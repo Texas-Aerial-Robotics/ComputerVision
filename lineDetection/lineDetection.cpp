@@ -17,6 +17,10 @@ using namespace std;
 // do canny
 // do hough transform
 
+//view logs on linux install: sudo apt-get install ubuntu-restricted-extras
+
+const int FRAME_WIDTH = 640;
+const int FRAME_HEIGHT = 480;
 float H = 1; // global variable to moniter height
 int W = 1000; // width of gui
 int gridM = 20; // size of grid in meters
@@ -33,14 +37,15 @@ int main()
 	Point2f POS2;
 	VideoCapture capture;
 	capture.open(0);
-	
+	//initialize logging 
+	bool logging = true;
+	VideoWriter videoSource("out.avi", CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(FRAME_WIDTH, FRAME_HEIGHT), true);
+	VideoWriter videoProcessed("out2.avi", CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(FRAME_WIDTH, FRAME_HEIGHT), true);
 	while (1)
 	{
 
 		capture.read(cameraFeed);
 		
-		
-		//cameraFeed = imread("C:\\Users\\Eric Johnson\\Pictures\\rainbowGrid.png", CV_LOAD_IMAGE_COLOR);
 		if (!cameraFeed.data)                              // Check for invalid input
 		{
 			cout << "Could not open or find the image" << std::endl;
@@ -73,6 +78,7 @@ int main()
 		float rise;
 		float run;
 		bool align = false;
+		//unpacks vectors of lines and sorts them into bins
 		for (size_t i = 0; i < lines.size(); i++)
 		{
 			cout << "i= " << i << endl;
@@ -154,6 +160,7 @@ int main()
 		line(linesDetected, center, pns, Scalar(0, 255, 255));
 		//putText(pos, to_string(center.x) + " " + to_string(center.y), center * (W / gridM) + Point2f(15, 15), 1, 1, Scalar(255, 0, 0));
 
+		//OUTPUT
 		cout << POS1 << endl;
 		circle(linesDetected, center, 5, Scalar(255, 0, 0), -1);
 		grid(pos);
@@ -161,18 +168,22 @@ int main()
 		imshow("source", cameraFeed);
 		imshow("black and white", imgBlack);
 		imshow("canny", canny);
-		//imshow("eroded", eroded);
 		imshow("detected Lines", linesDetected);
 		imshow("position", pos);
 		counter++;
-		//if (waitKey() == 27)
-		//{
-		//break;
-		    //}
+
+		//LOGGING
+		if(logging == true)
+		{
+			videoSource.write(cameraFeed);
+			videoProcessed.write(linesDetected);
+		}
+		
 		waitKey(30);
 	}
     return 0;
 }
+
 
 Point findNormal(Mat img, Point2f p1, Point2f p2)
 {

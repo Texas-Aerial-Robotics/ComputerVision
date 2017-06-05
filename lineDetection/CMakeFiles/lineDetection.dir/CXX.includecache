@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/eric/Desktop/lineDetection/lineDetection.cpp
+/home/eric/Desktop/flightCode/lineDetection/lineDetection.cpp
 iostream
 -
 string
