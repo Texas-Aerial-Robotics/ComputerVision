@@ -6,21 +6,59 @@
 
 #IncludeRegexTransform: 
 
-/home/eric/Desktop/flightCode/lineDetection/lineDetection.cpp
-iostream
--
+/home/mark/Desktop/flightCode/lineDetection/Roomba.cpp
+Roomba.h
+/home/mark/Desktop/flightCode/lineDetection/Roomba.h
 string
 -
 opencv2/opencv.hpp
 -
-opencv2/imgproc/imgproc.hpp
+
+/home/mark/Desktop/flightCode/lineDetection/Roomba.h
+string
+-
+opencv/cv.h
+-
+opencv/highgui.h
+-
+
+/home/mark/Desktop/flightCode/lineDetection/lineDetection.cpp
+iostream
+-
+string
+-
+sstream
+-
+vector
+-
+Roomba.h
+/home/mark/Desktop/flightCode/lineDetection/Roomba.h
+opencv2/opencv.hpp
 -
 opencv2/highgui/highgui.hpp
 -
 
+/usr/local/include/opencv/cv.h
+opencv2/core/core_c.h
+/usr/local/include/opencv/opencv2/core/core_c.h
+opencv2/imgproc/imgproc_c.h
+/usr/local/include/opencv/opencv2/imgproc/imgproc_c.h
+opencv2/photo/photo_c.h
+/usr/local/include/opencv/opencv2/photo/photo_c.h
+opencv2/video/tracking_c.h
+/usr/local/include/opencv/opencv2/video/tracking_c.h
+opencv2/objdetect/objdetect_c.h
+/usr/local/include/opencv/opencv2/objdetect/objdetect_c.h
+
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
 /usr/local/include/opencv/opencv2/core/core_c.h
+
+/usr/local/include/opencv/highgui.h
+opencv2/core/core_c.h
+/usr/local/include/opencv/opencv2/core/core_c.h
+opencv2/highgui/highgui_c.h
+/usr/local/include/opencv/opencv2/highgui/highgui_c.h
 
 /usr/local/include/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -831,10 +869,6 @@ opencv2/highgui.hpp
 /usr/local/include/opencv2/opencv2/highgui.hpp
 opencv2/imgproc/imgproc_c.h
 /usr/local/include/opencv2/opencv2/imgproc/imgproc_c.h
-
-/usr/local/include/opencv2/imgproc/imgproc.hpp
-opencv2/imgproc.hpp
-/usr/local/include/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv2/imgproc/imgproc_c.h
 opencv2/imgproc/types_c.h

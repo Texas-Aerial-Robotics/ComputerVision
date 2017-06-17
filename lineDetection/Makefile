@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eric/Desktop/flightCode/lineDetection
+CMAKE_SOURCE_DIR = /home/mark/Desktop/flightCode/lineDetection
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eric/Desktop/flightCode/lineDetection
+CMAKE_BINARY_DIR = /home/mark/Desktop/flightCode/lineDetection
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eric/Desktop/flightCode/lineDetection/CMakeFiles /home/eric/Desktop/flightCode/lineDetection/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Desktop/flightCode/lineDetection/CMakeFiles /home/mark/Desktop/flightCode/lineDetection/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eric/Desktop/flightCode/lineDetection/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Desktop/flightCode/lineDetection/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ lineDetection/fast:
 	$(MAKE) -f CMakeFiles/lineDetection.dir/build.make CMakeFiles/lineDetection.dir/build
 .PHONY : lineDetection/fast
 
+Roomba.o: Roomba.cpp.o
+
+.PHONY : Roomba.o
+
+# target to build an object file
+Roomba.cpp.o:
+	$(MAKE) -f CMakeFiles/lineDetection.dir/build.make CMakeFiles/lineDetection.dir/Roomba.cpp.o
+.PHONY : Roomba.cpp.o
+
+Roomba.i: Roomba.cpp.i
+
+.PHONY : Roomba.i
+
+# target to preprocess a source file
+Roomba.cpp.i:
+	$(MAKE) -f CMakeFiles/lineDetection.dir/build.make CMakeFiles/lineDetection.dir/Roomba.cpp.i
+.PHONY : Roomba.cpp.i
+
+Roomba.s: Roomba.cpp.s
+
+.PHONY : Roomba.s
+
+# target to generate assembly for a file
+Roomba.cpp.s:
+	$(MAKE) -f CMakeFiles/lineDetection.dir/build.make CMakeFiles/lineDetection.dir/Roomba.cpp.s
+.PHONY : Roomba.cpp.s
+
 lineDetection.o: lineDetection.cpp.o
 
 .PHONY : lineDetection.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lineDetection"
+	@echo "... Roomba.o"
+	@echo "... Roomba.i"
+	@echo "... Roomba.s"
 	@echo "... lineDetection.o"
 	@echo "... lineDetection.i"
 	@echo "... lineDetection.s"

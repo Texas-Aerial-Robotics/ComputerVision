@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/multiTarget.dir/multiTracking.cpp.o"
+  "CMakeFiles/multiTarget.dir/Roomba.cpp.o"
   "multiTarget.pdb"
   "multiTarget"
 )
