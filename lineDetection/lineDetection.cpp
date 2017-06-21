@@ -72,7 +72,7 @@ int main()
 	Point2f POS1;
 	Point2f POS2;
 	VideoCapture capture;
-	capture.open(1);
+	capture.open(0);
 	int smalldist = 800;
 	vector<Vec4i> normalLines;
 	Point2f pn;
@@ -92,8 +92,32 @@ int main()
 	VideoWriter videoSource("out.avi", CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(FRAME_WIDTH, FRAME_HEIGHT), true);
 	VideoWriter videoProcessed("out2.avi", CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(FRAME_WIDTH, FRAME_HEIGHT), true);
 
+	//if we would like to calibrate our filter values, set to true.
+	string onOff;
+	cout << "calibrtion mode on or off (t/f)" << endl;
+	cin >> onOff;
+    for (int i=0;i<onOff.length();i++){ // input.length() gets the length of the string
+         onOff[i]=tolower(onOff[i]); // convert every character of input to lowercase ( I think there are other methods to do this)
+    }
+	bool calibrationMode = true;	
+	if( onOff != "f" && onOff != "t")
+	{
+		cout << "incorrect input" << onOff << endl;
+		return 1;
+	}
+	if( onOff == "f")
+	{
+		calibrationMode = false; 
+	}
 
+
+	capture.set(CV_CAP_PROP_FRAME_WIDTH, FRAME_WIDTH);
+	capture.set(CV_CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT);
+			
 //BEGINS CAMERA LOOP
+	//start an infinite loop where webcam feed is copied to cameraFeed matrix
+			//all of our operations will be performed within this loop
+
 	while (1)
 	{
 
@@ -105,39 +129,62 @@ int main()
 			system("pause");
 			return -1;
 		}
-		//imshow("source", cameraFeed);
-		
 
-
-
-				//if we would like to calibrate our filter values, set to true.
+			//if we would like to calibrate our filter values, set to true.
 			bool calibrationMode = false;
-
-			//Matrix to store each frame of the webcam feed
-			//Mat threshold1;
-			//Mat HSV;
-
-			//if (calibrationMode) {
-				//create slider bars for HSV filtering
-			//	createTrackbars();
-			//}
-			//video capture object to acquire webcam feed
-			VideoCapture capture;
 			//open capture object at location zero (default location for webcam)
-			capture.open(0);
 			//set height and width of capture frame
-			capture.set(CV_CAP_PROP_FRAME_WIDTH, FRAME_WIDTH);
-			capture.set(CV_CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT);
-			//start an infinite loop where webcam feed is copied to cameraFeed matrix
-			//all of our operations will be performed within this loop
-
-
-
-			//convert frame from BGR to HSV colorspace, writes it to HSV
-			cvtColor(cameraFeed, HSV, COLOR_BGR2HSV);
+			
 			//COLOR DETECTION PART
 			////\\\\\\\\\\\\\\\\\\\////////////////////////////////////////////////////////////
-
+			//convert frame from BGR to HSV colorspace, writes it to HSV
+			cvtColor(cameraFeed, HSV, COLOR_BGR2HSV);
+			if (calibrationMode == true) {
+			//if in calibration mode, we track objects based on the HSV slider values.
+				cvtColor(cameraFeed, HSV, COLOR_BGR2HSV);
+				inRange(HSV, Scalar(H_MIN, S_MIN, V_MIN), Scalar(H_MAX, S_MAX, V_MAX), threshold1);
+				morphOps(threshold1);
+				imshow(windowName2, threshold1);
+				trackFilteredObject(threshold1, HSV, cameraFeed);
+				// 103 = g for green
+				switch(waitKey(30))
+				{
+					// g set for green
+					case 103:
+					{
+						ofstream config;
+					    config.open ("greenRoomba.txt");
+					    config.seekp(0,std::ios::end); //to ensure the put pointer is at the end
+						config<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<"\n"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX;
+						cout << "green roomba HSV min vals set to :"<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<endl;
+						cout << "green roomba HSV max vals set to :"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX<<endl;
+					    config.close();
+					}
+					// r set for red
+					case 114:
+					{
+						ofstream config;
+					    config.open ("redRoomba.txt");
+					    config.seekp(0,std::ios::end); //to ensure the put pointer is at the end
+						config<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<"\n"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX;
+						cout << "red roomba HSV min vals set to :"<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<endl;
+						cout << "red roomba HSV max vals set to :"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX<<endl;
+					    config.close();
+					}
+					// c for continue 
+					case 99:
+					{
+						calibrationMode = false;
+					}
+					// esc end program 
+					case 27:
+					{
+						return 1;
+					}
+					default:
+						continue;
+				}
+			}
 
 			if (calibrationMode == true) {
 				createTrackbars();
@@ -305,7 +352,7 @@ int main()
 			videoProcessed.write(linesDetected);
 		}
 		
-		waitKey(30);
+		//waitKey(30);
 
 	}
     return 0;
