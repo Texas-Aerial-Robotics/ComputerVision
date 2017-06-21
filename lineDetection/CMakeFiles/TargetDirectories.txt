@@ -1,3 +1,3 @@
-/home/mark/Desktop/flightCode/lineDetection/CMakeFiles/rebuild_cache.dir
-/home/mark/Desktop/flightCode/lineDetection/CMakeFiles/edit_cache.dir
-/home/mark/Desktop/flightCode/lineDetection/CMakeFiles/lineDetection.dir
+/home/eric/Desktop/flightCode/lineDetection/CMakeFiles/rebuild_cache.dir
+/home/eric/Desktop/flightCode/lineDetection/CMakeFiles/edit_cache.dir
+/home/eric/Desktop/flightCode/lineDetection/CMakeFiles/lineDetection.dir

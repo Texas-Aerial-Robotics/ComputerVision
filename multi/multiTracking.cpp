@@ -64,14 +64,6 @@ void createTrackbars() {
 
 	namedWindow(trackbarWindowName, 0);
 	//create memory to store trackbar name on window
-	
-	//char TrackbarName[50];
-	// sprintf(TrackbarName, "H_MIN", H_MIN);
-	// sprintf(TrackbarName, "H_MAX", H_MAX);
-	// sprintf(TrackbarName, "S_MIN", S_MIN);
-	// sprintf(TrackbarName, "S_MAX", S_MAX);
-	// sprintf(TrackbarName, "V_MIN", V_MIN);
-	// sprintf(TrackbarName, "V_MAX", V_MAX);
 
 	//create trackbars and insert them into window
 	//3 parameters are: the address of the variable that is changing when the trackbar is moved(eg.H_LOW),
@@ -151,12 +143,7 @@ void trackFilteredObject(Mat threshold, Mat HSV, Mat &cameraFeed) {
 				if (area>MIN_OBJECT_AREA) {
 					//Fruit apple;
 					Roomba green;
-					green.setXPos(moment.m10 / area);
-					green.setYPos(moment.m01 / area);
-
-					//apples.push_back(apple);
-					roombas.push_back(green);
-
+					
 					objectFound = true;
 
 				}
@@ -231,8 +218,23 @@ void trackFilteredObject(Roomba theRoomba, Mat threshold, Mat HSV, Mat &cameraFe
 int main(int argc, char* argv[])
 {
 	//if we would like to calibrate our filter values, set to true.
-	bool calibrationMode = false;
+	string onOff;
+	cout << "calibrtion mode on or off (t/f)" << endl;
+	cin >> onOff;
+    for (int i=0;i<onOff.length();i++){ // input.length() gets the length of the string
+         onOff[i]=tolower(onOff[i]); // convert every character of input to lowercase ( I think there are other methods to do this)
+    }
 
+	bool calibrationMode = true;	
+	if( onOff != "f" || onOff != "t")
+	{
+		cout << "incorrect input" << endl;
+		return 1;
+	}
+	if( onOff == "f")
+	{
+		calibrationMode = false; 
+	}
 	//Matrix to store each frame of the webcam feed
 	Mat cameraFeed;
 	Mat threshold;
@@ -265,11 +267,47 @@ int main(int argc, char* argv[])
 			inRange(HSV, Scalar(H_MIN, S_MIN, V_MIN), Scalar(H_MAX, S_MAX, V_MAX), threshold);
 			morphOps(threshold);
 			imshow(windowName2, threshold);
-			
 			trackFilteredObject(threshold, HSV, cameraFeed);
+			// 103 = g for green
+			switch(waitKey(30))
+			{
+				// g set for green
+				case 103:
+				{
+					ofstream config;
+				    config.open ("greenRoomba.txt");
+				    config.seekp(0,std::ios::end); //to ensure the put pointer is at the end
+					config<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<"\n"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX;
+					cout << "green roomba HSV min vals set to :"<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<endl;
+					cout << "green roomba HSV max vals set to :"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX<<endl;
+				    config.close();
+				}
+				// r set for red
+				case 114:
+				{
+					ofstream config;
+				    config.open ("redRoomba.txt");
+				    config.seekp(0,std::ios::end); //to ensure the put pointer is at the end
+					config<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<"\n"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX;
+					cout << "red roomba HSV min vals set to :"<<H_MIN<<" "<<S_MIN<<" "<<V_MIN<<endl;
+					cout << "red roomba HSV max vals set to :"<<H_MAX<<" "<<S_MAX<<" "<<V_MAX<<endl;
+				    config.close();
+				}
+				// c for continue 
+				case 99:
+				{
+					calibrationMode = false;
+				}
+				// esc end program 
+				case 27:
+				{
+					return 1;
+				}
+				default:
+					continue;
+			}
 		}
 		else {
-			//Fruit banana("banana"), apple("apple"), cherry("cherry");
 			Roomba green("green roomba"), red("red roomba");
 			
 			cvtColor(cameraFeed, HSV, COLOR_BGR2HSV);
@@ -281,12 +319,6 @@ int main(int argc, char* argv[])
 			inRange(HSV, red.getHSVMin(), red.getHSVMax(), threshold);
 			morphOps(threshold);
 			trackFilteredObject(red, threshold, HSV, cameraFeed);
-			/*
-			cvtColor(cameraFeed, HSV, COLOR_BGR2HSV);
-			inRange(HSV, cherry.getHSVMin(), cherry.getHSVMax(), threshold);
-			morphOps(threshold);
-			trackFilteredObject(cherry, threshold, HSV, cameraFeed);
-			*/
 		}
 
 		//show frames 
@@ -298,15 +330,13 @@ int main(int argc, char* argv[])
 		video2.write(HSV);
 
 
-		//delay 30ms so that screen can refresh.
-		//image will not appear without this waitKey() command
-		waitKey(30);
+		//delay 30ms so that screen can refresh. If esc is pressed end program
+		if (waitKey(30) == 27)
+		{
+			return 1;
+		}
+
 	}
-
-
-
-
-
 
 	return 0;
 }

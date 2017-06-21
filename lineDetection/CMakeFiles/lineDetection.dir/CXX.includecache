@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/mark/Desktop/flightCode/lineDetection/Roomba.cpp
+/home/eric/Desktop/flightCode/lineDetection/Roomba.cpp
 Roomba.h
-/home/mark/Desktop/flightCode/lineDetection/Roomba.h
+/home/eric/Desktop/flightCode/lineDetection/Roomba.h
 string
 -
 opencv2/opencv.hpp
 -
 
-/home/mark/Desktop/flightCode/lineDetection/Roomba.h
+/home/eric/Desktop/flightCode/lineDetection/Roomba.h
 string
 -
 opencv/cv.h
@@ -22,7 +22,7 @@ opencv/cv.h
 opencv/highgui.h
 -
 
-/home/mark/Desktop/flightCode/lineDetection/lineDetection.cpp
+/home/eric/Desktop/flightCode/lineDetection/lineDetection.cpp
 iostream
 -
 string
@@ -32,7 +32,7 @@ sstream
 vector
 -
 Roomba.h
-/home/mark/Desktop/flightCode/lineDetection/Roomba.h
+/home/eric/Desktop/flightCode/lineDetection/Roomba.h
 opencv2/opencv.hpp
 -
 opencv2/highgui/highgui.hpp

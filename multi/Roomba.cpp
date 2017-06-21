@@ -1,23 +1,66 @@
 #include "Roomba.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
-#include <opencv2/opencv.hpp>
-
 
 Roomba::Roomba()
 {
 }
 Roomba::Roomba(string name)
 {
+	
 	setType(name);
 	if (name == "green roomba")
 	{
-		setHSVMin(Scalar(49, 25, 56));
-		setHSVMax(Scalar(86, 179, 145));
+		std::ifstream f("greenRoomba.txt");
+		std::string s;
+		int H, S, V;
+		for (int i = 1; i <= 2; i++)
+		{
+			if (i == 1)
+			{
+				std::getline(f, s);
+				istringstream iss(s);
+				iss >> H >> S >> V;
+				Scalar min = Scalar(H, S, V);
+				setHSVMin(min);
+			}
+			if (i == 2)
+			{
+				std::getline(f, s);
+				istringstream iss(s);
+				iss >> H >> S >> V;
+				Scalar max = Scalar(H, S, V);
+				setHSVMax(max);
+			}
+		}
 	}
+
 	if (name == "red roomba")
 	{
-		setHSVMin(Scalar(0, 53, 19));
-		setHSVMax(Scalar(28, 255, 255));
+		std::ifstream f("redRoomba.txt");
+		std::string s;
+		int H, S, V;
+		for (int i = 1; i <= 2; i++)
+		{
+			if (i == 1)
+			{
+				std::getline(f, s);
+				istringstream iss(s);
+				iss >> H >> S >> V;
+				Scalar min = Scalar(H, S, V);
+				setHSVMin(min);
+			}
+			if (i == 2)
+			{
+				std::getline(f, s);
+				istringstream iss(s);
+				iss >> H >> S >> V;
+				Scalar max = Scalar(H, S, V);
+				setHSVMax(max);
+			}
+		}
 	}
 }
 Roomba::~Roomba()
