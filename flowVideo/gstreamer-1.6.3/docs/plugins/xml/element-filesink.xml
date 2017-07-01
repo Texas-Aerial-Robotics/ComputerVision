@@ -1,0 +1,159 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-filesink">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-filesink.top_of_page" role="top_of_page">filesink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>filesink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-filesink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFileSink--append">append</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstFileSinkBufferMode"><type>GstFileSinkBufferMode</type></link></entry><entry role="property_name"><link linkend="GstFileSink--buffer-mode">buffer-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFileSink--buffer-size">buffer-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstFileSink--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFileSink"/><refsect1 id="gstreamer-plugins-filesink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFileSink-struct">GstFileSink</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFileSinkBufferMode">GstFileSinkBufferMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstFileSink
+</screen>
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFileSink implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-filesink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Write incoming data to a file in the local file system.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 v4l2src num-buffers=1 ! jpegenc ! filesink location=capture1.jpeg
+]]></programlisting></informalexample> Capture one frame from a v4l2 camera and save as jpeg image.
+</refsect2>
+
+<include href="element-filesink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-filesink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFileSink-struct" role="struct">
+<title>struct GstFileSink</title>
+<indexterm zone="GstFileSink-struct"><primary>GstFileSink</primary></indexterm>
+<programlisting language="C">struct GstFileSink;</programlisting>
+<para>Opaque <link linkend="GstFileSink"><type>GstFileSink</type></link> structure.</para>
+</refsect2>
+<refsect2 id="GstFileSinkBufferMode" role="enum">
+<title>enum GstFileSinkBufferMode</title>
+<indexterm zone="GstFileSinkBufferMode"><primary>GstFileSinkBufferMode</primary></indexterm>
+<para>File read buffering mode.</para>
+<refsect3 id="GstFileSinkBufferMode.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FILE-SINK-BUFFER-MODE-DEFAULT:CAPS">GST_FILE_SINK_BUFFER_MODE_DEFAULT</para></entry>
+<entry role="enum_member_description"><para>Default buffering</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FILE-SINK-BUFFER-MODE-FULL:CAPS">GST_FILE_SINK_BUFFER_MODE_FULL</para></entry>
+<entry role="enum_member_description"><para>Fully buffered</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FILE-SINK-BUFFER-MODE-LINE:CAPS">GST_FILE_SINK_BUFFER_MODE_LINE</para></entry>
+<entry role="enum_member_description"><para>Line buffered</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FILE-SINK-BUFFER-MODE-UNBUFFERED:CAPS">GST_FILE_SINK_BUFFER_MODE_UNBUFFERED</para></entry>
+<entry role="enum_member_description"><para>Unbuffered</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFileSink--append" role="property"><title>The <literal>“append”</literal> property</title>
+<indexterm zone="GstFileSink--append"><primary>GstFileSink:append</primary></indexterm>
+<programlisting>  “append”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Append to an already existing file.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFileSink--buffer-mode" role="property"><title>The <literal>“buffer-mode”</literal> property</title>
+<indexterm zone="GstFileSink--buffer-mode"><primary>GstFileSink:buffer-mode</primary></indexterm>
+<programlisting>  “buffer-mode”              <link linkend="GstFileSinkBufferMode"><type>GstFileSinkBufferMode</type></link></programlisting>
+<para>The buffering mode to use.</para><para>Flags: Read / Write</para>
+<para>Default value: Default buffering</para>
+</refsect2>
+<refsect2 id="GstFileSink--buffer-size" role="property"><title>The <literal>“buffer-size”</literal> property</title>
+<indexterm zone="GstFileSink--buffer-size"><primary>GstFileSink:buffer-size</primary></indexterm>
+<programlisting>  “buffer-size”              <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Size of buffer in number of bytes for line or full buffer-mode.</para><para>Flags: Read / Write</para>
+<para>Default value: 65536</para>
+</refsect2>
+<refsect2 id="GstFileSink--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstFileSink--location"><primary>GstFileSink:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of the file to write.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesink.see-also">
+<title>See Also</title>
+<para><link linkend="GstFileSrc"><type>GstFileSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

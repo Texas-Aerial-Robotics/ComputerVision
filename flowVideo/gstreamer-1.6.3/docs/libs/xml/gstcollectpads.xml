@@ -1,0 +1,1559 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstCollectPads">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstCollectPads.top_of_page">GstCollectPads</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstCollectPads</refname>
+<refpurpose>manages a set of pads that operate in collect mode</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstCollectPads.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectDataDestroyNotify">*GstCollectDataDestroyNotify</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsBufferFunction">*GstCollectPadsBufferFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsClipFunction">*GstCollectPadsClipFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsCompareFunction">*GstCollectPadsCompareFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsEventFunction">*GstCollectPadsEventFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsFlushFunction">*GstCollectPadsFlushFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsQueryFunction">*GstCollectPadsQueryFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstCollectPadsFunction">*GstCollectPadsFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-STATE:CAPS">GST_COLLECT_PADS_STATE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-STATE-IS-SET:CAPS">GST_COLLECT_PADS_STATE_IS_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-STATE-SET:CAPS">GST_COLLECT_PADS_STATE_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-STATE-UNSET:CAPS">GST_COLLECT_PADS_STATE_UNSET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-GET-STREAM-LOCK:CAPS">GST_COLLECT_PADS_GET_STREAM_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-STREAM-LOCK:CAPS">GST_COLLECT_PADS_STREAM_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-STREAM-UNLOCK:CAPS">GST_COLLECT_PADS_STREAM_UNLOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-DTS:CAPS">GST_COLLECT_PADS_DTS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-COLLECT-PADS-DTS-IS-VALID:CAPS">GST_COLLECT_PADS_DTS_IS_VALID</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCollectPads"><returnvalue>GstCollectPads</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-collect-pads-new">gst_collect_pads_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCollectData"><returnvalue>GstCollectData</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-collect-pads-add-pad">gst_collect_pads_add_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-remove-pad">gst_collect_pads_remove_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-start">gst_collect_pads_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-stop">gst_collect_pads_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-available">gst_collect_pads_available</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-flush">gst_collect_pads_flush</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-collect-pads-peek">gst_collect_pads_peek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-collect-pads-pop">gst_collect_pads_pop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-collect-pads-read-buffer">gst_collect_pads_read_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-collect-pads-take-buffer">gst_collect_pads_take_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-clip-running-time">gst_collect_pads_clip_running_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-query-default">gst_collect_pads_query_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-event-default">gst_collect_pads_event_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-src-event-default">gst_collect_pads_src_event_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-buffer-function">gst_collect_pads_set_buffer_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-clip-function">gst_collect_pads_set_clip_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-compare-function">gst_collect_pads_set_compare_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-event-function">gst_collect_pads_set_event_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-flush-function">gst_collect_pads_set_flush_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-query-function">gst_collect_pads_set_query_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-flushing">gst_collect_pads_set_flushing</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-function">gst_collect_pads_set_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-collect-pads-set-waiting">gst_collect_pads_set_waiting</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstCollectPads.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCollectPads-struct">GstCollectPads</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCollectData">GstCollectData</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstCollectPadsStateFlags">GstCollectPadsStateFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstCollectPads.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstCollectPads
+</screen>
+</refsect1>
+
+<refsect1 id="GstCollectPads.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstcollectpads.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstCollectPads.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Manages a set of pads that operate in collect mode. This means that control
+is given to the manager of this object when all pads have data.</para>
+<itemizedlist>
+  <listitem><para>
+    Collectpads are created with <link linkend="gst-collect-pads-new"><function>gst_collect_pads_new()</function></link>. A callback should then
+    be installed with <link linkend="gst-collect-pads-set-function"><function>gst_collect_pads_set_function()</function></link>.
+  </para></listitem>
+  <listitem><para>
+    Pads are added to the collection with <link linkend="gst-collect-pads-add-pad"><function>gst_collect_pads_add_pad()</function></link>/
+    <link linkend="gst-collect-pads-remove-pad"><function>gst_collect_pads_remove_pad()</function></link>. The pad
+    has to be a sinkpad. The chain and event functions of the pad are
+    overridden. The element_private of the pad is used to store
+    private information for the collectpads.
+  </para></listitem>
+  <listitem><para>
+    For each pad, data is queued in the _chain function or by
+    performing a pull_range.
+  </para></listitem>
+  <listitem><para>
+    When data is queued on all pads in waiting mode, the callback function is called.
+  </para></listitem>
+  <listitem><para>
+    Data can be dequeued from the pad with the <link linkend="gst-collect-pads-pop"><function>gst_collect_pads_pop()</function></link> method.
+    One can peek at the data with the <link linkend="gst-collect-pads-peek"><function>gst_collect_pads_peek()</function></link> function.
+    These functions will return <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the pad received an EOS event. When all
+    pads return <link linkend="NULL:CAPS"><literal>NULL</literal></link> from a <link linkend="gst-collect-pads-peek"><function>gst_collect_pads_peek()</function></link>, the element can emit an EOS
+    event itself.
+  </para></listitem>
+  <listitem><para>
+    Data can also be dequeued in byte units using the <link linkend="gst-collect-pads-available"><function>gst_collect_pads_available()</function></link>,
+    <link linkend="gst-collect-pads-read-buffer"><function>gst_collect_pads_read_buffer()</function></link> and <link linkend="gst-collect-pads-flush"><function>gst_collect_pads_flush()</function></link> calls.
+  </para></listitem>
+  <listitem><para>
+    Elements should call <link linkend="gst-collect-pads-start"><function>gst_collect_pads_start()</function></link> and <link linkend="gst-collect-pads-stop"><function>gst_collect_pads_stop()</function></link> in
+    their state change functions to start and stop the processing of the collectpads.
+    The <link linkend="gst-collect-pads-stop"><function>gst_collect_pads_stop()</function></link> call should be called before calling the parent
+    element state change function in the PAUSED_TO_READY state change to ensure
+    no pad is blocked and the element can finish streaming.
+  </para></listitem>
+  <listitem><para>
+    <link linkend="gst-collect-pads-set-waiting"><function>gst_collect_pads_set_waiting()</function></link> sets a pad to waiting or non-waiting mode.
+    CollectPads element is not waiting for data to be collected on non-waiting pads.
+    Thus these pads may but need not have data when the callback is called.
+    All pads are in waiting mode by default.
+  </para></listitem>
+</itemizedlist>
+
+</refsect1>
+<refsect1 id="GstCollectPads.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstCollectDataDestroyNotify" role="function">
+<title>GstCollectDataDestroyNotify&#160;()</title>
+<indexterm zone="GstCollectDataDestroyNotify"><primary>GstCollectDataDestroyNotify</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectDataDestroyNotify<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>);</programlisting>
+<para>A function that will be called when the <link linkend="GstCollectData"><type>GstCollectData</type></link> will be freed.
+It is passed the pointer to the structure and should free any custom
+memory and resources allocated for it.</para>
+<refsect3 id="GstCollectDataDestroyNotify.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectData"><type>GstCollectData</type></link> that will be freed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstCollectPadsBufferFunction" role="function">
+<title>GstCollectPadsBufferFunction&#160;()</title>
+<indexterm zone="GstCollectPadsBufferFunction"><primary>GstCollectPadsBufferFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsBufferFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                 <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                                 <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                                 <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called when a (considered oldest) buffer can be muxed.
+If all pads have reached EOS, this function is called with <link linkend="NULL:CAPS"><literal>NULL</literal></link> <parameter>buffer</parameter>
+
+and <link linkend="NULL:CAPS"><literal>NULL</literal></link> <parameter>data</parameter>
+.</para>
+<refsect3 id="GstCollectPadsBufferFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPads"><type>GstCollectPads</type></link> that triggered the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectData"><type>GstCollectData</type></link> of pad that has received the buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <link linkend="gst-collect-pads-set-buffer-function"><function>gst_collect_pads_set_buffer_function()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstCollectPadsBufferFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link> for success</para>
+</refsect3></refsect2>
+<refsect2 id="GstCollectPadsClipFunction" role="function">
+<title>GstCollectPadsClipFunction&#160;()</title>
+<indexterm zone="GstCollectPadsClipFunction"><primary>GstCollectPadsClipFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsClipFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                               <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                               <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *inbuffer</parameter>,
+                               <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **outbuffer</parameter>,
+                               <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called when <parameter>inbuffer</parameter>
+ is received on the pad managed
+by <parameter>data</parameter>
+ in the collectpad object <parameter>pads</parameter>
+.</para>
+<para>The function should use the segment of <parameter>data</parameter>
+ and the negotiated media type on
+the pad to perform clipping of <parameter>inbuffer</parameter>
+.</para>
+<para>This function takes ownership of <parameter>inbuffer</parameter>
+ and should output a buffer in
+<parameter>outbuffer</parameter>
+ or return <link linkend="NULL:CAPS"><literal>NULL</literal></link> in <parameter>outbuffer</parameter>
+ if the buffer should be dropped.</para>
+<refsect3 id="GstCollectPadsClipFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectPads"><type>GstCollectPads</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectData"><type>GstCollectData</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>inbuffer</para></entry>
+<entry role="parameter_description"><para> the input <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>outbuffer</para></entry>
+<entry role="parameter_description"><para>the output <link linkend="GstBuffer"><type>GstBuffer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstCollectPadsClipFunction.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> that corresponds to the result of clipping.</para>
+</refsect3></refsect2>
+<refsect2 id="GstCollectPadsCompareFunction" role="function">
+<title>GstCollectPadsCompareFunction&#160;()</title>
+<indexterm zone="GstCollectPadsCompareFunction"><primary>GstCollectPadsCompareFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsCompareFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                  <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data1</parameter>,
+                                  <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp1</parameter>,
+                                  <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data2</parameter>,
+                                  <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp2</parameter>,
+                                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function for comparing two timestamps of buffers or newsegments collected on one pad.</para>
+<refsect3 id="GstCollectPadsCompareFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPads"><type>GstCollectPads</type></link> that is comparing the timestamps</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data1</para></entry>
+<entry role="parameter_description"><para>the first <link linkend="GstCollectData"><type>GstCollectData</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp1</para></entry>
+<entry role="parameter_description"><para>the first timestamp</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data2</para></entry>
+<entry role="parameter_description"><para>the second <link linkend="GstCollectData"><type>GstCollectData</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp2</para></entry>
+<entry role="parameter_description"><para>the second timestamp</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <link linkend="gst-collect-pads-set-compare-function"><function>gst_collect_pads_set_compare_function()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstCollectPadsCompareFunction.returns" role="returns">
+<title>Returns</title>
+<para> Integer less than zero when first timestamp is deemed older than the second one.
+Zero if the timestamps are deemed equally old.
+Integer greater than zero when second timestamp is deemed older than the first one.</para>
+</refsect3></refsect2>
+<refsect2 id="GstCollectPadsEventFunction" role="function">
+<title>GstCollectPadsEventFunction&#160;()</title>
+<indexterm zone="GstCollectPadsEventFunction"><primary>GstCollectPadsEventFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsEventFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *pad</parameter>,
+                                <parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                                <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called while processing an event. It takes
+ownership of the event and is responsible for chaining up (to
+<link linkend="gst-collect-pads-event-default"><function>gst_collect_pads_event_default()</function></link>) or dropping events (such typical cases
+being handled by the default handler).</para>
+<refsect3 id="GstCollectPadsEventFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPads"><type>GstCollectPads</type></link> that triggered the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPad"><type>GstPad</type></link> that received an event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstEvent"><type>GstEvent</type></link> received</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <link linkend="gst-collect-pads-set-event-function"><function>gst_collect_pads_set_event_function()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstCollectPadsEventFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the pad could handle the event</para>
+</refsect3></refsect2>
+<refsect2 id="GstCollectPadsFlushFunction" role="function" condition="since:1.4">
+<title>GstCollectPadsFlushFunction&#160;()</title>
+<indexterm zone="GstCollectPadsFlushFunction" role="1.4"><primary>GstCollectPadsFlushFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsFlushFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called while processing a flushing seek event.</para>
+<para>The function should flush any internal state of the element and the state of
+all the pads. It should clear only the state not directly managed by the
+<parameter>pads</parameter>
+ object. It is therefore not necessary to call
+gst_collect_pads_set_flushing nor gst_collect_pads_clear from this function.</para>
+<refsect3 id="GstCollectPadsFlushFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectPads"><type>GstCollectPads</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GstCollectPadsQueryFunction" role="function">
+<title>GstCollectPadsQueryFunction&#160;()</title>
+<indexterm zone="GstCollectPadsQueryFunction"><primary>GstCollectPadsQueryFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsQueryFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *pad</parameter>,
+                                <parameter><link linkend="GstQuery"><type>GstQuery</type></link> *query</parameter>,
+                                <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called while processing a query. It takes
+ownership of the query and is responsible for chaining up (to
+events downstream (with <link linkend="gst-pad-event-default"><function>gst_pad_event_default()</function></link>).</para>
+<refsect3 id="GstCollectPadsQueryFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPads"><type>GstCollectPads</type></link> that triggered the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPad"><type>GstPad</type></link> that received an event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>query</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstEvent"><type>GstEvent</type></link> received</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <link linkend="gst-collect-pads-set-query-function"><function>gst_collect_pads_set_query_function()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstCollectPadsQueryFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the pad could handle the event</para>
+</refsect3></refsect2>
+<refsect2 id="GstCollectPadsFunction" role="function">
+<title>GstCollectPadsFunction&#160;()</title>
+<indexterm zone="GstCollectPadsFunction"><primary>GstCollectPadsFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstCollectPadsFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                           <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called when all pads have received data.</para>
+<refsect3 id="GstCollectPadsFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPads"><type>GstCollectPads</type></link> that triggered the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <link linkend="gst-collect-pads-set-function"><function>gst_collect_pads_set_function()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstCollectPadsFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link> for success</para>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-STATE:CAPS" role="macro">
+<title>GST_COLLECT_PADS_STATE()</title>
+<indexterm zone="GST-COLLECT-PADS-STATE:CAPS"><primary>GST_COLLECT_PADS_STATE</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_STATE(data)                 (((GstCollectData *) data)-&gt;state)
+</programlisting>
+<para>A flags word containing <link linkend="GstCollectPadsStateFlags"><type>GstCollectPadsStateFlags</type></link> flags set
+on this collected pad.</para>
+<refsect3 id="GST-COLLECT-PADS-STATE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectData"><type>GstCollectData</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-STATE-IS-SET:CAPS" role="macro">
+<title>GST_COLLECT_PADS_STATE_IS_SET()</title>
+<indexterm zone="GST-COLLECT-PADS-STATE-IS-SET:CAPS"><primary>GST_COLLECT_PADS_STATE_IS_SET</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_STATE_IS_SET(data,flag)     !!(GST_COLLECT_PADS_STATE (data) &amp; flag)
+</programlisting>
+<para>Gives the status of a specific flag on a collected pad.</para>
+<refsect3 id="GST-COLLECT-PADS-STATE-IS-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectData"><type>GstCollectData</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPadsStateFlags"><type>GstCollectPadsStateFlags</type></link> to check.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-STATE-SET:CAPS" role="macro">
+<title>GST_COLLECT_PADS_STATE_SET()</title>
+<indexterm zone="GST-COLLECT-PADS-STATE-SET:CAPS"><primary>GST_COLLECT_PADS_STATE_SET</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_STATE_SET(data,flag)        (GST_COLLECT_PADS_STATE (data) |= flag)
+</programlisting>
+<para>Sets a state flag on a collected pad.</para>
+<refsect3 id="GST-COLLECT-PADS-STATE-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectData"><type>GstCollectData</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPadsStateFlags"><type>GstCollectPadsStateFlags</type></link> to set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-STATE-UNSET:CAPS" role="macro">
+<title>GST_COLLECT_PADS_STATE_UNSET()</title>
+<indexterm zone="GST-COLLECT-PADS-STATE-UNSET:CAPS"><primary>GST_COLLECT_PADS_STATE_UNSET</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_STATE_UNSET(data,flag)      (GST_COLLECT_PADS_STATE (data) &amp;= ~(flag))
+</programlisting>
+<para>Clears a state flag on a collected pad.</para>
+<refsect3 id="GST-COLLECT-PADS-STATE-UNSET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectData"><type>GstCollectData</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPadsStateFlags"><type>GstCollectPadsStateFlags</type></link> to clear.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-GET-STREAM-LOCK:CAPS" role="macro">
+<title>GST_COLLECT_PADS_GET_STREAM_LOCK()</title>
+<indexterm zone="GST-COLLECT-PADS-GET-STREAM-LOCK:CAPS"><primary>GST_COLLECT_PADS_GET_STREAM_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_GET_STREAM_LOCK(pads) (&amp;((GstCollectPads *)pads)-&gt;stream_lock)
+</programlisting>
+<para>Get the stream lock of <parameter>pads</parameter>
+. The stream lock is used to coordinate and
+serialize execution among the various streams being collected, and in
+protecting the resources used to accomplish this.</para>
+<refsect3 id="GST-COLLECT-PADS-GET-STREAM-LOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectPads"><type>GstCollectPads</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-STREAM-LOCK:CAPS" role="macro">
+<title>GST_COLLECT_PADS_STREAM_LOCK()</title>
+<indexterm zone="GST-COLLECT-PADS-STREAM-LOCK:CAPS"><primary>GST_COLLECT_PADS_STREAM_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_STREAM_LOCK(pads)     g_rec_mutex_lock(GST_COLLECT_PADS_GET_STREAM_LOCK (pads))
+</programlisting>
+<para>Lock the stream lock of <parameter>pads</parameter>
+.</para>
+<refsect3 id="GST-COLLECT-PADS-STREAM-LOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectPads"><type>GstCollectPads</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-STREAM-UNLOCK:CAPS" role="macro">
+<title>GST_COLLECT_PADS_STREAM_UNLOCK()</title>
+<indexterm zone="GST-COLLECT-PADS-STREAM-UNLOCK:CAPS"><primary>GST_COLLECT_PADS_STREAM_UNLOCK</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_STREAM_UNLOCK(pads)   g_rec_mutex_unlock(GST_COLLECT_PADS_GET_STREAM_LOCK (pads))
+</programlisting>
+<para>Unlock the stream lock of <parameter>pads</parameter>
+.</para>
+<refsect3 id="GST-COLLECT-PADS-STREAM-UNLOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCollectPads"><type>GstCollectPads</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-COLLECT-PADS-DTS:CAPS" role="macro" condition="since:1.6">
+<title>GST_COLLECT_PADS_DTS()</title>
+<indexterm zone="GST-COLLECT-PADS-DTS:CAPS" role="1.6"><primary>GST_COLLECT_PADS_DTS</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_DTS(data)                   (((GstCollectData *) data)-&gt;ABI.abi.dts)
+</programlisting>
+<para>Returns the DTS that has been converted to running time when using
+<link linkend="gst-collect-pads-clip-running-time"><function>gst_collect_pads_clip_running_time()</function></link>. Unlike the value saved into
+the buffer, this value is of type gint64 and may be negative. This allow
+properly handling streams with frame reordering where the first DTS may
+be negative. If the initial DTS was not set, this value will be
+set to <link linkend="G-MININT64:CAPS"><literal>G_MININT64</literal></link>.</para>
+<refsect3 id="GST-COLLECT-PADS-DTS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstCollectData"><type>GstCollectData</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-COLLECT-PADS-DTS-IS-VALID:CAPS" role="macro" condition="since:1.6">
+<title>GST_COLLECT_PADS_DTS_IS_VALID()</title>
+<indexterm zone="GST-COLLECT-PADS-DTS-IS-VALID:CAPS" role="1.6"><primary>GST_COLLECT_PADS_DTS_IS_VALID</primary></indexterm>
+<programlisting language="C">#define GST_COLLECT_PADS_DTS_IS_VALID(data)          (GST_CLOCK_STIME_IS_VALID (GST_COLLECT_PADS_DTS (data)))
+</programlisting>
+<para>Check if running DTS value store is valid.</para>
+<refsect3 id="GST-COLLECT-PADS-DTS-IS-VALID.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstCollectData"><type>GstCollectData</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-collect-pads-new" role="function">
+<title>gst_collect_pads_new&#160;()</title>
+<indexterm zone="gst-collect-pads-new"><primary>gst_collect_pads_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstCollectPads"><returnvalue>GstCollectPads</returnvalue></link>&#160;*
+gst_collect_pads_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new instance of <link linkend="GstCollectPads"><type>GstCollectPads</type></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstCollectPads"><type>GstCollectPads</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in case of an error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-add-pad" role="function">
+<title>gst_collect_pads_add_pad&#160;()</title>
+<indexterm zone="gst-collect-pads-add-pad"><primary>gst_collect_pads_add_pad</primary></indexterm>
+<programlisting language="C"><link linkend="GstCollectData"><returnvalue>GstCollectData</returnvalue></link>&#160;*
+gst_collect_pads_add_pad (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                          <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                          <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                          <parameter><link linkend="GstCollectDataDestroyNotify"><type>GstCollectDataDestroyNotify</type></link> destroy_notify</parameter>,
+                          <parameter><link linkend="gboolean"><type>gboolean</type></link> lock</parameter>);</programlisting>
+<para>Add a pad to the collection of collect pads. The pad has to be
+a sinkpad. The refcount of the pad is incremented. Use
+<link linkend="gst-collect-pads-remove-pad"><function>gst_collect_pads_remove_pad()</function></link> to remove the pad from the collection
+again.</para>
+<para>You specify a size for the returned <link linkend="GstCollectData"><type>GstCollectData</type></link> structure
+so that you can use it to store additional information.</para>
+<para>You can also specify a <link linkend="GstCollectDataDestroyNotify"><type>GstCollectDataDestroyNotify</type></link> that will be called
+just before the <link linkend="GstCollectData"><type>GstCollectData</type></link> structure is freed. It is passed the
+pointer to the structure and should free any custom memory and resources
+allocated for it.</para>
+<para>Keeping a pad locked in waiting state is only relevant when using
+the default collection algorithm (providing the oldest buffer).
+It ensures a buffer must be available on this pad for a collection
+to take place.  This is of typical use to a muxer element where
+non-subtitle streams should always be in waiting state,
+e.g. to assure that caps information is available on all these streams
+when initial headers have to be written.</para>
+<para>The pad will be automatically activated in push mode when <parameter>pads</parameter>
+ is
+started.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-add-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para> the pad to add. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the size of the returned <link linkend="GstCollectData"><type>GstCollectData</type></link> structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>destroy_notify</para></entry>
+<entry role="parameter_description"><para> function to be called before the returned
+<link linkend="GstCollectData"><type>GstCollectData</type></link> structure is freed. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope async</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>lock</para></entry>
+<entry role="parameter_description"><para>whether to lock this pad in usual waiting state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-add-pad.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstCollectData"><type>GstCollectData</type></link> to identify the
+new pad. Or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if wrong parameters are supplied. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-remove-pad" role="function">
+<title>gst_collect_pads_remove_pad&#160;()</title>
+<indexterm zone="gst-collect-pads-remove-pad"><primary>gst_collect_pads_remove_pad</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_collect_pads_remove_pad (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                             <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Remove a pad from the collection of collect pads. This function will also
+free the <link linkend="GstCollectData"><type>GstCollectData</type></link> and all the resources that were allocated with
+<link linkend="gst-collect-pads-add-pad"><function>gst_collect_pads_add_pad()</function></link>.</para>
+<para>The pad will be deactivated automatically when <parameter>pads</parameter>
+ is stopped.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-remove-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para> the pad to remove. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-remove-pad.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the pad could be removed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-start" role="function">
+<title>gst_collect_pads_start&#160;()</title>
+<indexterm zone="gst-collect-pads-start"><primary>gst_collect_pads_start</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_start (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>);</programlisting>
+<para>Starts the processing of data in the collect_pads.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-stop" role="function">
+<title>gst_collect_pads_stop&#160;()</title>
+<indexterm zone="gst-collect-pads-stop"><primary>gst_collect_pads_stop</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_stop (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>);</programlisting>
+<para>Stops the processing of data in the collect_pads. this function
+will also unblock any blocking operations.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-available" role="function">
+<title>gst_collect_pads_available&#160;()</title>
+<indexterm zone="gst-collect-pads-available"><primary>gst_collect_pads_available</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_collect_pads_available (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>);</programlisting>
+<para>Query how much bytes can be read from each queued buffer. This means
+that the result of this call is the maximum number of bytes that can
+be read from each of the pads.</para>
+<para>This function should be called with <parameter>pads</parameter>
+ STREAM_LOCK held, such as
+in the callback.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-available.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-available.returns" role="returns">
+<title>Returns</title>
+<para> The maximum number of bytes queued on all pads. This function
+returns 0 if a pad has no queued buffer.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-flush" role="function">
+<title>gst_collect_pads_flush&#160;()</title>
+<indexterm zone="gst-collect-pads-flush"><primary>gst_collect_pads_flush</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_collect_pads_flush (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                        <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Flush <parameter>size</parameter>
+ bytes from the pad <parameter>data</parameter>
+.</para>
+<para>This function should be called with <parameter>pads</parameter>
+ STREAM_LOCK held, such as
+in the callback.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-flush.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the number of bytes to flush</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-flush.returns" role="returns">
+<title>Returns</title>
+<para> The number of bytes flushed This can be less than <parameter>size</parameter>
+and
+is 0 if the pad was end-of-stream.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-peek" role="function">
+<title>gst_collect_pads_peek&#160;()</title>
+<indexterm zone="gst-collect-pads-peek"><primary>gst_collect_pads_peek</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_collect_pads_peek (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                       <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>);</programlisting>
+<para>Peek at the buffer currently queued in <parameter>data</parameter>
+. This function
+should be called with the <parameter>pads</parameter>
+ STREAM_LOCK held, such as in the callback
+handler.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-peek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to peek</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-peek.returns" role="returns">
+<title>Returns</title>
+<para> The buffer in <parameter>data</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no buffer is queued.
+should unref the buffer after usage.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-pop" role="function">
+<title>gst_collect_pads_pop&#160;()</title>
+<indexterm zone="gst-collect-pads-pop"><primary>gst_collect_pads_pop</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_collect_pads_pop (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                      <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>);</programlisting>
+<para>Pop the buffer currently queued in <parameter>data</parameter>
+. This function
+should be called with the <parameter>pads</parameter>
+ STREAM_LOCK held, such as in the callback
+handler.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-pop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to pop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-pop.returns" role="returns">
+<title>Returns</title>
+<para> The buffer in <parameter>data</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no buffer was
+queued. You should unref the buffer after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-read-buffer" role="function">
+<title>gst_collect_pads_read_buffer&#160;()</title>
+<indexterm zone="gst-collect-pads-read-buffer"><primary>gst_collect_pads_read_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_collect_pads_read_buffer (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                              <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Get a subbuffer of <parameter>size</parameter>
+ bytes from the given pad <parameter>data</parameter>
+.</para>
+<para>This function should be called with <parameter>pads</parameter>
+ STREAM_LOCK held, such as in the
+callback.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-read-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the number of bytes to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-read-buffer.returns" role="returns">
+<title>Returns</title>
+<para> A sub buffer. The size of the buffer can be less that requested.
+A return of <link linkend="NULL:CAPS"><literal>NULL</literal></link> signals that the pad is end-of-stream.
+Unref the buffer after use. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-take-buffer" role="function">
+<title>gst_collect_pads_take_buffer&#160;()</title>
+<indexterm zone="gst-collect-pads-take-buffer"><primary>gst_collect_pads_take_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_collect_pads_take_buffer (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                              <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Get a subbuffer of <parameter>size</parameter>
+ bytes from the given pad <parameter>data</parameter>
+. Flushes the amount
+of read bytes.</para>
+<para>This function should be called with <parameter>pads</parameter>
+ STREAM_LOCK held, such as in the
+callback.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-take-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the number of bytes to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-collect-pads-take-buffer.returns" role="returns">
+<title>Returns</title>
+<para> A sub buffer. The size of the buffer can be less that requested.
+A return of <link linkend="NULL:CAPS"><literal>NULL</literal></link> signals that the pad is end-of-stream.
+Unref the buffer after use.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-clip-running-time" role="function">
+<title>gst_collect_pads_clip_running_time&#160;()</title>
+<indexterm zone="gst-collect-pads-clip-running-time"><primary>gst_collect_pads_clip_running_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_collect_pads_clip_running_time (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                    <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *cdata</parameter>,
+                                    <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buf</parameter>,
+                                    <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **outbuf</parameter>,
+                                    <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Convenience clipping function that converts incoming buffer's timestamp
+to running time, or clips the buffer if outside configured segment.</para>
+<para>Since 1.6, this clipping function also sets the DTS parameter of the
+GstCollectData structure. This version of the running time DTS can be
+negative. G_MININT64 is used to indicate invalid value.</para>
+<refsect3 id="gst-collect-pads-clip-running-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cdata</para></entry>
+<entry role="parameter_description"><para>collect data of corresponding pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buf</para></entry>
+<entry role="parameter_description"><para>buffer being clipped</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>outbuf</para></entry>
+<entry role="parameter_description"><para> output buffer with running time, or NULL if clipped. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data (unused)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-query-default" role="function">
+<title>gst_collect_pads_query_default&#160;()</title>
+<indexterm zone="gst-collect-pads-query-default"><primary>gst_collect_pads_query_default</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_collect_pads_query_default (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                                <parameter><link linkend="GstQuery"><type>GstQuery</type></link> *query</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> discard</parameter>);</programlisting>
+<para>Default <link linkend="GstCollectPads"><type>GstCollectPads</type></link> query handling that elements should always
+chain up to to ensure proper operation.  Element might however indicate
+query should not be forwarded downstream.</para>
+<refsect3 id="gst-collect-pads-query-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>collect data of corresponding pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>query</para></entry>
+<entry role="parameter_description"><para>query being processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>discard</para></entry>
+<entry role="parameter_description"><para>process but do not send event downstream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-event-default" role="function">
+<title>gst_collect_pads_event_default&#160;()</title>
+<indexterm zone="gst-collect-pads-event-default"><primary>gst_collect_pads_event_default</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_collect_pads_event_default (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                                <parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> discard</parameter>);</programlisting>
+<para>Default <link linkend="GstCollectPads"><type>GstCollectPads</type></link> event handling that elements should always
+chain up to to ensure proper operation.  Element might however indicate
+event should not be forwarded downstream.</para>
+<refsect3 id="gst-collect-pads-event-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>collect data of corresponding pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>event being processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>discard</para></entry>
+<entry role="parameter_description"><para>process but do not send event downstream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-src-event-default" role="function" condition="since:1.4">
+<title>gst_collect_pads_src_event_default&#160;()</title>
+<indexterm zone="gst-collect-pads-src-event-default" role="1.4"><primary>gst_collect_pads_src_event_default</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_collect_pads_src_event_default (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                    <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                                    <parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Default <link linkend="GstCollectPads"><type>GstCollectPads</type></link> event handling for the src pad of elements.
+Elements can chain up to this to let flushing seek event handling
+be done by <link linkend="GstCollectPads"><type>GstCollectPads</type></link>.</para>
+<refsect3 id="gst-collect-pads-src-event-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCollectPads"><type>GstCollectPads</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>src <link linkend="GstPad"><type>GstPad</type></link> that received the event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>event being processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-collect-pads-set-buffer-function" role="function">
+<title>gst_collect_pads_set_buffer_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-buffer-function"><primary>gst_collect_pads_set_buffer_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_buffer_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                      <parameter><link linkend="GstCollectPadsBufferFunction"><type>GstCollectPadsBufferFunction</type></link> func</parameter>,
+                                      <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Set the callback function and user data that will be called with
+the oldest buffer when all pads have been collected, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on EOS.
+If a buffer is passed, the callback owns a reference and must unref
+it.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-buffer-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-clip-function" role="function">
+<title>gst_collect_pads_set_clip_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-clip-function"><primary>gst_collect_pads_set_clip_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_clip_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                    <parameter><link linkend="GstCollectPadsClipFunction"><type>GstCollectPadsClipFunction</type></link> clipfunc</parameter>,
+                                    <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Install a clipping function that is called right after a buffer is received
+on a pad managed by <parameter>pads</parameter>
+. See <link linkend="GstCollectPadsClipFunction"><type>GstCollectPadsClipFunction</type></link> for more info.</para>
+<refsect3 id="gst-collect-pads-set-clip-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>clipfunc</para></entry>
+<entry role="parameter_description"><para> clip function to install. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data to pass to <parameter>clip_func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-compare-function" role="function">
+<title>gst_collect_pads_set_compare_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-compare-function"><primary>gst_collect_pads_set_compare_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_compare_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                       <parameter><link linkend="GstCollectPadsCompareFunction"><type>GstCollectPadsCompareFunction</type></link> func</parameter>,
+                                       <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Set the timestamp comparison function.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-compare-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the pads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-event-function" role="function">
+<title>gst_collect_pads_set_event_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-event-function"><primary>gst_collect_pads_set_event_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_event_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                     <parameter><link linkend="GstCollectPadsEventFunction"><type>GstCollectPadsEventFunction</type></link> func</parameter>,
+                                     <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Set the event callback function and user data that will be called when
+collectpads has received an event originating from one of the collected
+pads.  If the event being processed is a serialized one, this callback is
+called with <parameter>pads</parameter>
+ STREAM_LOCK held, otherwise not.  As this lock should be
+held when calling a number of CollectPads functions, it should be acquired
+if so (unusually) needed.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-event-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to the function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-flush-function" role="function" condition="since:1.4">
+<title>gst_collect_pads_set_flush_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-flush-function" role="1.4"><primary>gst_collect_pads_set_flush_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_flush_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                     <parameter><link linkend="GstCollectPadsFlushFunction"><type>GstCollectPadsFlushFunction</type></link> func</parameter>,
+                                     <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Install a flush function that is called when the internal
+state of all pads should be flushed as part of flushing seek
+handling. See <link linkend="GstCollectPadsFlushFunction"><type>GstCollectPadsFlushFunction</type></link> for more info.</para>
+<refsect3 id="gst-collect-pads-set-flush-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> flush function to install. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data to pass to <parameter>func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-collect-pads-set-query-function" role="function">
+<title>gst_collect_pads_set_query_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-query-function"><primary>gst_collect_pads_set_query_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_query_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                                     <parameter><link linkend="GstCollectPadsQueryFunction"><type>GstCollectPadsQueryFunction</type></link> func</parameter>,
+                                     <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Set the query callback function and user data that will be called after
+collectpads has received a query originating from one of the collected
+pads.  If the query being processed is a serialized one, this callback is
+called with <parameter>pads</parameter>
+ STREAM_LOCK held, otherwise not.  As this lock should be
+held when calling a number of CollectPads functions, it should be acquired
+if so (unusually) needed.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-query-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to the function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-flushing" role="function">
+<title>gst_collect_pads_set_flushing&#160;()</title>
+<indexterm zone="gst-collect-pads-set-flushing"><primary>gst_collect_pads_set_flushing</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_flushing (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                               <parameter><link linkend="gboolean"><type>gboolean</type></link> flushing</parameter>);</programlisting>
+<para>Change the flushing state of all the pads in the collection. No pad
+is able to accept anymore data when <parameter>flushing</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>. Calling this
+function with <parameter>flushing</parameter>
+ <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> makes <parameter>pads</parameter>
+ accept data again.
+Caller must ensure that downstream streaming (thread) is not blocked,
+e.g. by sending a FLUSH_START downstream.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-flushing.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flushing</para></entry>
+<entry role="parameter_description"><para>desired state of the pads</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-function" role="function">
+<title>gst_collect_pads_set_function&#160;()</title>
+<indexterm zone="gst-collect-pads-set-function"><primary>gst_collect_pads_set_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_function (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                               <parameter><link linkend="GstCollectPadsFunction"><type>GstCollectPadsFunction</type></link> func</parameter>,
+                               <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>CollectPads provides a default collection algorithm that will determine
+the oldest buffer available on all of its pads, and then delegate
+to a configured callback.
+However, if circumstances are more complicated and/or more control
+is desired, this sets a callback that will be invoked instead when
+all the pads added to the collection have buffers queued.
+Evidently, this callback is not compatible with
+<link linkend="gst-collect-pads-set-buffer-function"><function>gst_collect_pads_set_buffer_function()</function></link> callback.
+If this callback is set, the former will be unset.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to the function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-collect-pads-set-waiting" role="function">
+<title>gst_collect_pads_set_waiting&#160;()</title>
+<indexterm zone="gst-collect-pads-set-waiting"><primary>gst_collect_pads_set_waiting</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_collect_pads_set_waiting (<parameter><link linkend="GstCollectPads"><type>GstCollectPads</type></link> *pads</parameter>,
+                              <parameter><link linkend="GstCollectData"><type>GstCollectData</type></link> *data</parameter>,
+                              <parameter><link linkend="gboolean"><type>gboolean</type></link> waiting</parameter>);</programlisting>
+<para>Sets a pad to waiting or non-waiting mode, if at least this pad
+has not been created with locked waiting state,
+in which case nothing happens.</para>
+<para>This function should be called with <parameter>pads</parameter>
+ STREAM_LOCK held, such as
+in the callback.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-collect-pads-set-waiting.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pads</para></entry>
+<entry role="parameter_description"><para>the collectpads</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>waiting</para></entry>
+<entry role="parameter_description"><para>boolean indicating whether this pad should operate
+in waiting or non-waiting mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstCollectPads.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCollectPads-struct" role="struct">
+<title>struct GstCollectPads</title>
+<indexterm zone="GstCollectPads-struct"><primary>GstCollectPads</primary></indexterm>
+<programlisting language="C">struct GstCollectPads {
+  GSList        *data;                  /* list of CollectData items */
+};
+</programlisting>
+<para>Collectpads object.</para>
+<refsect3 id="GstCollectPads.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GSList"><type>GSList</type></link>&#160;*<structfield id="GstCollectPads-struct.data">data</structfield>;</para></entry>
+<entry role="struct_member_description"><para> <link linkend="GList"><type>GList</type></link> of <link linkend="GstCollectData"><type>GstCollectData</type></link> managed
+by this <link linkend="GstCollectPads"><type>GstCollectPads</type></link>. </para></entry>
+<entry role="struct_member_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> GstBase.CollectData]</emphasis></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstCollectData" role="struct">
+<title>struct GstCollectData</title>
+<indexterm zone="GstCollectData"><primary>GstCollectData</primary></indexterm>
+<programlisting language="C">struct GstCollectData {
+  /* with STREAM_LOCK of @collect */
+  GstCollectPads        *collect;
+  GstPad                *pad;
+  GstBuffer             *buffer;
+  guint                  pos;
+  GstSegment             segment;
+
+      gint64 dts;
+};
+</programlisting>
+<para>Structure used by the collect_pads.</para>
+<refsect3 id="GstCollectData.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstCollectPads"><type>GstCollectPads</type></link>&#160;*<structfield id="GstCollectData.collect">collect</structfield>;</para></entry>
+<entry role="struct_member_description"><para>owner <link linkend="GstCollectPads"><type>GstCollectPads</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstPad"><type>GstPad</type></link>&#160;*<structfield id="GstCollectData.pad">pad</structfield>;</para></entry>
+<entry role="struct_member_description"><para><link linkend="GstPad"><type>GstPad</type></link> managed by this data</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstBuffer"><type>GstBuffer</type></link>&#160;*<structfield id="GstCollectData.buffer">buffer</structfield>;</para></entry>
+<entry role="struct_member_description"><para>currently queued buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstCollectData.pos">pos</structfield>;</para></entry>
+<entry role="struct_member_description"><para>position in the buffer</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstSegment"><type>GstSegment</type></link>&#160;<structfield id="GstCollectData.segment">segment</structfield>;</para></entry>
+<entry role="struct_member_description"><para>last segment received.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint64"><type>gint64</type></link>&#160;<structfield id="GstCollectData.dts">dts</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the signed version of the DTS converted to running time. To access
+this memeber, use <link linkend="GST-COLLECT-PADS-DTS:CAPS"><literal>GST_COLLECT_PADS_DTS</literal></link> macro. (Since 1.6)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstCollectPadsStateFlags" role="enum">
+<title>enum GstCollectPadsStateFlags</title>
+<indexterm zone="GstCollectPadsStateFlags"><primary>GstCollectPadsStateFlags</primary></indexterm>
+<refsect3 id="GstCollectPadsStateFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-COLLECT-PADS-STATE-EOS:CAPS">GST_COLLECT_PADS_STATE_EOS</para></entry>
+<entry role="enum_member_description"><para>Set if collectdata's pad is EOS.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-COLLECT-PADS-STATE-FLUSHING:CAPS">GST_COLLECT_PADS_STATE_FLUSHING</para></entry>
+<entry role="enum_member_description"><para>Set if collectdata's pad is flushing.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-COLLECT-PADS-STATE-NEW-SEGMENT:CAPS">GST_COLLECT_PADS_STATE_NEW_SEGMENT</para></entry>
+<entry role="enum_member_description"><para>Set if collectdata's pad received a
+                                     new_segment event.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-COLLECT-PADS-STATE-WAITING:CAPS">GST_COLLECT_PADS_STATE_WAITING</para></entry>
+<entry role="enum_member_description"><para>Set if collectdata's pad must be waited
+                                     for when collecting.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-COLLECT-PADS-STATE-LOCKED:CAPS">GST_COLLECT_PADS_STATE_LOCKED</para></entry>
+<entry role="enum_member_description"><para>Set collectdata's pad WAITING state must
+                                     not be changed.
+<link linkend="GstCollectPadsStateFlags"><type>GstCollectPadsStateFlags</type></link> indicate private state of a collectdata('s pad).</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

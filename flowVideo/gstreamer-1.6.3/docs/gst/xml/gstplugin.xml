@@ -1,0 +1,1156 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstPlugin">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstPlugin.top_of_page">GstPlugin</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPlugin</refname>
+<refpurpose>Container for features loaded from a shared object module</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstPlugin.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-error-quark">gst_plugin_error_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstPluginInitFunc">*GstPluginInitFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstPluginInitFullFunc">*GstPluginInitFullFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PLUGIN-DEFINE:CAPS">GST_PLUGIN_DEFINE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PLUGIN-STATIC-DECLARE:CAPS">GST_PLUGIN_STATIC_DECLARE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PLUGIN-STATIC-REGISTER:CAPS">GST_PLUGIN_STATIC_REGISTER</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstPluginFilter">*GstPluginFilter</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-name">gst_plugin_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-description">gst_plugin_get_description</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-filename">gst_plugin_get_filename</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-license">gst_plugin_get_license</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-package">gst_plugin_get_package</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-origin">gst_plugin_get_origin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-source">gst_plugin_get_source</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-version">gst_plugin_get_version</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-release-date-string">gst_plugin_get_release_date_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-is-loaded">gst_plugin_is_loaded</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-get-cache-data">gst_plugin_get_cache_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-set-cache-data">gst_plugin_set_cache_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-load-file">gst_plugin_load_file</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-load">gst_plugin_load</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-load-by-name">gst_plugin_load_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-list-free">gst_plugin_list_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-register-static">gst_plugin_register_static</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-register-static-full">gst_plugin_register_static_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-add-dependency">gst_plugin_add_dependency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-add-dependency-simple">gst_plugin_add_dependency_simple</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPlugin.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PLUGIN-ERROR:CAPS">GST_PLUGIN_ERROR</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstPluginError">GstPluginError</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstPlugin-struct">GstPlugin</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPluginDesc">GstPluginDesc</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-LICENSE-UNKNOWN:CAPS">GST_LICENSE_UNKNOWN</link></entry></row>
+
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstPluginFlags">GstPluginFlags</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstPluginDependencyFlags">GstPluginDependencyFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPlugin.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstPlugin
+</screen>
+</refsect1>
+
+<refsect1 id="GstPlugin.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstPlugin.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GStreamer is extensible, so <link linkend="GstElement"><type>GstElement</type></link> instances can be loaded at runtime.
+A plugin system can provide one or more of the basic</para>
+<application>GStreamer</application> <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> subclasses.
+<para>A plugin should export a symbol <symbol>gst_plugin_desc</symbol> that is a
+struct of type <link linkend="GstPluginDesc"><type>GstPluginDesc</type></link>.
+the plugin loader will check the version of the core library the plugin was
+linked against and will create a new <link linkend="GstPlugin"><type>GstPlugin</type></link>. It will then call the
+<link linkend="GstPluginInitFunc"><type>GstPluginInitFunc</type></link> function that was provided in the</para>
+<symbol>gst_plugin_desc</symbol>.
+<para>Once you have a handle to a <link linkend="GstPlugin"><type>GstPlugin</type></link> (e.g. from the <link linkend="GstRegistry"><type>GstRegistry</type></link>), you
+can add any object that subclasses <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>.</para>
+<para>Usually plugins are always automatically loaded so you don't need to call
+<link linkend="gst-plugin-load"><function>gst_plugin_load()</function></link> explicitly to bring it into memory. There are options to
+statically link plugins to an app or even use GStreamer without a plugin
+repository in which case <link linkend="gst-plugin-load"><function>gst_plugin_load()</function></link> can be needed to bring the plugin
+into memory.</para>
+
+</refsect1>
+<refsect1 id="GstPlugin.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-plugin-error-quark" role="function">
+<title>gst_plugin_error_quark&#160;()</title>
+<indexterm zone="gst-plugin-error-quark"><primary>gst_plugin_error_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_plugin_error_quark (<parameter><type>void</type></parameter>);</programlisting>
+<para>Get the error quark.</para>
+<refsect3 id="gst-plugin-error-quark.returns" role="returns">
+<title>Returns</title>
+<para> The error quark used in GError messages</para>
+</refsect3></refsect2>
+<refsect2 id="GstPluginInitFunc" role="function">
+<title>GstPluginInitFunc&#160;()</title>
+<indexterm zone="GstPluginInitFunc"><primary>GstPluginInitFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstPluginInitFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>A plugin should provide a pointer to a function of this type in the
+plugin_desc struct.
+This function will be called by the loader at startup. One would then
+register each <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>.</para>
+<refsect3 id="GstPluginInitFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>The plugin object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstPluginInitFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if plugin initialised successfully</para>
+</refsect3></refsect2>
+<refsect2 id="GstPluginInitFullFunc" role="function">
+<title>GstPluginInitFullFunc&#160;()</title>
+<indexterm zone="GstPluginInitFullFunc"><primary>GstPluginInitFullFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstPluginInitFullFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                          <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A plugin should provide a pointer to a function of either <link linkend="GstPluginInitFunc"><type>GstPluginInitFunc</type></link>
+or this type in the plugin_desc struct.
+The function will be called by the loader at startup. One would then
+register each <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>. This version allows
+user data to be passed to init function (useful for bindings).</para>
+<refsect3 id="GstPluginInitFullFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>The plugin object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>extra data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstPluginInitFullFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if plugin initialised successfully</para>
+</refsect3></refsect2>
+<refsect2 id="GST-PLUGIN-DEFINE:CAPS" role="macro">
+<title>GST_PLUGIN_DEFINE()</title>
+<indexterm zone="GST-PLUGIN-DEFINE:CAPS"><primary>GST_PLUGIN_DEFINE</primary></indexterm>
+<programlisting language="C">#define             GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin)</programlisting>
+<para>This macro needs to be used to define the entry point and meta data of a
+plugin. One would use this macro to export a plugin, so that it can be used
+by other applications.</para>
+<para>The macro uses a define named PACKAGE for the <link linkend="GstPluginDesc"><type>GstPluginDesc</type></link>,source field.
+When using autoconf, this is usually set automatically via the AC_INIT
+macro, and set in config.h. If you are not using autoconf, you will need to
+define PACKAGE yourself and set it to a short mnemonic string identifying
+your application/package, e.g. 'someapp' or 'my-plugins-foo.</para>
+<para>If defined, the GST_PACKAGE_RELEASE_DATETIME will also be used for the
+<link linkend="GstPluginDesc"><type>GstPluginDesc</type></link>,release_datetime field.</para>
+<refsect3 id="GST-PLUGIN-DEFINE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>major</para></entry>
+<entry role="parameter_description"><para>major version number of the gstreamer-core that plugin was compiled for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minor</para></entry>
+<entry role="parameter_description"><para>minor version number of the gstreamer-core that plugin was compiled for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>short, but unique name of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>information about the purpose of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>init</para></entry>
+<entry role="parameter_description"><para>function pointer to the plugin_init method with the signature of <code>static gboolean plugin_init (GstPlugin * plugin)</code>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>version</para></entry>
+<entry role="parameter_description"><para>full version string (e.g. VERSION from config.h)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>license</para></entry>
+<entry role="parameter_description"><para>under which licence the package has been released, e.g. GPL, LGPL.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>package</para></entry>
+<entry role="parameter_description"><para>the package-name (e.g. PACKAGE_NAME from config.h)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>origin</para></entry>
+<entry role="parameter_description"><para>a description from where the package comes from (e.g. the homepage URL)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-PLUGIN-STATIC-DECLARE:CAPS" role="macro" condition="since:1.2">
+<title>GST_PLUGIN_STATIC_DECLARE()</title>
+<indexterm zone="GST-PLUGIN-STATIC-DECLARE:CAPS" role="1.2"><primary>GST_PLUGIN_STATIC_DECLARE</primary></indexterm>
+<programlisting language="C">#define             GST_PLUGIN_STATIC_DECLARE(name)</programlisting>
+<para>This macro can be used to initialize statically linked plugins. It is
+necessary to call this macro before the plugin can be used.
+It has to be used in combination with GST_PLUGIN_STATIC_REGISTER
+and must be placed outside any block to declare the plugin initialization
+function.</para>
+<refsect3 id="GST-PLUGIN-STATIC-DECLARE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>short, but unique name of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GST-PLUGIN-STATIC-REGISTER:CAPS" role="macro" condition="since:1.2">
+<title>GST_PLUGIN_STATIC_REGISTER()</title>
+<indexterm zone="GST-PLUGIN-STATIC-REGISTER:CAPS" role="1.2"><primary>GST_PLUGIN_STATIC_REGISTER</primary></indexterm>
+<programlisting language="C">#define GST_PLUGIN_STATIC_REGISTER(name) G_PASTE(gst_plugin_, G_PASTE(name, _register)) ()
+</programlisting>
+<para>This macro can be used to initialize statically linked plugins. It is
+necessary to call this macro before the plugin can be used.
+It has to be used in combination with GST_PLUGIN_STATIC_DECLARE and
+calls the plugin initialization function.</para>
+<refsect3 id="GST-PLUGIN-STATIC-REGISTER.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>short, but unique name of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstPluginFilter" role="function">
+<title>GstPluginFilter&#160;()</title>
+<indexterm zone="GstPluginFilter"><primary>GstPluginFilter</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstPluginFilter<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                    <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that can be used with e.g. <link linkend="gst-registry-plugin-filter"><function>gst_registry_plugin_filter()</function></link>
+to get a list of plugins that match certain criteria.</para>
+<refsect3 id="GstPluginFilter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>the plugin to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the user_data that has been passed on e.g. <link linkend="gst-registry-plugin-filter"><function>gst_registry_plugin_filter()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstPluginFilter.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for a positive match, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-name" role="function">
+<title>gst_plugin_get_name&#160;()</title>
+<indexterm zone="gst-plugin-get-name"><primary>gst_plugin_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_name (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Get the short name of the plugin</para>
+<refsect3 id="gst-plugin-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the name of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-description" role="function">
+<title>gst_plugin_get_description&#160;()</title>
+<indexterm zone="gst-plugin-get-description"><primary>gst_plugin_get_description</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_description (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Get the long descriptive name of the plugin</para>
+<refsect3 id="gst-plugin-get-description.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get long name of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-description.returns" role="returns">
+<title>Returns</title>
+<para> the long name of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-filename" role="function">
+<title>gst_plugin_get_filename&#160;()</title>
+<indexterm zone="gst-plugin-get-filename"><primary>gst_plugin_get_filename</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_filename (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>get the filename of the plugin</para>
+<refsect3 id="gst-plugin-get-filename.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the filename of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-filename.returns" role="returns">
+<title>Returns</title>
+<para> the filename of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-license" role="function">
+<title>gst_plugin_get_license&#160;()</title>
+<indexterm zone="gst-plugin-get-license"><primary>gst_plugin_get_license</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_license (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>get the license of the plugin</para>
+<refsect3 id="gst-plugin-get-license.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the license of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-license.returns" role="returns">
+<title>Returns</title>
+<para> the license of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-package" role="function">
+<title>gst_plugin_get_package&#160;()</title>
+<indexterm zone="gst-plugin-get-package"><primary>gst_plugin_get_package</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_package (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>get the package the plugin belongs to.</para>
+<refsect3 id="gst-plugin-get-package.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the package of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-package.returns" role="returns">
+<title>Returns</title>
+<para> the package of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-origin" role="function">
+<title>gst_plugin_get_origin&#160;()</title>
+<indexterm zone="gst-plugin-get-origin"><primary>gst_plugin_get_origin</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_origin (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>get the URL where the plugin comes from</para>
+<refsect3 id="gst-plugin-get-origin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the origin of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-origin.returns" role="returns">
+<title>Returns</title>
+<para> the origin of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-source" role="function">
+<title>gst_plugin_get_source&#160;()</title>
+<indexterm zone="gst-plugin-get-source"><primary>gst_plugin_get_source</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_source (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>get the source module the plugin belongs to.</para>
+<refsect3 id="gst-plugin-get-source.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the source of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-source.returns" role="returns">
+<title>Returns</title>
+<para> the source of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-version" role="function">
+<title>gst_plugin_get_version&#160;()</title>
+<indexterm zone="gst-plugin-get-version"><primary>gst_plugin_get_version</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_version (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>get the version of the plugin</para>
+<refsect3 id="gst-plugin-get-version.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the version of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-version.returns" role="returns">
+<title>Returns</title>
+<para> the version of the plugin</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-release-date-string" role="function">
+<title>gst_plugin_get_release_date_string&#160;()</title>
+<indexterm zone="gst-plugin-get-release-date-string"><primary>gst_plugin_get_release_date_string</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_get_release_date_string (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Get the release date (and possibly time) in form of a string, if available.</para>
+<para>For normal GStreamer plugin releases this will usually just be a date in
+the form of "YYYY-MM-DD", while pre-releases and builds from git may contain
+a time component after the date as well, in which case the string will be
+formatted like "YYYY-MM-DDTHH:MMZ" (e.g. "2012-04-30T09:30Z").</para>
+<para>There may be plugins that do not have a valid release date set on them.</para>
+<refsect3 id="gst-plugin-get-release-date-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to get the release date of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-release-date-string.returns" role="returns">
+<title>Returns</title>
+<para> the date string of the plugin, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if not
+available. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-is-loaded" role="function">
+<title>gst_plugin_is_loaded&#160;()</title>
+<indexterm zone="gst-plugin-is-loaded"><primary>gst_plugin_is_loaded</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_plugin_is_loaded (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>queries if the plugin is loaded into memory</para>
+<refsect3 id="gst-plugin-is-loaded.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>plugin to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-is-loaded.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> is loaded, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-get-cache-data" role="function">
+<title>gst_plugin_get_cache_data&#160;()</title>
+<indexterm zone="gst-plugin-get-cache-data"><primary>gst_plugin_get_cache_data</primary></indexterm>
+<programlisting language="C">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_plugin_get_cache_data (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Gets the plugin specific data cache. If it is <link linkend="NULL:CAPS"><literal>NULL</literal></link> there is no cached data
+stored. This is the case when the registry is getting rebuilt.</para>
+<refsect3 id="gst-plugin-get-cache-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>a plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-get-cache-data.returns" role="returns">
+<title>Returns</title>
+<para> The cached data as a
+<link linkend="GstStructure"><type>GstStructure</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-set-cache-data" role="function">
+<title>gst_plugin_set_cache_data&#160;()</title>
+<indexterm zone="gst-plugin-set-cache-data"><primary>gst_plugin_set_cache_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_plugin_set_cache_data (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                           <parameter><link linkend="GstStructure"><type>GstStructure</type></link> *cache_data</parameter>);</programlisting>
+<para>Adds plugin specific data to cache. Passes the ownership of the structure to
+the <parameter>plugin</parameter>
+.</para>
+<para>The cache is flushed every time the registry is rebuilt.</para>
+<refsect3 id="gst-plugin-set-cache-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>a plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cache_data</para></entry>
+<entry role="parameter_description"><para> a structure containing the data to cache. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-load-file" role="function">
+<title>gst_plugin_load_file&#160;()</title>
+<indexterm zone="gst-plugin-load-file"><primary>gst_plugin_load_file</primary></indexterm>
+<programlisting language="C"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+gst_plugin_load_file (<parameter>const <link linkend="gchar"><type>gchar</type></link> *filename</parameter>,
+                      <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Loads the given plugin and refs it.  Caller needs to unref after use.</para>
+<refsect3 id="gst-plugin-load-file.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>filename</para></entry>
+<entry role="parameter_description"><para>the plugin filename to load</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>pointer to a <link linkend="NULL:CAPS"><literal>NULL</literal></link>-valued GError</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-load-file.returns" role="returns">
+<title>Returns</title>
+<para> a reference to the existing loaded GstPlugin, a
+reference to the newly-loaded GstPlugin, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if an error occurred. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-load" role="function">
+<title>gst_plugin_load&#160;()</title>
+<indexterm zone="gst-plugin-load"><primary>gst_plugin_load</primary></indexterm>
+<programlisting language="C"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+gst_plugin_load (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Loads <parameter>plugin</parameter>
+. Note that the *return value* is the loaded plugin; <parameter>plugin</parameter>
+ is
+untouched. The normal use pattern of this function goes like this:</para>
+<programlisting>
+GstPlugin *loaded_plugin;
+loaded_plugin = gst_plugin_load (plugin);
+// presumably, we're no longer interested in the potentially-unloaded plugin
+gst_object_unref (plugin);
+plugin = loaded_plugin;
+</programlisting>
+<refsect3 id="gst-plugin-load.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para> plugin to load. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-load.returns" role="returns">
+<title>Returns</title>
+<para> a reference to a loaded plugin, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-load-by-name" role="function">
+<title>gst_plugin_load_by_name&#160;()</title>
+<indexterm zone="gst-plugin-load-by-name"><primary>gst_plugin_load_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+gst_plugin_load_by_name (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Load the named plugin. Refs the plugin.</para>
+<refsect3 id="gst-plugin-load-by-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of plugin to load</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-load-by-name.returns" role="returns">
+<title>Returns</title>
+<para> a reference to a loaded plugin, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-list-free" role="function">
+<title>gst_plugin_list_free&#160;()</title>
+<indexterm zone="gst-plugin-list-free"><primary>gst_plugin_list_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_plugin_list_free (<parameter><link linkend="GList"><type>GList</type></link> *list</parameter>);</programlisting>
+<para>Unrefs each member of <parameter>list</parameter>
+, then frees the list.</para>
+<refsect3 id="gst-plugin-list-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> list of <link linkend="GstPlugin"><type>GstPlugin</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.Plugin]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-register-static" role="function">
+<title>gst_plugin_register_static&#160;()</title>
+<indexterm zone="gst-plugin-register-static"><primary>gst_plugin_register_static</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_plugin_register_static (<parameter><link linkend="gint"><type>gint</type></link> major_version</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> minor_version</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *description</parameter>,
+                            <parameter><link linkend="GstPluginInitFunc"><type>GstPluginInitFunc</type></link> init_func</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *version</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *license</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *source</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *package</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *origin</parameter>);</programlisting>
+<para>Registers a static plugin, ie. a plugin which is private to an application
+or library and contained within the application or library (as opposed to
+being shipped as a separate module file).</para>
+<para>You must make sure that GStreamer has been initialised (with <link linkend="gst-init"><function>gst_init()</function></link> or
+via <link linkend="gst-init-get-option-group"><function>gst_init_get_option_group()</function></link>) before calling this function.</para>
+<refsect3 id="gst-plugin-register-static.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>major_version</para></entry>
+<entry role="parameter_description"><para>the major version number of the GStreamer core that the
+plugin was compiled for, you can just use GST_VERSION_MAJOR here</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minor_version</para></entry>
+<entry role="parameter_description"><para>the minor version number of the GStreamer core that the
+plugin was compiled for, you can just use GST_VERSION_MINOR here</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a unique name of the plugin (ideally prefixed with an application- or
+library-specific namespace prefix in order to avoid name conflicts in
+case a similar plugin with the same name ever gets added to GStreamer)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>description of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>init_func</para></entry>
+<entry role="parameter_description"><para> pointer to the init function of this plugin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>version</para></entry>
+<entry role="parameter_description"><para>version string of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>license</para></entry>
+<entry role="parameter_description"><para>effective license of plugin. Must be one of the approved licenses
+(see <link linkend="GstPluginDesc"><type>GstPluginDesc</type></link> above) or the plugin will not be registered.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>source</para></entry>
+<entry role="parameter_description"><para>source module plugin belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>package</para></entry>
+<entry role="parameter_description"><para>shipped package plugin belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>origin</para></entry>
+<entry role="parameter_description"><para>URL to provider of plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-register-static.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the plugin was registered correctly, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-register-static-full" role="function">
+<title>gst_plugin_register_static_full&#160;()</title>
+<indexterm zone="gst-plugin-register-static-full"><primary>gst_plugin_register_static_full</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_plugin_register_static_full (<parameter><link linkend="gint"><type>gint</type></link> major_version</parameter>,
+                                 <parameter><link linkend="gint"><type>gint</type></link> minor_version</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *description</parameter>,
+                                 <parameter><link linkend="GstPluginInitFullFunc"><type>GstPluginInitFullFunc</type></link> init_full_func</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *version</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *license</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *source</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *package</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *origin</parameter>,
+                                 <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Registers a static plugin, ie. a plugin which is private to an application
+or library and contained within the application or library (as opposed to
+being shipped as a separate module file) with a <link linkend="GstPluginInitFullFunc"><type>GstPluginInitFullFunc</type></link>
+which allows user data to be passed to the callback function (useful
+for bindings).</para>
+<para>You must make sure that GStreamer has been initialised (with <link linkend="gst-init"><function>gst_init()</function></link> or
+via <link linkend="gst-init-get-option-group"><function>gst_init_get_option_group()</function></link>) before calling this function.</para>
+<refsect3 id="gst-plugin-register-static-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>major_version</para></entry>
+<entry role="parameter_description"><para>the major version number of the GStreamer core that the
+plugin was compiled for, you can just use GST_VERSION_MAJOR here</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minor_version</para></entry>
+<entry role="parameter_description"><para>the minor version number of the GStreamer core that the
+plugin was compiled for, you can just use GST_VERSION_MINOR here</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a unique name of the plugin (ideally prefixed with an application- or
+library-specific namespace prefix in order to avoid name conflicts in
+case a similar plugin with the same name ever gets added to GStreamer)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>description of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>init_full_func</para></entry>
+<entry role="parameter_description"><para> pointer to the init function with user data
+of this plugin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>version</para></entry>
+<entry role="parameter_description"><para>version string of the plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>license</para></entry>
+<entry role="parameter_description"><para>effective license of plugin. Must be one of the approved licenses
+(see <link linkend="GstPluginDesc"><type>GstPluginDesc</type></link> above) or the plugin will not be registered.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>source</para></entry>
+<entry role="parameter_description"><para>source module plugin belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>package</para></entry>
+<entry role="parameter_description"><para>shipped package plugin belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>origin</para></entry>
+<entry role="parameter_description"><para>URL to provider of plugin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>gpointer to user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-register-static-full.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the plugin was registered correctly, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-add-dependency" role="function">
+<title>gst_plugin_add_dependency&#160;()</title>
+<indexterm zone="gst-plugin-add-dependency"><primary>gst_plugin_add_dependency</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_plugin_add_dependency (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> **env_vars</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> **paths</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> **names</parameter>,
+                           <parameter><link linkend="GstPluginDependencyFlags"><type>GstPluginDependencyFlags</type></link> flags</parameter>);</programlisting>
+<para>Make GStreamer aware of external dependencies which affect the feature
+set of this plugin (ie. the elements or typefinders associated with it).</para>
+<para>GStreamer will re-inspect plugins with external dependencies whenever any
+of the external dependencies change. This is useful for plugins which wrap
+other plugin systems, e.g. a plugin which wraps a plugin-based visualisation
+library and makes visualisations available as GStreamer elements, or a
+codec loader which exposes elements and/or caps dependent on what external
+codec libraries are currently installed.</para>
+<refsect3 id="gst-plugin-add-dependency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPlugin"><type>GstPlugin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>env_vars</para></entry>
+<entry role="parameter_description"><para> <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of environment variables affecting the
+feature set of the plugin (e.g. an environment variable containing
+paths where to look for additional modules/plugins of a library),
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. Environment variable names may be followed by a path component
+which will be added to the content of the environment variable, e.g.
+"HOME/.mystuff/plugins". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>paths</para></entry>
+<entry role="parameter_description"><para> <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of directories/paths where dependent files
+may be, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>names</para></entry>
+<entry role="parameter_description"><para> <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of file names (or file name suffixes,
+depending on <parameter>flags</parameter>
+) to be used in combination with the paths from
+<parameter>paths</parameter>
+and/or the paths extracted from the environment variables in
+<parameter>env_vars</parameter>
+, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>optional flags, or <link linkend="GST-PLUGIN-DEPENDENCY-FLAG-NONE:CAPS"><type>GST_PLUGIN_DEPENDENCY_FLAG_NONE</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-add-dependency-simple" role="function">
+<title>gst_plugin_add_dependency_simple&#160;()</title>
+<indexterm zone="gst-plugin-add-dependency-simple"><primary>gst_plugin_add_dependency_simple</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_plugin_add_dependency_simple (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *env_vars</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *paths</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *names</parameter>,
+                                  <parameter><link linkend="GstPluginDependencyFlags"><type>GstPluginDependencyFlags</type></link> flags</parameter>);</programlisting>
+<para>Make GStreamer aware of external dependencies which affect the feature
+set of this plugin (ie. the elements or typefinders associated with it).</para>
+<para>GStreamer will re-inspect plugins with external dependencies whenever any
+of the external dependencies change. This is useful for plugins which wrap
+other plugin systems, e.g. a plugin which wraps a plugin-based visualisation
+library and makes visualisations available as GStreamer elements, or a
+codec loader which exposes elements and/or caps dependent on what external
+codec libraries are currently installed.</para>
+<para>Convenience wrapper function for <link linkend="gst-plugin-add-dependency"><function>gst_plugin_add_dependency()</function></link> which
+takes simple strings as arguments instead of string arrays, with multiple
+arguments separated by predefined delimiters (see above).</para>
+<refsect3 id="gst-plugin-add-dependency-simple.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPlugin"><type>GstPlugin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>env_vars</para></entry>
+<entry role="parameter_description"><para> one or more environment variables (separated by ':', ';' or ','),
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. Environment variable names may be followed by a path component
+which will be added to the content of the environment variable, e.g.
+"HOME/.mystuff/plugins:MYSTUFF_PLUGINS_PATH". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>paths</para></entry>
+<entry role="parameter_description"><para> one ore more directory paths (separated by ':' or ';' or ','),
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. Example: "/usr/lib/mystuff/plugins". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>names</para></entry>
+<entry role="parameter_description"><para> one or more file names or file name suffixes (separated by commas),
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>optional flags, or <link linkend="GST-PLUGIN-DEPENDENCY-FLAG-NONE:CAPS"><type>GST_PLUGIN_DEPENDENCY_FLAG_NONE</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPlugin.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-PLUGIN-ERROR:CAPS" role="macro">
+<title>GST_PLUGIN_ERROR</title>
+<indexterm zone="GST-PLUGIN-ERROR:CAPS"><primary>GST_PLUGIN_ERROR</primary></indexterm>
+<programlisting language="C">#define GST_PLUGIN_ERROR gst_plugin_error_quark ()
+</programlisting>
+<para>The error message category quark</para>
+</refsect2>
+<refsect2 id="GstPluginError" role="enum">
+<title>enum GstPluginError</title>
+<indexterm zone="GstPluginError"><primary>GstPluginError</primary></indexterm>
+<para>The plugin loading errors</para>
+<refsect3 id="GstPluginError.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-ERROR-MODULE:CAPS">GST_PLUGIN_ERROR_MODULE</para></entry>
+<entry role="enum_member_description"><para>The plugin could not be loaded</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-ERROR-DEPENDENCIES:CAPS">GST_PLUGIN_ERROR_DEPENDENCIES</para></entry>
+<entry role="enum_member_description"><para>The plugin has unresolved dependencies</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-ERROR-NAME-MISMATCH:CAPS">GST_PLUGIN_ERROR_NAME_MISMATCH</para></entry>
+<entry role="enum_member_description"><para>The plugin has already be loaded from a different file</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstPlugin-struct" role="struct">
+<title>GstPlugin</title>
+<indexterm zone="GstPlugin-struct"><primary>GstPlugin</primary></indexterm>
+<programlisting language="C">typedef struct _GstPlugin GstPlugin;</programlisting>
+<para>The opaque plugin object</para>
+</refsect2>
+<refsect2 id="GstPluginDesc" role="struct">
+<title>struct GstPluginDesc</title>
+<indexterm zone="GstPluginDesc"><primary>GstPluginDesc</primary></indexterm>
+<programlisting language="C">struct GstPluginDesc {
+  gint major_version;
+  gint minor_version;
+  const gchar *name;
+  const gchar *description;
+  GstPluginInitFunc plugin_init;
+  const gchar *version;
+  const gchar *license;
+  const gchar *source;
+  const gchar *package;
+  const gchar *origin;
+  const gchar *release_datetime;
+};
+</programlisting>
+<para>A plugin should export a variable of this type called plugin_desc. The plugin
+loader will use the data provided there to initialize the plugin.</para>
+<para>The <parameter>licence</parameter>
+ parameter must be one of: LGPL, GPL, QPL, GPL/QPL, MPL,
+BSD, MIT/X11, Proprietary, unknown.</para>
+<refsect3 id="GstPluginDesc.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstPluginDesc.major-version">major_version</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the major version number of core that plugin was compiled for</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstPluginDesc.minor-version">minor_version</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the minor version number of core that plugin was compiled for</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.name">name</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a unique name of the plugin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.description">description</structfield>;</para></entry>
+<entry role="struct_member_description"><para>description of plugin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstPluginInitFunc"><type>GstPluginInitFunc</type></link>&#160;<structfield id="GstPluginDesc.plugin-init">plugin_init</structfield>;</para></entry>
+<entry role="struct_member_description"><para>pointer to the init function of this plugin.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.version">version</structfield>;</para></entry>
+<entry role="struct_member_description"><para>version of the plugin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.license">license</structfield>;</para></entry>
+<entry role="struct_member_description"><para>effective license of plugin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.source">source</structfield>;</para></entry>
+<entry role="struct_member_description"><para>source module plugin belongs to</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.package">package</structfield>;</para></entry>
+<entry role="struct_member_description"><para>shipped package plugin belongs to</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.origin">origin</structfield>;</para></entry>
+<entry role="struct_member_description"><para>URL to provider of plugin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstPluginDesc.release-datetime">release_datetime</structfield>;</para></entry>
+<entry role="struct_member_description"><para> date time string in ISO 8601
+format (or rather, a subset thereof), or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. Allowed are the
+following formats: "YYYY-MM-DD" and "YYY-MM-DDTHH:MMZ" (with
+'T' a separator and 'Z' indicating UTC/Zulu time). This field
+should be set via the GST_PACKAGE_RELEASE_DATETIME
+preprocessor macro. </para></entry>
+<entry role="struct_member_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GST-LICENSE-UNKNOWN:CAPS" role="macro">
+<title>GST_LICENSE_UNKNOWN</title>
+<indexterm zone="GST-LICENSE-UNKNOWN:CAPS"><primary>GST_LICENSE_UNKNOWN</primary></indexterm>
+<programlisting language="C">#define GST_LICENSE_UNKNOWN "unknown"
+</programlisting>
+<para>To be used in GST_PLUGIN_DEFINE if unsure about the licence.</para>
+</refsect2>
+<refsect2 id="GstPluginFlags" role="enum">
+<title>enum GstPluginFlags</title>
+<indexterm zone="GstPluginFlags"><primary>GstPluginFlags</primary></indexterm>
+<para>The plugin loading state</para>
+<refsect3 id="GstPluginFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-FLAG-CACHED:CAPS">GST_PLUGIN_FLAG_CACHED</para></entry>
+<entry role="enum_member_description"><para>Temporarily loaded plugins</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-FLAG-BLACKLISTED:CAPS">GST_PLUGIN_FLAG_BLACKLISTED</para></entry>
+<entry role="enum_member_description"><para>The plugin won't be scanned (again)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstPluginDependencyFlags" role="enum">
+<title>enum GstPluginDependencyFlags</title>
+<indexterm zone="GstPluginDependencyFlags"><primary>GstPluginDependencyFlags</primary></indexterm>
+<para>Flags used in connection with <link linkend="gst-plugin-add-dependency"><function>gst_plugin_add_dependency()</function></link>.</para>
+<refsect3 id="GstPluginDependencyFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-DEPENDENCY-FLAG-NONE:CAPS">GST_PLUGIN_DEPENDENCY_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>no special flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-DEPENDENCY-FLAG-RECURSE:CAPS">GST_PLUGIN_DEPENDENCY_FLAG_RECURSE</para></entry>
+<entry role="enum_member_description"><para>recurse into subdirectories</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-DEPENDENCY-FLAG-PATHS-ARE-DEFAULT-ONLY:CAPS">GST_PLUGIN_DEPENDENCY_FLAG_PATHS_ARE_DEFAULT_ONLY</para></entry>
+<entry role="enum_member_description"><para>use paths
+        argument only if none of the environment variables is set</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PLUGIN-DEPENDENCY-FLAG-FILE-NAME-IS-SUFFIX:CAPS">GST_PLUGIN_DEPENDENCY_FLAG_FILE_NAME_IS_SUFFIX</para></entry>
+<entry role="enum_member_description"><para>interpret
+        filename argument as filter suffix and check all matching files in
+        the directory</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPlugin.see-also">
+<title>See Also</title>
+<para><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>, <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para>
+
+</refsect1>
+
+</refentry>

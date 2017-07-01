@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstDevice">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstDevice.top_of_page">GstDevice</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDevice</refname>
+<refpurpose>Object representing a device</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstDevice.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-create-element">gst_device_create_element</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-get-caps">gst_device_get_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-get-device-class">gst_device_get_device_class</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-get-display-name">gst_device_get_display_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-has-classes">gst_device_has_classes</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-has-classesv">gst_device_has_classesv</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-reconfigure-element">gst_device_reconfigure_element</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-get-properties">gst_device_get_properties</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstDevice.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDevice">GstDevice</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeviceClass">GstDeviceClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstDevice.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstDevice.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstDevice"><type>GstDevice</type></link> are objects representing a device, they contain
+relevant metadata about the device, such as its class and the <link linkend="GstCaps"><type>GstCaps</type></link>
+representing the media types it can produce or handle.</para>
+<para><link linkend="GstDevice"><type>GstDevice</type></link> are created by <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> objects which can be
+aggregated by <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> objects.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDevice.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-device-create-element" role="function" condition="since:1.4">
+<title>gst_device_create_element&#160;()</title>
+<indexterm zone="gst-device-create-element" role="1.4"><primary>gst_device_create_element</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_device_create_element (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Creates the element with all of the required paramaters set to use
+this device.</para>
+<refsect3 id="gst-device-create-element.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> name of new element, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to automatically
+create a unique name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-create-element.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstElement"><type>GstElement</type></link> configured to use this device. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-get-caps" role="function" condition="since:1.4">
+<title>gst_device_get_caps&#160;()</title>
+<indexterm zone="gst-device-get-caps" role="1.4"><primary>gst_device_get_caps</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_device_get_caps (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>);</programlisting>
+<para>Getter for the <link linkend="GstCaps"><type>GstCaps</type></link> that this device supports.</para>
+<refsect3 id="gst-device-get-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-get-caps.returns" role="returns">
+<title>Returns</title>
+<para> The <link linkend="GstCaps"><type>GstCaps</type></link> supported by this device. Unref with
+<link linkend="gst-caps-unref"><function>gst_caps_unref()</function></link> when done.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-get-device-class" role="function" condition="since:1.4">
+<title>gst_device_get_device_class&#160;()</title>
+<indexterm zone="gst-device-get-device-class" role="1.4"><primary>gst_device_get_device_class</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_device_get_device_class (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>);</programlisting>
+<para>Gets the "class" of a device. This is a "/" separated list of
+classes that represent this device. They are a subset of the
+classes of the <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> that produced this device.</para>
+<refsect3 id="gst-device-get-device-class.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-get-device-class.returns" role="returns">
+<title>Returns</title>
+<para> The device class. Free with <link linkend="g-free"><function>g_free()</function></link> after use.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-get-display-name" role="function" condition="since:1.4">
+<title>gst_device_get_display_name&#160;()</title>
+<indexterm zone="gst-device-get-display-name" role="1.4"><primary>gst_device_get_display_name</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_device_get_display_name (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>);</programlisting>
+<para>Gets the user-friendly name of the device.</para>
+<refsect3 id="gst-device-get-display-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-get-display-name.returns" role="returns">
+<title>Returns</title>
+<para> The device name. Free with <link linkend="g-free"><function>g_free()</function></link> after use.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-has-classes" role="function" condition="since:1.4">
+<title>gst_device_has_classes&#160;()</title>
+<indexterm zone="gst-device-has-classes" role="1.4"><primary>gst_device_has_classes</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_has_classes (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *classes</parameter>);</programlisting>
+<para>Check if <parameter>device</parameter>
+ matches all of the given classes</para>
+<refsect3 id="gst-device-has-classes.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>classes</para></entry>
+<entry role="parameter_description"><para>a "/" separate list of device classes to match, only match if
+all classes are matched</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-has-classes.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>device</parameter>
+matches.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-has-classesv" role="function" condition="since:1.4">
+<title>gst_device_has_classesv&#160;()</title>
+<indexterm zone="gst-device-has-classesv" role="1.4"><primary>gst_device_has_classesv</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_has_classesv (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="gchar"><type>gchar</type></link> **classes</parameter>);</programlisting>
+<para>Check if <parameter>factory</parameter>
+ matches all of the given classes</para>
+<refsect3 id="gst-device-has-classesv.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>classes</para></entry>
+<entry role="parameter_description"><para> a <link linkend="NULL:CAPS"><literal>NULL</literal></link> terminated array of classes to match, only match if all
+classes are matched. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-has-classesv.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>device</parameter>
+matches.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-reconfigure-element" role="function" condition="since:1.4">
+<title>gst_device_reconfigure_element&#160;()</title>
+<indexterm zone="gst-device-reconfigure-element" role="1.4"><primary>gst_device_reconfigure_element</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_reconfigure_element (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>,
+                                <parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+<para>Tries to reconfigure an existing element to use the device. If this
+function fails, then one must destroy the element and create a new one
+using <link linkend="gst-device-create-element"><function>gst_device_create_element()</function></link>.</para>
+<para>Note: This should only be implemented for elements can change their
+device in the PLAYING state.</para>
+<refsect3 id="gst-device-reconfigure-element.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElement"><type>GstElement</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-reconfigure-element.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the element could be reconfigured to use this device,
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-get-properties" role="function" condition="since:1.6">
+<title>gst_device_get_properties&#160;()</title>
+<indexterm zone="gst-device-get-properties" role="1.6"><primary>gst_device_get_properties</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_device_get_properties (<parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>);</programlisting>
+<para>Gets the extra properties of a device.</para>
+<refsect3 id="gst-device-get-properties.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-get-properties.returns" role="returns">
+<title>Returns</title>
+<para> The extra properties or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when there are none.
+Free with <link linkend="gst-structure-free"><function>gst_structure_free()</function></link> after use.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDevice.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDevice" role="struct" condition="since:1.4">
+<title>struct GstDevice</title>
+<indexterm zone="GstDevice" role="1.4"><primary>GstDevice</primary></indexterm>
+<programlisting language="C">struct GstDevice {
+  GstObject         parent;
+};
+</programlisting>
+<para>A device object.</para>
+<refsect3 id="GstDevice.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstObject"><type>GstObject</type></link>&#160;<structfield id="GstDevice.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The parent <link linkend="GstObject"><type>GstObject</type></link> strucuture.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GstDeviceClass" role="struct" condition="since:1.4">
+<title>struct GstDeviceClass</title>
+<indexterm zone="GstDeviceClass" role="1.4"><primary>GstDeviceClass</primary></indexterm>
+<programlisting language="C">struct GstDeviceClass {
+  GstObjectClass    parent_class;
+
+  GstElement * (*create_element)      (GstDevice * device, const gchar * name);
+  gboolean     (*reconfigure_element) (GstDevice * device, GstElement * element);
+};
+</programlisting>
+<para>The class structure for a <link linkend="GstDevice"><type>GstDevice</type></link> object.</para>
+<refsect3 id="GstDeviceClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstDeviceClass.create-element">create_element</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Creates the fully configured element to access this device.
+Subclasses need to override this and return a new element.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstDeviceClass.reconfigure-element">reconfigure_element</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>This only needs to be implemented by subclasses if the
+element can be reconfigured to use a different device. See the documentation
+for <link linkend="gst-device-reconfigure-element"><function>gst_device_reconfigure_element()</function></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDevice.see-also">
+<title>See Also</title>
+<para><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para>
+
+</refsect1>
+
+</refentry>

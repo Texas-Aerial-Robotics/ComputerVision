@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstDeviceProvider">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstDeviceProvider.top_of_page">GstDeviceProvider</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDeviceProvider</refname>
+<refpurpose>A device provider</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstDeviceProvider.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-can-monitor">gst_device_provider_can_monitor</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-class-add-metadata">gst_device_provider_class_add_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-class-add-static-metadata">gst_device_provider_class_add_static_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-class-get-metadata">gst_device_provider_class_get_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-class-set-metadata">gst_device_provider_class_set_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-class-set-static-metadata">gst_device_provider_class_set_static_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-device-add">gst_device_provider_device_add</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-device-remove">gst_device_provider_device_remove</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-get-bus">gst_device_provider_get_bus</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-get-devices">gst_device_provider_get_devices</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDeviceProviderFactory"><returnvalue>GstDeviceProviderFactory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-get-factory">gst_device_provider_get_factory</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-register">gst_device_provider_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-start">gst_device_provider_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-stop">gst_device_provider_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceProvider.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeviceProvider">GstDeviceProvider</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeviceProviderClass">GstDeviceProviderClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstDeviceProvider.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstDeviceProvider.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> subclass is provided by a plugin that handles devices
+if there is a way to programatically list connected devices. It can also
+optionally provide updates to the list of connected devices.</para>
+<para>Each <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> subclass is a singleton, a plugin should
+normally provide a single subclass for all devices.</para>
+<para>Applications would normally use a <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> to monitor devices
+from all relevant providers.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceProvider.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-device-provider-can-monitor" role="function">
+<title>gst_device_provider_can_monitor&#160;()</title>
+<indexterm zone="gst-device-provider-can-monitor"><primary>gst_device_provider_can_monitor</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_provider_can_monitor (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-device-provider-class-add-metadata" role="function" condition="since:1.4">
+<title>gst_device_provider_class_add_metadata&#160;()</title>
+<indexterm zone="gst-device-provider-class-add-metadata" role="1.4"><primary>gst_device_provider_class_add_metadata</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_class_add_metadata
+                               (<parameter><link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link> *klass</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *key</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *value</parameter>);</programlisting>
+<para>Set <parameter>key</parameter>
+ with <parameter>value</parameter>
+ as metadata in <parameter>klass</parameter>
+.</para>
+<refsect3 id="gst-device-provider-class-add-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>klass</para></entry>
+<entry role="parameter_description"><para>class to set metadata for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>key</para></entry>
+<entry role="parameter_description"><para>the key to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the value to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-class-add-static-metadata" role="function" condition="since:1.4">
+<title>gst_device_provider_class_add_static_metadata&#160;()</title>
+<indexterm zone="gst-device-provider-class-add-static-metadata" role="1.4"><primary>gst_device_provider_class_add_static_metadata</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_class_add_static_metadata
+                               (<parameter><link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link> *klass</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *key</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *value</parameter>);</programlisting>
+<para>Set <parameter>key</parameter>
+ with <parameter>value</parameter>
+ as metadata in <parameter>klass</parameter>
+.</para>
+<para>Same as <link linkend="gst-device-provider-class-add-metadata"><function>gst_device_provider_class_add_metadata()</function></link>, but <parameter>value</parameter>
+ must be a static string
+or an inlined string, as it will not be copied. (GStreamer plugins will
+be made resident once loaded, so this function can be used even from
+dynamically loaded plugins.)</para>
+<refsect3 id="gst-device-provider-class-add-static-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>klass</para></entry>
+<entry role="parameter_description"><para>class to set metadata for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>key</para></entry>
+<entry role="parameter_description"><para>the key to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> the value to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-class-get-metadata" role="function" condition="since:1.4">
+<title>gst_device_provider_class_get_metadata&#160;()</title>
+<indexterm zone="gst-device-provider-class-get-metadata" role="1.4"><primary>gst_device_provider_class_get_metadata</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_device_provider_class_get_metadata
+                               (<parameter><link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link> *klass</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *key</parameter>);</programlisting>
+<para>Get metadata with <parameter>key</parameter>
+ in <parameter>klass</parameter>
+.</para>
+<refsect3 id="gst-device-provider-class-get-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>klass</para></entry>
+<entry role="parameter_description"><para>class to get metadata for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>key</para></entry>
+<entry role="parameter_description"><para>the key to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-class-get-metadata.returns" role="returns">
+<title>Returns</title>
+<para> the metadata for <parameter>key</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-class-set-metadata" role="function" condition="since:1.4">
+<title>gst_device_provider_class_set_metadata&#160;()</title>
+<indexterm zone="gst-device-provider-class-set-metadata" role="1.4"><primary>gst_device_provider_class_set_metadata</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_class_set_metadata
+                               (<parameter><link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link> *klass</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *longname</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *classification</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *description</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *author</parameter>);</programlisting>
+<para>Sets the detailed information for a <link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link>.</para>
+<note>This function is for use in _class_init functions only.</note>
+<refsect3 id="gst-device-provider-class-set-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>klass</para></entry>
+<entry role="parameter_description"><para>class to set metadata for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>longname</para></entry>
+<entry role="parameter_description"><para>The long English name of the device provider. E.g. "File Sink"</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>classification</para></entry>
+<entry role="parameter_description"><para>String describing the type of device provider, as an
+unordered list separated with slashes ('/'). See draft-klass.txt of the
+design docs
+for more details and common types. E.g: "Sink/File"</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>Sentence describing the purpose of the device provider.
+E.g: "Write stream to a file"</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>author</para></entry>
+<entry role="parameter_description"><para>Name and contact details of the author(s). Use \n to separate
+multiple author metadata. E.g: "Joe Bloggs &lt;joe.blogs at foo.com&gt;"</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-class-set-static-metadata" role="function" condition="since:1.4">
+<title>gst_device_provider_class_set_static_metadata&#160;()</title>
+<indexterm zone="gst-device-provider-class-set-static-metadata" role="1.4"><primary>gst_device_provider_class_set_static_metadata</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_class_set_static_metadata
+                               (<parameter><link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link> *klass</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *longname</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *classification</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *description</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *author</parameter>);</programlisting>
+<para>Sets the detailed information for a <link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link>.</para>
+<note>This function is for use in _class_init functions only.</note>
+<para>Same as <link linkend="gst-device-provider-class-set-metadata"><function>gst_device_provider_class_set_metadata()</function></link>, but <parameter>longname</parameter>
+, <parameter>classification</parameter>
+,
+<parameter>description</parameter>
+, and <parameter>author</parameter>
+ must be static strings or inlined strings, as
+they will not be copied. (GStreamer plugins will be made resident once
+loaded, so this function can be used even from dynamically loaded plugins.)</para>
+<refsect3 id="gst-device-provider-class-set-static-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>klass</para></entry>
+<entry role="parameter_description"><para>class to set metadata for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>longname</para></entry>
+<entry role="parameter_description"><para> The long English name of the element. E.g. "File Sink". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>classification</para></entry>
+<entry role="parameter_description"><para> String describing the type of element, as
+an unordered list separated with slashes ('/'). See draft-klass.txt of the
+design docs for more details and common types. E.g: "Sink/File". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para> Sentence describing the purpose of the
+element.  E.g: "Write stream to a file". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>author</para></entry>
+<entry role="parameter_description"><para> Name and contact details of the author(s). Use \n
+to separate multiple author metadata. E.g: "Joe Bloggs &lt;joe.blogs at
+foo.com&gt;". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-device-add" role="function" condition="since:1.4">
+<title>gst_device_provider_device_add&#160;()</title>
+<indexterm zone="gst-device-provider-device-add" role="1.4"><primary>gst_device_provider_device_add</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_device_add (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>,
+                                <parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>);</programlisting>
+<para>Posts a message on the provider's <link linkend="GstBus"><type>GstBus</type></link> to inform applications that
+a new device has been added.</para>
+<para>This is for use by subclasses.</para>
+<refsect3 id="gst-device-provider-device-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstDevice"><type>GstDevice</type></link> that has been added. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-device-remove" role="function" condition="since:1.4">
+<title>gst_device_provider_device_remove&#160;()</title>
+<indexterm zone="gst-device-provider-device-remove" role="1.4"><primary>gst_device_provider_device_remove</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_device_remove (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>,
+                                   <parameter><link linkend="GstDevice"><type>GstDevice</type></link> *device</parameter>);</programlisting>
+<para>Posts a message on the provider's <link linkend="GstBus"><type>GstBus</type></link> to inform applications that
+a device has been removed.</para>
+<para>This is for use by subclasses.</para>
+<refsect3 id="gst-device-provider-device-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDevice"><type>GstDevice</type></link> that has been removed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-get-bus" role="function" condition="since:1.4">
+<title>gst_device_provider_get_bus&#160;()</title>
+<indexterm zone="gst-device-provider-get-bus" role="1.4"><primary>gst_device_provider_get_bus</primary></indexterm>
+<programlisting language="C"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+gst_device_provider_get_bus (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>);</programlisting>
+<para>Gets the <link linkend="GstBus"><type>GstBus</type></link> of this <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para>
+<refsect3 id="gst-device-provider-get-bus.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-get-bus.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBus"><type>GstBus</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-get-devices" role="function" condition="since:1.4">
+<title>gst_device_provider_get_devices&#160;()</title>
+<indexterm zone="gst-device-provider-get-devices" role="1.4"><primary>gst_device_provider_get_devices</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_device_provider_get_devices (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>);</programlisting>
+<para>Gets a list of devices that this provider understands. This may actually
+probe the hardware if the provider is not currently started.</para>
+<refsect3 id="gst-device-provider-get-devices.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-get-devices.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstDevice"><type>GstDevice</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> GstDevice]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-get-factory" role="function" condition="since:1.4">
+<title>gst_device_provider_get_factory&#160;()</title>
+<indexterm zone="gst-device-provider-get-factory" role="1.4"><primary>gst_device_provider_get_factory</primary></indexterm>
+<programlisting language="C"><link linkend="GstDeviceProviderFactory"><returnvalue>GstDeviceProviderFactory</returnvalue></link>&#160;*
+gst_device_provider_get_factory (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>);</programlisting>
+<para>Retrieves the factory that was used to create this device provider.</para>
+<refsect3 id="gst-device-provider-get-factory.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> to request the device provider factory of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-get-factory.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> used for
+creating this device provider. no refcounting is needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-register" role="function" condition="since:1.4">
+<title>gst_device_provider_register&#160;()</title>
+<indexterm zone="gst-device-provider-register" role="1.4"><primary>gst_device_provider_register</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_provider_register (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> rank</parameter>,
+                              <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Create a new device providerfactory capable of instantiating objects of the
+<parameter>type</parameter>
+ and add the factory to <parameter>plugin</parameter>
+.</para>
+<refsect3 id="gst-device-provider-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstPlugin"><type>GstPlugin</type></link> to register the device provider with, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> for
+a static device provider. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of device providers of this type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rank</para></entry>
+<entry role="parameter_description"><para>rank of device provider (higher rank means more importance when autoplugging)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>GType of device provider to register</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-register.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, if the registering succeeded, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-start" role="function" condition="since:1.4">
+<title>gst_device_provider_start&#160;()</title>
+<indexterm zone="gst-device-provider-start" role="1.4"><primary>gst_device_provider_start</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_provider_start (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>);</programlisting>
+<para>Starts providering the devices. This will cause <link linkend="GST-MESSAGE-DEVICE-ADDED:CAPS"><type>GST_MESSAGE_DEVICE_ADDED</type></link>
+and <link linkend="GST-MESSAGE-DEVICE-REMOVED:CAPS"><type>GST_MESSAGE_DEVICE_REMOVED</type></link> messages to be posted on the provider's bus
+when devices are added or removed from the system.</para>
+<para>Since the <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> is a singleton,
+<link linkend="gst-device-provider-start"><function>gst_device_provider_start()</function></link> may already have been called by another
+user of the object, <link linkend="gst-device-provider-stop"><function>gst_device_provider_stop()</function></link> needs to be called the same
+number of times.</para>
+<refsect3 id="gst-device-provider-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-start.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the device providering could be started</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-stop" role="function" condition="since:1.4">
+<title>gst_device_provider_stop&#160;()</title>
+<indexterm zone="gst-device-provider-stop" role="1.4"><primary>gst_device_provider_stop</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_provider_stop (<parameter><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> *provider</parameter>);</programlisting>
+<para>Decreases the use-count by one. If the use count reaches zero, this
+<link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> will stop providering the devices. This needs to be
+called the same number of times that <link linkend="gst-device-provider-start"><function>gst_device_provider_start()</function></link> was called.</para>
+<refsect3 id="gst-device-provider-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>provider</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceProvider.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDeviceProvider" role="struct" condition="since:1.4">
+<title>struct GstDeviceProvider</title>
+<indexterm zone="GstDeviceProvider" role="1.4"><primary>GstDeviceProvider</primary></indexterm>
+<programlisting language="C">struct GstDeviceProvider {
+  GstObject         parent;
+
+  /* Protected by the Object lock */
+  GList *devices;
+};
+</programlisting>
+<para>The structure of the base <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para>
+<refsect3 id="GstDeviceProvider.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstObject"><type>GstObject</type></link>&#160;<structfield id="GstDeviceProvider.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The parent <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GList"><type>GList</type></link>&#160;*<structfield id="GstDeviceProvider.devices">devices</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GList"><type>GList</type></link> of the <link linkend="GstDevice"><type>GstDevice</type></link> objects</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GstDeviceProviderClass" role="struct" condition="since:1.4">
+<title>struct GstDeviceProviderClass</title>
+<indexterm zone="GstDeviceProviderClass" role="1.4"><primary>GstDeviceProviderClass</primary></indexterm>
+<programlisting language="C">struct GstDeviceProviderClass {
+  GstObjectClass    parent_class;
+
+  GstDeviceProviderFactory     *factory;
+
+  GList*      (*probe) (GstDeviceProvider * provider);
+
+  gboolean    (*start) (GstDeviceProvider * provider);
+  void        (*stop)  (GstDeviceProvider * provider);
+};
+</programlisting>
+<para>The structure of the base <link linkend="GstDeviceProviderClass"><type>GstDeviceProviderClass</type></link></para>
+<refsect3 id="GstDeviceProviderClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link>&#160;*<structfield id="GstDeviceProviderClass.factory">factory</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a pointer to the <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> that creates this
+provider</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstDeviceProviderClass.probe">probe</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Returns a list of devices that are currently available.
+This should never block.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstDeviceProviderClass.start">start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Starts monitoring for new devices. Only subclasses that can know
+that devices have been added or remove need to implement this method.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstDeviceProviderClass.stop">stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Stops monitoring for new devices. Only subclasses that implement
+the <link linkend="start"><function>start()</function></link> method need to implement this method.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceProvider.see-also">
+<title>See Also</title>
+<para><link linkend="GstDevice"><type>GstDevice</type></link>, <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link></para>
+
+</refsect1>
+
+</refentry>

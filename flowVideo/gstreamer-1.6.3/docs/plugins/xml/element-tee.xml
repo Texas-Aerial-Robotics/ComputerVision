@@ -1,0 +1,175 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-tee">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-tee.top_of_page" role="top_of_page">tee</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>tee</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-tee.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstPad"><type>GstPad</type></link> *</entry><entry role="property_name"><link linkend="GstTee--alloc-pad">alloc-pad</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstTee--has-chain">has-chain</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstTee--last-message">last-message</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstTee--num-src-pads">num-src-pads</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstTeePullMode"><type>GstTeePullMode</type></link></entry><entry role="property_name"><link linkend="GstTee--pull-mode">pull-mode</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstTee--silent">silent</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstTee--allow-not-linked">allow-not-linked</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstTee"/><refsect1 id="gstreamer-plugins-tee.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTee-struct">GstTee</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstTeePullMode">GstTeePullMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-tee.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstTee
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-tee.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Split data to multiple pads. Branching the data flow is useful when e.g.
+capturing a video where the video is shown on the screen and also encoded and
+written to a file. Another example is playing music and hooking up a
+visualisation module.</para>
+<para>One needs to use separate queue elements (or a multiqueue) in each branch to
+provide separate threads for each branch. Otherwise a blocked dataflow in one
+branch would stall the other branches.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=song.ogg ! decodebin ! tee name=t ! queue ! audioconvert ! audioresample ! autoaudiosink t. ! queue ! audioconvert ! goom ! videoconvert ! autovideosink
+]]></programlisting></informalexample> Play song.ogg audio file which must be in the current working directory
+and render visualisations using the goom element (this can be easier done
+using the playbin element, this is just an example pipeline).
+</refsect2>
+
+<include href="element-tee-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-tee.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-tee.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTee-struct" role="struct">
+<title>struct GstTee</title>
+<indexterm zone="GstTee-struct"><primary>GstTee</primary></indexterm>
+<programlisting language="C">struct GstTee;</programlisting>
+<para>Opaque <link linkend="GstTee"><type>GstTee</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstTeePullMode" role="enum">
+<title>enum GstTeePullMode</title>
+<indexterm zone="GstTeePullMode"><primary>GstTeePullMode</primary></indexterm>
+<para>The different ways that tee can behave in pull mode. <parameter>TEE_PULL_MODE_NEVER</parameter>
+
+disables pull mode.</para>
+<refsect3 id="GstTeePullMode.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TEE-PULL-MODE-NEVER:CAPS">GST_TEE_PULL_MODE_NEVER</para></entry>
+<entry role="enum_member_description"><para>Never activate in pull mode.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TEE-PULL-MODE-SINGLE:CAPS">GST_TEE_PULL_MODE_SINGLE</para></entry>
+<entry role="enum_member_description"><para>Only one src pad can be active in pull mode.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-tee.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstTee--alloc-pad" role="property"><title>The <literal>“alloc-pad”</literal> property</title>
+<indexterm zone="GstTee--alloc-pad"><primary>GstTee:alloc-pad</primary></indexterm>
+<programlisting>  “alloc-pad”                <link linkend="GstPad"><type>GstPad</type></link> *</programlisting>
+<para>The pad ALLOCATION queries will be proxied to (unused).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstTee--has-chain" role="property"><title>The <literal>“has-chain”</literal> property</title>
+<indexterm zone="GstTee--has-chain"><primary>GstTee:has-chain</primary></indexterm>
+<programlisting>  “has-chain”                <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If the element can operate in push mode.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstTee--last-message" role="property"><title>The <literal>“last-message”</literal> property</title>
+<indexterm zone="GstTee--last-message"><primary>GstTee:last-message</primary></indexterm>
+<programlisting>  “last-message”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The message describing current status.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstTee--num-src-pads" role="property"><title>The <literal>“num-src-pads”</literal> property</title>
+<indexterm zone="GstTee--num-src-pads"><primary>GstTee:num-src-pads</primary></indexterm>
+<programlisting>  “num-src-pads”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The number of source pads.</para><para>Flags: Read</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstTee--pull-mode" role="property"><title>The <literal>“pull-mode”</literal> property</title>
+<indexterm zone="GstTee--pull-mode"><primary>GstTee:pull-mode</primary></indexterm>
+<programlisting>  “pull-mode”                <link linkend="GstTeePullMode"><type>GstTeePullMode</type></link></programlisting>
+<para>Behavior of tee in pull mode.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: Never activate in pull mode</para>
+</refsect2>
+<refsect2 id="GstTee--silent" role="property"><title>The <literal>“silent”</literal> property</title>
+<indexterm zone="GstTee--silent"><primary>GstTee:silent</primary></indexterm>
+<programlisting>  “silent”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Don't produce last_message events.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstTee--allow-not-linked" role="property"><title>The <literal>“allow-not-linked”</literal> property</title>
+<indexterm role="1.6" zone="GstTee--allow-not-linked"><primary>GstTee:allow-not-linked</primary></indexterm>
+<programlisting>  “allow-not-linked”         <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>This property makes sink pad return GST_FLOW_OK even if there are no
+source pads or any of them is linked.</para>
+<para>This is useful to avoid errors when you have a dynamic pipeline and during
+a reconnection you can have all the pads unlinked or removed.</para>
+<para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-tee.see-also">
+<title>See Also</title>
+<para><link linkend="GstIdentity"><type>GstIdentity</type></link></para>
+
+</refsect1>
+
+</refentry>

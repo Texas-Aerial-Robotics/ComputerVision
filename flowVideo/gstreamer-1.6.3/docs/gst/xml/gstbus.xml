@@ -1,0 +1,1121 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBus">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBus.top_of_page">GstBus</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBus</refname>
+<refpurpose>Asynchronous message bus subsystem</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBus.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstBusFunc">*GstBusFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBusSyncReply"><returnvalue>GstBusSyncReply</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstBusSyncHandler">*GstBusSyncHandler</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-new">gst_bus_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-post">gst_bus_post</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-have-pending">gst_bus_have_pending</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-peek">gst_bus_peek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-pop">gst_bus_pop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-pop-filtered">gst_bus_pop_filtered</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-timed-pop">gst_bus_timed_pop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-timed-pop-filtered">gst_bus_timed_pop_filtered</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-set-flushing">gst_bus_set_flushing</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-set-sync-handler">gst_bus_set_sync_handler</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBusSyncReply"><returnvalue>GstBusSyncReply</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-sync-signal-handler">gst_bus_sync_signal_handler</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSource"><returnvalue>GSource</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-create-watch">gst_bus_create_watch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-add-watch-full">gst_bus_add_watch_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-add-watch">gst_bus_add_watch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-remove-watch">gst_bus_remove_watch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-disable-sync-message-emission">gst_bus_disable_sync_message_emission</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-enable-sync-message-emission">gst_bus_enable_sync_message_emission</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-async-signal-func">gst_bus_async_signal_func</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-add-signal-watch">gst_bus_add_signal_watch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-add-signal-watch-full">gst_bus_add_signal_watch_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bus-remove-signal-watch">gst_bus_remove_signal_watch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bus-poll">gst_bus_poll</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBus.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBus--enable-async">enable-async</link></entry><entry role="property_flags">Write / Construct Only</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBus.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstBus-message">message</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-DETAILED:CAPS">Has Details</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstBus-sync-message">sync-message</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-DETAILED:CAPS">Has Details</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBus.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBus-struct">GstBus</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstBusFlags">GstBusFlags</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstBusSyncReply">GstBusSyncReply</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBus.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBus
+</screen>
+</refsect1>
+
+<refsect1 id="GstBus.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBus.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstBus"><type>GstBus</type></link> is an object responsible for delivering <link linkend="GstMessage"><type>GstMessage</type></link> packets in
+a first-in first-out way from the streaming threads (see <link linkend="GstTask"><type>GstTask</type></link>) to the
+application.</para>
+<para>Since the application typically only wants to deal with delivery of these
+messages from one thread, the GstBus will marshall the messages between
+different threads. This is important since the actual streaming of media
+is done in another thread than the application.</para>
+<para>The GstBus provides support for <link linkend="GSource"><type>GSource</type></link> based notifications. This makes it
+possible to handle the delivery in the glib mainloop.</para>
+<para>The <link linkend="GSource"><type>GSource</type></link> callback function <link linkend="gst-bus-async-signal-func"><function>gst_bus_async_signal_func()</function></link> can be used to
+convert all bus messages into signal emissions.</para>
+<para>A message is posted on the bus with the <link linkend="gst-bus-post"><function>gst_bus_post()</function></link> method. With the
+<link linkend="gst-bus-peek"><function>gst_bus_peek()</function></link> and <link linkend="gst-bus-pop"><function>gst_bus_pop()</function></link> methods one can look at or retrieve a
+previously posted message.</para>
+<para>The bus can be polled with the <link linkend="gst-bus-poll"><function>gst_bus_poll()</function></link> method. This methods blocks
+up to the specified timeout value until one of the specified messages types
+is posted on the bus. The application can then <link linkend="gst-bus-pop"><function>gst_bus_pop()</function></link> the messages
+from the bus to handle them.
+Alternatively the application can register an asynchronous bus function
+using <link linkend="gst-bus-add-watch-full"><function>gst_bus_add_watch_full()</function></link> or <link linkend="gst-bus-add-watch"><function>gst_bus_add_watch()</function></link>. This function will
+install a <link linkend="GSource"><type>GSource</type></link> in the default glib main loop and will deliver messages
+a short while after they have been posted. Note that the main loop should
+be running for the asynchronous callbacks.</para>
+<para>It is also possible to get messages from the bus without any thread
+marshalling with the <link linkend="gst-bus-set-sync-handler"><function>gst_bus_set_sync_handler()</function></link> method. This makes it
+possible to react to a message in the same thread that posted the
+message on the bus. This should only be used if the application is able
+to deal with messages from different threads.</para>
+<para>Every <link linkend="GstPipeline"><type>GstPipeline</type></link> has one bus.</para>
+<para>Note that a <link linkend="GstPipeline"><type>GstPipeline</type></link> will set its bus into flushing state when changing
+from READY to NULL state.</para>
+
+</refsect1>
+<refsect1 id="GstBus.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstBusFunc" role="function">
+<title>GstBusFunc&#160;()</title>
+<indexterm zone="GstBusFunc"><primary>GstBusFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstBusFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+               <parameter><link linkend="GstMessage"><type>GstMessage</type></link> *message</parameter>,
+               <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Specifies the type of function passed to <link linkend="gst-bus-add-watch"><function>gst_bus_add_watch()</function></link> or
+<link linkend="gst-bus-add-watch-full"><function>gst_bus_add_watch_full()</function></link>, which is called from the mainloop when a message
+is available on the bus.</para>
+<para>The message passed to the function will be unreffed after execution of this
+function so it should not be freed in the function.</para>
+<para>Note that this function is used as a GSourceFunc which means that returning
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> will remove the GSource from the mainloop.</para>
+<refsect3 id="GstBusFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBus"><type>GstBus</type></link> that sent the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMessage"><type>GstMessage</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data that has been given, when registering the handler</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstBusFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if the event source should be removed.</para>
+</refsect3></refsect2>
+<refsect2 id="GstBusSyncHandler" role="function">
+<title>GstBusSyncHandler&#160;()</title>
+<indexterm zone="GstBusSyncHandler"><primary>GstBusSyncHandler</primary></indexterm>
+<programlisting language="C"><link linkend="GstBusSyncReply"><returnvalue>GstBusSyncReply</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstBusSyncHandler<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                      <parameter><link linkend="GstMessage"><type>GstMessage</type></link> *message</parameter>,
+                      <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Handler will be invoked synchronously, when a new message has been injected
+into the bus. This function is mostly used internally. Only one sync handler
+can be attached to a given bus.</para>
+<para>If the handler returns GST_BUS_DROP, it should unref the message, else the
+message should not be unreffed by the sync handler.</para>
+<refsect3 id="GstBusSyncHandler.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBus"><type>GstBus</type></link> that sent the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMessage"><type>GstMessage</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data that has been given, when registering the handler</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstBusSyncHandler.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstBusSyncReply"><type>GstBusSyncReply</type></link> stating what to do with the message</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-new" role="function">
+<title>gst_bus_new&#160;()</title>
+<indexterm zone="gst-bus-new"><primary>gst_bus_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+gst_bus_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new <link linkend="GstBus"><type>GstBus</type></link> instance.</para>
+<refsect3 id="gst-bus-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstBus"><type>GstBus</type></link> instance. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-post" role="function">
+<title>gst_bus_post&#160;()</title>
+<indexterm zone="gst-bus-post"><primary>gst_bus_post</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bus_post (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+              <parameter><link linkend="GstMessage"><type>GstMessage</type></link> *message</parameter>);</programlisting>
+<para>Post a message on the given bus. Ownership of the message
+is taken by the bus.</para>
+<refsect3 id="gst-bus-post.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to post on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstMessage"><type>GstMessage</type></link> to post. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-post.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the message could be posted, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if the bus is flushing.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-have-pending" role="function">
+<title>gst_bus_have_pending&#160;()</title>
+<indexterm zone="gst-bus-have-pending"><primary>gst_bus_have_pending</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bus_have_pending (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Check if there are pending messages on the bus that
+should be handled.</para>
+<refsect3 id="gst-bus-have-pending.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-have-pending.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if there are messages on the bus to be handled, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>
+otherwise.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-peek" role="function">
+<title>gst_bus_peek&#160;()</title>
+<indexterm zone="gst-bus-peek"><primary>gst_bus_peek</primary></indexterm>
+<programlisting language="C"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+gst_bus_peek (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Peek the message on the top of the bus' queue. The message will remain
+on the bus' message queue. A reference is returned, and needs to be unreffed
+by the caller.</para>
+<refsect3 id="gst-bus-peek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-peek.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstMessage"><type>GstMessage</type></link> that is on the
+bus, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the bus is empty.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-pop" role="function">
+<title>gst_bus_pop&#160;()</title>
+<indexterm zone="gst-bus-pop"><primary>gst_bus_pop</primary></indexterm>
+<programlisting language="C"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+gst_bus_pop (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Get a message from the bus.</para>
+<refsect3 id="gst-bus-pop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to pop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-pop.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstMessage"><type>GstMessage</type></link> that is on the
+bus, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the bus is empty. The message is taken from
+the bus and needs to be unreffed with <link linkend="gst-message-unref"><function>gst_message_unref()</function></link> after
+usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-pop-filtered" role="function">
+<title>gst_bus_pop_filtered&#160;()</title>
+<indexterm zone="gst-bus-pop-filtered"><primary>gst_bus_pop_filtered</primary></indexterm>
+<programlisting language="C"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+gst_bus_pop_filtered (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                      <parameter><link linkend="GstMessageType"><type>GstMessageType</type></link> types</parameter>);</programlisting>
+<para>Get a message matching <parameter>type</parameter>
+ from the bus.  Will discard all messages on
+the bus that do not match <parameter>type</parameter>
+ and that have been posted before the first
+message that does match <parameter>type</parameter>
+.  If there is no message matching <parameter>type</parameter>
+ on
+the bus, all messages will be discarded. It is not possible to use message
+enums beyond <link linkend="GST-MESSAGE-EXTENDED:CAPS"><type>GST_MESSAGE_EXTENDED</type></link> in the <parameter>events</parameter>
+ mask.</para>
+<refsect3 id="gst-bus-pop-filtered.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to pop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>types</para></entry>
+<entry role="parameter_description"><para>message types to take into account</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-pop-filtered.returns" role="returns">
+<title>Returns</title>
+<para> the next <link linkend="GstMessage"><type>GstMessage</type></link> matching
+<parameter>type</parameter>
+that is on the bus, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the bus is empty or there
+is no message matching <parameter>type</parameter>
+. The message is taken from the bus
+and needs to be unreffed with <link linkend="gst-message-unref"><function>gst_message_unref()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-timed-pop" role="function">
+<title>gst_bus_timed_pop&#160;()</title>
+<indexterm zone="gst-bus-timed-pop"><primary>gst_bus_timed_pop</primary></indexterm>
+<programlisting language="C"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+gst_bus_timed_pop (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timeout</parameter>);</programlisting>
+<para>Get a message from the bus, waiting up to the specified timeout.</para>
+<para>If <parameter>timeout</parameter>
+ is 0, this function behaves like <link linkend="gst-bus-pop"><function>gst_bus_pop()</function></link>. If <parameter>timeout</parameter>
+ is
+<link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link>, this function will block forever until a message was
+posted on the bus.</para>
+<refsect3 id="gst-bus-timed-pop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to pop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>a timeout</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-timed-pop.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstMessage"><type>GstMessage</type></link> that is on the
+bus after the specified timeout or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the bus is empty
+after the timeout expired.  The message is taken from the bus
+and needs to be unreffed with <link linkend="gst-message-unref"><function>gst_message_unref()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-timed-pop-filtered" role="function">
+<title>gst_bus_timed_pop_filtered&#160;()</title>
+<indexterm zone="gst-bus-timed-pop-filtered"><primary>gst_bus_timed_pop_filtered</primary></indexterm>
+<programlisting language="C"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+gst_bus_timed_pop_filtered (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timeout</parameter>,
+                            <parameter><link linkend="GstMessageType"><type>GstMessageType</type></link> types</parameter>);</programlisting>
+<para>Get a message from the bus whose type matches the message type mask <parameter>types</parameter>
+,
+waiting up to the specified timeout (and discarding any messages that do not
+match the mask provided).</para>
+<para>If <parameter>timeout</parameter>
+ is 0, this function behaves like <link linkend="gst-bus-pop-filtered"><function>gst_bus_pop_filtered()</function></link>. If
+<parameter>timeout</parameter>
+ is <link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link>, this function will block forever until a
+matching message was posted on the bus.</para>
+<refsect3 id="gst-bus-timed-pop-filtered.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to pop from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>a timeout in nanoseconds, or GST_CLOCK_TIME_NONE to wait forever</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>types</para></entry>
+<entry role="parameter_description"><para>message types to take into account, GST_MESSAGE_ANY for any type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-timed-pop-filtered.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstMessage"><type>GstMessage</type></link> matching the
+filter in <parameter>types</parameter>
+, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no matching message was found on
+the bus until the timeout expired. The message is taken from
+the bus and needs to be unreffed with <link linkend="gst-message-unref"><function>gst_message_unref()</function></link> after
+usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-set-flushing" role="function">
+<title>gst_bus_set_flushing&#160;()</title>
+<indexterm zone="gst-bus-set-flushing"><primary>gst_bus_set_flushing</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_set_flushing (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                      <parameter><link linkend="gboolean"><type>gboolean</type></link> flushing</parameter>);</programlisting>
+<para>If <parameter>flushing</parameter>
+, flush out and unref any messages queued in the bus. Releases
+references to the message origin objects. Will flush future messages until
+<link linkend="gst-bus-set-flushing"><function>gst_bus_set_flushing()</function></link> sets <parameter>flushing</parameter>
+ to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bus-set-flushing.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flushing</para></entry>
+<entry role="parameter_description"><para>whether or not to flush the bus</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-set-sync-handler" role="function">
+<title>gst_bus_set_sync_handler&#160;()</title>
+<indexterm zone="gst-bus-set-sync-handler"><primary>gst_bus_set_sync_handler</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_set_sync_handler (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                          <parameter><link linkend="GstBusSyncHandler"><type>GstBusSyncHandler</type></link> func</parameter>,
+                          <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                          <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> notify</parameter>);</programlisting>
+<para>Sets the synchronous handler on the bus. The function will be called
+every time a new message is posted on the bus. Note that the function
+will be called in the same thread context as the posting object. This
+function is usually only called by the creator of the bus. Applications
+should handle messages asynchronously using the gst_bus watch and poll
+functions.</para>
+<para>You cannot replace an existing sync_handler. You can pass <link linkend="NULL:CAPS"><literal>NULL</literal></link> to this
+function, which will clear the existing handler.</para>
+<refsect3 id="gst-bus-set-sync-handler.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to install the handler on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> The handler function to install. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User data that will be sent to the handler function.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>notify</para></entry>
+<entry role="parameter_description"><para>called when <parameter>user_data</parameter>
+becomes unused</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-sync-signal-handler" role="function">
+<title>gst_bus_sync_signal_handler&#160;()</title>
+<indexterm zone="gst-bus-sync-signal-handler"><primary>gst_bus_sync_signal_handler</primary></indexterm>
+<programlisting language="C"><link linkend="GstBusSyncReply"><returnvalue>GstBusSyncReply</returnvalue></link>
+gst_bus_sync_signal_handler (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                             <parameter><link linkend="GstMessage"><type>GstMessage</type></link> *message</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>A helper GstBusSyncHandler that can be used to convert all synchronous
+messages into signals.</para>
+<refsect3 id="gst-bus-sync-signal-handler.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMessage"><type>GstMessage</type></link> received</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-sync-signal-handler.returns" role="returns">
+<title>Returns</title>
+<para> GST_BUS_PASS</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-create-watch" role="function">
+<title>gst_bus_create_watch&#160;()</title>
+<indexterm zone="gst-bus-create-watch"><primary>gst_bus_create_watch</primary></indexterm>
+<programlisting language="C"><link linkend="GSource"><returnvalue>GSource</returnvalue></link>&#160;*
+gst_bus_create_watch (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Create watch for this bus. The GSource will be dispatched whenever
+a message is on the bus. After the GSource is dispatched, the
+message is popped off the bus and unreffed.</para>
+<refsect3 id="gst-bus-create-watch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to create the watch for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-create-watch.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GSource"><type>GSource</type></link> that can be added to a mainloop. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-add-watch-full" role="function">
+<title>gst_bus_add_watch_full&#160;()</title>
+<indexterm zone="gst-bus-add-watch-full"><primary>gst_bus_add_watch_full</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_bus_add_watch_full (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                        <parameter><link linkend="gint"><type>gint</type></link> priority</parameter>,
+                        <parameter><link linkend="GstBusFunc"><type>GstBusFunc</type></link> func</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                        <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> notify</parameter>);</programlisting>
+<para>Adds a bus watch to the default main context with the given <parameter>priority</parameter>
+ (e.g.
+<link linkend="G-PRIORITY-DEFAULT:CAPS"><literal>G_PRIORITY_DEFAULT</literal></link>). It is also possible to use a non-default  main
+context set up using <link linkend="g-main-context-push-thread-default"><function>g_main_context_push_thread_default()</function></link> (before
+one had to create a bus watch source and attach it to the desired main
+context 'manually').</para>
+<para>This function is used to receive asynchronous messages in the main loop.
+There can only be a single bus watch per bus, you must remove it before you
+can set a new one.</para>
+<para>The bus watch will only work if a GLib main loop is being run.</para>
+<para>When <parameter>func</parameter>
+ is called, the message belongs to the caller; if you want to
+keep a copy of it, call <link linkend="gst-message-ref"><function>gst_message_ref()</function></link> before leaving <parameter>func</parameter>
+.</para>
+<para>The watch can be removed using <link linkend="gst-bus-remove-watch"><function>gst_bus_remove_watch()</function></link> or by returning <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>
+from <parameter>func</parameter>
+. If the watch was added to the default main context it is also
+possible to remove the watch using <link linkend="g-source-remove"><function>g_source_remove()</function></link>.</para>
+<para>MT safe.</para>
+
+<para><emphasis role="annotation">[<acronym>rename-to</acronym> gst_bus_add_watch]</emphasis></para><refsect3 id="gst-bus-add-watch-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to create the watch for.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>priority</para></entry>
+<entry role="parameter_description"><para>The priority of the watch.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>A function to call when a message is received.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>func</parameter>
+.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>notify</para></entry>
+<entry role="parameter_description"><para>the function to call when the source is removed.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-add-watch-full.returns" role="returns">
+<title>Returns</title>
+<para> The event source id or 0 if <parameter>bus</parameter>
+already got an event source.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-add-watch" role="function">
+<title>gst_bus_add_watch&#160;()</title>
+<indexterm zone="gst-bus-add-watch"><primary>gst_bus_add_watch</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_bus_add_watch (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                   <parameter><link linkend="GstBusFunc"><type>GstBusFunc</type></link> func</parameter>,
+                   <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Adds a bus watch to the default main context with the default priority
+(<link linkend="G-PRIORITY-DEFAULT:CAPS"><literal>G_PRIORITY_DEFAULT</literal></link>). It is also possible to use a non-default main
+context set up using <link linkend="g-main-context-push-thread-default"><function>g_main_context_push_thread_default()</function></link> (before
+one had to create a bus watch source and attach it to the desired main
+context 'manually').</para>
+<para>This function is used to receive asynchronous messages in the main loop.
+There can only be a single bus watch per bus, you must remove it before you
+can set a new one.</para>
+<para>The bus watch will only work if a GLib main loop is being run.</para>
+<para>The watch can be removed using <link linkend="gst-bus-remove-watch"><function>gst_bus_remove_watch()</function></link> or by returning <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>
+from <parameter>func</parameter>
+. If the watch was added to the default main context it is also
+possible to remove the watch using <link linkend="g-source-remove"><function>g_source_remove()</function></link>.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-bus-add-watch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to create the watch for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>A function to call when a message is received.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>func</parameter>
+.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-add-watch.returns" role="returns">
+<title>Returns</title>
+<para> The event source id or 0 if <parameter>bus</parameter>
+already got an event source.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-remove-watch" role="function" condition="since:1.6">
+<title>gst_bus_remove_watch&#160;()</title>
+<indexterm zone="gst-bus-remove-watch" role="1.6"><primary>gst_bus_remove_watch</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bus_remove_watch (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Removes an installed bus watch from <parameter>bus</parameter>
+.</para>
+<refsect3 id="gst-bus-remove-watch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> to remove the watch from.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-remove-watch.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if <parameter>bus</parameter>
+has no event source.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-bus-disable-sync-message-emission" role="function">
+<title>gst_bus_disable_sync_message_emission&#160;()</title>
+<indexterm zone="gst-bus-disable-sync-message-emission"><primary>gst_bus_disable_sync_message_emission</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_disable_sync_message_emission (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Instructs GStreamer to stop emitting the "sync-message" signal for this bus.
+See <link linkend="gst-bus-enable-sync-message-emission"><function>gst_bus_enable_sync_message_emission()</function></link> for more information.</para>
+<para>In the event that multiple pieces of code have called
+<link linkend="gst-bus-enable-sync-message-emission"><function>gst_bus_enable_sync_message_emission()</function></link>, the sync-message emissions will only
+be stopped after all calls to <link linkend="gst-bus-enable-sync-message-emission"><function>gst_bus_enable_sync_message_emission()</function></link> were
+"cancelled" by calling this function. In this way the semantics are exactly
+the same as <link linkend="gst-object-ref"><function>gst_object_ref()</function></link> that which calls enable should also call
+disable.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bus-disable-sync-message-emission.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> on which you previously called
+<link linkend="gst-bus-enable-sync-message-emission"><function>gst_bus_enable_sync_message_emission()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-enable-sync-message-emission" role="function">
+<title>gst_bus_enable_sync_message_emission&#160;()</title>
+<indexterm zone="gst-bus-enable-sync-message-emission"><primary>gst_bus_enable_sync_message_emission</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_enable_sync_message_emission (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Instructs GStreamer to emit the "sync-message" signal after running the bus's
+sync handler. This function is here so that code can ensure that they can
+synchronously receive messages without having to affect what the bin's sync
+handler is.</para>
+<para>This function may be called multiple times. To clean up, the caller is
+responsible for calling <link linkend="gst-bus-disable-sync-message-emission"><function>gst_bus_disable_sync_message_emission()</function></link> as many times
+as this function is called.</para>
+<para>While this function looks similar to <link linkend="gst-bus-add-signal-watch"><function>gst_bus_add_signal_watch()</function></link>, it is not
+exactly the same -- this function enables <emphasis>synchronous</emphasis> emission of
+signals when messages arrive; <link linkend="gst-bus-add-signal-watch"><function>gst_bus_add_signal_watch()</function></link> adds an idle callback
+to pop messages off the bus <emphasis>asynchronously</emphasis>. The sync-message signal
+comes from the thread of whatever object posted the message; the "message"
+signal is marshalled to the main thread via the main loop.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bus-enable-sync-message-emission.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> on which you want to receive the "sync-message" signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-async-signal-func" role="function">
+<title>gst_bus_async_signal_func&#160;()</title>
+<indexterm zone="gst-bus-async-signal-func"><primary>gst_bus_async_signal_func</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bus_async_signal_func (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                           <parameter><link linkend="GstMessage"><type>GstMessage</type></link> *message</parameter>,
+                           <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>A helper <link linkend="GstBusFunc"><type>GstBusFunc</type></link> that can be used to convert all asynchronous messages
+into signals.</para>
+<refsect3 id="gst-bus-async-signal-func.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMessage"><type>GstMessage</type></link> received</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-async-signal-func.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-add-signal-watch" role="function">
+<title>gst_bus_add_signal_watch&#160;()</title>
+<indexterm zone="gst-bus-add-signal-watch"><primary>gst_bus_add_signal_watch</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_add_signal_watch (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Adds a bus signal watch to the default main context with the default priority
+(<link linkend="G-PRIORITY-DEFAULT:CAPS"><literal>G_PRIORITY_DEFAULT</literal></link>). It is also possible to use a non-default
+main context set up using <link linkend="g-main-context-push-thread-default"><function>g_main_context_push_thread_default()</function></link> (before
+one had to create a bus watch source and attach it to the desired main
+context 'manually').</para>
+<para>After calling this statement, the bus will emit the "message" signal for each
+message posted on the bus.</para>
+<para>This function may be called multiple times. To clean up, the caller is
+responsible for calling <link linkend="gst-bus-remove-signal-watch"><function>gst_bus_remove_signal_watch()</function></link> as many times as this
+function is called.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bus-add-signal-watch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> on which you want to receive the "message" signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-add-signal-watch-full" role="function">
+<title>gst_bus_add_signal_watch_full&#160;()</title>
+<indexterm zone="gst-bus-add-signal-watch-full"><primary>gst_bus_add_signal_watch_full</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_add_signal_watch_full (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+                               <parameter><link linkend="gint"><type>gint</type></link> priority</parameter>);</programlisting>
+<para>Adds a bus signal watch to the default main context with the given <parameter>priority</parameter>
+
+(e.g. <link linkend="G-PRIORITY-DEFAULT:CAPS"><literal>G_PRIORITY_DEFAULT</literal></link>). It is also possible to use a non-default main
+context set up using <link linkend="g-main-context-push-thread-default"><function>g_main_context_push_thread_default()</function></link>
+(before one had to create a bus watch source and attach it to the desired
+main context 'manually').</para>
+<para>After calling this statement, the bus will emit the "message" signal for each
+message posted on the bus when the main loop is running.</para>
+<para>This function may be called multiple times. To clean up, the caller is
+responsible for calling <link linkend="gst-bus-remove-signal-watch"><function>gst_bus_remove_signal_watch()</function></link> as many times as this
+function is called.</para>
+<para>There can only be a single bus watch per bus, you must remove any signal
+watch before you can set another type of watch.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bus-add-signal-watch-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> on which you want to receive the "message" signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>priority</para></entry>
+<entry role="parameter_description"><para>The priority of the watch.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-remove-signal-watch" role="function">
+<title>gst_bus_remove_signal_watch&#160;()</title>
+<indexterm zone="gst-bus-remove-signal-watch"><primary>gst_bus_remove_signal_watch</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bus_remove_signal_watch (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>);</programlisting>
+<para>Removes a signal watch previously added with <link linkend="gst-bus-add-signal-watch"><function>gst_bus_add_signal_watch()</function></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bus-remove-signal-watch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link> you previously added a signal watch to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bus-poll" role="function">
+<title>gst_bus_poll&#160;()</title>
+<indexterm zone="gst-bus-poll"><primary>gst_bus_poll</primary></indexterm>
+<programlisting language="C"><link linkend="GstMessage"><returnvalue>GstMessage</returnvalue></link>&#160;*
+gst_bus_poll (<parameter><link linkend="GstBus"><type>GstBus</type></link> *bus</parameter>,
+              <parameter><link linkend="GstMessageType"><type>GstMessageType</type></link> events</parameter>,
+              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timeout</parameter>);</programlisting>
+<para>Poll the bus for messages. Will block while waiting for messages to come.
+You can specify a maximum time to poll with the <parameter>timeout</parameter>
+ parameter. If
+<parameter>timeout</parameter>
+ is negative, this function will block indefinitely.</para>
+<para>All messages not in <parameter>events</parameter>
+ will be popped off the bus and will be ignored.
+It is not possible to use message enums beyond <link linkend="GST-MESSAGE-EXTENDED:CAPS"><type>GST_MESSAGE_EXTENDED</type></link> in the
+<parameter>events</parameter>
+ mask</para>
+<para>Because poll is implemented using the "message" signal enabled by
+<link linkend="gst-bus-add-signal-watch"><function>gst_bus_add_signal_watch()</function></link>, calling <link linkend="gst-bus-poll"><function>gst_bus_poll()</function></link> will cause the "message"
+signal to be emitted for every message that poll sees. Thus a "message"
+signal handler will see the same messages that this function sees -- neither
+will steal messages from the other.</para>
+<para>This function will run a main loop from the default main context when
+polling.</para>
+<para>You should never use this function, since it is pure evil. This is
+especially true for GUI applications based on Gtk+ or Qt, but also for any
+other non-trivial application that uses the GLib main loop. As this function
+runs a GLib main loop, any callback attached to the default GLib main
+context may be invoked. This could be timeouts, GUI events, I/O events etc.;
+even if <link linkend="gst-bus-poll"><function>gst_bus_poll()</function></link> is called with a 0 timeout. Any of these callbacks
+may do things you do not expect, e.g. destroy the main application window or
+some other resource; change other application state; display a dialog and
+run another main loop until the user clicks it away. In short, using this
+function may add a lot of complexity to your code through unexpected
+re-entrancy and unexpected changes to your application's state.</para>
+<para>For 0 timeouts use <link linkend="gst-bus-pop-filtered"><function>gst_bus_pop_filtered()</function></link> instead of this function; for
+other short timeouts use <link linkend="gst-bus-timed-pop-filtered"><function>gst_bus_timed_pop_filtered()</function></link>; everything else is
+better handled by setting up an asynchronous bus watch and doing things
+from there.</para>
+<refsect3 id="gst-bus-poll.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBus"><type>GstBus</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>events</para></entry>
+<entry role="parameter_description"><para>a mask of <link linkend="GstMessageType"><type>GstMessageType</type></link>, representing the set of message types to
+poll for (note special handling of extended message types below)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>the poll timeout, as a <link linkend="GstClockTime"><type>GstClockTime</type></link>, or <link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link> to poll
+indefinitely.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bus-poll.returns" role="returns">
+<title>Returns</title>
+<para> the message that was received,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the poll timed out. The message is taken from the
+bus and needs to be unreffed with <link linkend="gst-message-unref"><function>gst_message_unref()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBus.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBus-struct" role="struct">
+<title>struct GstBus</title>
+<indexterm zone="GstBus-struct"><primary>GstBus</primary></indexterm>
+<programlisting language="C">struct GstBus;</programlisting>
+<para>The opaque <link linkend="GstBus"><type>GstBus</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstBusFlags" role="enum">
+<title>enum GstBusFlags</title>
+<indexterm zone="GstBusFlags"><primary>GstBusFlags</primary></indexterm>
+<para>The standard flags that a bus may have.</para>
+<refsect3 id="GstBusFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUS-FLUSHING:CAPS">GST_BUS_FLUSHING</para></entry>
+<entry role="enum_member_description"><para>The bus is currently dropping all messages</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUS-FLAG-LAST:CAPS">GST_BUS_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>offset to define more flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstBusSyncReply" role="enum">
+<title>enum GstBusSyncReply</title>
+<indexterm zone="GstBusSyncReply"><primary>GstBusSyncReply</primary></indexterm>
+<para>The result values for a GstBusSyncHandler.</para>
+<refsect3 id="GstBusSyncReply.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUS-DROP:CAPS">GST_BUS_DROP</para></entry>
+<entry role="enum_member_description"><para>drop the message</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUS-PASS:CAPS">GST_BUS_PASS</para></entry>
+<entry role="enum_member_description"><para>pass the message to the async queue</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUS-ASYNC:CAPS">GST_BUS_ASYNC</para></entry>
+<entry role="enum_member_description"><para>pass message to async queue, continue if message is handled</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBus.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstBus--enable-async" role="property"><title>The <literal>“enable-async”</literal> property</title>
+<indexterm zone="GstBus--enable-async"><primary>GstBus:enable-async</primary></indexterm>
+<programlisting>  “enable-async”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable async message delivery for bus watches and gst_bus_pop().</para><para>Flags: Write / Construct Only</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBus.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstBus-message" role="signal"><title>The <literal>“message”</literal> signal</title>
+<indexterm zone="GstBus-message"><primary>GstBus::message</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstBus"><type>GstBus</type></link>     *bus,
+               <link linkend="GstMessage"><type>GstMessage</type></link> *message,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>A message has been posted on the bus. This signal is emitted from a
+GSource added to the mainloop. this signal will only be emitted when
+there is a mainloop running.</para>
+<refsect3 id="GstBus-message.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the message that has been posted asynchronously</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-DETAILED:CAPS">Has Details</link></para>
+</refsect2><refsect2 id="GstBus-sync-message" role="signal"><title>The <literal>“sync-message”</literal> signal</title>
+<indexterm zone="GstBus-sync-message"><primary>GstBus::sync-message</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstBus"><type>GstBus</type></link>     *bus,
+               <link linkend="GstMessage"><type>GstMessage</type></link> *message,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>A message has been posted on the bus. This signal is emitted from the
+thread that posted the message so one has to be careful with locking.</para>
+<para>This signal will not be emitted by default, you have to call
+<link linkend="gst-bus-enable-sync-message-emission"><function>gst_bus_enable_sync_message_emission()</function></link> before.</para>
+<refsect3 id="GstBus-sync-message.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bus</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the message that has been posted synchronously</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-DETAILED:CAPS">Has Details</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstBus.see-also">
+<title>See Also</title>
+<para><link linkend="GstMessage"><type>GstMessage</type></link>, <link linkend="GstElement"><type>GstElement</type></link></para>
+
+</refsect1>
+
+</refentry>

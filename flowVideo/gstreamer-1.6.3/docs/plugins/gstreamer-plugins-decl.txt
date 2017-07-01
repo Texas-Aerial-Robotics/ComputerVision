@@ -1,0 +1,1546 @@
+<MACRO>
+<NAME>GST_TYPE_CAPS_FILTER</NAME>
+#define GST_TYPE_CAPS_FILTER \
+  (gst_capsfilter_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_CAPS_FILTER</NAME>
+#define GST_CAPS_FILTER(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_CAPS_FILTER,GstCapsFilter))
+</MACRO>
+<MACRO>
+<NAME>GST_CAPS_FILTER_CLASS</NAME>
+#define GST_CAPS_FILTER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_CAPS_FILTER,GstCapsFilterClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_CAPS_FILTER</NAME>
+#define GST_IS_CAPS_FILTER(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_CAPS_FILTER))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_CAPS_FILTER_CLASS</NAME>
+#define GST_IS_CAPS_FILTER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_CAPS_FILTER))
+</MACRO>
+<ENUM>
+<NAME>GstCapsFilterCapsChangeMode</NAME>
+typedef enum {
+  GST_CAPS_FILTER_CAPS_CHANGE_MODE_IMMEDIATE,
+  GST_CAPS_FILTER_CAPS_CHANGE_MODE_DELAYED
+} GstCapsFilterCapsChangeMode;
+</ENUM>
+<STRUCT>
+<NAME>GstCapsFilter</NAME>
+struct _GstCapsFilter {
+  GstBaseTransform trans;
+
+  GstCaps *filter_caps;
+  gboolean filter_caps_used;
+  GstCapsFilterCapsChangeMode caps_change_mode;
+
+  GList *pending_events;
+  GList *previous_caps;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstCapsFilterClass</NAME>
+struct _GstCapsFilterClass {
+  GstBaseTransformClass trans_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_DOWNLOAD_BUFFER</NAME>
+#define GST_TYPE_DOWNLOAD_BUFFER \
+  (gst_download_buffer_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_DOWNLOAD_BUFFER</NAME>
+#define GST_DOWNLOAD_BUFFER(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_DOWNLOAD_BUFFER,GstDownloadBuffer))
+</MACRO>
+<MACRO>
+<NAME>GST_DOWNLOAD_BUFFER_CLASS</NAME>
+#define GST_DOWNLOAD_BUFFER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_DOWNLOAD_BUFFER,GstDownloadBufferClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_DOWNLOAD_BUFFER</NAME>
+#define GST_IS_DOWNLOAD_BUFFER(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_DOWNLOAD_BUFFER))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_DOWNLOAD_BUFFER_CLASS</NAME>
+#define GST_IS_DOWNLOAD_BUFFER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_DOWNLOAD_BUFFER))
+</MACRO>
+<MACRO>
+<NAME>GST_DOWNLOAD_BUFFER_CAST</NAME>
+#define GST_DOWNLOAD_BUFFER_CAST(obj) \
+  ((GstDownloadBuffer *)(obj))
+</MACRO>
+<STRUCT>
+<NAME>GstDownloadBufferSize</NAME>
+struct _GstDownloadBufferSize
+{
+  guint bytes;
+  guint64 time;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstDownloadBuffer</NAME>
+struct _GstDownloadBuffer
+{
+  GstElement element;
+
+  /*< private > */
+  GstPad *sinkpad;
+  GstPad *srcpad;
+
+  /* upstream size in bytes (if downstream is operating in pull mode) */
+  guint64 upstream_size;
+
+  /* flowreturn when srcpad is paused */
+  GstFlowReturn srcresult;
+  GstFlowReturn sinkresult;
+  gboolean unexpected;
+
+  /* the queue of data we're keeping our hands on */
+  GstSparseFile *file;
+  guint64 write_pos;
+  guint64 read_pos;
+  gboolean filling;
+
+  GstDownloadBufferSize cur_level;
+  GstDownloadBufferSize max_level;
+  gint low_percent;             /* low/high watermarks for buffering */
+  gint high_percent;
+
+  /* current buffering state */
+  gboolean is_buffering;
+  gint buffering_percent;
+
+  /* for measuring input/output rates */
+  GTimer *in_timer;
+  gboolean in_timer_started;
+  gdouble last_in_elapsed;
+  guint64 bytes_in;
+  gdouble byte_in_rate;
+  gdouble byte_in_period;
+
+  GTimer *out_timer;
+  gboolean out_timer_started;
+  gdouble last_out_elapsed;
+  guint64 bytes_out;
+  gdouble byte_out_rate;
+
+  GMutex qlock;                /* lock for queue (vs object lock) */
+  gboolean waiting_add;
+  GCond item_add;              /* signals buffers now available for reading */
+  guint64 waiting_offset;
+
+  /* temp location stuff */
+  gchar *temp_template;
+  gboolean temp_location_set;
+  gchar *temp_location;
+  gboolean temp_remove;
+  gint temp_fd;
+  gboolean seeking;
+
+  GstEvent *stream_start_event;
+  GstEvent *segment_event;
+
+  volatile gint downstream_may_block;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstDownloadBufferClass</NAME>
+struct _GstDownloadBufferClass
+{
+  GstElementClass parent_class;
+};
+</STRUCT>
+<ENUM>
+<NAME>GstFakeSrcOutputType</NAME>
+typedef enum {
+  FAKE_SRC_FIRST_LAST_LOOP = 1,
+  FAKE_SRC_LAST_FIRST_LOOP,
+  FAKE_SRC_PING_PONG,
+  FAKE_SRC_ORDERED_RANDOM,
+  FAKE_SRC_RANDOM,
+  FAKE_SRC_PATTERN_LOOP,
+  FAKE_SRC_PING_PONG_PATTERN,
+  FAKE_SRC_GET_ALWAYS_SUCEEDS
+} GstFakeSrcOutputType;
+</ENUM>
+<ENUM>
+<NAME>GstFakeSrcDataType</NAME>
+typedef enum {
+  FAKE_SRC_DATA_ALLOCATE = 1,
+  FAKE_SRC_DATA_SUBBUFFER
+} GstFakeSrcDataType;
+</ENUM>
+<ENUM>
+<NAME>GstFakeSrcSizeType</NAME>
+typedef enum {
+  FAKE_SRC_SIZETYPE_EMPTY = 1,
+  FAKE_SRC_SIZETYPE_FIXED,
+  FAKE_SRC_SIZETYPE_RANDOM
+} GstFakeSrcSizeType;
+</ENUM>
+<ENUM>
+<NAME>GstFakeSrcFillType</NAME>
+typedef enum {
+  FAKE_SRC_FILLTYPE_NOTHING = 1,
+  FAKE_SRC_FILLTYPE_ZERO,
+  FAKE_SRC_FILLTYPE_RANDOM,
+  FAKE_SRC_FILLTYPE_PATTERN,
+  FAKE_SRC_FILLTYPE_PATTERN_CONT
+} GstFakeSrcFillType;
+</ENUM>
+<MACRO>
+<NAME>GST_TYPE_FAKE_SRC</NAME>
+#define GST_TYPE_FAKE_SRC \
+  (gst_fake_src_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_FAKE_SRC</NAME>
+#define GST_FAKE_SRC(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FAKE_SRC,GstFakeSrc))
+</MACRO>
+<MACRO>
+<NAME>GST_FAKE_SRC_CLASS</NAME>
+#define GST_FAKE_SRC_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FAKE_SRC,GstFakeSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FAKE_SRC</NAME>
+#define GST_IS_FAKE_SRC(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FAKE_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FAKE_SRC_CLASS</NAME>
+#define GST_IS_FAKE_SRC_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FAKE_SRC))
+</MACRO>
+<STRUCT>
+<NAME>GstFakeSrc</NAME>
+struct _GstFakeSrc {
+  GstBaseSrc     element;
+
+  /*< private >*/
+  gboolean	 has_loop;
+  gboolean	 has_getrange;
+
+  GstFakeSrcOutputType output;
+  GstFakeSrcDataType   data;
+  GstFakeSrcSizeType   sizetype;
+  GstFakeSrcFillType   filltype;
+
+  guint		sizemin;
+  guint		sizemax;
+  GstBuffer	*parent;
+  guint		parentsize;
+  guint		parentoffset;
+  guint8	 pattern_byte;
+  GList		*patternlist;
+  gint		 datarate;
+  gboolean	 sync;
+  GstClock	*clock;
+
+  gboolean	 silent;
+  gboolean	 signal_handoffs;
+  gboolean	 dump;
+  gboolean	 can_activate_pull;
+  GstFormat      format;
+
+  guint64        bytes_sent;
+
+  gchar		*last_message;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFakeSrcClass</NAME>
+struct _GstFakeSrcClass {
+  GstBaseSrcClass parent_class;
+
+  /*< public >*/
+  /* signals */
+  void (*handoff) (GstElement *element, GstBuffer *buf, GstPad *pad);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FAKE_SINK</NAME>
+#define GST_TYPE_FAKE_SINK \
+  (gst_fake_sink_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_FAKE_SINK</NAME>
+#define GST_FAKE_SINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FAKE_SINK,GstFakeSink))
+</MACRO>
+<MACRO>
+<NAME>GST_FAKE_SINK_CLASS</NAME>
+#define GST_FAKE_SINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FAKE_SINK,GstFakeSinkClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FAKE_SINK</NAME>
+#define GST_IS_FAKE_SINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FAKE_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FAKE_SINK_CLASS</NAME>
+#define GST_IS_FAKE_SINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FAKE_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_FAKE_SINK_CAST</NAME>
+#define GST_FAKE_SINK_CAST(obj) ((GstFakeSink *)obj)
+</MACRO>
+<ENUM>
+<NAME>GstFakeSinkStateError</NAME>
+typedef enum {
+  FAKE_SINK_STATE_ERROR_NONE = 0,
+  FAKE_SINK_STATE_ERROR_NULL_READY,
+  FAKE_SINK_STATE_ERROR_READY_PAUSED,
+  FAKE_SINK_STATE_ERROR_PAUSED_PLAYING,
+  FAKE_SINK_STATE_ERROR_PLAYING_PAUSED,
+  FAKE_SINK_STATE_ERROR_PAUSED_READY,
+  FAKE_SINK_STATE_ERROR_READY_NULL
+} GstFakeSinkStateError;
+</ENUM>
+<STRUCT>
+<NAME>GstFakeSink</NAME>
+struct _GstFakeSink {
+  GstBaseSink		element;
+
+  gboolean		silent;
+  gboolean		dump;
+  gboolean		signal_handoffs;
+  GstFakeSinkStateError state_error;
+  gchar			*last_message;
+  gint                  num_buffers;
+  gint                  num_buffers_left;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFakeSinkClass</NAME>
+struct _GstFakeSinkClass {
+  GstBaseSinkClass parent_class;
+
+  /* signals */
+  void (*handoff) (GstElement *element, GstBuffer *buf, GstPad *pad);
+  void (*preroll_handoff) (GstElement *element, GstBuffer *buf, GstPad *pad);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FD_SINK</NAME>
+#define GST_TYPE_FD_SINK \
+  (gst_fd_sink_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_FD_SINK</NAME>
+#define GST_FD_SINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FD_SINK,GstFdSink))
+</MACRO>
+<MACRO>
+<NAME>GST_FD_SINK_CLASS</NAME>
+#define GST_FD_SINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FD_SINK,GstFdSinkClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FD_SINK</NAME>
+#define GST_IS_FD_SINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FD_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FD_SINK_CLASS</NAME>
+#define GST_IS_FD_SINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FD_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_FD_SINK_CAST</NAME>
+#define GST_FD_SINK_CAST(obj) ((GstFdSink *)(obj))
+</MACRO>
+<STRUCT>
+<NAME>GstFdSink</NAME>
+struct _GstFdSink {
+  GstBaseSink parent;
+
+  gchar *uri;
+
+  GstPoll *fdset;
+
+  int fd;
+  guint64 bytes_written;
+  guint64 current_pos;
+
+  gboolean seekable;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFdSinkClass</NAME>
+struct _GstFdSinkClass {
+  GstBaseSinkClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FD_SRC</NAME>
+#define GST_TYPE_FD_SRC \
+  (gst_fd_src_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_FD_SRC</NAME>
+#define GST_FD_SRC(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FD_SRC,GstFdSrc))
+</MACRO>
+<MACRO>
+<NAME>GST_FD_SRC_CLASS</NAME>
+#define GST_FD_SRC_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FD_SRC,GstFdSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FD_SRC</NAME>
+#define GST_IS_FD_SRC(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FD_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FD_SRC_CLASS</NAME>
+#define GST_IS_FD_SRC_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FD_SRC))
+</MACRO>
+<STRUCT>
+<NAME>GstFdSrc</NAME>
+struct _GstFdSrc {
+  GstPushSrc element;
+
+  /*< private >*/
+  /* new_fd is copied to fd on READY->PAUSED */
+  gint new_fd;
+
+  /* fd and flag indicating whether fd is seekable */
+  gint fd;
+  gboolean seekable_fd;
+  guint64 size;
+
+  /* poll timeout */
+  guint64 timeout;
+
+  gchar *uri;
+
+  GstPoll *fdset;
+
+  gulong curoffset; /* current offset in file */
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFdSrcClass</NAME>
+struct _GstFdSrcClass {
+  GstPushSrcClass parent_class;
+
+  /* signals */
+  void (*timeout) (GstElement *element);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FILE_SRC</NAME>
+#define GST_TYPE_FILE_SRC \
+  (gst_file_src_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_FILE_SRC</NAME>
+#define GST_FILE_SRC(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FILE_SRC,GstFileSrc))
+</MACRO>
+<MACRO>
+<NAME>GST_FILE_SRC_CLASS</NAME>
+#define GST_FILE_SRC_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FILE_SRC,GstFileSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FILE_SRC</NAME>
+#define GST_IS_FILE_SRC(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FILE_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FILE_SRC_CLASS</NAME>
+#define GST_IS_FILE_SRC_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FILE_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_FILE_SRC_CAST</NAME>
+#define GST_FILE_SRC_CAST(obj) ((GstFileSrc*) obj)
+</MACRO>
+<STRUCT>
+<NAME>GstFileSrc</NAME>
+struct _GstFileSrc {
+  GstBaseSrc element;
+
+  /*< private >*/
+  gchar *filename;			/* filename */
+  gchar *uri;				/* caching the URI */
+  gint fd;				/* open file descriptor */
+  guint64 read_position;		/* position of fd */
+
+  gboolean seekable;                    /* whether the file is seekable */
+  gboolean is_regular;                  /* whether it's a (symlink to a)
+                                           regular file */
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFileSrcClass</NAME>
+struct _GstFileSrcClass {
+  GstBaseSrcClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FILE_SINK</NAME>
+#define GST_TYPE_FILE_SINK \
+  (gst_file_sink_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_FILE_SINK</NAME>
+#define GST_FILE_SINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FILE_SINK,GstFileSink))
+</MACRO>
+<MACRO>
+<NAME>GST_FILE_SINK_CLASS</NAME>
+#define GST_FILE_SINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FILE_SINK,GstFileSinkClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FILE_SINK</NAME>
+#define GST_IS_FILE_SINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FILE_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FILE_SINK_CLASS</NAME>
+#define GST_IS_FILE_SINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FILE_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_FILE_SINK_CAST</NAME>
+#define GST_FILE_SINK_CAST(obj) ((GstFileSink *)(obj))
+</MACRO>
+<ENUM>
+<NAME>GstFileSinkBufferMode</NAME>
+typedef enum {
+  GST_FILE_SINK_BUFFER_MODE_DEFAULT    = -1,
+  GST_FILE_SINK_BUFFER_MODE_FULL       = _IOFBF,
+  GST_FILE_SINK_BUFFER_MODE_LINE       = _IOLBF,
+  GST_FILE_SINK_BUFFER_MODE_UNBUFFERED = _IONBF
+} GstFileSinkBufferMode;
+</ENUM>
+<STRUCT>
+<NAME>GstFileSink</NAME>
+struct _GstFileSink {
+  GstBaseSink parent;
+
+  /*< private >*/
+  gchar *filename;
+  gchar *uri;
+  FILE *file;
+
+  gboolean seekable;
+  guint64 current_pos;
+
+  gint    buffer_mode;
+  guint   buffer_size;
+  gchar  *buffer;
+  
+  gboolean append;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFileSinkClass</NAME>
+struct _GstFileSinkClass {
+  GstBaseSinkClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_IDENTITY</NAME>
+#define GST_TYPE_IDENTITY \
+  (gst_identity_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_IDENTITY</NAME>
+#define GST_IDENTITY(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_IDENTITY,GstIdentity))
+</MACRO>
+<MACRO>
+<NAME>GST_IDENTITY_CLASS</NAME>
+#define GST_IDENTITY_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_IDENTITY,GstIdentityClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_IDENTITY</NAME>
+#define GST_IS_IDENTITY(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_IDENTITY))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_IDENTITY_CLASS</NAME>
+#define GST_IS_IDENTITY_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_IDENTITY))
+</MACRO>
+<STRUCT>
+<NAME>GstIdentity</NAME>
+struct _GstIdentity {
+  GstBaseTransform 	 element;
+
+  /*< private >*/
+  GstClockID     clock_id;
+  gint 	 	 error_after;
+  gfloat 	 drop_probability;
+  gint		 datarate;
+  guint 	 sleep_time;
+  gboolean 	 silent;
+  gboolean 	 dump;
+  gboolean 	 sync;
+  gboolean 	 check_imperfect_timestamp;
+  gboolean 	 check_imperfect_offset;
+  gboolean	 single_segment;
+  GstClockTime   prev_timestamp;
+  GstClockTime   prev_duration;
+  guint64        prev_offset;
+  guint64        prev_offset_end;
+  gchar 	*last_message;
+  guint64        offset;
+  gboolean       signal_handoffs;
+  GstClockTime   upstream_latency;
+  GCond          blocked_cond;
+  gboolean       blocked;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstIdentityClass</NAME>
+struct _GstIdentityClass {
+  GstBaseTransformClass parent_class;
+
+  /* signals */
+  void (*handoff) (GstElement *element, GstBuffer *buf);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_INPUT_SELECTOR</NAME>
+#define GST_TYPE_INPUT_SELECTOR \
+  (gst_input_selector_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR</NAME>
+#define GST_INPUT_SELECTOR(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_INPUT_SELECTOR, GstInputSelector))
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_CLASS</NAME>
+#define GST_INPUT_SELECTOR_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_INPUT_SELECTOR, GstInputSelectorClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_INPUT_SELECTOR</NAME>
+#define GST_IS_INPUT_SELECTOR(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_INPUT_SELECTOR))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_INPUT_SELECTOR_CLASS</NAME>
+#define GST_IS_INPUT_SELECTOR_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_INPUT_SELECTOR))
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_GET_LOCK</NAME>
+#define GST_INPUT_SELECTOR_GET_LOCK(sel) (&((GstInputSelector*)(sel))->lock)
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_GET_COND</NAME>
+#define GST_INPUT_SELECTOR_GET_COND(sel) (&((GstInputSelector*)(sel))->cond)
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_LOCK</NAME>
+#define GST_INPUT_SELECTOR_LOCK(sel) (g_mutex_lock (GST_INPUT_SELECTOR_GET_LOCK(sel)))
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_UNLOCK</NAME>
+#define GST_INPUT_SELECTOR_UNLOCK(sel) (g_mutex_unlock (GST_INPUT_SELECTOR_GET_LOCK(sel)))
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_WAIT</NAME>
+#define GST_INPUT_SELECTOR_WAIT(sel) (g_cond_wait (GST_INPUT_SELECTOR_GET_COND(sel), \
+			GST_INPUT_SELECTOR_GET_LOCK(sel)))
+</MACRO>
+<MACRO>
+<NAME>GST_INPUT_SELECTOR_BROADCAST</NAME>
+#define GST_INPUT_SELECTOR_BROADCAST(sel) (g_cond_broadcast (GST_INPUT_SELECTOR_GET_COND(sel)))
+</MACRO>
+<ENUM>
+<NAME>GstInputSelectorSyncMode</NAME>
+typedef enum {
+  GST_INPUT_SELECTOR_SYNC_MODE_ACTIVE_SEGMENT,
+  GST_INPUT_SELECTOR_SYNC_MODE_CLOCK
+} GstInputSelectorSyncMode;
+</ENUM>
+<STRUCT>
+<NAME>GstInputSelector</NAME>
+struct _GstInputSelector {
+  GstElement element;
+
+  GstPad *srcpad;
+
+  GstPad *active_sinkpad;
+  guint n_pads;           /* number of pads */
+  guint padcount;         /* sequence number for pads */
+  gboolean sync_streams;
+  GstInputSelectorSyncMode sync_mode;
+  gboolean cache_buffers;
+
+  gboolean have_group_id;
+
+  GMutex lock;
+  GCond cond;
+  gboolean eos;
+  gboolean eos_sent;
+  gboolean flushing;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstInputSelectorClass</NAME>
+struct _GstInputSelectorClass {
+  GstElementClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_MULTI_QUEUE</NAME>
+#define GST_TYPE_MULTI_QUEUE \
+  (gst_multi_queue_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_MULTI_QUEUE</NAME>
+#define GST_MULTI_QUEUE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_MULTI_QUEUE,GstMultiQueue))
+</MACRO>
+<MACRO>
+<NAME>GST_MULTI_QUEUE_CLASS</NAME>
+#define GST_MULTI_QUEUE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_MULTI_QUEUE,GstMultiQueueClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_MULTI_QUEUE</NAME>
+#define GST_IS_MULTI_QUEUE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_MULTI_QUEUE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_MULTI_QUEUE_CLASS</NAME>
+#define GST_IS_MULTI_QUEUE_CLASS(obj) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_MULTI_QUEUE))
+</MACRO>
+<STRUCT>
+<NAME>GstMultiQueue</NAME>
+struct _GstMultiQueue {
+  GstElement element;
+
+  gboolean sync_by_running_time;
+
+  /* number of queues */
+  guint	nbqueues;
+
+  /* The list of individual queues */
+  GList *queues;
+  guint32 queues_cookie;
+
+  GstDataQueueSize  max_size, extra_size;
+  gboolean use_buffering;
+  gint low_percent, high_percent;
+  gboolean buffering;
+  gint percent;
+
+  guint    counter;	/* incoming object counter, use atomic accesses */
+  guint32  highid;	/* contains highest id of last outputted object */
+  GstClockTime high_time; /* highest start running time */
+
+  GMutex   qlock;	/* Global queue lock (vs object lock or individual */
+			/* queues lock). Protects nbqueues, queues, global */
+			/* GstMultiQueueSize, counter and highid */
+
+  gint numwaiting;	/* number of not-linked pads waiting */
+
+  gboolean percent_changed;
+  GMutex buffering_post_lock; /* assures only one posted at a time */
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstMultiQueueClass</NAME>
+struct _GstMultiQueueClass {
+  GstElementClass parent_class;
+
+  /* signals emitted when ALL queues are either full or empty */
+  void (*underrun)	(GstMultiQueue *queue);
+  void (*overrun)	(GstMultiQueue *queue);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_OUTPUT_SELECTOR</NAME>
+#define GST_TYPE_OUTPUT_SELECTOR \
+  (gst_output_selector_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_OUTPUT_SELECTOR</NAME>
+#define GST_OUTPUT_SELECTOR(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_OUTPUT_SELECTOR, GstOutputSelector))
+</MACRO>
+<MACRO>
+<NAME>GST_OUTPUT_SELECTOR_CLASS</NAME>
+#define GST_OUTPUT_SELECTOR_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_OUTPUT_SELECTOR, GstOutputSelectorClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_OUTPUT_SELECTOR</NAME>
+#define GST_IS_OUTPUT_SELECTOR(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_OUTPUT_SELECTOR))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_OUTPUT_SELECTOR_CLASS</NAME>
+#define GST_IS_OUTPUT_SELECTOR_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_OUTPUT_SELECTOR))
+</MACRO>
+<STRUCT>
+<NAME>GstOutputSelector</NAME>
+struct _GstOutputSelector {
+  GstElement element;
+
+  GstPad *sinkpad;
+
+  GstPad *active_srcpad;
+  GstPad *pending_srcpad;
+  guint nb_srcpads;
+
+  gint pad_negotiation_mode;
+
+  GstSegment segment;
+
+  /* resend latest buffer after switch */
+  gboolean resend_latest;
+  GstBuffer *latest_buffer;
+
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstOutputSelectorClass</NAME>
+struct _GstOutputSelectorClass {
+  GstElementClass parent_class;
+};
+</STRUCT>
+<ENUM>
+<NAME>GstOutputSelectorPadNegotiationMode</NAME>
+typedef enum
+{
+  GST_OUTPUT_SELECTOR_PAD_NEGOTIATION_MODE_NONE,
+  GST_OUTPUT_SELECTOR_PAD_NEGOTIATION_MODE_ALL,
+  GST_OUTPUT_SELECTOR_PAD_NEGOTIATION_MODE_ACTIVE
+} GstOutputSelectorPadNegotiationMode;
+</ENUM>
+<MACRO>
+<NAME>GST_TYPE_QUEUE</NAME>
+#define GST_TYPE_QUEUE \
+  (gst_queue_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_QUEUE</NAME>
+#define GST_QUEUE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_QUEUE,GstQueue))
+</MACRO>
+<MACRO>
+<NAME>GST_QUEUE_CLASS</NAME>
+#define GST_QUEUE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_QUEUE,GstQueueClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_QUEUE</NAME>
+#define GST_IS_QUEUE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_QUEUE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_QUEUE_CLASS</NAME>
+#define GST_IS_QUEUE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_QUEUE))
+</MACRO>
+<MACRO>
+<NAME>GST_QUEUE_CAST</NAME>
+#define GST_QUEUE_CAST(obj) \
+  ((GstQueue *)(obj))
+</MACRO>
+<ENUM>
+<NAME>GstQueueLeaky</NAME>
+enum GstQueueLeaky {
+  GST_QUEUE_NO_LEAK             = 0,
+  GST_QUEUE_LEAK_UPSTREAM       = 1,
+  GST_QUEUE_LEAK_DOWNSTREAM     = 2
+};
+</ENUM>
+<STRUCT>
+<NAME>GstQueueSize</NAME>
+struct _GstQueueSize {
+    guint   buffers;
+    guint   bytes;
+    guint64 time;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_QUEUE_CLEAR_LEVEL</NAME>
+#define GST_QUEUE_CLEAR_LEVEL(l) G_STMT_START {         \
+  l.buffers = 0;                                        \
+  l.bytes = 0;                                          \
+  l.time = 0;                                           \
+} G_STMT_END
+</MACRO>
+<STRUCT>
+<NAME>GstQueue</NAME>
+struct _GstQueue {
+  GstElement element;
+
+  /*< private >*/
+  GstPad *sinkpad;
+  GstPad *srcpad;
+
+  /* segments to keep track of timestamps */
+  GstSegment sink_segment;
+  GstSegment src_segment;
+
+  /* position of src/sink */
+  GstClockTime sinktime, srctime;
+  /* TRUE if either position needs to be recalculated */
+  gboolean sink_tainted, src_tainted;
+
+  /* flowreturn when srcpad is paused */
+  GstFlowReturn srcresult;
+  gboolean      unexpected;
+  gboolean      eos;
+
+  /* the queue of data we're keeping our grubby hands on */
+  GstQueueArray *queue;
+
+  GstQueueSize
+    cur_level,          /* currently in the queue */
+    max_size,           /* max. amount of data allowed in the queue */
+    min_threshold,      /* min. amount of data required to wake reader */
+    orig_min_threshold; /* Original min.threshold, for reset in EOS */
+
+  /* whether we leak data, and at which end */
+  gint leaky;
+
+  GMutex qlock;        /* lock for queue (vs object lock) */
+  gboolean waiting_add;
+  GCond item_add;      /* signals buffers now available for reading */
+  gboolean waiting_del;
+  GCond item_del;      /* signals space now available for writing */
+
+  gboolean head_needs_discont, tail_needs_discont;
+  gboolean push_newsegment;
+
+  gboolean silent;      /* don't emit signals */
+
+  /* whether the first new segment has been applied to src */
+  gboolean newseg_applied_to_src;
+
+  GCond query_handled;
+  gboolean last_query;
+
+  gboolean flush_on_eos; /* flush on EOS */
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstQueueClass</NAME>
+struct _GstQueueClass {
+  GstElementClass parent_class;
+
+  /* signals - 'running' is called from both sides
+   * which might make it sort of non-useful... */
+  void (*underrun)      (GstQueue *queue);
+  void (*running)       (GstQueue *queue);
+  void (*overrun)       (GstQueue *queue);
+
+  void (*pushing)       (GstQueue *queue);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_QUEUE2</NAME>
+#define GST_TYPE_QUEUE2 \
+  (gst_queue2_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_QUEUE2</NAME>
+#define GST_QUEUE2(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_QUEUE2,GstQueue2))
+</MACRO>
+<MACRO>
+<NAME>GST_QUEUE2_CLASS</NAME>
+#define GST_QUEUE2_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_QUEUE2,GstQueue2Class))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_QUEUE2</NAME>
+#define GST_IS_QUEUE2(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_QUEUE2))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_QUEUE2_CLASS</NAME>
+#define GST_IS_QUEUE2_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_QUEUE2))
+</MACRO>
+<MACRO>
+<NAME>GST_QUEUE2_CAST</NAME>
+#define GST_QUEUE2_CAST(obj) \
+  ((GstQueue2 *)(obj))
+</MACRO>
+<STRUCT>
+<NAME>GstQueue2Size</NAME>
+struct _GstQueue2Size
+{
+  guint buffers;
+  guint bytes;
+  guint64 time;
+  guint64 rate_time;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstQueue2Range</NAME>
+struct _GstQueue2Range
+{
+  GstQueue2Range *next;
+
+  guint64 offset;          /* offset of range start in source */
+  guint64 rb_offset;       /* offset of range start in ring buffer */
+  guint64 writing_pos;     /* writing position in source */
+  guint64 rb_writing_pos;  /* writing position in ring buffer */
+  guint64 reading_pos;     /* reading position in source */
+  guint64 max_reading_pos; /* latest requested offset in source */
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstQueue2</NAME>
+struct _GstQueue2
+{
+  GstElement element;
+
+  /*< private > */
+  GstPad *sinkpad;
+  GstPad *srcpad;
+
+  /* upstream size in bytes (if downstream is operating in pull mode) */
+  guint64 upstream_size;
+
+  /* segments to keep track of timestamps */
+  GstSegment sink_segment;
+  GstSegment src_segment;
+
+  /* Position of src/sink */
+  GstClockTime sinktime, srctime;
+  /* TRUE if either position needs to be recalculated */
+  gboolean sink_tainted, src_tainted;
+
+  /* flowreturn when srcpad is paused */
+  GstFlowReturn srcresult;
+  GstFlowReturn sinkresult;
+  gboolean is_eos;
+  gboolean unexpected;
+
+  /* the queue of data we're keeping our hands on */
+  GQueue queue;
+
+  GCond query_handled;
+  gboolean last_query; /* result of last serialized query */
+
+  GstQueue2Size cur_level;       /* currently in the queue */
+  GstQueue2Size max_level;       /* max. amount of data allowed in the queue */
+  gboolean use_buffering;
+  gboolean use_rate_estimate;
+  GstClockTime buffering_interval;
+  gint low_percent;             /* low/high watermarks for buffering */
+  gint high_percent;
+
+  /* current buffering state */
+  gboolean is_buffering;
+  gint buffering_percent;
+
+  /* for measuring input/output rates */
+  GTimer *in_timer;
+  gboolean in_timer_started;
+  gdouble last_in_elapsed;
+  guint64 bytes_in;
+  gdouble byte_in_rate;
+  gdouble byte_in_period;
+
+  GTimer *out_timer;
+  gboolean out_timer_started;
+  gdouble last_out_elapsed;
+  guint64 bytes_out;
+  gdouble byte_out_rate;
+
+  GMutex qlock;                /* lock for queue (vs object lock) */
+  gboolean waiting_add;
+  GCond item_add;              /* signals buffers now available for reading */
+  gboolean waiting_del;
+  GCond item_del;              /* signals space now available for writing */
+
+  /* temp location stuff */
+  gchar *temp_template;
+  gboolean temp_location_set;
+  gchar *temp_location;
+  gboolean temp_remove;
+  FILE *temp_file;
+  /* list of downloaded areas and the current area */
+  GstQueue2Range *ranges;
+  GstQueue2Range *current;
+  /* we need this to send the first new segment event of the stream
+   * because we can't save it on the file */
+  gboolean segment_event_received;
+  GstEvent *starting_segment;
+  gboolean seeking;
+
+  GstEvent *stream_start_event;
+
+  guint64 ring_buffer_max_size;
+  guint8 * ring_buffer;
+
+  volatile gint downstream_may_block;
+
+  GstBufferingMode mode;
+  gint64 buffering_left;
+  gint avg_in;
+  gint avg_out;
+  gboolean percent_changed;
+  GMutex buffering_post_lock; /* assures only one posted at a time */
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstQueue2Class</NAME>
+struct _GstQueue2Class
+{
+  GstElementClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_TYPE_FIND_ELEMENT</NAME>
+#define GST_TYPE_TYPE_FIND_ELEMENT		(gst_type_find_element_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_TYPE_FIND_ELEMENT</NAME>
+#define GST_TYPE_FIND_ELEMENT(obj) 		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_TYPE_FIND_ELEMENT, GstTypeFindElement))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TYPE_FIND_ELEMENT</NAME>
+#define GST_IS_TYPE_FIND_ELEMENT(obj) 		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_TYPE_FIND_ELEMENT))
+</MACRO>
+<MACRO>
+<NAME>GST_TYPE_FIND_ELEMENT_CLASS</NAME>
+#define GST_TYPE_FIND_ELEMENT_CLASS(klass) 	(G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_TYPE_FIND_ELEMENT, GstTypeFindElementClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TYPE_FIND_ELEMENT_CLASS</NAME>
+#define GST_IS_TYPE_FIND_ELEMENT_CLASS(klass) 	(G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_TYPE_FIND_ELEMENT))
+</MACRO>
+<STRUCT>
+<NAME>GstTypeFindElement</NAME>
+struct _GstTypeFindElement {
+  GstElement		element;
+
+  GstPad *		sink;
+  GstPad *		src;
+
+  guint			min_probability;
+  GstCaps *		caps;
+
+  guint			mode;
+  GstAdapter *		adapter;
+
+  GList *               cached_events;
+  GstCaps *             force_caps;
+
+  guint64		initial_offset;
+  
+  /* Only used when driving the pipeline */
+  gboolean need_segment;
+  gboolean need_stream_start;
+  GstSegment segment;
+  guint64 offset;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstTypeFindElementClass</NAME>
+struct _GstTypeFindElementClass {
+  GstElementClass 	parent_class;
+
+  /* signals */
+  void 			(*have_type) 	(GstTypeFindElement *element,
+					 guint		     probability,
+					 GstCaps            *caps);
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_TEE</NAME>
+#define GST_TYPE_TEE \
+  (gst_tee_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_TEE</NAME>
+#define GST_TEE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_TEE,GstTee))
+</MACRO>
+<MACRO>
+<NAME>GST_TEE_CLASS</NAME>
+#define GST_TEE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_TEE,GstTeeClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TEE</NAME>
+#define GST_IS_TEE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_TEE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TEE_CLASS</NAME>
+#define GST_IS_TEE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_TEE))
+</MACRO>
+<MACRO>
+<NAME>GST_TEE_CAST</NAME>
+#define GST_TEE_CAST(obj) ((GstTee*) obj)
+</MACRO>
+<ENUM>
+<NAME>GstTeePullMode</NAME>
+typedef enum {
+  GST_TEE_PULL_MODE_NEVER,
+  GST_TEE_PULL_MODE_SINGLE,
+} GstTeePullMode;
+</ENUM>
+<STRUCT>
+<NAME>GstTee</NAME>
+struct _GstTee {
+  GstElement      element;
+
+  /*< private >*/
+  GstPad         *sinkpad;
+  GstPad         *allocpad;
+
+  GHashTable     *pad_indexes;
+  guint           next_pad_index;
+
+  gboolean        has_chain;
+  gboolean        silent;
+  gchar          *last_message;
+
+  GstPadMode      sink_mode;
+  GstTeePullMode  pull_mode;
+  GstPad         *pull_pad;
+
+  gboolean        allow_not_linked;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstTeeClass</NAME>
+struct _GstTeeClass {
+  GstElementClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_VALVE</NAME>
+#define GST_TYPE_VALVE \
+  (gst_valve_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_VALVE</NAME>
+#define GST_VALVE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj), \
+  GST_TYPE_VALVE,GstValve))
+</MACRO>
+<MACRO>
+<NAME>GST_VALVE_CLASS</NAME>
+#define GST_VALVE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass), \
+  GST_TYPE_VALVE,GstValveClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_VALVE</NAME>
+#define GST_IS_VALVE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_VALVE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_VALVE_CLASS</NAME>
+#define GST_IS_VALVE_CLASS(obj) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_VALVE))
+</MACRO>
+<STRUCT>
+<NAME>GstValve</NAME>
+struct _GstValve
+{
+  /*< private >*/
+  GstElement parent;
+
+  /* atomic boolean */
+  volatile gint drop;
+
+  /* Protected by the stream lock */
+  gboolean discont;
+  gboolean need_repush_sticky;
+
+  GstPad *srcpad;
+  GstPad *sinkpad;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstValveClass</NAME>
+struct _GstValveClass
+{
+  GstElementClass parent_class;
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FUNNEL</NAME>
+#define GST_TYPE_FUNNEL \
+  (gst_funnel_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_FUNNEL</NAME>
+#define GST_FUNNEL(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_FUNNEL,GstFunnel))
+</MACRO>
+<MACRO>
+<NAME>GST_FUNNEL_CLASS</NAME>
+#define GST_FUNNEL_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_FUNNEL,GstFunnelClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FUNNEL</NAME>
+#define GST_IS_FUNNEL(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_FUNNEL))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_FUNNEL_CLASS</NAME>
+#define GST_IS_FUNNEL_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FUNNEL))
+</MACRO>
+<STRUCT>
+<NAME>GstFunnel</NAME>
+struct _GstFunnel {
+  GstElement      element;
+
+  /*< private >*/
+  GstPad         *srcpad;
+
+  GstPad *last_sinkpad;
+  gboolean forward_sticky_events;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstFunnelClass</NAME>
+struct _GstFunnelClass {
+  GstElementClass parent_class;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_buffer_get_flags_string</NAME>
+<RETURNS>char  *    </RETURNS>
+GstBuffer *buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_writev_buffers</NAME>
+<RETURNS>GstFlowReturn   </RETURNS>
+GstObject * sink, gint fd, GstPoll * fdset, GstBuffer ** buffers, guint num_buffers, guint8 * mem_nums, guint total_mem_num, guint64 * total_written, guint64 * cur_pos
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_STREAMID_DEMUX</NAME>
+#define GST_TYPE_STREAMID_DEMUX \
+  (gst_streamid_demux_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_STREAMID_DEMUX</NAME>
+#define GST_STREAMID_DEMUX(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_STREAMID_DEMUX, GstStreamidDemux))
+</MACRO>
+<MACRO>
+<NAME>GST_STREAMID_DEMUX_CLASS</NAME>
+#define GST_STREAMID_DEMUX_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_STREAMID_DEMUX, GstStreamidDemuxClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_STREAMID_DEMUX</NAME>
+#define GST_IS_STREAMID_DEMUX(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_STREAMID_DEMUX))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_STREAMID_DEMUX_CLASS</NAME>
+#define GST_IS_STREAMID_DEMUX_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_STREAMID_DEMUX))
+</MACRO>
+<STRUCT>
+<NAME>GstStreamidDemux</NAME>
+struct _GstStreamidDemux
+{
+  GstElement element;
+
+  GstPad *sinkpad;
+
+  guint nb_srcpads;
+  GstPad *active_srcpad;
+
+  /* This table contains srcpad and stream-id */
+  GHashTable *stream_id_pairs;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstStreamidDemuxClass</NAME>
+struct _GstStreamidDemuxClass
+{
+  GstElementClass parent_class;
+};
+</STRUCT>
+<ENUM>
+<NAME>GstSparseFileIOErrorEnum</NAME>
+typedef enum {
+  GST_SPARSE_FILE_IO_ERROR_FAILED,
+  GST_SPARSE_FILE_IO_ERROR_NOT_FOUND,
+  GST_SPARSE_FILE_IO_ERROR_EXISTS,
+  GST_SPARSE_FILE_IO_ERROR_IS_DIRECTORY,
+  GST_SPARSE_FILE_IO_ERROR_NOT_DIRECTORY,
+  GST_SPARSE_FILE_IO_ERROR_NOT_EMPTY,
+  GST_SPARSE_FILE_IO_ERROR_NOT_REGULAR_FILE,
+  GST_SPARSE_FILE_IO_ERROR_NOT_SYMBOLIC_LINK,
+  GST_SPARSE_FILE_IO_ERROR_NOT_MOUNTABLE_FILE,
+  GST_SPARSE_FILE_IO_ERROR_FILENAME_TOO_LONG,
+  GST_SPARSE_FILE_IO_ERROR_INVALID_FILENAME,
+  GST_SPARSE_FILE_IO_ERROR_TOO_MANY_LINKS,
+  GST_SPARSE_FILE_IO_ERROR_NO_SPACE,
+  GST_SPARSE_FILE_IO_ERROR_INVALID_ARGUMENT,
+  GST_SPARSE_FILE_IO_ERROR_PERMISSION_DENIED,
+  GST_SPARSE_FILE_IO_ERROR_NOT_SUPPORTED,
+  GST_SPARSE_FILE_IO_ERROR_NOT_MOUNTED,
+  GST_SPARSE_FILE_IO_ERROR_ALREADY_MOUNTED,
+  GST_SPARSE_FILE_IO_ERROR_CLOSED,
+  GST_SPARSE_FILE_IO_ERROR_CANCELLED,
+  GST_SPARSE_FILE_IO_ERROR_PENDING,
+  GST_SPARSE_FILE_IO_ERROR_READ_ONLY,
+  GST_SPARSE_FILE_IO_ERROR_CANT_CREATE_BACKUP,
+  GST_SPARSE_FILE_IO_ERROR_WRONG_ETAG,
+  GST_SPARSE_FILE_IO_ERROR_TIMED_OUT,
+  GST_SPARSE_FILE_IO_ERROR_WOULD_RECURSE,
+  GST_SPARSE_FILE_IO_ERROR_BUSY,
+  GST_SPARSE_FILE_IO_ERROR_WOULD_BLOCK,
+  GST_SPARSE_FILE_IO_ERROR_HOST_NOT_FOUND,
+  GST_SPARSE_FILE_IO_ERROR_WOULD_MERGE,
+  GST_SPARSE_FILE_IO_ERROR_FAILED_HANDLED,
+  GST_SPARSE_FILE_IO_ERROR_TOO_MANY_OPEN_FILES,
+  GST_SPARSE_FILE_IO_ERROR_NOT_INITIALIZED,
+  GST_SPARSE_FILE_IO_ERROR_ADDRESS_IN_USE,
+  GST_SPARSE_FILE_IO_ERROR_PARTIAL_INPUT,
+  GST_SPARSE_FILE_IO_ERROR_INVALID_DATA,
+  GST_SPARSE_FILE_IO_ERROR_DBUS_ERROR,
+  GST_SPARSE_FILE_IO_ERROR_HOST_UNREACHABLE,
+  GST_SPARSE_FILE_IO_ERROR_NETWORK_UNREACHABLE,
+  GST_SPARSE_FILE_IO_ERROR_CONNECTION_REFUSED,
+  GST_SPARSE_FILE_IO_ERROR_PROXY_FAILED,
+  GST_SPARSE_FILE_IO_ERROR_PROXY_AUTH_FAILED,
+  GST_SPARSE_FILE_IO_ERROR_PROXY_NEED_AUTH,
+  GST_SPARSE_FILE_IO_ERROR_PROXY_NOT_ALLOWED,
+  GST_SPARSE_FILE_IO_ERROR_BROKEN_PIPE
+} GstSparseFileIOErrorEnum;
+</ENUM>
+<FUNCTION>
+<NAME>gst_sparse_file_new</NAME>
+<RETURNS>GstSparseFile  * </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_free</NAME>
+<RETURNS>void             </RETURNS>
+GstSparseFile *file
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_set_fd</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstSparseFile *file, gint fd
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_clear</NAME>
+<RETURNS>void             </RETURNS>
+GstSparseFile *file
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_write</NAME>
+<RETURNS>gsize            </RETURNS>
+GstSparseFile *file, gsize offset, gconstpointer data, gsize count, gsize *available, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_read</NAME>
+<RETURNS>gsize            </RETURNS>
+GstSparseFile *file, gsize offset, gpointer data, gsize count, gsize *remaining, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_n_ranges</NAME>
+<RETURNS>guint            </RETURNS>
+GstSparseFile *file
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_get_range_before</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstSparseFile *file, gsize offset, gsize *start, gsize *stop
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_sparse_file_get_range_after</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstSparseFile *file, gsize offset, gsize *start, gsize *stop
+</FUNCTION>
+<STRUCT>
+<NAME>GstSparseFile</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_CONCAT</NAME>
+#define GST_TYPE_CONCAT (gst_concat_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_CONCAT</NAME>
+#define GST_CONCAT(obj) (G_TYPE_CHECK_INSTANCE_CAST((obj), GST_TYPE_CONCAT, GstConcat))
+</MACRO>
+<MACRO>
+<NAME>GST_CONCAT_CAST</NAME>
+#define GST_CONCAT_CAST(obj) ((GstConcat*)obj)
+</MACRO>
+<MACRO>
+<NAME>GST_CONCAT_CLASS</NAME>
+#define GST_CONCAT_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass), GST_TYPE_CONCAT,GstConcatClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_CONCAT</NAME>
+#define GST_IS_CONCAT(obj) (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_CONCAT))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_CONCAT_CLASS</NAME>
+#define GST_IS_CONCAT_CLASS(obj) (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_CONCAT))
+</MACRO>
+<STRUCT>
+<NAME>GstConcat</NAME>
+struct _GstConcat
+{
+  /*< private >*/
+  GstElement parent;
+
+  GMutex lock;
+  GCond cond;
+  GList *sinkpads; /* Last is earliest */
+  GstPad *current_sinkpad;
+  GstPad *srcpad;
+  guint pad_count;
+
+  /* Format we're operating in */
+  GstFormat format;
+  /* In format, running time or accumulated byte offset */
+  guint64 current_start_offset;
+  /* Between current pad's segment start and stop */
+  guint64 last_stop;
+
+  gboolean adjust_base;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstConcatClass</NAME>
+struct _GstConcatClass
+{
+  GstElementClass parent_class;
+};
+</STRUCT>

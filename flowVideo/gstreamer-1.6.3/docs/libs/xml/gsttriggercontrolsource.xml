@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTriggerControlSource">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTriggerControlSource.top_of_page">GstTriggerControlSource</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTriggerControlSource</refname>
+<refpurpose>trigger control source</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTriggerControlSource.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstControlSource"><returnvalue>GstControlSource</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-trigger-control-source-new">gst_trigger_control_source_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTriggerControlSource.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstTriggerControlSource--tolerance">tolerance</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTriggerControlSource.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTriggerControlSource-struct">GstTriggerControlSource</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-TRIGGER-WAVEFORM:CAPS">GST_TYPE_TRIGGER_WAVEFORM</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTriggerControlSource.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link>
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTriggerControlSource
+</screen>
+</refsect1>
+
+<refsect1 id="GstTriggerControlSource.includes"><title>Includes</title><synopsis>#include &lt;libs/controller/gsttriggercontrolsource.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTriggerControlSource.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstTriggerControlSource"><type>GstTriggerControlSource</type></link> is a <link linkend="GstControlSource"><type>GstControlSource</type></link>, that returns values from user-given
+control points. It allows for a tolerance on the time-stamps.</para>
+<para>To use <link linkend="GstTriggerControlSource"><type>GstTriggerControlSource</type></link> get a new instance by calling
+<link linkend="gst-trigger-control-source-new"><function>gst_trigger_control_source_new()</function></link>, bind it to a <link linkend="GParamSpec"><type>GParamSpec</type></link> and set some
+control points by calling <link linkend="gst-timed-value-control-source-set"><function>gst_timed_value_control_source_set()</function></link>.</para>
+<para>All functions are MT-safe.</para>
+
+</refsect1>
+<refsect1 id="GstTriggerControlSource.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-trigger-control-source-new" role="function">
+<title>gst_trigger_control_source_new&#160;()</title>
+<indexterm zone="gst-trigger-control-source-new"><primary>gst_trigger_control_source_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstControlSource"><returnvalue>GstControlSource</returnvalue></link>&#160;*
+gst_trigger_control_source_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>This returns a new, unbound <link linkend="GstTriggerControlSource"><type>GstTriggerControlSource</type></link>.</para>
+<refsect3 id="gst-trigger-control-source-new.returns" role="returns">
+<title>Returns</title>
+<para> a new, unbound <link linkend="GstTriggerControlSource"><type>GstTriggerControlSource</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstTriggerControlSource.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTriggerControlSource-struct" role="struct">
+<title>struct GstTriggerControlSource</title>
+<indexterm zone="GstTriggerControlSource-struct"><primary>GstTriggerControlSource</primary></indexterm>
+<programlisting language="C">struct GstTriggerControlSource;</programlisting>
+<para>The instance structure of <link linkend="GstControlSource"><type>GstControlSource</type></link>.</para>
+</refsect2>
+<refsect2 id="GST-TYPE-TRIGGER-WAVEFORM:CAPS" role="macro">
+<title>GST_TYPE_TRIGGER_WAVEFORM</title>
+<indexterm zone="GST-TYPE-TRIGGER-WAVEFORM:CAPS"><primary>GST_TYPE_TRIGGER_WAVEFORM</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_TRIGGER_WAVEFORM (gst_trigger_waveform_get_type ())
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstTriggerControlSource.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstTriggerControlSource--tolerance" role="property"><title>The <literal>“tolerance”</literal> property</title>
+<indexterm zone="GstTriggerControlSource--tolerance"><primary>GstTriggerControlSource:tolerance</primary></indexterm>
+<programlisting>  “tolerance”                <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Amount of ns a control time can be off to still trigger.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

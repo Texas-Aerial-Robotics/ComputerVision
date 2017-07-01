@@ -1,0 +1,388 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-Gst">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-Gst.top_of_page">Gst</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Gst</refname>
+<refpurpose>Media library supporting arbitrary formats and filter
+                    graphs.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-Gst.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-init">gst_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-init-check">gst_init_check</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GOptionGroup"><returnvalue>GOptionGroup</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-init-get-option-group">gst_init_get_option_group</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-is-initialized">gst_is_initialized</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-deinit">gst_deinit</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-version">gst_version</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-version-string">gst_version_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segtrap-is-enabled">gst_segtrap_is_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segtrap-set-enabled">gst_segtrap_set_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-fork-is-enabled">gst_registry_fork_is_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-fork-set-enabled">gst_registry_fork_set_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-update-registry">gst_update_registry</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-Gst.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-Gst.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GStreamer is a framework for constructing graphs of various filters
+(termed elements here) that will handle streaming media.  Any discrete
+(packetizable) media type is supported, with provisions for automatically
+determining source type.  Formatting/framing information is provided with
+a powerful negotiation framework.  Plugins are heavily used to provide for
+all elements, allowing one to construct plugins outside of the GST
+library, even released binary-only if license require (please don't).
+GStreamer covers a wide range of use cases including: playback, recording,
+editing, serving streams, voice over ip and video calls.</para>
+<para>The <application>GStreamer</application> library should be initialized with
+<link linkend="gst-init"><function>gst_init()</function></link> before it can be used. You should pass pointers to the main argc
+and argv variables so that GStreamer can process its own command line
+options, as shown in the following example.</para>
+<example>
+<title>Initializing the gstreamer library</title>
+<programlisting language="c">
+int
+main (int argc, char *argv[])
+{
+  // initialize the GStreamer library
+  gst_init (&amp;argc, &amp;argv);
+  ...
+}
+</programlisting>
+</example>
+<para>It's allowed to pass two <link linkend="NULL:CAPS"><literal>NULL</literal></link> pointers to <link linkend="gst-init"><function>gst_init()</function></link> in case you don't want
+to pass the command line args to GStreamer.</para>
+<para>You can also use GOption to initialize your own parameters as shown in
+the next code fragment:</para>
+<example>
+<title>Initializing own parameters when initializing gstreamer</title>
+<programlisting>
+static gboolean stats = FALSE;
+...
+int
+main (int argc, char *argv[])
+{
+ GOptionEntry options[] = {
+  {"tags", 't', 0, G_OPTION_ARG_NONE, &amp;tags,
+      N_("Output tags (also known as metadata)"), NULL},
+  {NULL}
+ };
+ ctx = g_option_context_new ("[ADDITIONAL ARGUMENTS]");
+ g_option_context_add_main_entries (ctx, options, GETTEXT_PACKAGE);
+ g_option_context_add_group (ctx, gst_init_get_option_group ());
+ if (!g_option_context_parse (ctx, &amp;argc, &amp;argv, &amp;err)) {
+   g_print ("Error initializing: &percnt;s\n", GST_STR_NULL (err->message));
+   exit (1);
+ }
+ g_option_context_free (ctx);
+...
+}
+</programlisting>
+</example>
+<para>Use <link linkend="gst-version"><function>gst_version()</function></link> to query the library version at runtime or use the
+GST_VERSION_* macros to find the version at compile time. Optionally
+<link linkend="gst-version-string"><function>gst_version_string()</function></link> returns a printable string.</para>
+<para>The <link linkend="gst-deinit"><function>gst_deinit()</function></link> call is used to clean up all internal resources used
+by <application>GStreamer</application>. It is mostly used in unit tests 
+to check for leaks.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-Gst.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-init" role="function">
+<title>gst_init&#160;()</title>
+<indexterm zone="gst-init"><primary>gst_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_init (<parameter><link linkend="int"><type>int</type></link> *argc</parameter>,
+          <parameter><link linkend="char"><type>char</type></link> **argv[]</parameter>);</programlisting>
+<para>Initializes the GStreamer library, setting up internal path lists,
+registering built-in elements, and loading standard plugins.</para>
+<para>Unless the plugin registry is disabled at compile time, the registry will be
+loaded. By default this will also check if the registry cache needs to be
+updated and rescan all plugins if needed. See <link linkend="gst-update-registry"><function>gst_update_registry()</function></link> for
+details and section</para>
+<link linkend="gst-running">Running GStreamer Applications</link>
+<para>for how to disable automatic registry updates.</para>
+<note><para>
+This function will terminate your program if it was unable to initialize
+GStreamer for some reason.  If you want your program to fall back,
+use <link linkend="gst-init-check"><function>gst_init_check()</function></link> instead.
+</para></note>
+<para>WARNING: This function does not work in the same way as corresponding
+functions in other glib-style libraries, such as <link linkend="gtk-init"><function>gtk_init()</function></link>. In
+particular, unknown command line options cause this function to
+abort program execution.</para>
+<refsect3 id="gst-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>argc</para></entry>
+<entry role="parameter_description"><para> pointer to application's argc. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>argv</para></entry>
+<entry role="parameter_description"><para> pointer to application's argv. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>array</acronym> length=argc][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-init-check" role="function">
+<title>gst_init_check&#160;()</title>
+<indexterm zone="gst-init-check"><primary>gst_init_check</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_init_check (<parameter><link linkend="int"><type>int</type></link> *argc</parameter>,
+                <parameter><link linkend="char"><type>char</type></link> **argv[]</parameter>,
+                <parameter><link linkend="GError"><type>GError</type></link> **err</parameter>);</programlisting>
+<para>Initializes the GStreamer library, setting up internal path lists,
+registering built-in elements, and loading standard plugins.</para>
+<para>This function will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if GStreamer could not be initialized
+for some reason.  If you want your program to fail fatally,
+use <link linkend="gst-init"><function>gst_init()</function></link> instead.</para>
+<refsect3 id="gst-init-check.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>argc</para></entry>
+<entry role="parameter_description"><para> pointer to application's argc. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>argv</para></entry>
+<entry role="parameter_description"><para> pointer to application's argv. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>array</acronym> length=argc][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>err</para></entry>
+<entry role="parameter_description"><para>pointer to a <link linkend="GError"><type>GError</type></link> to which a message will be posted on error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-init-check.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if GStreamer could be initialized.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-init-get-option-group" role="function">
+<title>gst_init_get_option_group&#160;()</title>
+<indexterm zone="gst-init-get-option-group"><primary>gst_init_get_option_group</primary></indexterm>
+<programlisting language="C"><link linkend="GOptionGroup"><returnvalue>GOptionGroup</returnvalue></link>&#160;*
+gst_init_get_option_group (<parameter><type>void</type></parameter>);</programlisting>
+<para>Returns a <link linkend="GOptionGroup"><type>GOptionGroup</type></link> with GStreamer's argument specifications. The
+group is set up to use standard GOption callbacks, so when using this
+group in combination with GOption parsing methods, all argument parsing
+and initialization is automated.</para>
+<para>This function is useful if you want to integrate GStreamer with other
+libraries that use GOption (see <link linkend="g-option-context-add-group"><function>g_option_context_add_group()</function></link> ).</para>
+<para>If you use this function, you should make sure you initialise the GLib
+threading system as one of the very first things in your program
+(see the example at the beginning of this section).</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-init-get-option-group.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to GStreamer's option group. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-is-initialized" role="function">
+<title>gst_is_initialized&#160;()</title>
+<indexterm zone="gst-is-initialized"><primary>gst_is_initialized</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_is_initialized (<parameter><type>void</type></parameter>);</programlisting>
+<para>Use this function to check if GStreamer has been initialized with <link linkend="gst-init"><function>gst_init()</function></link>
+or <link linkend="gst-init-check"><function>gst_init_check()</function></link>.</para>
+<refsect3 id="gst-is-initialized.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if initialization has been done, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-deinit" role="function">
+<title>gst_deinit&#160;()</title>
+<indexterm zone="gst-deinit"><primary>gst_deinit</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_deinit (<parameter><type>void</type></parameter>);</programlisting>
+<para>Clean up any resources created by GStreamer in <link linkend="gst-init"><function>gst_init()</function></link>.</para>
+<para>It is normally not needed to call this function in a normal application
+as the resources will automatically be freed when the program terminates.
+This function is therefore mostly used by testsuites and other memory
+profiling tools.</para>
+<para>After this call GStreamer (including this method) should not be used anymore.</para>
+</refsect2>
+<refsect2 id="gst-version" role="function">
+<title>gst_version&#160;()</title>
+<indexterm zone="gst-version"><primary>gst_version</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_version (<parameter><link linkend="guint"><type>guint</type></link> *major</parameter>,
+             <parameter><link linkend="guint"><type>guint</type></link> *minor</parameter>,
+             <parameter><link linkend="guint"><type>guint</type></link> *micro</parameter>,
+             <parameter><link linkend="guint"><type>guint</type></link> *nano</parameter>);</programlisting>
+<para>Gets the version number of the GStreamer library.</para>
+<refsect3 id="gst-version.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>major</para></entry>
+<entry role="parameter_description"><para> pointer to a guint to store the major version number. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>minor</para></entry>
+<entry role="parameter_description"><para> pointer to a guint to store the minor version number. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>micro</para></entry>
+<entry role="parameter_description"><para> pointer to a guint to store the micro version number. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nano</para></entry>
+<entry role="parameter_description"><para> pointer to a guint to store the nano version number. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-version-string" role="function">
+<title>gst_version_string&#160;()</title>
+<indexterm zone="gst-version-string"><primary>gst_version_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_version_string (<parameter><type>void</type></parameter>);</programlisting>
+<para>This function returns a string that is useful for describing this version
+of GStreamer to the outside world: user agent strings, logging, ...</para>
+<refsect3 id="gst-version-string.returns" role="returns">
+<title>Returns</title>
+<para> a newly allocated string describing this version
+of GStreamer. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-segtrap-is-enabled" role="function">
+<title>gst_segtrap_is_enabled&#160;()</title>
+<indexterm zone="gst-segtrap-is-enabled"><primary>gst_segtrap_is_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_segtrap_is_enabled (<parameter><type>void</type></parameter>);</programlisting>
+<para>Some functions in the GStreamer core might install a custom SIGSEGV handler
+to better catch and report errors to the application. Currently this feature
+is enabled by default when loading plugins.</para>
+<para>Applications might want to disable this behaviour with the
+<link linkend="gst-segtrap-set-enabled"><function>gst_segtrap_set_enabled()</function></link> function. This is typically done if the application
+wants to install its own handler without GStreamer interfering.</para>
+<refsect3 id="gst-segtrap-is-enabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if GStreamer is allowed to install a custom SIGSEGV handler.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segtrap-set-enabled" role="function">
+<title>gst_segtrap_set_enabled&#160;()</title>
+<indexterm zone="gst-segtrap-set-enabled"><primary>gst_segtrap_set_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_segtrap_set_enabled (<parameter><link linkend="gboolean"><type>gboolean</type></link> enabled</parameter>);</programlisting>
+<para>Applications might want to disable/enable the SIGSEGV handling of
+the GStreamer core. See <link linkend="gst-segtrap-is-enabled"><function>gst_segtrap_is_enabled()</function></link> for more information.</para>
+<refsect3 id="gst-segtrap-set-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>enabled</para></entry>
+<entry role="parameter_description"><para>whether a custom SIGSEGV handler should be installed.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-fork-is-enabled" role="function">
+<title>gst_registry_fork_is_enabled&#160;()</title>
+<indexterm zone="gst-registry-fork-is-enabled"><primary>gst_registry_fork_is_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_registry_fork_is_enabled (<parameter><type>void</type></parameter>);</programlisting>
+<para>By default GStreamer will perform scanning and rebuilding of the
+registry file using a helper child process.</para>
+<para>Applications might want to disable this behaviour with the
+<link linkend="gst-registry-fork-set-enabled"><function>gst_registry_fork_set_enabled()</function></link> function, in which case new plugins
+are scanned (and loaded) into the application process.</para>
+<refsect3 id="gst-registry-fork-is-enabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if GStreamer will use the child helper process when
+rebuilding the registry.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-fork-set-enabled" role="function">
+<title>gst_registry_fork_set_enabled&#160;()</title>
+<indexterm zone="gst-registry-fork-set-enabled"><primary>gst_registry_fork_set_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_registry_fork_set_enabled (<parameter><link linkend="gboolean"><type>gboolean</type></link> enabled</parameter>);</programlisting>
+<para>Applications might want to disable/enable spawning of a child helper process
+when rebuilding the registry. See <link linkend="gst-registry-fork-is-enabled"><function>gst_registry_fork_is_enabled()</function></link> for more
+information.</para>
+<refsect3 id="gst-registry-fork-set-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>enabled</para></entry>
+<entry role="parameter_description"><para>whether rebuilding the registry can use a temporary child helper process.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-update-registry" role="function">
+<title>gst_update_registry&#160;()</title>
+<indexterm zone="gst-update-registry"><primary>gst_update_registry</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_update_registry (<parameter><type>void</type></parameter>);</programlisting>
+<para>Forces GStreamer to re-scan its plugin paths and update the default
+plugin registry.</para>
+<para>Applications will almost never need to call this function, it is only
+useful if the application knows new plugins have been installed (or old
+ones removed) since the start of the application (or, to be precise, the
+first call to <link linkend="gst-init"><function>gst_init()</function></link>) and the application wants to make use of any
+newly-installed plugins without restarting the application.</para>
+<para>Applications should assume that the registry update is neither atomic nor
+thread-safe and should therefore not have any dynamic pipelines running
+(including the playbin and decodebin elements) and should also not create
+any elements or access the GStreamer registry while the update is in
+progress.</para>
+<para>Note that this function may block for a significant amount of time.</para>
+<refsect3 id="gst-update-registry.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the registry has been updated successfully (does not
+imply that there were changes), otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-Gst.other_details" role="details">
+<title role="details.title">Types and Values</title>
+
+</refsect1>
+
+</refentry>

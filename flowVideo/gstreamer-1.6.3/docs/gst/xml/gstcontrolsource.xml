@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstControlSource">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstControlSource.top_of_page">GstControlSource</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstControlSource</refname>
+<refpurpose>base class for control source sources</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstControlSource.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstControlSourceGetValue">*GstControlSourceGetValue</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstControlSourceGetValueArray">*GstControlSourceGetValueArray</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-source-get-value">gst_control_source_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-source-get-value-array">gst_control_source_get_value_array</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstControlSource.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstValueArray">GstValueArray</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstControlSource-struct">GstControlSource</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstControlSourceClass">GstControlSourceClass</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTimedValue">GstTimedValue</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstControlSource.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstControlSource
+</screen>
+</refsect1>
+
+<refsect1 id="GstControlSource.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstControlSource.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstControlSource"><type>GstControlSource</type></link> is a base class for control value sources that could
+be used to get timestamp-value pairs. A control source essentially is a
+function over time, returning float values between 0.0 and 1.0.</para>
+<para>A <link linkend="GstControlSource"><type>GstControlSource</type></link> is used by first getting an instance of a specific
+control-source, creating a binding for the control-source to the target property
+of the element and then adding the binding to the element. The binding will
+convert the data types and value range to fit to the bound property.</para>
+<para>For implementing a new <link linkend="GstControlSource"><type>GstControlSource</type></link> one has to implement
+<link linkend="GstControlSourceGetValue"><type>GstControlSourceGetValue</type></link> and <link linkend="GstControlSourceGetValueArray"><type>GstControlSourceGetValueArray</type></link> functions.
+These are then used by <link linkend="gst-control-source-get-value"><function>gst_control_source_get_value()</function></link> and
+<link linkend="gst-control-source-get-value-array"><function>gst_control_source_get_value_array()</function></link> to get values for specific timestamps.</para>
+
+</refsect1>
+<refsect1 id="GstControlSource.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstControlSourceGetValue" role="function">
+<title>GstControlSourceGetValue&#160;()</title>
+<indexterm zone="GstControlSourceGetValue"><primary>GstControlSourceGetValue</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstControlSourceGetValue<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstControlSource"><type>GstControlSource</type></link> *self</parameter>,
+                             <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                             <parameter><link linkend="gdouble"><type>gdouble</type></link> *value</parameter>);</programlisting>
+<para>Function for returning a value for a given timestamp.</para>
+<refsect3 id="GstControlSourceGetValue.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstControlSource"><type>GstControlSource</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>timestamp for which a value should be calculated</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> which will be set to the result. It must be initialized to the correct type.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstControlSourceGetValue.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value was successfully calculated.</para>
+</refsect3></refsect2>
+<refsect2 id="GstControlSourceGetValueArray" role="function">
+<title>GstControlSourceGetValueArray&#160;()</title>
+<indexterm zone="GstControlSourceGetValueArray"><primary>GstControlSourceGetValueArray</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstControlSourceGetValueArray<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstControlSource"><type>GstControlSource</type></link> *self</parameter>,
+                                  <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                                  <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> n_values</parameter>,
+                                  <parameter><link linkend="gdouble"><type>gdouble</type></link> *values</parameter>);</programlisting>
+<para>Function for returning an array of values for starting at a given timestamp.</para>
+<refsect3 id="GstControlSourceGetValueArray.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstControlSource"><type>GstControlSource</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>timestamp for which a value should be calculated</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the time spacing between subsequent values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_values</para></entry>
+<entry role="parameter_description"><para>the number of values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>values</para></entry>
+<entry role="parameter_description"><para>array to put control-values in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstControlSourceGetValueArray.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the values were successfully calculated.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-control-source-get-value" role="function">
+<title>gst_control_source_get_value&#160;()</title>
+<indexterm zone="gst-control-source-get-value"><primary>gst_control_source_get_value</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_control_source_get_value (<parameter><link linkend="GstControlSource"><type>GstControlSource</type></link> *self</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                              <parameter><link linkend="gdouble"><type>gdouble</type></link> *value</parameter>);</programlisting>
+<para>Gets the value for this <link linkend="GstControlSource"><type>GstControlSource</type></link> at a given timestamp.</para>
+
+<para><emphasis role="annotation">[<acronym>method</acronym>]</emphasis></para><refsect3 id="gst-control-source-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstControlSource"><type>GstControlSource</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time for which the value should be returned</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-source-get-value.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if the value couldn't be returned, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-control-source-get-value-array" role="function">
+<title>gst_control_source_get_value_array&#160;()</title>
+<indexterm zone="gst-control-source-get-value-array"><primary>gst_control_source_get_value_array</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_control_source_get_value_array (<parameter><link linkend="GstControlSource"><type>GstControlSource</type></link> *self</parameter>,
+                                    <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                                    <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> n_values</parameter>,
+                                    <parameter><link linkend="gdouble"><type>gdouble</type></link> *values</parameter>);</programlisting>
+<para>Gets an array of values for for this <link linkend="GstControlSource"><type>GstControlSource</type></link>. Values that are
+undefined contain NANs.</para>
+
+<para><emphasis role="annotation">[<acronym>method</acronym>]</emphasis></para><refsect3 id="gst-control-source-get-value-array.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstControlSource"><type>GstControlSource</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the first timestamp</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the time steps</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_values</para></entry>
+<entry role="parameter_description"><para>the number of values to fetch</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>values</para></entry>
+<entry role="parameter_description"><para> array to put control-values in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=n_values]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-source-get-value-array.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the given array could be filled, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstControlSource.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstValueArray" role="struct">
+<title>GstValueArray</title>
+<indexterm zone="GstValueArray"><primary>GstValueArray</primary></indexterm>
+<programlisting language="C">typedef struct _GstValueArray GstValueArray;</programlisting>
+</refsect2>
+<refsect2 id="GstControlSource-struct" role="struct">
+<title>struct GstControlSource</title>
+<indexterm zone="GstControlSource-struct"><primary>GstControlSource</primary></indexterm>
+<programlisting language="C">struct GstControlSource {
+  GstControlSourceGetValue get_value;             /* Returns the value for a property at a given timestamp */
+  GstControlSourceGetValueArray get_value_array;  /* Returns values for a property in a given timespan */
+};
+</programlisting>
+<para>The instance structure of <link linkend="GstControlSource"><type>GstControlSource</type></link>.</para>
+<refsect3 id="GstControlSource.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstControlSourceGetValue"><type>GstControlSourceGetValue</type></link>&#160;<structfield id="GstControlSource-struct.get-value">get_value</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Function for returning a value for a given timestamp</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstControlSourceGetValueArray"><type>GstControlSourceGetValueArray</type></link>&#160;<structfield id="GstControlSource-struct.get-value-array">get_value_array</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Function for returning a <link linkend="GstValueArray"><type>GstValueArray</type></link> for a given timestamp</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstControlSourceClass" role="struct">
+<title>struct GstControlSourceClass</title>
+<indexterm zone="GstControlSourceClass"><primary>GstControlSourceClass</primary></indexterm>
+<programlisting language="C">struct GstControlSourceClass {
+  GstObjectClass parent_class;
+};
+</programlisting>
+<para>The class structure of <link linkend="GstControlSource"><type>GstControlSource</type></link>.</para>
+<refsect3 id="GstControlSourceClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstTimedValue" role="struct">
+<title>struct GstTimedValue</title>
+<indexterm zone="GstTimedValue"><primary>GstTimedValue</primary></indexterm>
+<programlisting language="C">struct GstTimedValue {
+  GstClockTime timestamp;
+  gdouble      value;
+};
+</programlisting>
+<para>Structure for saving a timestamp and a value.</para>
+<refsect3 id="GstTimedValue.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClockTime"><type>GstClockTime</type></link>&#160;<structfield id="GstTimedValue.timestamp">timestamp</structfield>;</para></entry>
+<entry role="struct_member_description"><para>timestamp of the value change</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gdouble"><type>gdouble</type></link>&#160;<structfield id="GstTimedValue.value">value</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the corresponding value</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

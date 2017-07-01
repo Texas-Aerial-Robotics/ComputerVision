@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBufferList">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBufferList.top_of_page">GstBufferList</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBufferList</refname>
+<refpurpose>Lists of buffers for data-passing</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBufferList.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-list-new">gst_buffer_list_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-list-new-sized">gst_buffer_list_new_sized</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-list-length">gst_buffer_list_length</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-buffer-list-add">gst_buffer_list_add</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-list-insert">gst_buffer_list_insert</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-list-remove">gst_buffer_list_remove</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-list-ref">gst_buffer_list_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-list-unref">gst_buffer_list_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-list-copy">gst_buffer_list_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-list-copy-deep">gst_buffer_list_copy_deep</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-buffer-list-is-writable">gst_buffer_list_is_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-buffer-list-make-writable">gst_buffer_list_make_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstBufferListFunc">*GstBufferListFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-list-foreach">gst_buffer_list_foreach</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-list-get">gst_buffer_list_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBufferList.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstBufferList-struct">GstBufferList</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBufferList.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBufferList
+</screen>
+</refsect1>
+
+<refsect1 id="GstBufferList.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBufferList.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Buffer lists are an object containing a list of buffers.</para>
+<para>Buffer lists are created with <link linkend="gst-buffer-list-new"><function>gst_buffer_list_new()</function></link> and filled with data
+using a <link linkend="gst-buffer-list-insert"><function>gst_buffer_list_insert()</function></link>.</para>
+<para>Buffer lists can be pushed on a srcpad with <link linkend="gst-pad-push-list"><function>gst_pad_push_list()</function></link>. This is
+interesting when multiple buffers need to be pushed in one go because it
+can reduce the amount of overhead for pushing each buffer individually.</para>
+
+</refsect1>
+<refsect1 id="GstBufferList.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-buffer-list-new" role="function">
+<title>gst_buffer_list_new&#160;()</title>
+<indexterm zone="gst-buffer-list-new"><primary>gst_buffer_list_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_buffer_list_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new, empty <link linkend="GstBufferList"><type>GstBufferList</type></link>. The caller is responsible for unreffing
+the returned <link linkend="GstBufferList"><type>GstBufferList</type></link>.</para>
+<para>Free-function: gst_buffer_list_unref</para>
+<refsect3 id="gst-buffer-list-new.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstBufferList"><type>GstBufferList</type></link>. <link linkend="gst-buffer-list-unref"><function>gst_buffer_list_unref()</function></link>
+after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-new-sized" role="function">
+<title>gst_buffer_list_new_sized&#160;()</title>
+<indexterm zone="gst-buffer-list-new-sized"><primary>gst_buffer_list_new_sized</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_buffer_list_new_sized (<parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Creates a new, empty <link linkend="GstBufferList"><type>GstBufferList</type></link>. The caller is responsible for unreffing
+the returned <link linkend="GstBufferList"><type>GstBufferList</type></link>. The list will have <parameter>size</parameter>
+ space preallocated so
+that memory reallocations can be avoided.</para>
+<para>Free-function: gst_buffer_list_unref</para>
+<refsect3 id="gst-buffer-list-new-sized.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>an initial reserved size</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-new-sized.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstBufferList"><type>GstBufferList</type></link>. <link linkend="gst-buffer-list-unref"><function>gst_buffer_list_unref()</function></link>
+after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-length" role="function">
+<title>gst_buffer_list_length&#160;()</title>
+<indexterm zone="gst-buffer-list-length"><primary>gst_buffer_list_length</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_buffer_list_length (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>);</programlisting>
+<para>Returns the number of buffers in <parameter>list</parameter>
+.</para>
+<refsect3 id="gst-buffer-list-length.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-length.returns" role="returns">
+<title>Returns</title>
+<para> the number of buffers in the buffer list</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-add" role="macro">
+<title>gst_buffer_list_add()</title>
+<indexterm zone="gst-buffer-list-add"><primary>gst_buffer_list_add</primary></indexterm>
+<programlisting language="C">#define gst_buffer_list_add(l,b) gst_buffer_list_insert((l),-1,(b));
+</programlisting>
+<para>Append <parameter>b</parameter>
+ at the end of <parameter>l</parameter>
+.</para>
+<refsect3 id="gst-buffer-list-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>l</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-insert" role="function">
+<title>gst_buffer_list_insert&#160;()</title>
+<indexterm zone="gst-buffer-list-insert"><primary>gst_buffer_list_insert</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_list_insert (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>,
+                        <parameter><link linkend="gint"><type>gint</type></link> idx</parameter>,
+                        <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Insert <parameter>buffer</parameter>
+ at <parameter>idx</parameter>
+ in <parameter>list</parameter>
+. Other buffers are moved to make room for
+this new buffer.</para>
+<para>A -1 value for <parameter>idx</parameter>
+ will append the buffer at the end.</para>
+<refsect3 id="gst-buffer-list-insert.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>the index</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-remove" role="function">
+<title>gst_buffer_list_remove&#160;()</title>
+<indexterm zone="gst-buffer-list-remove"><primary>gst_buffer_list_remove</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_list_remove (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> idx</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> length</parameter>);</programlisting>
+<para>Remove <parameter>length</parameter>
+ buffers starting from <parameter>idx</parameter>
+ in <parameter>list</parameter>
+. The following buffers
+are moved to close the gap.</para>
+<refsect3 id="gst-buffer-list-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>the index</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>the amount to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-ref" role="function">
+<title>gst_buffer_list_ref&#160;()</title>
+<indexterm zone="gst-buffer-list-ref"><primary>gst_buffer_list_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_buffer_list_ref (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>);</programlisting>
+<para>Increases the refcount of the given buffer list by one.</para>
+<para>Note that the refcount affects the writability of <parameter>list</parameter>
+ and its data, see
+<link linkend="gst-buffer-list-make-writable"><function>gst_buffer_list_make_writable()</function></link>. It is important to note that keeping
+additional references to GstBufferList instances can potentially increase
+the number of memcpy operations in a pipeline.</para>
+<refsect3 id="gst-buffer-list-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-ref.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>list</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-unref" role="function">
+<title>gst_buffer_list_unref&#160;()</title>
+<indexterm zone="gst-buffer-list-unref"><primary>gst_buffer_list_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_list_unref (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>);</programlisting>
+<para>Decreases the refcount of the buffer list. If the refcount reaches 0, the
+buffer list will be freed.</para>
+<refsect3 id="gst-buffer-list-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBufferList"><type>GstBufferList</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-copy" role="function">
+<title>gst_buffer_list_copy&#160;()</title>
+<indexterm zone="gst-buffer-list-copy"><primary>gst_buffer_list_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_buffer_list_copy (<parameter>const <link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>);</programlisting>
+<para>Create a shallow copy of the given buffer list. This will make a newly
+allocated copy of the source list with copies of buffer pointers. The
+refcount of buffers pointed to will be increased by one.</para>
+<refsect3 id="gst-buffer-list-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new copy of <parameter>list</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-copy-deep" role="function" condition="since:1.6">
+<title>gst_buffer_list_copy_deep&#160;()</title>
+<indexterm zone="gst-buffer-list-copy-deep" role="1.6"><primary>gst_buffer_list_copy_deep</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_buffer_list_copy_deep (<parameter>const <link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>);</programlisting>
+<para>Create a copy of the given buffer list. This will make a newly allocated
+copy of the buffer that the source buffer list contains.</para>
+<refsect3 id="gst-buffer-list-copy-deep.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-copy-deep.returns" role="returns">
+<title>Returns</title>
+<para> a new copy of <parameter>list</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-buffer-list-is-writable" role="macro">
+<title>gst_buffer_list_is_writable()</title>
+<indexterm zone="gst-buffer-list-is-writable"><primary>gst_buffer_list_is_writable</primary></indexterm>
+<programlisting language="C">#define gst_buffer_list_is_writable(list) gst_mini_object_is_writable (GST_MINI_OBJECT_CAST (list))
+</programlisting>
+<para>Tests if you can safely add buffers and groups into a buffer list.</para>
+<refsect3 id="gst-buffer-list-is-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-make-writable" role="macro">
+<title>gst_buffer_list_make_writable()</title>
+<indexterm zone="gst-buffer-list-make-writable"><primary>gst_buffer_list_make_writable</primary></indexterm>
+<programlisting language="C">#define gst_buffer_list_make_writable(list) GST_BUFFER_LIST_CAST (gst_mini_object_make_writable (GST_MINI_OBJECT_CAST (list)))
+</programlisting>
+<para>Makes a writable buffer list from the given buffer list. If the source buffer
+list is already writable, this will simply return the same buffer list. A
+copy will otherwise be made using <link linkend="gst-buffer-list-copy"><function>gst_buffer_list_copy()</function></link>.</para>
+<refsect3 id="gst-buffer-list-make-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBufferList"><type>GstBufferList</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-make-writable.returns" role="returns">
+<title>Returns</title>
+<para> a writable list, which may or may not be the
+same as <parameter>list</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GstBufferListFunc" role="function">
+<title>GstBufferListFunc&#160;()</title>
+<indexterm zone="GstBufferListFunc"><primary>GstBufferListFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstBufferListFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **buffer</parameter>,
+                      <parameter><link linkend="guint"><type>guint</type></link> idx</parameter>,
+                      <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called from <link linkend="gst-buffer-list-foreach"><function>gst_buffer_list_foreach()</function></link>. The <parameter>buffer</parameter>
+
+field will point to a the reference of the buffer at <parameter>idx</parameter>
+.</para>
+<para>When this function returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the next buffer will be
+returned. When <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is returned, <link linkend="gst-buffer-list-foreach"><function>gst_buffer_list_foreach()</function></link> will return.</para>
+<para>When <parameter>buffer</parameter>
+ is set to <link linkend="NULL:CAPS"><literal>NULL</literal></link>, the item will be removed from the bufferlist.
+When <parameter>buffer</parameter>
+ has been made writable, the new buffer reference can be assigned
+to <parameter>buffer</parameter>
+. This function is responsible for unreffing the old buffer when
+removing or modifying.</para>
+<refsect3 id="GstBufferListFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> pointer the buffer. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>the index of <parameter>buffer</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <link linkend="gst-buffer-list-foreach"><function>gst_buffer_list_foreach()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstBufferListFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when <link linkend="gst-buffer-list-foreach"><function>gst_buffer_list_foreach()</function></link> should stop</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-foreach" role="function">
+<title>gst_buffer_list_foreach&#160;()</title>
+<indexterm zone="gst-buffer-list-foreach"><primary>gst_buffer_list_foreach</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_list_foreach (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>,
+                         <parameter><link linkend="GstBufferListFunc"><type>GstBufferListFunc</type></link> func</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Call <parameter>func</parameter>
+ with <parameter>data</parameter>
+ for each buffer in <parameter>list</parameter>
+.</para>
+<para><parameter>func</parameter>
+ can modify the passed buffer pointer or its contents. The return value
+of <parameter>func</parameter>
+ define if this function returns or if the remaining buffers in
+the list should be skipped.</para>
+<refsect3 id="gst-buffer-list-foreach.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBufferListFunc"><type>GstBufferListFunc</type></link> to call. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to <parameter>func</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-foreach.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when <parameter>func</parameter>
+returned <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for each buffer in <parameter>list</parameter>
+or when
+<parameter>list</parameter>
+is empty.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-list-get" role="function">
+<title>gst_buffer_list_get&#160;()</title>
+<indexterm zone="gst-buffer-list-get"><primary>gst_buffer_list_get</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_buffer_list_get (<parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>,
+                     <parameter><link linkend="guint"><type>guint</type></link> idx</parameter>);</programlisting>
+<para>Get the buffer at <parameter>idx</parameter>
+.</para>
+<refsect3 id="gst-buffer-list-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferList"><type>GstBufferList</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>the index</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-list-get.returns" role="returns">
+<title>Returns</title>
+<para> the buffer at <parameter>idx</parameter>
+in <parameter>group</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when there is no buffer. The buffer remains valid as
+long as <parameter>list</parameter>
+is valid and buffer is not removed from the list. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBufferList.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBufferList-struct" role="struct">
+<title>GstBufferList</title>
+<indexterm zone="GstBufferList-struct"><primary>GstBufferList</primary></indexterm>
+<programlisting language="C">typedef struct _GstBufferList GstBufferList;</programlisting>
+<para>Opaque list of grouped buffers.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBufferList.see-also">
+<title>See Also</title>
+<para><link linkend="GstPad"><type>GstPad</type></link>, <link linkend="GstMiniObject"><type>GstMiniObject</type></link></para>
+
+</refsect1>
+
+</refentry>

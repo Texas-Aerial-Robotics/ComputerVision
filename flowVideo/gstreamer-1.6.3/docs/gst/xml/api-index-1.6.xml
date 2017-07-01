@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.6">
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gst-bin-sync-children-states"><link linkend="gst-bin-sync-children-states">gst_bin_sync_children_states</link>, function in <link linkend="GstBin">GstBin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-add-parent-buffer-meta"><link linkend="gst-buffer-add-parent-buffer-meta">gst_buffer_add_parent_buffer_meta</link>, function in <link linkend="GstBuffer">GstBuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-add-protection-meta"><link linkend="gst-buffer-add-protection-meta">gst_buffer_add_protection_meta</link>, function in <link linkend="gstreamer-GstProtectionMeta">GstProtectionMeta</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-copy-deep"><link linkend="gst-buffer-copy-deep">gst_buffer_copy_deep</link>, function in <link linkend="GstBuffer">GstBuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-list-copy-deep"><link linkend="gst-buffer-list-copy-deep">gst_buffer_list_copy_deep</link>, function in <link linkend="GstBufferList">GstBufferList</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-bus-remove-watch"><link linkend="gst-bus-remove-watch">gst_bus_remove_watch</link>, function in <link linkend="GstBus">GstBus</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="GstCapsForeachFunc"><link linkend="GstCapsForeachFunc">GstCapsForeachFunc</link>, user_function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-filter-and-map-in-place"><link linkend="gst-caps-filter-and-map-in-place">gst_caps_filter_and_map_in_place</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-foreach"><link linkend="gst-caps-foreach">gst_caps_foreach</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-map-in-place"><link linkend="gst-caps-map-in-place">gst_caps_map_in_place</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstClock-synced"><link linkend="GstClock-synced">GstClock::synced</link>, object signal in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-clock-add-observation-unapplied"><link linkend="gst-clock-add-observation-unapplied">gst_clock_add_observation_unapplied</link>, function in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-clock-adjust-with-calibration"><link linkend="gst-clock-adjust-with-calibration">gst_clock_adjust_with_calibration</link>, function in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-clock-is-synced"><link linkend="gst-clock-is-synced">gst_clock_is_synced</link>, function in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-clock-set-synced"><link linkend="gst-clock-set-synced">gst_clock_set_synced</link>, function in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-CLOCK-STIME-IS-VALID:CAPS"><link linkend="GST-CLOCK-STIME-IS-VALID:CAPS">GST_CLOCK_STIME_IS_VALID</link>, macro in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-clock-wait-for-sync"><link linkend="gst-clock-wait-for-sync">gst_clock_wait_for_sync</link>, function in <link linkend="GstClock">GstClock</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gst-device-get-properties"><link linkend="gst-device-get-properties">gst_device_get_properties</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="gst-event-new-protection"><link linkend="gst-event-new-protection">gst_event_new_protection</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-event-parse-protection"><link linkend="gst-event-parse-protection">gst_event_parse_protection</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="gst-flagset-register"><link linkend="gst-flagset-register">gst_flagset_register</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>L</title>
+<indexentry><primaryie linkends="GST-LEVEL-MAX:CAPS"><link linkend="GST-LEVEL-MAX:CAPS">GST_LEVEL_MAX</link>, macro in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>O</title>
+<indexentry><primaryie linkends="gst-object-has-as-parent"><link linkend="gst-object-has-as-parent">gst_object_has_as_parent</link>, function in <link linkend="GstObject">GstObject</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="GstPad--offset"><link linkend="GstPad--offset">GstPad:offset</link>, object property in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PAD-IS-ACCEPT-TEMPLATE:CAPS"><link linkend="GST-PAD-IS-ACCEPT-TEMPLATE:CAPS">GST_PAD_IS_ACCEPT_TEMPLATE</link>, macro in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PAD-SET-ACCEPT-TEMPLATE:CAPS"><link linkend="GST-PAD-SET-ACCEPT-TEMPLATE:CAPS">GST_PAD_SET_ACCEPT_TEMPLATE</link>, macro in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PAD-UNSET-ACCEPT-TEMPLATE:CAPS"><link linkend="GST-PAD-UNSET-ACCEPT-TEMPLATE:CAPS">GST_PAD_UNSET_ACCEPT_TEMPLATE</link>, macro in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstParentBufferMeta"><link linkend="GstParentBufferMeta">GstParentBufferMeta</link>, struct in <link linkend="GstBuffer">GstBuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstPipeline--latency"><link linkend="GstPipeline--latency">GstPipeline:latency</link>, object property in <link linkend="GstPipeline">GstPipeline</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-pipeline-get-latency"><link linkend="gst-pipeline-get-latency">gst_pipeline_get_latency</link>, function in <link linkend="GstPipeline">GstPipeline</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-pipeline-get-pipeline-clock"><link linkend="gst-pipeline-get-pipeline-clock">gst_pipeline_get_pipeline_clock</link>, function in <link linkend="GstPipeline">GstPipeline</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-pipeline-set-latency"><link linkend="gst-pipeline-set-latency">gst_pipeline_set_latency</link>, function in <link linkend="GstPipeline">GstPipeline</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-preset-is-editable"><link linkend="gst-preset-is-editable">gst_preset_is_editable</link>, function in <link linkend="GstPreset">GstPreset</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstProtectionMeta"><link linkend="GstProtectionMeta">GstProtectionMeta</link>, struct in <link linkend="gstreamer-GstProtectionMeta">GstProtectionMeta</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-protection-select-system"><link linkend="gst-protection-select-system">gst_protection_select_system</link>, function in <link linkend="gstreamer-GstProtectionMeta">GstProtectionMeta</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PROTECTION-SYSTEM-ID-CAPS-FIELD:CAPS"><link linkend="GST-PROTECTION-SYSTEM-ID-CAPS-FIELD:CAPS">GST_PROTECTION_SYSTEM_ID_CAPS_FIELD</link>, macro in <link linkend="gstreamer-GstProtectionMeta">GstProtectionMeta</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gst-sample-get-buffer-list"><link linkend="gst-sample-get-buffer-list">gst_sample_get_buffer_list</link>, function in <link linkend="GstSample">GstSample</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-sample-set-buffer-list"><link linkend="gst-sample-set-buffer-list">gst_sample_set_buffer_list</link>, function in <link linkend="GstSample">GstSample</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-segment-is-equal"><link linkend="gst-segment-is-equal">gst_segment_is_equal</link>, function in <link linkend="GstSegment">GstSegment</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-segment-to-running-time-full"><link linkend="gst-segment-to-running-time-full">gst_segment_to_running_time_full</link>, function in <link linkend="GstSegment">GstSegment</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-STIME-ARGS:CAPS"><link linkend="GST-STIME-ARGS:CAPS">GST_STIME_ARGS</link>, macro in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-STIME-FORMAT:CAPS"><link linkend="GST-STIME-FORMAT:CAPS">GST_STIME_FORMAT</link>, macro in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-structure-filter-and-map-in-place"><link linkend="gst-structure-filter-and-map-in-place">gst_structure_filter_and_map_in_place</link>, function in <link linkend="GstStructure">GstStructure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-structure-get-flagset"><link linkend="gst-structure-get-flagset">gst_structure_get_flagset</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="GST-TYPE-FLAG-SET:CAPS"><link linkend="GST-TYPE-FLAG-SET:CAPS">GST_TYPE_FLAG_SET</link>, macro in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>U</title>
+<indexentry><primaryie linkends="gst-uri-append-path"><link linkend="gst-uri-append-path">gst_uri_append_path</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-append-path-segment"><link linkend="gst-uri-append-path-segment">gst_uri_append_path_segment</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-equal"><link linkend="gst-uri-equal">gst_uri_equal</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-from-string"><link linkend="gst-uri-from-string">gst_uri_from_string</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-from-string-with-base"><link linkend="gst-uri-from-string-with-base">gst_uri_from_string_with_base</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-fragment"><link linkend="gst-uri-get-fragment">gst_uri_get_fragment</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-host"><link linkend="gst-uri-get-host">gst_uri_get_host</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-path"><link linkend="gst-uri-get-path">gst_uri_get_path</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-path-segments"><link linkend="gst-uri-get-path-segments">gst_uri_get_path_segments</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-path-string"><link linkend="gst-uri-get-path-string">gst_uri_get_path_string</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-port"><link linkend="gst-uri-get-port">gst_uri_get_port</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-query-keys"><link linkend="gst-uri-get-query-keys">gst_uri_get_query_keys</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-query-string"><link linkend="gst-uri-get-query-string">gst_uri_get_query_string</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-query-table"><link linkend="gst-uri-get-query-table">gst_uri_get_query_table</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-query-value"><link linkend="gst-uri-get-query-value">gst_uri_get_query_value</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-get-userinfo"><link linkend="gst-uri-get-userinfo">gst_uri_get_userinfo</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-is-normalized"><link linkend="gst-uri-is-normalized">gst_uri_is_normalized</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-is-writable"><link linkend="gst-uri-is-writable">gst_uri_is_writable</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-join"><link linkend="gst-uri-join">gst_uri_join</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-join-strings"><link linkend="gst-uri-join-strings">gst_uri_join_strings</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-make-writable"><link linkend="gst-uri-make-writable">gst_uri_make_writable</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-new"><link linkend="gst-uri-new">gst_uri_new</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-new-with-base"><link linkend="gst-uri-new-with-base">gst_uri_new_with_base</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-normalize"><link linkend="gst-uri-normalize">gst_uri_normalize</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-query-has-key"><link linkend="gst-uri-query-has-key">gst_uri_query_has_key</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-remove-query-key"><link linkend="gst-uri-remove-query-key">gst_uri_remove_query_key</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-fragment"><link linkend="gst-uri-set-fragment">gst_uri_set_fragment</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-host"><link linkend="gst-uri-set-host">gst_uri_set_host</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-path"><link linkend="gst-uri-set-path">gst_uri_set_path</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-path-segments"><link linkend="gst-uri-set-path-segments">gst_uri_set_path_segments</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-path-string"><link linkend="gst-uri-set-path-string">gst_uri_set_path_string</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-port"><link linkend="gst-uri-set-port">gst_uri_set_port</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-query-string"><link linkend="gst-uri-set-query-string">gst_uri_set_query_string</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-query-table"><link linkend="gst-uri-set-query-table">gst_uri_set_query_table</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-query-value"><link linkend="gst-uri-set-query-value">gst_uri_set_query_value</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-scheme"><link linkend="gst-uri-set-scheme">gst_uri_set_scheme</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-set-userinfo"><link linkend="gst-uri-set-userinfo">gst_uri_set_userinfo</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-uri-to-string"><link linkend="gst-uri-to-string">gst_uri_to_string</link>, function in <link linkend="gstreamer-GstUri">GstUri</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>V</title>
+<indexentry><primaryie linkends="gst-value-get-flagset-flags"><link linkend="gst-value-get-flagset-flags">gst_value_get_flagset_flags</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-value-get-flagset-mask"><link linkend="gst-value-get-flagset-mask">gst_value_get_flagset_mask</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-VALUE-HOLDS-FLAG-SET:CAPS"><link linkend="GST-VALUE-HOLDS-FLAG-SET:CAPS">GST_VALUE_HOLDS_FLAG_SET</link>, macro in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-value-set-flagset"><link linkend="gst-value-set-flagset">gst_value_set_flagset</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

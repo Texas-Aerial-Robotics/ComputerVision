@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTagSetter">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTagSetter.top_of_page">GstTagSetter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTagSetter</refname>
+<refpurpose>Element interface that allows setting and retrieval
+                    of media metadata</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTagSetter.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-reset-tags">gst_tag_setter_reset_tags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-merge-tags">gst_tag_setter_merge_tags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-add-tags">gst_tag_setter_add_tags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-add-tag-value">gst_tag_setter_add_tag_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-add-tag-values">gst_tag_setter_add_tag_values</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-add-tag-valist">gst_tag_setter_add_tag_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-add-tag-valist-values">gst_tag_setter_add_tag_valist_values</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstTagList"><returnvalue>GstTagList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-tag-setter-get-tag-list">gst_tag_setter_get_tag_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-set-tag-merge-mode">gst_tag_setter_set_tag_merge_mode</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstTagMergeMode"><returnvalue>GstTagMergeMode</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-tag-setter-get-tag-merge-mode">gst_tag_setter_get_tag_merge_mode</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTagSetter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstTagSetter-struct">GstTagSetter</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTagSetterInterface">GstTagSetterInterface</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTagSetter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GInterface">GInterface</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTagSetter
+</screen>
+</refsect1>
+<refsect1 id="GstTagSetter.prerequisites" role="prerequisites">
+<title role="prerequisites.title">Prerequisites</title>
+<para>
+GstTagSetter requires
+ <link linkend="GstElement">GstElement</link>.</para>
+
+</refsect1>
+
+<refsect1 id="GstTagSetter.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTagSetter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Element interface that allows setting of media metadata.</para>
+<para>Elements that support changing a stream's metadata will implement this
+interface. Examples of such elements are 'vorbisenc', 'theoraenc' and
+'id3v2mux'.</para>
+<para>If you just want to retrieve metadata in your application then all you
+need to do is watch for tag messages on your pipeline's bus. This
+interface is only for setting metadata, not for extracting it. To set tags
+from the application, find tagsetter elements and set tags using e.g.
+<link linkend="gst-tag-setter-merge-tags"><function>gst_tag_setter_merge_tags()</function></link> or <link linkend="gst-tag-setter-add-tags"><function>gst_tag_setter_add_tags()</function></link>. Also consider
+setting the <link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> that is used for tag events that arrive at the
+tagsetter element (default mode is to keep existing tags).
+The application should do that before the element goes to <link linkend="GST-STATE-PAUSED:CAPS"><literal>GST_STATE_PAUSED</literal></link>.</para>
+<para>Elements implementing the <link linkend="GstTagSetter"><type>GstTagSetter</type></link> interface often have to merge
+any tags received from upstream and the tags set by the application via
+the interface. This can be done like this:</para>
+<informalexample><programlisting><![CDATA[
+GstTagMergeMode merge_mode;
+const GstTagList *application_tags;
+const GstTagList *event_tags;
+GstTagSetter *tagsetter;
+GstTagList *result;
+ 
+tagsetter = GST_TAG_SETTER (element);
+ 
+merge_mode = gst_tag_setter_get_tag_merge_mode (tagsetter);
+application_tags = gst_tag_setter_get_tag_list (tagsetter);
+event_tags = (const GstTagList *) element->event_tags;
+ 
+GST_LOG_OBJECT (tagsetter, "merging tags, merge mode = %d", merge_mode);
+GST_LOG_OBJECT (tagsetter, "event tags: %" GST_PTR_FORMAT, event_tags);
+GST_LOG_OBJECT (tagsetter, "set   tags: %" GST_PTR_FORMAT, application_tags);
+ 
+result = gst_tag_list_merge (application_tags, event_tags, merge_mode);
+ 
+GST_LOG_OBJECT (tagsetter, "final tags: %" GST_PTR_FORMAT, result);
+]]></programlisting></informalexample>
+<para></para>
+
+</refsect1>
+<refsect1 id="GstTagSetter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-tag-setter-reset-tags" role="function">
+<title>gst_tag_setter_reset_tags&#160;()</title>
+<indexterm zone="gst-tag-setter-reset-tags"><primary>gst_tag_setter_reset_tags</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_reset_tags (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>);</programlisting>
+<para>Reset the internal taglist. Elements should call this from within the
+state-change handler.</para>
+<refsect3 id="gst-tag-setter-reset-tags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-merge-tags" role="function">
+<title>gst_tag_setter_merge_tags&#160;()</title>
+<indexterm zone="gst-tag-setter-merge-tags"><primary>gst_tag_setter_merge_tags</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_merge_tags (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                           <parameter>const <link linkend="GstTagList"><type>GstTagList</type></link> *list</parameter>,
+                           <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>);</programlisting>
+<para>Merges the given list into the setter's list using the given mode.</para>
+<refsect3 id="gst-tag-setter-merge-tags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>a tag list to merge from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the mode to merge with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-add-tags" role="function">
+<title>gst_tag_setter_add_tags&#160;()</title>
+<indexterm zone="gst-tag-setter-add-tags"><primary>gst_tag_setter_add_tags</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_add_tags (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                         <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                         <parameter>...</parameter>);</programlisting>
+<para>Adds the given tag / value pairs on the setter using the given merge mode.
+The list must be terminated with <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-tag-setter-add-tags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the mode to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>tag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>more tag / value pairs to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-add-tag-value" role="function">
+<title>gst_tag_setter_add_tag_value&#160;()</title>
+<indexterm zone="gst-tag-setter-add-tag-value"><primary>gst_tag_setter_add_tag_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_add_tag_value (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                              <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                              <parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Adds the given tag / GValue pair on the setter using the given merge mode.</para>
+<refsect3 id="gst-tag-setter-add-tag-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the mode to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>tag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>GValue to set for the tag</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-add-tag-values" role="function">
+<title>gst_tag_setter_add_tag_values&#160;()</title>
+<indexterm zone="gst-tag-setter-add-tag-values"><primary>gst_tag_setter_add_tag_values</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_add_tag_values (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                               <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                               <parameter>...</parameter>);</programlisting>
+<para>Adds the given tag / GValue pairs on the setter using the given merge mode.
+The list must be terminated with <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-tag-setter-add-tag-values.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the mode to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>tag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>more tag / GValue pairs to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-add-tag-valist" role="function">
+<title>gst_tag_setter_add_tag_valist&#160;()</title>
+<indexterm zone="gst-tag-setter-add-tag-valist"><primary>gst_tag_setter_add_tag_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_add_tag_valist (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                               <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                               <parameter><link linkend="va-list"><type>va_list</type></link> var_args</parameter>);</programlisting>
+<para>Adds the given tag / value pairs on the setter using the given merge mode.
+The list must be terminated with <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-tag-setter-add-tag-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the mode to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>tag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>var_args</para></entry>
+<entry role="parameter_description"><para>tag / value pairs to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-add-tag-valist-values" role="function">
+<title>gst_tag_setter_add_tag_valist_values&#160;()</title>
+<indexterm zone="gst-tag-setter-add-tag-valist-values"><primary>gst_tag_setter_add_tag_valist_values</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_add_tag_valist_values (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                                      <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>,
+                                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                                      <parameter><link linkend="va-list"><type>va_list</type></link> var_args</parameter>);</programlisting>
+<para>Adds the given tag / GValue pairs on the setter using the given merge mode.
+The list must be terminated with <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-tag-setter-add-tag-valist-values.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the mode to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>tag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>var_args</para></entry>
+<entry role="parameter_description"><para>tag / GValue pairs to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-get-tag-list" role="function">
+<title>gst_tag_setter_get_tag_list&#160;()</title>
+<indexterm zone="gst-tag-setter-get-tag-list"><primary>gst_tag_setter_get_tag_list</primary></indexterm>
+<programlisting language="C">const <link linkend="GstTagList"><returnvalue>GstTagList</returnvalue></link>&#160;*
+gst_tag_setter_get_tag_list (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>);</programlisting>
+<para>Returns the current list of tags the setter uses.  The list should not be
+modified or freed.</para>
+<para>This function is not thread-safe.</para>
+<refsect3 id="gst-tag-setter-get-tag-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-tag-setter-get-tag-list.returns" role="returns">
+<title>Returns</title>
+<para> a current snapshot of the
+taglist used in the setter or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none is used. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-set-tag-merge-mode" role="function">
+<title>gst_tag_setter_set_tag_merge_mode&#160;()</title>
+<indexterm zone="gst-tag-setter-set-tag-merge-mode"><primary>gst_tag_setter_set_tag_merge_mode</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_tag_setter_set_tag_merge_mode (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>,
+                                   <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>);</programlisting>
+<para>Sets the given merge mode that is used for adding tags from events to tags
+specified by this interface. The default is <link linkend="GST-TAG-MERGE-KEEP:CAPS"><type>GST_TAG_MERGE_KEEP</type></link>, which keeps
+the tags set with this interface and discards tags from events.</para>
+<refsect3 id="gst-tag-setter-set-tag-merge-mode.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>The mode with which tags are added</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-tag-setter-get-tag-merge-mode" role="function">
+<title>gst_tag_setter_get_tag_merge_mode&#160;()</title>
+<indexterm zone="gst-tag-setter-get-tag-merge-mode"><primary>gst_tag_setter_get_tag_merge_mode</primary></indexterm>
+<programlisting language="C"><link linkend="GstTagMergeMode"><returnvalue>GstTagMergeMode</returnvalue></link>
+gst_tag_setter_get_tag_merge_mode (<parameter><link linkend="GstTagSetter"><type>GstTagSetter</type></link> *setter</parameter>);</programlisting>
+<para>Queries the mode by which tags inside the setter are overwritten by tags
+from events</para>
+<refsect3 id="gst-tag-setter-get-tag-merge-mode.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-tag-setter-get-tag-merge-mode.returns" role="returns">
+<title>Returns</title>
+<para> the merge mode used inside the element.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstTagSetter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTagSetter-struct" role="struct">
+<title>GstTagSetter</title>
+<indexterm zone="GstTagSetter-struct"><primary>GstTagSetter</primary></indexterm>
+<programlisting language="C">typedef struct _GstTagSetter GstTagSetter;</programlisting>
+<para>Opaque <link linkend="GstTagSetter"><type>GstTagSetter</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstTagSetterInterface" role="struct">
+<title>struct GstTagSetterInterface</title>
+<indexterm zone="GstTagSetterInterface"><primary>GstTagSetterInterface</primary></indexterm>
+<programlisting language="C">struct GstTagSetterInterface {
+  GTypeInterface g_iface;
+
+  /* signals */
+
+  /* virtual table */
+};
+</programlisting>
+<para><link linkend="GstTagSetterInterface"><type>GstTagSetterInterface</type></link> interface.</para>
+<refsect3 id="GstTagSetterInterface.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

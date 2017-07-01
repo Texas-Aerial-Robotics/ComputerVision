@@ -1,0 +1,1115 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBin">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBin.top_of_page">GstBin</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBin</refname>
+<refpurpose>Base class and element that can contain other elements</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBin.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-new">gst_bin_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bin-add">gst_bin_add</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bin-remove">gst_bin_remove</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-get-by-name">gst_bin_get_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-get-by-name-recurse-up">gst_bin_get_by_name_recurse_up</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-get-by-interface">gst_bin_get_by_interface</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-iterate-elements">gst_bin_iterate_elements</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-iterate-recurse">gst_bin_iterate_recurse</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-iterate-sinks">gst_bin_iterate_sinks</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-iterate-sorted">gst_bin_iterate_sorted</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-iterate-sources">gst_bin_iterate_sources</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-iterate-all-by-interface">gst_bin_iterate_all_by_interface</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bin-recalculate-latency">gst_bin_recalculate_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bin-add-many">gst_bin_add_many</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bin-remove-many">gst_bin_remove_many</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bin-find-unlinked-pad">gst_bin_find_unlinked_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bin-sync-children-states">gst_bin_sync_children_states</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BIN-IS-NO-RESYNC:CAPS">GST_BIN_IS_NO_RESYNC</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BIN-CHILDREN:CAPS">GST_BIN_CHILDREN</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BIN-CHILDREN-COOKIE:CAPS">GST_BIN_CHILDREN_COOKIE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BIN-NUMCHILDREN:CAPS">GST_BIN_NUMCHILDREN</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBin.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBin--async-handling">async-handling</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBin--message-forward">message-forward</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBin.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link></entry><entry role="signal_name"><link linkend="GstBin-do-latency">do-latency</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstBin-element-added">element-added</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstBin-element-removed">element-removed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBin.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBin-struct">GstBin</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBinClass">GstBinClass</link></entry></row>
+
+
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstBinFlags">GstBinFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBin.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBin
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPipeline">GstPipeline</link>
+</screen>
+</refsect1>
+<refsect1 id="GstBin.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstBin implements
+ <link linkend="GstChildProxy">GstChildProxy</link>.</para>
+
+</refsect1>
+
+<refsect1 id="GstBin.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBin.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstBin"><type>GstBin</type></link> is an element that can contain other <link linkend="GstElement"><type>GstElement</type></link>, allowing them to be
+managed as a group.
+Pads from the child elements can be ghosted to the bin, see <link linkend="GstGhostPad"><type>GstGhostPad</type></link>.
+This makes the bin look like any other elements and enables creation of
+higher-level abstraction elements.</para>
+<para>A new <link linkend="GstBin"><type>GstBin</type></link> is created with <link linkend="gst-bin-new"><function>gst_bin_new()</function></link>. Use a <link linkend="GstPipeline"><type>GstPipeline</type></link> instead if you
+want to create a toplevel bin because a normal bin doesn't have a bus or
+handle clock distribution of its own.</para>
+<para>After the bin has been created you will typically add elements to it with
+<link linkend="gst-bin-add"><function>gst_bin_add()</function></link>. You can remove elements with <link linkend="gst-bin-remove"><function>gst_bin_remove()</function></link>.</para>
+<para>An element can be retrieved from a bin with <link linkend="gst-bin-get-by-name"><function>gst_bin_get_by_name()</function></link>, using the
+elements name. <link linkend="gst-bin-get-by-name-recurse-up"><function>gst_bin_get_by_name_recurse_up()</function></link> is mainly used for internal
+purposes and will query the parent bins when the element is not found in the
+current bin.</para>
+<para>An iterator of elements in a bin can be retrieved with
+<link linkend="gst-bin-iterate-elements"><function>gst_bin_iterate_elements()</function></link>. Various other iterators exist to retrieve the
+elements in a bin.</para>
+<para>gst_object_unref() is used to drop your reference to the bin.</para>
+<para>The <link linkend="GstBin-element-added"><type>“element-added”</type></link> signal is fired whenever a new element is added to
+the bin. Likewise the <link linkend="GstBin-element-removed"><type>“element-removed”</type></link> signal is fired whenever an
+element is removed from the bin.</para>
+<refsect2><title>Notes</title>
+<para>
+A <link linkend="GstBin"><type>GstBin</type></link> internally intercepts every <link linkend="GstMessage"><type>GstMessage</type></link> posted by its children and
+implements the following default behaviour for each of them:
+<variablelist>
+  <varlistentry>
+    <term>GST_MESSAGE_EOS</term>
+    <listitem><para>This message is only posted by sinks in the PLAYING
+    state. If all sinks posted the EOS message, this bin will post and EOS
+    message upwards.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>GST_MESSAGE_SEGMENT_START</term>
+    <listitem><para>just collected and never forwarded upwards.
+    The messages are used to decide when all elements have completed playback
+    of their segment.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>GST_MESSAGE_SEGMENT_DONE</term>
+    <listitem><para> Is posted by <link linkend="GstBin"><type>GstBin</type></link> when all elements that posted
+    a SEGMENT_START have posted a SEGMENT_DONE.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>GST_MESSAGE_DURATION_CHANGED</term>
+    <listitem><para> Is posted by an element that detected a change
+    in the stream duration. The default bin behaviour is to clear any
+    cached duration values so that the next duration query will perform
+    a full duration recalculation. The duration change is posted to the
+    application so that it can refetch the new duration with a duration
+    query. Note that these messages can be posted before the bin is
+    prerolled, in which case the duration query might fail.
+    </para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>GST_MESSAGE_CLOCK_LOST</term>
+    <listitem><para> This message is posted by an element when it
+    can no longer provide a clock. The default bin behaviour is to
+    check if the lost clock was the one provided by the bin. If so and
+    the bin is currently in the PLAYING state, the message is forwarded to
+    the bin parent.
+    This message is also generated when a clock provider is removed from
+    the bin. If this message is received by the application, it should
+    PAUSE the pipeline and set it back to PLAYING to force a new clock
+    distribution.
+    </para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>GST_MESSAGE_CLOCK_PROVIDE</term>
+    <listitem><para> This message is generated when an element
+    can provide a clock. This mostly happens when a new clock
+    provider is added to the bin. The default behaviour of the bin is to
+    mark the currently selected clock as dirty, which will perform a clock
+    recalculation the next time the bin is asked to provide a clock.
+    This message is never sent tot the application but is forwarded to
+    the parent of the bin.
+    </para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>OTHERS</term>
+    <listitem><para> posted upwards.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+
+A <link linkend="GstBin"><type>GstBin</type></link> implements the following default behaviour for answering to a
+<link linkend="GstQuery"><type>GstQuery</type></link>:
+<variablelist>
+  <varlistentry>
+    <term>GST_QUERY_DURATION</term>
+    <listitem><para>If the query has been asked before with the same format
+    and the bin is a toplevel bin (ie. has no parent),
+    use the cached previous value. If no previous value was cached, the
+    query is sent to all sink elements in the bin and the MAXIMUM of all
+    values is returned. If the bin is a toplevel bin the value is cached.
+    If no sinks are available in the bin, the query fails.
+    </para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>GST_QUERY_POSITION</term>
+    <listitem><para>The query is sent to all sink elements in the bin and the
+    MAXIMUM of all values is returned. If no sinks are available in the bin,
+    the query fails.
+    </para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>OTHERS</term>
+    <listitem><para>the query is forwarded to all sink elements, the result
+    of the first sink that answers the query successfully is returned. If no
+    sink is in the bin, the query fails.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+A <link linkend="GstBin"><type>GstBin</type></link> will by default forward any event sent to it to all sink elements.
+If all the sinks return <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the bin will also return <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is
+returned. If no sinks are in the bin, the event handler will return <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.
+
+</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBin.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-bin-new" role="function">
+<title>gst_bin_new&#160;()</title>
+<indexterm zone="gst-bin-new"><primary>gst_bin_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_bin_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Creates a new bin with the given name.</para>
+<refsect3 id="gst-bin-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> the name of the new bin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstBin"><type>GstBin</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-add" role="function">
+<title>gst_bin_add&#160;()</title>
+<indexterm zone="gst-bin-add"><primary>gst_bin_add</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bin_add (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+             <parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+<para>Adds the given element to the bin.  Sets the element's parent, and thus
+takes ownership of the element. An element can only be added to one bin.</para>
+<para>If the element's pads are linked to other pads, the pads will be unlinked
+before the element is added to the bin.</para>
+<note>
+When you add an element to an already-running pipeline, you will have to
+take care to set the state of the newly-added element to the desired
+state (usually PLAYING or PAUSED, same you set the pipeline to originally)
+with <link linkend="gst-element-set-state"><function>gst_element_set_state()</function></link>, or use <link linkend="gst-element-sync-state-with-parent"><function>gst_element_sync_state_with_parent()</function></link>.
+The bin or pipeline will not take care of this for you.
+</note>
+<para>MT safe.</para>
+<refsect3 id="gst-bin-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstElement"><type>GstElement</type></link> to add. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-add.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the element could be added, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if
+the bin does not want to accept the element.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-remove" role="function">
+<title>gst_bin_remove&#160;()</title>
+<indexterm zone="gst-bin-remove"><primary>gst_bin_remove</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bin_remove (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                <parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+<para>Removes the element from the bin, unparenting it as well.
+Unparenting the element means that the element will be dereferenced,
+so if the bin holds the only reference to the element, the element
+will be freed in the process of removing it from the bin.  If you
+want the element to still exist after removing, you need to call
+<link linkend="gst-object-ref"><function>gst_object_ref()</function></link> before removing it from the bin.</para>
+<para>If the element's pads are linked to other pads, the pads will be unlinked
+before the element is removed from the bin.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-bin-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstElement"><type>GstElement</type></link> to remove. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-remove.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the element could be removed, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if
+the bin does not want to remove the element.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-get-by-name" role="function">
+<title>gst_bin_get_by_name&#160;()</title>
+<indexterm zone="gst-bin-get-by-name"><primary>gst_bin_get_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_bin_get_by_name (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Gets the element with the given name from a bin. This
+function recurses into child bins.</para>
+<para>Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no element with the given name is found in the bin.</para>
+<para>MT safe.  Caller owns returned reference.</para>
+<refsect3 id="gst-bin-get-by-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the element name to search for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-get-by-name.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstElement"><type>GstElement</type></link> with the given
+name, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-get-by-name-recurse-up" role="function">
+<title>gst_bin_get_by_name_recurse_up&#160;()</title>
+<indexterm zone="gst-bin-get-by-name-recurse-up"><primary>gst_bin_get_by_name_recurse_up</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_bin_get_by_name_recurse_up (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Gets the element with the given name from this bin. If the
+element is not found, a recursion is performed on the parent bin.</para>
+<para>Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if:</para>
+<itemizedlist>
+<listitem>
+<para>no element with the given name is found in the bin</para>
+</listitem>
+</itemizedlist>
+<para>MT safe.  Caller owns returned reference.</para>
+<refsect3 id="gst-bin-get-by-name-recurse-up.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the element name to search for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-get-by-name-recurse-up.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstElement"><type>GstElement</type></link> with the given
+name, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-get-by-interface" role="function">
+<title>gst_bin_get_by_interface&#160;()</title>
+<indexterm zone="gst-bin-get-by-interface"><primary>gst_bin_get_by_interface</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_bin_get_by_interface (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                          <parameter><link linkend="GType"><type>GType</type></link> iface</parameter>);</programlisting>
+<para>Looks for an element inside the bin that implements the given
+interface. If such an element is found, it returns the element.
+You can cast this element to the given interface afterwards.  If you want
+all elements that implement the interface, use
+<link linkend="gst-bin-iterate-all-by-interface"><function>gst_bin_iterate_all_by_interface()</function></link>. This function recurses into child bins.</para>
+<para>MT safe.  Caller owns returned reference.</para>
+<refsect3 id="gst-bin-get-by-interface.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>iface</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GType"><type>GType</type></link> of an interface</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-get-by-interface.returns" role="returns">
+<title>Returns</title>
+<para> A <link linkend="GstElement"><type>GstElement</type></link> inside the bin implementing the interface. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-iterate-elements" role="function">
+<title>gst_bin_iterate_elements&#160;()</title>
+<indexterm zone="gst-bin-iterate-elements"><primary>gst_bin_iterate_elements</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_bin_iterate_elements (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Gets an iterator for the elements in this bin.</para>
+<para>MT safe.  Caller owns returned value.</para>
+<refsect3 id="gst-bin-iterate-elements.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-iterate-elements.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstElement"><type>GstElement</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-iterate-recurse" role="function">
+<title>gst_bin_iterate_recurse&#160;()</title>
+<indexterm zone="gst-bin-iterate-recurse"><primary>gst_bin_iterate_recurse</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_bin_iterate_recurse (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Gets an iterator for the elements in this bin.
+This iterator recurses into GstBin children.</para>
+<para>MT safe.  Caller owns returned value.</para>
+<refsect3 id="gst-bin-iterate-recurse.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-iterate-recurse.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstElement"><type>GstElement</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-iterate-sinks" role="function">
+<title>gst_bin_iterate_sinks&#160;()</title>
+<indexterm zone="gst-bin-iterate-sinks"><primary>gst_bin_iterate_sinks</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_bin_iterate_sinks (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Gets an iterator for all elements in the bin that have the
+<link linkend="GST-ELEMENT-FLAG-SINK:CAPS"><type>GST_ELEMENT_FLAG_SINK</type></link> flag set.</para>
+<para>MT safe.  Caller owns returned value.</para>
+<refsect3 id="gst-bin-iterate-sinks.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-iterate-sinks.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstElement"><type>GstElement</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-iterate-sorted" role="function">
+<title>gst_bin_iterate_sorted&#160;()</title>
+<indexterm zone="gst-bin-iterate-sorted"><primary>gst_bin_iterate_sorted</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_bin_iterate_sorted (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Gets an iterator for the elements in this bin in topologically
+sorted order. This means that the elements are returned from
+the most downstream elements (sinks) to the sources.</para>
+<para>This function is used internally to perform the state changes
+of the bin elements and for clock selection.</para>
+<para>MT safe.  Caller owns returned value.</para>
+<refsect3 id="gst-bin-iterate-sorted.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-iterate-sorted.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstElement"><type>GstElement</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-iterate-sources" role="function">
+<title>gst_bin_iterate_sources&#160;()</title>
+<indexterm zone="gst-bin-iterate-sources"><primary>gst_bin_iterate_sources</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_bin_iterate_sources (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Gets an iterator for all elements in the bin that have the
+<link linkend="GST-ELEMENT-FLAG-SOURCE:CAPS"><type>GST_ELEMENT_FLAG_SOURCE</type></link> flag set.</para>
+<para>MT safe.  Caller owns returned value.</para>
+<refsect3 id="gst-bin-iterate-sources.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-iterate-sources.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstElement"><type>GstElement</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-iterate-all-by-interface" role="function">
+<title>gst_bin_iterate_all_by_interface&#160;()</title>
+<indexterm zone="gst-bin-iterate-all-by-interface"><primary>gst_bin_iterate_all_by_interface</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_bin_iterate_all_by_interface (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                                  <parameter><link linkend="GType"><type>GType</type></link> iface</parameter>);</programlisting>
+<para>Looks for all elements inside the bin that implements the given
+interface. You can safely cast all returned elements to the given interface.
+The function recurses inside child bins. The iterator will yield a series
+of <link linkend="GstElement"><type>GstElement</type></link> that should be unreffed after use.</para>
+<para>MT safe.  Caller owns returned value.</para>
+<refsect3 id="gst-bin-iterate-all-by-interface.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>iface</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GType"><type>GType</type></link> of an interface</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-iterate-all-by-interface.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstElement"><type>GstElement</type></link>
+for all elements in the bin implementing the given interface,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-recalculate-latency" role="function">
+<title>gst_bin_recalculate_latency&#160;()</title>
+<indexterm zone="gst-bin-recalculate-latency"><primary>gst_bin_recalculate_latency</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bin_recalculate_latency (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Query <parameter>bin</parameter>
+ for the current latency using and reconfigures this latency to all the
+elements with a LATENCY event.</para>
+<para>This method is typically called on the pipeline when a <link linkend="GST-MESSAGE-LATENCY:CAPS"><type>GST_MESSAGE_LATENCY</type></link>
+is posted on the bus.</para>
+<para>This function simply emits the 'do-latency' signal so any custom latency
+calculations will be performed.</para>
+<refsect3 id="gst-bin-recalculate-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-recalculate-latency.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the latency could be queried and reconfigured.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-add-many" role="function">
+<title>gst_bin_add_many&#160;()</title>
+<indexterm zone="gst-bin-add-many"><primary>gst_bin_add_many</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bin_add_many (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                  <parameter><link linkend="GstElement"><type>GstElement</type></link> *element_1</parameter>,
+                  <parameter>...</parameter>);</programlisting>
+<para>Adds a <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated list of elements to a bin.  This function is
+equivalent to calling <link linkend="gst-bin-add"><function>gst_bin_add()</function></link> for each member of the list. The return
+value of each <link linkend="gst-bin-add"><function>gst_bin_add()</function></link> is ignored.</para>
+<refsect3 id="gst-bin-add-many.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element_1</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstElement"><type>GstElement</type></link> element to add to the bin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para> additional elements to add to the bin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-remove-many" role="function">
+<title>gst_bin_remove_many&#160;()</title>
+<indexterm zone="gst-bin-remove-many"><primary>gst_bin_remove_many</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bin_remove_many (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                     <parameter><link linkend="GstElement"><type>GstElement</type></link> *element_1</parameter>,
+                     <parameter>...</parameter>);</programlisting>
+<para>Remove a list of elements from a bin. This function is equivalent
+to calling <link linkend="gst-bin-remove"><function>gst_bin_remove()</function></link> with each member of the list.</para>
+<refsect3 id="gst-bin-remove-many.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element_1</para></entry>
+<entry role="parameter_description"><para> the first <link linkend="GstElement"><type>GstElement</type></link> to remove from the bin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para> <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated list of elements to remove from the bin. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-find-unlinked-pad" role="function">
+<title>gst_bin_find_unlinked_pad&#160;()</title>
+<indexterm zone="gst-bin-find-unlinked-pad"><primary>gst_bin_find_unlinked_pad</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_bin_find_unlinked_pad (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                           <parameter><link linkend="GstPadDirection"><type>GstPadDirection</type></link> direction</parameter>);</programlisting>
+<para>Recursively looks for elements with an unlinked pad of the given
+direction within the specified bin and returns an unlinked pad
+if one is found, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> otherwise. If a pad is found, the caller
+owns a reference to it and should use <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> on the
+pad when it is not needed any longer.</para>
+<refsect3 id="gst-bin-find-unlinked-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>bin in which to look for elements with unlinked pads</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>direction</para></entry>
+<entry role="parameter_description"><para>whether to look for an unlinked source or sink pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-find-unlinked-pad.returns" role="returns">
+<title>Returns</title>
+<para> unlinked pad of the given
+direction, <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bin-sync-children-states" role="function" condition="since:1.6">
+<title>gst_bin_sync_children_states&#160;()</title>
+<indexterm zone="gst-bin-sync-children-states" role="1.6"><primary>gst_bin_sync_children_states</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bin_sync_children_states (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>);</programlisting>
+<para>Synchronizes the state of every child of <parameter>bin</parameter>
+ with the state
+of <parameter>bin</parameter>
+. See also <link linkend="gst-element-sync-state-with-parent"><function>gst_element_sync_state_with_parent()</function></link>.</para>
+<refsect3 id="gst-bin-sync-children-states.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bin-sync-children-states.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if syncing the state was successful for all children,
+otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-BIN-IS-NO-RESYNC:CAPS" role="macro" condition="since:1.0.5">
+<title>GST_BIN_IS_NO_RESYNC()</title>
+<indexterm zone="GST-BIN-IS-NO-RESYNC:CAPS" role="1.0.5"><primary>GST_BIN_IS_NO_RESYNC</primary></indexterm>
+<programlisting language="C">#define GST_BIN_IS_NO_RESYNC(bin)        (GST_OBJECT_FLAG_IS_SET(bin,GST_BIN_FLAG_NO_RESYNC))
+</programlisting>
+<para>Check if <parameter>bin</parameter>
+ will resync its state change when elements are added and
+removed.</para>
+<refsect3 id="GST-BIN-IS-NO-RESYNC.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.0.5">1.0.5</link></para></refsect2>
+<refsect2 id="GST-BIN-CHILDREN:CAPS" role="macro">
+<title>GST_BIN_CHILDREN()</title>
+<indexterm zone="GST-BIN-CHILDREN:CAPS"><primary>GST_BIN_CHILDREN</primary></indexterm>
+<programlisting language="C">#define GST_BIN_CHILDREN(bin)		(GST_BIN_CAST(bin)-&gt;children)
+</programlisting>
+<para>Gets the list with children in a bin.</para>
+<refsect3 id="GST-BIN-CHILDREN.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BIN-CHILDREN-COOKIE:CAPS" role="macro">
+<title>GST_BIN_CHILDREN_COOKIE()</title>
+<indexterm zone="GST-BIN-CHILDREN-COOKIE:CAPS"><primary>GST_BIN_CHILDREN_COOKIE</primary></indexterm>
+<programlisting language="C">#define GST_BIN_CHILDREN_COOKIE(bin)&#160;(GST_BIN_CAST(bin)-&gt;children_cookie)
+</programlisting>
+<para>Gets the children cookie that watches the children list.</para>
+<refsect3 id="GST-BIN-CHILDREN-COOKIE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BIN-NUMCHILDREN:CAPS" role="macro">
+<title>GST_BIN_NUMCHILDREN()</title>
+<indexterm zone="GST-BIN-NUMCHILDREN:CAPS"><primary>GST_BIN_NUMCHILDREN</primary></indexterm>
+<programlisting language="C">#define GST_BIN_NUMCHILDREN(bin)&#160;(GST_BIN_CAST(bin)-&gt;numchildren)
+</programlisting>
+<para>Gets the number of children in a bin.</para>
+<refsect3 id="GST-BIN-NUMCHILDREN.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBin.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBin-struct" role="struct">
+<title>struct GstBin</title>
+<indexterm zone="GstBin-struct"><primary>GstBin</primary></indexterm>
+<programlisting language="C">struct GstBin {
+  /* our children, subclass are supposed to update these
+   * fields to reflect their state with _iterate_*() */
+  gint		 numchildren;
+  GList		*children;
+  guint32	 children_cookie;
+
+  GstBus        *child_bus;
+  GList         *messages;
+
+  gboolean	 polling;
+  gboolean       state_dirty;
+
+  gboolean       clock_dirty;
+  GstClock&#160;*provided_clock;
+  GstElement    *clock_provider;
+};
+</programlisting>
+<para>The GstBin base class. Subclasses can access these fields provided
+the LOCK is taken.</para>
+<refsect3 id="GstBin.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstBin-struct.numchildren">numchildren</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the number of children in this bin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GList"><type>GList</type></link>&#160;*<structfield id="GstBin-struct.children">children</structfield>;</para></entry>
+<entry role="struct_member_description"><para> the list of children in this bin. </para></entry>
+<entry role="struct_member_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> Gst.Element]</emphasis></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint32"><type>guint32</type></link>&#160;<structfield id="GstBin-struct.children-cookie">children_cookie</structfield>;</para></entry>
+<entry role="struct_member_description"><para>updated whenever <parameter>children</parameter>
+changes</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstBus"><type>GstBus</type></link>&#160;*<structfield id="GstBin-struct.child-bus">child_bus</structfield>;</para></entry>
+<entry role="struct_member_description"><para>internal bus for handling child messages</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GList"><type>GList</type></link>&#160;*<structfield id="GstBin-struct.messages">messages</structfield>;</para></entry>
+<entry role="struct_member_description"><para> queued and cached messages. </para></entry>
+<entry role="struct_member_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> Gst.Message]</emphasis></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstBin-struct.polling">polling</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the bin is currently calculating its state</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstBin-struct.state-dirty">state_dirty</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the bin needs to recalculate its state (deprecated)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstBin-struct.clock-dirty">clock_dirty</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the bin needs to select a new clock</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClock"><type>GstClock</type></link>&#160;*<structfield id="GstBin-struct.provided-clock">provided_clock</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the last clock selected</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstElement"><type>GstElement</type></link>&#160;*<structfield id="GstBin-struct.clock-provider">clock_provider</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the element that provided <parameter>provided_clock</parameter>
+</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBinClass" role="struct">
+<title>struct GstBinClass</title>
+<indexterm zone="GstBinClass"><primary>GstBinClass</primary></indexterm>
+<programlisting language="C">struct GstBinClass {
+  GstElementClass parent_class;
+
+  /* virtual methods for subclasses */
+  gboolean&#160;(*add_element)		(GstBin *bin, GstElement *element);
+  gboolean&#160;(*remove_element)&#160;(GstBin *bin, GstElement *element);
+
+  void		(*handle_message)&#160;(GstBin *bin, GstMessage *message);
+};
+</programlisting>
+<para>Subclasses can override the <parameter>add_element</parameter>
+ and <parameter>remove_element</parameter>
+ to
+update the list of children in the bin.</para>
+<para>The <parameter>handle_message</parameter>
+ method can be overridden to implement custom
+message handling.  <parameter>handle_message</parameter>
+ takes ownership of the message, just like
+<link linkend="gst-element-post-message"><type>gst_element_post_message</type></link>.</para>
+<refsect3 id="GstBinClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBinClass.add-element">add_element</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>method to add an element to a bin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBinClass.remove-element">remove_element</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>method to remove an element from a bin</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBinClass.handle-message">handle_message</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>method to handle a message from the children</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBinFlags" role="enum">
+<title>enum GstBinFlags</title>
+<indexterm zone="GstBinFlags"><primary>GstBinFlags</primary></indexterm>
+<para>GstBinFlags are a set of flags specific to bins. Most are set/used
+internally. They can be checked using the <link linkend="GST-OBJECT-FLAG-IS-SET:CAPS"><function>GST_OBJECT_FLAG_IS_SET()</function></link> macro,
+and (un)set using <link linkend="GST-OBJECT-FLAG-SET:CAPS"><function>GST_OBJECT_FLAG_SET()</function></link> and <link linkend="GST-OBJECT-FLAG-UNSET:CAPS"><function>GST_OBJECT_FLAG_UNSET()</function></link>.</para>
+<refsect3 id="GstBinFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BIN-FLAG-NO-RESYNC:CAPS">GST_BIN_FLAG_NO_RESYNC</para></entry>
+<entry role="enum_member_description"><para>don't resync a state change when elements are
+            added or linked in the bin (Since 1.0.5)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BIN-FLAG-LAST:CAPS">GST_BIN_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>the last enum in the series of flags for bins.
+Derived classes can use this as first value in a list of flags.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBin.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstBin--async-handling" role="property"><title>The <literal>“async-handling”</literal> property</title>
+<indexterm zone="GstBin--async-handling"><primary>GstBin:async-handling</primary></indexterm>
+<programlisting>  “async-handling”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the bin will handle asynchronous state changes.
+This should be used only if the bin subclass is modifying the state
+of its children on its own.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstBin--message-forward" role="property"><title>The <literal>“message-forward”</literal> property</title>
+<indexterm zone="GstBin--message-forward"><primary>GstBin:message-forward</primary></indexterm>
+<programlisting>  “message-forward”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Forward all children messages, even those that would normally be filtered by
+the bin. This can be interesting when one wants to be notified of the EOS
+state of individual elements, for example.</para>
+<para>The messages are converted to an ELEMENT message with the bin as the
+source. The structure of the message is named 'GstBinForwarded' and contains
+a field named 'message' of type GST_TYPE_MESSAGE that contains the original
+forwarded message.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBin.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstBin-do-latency" role="signal"><title>The <literal>“do-latency”</literal> signal</title>
+<indexterm zone="GstBin-do-latency"><primary>GstBin::do-latency</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+user_function (<link linkend="GstBin"><type>GstBin</type></link>  *bin,
+               <link linkend="gpointer"><type>gpointer</type></link> user_data)</programlisting>
+<para>Will be emitted when the bin needs to perform latency calculations. This
+signal is only emitted for toplevel bins or when async-handling is
+enabled.</para>
+<para>Only one signal handler is invoked. If no signals are connected, the
+default handler is invoked, which will query and distribute the lowest
+possible latency to all sinks.</para>
+<para>Connect to this signal if the default latency calculations are not
+sufficient, like when you need different latencies for different sinks in
+the same pipeline.</para>
+<refsect3 id="GstBin-do-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstBin-element-added" role="signal"><title>The <literal>“element-added”</literal> signal</title>
+<indexterm zone="GstBin-element-added"><primary>GstBin::element-added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstBin"><type>GstBin</type></link>     *bin,
+               <link linkend="GstElement"><type>GstElement</type></link> *element,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>Will be emitted after the element was added to the bin.</para>
+<refsect3 id="GstBin-element-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstElement"><type>GstElement</type></link> that was added to the bin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+</refsect2><refsect2 id="GstBin-element-removed" role="signal"><title>The <literal>“element-removed”</literal> signal</title>
+<indexterm zone="GstBin-element-removed"><primary>GstBin::element-removed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstBin"><type>GstBin</type></link>     *bin,
+               <link linkend="GstElement"><type>GstElement</type></link> *element,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>Will be emitted after the element was removed from the bin.</para>
+<refsect3 id="GstBin-element-removed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBin"><type>GstBin</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstElement"><type>GstElement</type></link> that was removed from the bin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,1563 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstObject">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstObject.top_of_page">GstObject</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstObject</refname>
+<refpurpose>Base class for the GStreamer object hierarchy</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstObject.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-FLAGS:CAPS">GST_OBJECT_FLAGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-FLAG-IS-SET:CAPS">GST_OBJECT_FLAG_IS_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-FLAG-SET:CAPS">GST_OBJECT_FLAG_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-FLAG-UNSET:CAPS">GST_OBJECT_FLAG_UNSET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-NAME:CAPS">GST_OBJECT_NAME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-PARENT:CAPS">GST_OBJECT_PARENT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-REFCOUNT:CAPS">GST_OBJECT_REFCOUNT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-REFCOUNT-VALUE:CAPS">GST_OBJECT_REFCOUNT_VALUE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-LOCK:CAPS">GST_OBJECT_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-TRYLOCK:CAPS">GST_OBJECT_TRYLOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-UNLOCK:CAPS">GST_OBJECT_UNLOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-OBJECT-GET-LOCK:CAPS">GST_OBJECT_GET_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-set-name">gst_object_set_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-object-get-name">gst_object_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-set-parent">gst_object_set_parent</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstObject"><returnvalue>GstObject</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-object-get-parent">gst_object_get_parent</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-has-as-parent">gst_object_has_as_parent</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-unparent">gst_object_unparent</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-default-deep-notify">gst_object_default_deep_notify</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-default-error">gst_object_default_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-check-uniqueness">gst_object_check_uniqueness</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-has-as-ancestor">gst_object_has_as_ancestor</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-has-ancestor">gst_object_has_ancestor</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-ref">gst_object_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-unref">gst_object_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-ref-sink">gst_object_ref_sink</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-replace">gst_object_replace</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-object-get-path-string">gst_object_get_path_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-suggest-next-sync">gst_object_suggest_next_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-sync-values">gst_object_sync_values</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-has-active-control-bindings">gst_object_has_active_control_bindings</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-set-control-bindings-disabled">gst_object_set_control_bindings_disabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-set-control-binding-disabled">gst_object_set_control_binding_disabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-add-control-binding">gst_object_add_control_binding</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstControlBinding"><returnvalue>GstControlBinding</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-object-get-control-binding">gst_object_get_control_binding</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-remove-control-binding">gst_object_remove_control_binding</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-object-get-value">gst_object_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-get-value-array">gst_object_get_value_array</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-get-g-value-array">gst_object_get_g_value_array</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-get-control-rate">gst_object_get_control_rate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-object-set-control-rate">gst_object_set_control_rate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstObject.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstObject--name">name</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="GstObject"><type>GstObject</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstObject--parent">parent</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstObject.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstObject-deep-notify">deep-notify</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-NO-HOOKS:CAPS">No Hooks</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstObject.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstObject-struct">GstObject</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstObjectClass">GstObjectClass</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstObjectFlags">GstObjectFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstObject.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstObject
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstAllocator">GstAllocator</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPad">GstPad</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPadTemplate">GstPadTemplate</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPluginFeature">GstPluginFeature</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBus">GstBus</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTask">GstTask</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTaskPool">GstTaskPool</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstClock">GstClock</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstControlBinding">GstControlBinding</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPlugin">GstPlugin</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRegistry">GstRegistry</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstBufferPool">GstBufferPool</link>
+</screen>
+</refsect1>
+
+<refsect1 id="GstObject.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstObject.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstObject"><type>GstObject</type></link> provides a root for the object hierarchy tree filed in by the
+GStreamer library.  It is currently a thin wrapper on top of
+<link linkend="GInitiallyUnowned"><type>GInitiallyUnowned</type></link>. It is an abstract class that is not very usable on its own.</para>
+<para><link linkend="GstObject"><type>GstObject</type></link> gives us basic refcounting, parenting functionality and locking.
+Most of the functions are just extended for special GStreamer needs and can be
+found under the same name in the base class of <link linkend="GstObject"><type>GstObject</type></link> which is <link linkend="GObject"><type>GObject</type></link>
+(e.g. <link linkend="g-object-ref"><function>g_object_ref()</function></link> becomes <link linkend="gst-object-ref"><function>gst_object_ref()</function></link>).</para>
+<para>Since <link linkend="GstObject"><type>GstObject</type></link> derives from <link linkend="GInitiallyUnowned"><type>GInitiallyUnowned</type></link>, it also inherits the
+floating reference. Be aware that functions such as <link linkend="gst-bin-add"><function>gst_bin_add()</function></link> and
+<link linkend="gst-element-add-pad"><function>gst_element_add_pad()</function></link> take ownership of the floating reference.</para>
+<para>In contrast to <link linkend="GObject"><type>GObject</type></link> instances, <link linkend="GstObject"><type>GstObject</type></link> adds a name property. The functions
+<link linkend="gst-object-set-name"><function>gst_object_set_name()</function></link> and <link linkend="gst-object-get-name"><function>gst_object_get_name()</function></link> are used to set/get the name
+of the object.</para>
+<refsect2>
+<title>controlled properties</title>
+<para>
+Controlled properties offers a lightweight way to adjust gobject properties
+over stream-time. It works by using time-stamped value pairs that are queued
+for element-properties. At run-time the elements continuously pull value
+changes for the current stream-time.
+
+What needs to be changed in a <link linkend="GstElement"><type>GstElement</type></link>?
+Very little - it is just two steps to make a plugin controllable!
+<orderedlist>
+  <listitem><para>
+    mark gobject-properties paramspecs that make sense to be controlled,
+    by GST_PARAM_CONTROLLABLE.
+  </para></listitem>
+  <listitem><para>
+    when processing data (get, chain, loop function) at the beginning call
+    gst_object_sync_values(element,timestamp).
+    This will make the controller update all GObject properties that are
+    under its control with the current values based on the timestamp.
+  </para></listitem>
+</orderedlist>
+
+What needs to be done in applications?
+Again it's not a lot to change.
+<orderedlist>
+  <listitem><para>
+    create a <link linkend="GstControlSource"><type>GstControlSource</type></link>.
+    csource = <link linkend="gst-interpolation-control-source-new"><function>gst_interpolation_control_source_new()</function></link>;
+    g_object_set (csource, "mode", GST_INTERPOLATION_MODE_LINEAR, NULL);
+  </para></listitem>
+  <listitem><para>
+    Attach the <link linkend="GstControlSource"><type>GstControlSource</type></link> on the controller to a property.
+    gst_object_add_control_binding (object, gst_direct_control_binding_new (object, "prop1", csource));
+  </para></listitem>
+  <listitem><para>
+    Set the control values
+    gst_timed_value_control_source_set ((GstTimedValueControlSource *)csource,0 * GST_SECOND, value1);
+    gst_timed_value_control_source_set ((GstTimedValueControlSource *)csource,1 * GST_SECOND, value2);
+  </para></listitem>
+  <listitem><para>
+    start your pipeline
+  </para></listitem>
+</orderedlist>
+</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstObject.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-OBJECT-FLAGS:CAPS" role="macro">
+<title>GST_OBJECT_FLAGS()</title>
+<indexterm zone="GST-OBJECT-FLAGS:CAPS"><primary>GST_OBJECT_FLAGS</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_FLAGS(obj)                  (GST_OBJECT_CAST (obj)-&gt;flags)
+</programlisting>
+<para>This macro returns the entire set of flags for the object.</para>
+<refsect3 id="GST-OBJECT-FLAGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-FLAG-IS-SET:CAPS" role="macro">
+<title>GST_OBJECT_FLAG_IS_SET()</title>
+<indexterm zone="GST-OBJECT-FLAG-IS-SET:CAPS"><primary>GST_OBJECT_FLAG_IS_SET</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_FLAG_IS_SET(obj,flag)       ((GST_OBJECT_FLAGS (obj) &amp; (flag)) == (flag))
+</programlisting>
+<para>This macro checks to see if the given flag is set.</para>
+<refsect3 id="GST-OBJECT-FLAG-IS-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>Flag to check for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-FLAG-SET:CAPS" role="macro">
+<title>GST_OBJECT_FLAG_SET()</title>
+<indexterm zone="GST-OBJECT-FLAG-SET:CAPS"><primary>GST_OBJECT_FLAG_SET</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_FLAG_SET(obj,flag)          (GST_OBJECT_FLAGS (obj) |= (flag))
+</programlisting>
+<para>This macro sets the given bits.</para>
+<refsect3 id="GST-OBJECT-FLAG-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>Flag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-FLAG-UNSET:CAPS" role="macro">
+<title>GST_OBJECT_FLAG_UNSET()</title>
+<indexterm zone="GST-OBJECT-FLAG-UNSET:CAPS"><primary>GST_OBJECT_FLAG_UNSET</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_FLAG_UNSET(obj,flag)        (GST_OBJECT_FLAGS (obj) &amp;= ~(flag))
+</programlisting>
+<para>This macro unsets the given bits.</para>
+<refsect3 id="GST-OBJECT-FLAG-UNSET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>Flag to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-NAME:CAPS" role="macro">
+<title>GST_OBJECT_NAME()</title>
+<indexterm zone="GST-OBJECT-NAME:CAPS"><primary>GST_OBJECT_NAME</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_NAME(obj)            (GST_OBJECT_CAST(obj)-&gt;name)
+</programlisting>
+<para>Get the name of this object</para>
+<refsect3 id="GST-OBJECT-NAME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-PARENT:CAPS" role="macro">
+<title>GST_OBJECT_PARENT()</title>
+<indexterm zone="GST-OBJECT-PARENT:CAPS"><primary>GST_OBJECT_PARENT</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_PARENT(obj)          (GST_OBJECT_CAST(obj)-&gt;parent)
+</programlisting>
+<para>Get the parent of this object</para>
+<refsect3 id="GST-OBJECT-PARENT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-REFCOUNT:CAPS" role="macro">
+<title>GST_OBJECT_REFCOUNT()</title>
+<indexterm zone="GST-OBJECT-REFCOUNT:CAPS"><primary>GST_OBJECT_REFCOUNT</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_REFCOUNT(obj)                (((GObject*)(obj))-&gt;ref_count)
+</programlisting>
+<para>Get access to the reference count field of the object.</para>
+<refsect3 id="GST-OBJECT-REFCOUNT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-REFCOUNT-VALUE:CAPS" role="macro">
+<title>GST_OBJECT_REFCOUNT_VALUE()</title>
+<indexterm zone="GST-OBJECT-REFCOUNT-VALUE:CAPS"><primary>GST_OBJECT_REFCOUNT_VALUE</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_REFCOUNT_VALUE(obj)          g_atomic_int_get ((gint *) &amp;GST_OBJECT_REFCOUNT(obj))
+</programlisting>
+<para>Get the reference count value of the object.</para>
+<refsect3 id="GST-OBJECT-REFCOUNT-VALUE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-LOCK:CAPS" role="macro">
+<title>GST_OBJECT_LOCK()</title>
+<indexterm zone="GST-OBJECT-LOCK:CAPS"><primary>GST_OBJECT_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_LOCK(obj)                   g_mutex_lock(GST_OBJECT_GET_LOCK(obj))
+</programlisting>
+<para>This macro will obtain a lock on the object, making serialization possible.
+It blocks until the lock can be obtained.</para>
+<refsect3 id="GST-OBJECT-LOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to lock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-TRYLOCK:CAPS" role="macro">
+<title>GST_OBJECT_TRYLOCK()</title>
+<indexterm zone="GST-OBJECT-TRYLOCK:CAPS"><primary>GST_OBJECT_TRYLOCK</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_TRYLOCK(obj)                g_mutex_trylock(GST_OBJECT_GET_LOCK(obj))
+</programlisting>
+<para>This macro will try to obtain a lock on the object, but will return with
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if it can't get it immediately.</para>
+<refsect3 id="GST-OBJECT-TRYLOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-UNLOCK:CAPS" role="macro">
+<title>GST_OBJECT_UNLOCK()</title>
+<indexterm zone="GST-OBJECT-UNLOCK:CAPS"><primary>GST_OBJECT_UNLOCK</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_UNLOCK(obj)                 g_mutex_unlock(GST_OBJECT_GET_LOCK(obj))
+</programlisting>
+<para>This macro releases a lock on the object.</para>
+<refsect3 id="GST-OBJECT-UNLOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to unlock.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-OBJECT-GET-LOCK:CAPS" role="macro">
+<title>GST_OBJECT_GET_LOCK()</title>
+<indexterm zone="GST-OBJECT-GET-LOCK:CAPS"><primary>GST_OBJECT_GET_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_OBJECT_GET_LOCK(obj)               (&amp;GST_OBJECT_CAST(obj)-&gt;lock)
+</programlisting>
+<para>Acquire a reference to the mutex of this object.</para>
+<refsect3 id="GST-OBJECT-GET-LOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-set-name" role="function">
+<title>gst_object_set_name&#160;()</title>
+<indexterm zone="gst-object-set-name"><primary>gst_object_set_name</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_set_name (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Sets the name of <parameter>object</parameter>
+, or gives <parameter>object</parameter>
+ a guaranteed unique
+name (if <parameter>name</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>).
+This function makes a copy of the provided name, so the caller
+retains ownership of the name it sent.</para>
+<refsect3 id="gst-object-set-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> new name of object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-set-name.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the name could be set. Since Objects that have
+a parent cannot be renamed, this function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> in those
+cases.</para>
+<para>MT safe.  This function grabs and releases <parameter>object</parameter>
+'s LOCK.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-name" role="function">
+<title>gst_object_get_name&#160;()</title>
+<indexterm zone="gst-object-get-name"><primary>gst_object_get_name</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_object_get_name (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Returns a copy of the name of <parameter>object</parameter>
+.
+Caller should <link linkend="g-free"><function>g_free()</function></link> the return value after usage.
+For a nameless object, this returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>, which you can safely <link linkend="g-free"><function>g_free()</function></link>
+as well.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-object-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of <parameter>object</parameter>
+. <link linkend="g-free"><function>g_free()</function></link>
+after usage.</para>
+<para>MT safe. This function grabs and releases <parameter>object</parameter>
+'s LOCK. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-set-parent" role="function">
+<title>gst_object_set_parent&#160;()</title>
+<indexterm zone="gst-object-set-parent"><primary>gst_object_set_parent</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_set_parent (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                       <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>);</programlisting>
+<para>Sets the parent of <parameter>object</parameter>
+ to <parameter>parent</parameter>
+. The object's reference count will
+be incremented, and any floating reference will be removed (see <link linkend="gst-object-ref-sink"><function>gst_object_ref_sink()</function></link>).</para>
+<refsect3 id="gst-object-set-parent.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>new parent of object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-set-parent.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>parent</parameter>
+could be set or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when <parameter>object</parameter>
+already had a parent or <parameter>object</parameter>
+and <parameter>parent</parameter>
+are the same.</para>
+<para>MT safe. Grabs and releases <parameter>object</parameter>
+'s LOCK.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-parent" role="function">
+<title>gst_object_get_parent&#160;()</title>
+<indexterm zone="gst-object-get-parent"><primary>gst_object_get_parent</primary></indexterm>
+<programlisting language="C"><link linkend="GstObject"><returnvalue>GstObject</returnvalue></link>&#160;*
+gst_object_get_parent (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Returns the parent of <parameter>object</parameter>
+. This function increases the refcount
+of the parent object so you should <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> it after usage.</para>
+<refsect3 id="gst-object-get-parent.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-parent.returns" role="returns">
+<title>Returns</title>
+<para> parent of <parameter>object</parameter>
+, this can be
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>object</parameter>
+has no parent. unref after usage.</para>
+<para>MT safe. Grabs and releases <parameter>object</parameter>
+'s LOCK. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-has-as-parent" role="function" condition="since:1.6">
+<title>gst_object_has_as_parent&#160;()</title>
+<indexterm zone="gst-object-has-as-parent" role="1.6"><primary>gst_object_has_as_parent</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_has_as_parent (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                          <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>);</programlisting>
+<para>Check if <parameter>parent</parameter>
+ is the parent of <parameter>object</parameter>
+.
+E.g. a <link linkend="GstElement"><type>GstElement</type></link> can check if it owns a given <link linkend="GstPad"><type>GstPad</type></link>.</para>
+<refsect3 id="gst-object-has-as-parent.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to check as parent</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-has-as-parent.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if either <parameter>object</parameter>
+or <parameter>parent</parameter>
+is <link linkend="NULL:CAPS"><literal>NULL</literal></link>. <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>parent</parameter>
+is
+the parent of <parameter>object</parameter>
+. Otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>MT safe. Grabs and releases <parameter>object</parameter>
+'s locks.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-object-unparent" role="function">
+<title>gst_object_unparent&#160;()</title>
+<indexterm zone="gst-object-unparent"><primary>gst_object_unparent</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_unparent (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Clear the parent of <parameter>object</parameter>
+, removing the associated reference.
+This function decreases the refcount of <parameter>object</parameter>
+.</para>
+<para>MT safe. Grabs and releases <parameter>object</parameter>
+'s lock.</para>
+<refsect3 id="gst-object-unparent.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to unparent</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-default-deep-notify" role="function">
+<title>gst_object_default_deep_notify&#160;()</title>
+<indexterm zone="gst-object-default-deep-notify"><primary>gst_object_default_deep_notify</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_default_deep_notify (<parameter><link linkend="GObject"><type>GObject</type></link> *object</parameter>,
+                                <parameter><link linkend="GstObject"><type>GstObject</type></link> *orig</parameter>,
+                                <parameter><link linkend="GParamSpec"><type>GParamSpec</type></link> *pspec</parameter>,
+                                <parameter><link linkend="gchar"><type>gchar</type></link> **excluded_props</parameter>);</programlisting>
+<para>A default deep_notify signal callback for an object. The user data
+should contain a pointer to an array of strings that should be excluded
+from the notify. The default handler will print the new value of the property
+using g_print.</para>
+<para>MT safe. This function grabs and releases <parameter>object</parameter>
+'s LOCK for getting its
+         path string.</para>
+<refsect3 id="gst-object-default-deep-notify.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> that signalled the notify.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>orig</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> that initiated the notify.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pspec</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GParamSpec"><type>GParamSpec</type></link> of the property.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>excluded_props</para></entry>
+<entry role="parameter_description"><para>    a set of user-specified properties to exclude or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to show
+all changes. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> zero-terminated=1][<acronym>element-type</acronym> gchar*][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-default-error" role="function">
+<title>gst_object_default_error&#160;()</title>
+<indexterm zone="gst-object-default-error"><primary>gst_object_default_error</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_default_error (<parameter><link linkend="GstObject"><type>GstObject</type></link> *source</parameter>,
+                          <parameter>const <link linkend="GError"><type>GError</type></link> *error</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *debug</parameter>);</programlisting>
+<para>A default error function that uses <link linkend="g-printerr"><function>g_printerr()</function></link> to display the error message
+and the optional debug sting..</para>
+<para>The default handler will simply print the error string using g_print.</para>
+<refsect3 id="gst-object-default-error.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>source</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstObject"><type>GstObject</type></link> that initiated the error.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para> the GError. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>debug</para></entry>
+<entry role="parameter_description"><para> an additional debug information string, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-check-uniqueness" role="function">
+<title>gst_object_check_uniqueness&#160;()</title>
+<indexterm zone="gst-object-check-uniqueness"><primary>gst_object_check_uniqueness</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_check_uniqueness (<parameter><link linkend="GList"><type>GList</type></link> *list</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Checks to see if there is any object named <parameter>name</parameter>
+ in <parameter>list</parameter>
+. This function
+does not do any locking of any kind. You might want to protect the
+provided list with the lock of the owner of the list. This function
+will lock each <link linkend="GstObject"><type>GstObject</type></link> in the list to compare the name, so be
+careful when passing a list with a locked object.</para>
+<refsect3 id="gst-object-check-uniqueness.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> a list of <link linkend="GstObject"><type>GstObject</type></link> to
+check through. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> Gst.Object]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name to search for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-check-uniqueness.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if a <link linkend="GstObject"><type>GstObject</type></link> named <parameter>name</parameter>
+does not appear in <parameter>list</parameter>
+,
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if it does.</para>
+<para>MT safe. Grabs and releases the LOCK of each object in the list.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-has-as-ancestor" role="function">
+<title>gst_object_has_as_ancestor&#160;()</title>
+<indexterm zone="gst-object-has-as-ancestor"><primary>gst_object_has_as_ancestor</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_has_as_ancestor (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                            <parameter><link linkend="GstObject"><type>GstObject</type></link> *ancestor</parameter>);</programlisting>
+<para>Check if <parameter>object</parameter>
+ has an ancestor <parameter>ancestor</parameter>
+ somewhere up in
+the hierarchy. One can e.g. check if a <link linkend="GstElement"><type>GstElement</type></link> is inside a <link linkend="GstPipeline"><type>GstPipeline</type></link>.</para>
+<refsect3 id="gst-object-has-as-ancestor.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ancestor</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to check as ancestor</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-has-as-ancestor.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>ancestor</parameter>
+is an ancestor of <parameter>object</parameter>
+.</para>
+<para>MT safe. Grabs and releases <parameter>object</parameter>
+'s locks.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-has-ancestor" role="function" condition="deprecated">
+<title>gst_object_has_ancestor&#160;()</title>
+<indexterm zone="gst-object-has-ancestor" role="deprecated"><primary>gst_object_has_ancestor</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_has_ancestor (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                         <parameter><link linkend="GstObject"><type>GstObject</type></link> *ancestor</parameter>);</programlisting>
+<warning><para><literal>gst_object_has_ancestor</literal> is deprecated and should not be used in newly-written code.</para> <para>Use <link linkend="gst-object-has-as-ancestor"><function>gst_object_has_as_ancestor()</function></link> instead.</para>
+<para>MT safe. Grabs and releases <parameter>object</parameter>
+'s locks.</para>
+</warning>
+<para>Check if <parameter>object</parameter>
+ has an ancestor <parameter>ancestor</parameter>
+ somewhere up in
+the hierarchy. One can e.g. check if a <link linkend="GstElement"><type>GstElement</type></link> is inside a <link linkend="GstPipeline"><type>GstPipeline</type></link>.</para>
+<refsect3 id="gst-object-has-ancestor.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ancestor</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to check as ancestor</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-has-ancestor.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>ancestor</parameter>
+is an ancestor of <parameter>object</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-ref" role="function">
+<title>gst_object_ref&#160;()</title>
+<indexterm zone="gst-object-ref"><primary>gst_object_ref</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_object_ref (<parameter><link linkend="gpointer"><type>gpointer</type></link> object</parameter>);</programlisting>
+<para>Increments the reference count on <parameter>object</parameter>
+. This function
+does not take the lock on <parameter>object</parameter>
+ because it relies on
+atomic refcounting.</para>
+<para>This object returns the input parameter to ease writing
+constructs like :
+ result = gst_object_ref (object->parent);</para>
+<refsect3 id="gst-object-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstObject"><type>GstObject</type></link> to reference. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>type</acronym> Gst.Object]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-ref.returns" role="returns">
+<title>Returns</title>
+<para> A pointer to <parameter>object</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>type</acronym> Gst.Object]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-unref" role="function">
+<title>gst_object_unref&#160;()</title>
+<indexterm zone="gst-object-unref"><primary>gst_object_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_unref (<parameter><link linkend="gpointer"><type>gpointer</type></link> object</parameter>);</programlisting>
+<para>Decrements the reference count on <parameter>object</parameter>
+.  If reference count hits
+zero, destroy <parameter>object</parameter>
+. This function does not take the lock
+on <parameter>object</parameter>
+ as it relies on atomic refcounting.</para>
+<para>The unref method should never be called with the LOCK held since
+this might deadlock the dispose function.</para>
+<refsect3 id="gst-object-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstObject"><type>GstObject</type></link> to unreference. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>type</acronym> Gst.Object]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-ref-sink" role="function">
+<title>gst_object_ref_sink&#160;()</title>
+<indexterm zone="gst-object-ref-sink"><primary>gst_object_ref_sink</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_object_ref_sink (<parameter><link linkend="gpointer"><type>gpointer</type></link> object</parameter>);</programlisting>
+<para>Increase the reference count of <parameter>object</parameter>
+, and possibly remove the floating
+reference, if <parameter>object</parameter>
+ has a floating reference.</para>
+<para>In other words, if the object is floating, then this call "assumes ownership"
+of the floating reference, converting it to a normal reference by clearing
+the floating flag while leaving the reference count unchanged. If the object
+is not floating, then this call adds a new normal reference increasing the
+reference count by one.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-object-ref-sink.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> to sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-replace" role="function">
+<title>gst_object_replace&#160;()</title>
+<indexterm zone="gst-object-replace"><primary>gst_object_replace</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_replace (<parameter><link linkend="GstObject"><type>GstObject</type></link> **oldobj</parameter>,
+                    <parameter><link linkend="GstObject"><type>GstObject</type></link> *newobj</parameter>);</programlisting>
+<para>Atomically modifies a pointer to point to a new object.
+The reference count of <parameter>oldobj</parameter>
+ is decreased and the reference count of
+<parameter>newobj</parameter>
+ is increased.</para>
+<para>Either <parameter>newobj</parameter>
+ and the value pointed to by <parameter>oldobj</parameter>
+ may be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-object-replace.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>oldobj</para></entry>
+<entry role="parameter_description"><para> pointer to a place of
+a <link linkend="GstObject"><type>GstObject</type></link> to replace. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>newobj</para></entry>
+<entry role="parameter_description"><para> a new <link linkend="GstObject"><type>GstObject</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-replace.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>newobj</parameter>
+was different from <parameter>oldobj</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-path-string" role="function">
+<title>gst_object_get_path_string&#160;()</title>
+<indexterm zone="gst-object-get-path-string"><primary>gst_object_get_path_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_object_get_path_string (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Generates a string describing the path of <parameter>object</parameter>
+ in
+the object hierarchy. Only useful (or used) for debugging.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-object-get-path-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-path-string.returns" role="returns">
+<title>Returns</title>
+<para> a string describing the path of <parameter>object</parameter>
+. You must
+<link linkend="g-free"><function>g_free()</function></link> the string after usage.</para>
+<para>MT safe. Grabs and releases the <link linkend="GstObject"><type>GstObject</type></link>'s LOCK for all objects
+in the hierarchy. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-suggest-next-sync" role="function">
+<title>gst_object_suggest_next_sync&#160;()</title>
+<indexterm zone="gst-object-suggest-next-sync"><primary>gst_object_suggest_next_sync</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_object_suggest_next_sync (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Returns a suggestion for timestamps where buffers should be split
+to get best controller results.</para>
+<refsect3 id="gst-object-suggest-next-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-suggest-next-sync.returns" role="returns">
+<title>Returns</title>
+<para> Returns the suggested timestamp or <link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link>
+if no control-rate was set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-sync-values" role="function">
+<title>gst_object_sync_values&#160;()</title>
+<indexterm zone="gst-object-sync-values"><primary>gst_object_sync_values</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_sync_values (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                        <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Sets the properties of the object, according to the <link linkend="GstControlSources"><type>GstControlSources</type></link> that
+(maybe) handle them and for the given timestamp.</para>
+<para>If this function fails, it is most likely the application developers fault.
+Most probably the control sources are not setup correctly.</para>
+<refsect3 id="gst-object-sync-values.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time that should be processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-sync-values.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the controller values could be applied to the object
+properties, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-has-active-control-bindings" role="function">
+<title>gst_object_has_active_control_bindings&#160;()</title>
+<indexterm zone="gst-object-has-active-control-bindings"><primary>gst_object_has_active_control_bindings</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_has_active_control_bindings
+                               (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Check if the <parameter>object</parameter>
+ has an active controlled properties.</para>
+<refsect3 id="gst-object-has-active-control-bindings.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-has-active-control-bindings.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the object has active controlled properties</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-set-control-bindings-disabled" role="function">
+<title>gst_object_set_control_bindings_disabled&#160;()</title>
+<indexterm zone="gst-object-set-control-bindings-disabled"><primary>gst_object_set_control_bindings_disabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_set_control_bindings_disabled
+                               (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> disabled</parameter>);</programlisting>
+<para>This function is used to disable all controlled properties of the <parameter>object</parameter>
+ for
+some time, i.e. <link linkend="gst-object-sync-values"><function>gst_object_sync_values()</function></link> will do nothing.</para>
+<refsect3 id="gst-object-set-control-bindings-disabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>disabled</para></entry>
+<entry role="parameter_description"><para>boolean that specifies whether to disable the controller
+or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-set-control-binding-disabled" role="function">
+<title>gst_object_set_control_binding_disabled&#160;()</title>
+<indexterm zone="gst-object-set-control-binding-disabled"><primary>gst_object_set_control_binding_disabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_set_control_binding_disabled
+                               (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> disabled</parameter>);</programlisting>
+<para>This function is used to disable the control bindings on a property for
+some time, i.e. <link linkend="gst-object-sync-values"><function>gst_object_sync_values()</function></link> will do nothing for the
+property.</para>
+<refsect3 id="gst-object-set-control-binding-disabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>property to disable</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>disabled</para></entry>
+<entry role="parameter_description"><para>boolean that specifies whether to disable the controller
+or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-object-add-control-binding" role="function">
+<title>gst_object_add_control_binding&#160;()</title>
+<indexterm zone="gst-object-add-control-binding"><primary>gst_object_add_control_binding</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_add_control_binding (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                <parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>);</programlisting>
+<para>Attach the <link linkend="GstControlBinding"><type>GstControlBinding</type></link> to the object. If there already was a
+<link linkend="GstControlBinding"><type>GstControlBinding</type></link> for this property it will be replaced.</para>
+<para>The <parameter>object</parameter>
+ will take ownership of the <parameter>binding</parameter>
+.</para>
+<refsect3 id="gst-object-add-control-binding.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the controller object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstControlBinding"><type>GstControlBinding</type></link> that should be used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-add-control-binding.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if the given <parameter>binding</parameter>
+has not been setup for this object or
+has been setup for a non suitable property, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-control-binding" role="function">
+<title>gst_object_get_control_binding&#160;()</title>
+<indexterm zone="gst-object-get-control-binding"><primary>gst_object_get_control_binding</primary></indexterm>
+<programlisting language="C"><link linkend="GstControlBinding"><returnvalue>GstControlBinding</returnvalue></link>&#160;*
+gst_object_get_control_binding (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>);</programlisting>
+<para>Gets the corresponding <link linkend="GstControlBinding"><type>GstControlBinding</type></link> for the property. This should be
+unreferenced again after use.</para>
+<refsect3 id="gst-object-get-control-binding.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>name of the property</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-control-binding.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstControlBinding"><type>GstControlBinding</type></link> for
+<parameter>property_name</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the property is not controlled. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-remove-control-binding" role="function">
+<title>gst_object_remove_control_binding&#160;()</title>
+<indexterm zone="gst-object-remove-control-binding"><primary>gst_object_remove_control_binding</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_remove_control_binding (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                   <parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>);</programlisting>
+<para>Removes the corresponding <link linkend="GstControlBinding"><type>GstControlBinding</type></link>. If it was the
+last ref of the binding, it will be disposed.</para>
+<refsect3 id="gst-object-remove-control-binding.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-remove-control-binding.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the binding could be removed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-value" role="function">
+<title>gst_object_get_value&#160;()</title>
+<indexterm zone="gst-object-get-value"><primary>gst_object_get_value</primary></indexterm>
+<programlisting language="C"><link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_object_get_value (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>,
+                      <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Gets the value for the given controlled property at the requested time.</para>
+<refsect3 id="gst-object-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>the name of the property to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time the control-change should be read from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-value.returns" role="returns">
+<title>Returns</title>
+<para> the GValue of the property at the given time,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the property isn't controlled. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-value-array" role="function">
+<title>gst_object_get_value_array&#160;()</title>
+<indexterm zone="gst-object-get-value-array"><primary>gst_object_get_value_array</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_get_value_array (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>,
+                            <parameter><link linkend="guint"><type>guint</type></link> n_values</parameter>,
+                            <parameter><link linkend="gpointer"><type>gpointer</type></link> values</parameter>);</programlisting>
+<para>Gets a number of values for the given controlled property starting at the
+requested time. The array <parameter>values</parameter>
+ need to hold enough space for <parameter>n_values</parameter>
+ of
+the same type as the objects property's type.</para>
+<para>This function is useful if one wants to e.g. draw a graph of the control
+curve or apply a control curve sample by sample.</para>
+<para>The values are unboxed and ready to be used. The similar function 
+<link linkend="gst-object-get-g-value-array"><function>gst_object_get_g_value_array()</function></link> returns the array as <link linkend="GValues"><type>GValues</type></link> and is
+better suites for bindings.</para>
+<refsect3 id="gst-object-get-value-array.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>the name of the property to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time that should be processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the time spacing between subsequent values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_values</para></entry>
+<entry role="parameter_description"><para>the number of values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>values</para></entry>
+<entry role="parameter_description"><para>array to put control-values in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-value-array.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the given array could be filled, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-g-value-array" role="function">
+<title>gst_object_get_g_value_array&#160;()</title>
+<indexterm zone="gst-object-get-g-value-array"><primary>gst_object_get_g_value_array</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_object_get_g_value_array (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> n_values</parameter>,
+                              <parameter><link linkend="GValue"><type>GValue</type></link> *values</parameter>);</programlisting>
+<para>Gets a number of <link linkend="GValues"><type>GValues</type></link> for the given controlled property starting at the
+requested time. The array <parameter>values</parameter>
+ need to hold enough space for <parameter>n_values</parameter>
+ of
+<link linkend="GValue"><type>GValue</type></link>.</para>
+<para>This function is useful if one wants to e.g. draw a graph of the control
+curve or apply a control curve sample by sample.</para>
+<refsect3 id="gst-object-get-g-value-array.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>the name of the property to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time that should be processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the time spacing between subsequent values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_values</para></entry>
+<entry role="parameter_description"><para>the number of values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>values</para></entry>
+<entry role="parameter_description"><para>array to put control-values in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-g-value-array.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the given array could be filled, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-get-control-rate" role="function">
+<title>gst_object_get_control_rate&#160;()</title>
+<indexterm zone="gst-object-get-control-rate"><primary>gst_object_get_control_rate</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_object_get_control_rate (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>);</programlisting>
+<para>Obtain the control-rate for this <parameter>object</parameter>
+. Audio processing <link linkend="GstElement"><type>GstElement</type></link>
+objects will use this rate to sub-divide their processing loop and call
+<link linkend="gst-object-sync-values"><function>gst_object_sync_values()</function></link> inbetween. The length of the processing segment
+should be up to <parameter>control</parameter>
+-rate nanoseconds.</para>
+<para>If the <parameter>object</parameter>
+ is not under property control, this will return
+<link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link>. This allows the element to avoid the sub-dividing.</para>
+<para>The control-rate is not expected to change if the element is in
+<link linkend="GST-STATE-PAUSED:CAPS"><literal>GST_STATE_PAUSED</literal></link> or <link linkend="GST-STATE-PLAYING:CAPS"><literal>GST_STATE_PLAYING</literal></link>.</para>
+<refsect3 id="gst-object-get-control-rate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-object-get-control-rate.returns" role="returns">
+<title>Returns</title>
+<para> the control rate in nanoseconds</para>
+</refsect3></refsect2>
+<refsect2 id="gst-object-set-control-rate" role="function">
+<title>gst_object_set_control_rate&#160;()</title>
+<indexterm zone="gst-object-set-control-rate"><primary>gst_object_set_control_rate</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_object_set_control_rate (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                             <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> control_rate</parameter>);</programlisting>
+<para>Change the control-rate for this <parameter>object</parameter>
+. Audio processing <link linkend="GstElement"><type>GstElement</type></link>
+objects will use this rate to sub-divide their processing loop and call
+<link linkend="gst-object-sync-values"><function>gst_object_sync_values()</function></link> inbetween. The length of the processing segment
+should be up to <parameter>control</parameter>
+-rate nanoseconds.</para>
+<para>The control-rate should not change if the element is in <link linkend="GST-STATE-PAUSED:CAPS"><literal>GST_STATE_PAUSED</literal></link> or
+<link linkend="GST-STATE-PLAYING:CAPS"><literal>GST_STATE_PLAYING</literal></link>.</para>
+<refsect3 id="gst-object-set-control-rate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>control_rate</para></entry>
+<entry role="parameter_description"><para>the new control-rate in nanoseconds.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstObject.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstObject-struct" role="struct">
+<title>struct GstObject</title>
+<indexterm zone="GstObject-struct"><primary>GstObject</primary></indexterm>
+<programlisting language="C">struct GstObject {
+  GMutex         lock;        /* object LOCK */
+  gchar         *name;        /* object name */
+  GstObject     *parent;      /* this object's parent, weak ref */
+  guint32        flags;
+};
+</programlisting>
+<para>GStreamer base object class.</para>
+<refsect3 id="GstObject.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GMutex"><type>GMutex</type></link>&#160;<structfield id="GstObject-struct.lock">lock</structfield>;</para></entry>
+<entry role="struct_member_description"><para>object LOCK</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstObject-struct.name">name</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The name of the object</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstObject"><type>GstObject</type></link>&#160;*<structfield id="GstObject-struct.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>this object's parent, weak ref</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint32"><type>guint32</type></link>&#160;<structfield id="GstObject-struct.flags">flags</structfield>;</para></entry>
+<entry role="struct_member_description"><para>flags for this object</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstObjectClass" role="struct">
+<title>struct GstObjectClass</title>
+<indexterm zone="GstObjectClass"><primary>GstObjectClass</primary></indexterm>
+<programlisting language="C">struct GstObjectClass {
+  GInitiallyUnownedClass parent_class;
+
+  const gchar&#160;*path_string_separator;
+
+  /* signals */
+  void          (*deep_notify)      (GstObject * object, GstObject * orig, GParamSpec * pspec);
+
+  /* virtual methods for subclasses */
+};
+</programlisting>
+<para>GStreamer base object class.</para>
+<refsect3 id="GstObjectClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstObjectClass.path-string-separator">path_string_separator</structfield>;</para></entry>
+<entry role="struct_member_description"><para>separator used by <link linkend="gst-object-get-path-string"><function>gst_object_get_path_string()</function></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstObjectClass.deep-notify">deep_notify</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>default signal handler</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstObjectFlags" role="enum">
+<title>enum GstObjectFlags</title>
+<indexterm zone="GstObjectFlags"><primary>GstObjectFlags</primary></indexterm>
+<para>The standard flags that an gstobject may have.</para>
+<refsect3 id="GstObjectFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-OBJECT-FLAG-LAST:CAPS">GST_OBJECT_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>subclasses can add additional flags starting from this flag</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstObject.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstObject--name" role="property"><title>The <literal>“name”</literal> property</title>
+<indexterm zone="GstObject--name"><primary>GstObject:name</primary></indexterm>
+<programlisting>  “name”                     <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The name of the object.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstObject--parent" role="property"><title>The <literal>“parent”</literal> property</title>
+<indexterm zone="GstObject--parent"><primary>GstObject:parent</primary></indexterm>
+<programlisting>  “parent”                   <link linkend="GstObject"><type>GstObject</type></link>&#160;*</programlisting>
+<para>The parent of the object. Please note, that when changing the 'parent'
+property, we don't emit <link linkend="GObject-notify"><type>“notify”</type></link> and <link linkend="GstObject-deep-notify"><type>“deep-notify”</type></link>
+signals due to locking issues. In some cases one can use
+<link linkend="GstBin-element-added"><type>“element-added”</type></link> or <link linkend="GstBin-element-removed"><type>“element-removed”</type></link> signals on the parent to
+achieve a similar effect.</para>
+<para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstObject.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstObject-deep-notify" role="signal"><title>The <literal>“deep-notify”</literal> signal</title>
+<indexterm zone="GstObject-deep-notify"><primary>GstObject::deep-notify</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstObject"><type>GstObject</type></link>  *gstobject,
+               <link linkend="GstObject"><type>GstObject</type></link>  *prop_object,
+               <link linkend="GParamSpec"><type>GParamSpec</type></link> *prop,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>The deep notify signal is used to be notified of property changes. It is
+typically attached to the toplevel bin to receive notifications from all
+the elements contained in that bin.</para>
+<refsect3 id="GstObject-deep-notify.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstobject</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prop_object</para></entry>
+<entry role="parameter_description"><para>the object that originated the signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prop</para></entry>
+<entry role="parameter_description"><para>the property that changed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-NO-HOOKS:CAPS">No Hooks</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

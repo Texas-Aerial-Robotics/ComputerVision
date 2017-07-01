@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstMeta">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstMeta.top_of_page">GstMeta</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstMeta</refname>
+<refpurpose>Buffer metadata</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstMeta.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-FLAGS:CAPS">GST_META_FLAGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-FLAG-IS-SET:CAPS">GST_META_FLAG_IS_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-FLAG-SET:CAPS">GST_META_FLAG_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-FLAG-UNSET:CAPS">GST_META_FLAG_UNSET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMetaInitFunction">*GstMetaInitFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMetaFreeFunction">*GstMetaFreeFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMetaTransformFunction">*GstMetaTransformFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-TRANSFORM-IS-COPY:CAPS">GST_META_TRANSFORM_IS_COPY</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-meta-api-type-register">gst_meta_api_type_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-meta-api-type-has-tag">gst_meta_api_type_has_tag</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const*
+</entry><entry role="function_name"><link linkend="gst-meta-api-type-get-tags">gst_meta_api_type_get_tags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstMetaInfo"><returnvalue>GstMetaInfo</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-meta-register">gst_meta_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstMetaInfo"><returnvalue>GstMetaInfo</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-meta-get-info">gst_meta_get_info</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstMeta.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMeta">GstMeta</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstMetaFlags">GstMetaFlags</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMetaInfo">GstMetaInfo</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstMetaTransformCopy">GstMetaTransformCopy</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-TAG-MEMORY:CAPS">GST_META_TAG_MEMORY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-META-TAG-MEMORY-STR:CAPS">GST_META_TAG_MEMORY_STR</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstMeta.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstMeta.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstMeta"><type>GstMeta</type></link> structure should be included as the first member of a <link linkend="GstBuffer"><type>GstBuffer</type></link>
+metadata structure. The structure defines the API of the metadata and should
+be accessible to all elements using the metadata.</para>
+<para>A metadata API is registered with <link linkend="gst-meta-api-type-register"><function>gst_meta_api_type_register()</function></link> which takes a
+name for the metadata API and some tags associated with the metadata.
+With <link linkend="gst-meta-api-type-has-tag"><function>gst_meta_api_type_has_tag()</function></link> one can check if a certain metadata API
+contains a given tag.</para>
+<para>Multiple implementations of a metadata API can be registered.
+To implement a metadata API, <link linkend="gst-meta-register"><function>gst_meta_register()</function></link> should be used. This
+function takes all parameters needed to create, free and transform metadata
+along with the size of the metadata. The function returns a <link linkend="GstMetaInfo"><type>GstMetaInfo</type></link>
+structure that contains the information for the implementation of the API.</para>
+<para>A specific implementation can be retrieved by name with <link linkend="gst-meta-get-info"><function>gst_meta_get_info()</function></link>.</para>
+<para>See <link linkend="GstBuffer"><type>GstBuffer</type></link> for how the metadata can be added, retrieved and removed from
+buffers.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstMeta.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-META-FLAGS:CAPS" role="macro">
+<title>GST_META_FLAGS()</title>
+<indexterm zone="GST-META-FLAGS:CAPS"><primary>GST_META_FLAGS</primary></indexterm>
+<programlisting language="C">#define GST_META_FLAGS(meta)  (GST_META_CAST (meta)-&gt;flags)
+</programlisting>
+<para>A flags word containing <link linkend="GstMetaFlags"><type>GstMetaFlags</type></link> flags set on <parameter>meta</parameter>
+</para>
+<refsect3 id="GST-META-FLAGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-META-FLAG-IS-SET:CAPS" role="macro">
+<title>GST_META_FLAG_IS_SET()</title>
+<indexterm zone="GST-META-FLAG-IS-SET:CAPS"><primary>GST_META_FLAG_IS_SET</primary></indexterm>
+<programlisting language="C">#define GST_META_FLAG_IS_SET(meta,flag)        !!(GST_META_FLAGS (meta) &amp; (flag))
+</programlisting>
+<para>Gives the status of a specific flag on a metadata.</para>
+<refsect3 id="GST-META-FLAG-IS-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMetaFlags"><type>GstMetaFlags</type></link> to check.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-META-FLAG-SET:CAPS" role="macro">
+<title>GST_META_FLAG_SET()</title>
+<indexterm zone="GST-META-FLAG-SET:CAPS"><primary>GST_META_FLAG_SET</primary></indexterm>
+<programlisting language="C">#define GST_META_FLAG_SET(meta,flag)           (GST_META_FLAGS (meta) |= (flag))
+</programlisting>
+<para>Sets a metadata flag on a metadata.</para>
+<refsect3 id="GST-META-FLAG-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMetaFlags"><type>GstMetaFlags</type></link> to set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-META-FLAG-UNSET:CAPS" role="macro">
+<title>GST_META_FLAG_UNSET()</title>
+<indexterm zone="GST-META-FLAG-UNSET:CAPS"><primary>GST_META_FLAG_UNSET</primary></indexterm>
+<programlisting language="C">#define GST_META_FLAG_UNSET(meta,flag)         (GST_META_FLAGS (meta) &amp;= ~(flag))
+</programlisting>
+<para>Clears a metadata flag.</para>
+<refsect3 id="GST-META-FLAG-UNSET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMetaFlags"><type>GstMetaFlags</type></link> to clear.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMetaInitFunction" role="function">
+<title>GstMetaInitFunction&#160;()</title>
+<indexterm zone="GstMetaInitFunction"><primary>GstMetaInitFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMetaInitFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMeta"><type>GstMeta</type></link> *meta</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> params</parameter>,
+                        <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Function called when <parameter>meta</parameter>
+ is initialized in <parameter>buffer</parameter>
+.</para>
+<refsect3 id="GstMetaInitFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>params</para></entry>
+<entry role="parameter_description"><para>parameters passed to the init function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMetaFreeFunction" role="function">
+<title>GstMetaFreeFunction&#160;()</title>
+<indexterm zone="GstMetaFreeFunction"><primary>GstMetaFreeFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMetaFreeFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMeta"><type>GstMeta</type></link> *meta</parameter>,
+                        <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Function called when <parameter>meta</parameter>
+ is freed in <parameter>buffer</parameter>
+.</para>
+<refsect3 id="GstMetaFreeFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMetaTransformFunction" role="function">
+<title>GstMetaTransformFunction&#160;()</title>
+<indexterm zone="GstMetaTransformFunction"><primary>GstMetaTransformFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMetaTransformFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *transbuf</parameter>,
+                             <parameter><link linkend="GstMeta"><type>GstMeta</type></link> *meta</parameter>,
+                             <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                             <parameter><link linkend="GQuark"><type>GQuark</type></link> type</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>Function called for each <parameter>meta</parameter>
+ in <parameter>buffer</parameter>
+ as a result of performing a
+transformation on <parameter>transbuf</parameter>
+. Additional <parameter>type</parameter>
+ specific transform data
+is passed to the function as <parameter>data</parameter>
+.</para>
+<para>Implementations should check the <parameter>type</parameter>
+ of the transform and parse
+additional type specific fields in <parameter>data</parameter>
+ that should be used to update
+the metadata on <parameter>transbuf</parameter>
+.</para>
+<refsect3 id="GstMetaTransformFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transbuf</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>meta</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMeta"><type>GstMeta</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the transform type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>transform specific data.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMetaTransformFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the transform could be performed</para>
+</refsect3></refsect2>
+<refsect2 id="GST-META-TRANSFORM-IS-COPY:CAPS" role="macro">
+<title>GST_META_TRANSFORM_IS_COPY()</title>
+<indexterm zone="GST-META-TRANSFORM-IS-COPY:CAPS"><primary>GST_META_TRANSFORM_IS_COPY</primary></indexterm>
+<programlisting language="C">#define GST_META_TRANSFORM_IS_COPY(type) ((type) == _gst_meta_transform_copy)
+</programlisting>
+<para>Check if the transform type is a copy transform</para>
+<refsect3 id="GST-META-TRANSFORM-IS-COPY.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>a transform type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-meta-api-type-register" role="function">
+<title>gst_meta_api_type_register&#160;()</title>
+<indexterm zone="gst-meta-api-type-register"><primary>gst_meta_api_type_register</primary></indexterm>
+<programlisting language="C"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+gst_meta_api_type_register (<parameter>const <link linkend="gchar"><type>gchar</type></link> *api</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> **tags</parameter>);</programlisting>
+<para>Register and return a GType for the <parameter>api</parameter>
+ and associate it with
+<parameter>tags</parameter>
+.</para>
+<refsect3 id="gst-meta-api-type-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>api</para></entry>
+<entry role="parameter_description"><para>an API to register</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tags</para></entry>
+<entry role="parameter_description"><para>tags for <parameter>api</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-meta-api-type-register.returns" role="returns">
+<title>Returns</title>
+<para> a unique GType for <parameter>api</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-meta-api-type-has-tag" role="function">
+<title>gst_meta_api_type_has_tag&#160;()</title>
+<indexterm zone="gst-meta-api-type-has-tag"><primary>gst_meta_api_type_has_tag</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_meta_api_type_has_tag (<parameter><link linkend="GType"><type>GType</type></link> api</parameter>,
+                           <parameter><link linkend="GQuark"><type>GQuark</type></link> tag</parameter>);</programlisting>
+<para>Check if <parameter>api</parameter>
+ was registered with <parameter>tag</parameter>
+.</para>
+<refsect3 id="gst-meta-api-type-has-tag.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>api</para></entry>
+<entry role="parameter_description"><para>an API</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>the tag to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-meta-api-type-has-tag.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>api</parameter>
+was registered with <parameter>tag</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-meta-api-type-get-tags" role="function" condition="since:1.2">
+<title>gst_meta_api_type_get_tags&#160;()</title>
+<indexterm zone="gst-meta-api-type-get-tags" role="1.2"><primary>gst_meta_api_type_get_tags</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const*
+gst_meta_api_type_get_tags (<parameter><link linkend="GType"><type>GType</type></link> api</parameter>);</programlisting>
+<refsect3 id="gst-meta-api-type-get-tags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>api</para></entry>
+<entry role="parameter_description"><para>an API</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-meta-api-type-get-tags.returns" role="returns">
+<title>Returns</title>
+<para> an array of tags as strings. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>element-type</acronym> utf8]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-meta-register" role="function">
+<title>gst_meta_register&#160;()</title>
+<indexterm zone="gst-meta-register"><primary>gst_meta_register</primary></indexterm>
+<programlisting language="C">const <link linkend="GstMetaInfo"><returnvalue>GstMetaInfo</returnvalue></link>&#160;*
+gst_meta_register (<parameter><link linkend="GType"><type>GType</type></link> api</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *impl</parameter>,
+                   <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>,
+                   <parameter><link linkend="GstMetaInitFunction"><type>GstMetaInitFunction</type></link> init_func</parameter>,
+                   <parameter><link linkend="GstMetaFreeFunction"><type>GstMetaFreeFunction</type></link> free_func</parameter>,
+                   <parameter><link linkend="GstMetaTransformFunction"><type>GstMetaTransformFunction</type></link> transform_func</parameter>);</programlisting>
+<para>Register a new <link linkend="GstMeta"><type>GstMeta</type></link> implementation.</para>
+<para>The same <parameter>info</parameter>
+ can be retrieved later with <link linkend="gst-meta-get-info"><function>gst_meta_get_info()</function></link> by using
+<parameter>impl</parameter>
+ as the key.</para>
+<refsect3 id="gst-meta-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>api</para></entry>
+<entry role="parameter_description"><para>the type of the <link linkend="GstMeta"><type>GstMeta</type></link> API</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>impl</para></entry>
+<entry role="parameter_description"><para>the name of the <link linkend="GstMeta"><type>GstMeta</type></link> implementation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the size of the <link linkend="GstMeta"><type>GstMeta</type></link> structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>init_func</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstMetaInitFunction"><type>GstMetaInitFunction</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope async</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>free_func</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstMetaFreeFunction"><type>GstMetaFreeFunction</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope async</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>transform_func</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstMetaTransformFunction"><type>GstMetaTransformFunction</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope async</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-meta-register.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstMetaInfo"><type>GstMetaInfo</type></link> that can be used to access metadata. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-meta-get-info" role="function">
+<title>gst_meta_get_info&#160;()</title>
+<indexterm zone="gst-meta-get-info"><primary>gst_meta_get_info</primary></indexterm>
+<programlisting language="C">const <link linkend="GstMetaInfo"><returnvalue>GstMetaInfo</returnvalue></link>&#160;*
+gst_meta_get_info (<parameter>const <link linkend="gchar"><type>gchar</type></link> *impl</parameter>);</programlisting>
+<para>Lookup a previously registered meta info structure by its implementation name
+<parameter>impl</parameter>
+.</para>
+<refsect3 id="gst-meta-get-info.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>impl</para></entry>
+<entry role="parameter_description"><para>the name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-meta-get-info.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstMetaInfo"><type>GstMetaInfo</type></link> with <parameter>impl</parameter>
+, or
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> when no such metainfo exists. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstMeta.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMeta" role="struct">
+<title>struct GstMeta</title>
+<indexterm zone="GstMeta"><primary>GstMeta</primary></indexterm>
+<programlisting language="C">struct GstMeta {
+  GstMetaFlags       flags;
+  const GstMetaInfo *info;
+};
+</programlisting>
+<para>Base structure for metadata. Custom metadata will put this structure
+as the first member of their structure.</para>
+<refsect3 id="GstMeta.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMetaFlags"><type>GstMetaFlags</type></link>&#160;<structfield id="GstMeta.flags">flags</structfield>;</para></entry>
+<entry role="struct_member_description"><para>extra flags for the metadata</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="GstMetaInfo"><type>GstMetaInfo</type></link>&#160;*<structfield id="GstMeta.info">info</structfield>;</para></entry>
+<entry role="struct_member_description"><para>pointer to the <link linkend="GstMetaInfo"><type>GstMetaInfo</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstMetaFlags" role="enum">
+<title>enum GstMetaFlags</title>
+<indexterm zone="GstMetaFlags"><primary>GstMetaFlags</primary></indexterm>
+<para>Extra metadata flags.</para>
+<refsect3 id="GstMetaFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-META-FLAG-NONE:CAPS">GST_META_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>no flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-META-FLAG-READONLY:CAPS">GST_META_FLAG_READONLY</para></entry>
+<entry role="enum_member_description"><para>metadata should not be modified</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-META-FLAG-POOLED:CAPS">GST_META_FLAG_POOLED</para></entry>
+<entry role="enum_member_description"><para>metadata is managed by a bufferpool</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-META-FLAG-LOCKED:CAPS">GST_META_FLAG_LOCKED</para></entry>
+<entry role="enum_member_description"><para>metadata should not be removed</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-META-FLAG-LAST:CAPS">GST_META_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>additional flags can be added starting from this flag.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMetaInfo" role="struct">
+<title>struct GstMetaInfo</title>
+<indexterm zone="GstMetaInfo"><primary>GstMetaInfo</primary></indexterm>
+<programlisting language="C">struct GstMetaInfo {
+  GType                      api;
+  GType                      type;
+  gsize                      size;
+
+  GstMetaInitFunction        init_func;
+  GstMetaFreeFunction        free_func;
+  GstMetaTransformFunction   transform_func;
+};
+</programlisting>
+<para>The <link linkend="GstMetaInfo"><type>GstMetaInfo</type></link> provides information about a specific metadata
+structure.</para>
+<refsect3 id="GstMetaInfo.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GType"><type>GType</type></link>&#160;<structfield id="GstMetaInfo.api">api</structfield>;</para></entry>
+<entry role="struct_member_description"><para>tag identifying the metadata structure and api</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GType"><type>GType</type></link>&#160;<structfield id="GstMetaInfo.type">type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>type identifying the implementor of the api</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMetaInfo.size">size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>size of the metadata</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMetaInitFunction"><type>GstMetaInitFunction</type></link>&#160;<structfield id="GstMetaInfo.init-func">init_func</structfield>;</para></entry>
+<entry role="struct_member_description"><para>function for initializing the metadata</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMetaFreeFunction"><type>GstMetaFreeFunction</type></link>&#160;<structfield id="GstMetaInfo.free-func">free_func</structfield>;</para></entry>
+<entry role="struct_member_description"><para>function for freeing the metadata</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMetaTransformFunction"><type>GstMetaTransformFunction</type></link>&#160;<structfield id="GstMetaInfo.transform-func">transform_func</structfield>;</para></entry>
+<entry role="struct_member_description"><para>function for transforming the metadata</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstMetaTransformCopy" role="struct">
+<title>GstMetaTransformCopy</title>
+<indexterm zone="GstMetaTransformCopy"><primary>GstMetaTransformCopy</primary></indexterm>
+<programlisting language="C">typedef struct {
+  gboolean region;
+  gsize offset;
+  gsize size;
+} GstMetaTransformCopy;
+</programlisting>
+<para>Extra data passed to a "gst-copy" transform <link linkend="GstMetaTransformFunction"><type>GstMetaTransformFunction</type></link>.</para>
+<refsect3 id="GstMetaTransformCopy.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstMetaTransformCopy.region">region</structfield>;</para></entry>
+<entry role="struct_member_description"><para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if only region is copied</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMetaTransformCopy.offset">offset</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the offset to copy, 0 if <parameter>region</parameter>
+is <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, otherwise &gt; 0</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMetaTransformCopy.size">size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the size to copy, -1 or the buffer size when <parameter>region</parameter>
+is <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GST-META-TAG-MEMORY:CAPS" role="macro" condition="deprecated">
+<title>GST_META_TAG_MEMORY</title>
+<indexterm zone="GST-META-TAG-MEMORY:CAPS" role="deprecated"><primary>GST_META_TAG_MEMORY</primary></indexterm>
+<programlisting language="C">#define GST_META_TAG_MEMORY (_gst_meta_tag_memory)
+</programlisting>
+<warning><para><literal>GST_META_TAG_MEMORY</literal> is deprecated and should not be used in newly-written code.</para> <para>The GQuarks are not exported by any public API, use
+  GST_META_TAG_MEMORY_STR instead.</para>
+</warning>
+<para>Metadata tagged with this tag depends on the particular memory
+or buffer that it is on.</para>
+</refsect2>
+<refsect2 id="GST-META-TAG-MEMORY-STR:CAPS" role="macro" condition="since:1.2">
+<title>GST_META_TAG_MEMORY_STR</title>
+<indexterm zone="GST-META-TAG-MEMORY-STR:CAPS" role="1.2"><primary>GST_META_TAG_MEMORY_STR</primary></indexterm>
+<programlisting language="C">#define GST_META_TAG_MEMORY_STR "memory"
+</programlisting>
+<para>This metadata stays relevant as long as memory layout is unchanged.</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstFormat">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstFormat.top_of_page">GstFormat</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstFormat</refname>
+<refpurpose>Dynamically register new data formats</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstFormat.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-format-get-name">gst_format_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-format-to-quark">gst_format_to_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFormat"><returnvalue>GstFormat</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-format-register">gst_format_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFormat"><returnvalue>GstFormat</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-format-get-by-nick">gst_format_get_by_nick</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-formats-contains">gst_formats_contains</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstFormatDefinition"><returnvalue>GstFormatDefinition</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-format-get-details">gst_format_get_details</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-format-iterate-definitions">gst_format_iterate_definitions</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstFormat.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFormat">GstFormat</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FORMAT-PERCENT-MAX:CAPS">GST_FORMAT_PERCENT_MAX</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FORMAT-PERCENT-SCALE:CAPS">GST_FORMAT_PERCENT_SCALE</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFormatDefinition">GstFormatDefinition</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstFormat.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstFormat.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GstFormats functions are used to register a new format to the gstreamer
+core.  Formats can be used to perform seeking or conversions/query
+operations.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstFormat.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-format-get-name" role="function">
+<title>gst_format_get_name&#160;()</title>
+<indexterm zone="gst-format-get-name"><primary>gst_format_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_format_get_name (<parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>Get a printable name for the given format. Do not modify or free.</para>
+<refsect3 id="gst-format-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstFormat"><type>GstFormat</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-format-get-name.returns" role="returns">
+<title>Returns</title>
+<para> a reference to the static name of the format
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the format is unknown. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-format-to-quark" role="function">
+<title>gst_format_to_quark&#160;()</title>
+<indexterm zone="gst-format-to-quark"><primary>gst_format_to_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_format_to_quark (<parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>Get the unique quark for the given format.</para>
+<refsect3 id="gst-format-to-quark.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstFormat"><type>GstFormat</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-format-to-quark.returns" role="returns">
+<title>Returns</title>
+<para> the quark associated with the format or 0 if the format
+is unknown.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-format-register" role="function">
+<title>gst_format_register&#160;()</title>
+<indexterm zone="gst-format-register"><primary>gst_format_register</primary></indexterm>
+<programlisting language="C"><link linkend="GstFormat"><returnvalue>GstFormat</returnvalue></link>
+gst_format_register (<parameter>const <link linkend="gchar"><type>gchar</type></link> *nick</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *description</parameter>);</programlisting>
+<para>Create a new GstFormat based on the nick or return an
+already registered format with that nick.</para>
+<refsect3 id="gst-format-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>nick</para></entry>
+<entry role="parameter_description"><para>The nick of the new format</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>The description of the new format</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-format-register.returns" role="returns">
+<title>Returns</title>
+<para> A new GstFormat or an already registered format
+with the same nick.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-format-get-by-nick" role="function">
+<title>gst_format_get_by_nick&#160;()</title>
+<indexterm zone="gst-format-get-by-nick"><primary>gst_format_get_by_nick</primary></indexterm>
+<programlisting language="C"><link linkend="GstFormat"><returnvalue>GstFormat</returnvalue></link>
+gst_format_get_by_nick (<parameter>const <link linkend="gchar"><type>gchar</type></link> *nick</parameter>);</programlisting>
+<para>Return the format registered with the given nick.</para>
+<refsect3 id="gst-format-get-by-nick.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>nick</para></entry>
+<entry role="parameter_description"><para>The nick of the format</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-format-get-by-nick.returns" role="returns">
+<title>Returns</title>
+<para> The format with <parameter>nick</parameter>
+or GST_FORMAT_UNDEFINED
+if the format was not registered.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-formats-contains" role="function">
+<title>gst_formats_contains&#160;()</title>
+<indexterm zone="gst-formats-contains"><primary>gst_formats_contains</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_formats_contains (<parameter>const <link linkend="GstFormat"><type>GstFormat</type></link> *formats</parameter>,
+                      <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>See if the given format is inside the format array.</para>
+<refsect3 id="gst-formats-contains.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>formats</para></entry>
+<entry role="parameter_description"><para> The format array to search. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format to find</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-formats-contains.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the format is found inside the array</para>
+</refsect3></refsect2>
+<refsect2 id="gst-format-get-details" role="function">
+<title>gst_format_get_details&#160;()</title>
+<indexterm zone="gst-format-get-details"><primary>gst_format_get_details</primary></indexterm>
+<programlisting language="C">const <link linkend="GstFormatDefinition"><returnvalue>GstFormatDefinition</returnvalue></link>&#160;*
+gst_format_get_details (<parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>Get details about the given format.</para>
+<refsect3 id="gst-format-get-details.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>The format to get details of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-format-get-details.returns" role="returns">
+<title>Returns</title>
+<para> The <link linkend="GstFormatDefinition"><type>GstFormatDefinition</type></link> for <parameter>format</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+on failure.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-format-iterate-definitions" role="function">
+<title>gst_format_iterate_definitions&#160;()</title>
+<indexterm zone="gst-format-iterate-definitions"><primary>gst_format_iterate_definitions</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_format_iterate_definitions (<parameter><type>void</type></parameter>);</programlisting>
+<para>Iterate all the registered formats. The format definition is read
+only.</para>
+<refsect3 id="gst-format-iterate-definitions.returns" role="returns">
+<title>Returns</title>
+<para> a GstIterator of <link linkend="GstFormatDefinition"><type>GstFormatDefinition</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstFormat.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFormat" role="enum">
+<title>enum GstFormat</title>
+<indexterm zone="GstFormat"><primary>GstFormat</primary></indexterm>
+<para>Standard predefined formats</para>
+<refsect3 id="GstFormat.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FORMAT-UNDEFINED:CAPS">GST_FORMAT_UNDEFINED</para></entry>
+<entry role="enum_member_description"><para>undefined format</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FORMAT-DEFAULT:CAPS">GST_FORMAT_DEFAULT</para></entry>
+<entry role="enum_member_description"><para>the default format of the pad/element. This can be
+   samples for raw audio, frames/fields for raw video (some, but not all,
+   elements support this; use <parameter>GST_FORMAT_TIME</parameter>
+ if you don't have a good
+   reason to query for samples/frames)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FORMAT-BYTES:CAPS">GST_FORMAT_BYTES</para></entry>
+<entry role="enum_member_description"><para>bytes</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FORMAT-TIME:CAPS">GST_FORMAT_TIME</para></entry>
+<entry role="enum_member_description"><para>time in nanoseconds</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FORMAT-BUFFERS:CAPS">GST_FORMAT_BUFFERS</para></entry>
+<entry role="enum_member_description"><para>buffers (few, if any, elements implement this as of
+    May 2009)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-FORMAT-PERCENT:CAPS">GST_FORMAT_PERCENT</para></entry>
+<entry role="enum_member_description"><para>percentage of stream (few, if any, elements implement
+    this as of May 2009)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-FORMAT-PERCENT-MAX:CAPS" role="macro">
+<title>GST_FORMAT_PERCENT_MAX</title>
+<indexterm zone="GST-FORMAT-PERCENT-MAX:CAPS"><primary>GST_FORMAT_PERCENT_MAX</primary></indexterm>
+<programlisting language="C">#define GST_FORMAT_PERCENT_MAX          G_GINT64_CONSTANT (1000000)
+</programlisting>
+<para>The PERCENT format is between 0 and this value</para>
+</refsect2>
+<refsect2 id="GST-FORMAT-PERCENT-SCALE:CAPS" role="macro">
+<title>GST_FORMAT_PERCENT_SCALE</title>
+<indexterm zone="GST-FORMAT-PERCENT-SCALE:CAPS"><primary>GST_FORMAT_PERCENT_SCALE</primary></indexterm>
+<programlisting language="C">#define GST_FORMAT_PERCENT_SCALE        G_GINT64_CONSTANT (10000)
+</programlisting>
+<para>The value used to scale down the reported PERCENT format value to
+its real value.</para>
+</refsect2>
+<refsect2 id="GstFormatDefinition" role="struct">
+<title>struct GstFormatDefinition</title>
+<indexterm zone="GstFormatDefinition"><primary>GstFormatDefinition</primary></indexterm>
+<programlisting language="C">struct GstFormatDefinition {
+  GstFormat    value;
+  const gchar *nick;
+  const gchar *description;
+  GQuark       quark;
+};
+</programlisting>
+<para>A format definition</para>
+<refsect3 id="GstFormatDefinition.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstFormat"><type>GstFormat</type></link>&#160;<structfield id="GstFormatDefinition.value">value</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The unique id of this format</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstFormatDefinition.nick">nick</structfield>;</para></entry>
+<entry role="struct_member_description"><para>A short nick of the format</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstFormatDefinition.description">description</structfield>;</para></entry>
+<entry role="struct_member_description"><para>A longer description of the format</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GQuark"><type>GQuark</type></link>&#160;<structfield id="GstFormatDefinition.quark">quark</structfield>;</para></entry>
+<entry role="struct_member_description"><para>A quark for the nick</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstFormat.see-also">
+<title>See Also</title>
+<para><link linkend="GstPad"><type>GstPad</type></link>, <link linkend="GstElement"><type>GstElement</type></link></para>
+
+</refsect1>
+
+</refentry>

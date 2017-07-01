@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="gstreamer-plugins-plugin-coreelements">
+  <refmeta>
+    <refentrytitle>coreelements</refentrytitle>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo>FIXME Library</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>coreelements</refname>
+    <refpurpose><anchor id="plugin-coreelements"/>GStreamer core elements</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <title>Plugin Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>filename</term>
+        <listitem>
+          <simpara>libgstcoreelements.so</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem>
+          <simpara>1.6.3</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>run-time license</term>
+        <listitem>
+          <simpara>LGPL</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>package</term>
+        <listitem>
+          <simpara>GStreamer source release</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>origin</term>
+        <listitem>
+          <simpara>Unknown package origin</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <variablelist>
+    <varlistentry><term><link linkend="gstreamer-plugins-capsfilter">capsfilter</link></term><listitem><simpara>Pass data without modification, limiting formats</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-concat">concat</link></term><listitem><simpara>Concatenate multiple streams</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-downloadbuffer">downloadbuffer</link></term><listitem><simpara>Download Buffer element</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-fakesink">fakesink</link></term><listitem><simpara>Black hole for data</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-fakesrc">fakesrc</link></term><listitem><simpara>Push empty (no data) buffers around</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-fdsink">fdsink</link></term><listitem><simpara>Write data to a file descriptor</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-fdsrc">fdsrc</link></term><listitem><simpara>Read from a file descriptor</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-filesink">filesink</link></term><listitem><simpara>Write stream to a file</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-filesrc">filesrc</link></term><listitem><simpara>Read from arbitrary point in a file</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-funnel">funnel</link></term><listitem><simpara>N-to-1 pipe fitting</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-identity">identity</link></term><listitem><simpara>Pass data without modification</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-input-selector">input-selector</link></term><listitem><simpara>N-to-1 input stream selector</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-multiqueue">multiqueue</link></term><listitem><simpara>Multiple data queue</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-output-selector">output-selector</link></term><listitem><simpara>1-to-N output stream selector</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-queue">queue</link></term><listitem><simpara>Simple data queue</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-queue2">queue2</link></term><listitem><simpara>Simple data queue</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-streamiddemux">streamiddemux</link></term><listitem><simpara>1-to-N output stream by stream-id</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-tee">tee</link></term><listitem><simpara>1-to-N pipe fitting</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-typefind">typefind</link></term><listitem><simpara>Finds the media type of a stream</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gstreamer-plugins-valve">valve</link></term><listitem><simpara>Drops buffers and events or lets them through</simpara></listitem></varlistentry>
+  </variablelist>
+  </refsect1>
+</refentry>

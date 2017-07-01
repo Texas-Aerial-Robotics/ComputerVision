@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstNetTimePacket">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstNetTimePacket.top_of_page">GstNetTimePacket</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstNetTimePacket</refname>
+<refpurpose>Helper structure to construct clock packets used
+                    by network clocks.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstNetTimePacket.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstNetTimePacket"><returnvalue>GstNetTimePacket</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-net-time-packet-new">gst_net_time_packet_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstNetTimePacket"><returnvalue>GstNetTimePacket</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-net-time-packet-copy">gst_net_time_packet_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-net-time-packet-free">gst_net_time_packet_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstNetTimePacket"><returnvalue>GstNetTimePacket</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-net-time-packet-receive">gst_net_time_packet_receive</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-net-time-packet-send">gst_net_time_packet_send</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-net-time-packet-serialize">gst_net_time_packet_serialize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstNetTimePacket.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstNetTimePacket">GstNetTimePacket</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-NET-TIME-PACKET-SIZE:CAPS">GST_NET_TIME_PACKET_SIZE</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstNetTimePacket.includes"><title>Includes</title><synopsis>#include &lt;gst/net/gstnet.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstNetTimePacket.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Various functions for receiving, sending an serializing <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link>
+structures.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstNetTimePacket.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-net-time-packet-new" role="function">
+<title>gst_net_time_packet_new&#160;()</title>
+<indexterm zone="gst-net-time-packet-new"><primary>gst_net_time_packet_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstNetTimePacket"><returnvalue>GstNetTimePacket</returnvalue></link>&#160;*
+gst_net_time_packet_new (<parameter>const <link linkend="guint8"><type>guint8</type></link> *buffer</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> from a buffer received over the network. The
+caller is responsible for ensuring that <parameter>buffer</parameter>
+ is at least
+<link linkend="GST-NET-TIME-PACKET-SIZE:CAPS"><type>GST_NET_TIME_PACKET_SIZE</type></link> bytes long.</para>
+<para>If <parameter>buffer</parameter>
+ is <link linkend="NULL:CAPS"><type>NULL</type></link>, the local and remote times will be set to
+<link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link>.</para>
+<para>MT safe. Caller owns return value (gst_net_time_packet_free to free).</para>
+<refsect3 id="gst-net-time-packet-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> a buffer from which to construct the packet, or NULL. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-time-packet-new.returns" role="returns">
+<title>Returns</title>
+<para> The new <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-net-time-packet-copy" role="function">
+<title>gst_net_time_packet_copy&#160;()</title>
+<indexterm zone="gst-net-time-packet-copy"><primary>gst_net_time_packet_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstNetTimePacket"><returnvalue>GstNetTimePacket</returnvalue></link>&#160;*
+gst_net_time_packet_copy (<parameter>const <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> *packet</parameter>);</programlisting>
+<para>Make a copy of <parameter>packet</parameter>
+.</para>
+<refsect3 id="gst-net-time-packet-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>packet</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-time-packet-copy.returns" role="returns">
+<title>Returns</title>
+<para> a copy of <parameter>packet</parameter>
+, free with <link linkend="gst-net-time-packet-free"><function>gst_net_time_packet_free()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-net-time-packet-free" role="function">
+<title>gst_net_time_packet_free&#160;()</title>
+<indexterm zone="gst-net-time-packet-free"><primary>gst_net_time_packet_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_net_time_packet_free (<parameter><link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> *packet</parameter>);</programlisting>
+<para>Free <parameter>packet</parameter>
+.</para>
+<refsect3 id="gst-net-time-packet-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>packet</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-net-time-packet-receive" role="function">
+<title>gst_net_time_packet_receive&#160;()</title>
+<indexterm zone="gst-net-time-packet-receive"><primary>gst_net_time_packet_receive</primary></indexterm>
+<programlisting language="C"><link linkend="GstNetTimePacket"><returnvalue>GstNetTimePacket</returnvalue></link>&#160;*
+gst_net_time_packet_receive (<parameter><link linkend="GSocket"><type>GSocket</type></link> *socket</parameter>,
+                             <parameter><link linkend="GSocketAddress"><type>GSocketAddress</type></link> **src_address</parameter>,
+                             <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Receives a <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> over a socket. Handles interrupted system
+calls, but otherwise returns NULL on error.</para>
+<refsect3 id="gst-net-time-packet-receive.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>socket</para></entry>
+<entry role="parameter_description"><para>socket to receive the time packet on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>src_address</para></entry>
+<entry role="parameter_description"><para> address of variable to return sender address. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>return address for a <link linkend="GError"><type>GError</type></link>, or NULL</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-time-packet-receive.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link>, or NULL on error. Free
+with <link linkend="gst-net-time-packet-free"><function>gst_net_time_packet_free()</function></link> when done. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-net-time-packet-send" role="function">
+<title>gst_net_time_packet_send&#160;()</title>
+<indexterm zone="gst-net-time-packet-send"><primary>gst_net_time_packet_send</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_net_time_packet_send (<parameter>const <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> *packet</parameter>,
+                          <parameter><link linkend="GSocket"><type>GSocket</type></link> *socket</parameter>,
+                          <parameter><link linkend="GSocketAddress"><type>GSocketAddress</type></link> *dest_address</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Sends a <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> over a socket.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-net-time-packet-send.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>packet</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> to send</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>socket</para></entry>
+<entry role="parameter_description"><para>socket to send the time packet on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dest_address</para></entry>
+<entry role="parameter_description"><para>address to send the time packet to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>return address for a <link linkend="GError"><type>GError</type></link>, or NULL</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-time-packet-send.returns" role="returns">
+<title>Returns</title>
+<para> TRUE if successful, FALSE in case an error occurred.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-net-time-packet-serialize" role="function">
+<title>gst_net_time_packet_serialize&#160;()</title>
+<indexterm zone="gst-net-time-packet-serialize"><primary>gst_net_time_packet_serialize</primary></indexterm>
+<programlisting language="C"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+gst_net_time_packet_serialize (<parameter>const <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> *packet</parameter>);</programlisting>
+<para>Serialized a <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link> into a newly-allocated sequence of
+<link linkend="GST-NET-TIME-PACKET-SIZE:CAPS"><type>GST_NET_TIME_PACKET_SIZE</type></link> bytes, in network byte order. The value returned is
+suitable for passing to write(2) or sendto(2) for communication over the
+network.</para>
+<para>MT safe. Caller owns return value (g_free to free).</para>
+<refsect3 id="gst-net-time-packet-serialize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>packet</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-time-packet-serialize.returns" role="returns">
+<title>Returns</title>
+<para> A newly allocated sequence of <link linkend="GST-NET-TIME-PACKET-SIZE:CAPS"><type>GST_NET_TIME_PACKET_SIZE</type></link> bytes.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstNetTimePacket.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstNetTimePacket" role="struct">
+<title>struct GstNetTimePacket</title>
+<indexterm zone="GstNetTimePacket"><primary>GstNetTimePacket</primary></indexterm>
+<programlisting language="C">struct GstNetTimePacket {
+  GstClockTime local_time;
+  GstClockTime remote_time;
+};
+</programlisting>
+<para>Content of a <link linkend="GstNetTimePacket"><type>GstNetTimePacket</type></link>.</para>
+<refsect3 id="GstNetTimePacket.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClockTime"><type>GstClockTime</type></link>&#160;<structfield id="GstNetTimePacket.local-time">local_time</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the local time when this packet was sent</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClockTime"><type>GstClockTime</type></link>&#160;<structfield id="GstNetTimePacket.remote-time">remote_time</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the remote time observation</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GST-NET-TIME-PACKET-SIZE:CAPS" role="macro">
+<title>GST_NET_TIME_PACKET_SIZE</title>
+<indexterm zone="GST-NET-TIME-PACKET-SIZE:CAPS"><primary>GST_NET_TIME_PACKET_SIZE</primary></indexterm>
+<programlisting language="C">#define GST_NET_TIME_PACKET_SIZE 16
+</programlisting>
+<para>The size of the packets sent between network clocks.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstNetTimePacket.see-also">
+<title>See Also</title>
+<para><link linkend="GstClock"><type>GstClock</type></link>, <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link>, <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link></para>
+
+</refsect1>
+
+</refentry>

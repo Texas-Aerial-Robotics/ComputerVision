@@ -1,0 +1,675 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTestClock">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTestClock.top_of_page">GstTestClock</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTestClock</refname>
+<refpurpose>Controllable, deterministic clock for GStreamer unit tests</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTestClock.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-test-clock-new">gst_test_clock_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-test-clock-new-with-start-time">gst_test_clock_new_with_start_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-set-time">gst_test_clock_set_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-advance-time">gst_test_clock_advance_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-peek-id-count">gst_test_clock_peek_id_count</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-has-id">gst_test_clock_has_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-peek-next-pending-id">gst_test_clock_peek_next_pending_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-wait-for-next-pending-id">gst_test_clock_wait_for_next_pending_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-wait-for-pending-id-count">gst_test_clock_wait_for_pending_id_count</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-process-next-clock-id">gst_test_clock_process_next_clock_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-get-next-entry-time">gst_test_clock_get_next_entry_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-wait-for-multiple-pending-ids">gst_test_clock_wait_for_multiple_pending_ids</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-id-list-get-latest-time">gst_test_clock_id_list_get_latest_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-test-clock-process-id-list">gst_test_clock_process_id_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTestClock.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstTestClock--start-time">start-time</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTestClock.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTestClock-struct">GstTestClock</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTestClockClass">GstTestClockClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTestClock.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstClock">GstClock</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTestClock
+</screen>
+</refsect1>
+
+<refsect1 id="GstTestClock.includes"><title>Includes</title><synopsis>#include &lt;gst/check/gsttestclock.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTestClock.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GstTestClock is an implementation of <link linkend="GstClock"><type>GstClock</type></link> which has different
+behaviour compared to <link linkend="GstSystemClock"><type>GstSystemClock</type></link>. Time for <link linkend="GstSystemClock"><type>GstSystemClock</type></link> advances
+according to the system time, while time for <link linkend="GstTestClock"><type>GstTestClock</type></link> changes only
+when <link linkend="gst-test-clock-set-time"><function>gst_test_clock_set_time()</function></link> or <link linkend="gst-test-clock-advance-time"><function>gst_test_clock_advance_time()</function></link> are
+called. <link linkend="GstTestClock"><type>GstTestClock</type></link> provides unit tests with the possibility to
+precisely advance the time in a deterministic manner, independent of the
+system time or any other external factors.</para>
+<example>
+<title>Advancing the time of a <link linkend="GstTestClock"><type>GstTestClock</type></link></title>
+  <programlisting language="c">
+  #include &lt;gst/gst.h&gt;
+  #include &lt;gst/check/gsttestclock.h&gt;
+
+  GstClock *clock;
+  GstTestClock *test_clock;
+
+  clock = gst_test_clock_new ();
+  test_clock = GST_TEST_CLOCK (clock);
+  GST_INFO ("Time: %" GST_TIME_FORMAT, GST_TIME_ARGS (gst_clock_get_time (clock)));
+  gst_test_clock_advance_time ( test_clock, 1 * GST_SECOND);
+  GST_INFO ("Time: %" GST_TIME_FORMAT, GST_TIME_ARGS (gst_clock_get_time (clock)));
+  g_usleep (10 * G_USEC_PER_SEC);
+  GST_INFO ("Time: %" GST_TIME_FORMAT, GST_TIME_ARGS (gst_clock_get_time (clock)));
+  gst_test_clock_set_time (test_clock, 42 * GST_SECOND);
+  GST_INFO ("Time: %" GST_TIME_FORMAT, GST_TIME_ARGS (gst_clock_get_time (clock)));
+  ...
+  </programlisting>
+</example>
+<para><link linkend="GstClock"><type>GstClock</type></link> allows for setting up single shot or periodic clock notifications
+as well as waiting for these notifications synchronously (using
+<link linkend="gst-clock-id-wait"><function>gst_clock_id_wait()</function></link>) or asynchronously (using <link linkend="gst-clock-id-wait-async"><function>gst_clock_id_wait_async()</function></link> or
+<link linkend="gst-clock-id-wait-async"><function>gst_clock_id_wait_async()</function></link>). This is used by many GStreamer elements,
+among them <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> and <link linkend="GstBaseSink"><type>GstBaseSink</type></link>.</para>
+<para><link linkend="GstTestClock"><type>GstTestClock</type></link> keeps track of these clock notifications. By calling
+<link linkend="gst-test-clock-wait-for-next-pending-id"><function>gst_test_clock_wait_for_next_pending_id()</function></link> or
+<link linkend="gst-test-clock-wait-for-multiple-pending-ids"><function>gst_test_clock_wait_for_multiple_pending_ids()</function></link> a unit tests may wait for the
+next one or several clock notifications to be requested. Additionally unit
+tests may release blocked waits in a controlled fashion by calling
+<link linkend="gst-test-clock-process-next-clock-id"><function>gst_test_clock_process_next_clock_id()</function></link>. This way a unit test can control the
+inaccuracy (jitter) of clock notifications, since the test can decide to
+release blocked waits when the clock time has advanced exactly to, or past,
+the requested clock notification time.</para>
+<para>There are also interfaces for determining if a notification belongs to a
+<link linkend="GstTestClock"><type>GstTestClock</type></link> or not, as well as getting the number of requested clock
+notifications so far.</para>
+<para>N.B.: When a unit test waits for a certain amount of clock notifications to
+be requested in <link linkend="gst-test-clock-wait-for-next-pending-id"><function>gst_test_clock_wait_for_next_pending_id()</function></link> or
+<link linkend="gst-test-clock-wait-for-multiple-pending-ids"><function>gst_test_clock_wait_for_multiple_pending_ids()</function></link> then these functions may block
+for a long time. If they block forever then the expected clock notifications
+were never requested from <link linkend="GstTestClock"><type>GstTestClock</type></link>, and so the assumptions in the code
+of the unit test are wrong. The unit test case runner in gstcheck is
+expected to catch these cases either by the default test case timeout or the
+one set for the unit test by calling <link linkend="tcase-set-timeout"><function>tcase_set_timeout()</function></link>.</para>
+<para>The sample code below assumes that the element under test will delay a
+buffer pushed on the source pad by some latency until it arrives on the sink
+pad. Moreover it is assumed that the element will at some point call
+<link linkend="gst-clock-id-wait"><function>gst_clock_id_wait()</function></link> to synchronously wait for a specific time. The first
+buffer sent will arrive exactly on time only delayed by the latency. The
+second buffer will arrive a little late (7ms) due to simulated jitter in the
+clock notification.</para>
+<example>
+<title>Demonstration of how to work with clock notifications and <link linkend="GstTestClock"><type>GstTestClock</type></link></title>
+  <programlisting language="c">
+  #include &lt;gst/gst.h&gt;
+  #include &lt;gst/check/gstcheck.h&gt;
+  #include &lt;gst/check/gsttestclock.h&gt;
+
+  GstClockTime latency;
+  GstElement *element;
+  GstPad *srcpad;
+  GstClock *clock;
+  GstTestClock *test_clock;
+  GstBuffer buf;
+  GstClockID pending_id;
+  GstClockID processed_id;
+
+  latency = 42 * GST_MSECOND;
+  element = create_element (latency, ...);
+  srcpad = get_source_pad (element);
+
+  clock = gst_test_clock_new ();
+  test_clock = GST_TEST_CLOCK (clock);
+  gst_element_set_clock (element, clock);
+
+  GST_INFO ("Set time, create and push the first buffer\n");
+  gst_test_clock_set_time (test_clock, 0);
+  buf = create_test_buffer (gst_clock_get_time (clock), ...);
+  gst_assert_cmpint (gst_pad_push (srcpad, buf), ==, GST_FLOW_OK);
+
+  GST_INFO ("Block until element is waiting for a clock notification\n");
+  gst_test_clock_wait_for_next_pending_id (test_clock, &amp;pending_id);
+  GST_INFO ("Advance to the requested time of the clock notification\n");
+  gst_test_clock_advance_time (test_clock, latency);
+  GST_INFO ("Release the next blocking wait and make sure it is the one from element\n");
+  processed_id = gst_test_clock_process_next_clock_id (test_clock);
+  g_assert (processed_id == pending_id);
+  g_assert_cmpint (GST_CLOCK_ENTRY_STATUS (processed_id), ==, GST_CLOCK_OK);
+  gst_clock_id_unref (pending_id);
+  gst_clock_id_unref (processed_id);
+
+  GST_INFO ("Validate that element produced an output buffer and check its timestamp\n");
+  g_assert_cmpint (get_number_of_output_buffer (...), ==, 1);
+  buf = get_buffer_pushed_by_element (element, ...);
+  g_assert_cmpint (GST_BUFFER_TIMESTAMP (buf), ==, latency);
+  gst_buffer_unref (buf);
+  GST_INFO ("Check that element does not wait for any clock notification\n");
+  g_assert (!gst_test_clock_peek_next_pending_id (test_clock, NULL));
+
+  GST_INFO ("Set time, create and push the second buffer\n");
+  gst_test_clock_advance_time (test_clock, 10 * GST_SECOND);
+  buf = create_test_buffer (gst_clock_get_time (clock), ...);
+  gst_assert_cmpint (gst_pad_push (srcpad, buf), ==, GST_FLOW_OK);
+
+  GST_INFO ("Block until element is waiting for a new clock notification\n");
+  (gst_test_clock_wait_for_next_pending_id (test_clock, &amp;pending_id);
+  GST_INFO ("Advance past 7ms beyond the requested time of the clock notification\n");
+  gst_test_clock_advance_time (test_clock, latency + 7 * GST_MSECOND);
+  GST_INFO ("Release the next blocking wait and make sure it is the one from element\n");
+  processed_id = gst_test_clock_process_next_clock_id (test_clock);
+  g_assert (processed_id == pending_id);
+  g_assert_cmpint (GST_CLOCK_ENTRY_STATUS (processed_id), ==, GST_CLOCK_OK);
+  gst_clock_id_unref (pending_id);
+  gst_clock_id_unref (processed_id);
+
+  GST_INFO ("Validate that element produced an output buffer and check its timestamp\n");
+  g_assert_cmpint (get_number_of_output_buffer (...), ==, 1);
+  buf = get_buffer_pushed_by_element (element, ...);
+  g_assert_cmpint (GST_BUFFER_TIMESTAMP (buf), ==,
+      10 * GST_SECOND + latency + 7 * GST_MSECOND);
+  gst_buffer_unref (buf);
+  GST_INFO ("Check that element does not wait for any clock notification\n");
+  g_assert (!gst_test_clock_peek_next_pending_id (test_clock, NULL));
+  ...
+  </programlisting>
+</example>
+<para>Since <link linkend="GstTestClock"><type>GstTestClock</type></link> is only supposed to be used in unit tests it calls
+<link linkend="g-assert"><function>g_assert()</function></link>, <link linkend="g-assert-cmpint"><function>g_assert_cmpint()</function></link> or <link linkend="g-assert-cmpuint"><function>g_assert_cmpuint()</function></link> to validate all function
+arguments. This will highlight any issues with the unit test code itself.</para>
+
+</refsect1>
+<refsect1 id="GstTestClock.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-test-clock-new" role="function" condition="since:1.2">
+<title>gst_test_clock_new&#160;()</title>
+<indexterm zone="gst-test-clock-new" role="1.2"><primary>gst_test_clock_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_test_clock_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new test clock with its time set to zero.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-new.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstTestClock"><type>GstTestClock</type></link> cast to <link linkend="GstClock"><type>GstClock</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-new-with-start-time" role="function" condition="since:1.2">
+<title>gst_test_clock_new_with_start_time&#160;()</title>
+<indexterm zone="gst-test-clock-new-with-start-time" role="1.2"><primary>gst_test_clock_new_with_start_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_test_clock_new_with_start_time (<parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> start_time</parameter>);</programlisting>
+<para>Creates a new test clock with its time set to the specified time.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-new-with-start-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>start_time</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockTime"><type>GstClockTime</type></link> set to the desired start time of the clock.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-test-clock-new-with-start-time.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstTestClock"><type>GstTestClock</type></link> cast to <link linkend="GstClock"><type>GstClock</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-set-time" role="function" condition="since:1.2">
+<title>gst_test_clock_set_time&#160;()</title>
+<indexterm zone="gst-test-clock-set-time" role="1.2"><primary>gst_test_clock_set_time</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_test_clock_set_time (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                         <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> new_time</parameter>);</programlisting>
+<para>Sets the time of <parameter>test_clock</parameter>
+ to the time given by <parameter>new_time</parameter>
+. The time of
+<parameter>test_clock</parameter>
+ is monotonically increasing, therefore providing a <parameter>new_time</parameter>
+
+which is earlier or equal to the time of the clock as given by
+<link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link> is a programming error.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-set-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> of which to set the time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>new_time</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockTime"><type>GstClockTime</type></link> later than that returned by <link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-advance-time" role="function" condition="since:1.2">
+<title>gst_test_clock_advance_time&#160;()</title>
+<indexterm zone="gst-test-clock-advance-time" role="1.2"><primary>gst_test_clock_advance_time</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_test_clock_advance_time (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                             <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> delta</parameter>);</programlisting>
+<para>Advances the time of the <parameter>test_clock</parameter>
+ by the amount given by <parameter>delta</parameter>
+. The
+time of <parameter>test_clock</parameter>
+ is monotonically increasing, therefore providing a
+<parameter>delta</parameter>
+ which is negative or zero is a programming error.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-advance-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> for which to increase the time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>delta</para></entry>
+<entry role="parameter_description"><para>a positive <link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> to be added to the time of the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-peek-id-count" role="function" condition="since:1.2">
+<title>gst_test_clock_peek_id_count&#160;()</title>
+<indexterm zone="gst-test-clock-peek-id-count" role="1.2"><primary>gst_test_clock_peek_id_count</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_test_clock_peek_id_count (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>);</programlisting>
+<para>Determine the number of pending clock notifications that have been
+requested from the <parameter>test_clock</parameter>
+.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-peek-id-count.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> for which to count notifications</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-test-clock-peek-id-count.returns" role="returns">
+<title>Returns</title>
+<para> the number of pending clock notifications.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-has-id" role="function" condition="since:1.2">
+<title>gst_test_clock_has_id&#160;()</title>
+<indexterm zone="gst-test-clock-has-id" role="1.2"><primary>gst_test_clock_has_id</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_test_clock_has_id (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                       <parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>);</programlisting>
+<para>Checks whether <parameter>test_clock</parameter>
+ was requested to provide the clock notification
+given by <parameter>id</parameter>
+.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-has-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> to ask if it provided the notification</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstClockID"><type>GstClockID</type></link> clock notification. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-test-clock-has-id.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the clock has been asked to provide the given clock
+notification, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-peek-next-pending-id" role="function" condition="since:1.2">
+<title>gst_test_clock_peek_next_pending_id&#160;()</title>
+<indexterm zone="gst-test-clock-peek-next-pending-id" role="1.2"><primary>gst_test_clock_peek_next_pending_id</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_test_clock_peek_next_pending_id (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                                     <parameter><link linkend="GstClockID"><type>GstClockID</type></link> *pending_id</parameter>);</programlisting>
+<para>Determines if the <parameter>pending_id</parameter>
+ is the next clock notification scheduled to
+be triggered given the current time of the <parameter>test_clock</parameter>
+.</para>
+<para>MT safe.</para>
+<para>Return: <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>pending_id</parameter>
+ is the next clock notification to be
+triggered, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+<refsect3 id="gst-test-clock-peek-next-pending-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> to check the clock notifications for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pending_id</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstClockID"><type>GstClockID</type></link> clock
+notification to look for. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>out</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-wait-for-next-pending-id" role="function" condition="since:1.2">
+<title>gst_test_clock_wait_for_next_pending_id&#160;()</title>
+<indexterm zone="gst-test-clock-wait-for-next-pending-id" role="1.2"><primary>gst_test_clock_wait_for_next_pending_id</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_test_clock_wait_for_next_pending_id
+                               (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                                <parameter><link linkend="GstClockID"><type>GstClockID</type></link> *pending_id</parameter>);</programlisting>
+<para>Waits until a clock notification is requested from <parameter>test_clock</parameter>
+. There is no
+timeout for this wait, see the main description of <link linkend="GstTestClock"><type>GstTestClock</type></link>. A reference
+to the pending clock notification is stored in <parameter>pending_id</parameter>
+.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-wait-for-next-pending-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para><link linkend="GstTestClock"><type>GstTestClock</type></link> for which to get the pending clock notification</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pending_id</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstClockID"><type>GstClockID</type></link>
+with information about the pending clock notification. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>out</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-wait-for-pending-id-count" role="function" condition="deprecated:use gst_test_clock_wait_for_multiple_pending_ids() instead.|since:1.2">
+<title>gst_test_clock_wait_for_pending_id_count&#160;()</title>
+<indexterm zone="gst-test-clock-wait-for-pending-id-count" role="deprecated"><primary>gst_test_clock_wait_for_pending_id_count</primary></indexterm><indexterm zone="gst-test-clock-wait-for-pending-id-count" role="1.2"><primary>gst_test_clock_wait_for_pending_id_count</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_test_clock_wait_for_pending_id_count
+                               (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> count</parameter>);</programlisting>
+<warning><para><literal>gst_test_clock_wait_for_pending_id_count</literal> is deprecated and should not be used in newly-written code.</para> <para>use <link linkend="gst-test-clock-wait-for-multiple-pending-ids"><function>gst_test_clock_wait_for_multiple_pending_ids()</function></link> instead.</para>
+</warning>
+<para>Blocks until at least <parameter>count</parameter>
+ clock notifications have been requested from
+<parameter>test_clock</parameter>
+. There is no timeout for this wait, see the main description of
+<link linkend="GstTestClock"><type>GstTestClock</type></link>.</para>
+<refsect3 id="gst-test-clock-wait-for-pending-id-count.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para><link linkend="GstTestClock"><type>GstTestClock</type></link> for which to await having enough pending clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>count</para></entry>
+<entry role="parameter_description"><para>the number of pending clock notifications to wait for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-process-next-clock-id" role="function" condition="since:1.2">
+<title>gst_test_clock_process_next_clock_id&#160;()</title>
+<indexterm zone="gst-test-clock-process-next-clock-id" role="1.2"><primary>gst_test_clock_process_next_clock_id</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+gst_test_clock_process_next_clock_id (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>);</programlisting>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-process-next-clock-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> for which to retrieve the next pending clock
+notification</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-test-clock-process-next-clock-id.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstClockID"><type>GstClockID</type></link> containing the next pending clock
+notification. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-get-next-entry-time" role="function" condition="since:1.2">
+<title>gst_test_clock_get_next_entry_time&#160;()</title>
+<indexterm zone="gst-test-clock-get-next-entry-time" role="1.2"><primary>gst_test_clock_get_next_entry_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_test_clock_get_next_entry_time (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>);</programlisting>
+<para>Retrieve the requested time for the next pending clock notification.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-get-next-entry-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTestClock"><type>GstTestClock</type></link> to fetch the next clock notification time for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-test-clock-get-next-entry-time.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstClockTime"><type>GstClockTime</type></link> set to the time of the next pending clock
+notification. If no clock notifications have been requested
+<link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link> will be returned.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-test-clock-wait-for-multiple-pending-ids" role="function" condition="since:1.4">
+<title>gst_test_clock_wait_for_multiple_pending_ids&#160;()</title>
+<indexterm zone="gst-test-clock-wait-for-multiple-pending-ids" role="1.4"><primary>gst_test_clock_wait_for_multiple_pending_ids</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_test_clock_wait_for_multiple_pending_ids
+                               (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> count</parameter>,
+                                <parameter><link linkend="GList"><type>GList</type></link> **pending_list</parameter>);</programlisting>
+<para>Blocks until at least <parameter>count</parameter>
+ clock notifications have been requested from
+<parameter>test_clock</parameter>
+. There is no timeout for this wait, see the main description of
+<link linkend="GstTestClock"><type>GstTestClock</type></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-wait-for-multiple-pending-ids.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para><link linkend="GstTestClock"><type>GstTestClock</type></link> for which to await having enough pending clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>count</para></entry>
+<entry role="parameter_description"><para>the number of pending clock notifications to wait for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pending_list</para></entry>
+<entry role="parameter_description"><para> Address
+of a <link linkend="GList"><type>GList</type></link> pointer variable to store the list of pending <link linkend="GstClockIDs"><type>GstClockIDs</type></link>
+that expired, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>element-type</acronym> Gst.ClockID][<acronym>transfer full</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-test-clock-id-list-get-latest-time" role="function" condition="since:1.4">
+<title>gst_test_clock_id_list_get_latest_time&#160;()</title>
+<indexterm zone="gst-test-clock-id-list-get-latest-time" role="1.4"><primary>gst_test_clock_id_list_get_latest_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_test_clock_id_list_get_latest_time
+                               (<parameter>const <link linkend="GList"><type>GList</type></link> *pending_list</parameter>);</programlisting>
+<para>Finds the latest time inside the list.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-id-list-get-latest-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pending_list</para></entry>
+<entry role="parameter_description"><para> List
+of of pending <link linkend="GstClockIDs"><type>GstClockIDs</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> Gst.ClockID][<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-test-clock-process-id-list" role="function" condition="since:1.4">
+<title>gst_test_clock_process_id_list&#160;()</title>
+<indexterm zone="gst-test-clock-process-id-list" role="1.4"><primary>gst_test_clock_process_id_list</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_test_clock_process_id_list (<parameter><link linkend="GstTestClock"><type>GstTestClock</type></link> *test_clock</parameter>,
+                                <parameter>const <link linkend="GList"><type>GList</type></link> *pending_list</parameter>);</programlisting>
+<para>Processes and releases the pending IDs in the list.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-test-clock-process-id-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>test_clock</para></entry>
+<entry role="parameter_description"><para><link linkend="GstTestClock"><type>GstTestClock</type></link> for which to process the pending IDs</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pending_list</para></entry>
+<entry role="parameter_description"><para> List
+of pending <link linkend="GstClockIDs"><type>GstClockIDs</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> Gst.ClockID][<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstTestClock.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTestClock-struct" role="struct">
+<title>struct GstTestClock</title>
+<indexterm zone="GstTestClock-struct" role="1.2"><primary>GstTestClock</primary></indexterm>
+<programlisting language="C">struct GstTestClock;</programlisting>
+<para>A <link linkend="GstTestClock"><type>GstTestClock</type></link> structure which is based on a <link linkend="GstClock"><type>GstClock</type></link> along with some
+private data.</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstTestClockClass" role="struct" condition="since:1.2">
+<title>struct GstTestClockClass</title>
+<indexterm zone="GstTestClockClass" role="1.2"><primary>GstTestClockClass</primary></indexterm>
+<programlisting language="C">struct GstTestClockClass {
+  GstClockClass parent_class;
+};
+</programlisting>
+<para>The class of a <link linkend="GstTestClock"><type>GstTestClock</type></link>, which has no virtual methods to override.</para>
+<refsect3 id="GstTestClockClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstTestClock.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstTestClock--start-time" role="property"><title>The <literal>“start-time”</literal> property</title>
+<indexterm zone="GstTestClock--start-time"><primary>GstTestClock:start-time</primary></indexterm>
+<programlisting>  “start-time”               <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>When a <link linkend="GstTestClock"><type>GstTestClock</type></link> is constructed it will have a certain start time set.
+If the clock was created using <link linkend="gst-test-clock-new-with-start-time"><function>gst_test_clock_new_with_start_time()</function></link> then
+this property contains the value of the <parameter>start_time</parameter>
+ argument. If
+<link linkend="gst-test-clock-new"><function>gst_test_clock_new()</function></link> was called the clock started at time zero, and thus
+this property contains the value 0.</para>
+<para>Flags: Read / Write / Construct Only</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstTestClock.see-also">
+<title>See Also</title>
+<para><link linkend="GstSystemClock"><type>GstSystemClock</type></link>, <link linkend="GstClock"><type>GstClock</type></link></para>
+
+</refsect1>
+
+</refentry>

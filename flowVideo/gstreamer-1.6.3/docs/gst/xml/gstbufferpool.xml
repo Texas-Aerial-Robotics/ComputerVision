@@ -1,0 +1,964 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBufferPool">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBufferPool.top_of_page">GstBufferPool</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBufferPool</refname>
+<refpurpose>Pool for buffers</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBufferPool.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BUFFER-POOL-IS-FLUSHING:CAPS">GST_BUFFER_POOL_IS_FLUSHING</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferPool"><returnvalue>GstBufferPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-new">gst_buffer_pool_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-get-params">gst_buffer_pool_config_get_params</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-set-params">gst_buffer_pool_config_set_params</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-validate-params">gst_buffer_pool_config_validate_params</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-get-allocator">gst_buffer_pool_config_get_allocator</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-set-allocator">gst_buffer_pool_config_set_allocator</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-n-options">gst_buffer_pool_config_n_options</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-add-option">gst_buffer_pool_config_add_option</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-get-option">gst_buffer_pool_config_get_option</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-config-has-option">gst_buffer_pool_config_has_option</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-get-options">gst_buffer_pool_get_options</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-has-option">gst_buffer_pool_has_option</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-get-config">gst_buffer_pool_get_config</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-set-config">gst_buffer_pool_set_config</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-set-active">gst_buffer_pool_set_active</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-is-active">gst_buffer_pool_is_active</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-set-flushing">gst_buffer_pool_set_flushing</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-acquire-buffer">gst_buffer_pool_acquire_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-pool-release-buffer">gst_buffer_pool_release_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBufferPool.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstBufferPool-struct">GstBufferPool</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBufferPoolClass">GstBufferPoolClass</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstBufferPoolAcquireFlags">GstBufferPoolAcquireFlags</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBufferPoolAcquireParams">GstBufferPoolAcquireParams</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBufferPool.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBufferPool
+</screen>
+</refsect1>
+
+<refsect1 id="GstBufferPool.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBufferPool.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstBufferPool"><type>GstBufferPool</type></link> is an object that can be used to pre-allocate and recycle
+buffers of the same size and with the same properties.</para>
+<para>A <link linkend="GstBufferPool"><type>GstBufferPool</type></link> is created with <link linkend="gst-buffer-pool-new"><function>gst_buffer_pool_new()</function></link>.</para>
+<para>Once a pool is created, it needs to be configured. A call to
+<link linkend="gst-buffer-pool-get-config"><function>gst_buffer_pool_get_config()</function></link> returns the current configuration structure from
+the pool. With <link linkend="gst-buffer-pool-config-set-params"><function>gst_buffer_pool_config_set_params()</function></link> and
+<link linkend="gst-buffer-pool-config-set-allocator"><function>gst_buffer_pool_config_set_allocator()</function></link> the bufferpool parameters and
+allocator can be configured. Other properties can be configured in the pool
+depending on the pool implementation.</para>
+<para>A bufferpool can have extra options that can be enabled with
+<link linkend="gst-buffer-pool-config-add-option"><function>gst_buffer_pool_config_add_option()</function></link>. The available options can be retrieved
+with <link linkend="gst-buffer-pool-get-options"><function>gst_buffer_pool_get_options()</function></link>. Some options allow for additional
+configuration properties to be set.</para>
+<para>After the configuration structure has been configured,
+<link linkend="gst-buffer-pool-set-config"><function>gst_buffer_pool_set_config()</function></link> updates the configuration in the pool. This can
+fail when the configuration structure is not accepted.</para>
+<para>After the a pool has been configured, it can be activated with
+<link linkend="gst-buffer-pool-set-active"><function>gst_buffer_pool_set_active()</function></link>. This will preallocate the configured resources
+in the pool.</para>
+<para>When the pool is active, <link linkend="gst-buffer-pool-acquire-buffer"><function>gst_buffer_pool_acquire_buffer()</function></link> can be used to
+retrieve a buffer from the pool.</para>
+<para>Buffers allocated from a bufferpool will automatically be returned to the
+pool with <link linkend="gst-buffer-pool-release-buffer"><function>gst_buffer_pool_release_buffer()</function></link> when their refcount drops to 0.</para>
+<para>The bufferpool can be deactivated again with <link linkend="gst-buffer-pool-set-active"><function>gst_buffer_pool_set_active()</function></link>.
+All further <link linkend="gst-buffer-pool-acquire-buffer"><function>gst_buffer_pool_acquire_buffer()</function></link> calls will return an error. When
+all buffers are returned to the pool they will be freed.</para>
+<para>Use <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> to release the reference to a bufferpool. If the
+refcount of the pool reaches 0, the pool will be freed.</para>
+
+</refsect1>
+<refsect1 id="GstBufferPool.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-BUFFER-POOL-IS-FLUSHING:CAPS" role="macro">
+<title>GST_BUFFER_POOL_IS_FLUSHING()</title>
+<indexterm zone="GST-BUFFER-POOL-IS-FLUSHING:CAPS"><primary>GST_BUFFER_POOL_IS_FLUSHING</primary></indexterm>
+<programlisting language="C">#define GST_BUFFER_POOL_IS_FLUSHING(pool)  (g_atomic_int_get (&amp;pool-&gt;flushing))
+</programlisting>
+<para>Check if the bufferpool is flushing. Subclasses might want to check the
+state of the pool in the acquire function.</para>
+<refsect3 id="GST-BUFFER-POOL-IS-FLUSHING.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a GstBufferPool</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-new" role="function">
+<title>gst_buffer_pool_new&#160;()</title>
+<indexterm zone="gst-buffer-pool-new"><primary>gst_buffer_pool_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferPool"><returnvalue>GstBufferPool</returnvalue></link>&#160;*
+gst_buffer_pool_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new <link linkend="GstBufferPool"><type>GstBufferPool</type></link> instance.</para>
+<refsect3 id="gst-buffer-pool-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstBufferPool"><type>GstBufferPool</type></link> instance. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-get-params" role="function">
+<title>gst_buffer_pool_config_get_params&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-get-params"><primary>gst_buffer_pool_config_get_params</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_config_get_params (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                   <parameter><link linkend="GstCaps"><type>GstCaps</type></link> **caps</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> *size</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> *min_buffers</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> *max_buffers</parameter>);</programlisting>
+<para>Get the configuration values from <parameter>config</parameter>
+.</para>
+<refsect3 id="gst-buffer-pool-config-get-params.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> the caps of buffers. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para> the size of each buffer, not including prefix and padding. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>min_buffers</para></entry>
+<entry role="parameter_description"><para> the minimum amount of buffers to allocate. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>max_buffers</para></entry>
+<entry role="parameter_description"><para> the maximum amount of buffers to allocate or 0 for unlimited. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-config-get-params.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if all parameters could be fetched.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-set-params" role="function">
+<title>gst_buffer_pool_config_set_params&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-set-params"><primary>gst_buffer_pool_config_set_params</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_pool_config_set_params (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                   <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> min_buffers</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> max_buffers</parameter>);</programlisting>
+<para>Configure <parameter>config</parameter>
+ with the given parameters.</para>
+<refsect3 id="gst-buffer-pool-config-set-params.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>caps for the buffers</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the size of each buffer, not including prefix and padding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_buffers</para></entry>
+<entry role="parameter_description"><para>the minimum amount of buffers to allocate.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_buffers</para></entry>
+<entry role="parameter_description"><para>the maximum amount of buffers to allocate or 0 for unlimited.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-validate-params" role="function" condition="since:1.4">
+<title>gst_buffer_pool_config_validate_params&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-validate-params" role="1.4"><primary>gst_buffer_pool_config_validate_params</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_config_validate_params
+                               (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> min_buffers</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> max_buffers</parameter>);</programlisting>
+<para>Validate that changes made to <parameter>config</parameter>
+ are still valid in the context of the
+expected parameters. This function is a helper that can be used to validate
+changes made by a pool to a config when <link linkend="gst-buffer-pool-set-config"><function>gst_buffer_pool_set_config()</function></link>
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>. This expects that <parameter>caps</parameter>
+ haven't changed and that
+<parameter>min_buffers</parameter>
+ aren't lower then what we initially expected.
+This does not check if options or allocator parameters are still valid,
+won't check if size have changed, since changing the size is valid to adapt
+padding.</para>
+<refsect3 id="gst-buffer-pool-config-validate-params.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> the excepted caps of buffers. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the expected size of each buffer, not including prefix and padding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_buffers</para></entry>
+<entry role="parameter_description"><para>the expected minimum amount of buffers to allocate.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_buffers</para></entry>
+<entry role="parameter_description"><para>the expect maximum amount of buffers to allocate or 0 for unlimited.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-config-validate-params.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, if the parameters are valid in this context.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-buffer-pool-config-get-allocator" role="function">
+<title>gst_buffer_pool_config_get_allocator&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-get-allocator"><primary>gst_buffer_pool_config_get_allocator</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_config_get_allocator (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                      <parameter><link linkend="GstAllocator"><type>GstAllocator</type></link> **allocator</parameter>,
+                                      <parameter><link linkend="GstAllocationParams"><type>GstAllocationParams</type></link> *params</parameter>);</programlisting>
+<para>Get the <parameter>allocator</parameter>
+ and <parameter>params</parameter>
+ from <parameter>config</parameter>
+.</para>
+<refsect3 id="gst-buffer-pool-config-get-allocator.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>allocator</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstAllocator"><type>GstAllocator</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>params</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstAllocationParams"><type>GstAllocationParams</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-config-get-allocator.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, if the values are set. </para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-set-allocator" role="function">
+<title>gst_buffer_pool_config_set_allocator&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-set-allocator"><primary>gst_buffer_pool_config_set_allocator</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_pool_config_set_allocator (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                      <parameter><link linkend="GstAllocator"><type>GstAllocator</type></link> *allocator</parameter>,
+                                      <parameter>const <link linkend="GstAllocationParams"><type>GstAllocationParams</type></link> *params</parameter>);</programlisting>
+<para>Set the <parameter>allocator</parameter>
+ and <parameter>params</parameter>
+ on <parameter>config</parameter>
+.</para>
+<para>One of <parameter>allocator</parameter>
+ and <parameter>params</parameter>
+ can be <link linkend="NULL:CAPS"><literal>NULL</literal></link>, but not both. When <parameter>allocator</parameter>
+
+is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, the default allocator of the pool will use the values in <parameter>param</parameter>
+
+to perform its allocation. When <parameter>param</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, the pool will use the
+provided <parameter>allocator</parameter>
+ with its default <link linkend="GstAllocationParams"><type>GstAllocationParams</type></link>.</para>
+<para>A call to <link linkend="gst-buffer-pool-set-config"><function>gst_buffer_pool_set_config()</function></link> can update the allocator and params
+with the values that it is able to do. Some pools are, for example, not able
+to operate with different allocators or cannot allocate with the values
+specified in <parameter>params</parameter>
+. Use <link linkend="gst-buffer-pool-get-config"><function>gst_buffer_pool_get_config()</function></link> to get the currently
+used values.</para>
+<refsect3 id="gst-buffer-pool-config-set-allocator.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>allocator</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstAllocator"><type>GstAllocator</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>params</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstAllocationParams"><type>GstAllocationParams</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-n-options" role="function">
+<title>gst_buffer_pool_config_n_options&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-n-options"><primary>gst_buffer_pool_config_n_options</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_buffer_pool_config_n_options (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>);</programlisting>
+<para>Retrieve the number of values currently stored in the options array of the
+<parameter>config</parameter>
+ structure.</para>
+<refsect3 id="gst-buffer-pool-config-n-options.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-config-n-options.returns" role="returns">
+<title>Returns</title>
+<para> the options array size as a <link linkend="guint"><type>guint</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-add-option" role="function">
+<title>gst_buffer_pool_config_add_option&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-add-option"><primary>gst_buffer_pool_config_add_option</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_pool_config_add_option (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *option</parameter>);</programlisting>
+<para>Enabled the option in <parameter>config</parameter>
+. This will instruct the <parameter>bufferpool</parameter>
+ to enable
+the specified option on the buffers that it allocates.</para>
+<para>The supported options by <parameter>pool</parameter>
+ can be retrieved with <link linkend="gst-buffer-pool-get-options"><function>gst_buffer_pool_get_options()</function></link>.</para>
+<refsect3 id="gst-buffer-pool-config-add-option.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>option</para></entry>
+<entry role="parameter_description"><para>an option to add</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-get-option" role="function">
+<title>gst_buffer_pool_config_get_option&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-get-option"><primary>gst_buffer_pool_config_get_option</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_buffer_pool_config_get_option (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> index</parameter>);</programlisting>
+<para>Parse an available <parameter>config</parameter>
+ and get the option at <parameter>index</parameter>
+ of the options API
+array.</para>
+<refsect3 id="gst-buffer-pool-config-get-option.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>index</para></entry>
+<entry role="parameter_description"><para>position in the option array to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-config-get-option.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="gchar"><type>gchar</type></link> of the option at <parameter>index</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-config-has-option" role="function">
+<title>gst_buffer_pool_config_has_option&#160;()</title>
+<indexterm zone="gst-buffer-pool-config-has-option"><primary>gst_buffer_pool_config_has_option</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_config_has_option (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *option</parameter>);</programlisting>
+<para>Check if <parameter>config</parameter>
+ contains <parameter>option</parameter>
+.</para>
+<refsect3 id="gst-buffer-pool-config-has-option.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link> configuration</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>option</para></entry>
+<entry role="parameter_description"><para>an option</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-config-has-option.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the options array contains <parameter>option</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-get-options" role="function">
+<title>gst_buffer_pool_get_options&#160;()</title>
+<indexterm zone="gst-buffer-pool-get-options"><primary>gst_buffer_pool_get_options</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+gst_buffer_pool_get_options (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>);</programlisting>
+<para>Get a <link linkend="NULL:CAPS"><literal>NULL</literal></link> terminated array of string with supported bufferpool options for
+<parameter>pool</parameter>
+. An option would typically be enabled with
+<link linkend="gst-buffer-pool-config-add-option"><function>gst_buffer_pool_config_add_option()</function></link>.</para>
+<refsect3 id="gst-buffer-pool-get-options.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-get-options.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="NULL:CAPS"><literal>NULL</literal></link> terminated array
+of strings. </para>
+<para><emphasis role="annotation">[<acronym>array</acronym> zero-terminated=1][<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-has-option" role="function">
+<title>gst_buffer_pool_has_option&#160;()</title>
+<indexterm zone="gst-buffer-pool-has-option"><primary>gst_buffer_pool_has_option</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_has_option (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *option</parameter>);</programlisting>
+<para>Check if the bufferpool supports <parameter>option</parameter>
+.</para>
+<refsect3 id="gst-buffer-pool-has-option.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>option</para></entry>
+<entry role="parameter_description"><para>an option</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-has-option.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the buffer pool contains <parameter>option</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-get-config" role="function">
+<title>gst_buffer_pool_get_config&#160;()</title>
+<indexterm zone="gst-buffer-pool-get-config"><primary>gst_buffer_pool_get_config</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_buffer_pool_get_config (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>);</programlisting>
+<para>Get a copy of the current configuration of the pool. This configuration
+can either be modified and used for the <link linkend="gst-buffer-pool-set-config"><function>gst_buffer_pool_set_config()</function></link> call
+or it must be freed after usage.</para>
+<refsect3 id="gst-buffer-pool-get-config.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-get-config.returns" role="returns">
+<title>Returns</title>
+<para> a copy of the current configuration of <parameter>pool</parameter>
+. use
+<link linkend="gst-structure-free"><function>gst_structure_free()</function></link> after usage or <link linkend="gst-buffer-pool-set-config"><function>gst_buffer_pool_set_config()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-set-config" role="function">
+<title>gst_buffer_pool_set_config&#160;()</title>
+<indexterm zone="gst-buffer-pool-set-config"><primary>gst_buffer_pool_set_config</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_set_config (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>,
+                            <parameter><link linkend="GstStructure"><type>GstStructure</type></link> *config</parameter>);</programlisting>
+<para>Set the configuration of the pool. If the pool is already configured, and
+the configuration haven't change, this function will return <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>. If the
+pool is active, this method will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> and active configuration
+will remain. Buffers allocated form this pool must be returned or else this
+function will do nothing and return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para><parameter>config</parameter>
+ is a <link linkend="GstStructure"><type>GstStructure</type></link> that contains the configuration parameters for
+the pool. A default and mandatory set of parameters can be configured with
+<link linkend="gst-buffer-pool-config-set-params"><function>gst_buffer_pool_config_set_params()</function></link>, <link linkend="gst-buffer-pool-config-set-allocator"><function>gst_buffer_pool_config_set_allocator()</function></link>
+and <link linkend="gst-buffer-pool-config-add-option"><function>gst_buffer_pool_config_add_option()</function></link>.</para>
+<para>If the parameters in <parameter>config</parameter>
+ can not be set exactly, this function returns
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> and will try to update as much state as possible. The new state can
+then be retrieved and refined with <link linkend="gst-buffer-pool-get-config"><function>gst_buffer_pool_get_config()</function></link>.</para>
+<para>This function takes ownership of <parameter>config</parameter>
+.</para>
+<refsect3 id="gst-buffer-pool-set-config.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>config</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstStructure"><type>GstStructure</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-set-config.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when the configuration could be set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-set-active" role="function">
+<title>gst_buffer_pool_set_active&#160;()</title>
+<indexterm zone="gst-buffer-pool-set-active"><primary>gst_buffer_pool_set_active</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_set_active (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>,
+                            <parameter><link linkend="gboolean"><type>gboolean</type></link> active</parameter>);</programlisting>
+<para>Control the active state of <parameter>pool</parameter>
+. When the pool is inactive, new calls to
+<link linkend="gst-buffer-pool-acquire-buffer"><function>gst_buffer_pool_acquire_buffer()</function></link> will return with <link linkend="GST-FLOW-FLUSHING:CAPS"><literal>GST_FLOW_FLUSHING</literal></link>.</para>
+<para>Activating the bufferpool will preallocate all resources in the pool based on
+the configuration of the pool.</para>
+<para>Deactivating will free the resources again when there are no outstanding
+buffers. When there are outstanding buffers, they will be freed as soon as
+they are all returned to the pool.</para>
+<refsect3 id="gst-buffer-pool-set-active.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>active</para></entry>
+<entry role="parameter_description"><para>the new active state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-set-active.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when the pool was not configured or when preallocation of the
+buffers failed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-is-active" role="function">
+<title>gst_buffer_pool_is_active&#160;()</title>
+<indexterm zone="gst-buffer-pool-is-active"><primary>gst_buffer_pool_is_active</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_buffer_pool_is_active (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>);</programlisting>
+<para>Check if <parameter>pool</parameter>
+ is active. A pool can be activated with the
+<link linkend="gst-buffer-pool-set-active"><function>gst_buffer_pool_set_active()</function></link> call.</para>
+<refsect3 id="gst-buffer-pool-is-active.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-is-active.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when the pool is active.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-set-flushing" role="function" condition="since:1.4">
+<title>gst_buffer_pool_set_flushing&#160;()</title>
+<indexterm zone="gst-buffer-pool-set-flushing" role="1.4"><primary>gst_buffer_pool_set_flushing</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_pool_set_flushing (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>,
+                              <parameter><link linkend="gboolean"><type>gboolean</type></link> flushing</parameter>);</programlisting>
+<para>Enable or disable the flushing state of a <parameter>pool</parameter>
+ without freeing or
+allocating buffers.</para>
+<refsect3 id="gst-buffer-pool-set-flushing.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flushing</para></entry>
+<entry role="parameter_description"><para>whether to start or stop flushing</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-buffer-pool-acquire-buffer" role="function">
+<title>gst_buffer_pool_acquire_buffer&#160;()</title>
+<indexterm zone="gst-buffer-pool-acquire-buffer"><primary>gst_buffer_pool_acquire_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_buffer_pool_acquire_buffer (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>,
+                                <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **buffer</parameter>,
+                                <parameter><link linkend="GstBufferPoolAcquireParams"><type>GstBufferPoolAcquireParams</type></link> *params</parameter>);</programlisting>
+<para>Acquire a buffer from <parameter>pool</parameter>
+. <parameter>buffer</parameter>
+ should point to a memory location that
+can hold a pointer to the new buffer.</para>
+<para><parameter>params</parameter>
+ can be <link linkend="NULL:CAPS"><literal>NULL</literal></link> or contain optional parameters to influence the
+allocation.</para>
+<refsect3 id="gst-buffer-pool-acquire-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> a location for a <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>params</para></entry>
+<entry role="parameter_description"><para> parameters. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-pool-acquire-buffer.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> such as <link linkend="GST-FLOW-FLUSHING:CAPS"><literal>GST_FLOW_FLUSHING</literal></link> when the pool is
+inactive.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-pool-release-buffer" role="function">
+<title>gst_buffer_pool_release_buffer&#160;()</title>
+<indexterm zone="gst-buffer-pool-release-buffer"><primary>gst_buffer_pool_release_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_pool_release_buffer (<parameter><link linkend="GstBufferPool"><type>GstBufferPool</type></link> *pool</parameter>,
+                                <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Release <parameter>buffer</parameter>
+ to <parameter>pool</parameter>
+. <parameter>buffer</parameter>
+ should have previously been allocated from
+<parameter>pool</parameter>
+ with <link linkend="gst-buffer-pool-acquire-buffer"><function>gst_buffer_pool_acquire_buffer()</function></link>.</para>
+<para>This function is usually called automatically when the last ref on <parameter>buffer</parameter>
+
+disappears.</para>
+<refsect3 id="gst-buffer-pool-release-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBufferPool"><type>GstBufferPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBufferPool.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBufferPool-struct" role="struct">
+<title>GstBufferPool</title>
+<indexterm zone="GstBufferPool-struct"><primary>GstBufferPool</primary></indexterm>
+<programlisting language="C">typedef struct _GstBufferPool GstBufferPool;</programlisting>
+<para>The structure of a <link linkend="GstBufferPool"><type>GstBufferPool</type></link>. Use the associated macros to access the public
+variables.</para>
+</refsect2>
+<refsect2 id="GstBufferPoolClass" role="struct">
+<title>struct GstBufferPoolClass</title>
+<indexterm zone="GstBufferPoolClass"><primary>GstBufferPoolClass</primary></indexterm>
+<programlisting language="C">struct GstBufferPoolClass {
+  GstObjectClass    object_class;
+
+  const gchar ** (*get_options)    (GstBufferPool *pool);
+  gboolean       (*set_config)     (GstBufferPool *pool, GstStructure *config);
+
+  gboolean       (*start)          (GstBufferPool *pool);
+  gboolean       (*stop)           (GstBufferPool *pool);
+
+  GstFlowReturn  (*acquire_buffer) (GstBufferPool *pool, GstBuffer **buffer,
+                                    GstBufferPoolAcquireParams *params);
+  GstFlowReturn  (*alloc_buffer)   (GstBufferPool *pool, GstBuffer **buffer,
+                                    GstBufferPoolAcquireParams *params);
+  void           (*reset_buffer)   (GstBufferPool *pool, GstBuffer *buffer);
+  void           (*release_buffer) (GstBufferPool *pool, GstBuffer *buffer);
+  void           (*free_buffer)    (GstBufferPool *pool, GstBuffer *buffer);
+  void           (*flush_start)    (GstBufferPool *pool);
+  void           (*flush_stop)     (GstBufferPool *pool);
+};
+</programlisting>
+<para>The GstBufferPool class.</para>
+<refsect3 id="GstBufferPoolClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstObjectClass"><type>GstObjectClass</type></link>&#160;<structfield id="GstBufferPoolClass.object-class">object_class</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Object parent class</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.get-options">get_options</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>get a list of options supported by this pool</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.set-config">set_config</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>apply the bufferpool configuration. The default configuration
+will parse the default config parameters</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.start">start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>start the bufferpool. The default implementation will preallocate
+min-buffers buffers and put them in the queue</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.stop">stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>stop the bufferpool. the default implementation will free the
+preallocated buffers. This function is called when all the buffers are
+returned to the pool.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.acquire-buffer">acquire_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>get a new buffer from the pool. The default implementation
+will take a buffer from the queue and optionally wait for a buffer to
+be released when there are no buffers available.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.alloc-buffer">alloc_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>allocate a buffer. the default implementation allocates
+buffers from the configured memory allocator and with the configured
+parameters. All metadata that is present on the allocated buffer will
+be marked as <link linkend="GST-META-FLAG-POOLED:CAPS"><type>GST_META_FLAG_POOLED</type></link> and <link linkend="GST-META-FLAG-LOCKED:CAPS"><type>GST_META_FLAG_LOCKED</type></link> and will
+not be removed from the buffer in <parameter>reset_buffer</parameter>
+. The buffer should
+have the GST_BUFFER_FLAG_TAG_MEMORY cleared.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.reset-buffer">reset_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>reset the buffer to its state when it was freshly allocated.
+The default implementation will clear the flags, timestamps and
+will remove the metadata without the <link linkend="GST-META-FLAG-POOLED:CAPS"><type>GST_META_FLAG_POOLED</type></link> flag (even
+the metadata with <link linkend="GST-META-FLAG-LOCKED:CAPS"><type>GST_META_FLAG_LOCKED</type></link>). If the
+<link linkend="GST-BUFFER-FLAG-TAG-MEMORY:CAPS"><type>GST_BUFFER_FLAG_TAG_MEMORY</type></link> was set, this function can also try to
+restore the memory and clear the <link linkend="GST-BUFFER-FLAG-TAG-MEMORY:CAPS"><type>GST_BUFFER_FLAG_TAG_MEMORY</type></link> again.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.release-buffer">release_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>release a buffer back in the pool. The default
+implementation will put the buffer back in the queue and notify any
+blocking acquire_buffer calls when the <link linkend="GST-BUFFER-FLAG-TAG-MEMORY:CAPS"><type>GST_BUFFER_FLAG_TAG_MEMORY</type></link>
+is not set on the buffer. If <link linkend="GST-BUFFER-FLAG-TAG-MEMORY:CAPS"><type>GST_BUFFER_FLAG_TAG_MEMORY</type></link> is set, the
+buffer will be freed with <parameter>free_buffer</parameter>
+.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.free-buffer">free_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>free a buffer. The default implementation unrefs the buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.flush-start">flush_start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>enter the flushing state. (Since 1.4)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBufferPoolClass.flush-stop">flush_stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>leave the flushign state. (Since 1.4)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBufferPoolAcquireFlags" role="enum">
+<title>enum GstBufferPoolAcquireFlags</title>
+<indexterm zone="GstBufferPoolAcquireFlags"><primary>GstBufferPoolAcquireFlags</primary></indexterm>
+<para>Additional flags to control the allocation of a buffer</para>
+<refsect3 id="GstBufferPoolAcquireFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUFFER-POOL-ACQUIRE-FLAG-NONE:CAPS">GST_BUFFER_POOL_ACQUIRE_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>no flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUFFER-POOL-ACQUIRE-FLAG-KEY-UNIT:CAPS">GST_BUFFER_POOL_ACQUIRE_FLAG_KEY_UNIT</para></entry>
+<entry role="enum_member_description"><para>buffer is keyframe</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUFFER-POOL-ACQUIRE-FLAG-DONTWAIT:CAPS">GST_BUFFER_POOL_ACQUIRE_FLAG_DONTWAIT</para></entry>
+<entry role="enum_member_description"><para>when the bufferpool is empty, acquire_buffer
+will by default block until a buffer is released into the pool again. Setting
+this flag makes acquire_buffer return <link linkend="GST-FLOW-EOS:CAPS"><type>GST_FLOW_EOS</type></link> instead of blocking.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUFFER-POOL-ACQUIRE-FLAG-DISCONT:CAPS">GST_BUFFER_POOL_ACQUIRE_FLAG_DISCONT</para></entry>
+<entry role="enum_member_description"><para>buffer is discont</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BUFFER-POOL-ACQUIRE-FLAG-LAST:CAPS">GST_BUFFER_POOL_ACQUIRE_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>last flag, subclasses can use private flags
+   starting from this value.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstBufferPoolAcquireParams" role="struct">
+<title>struct GstBufferPoolAcquireParams</title>
+<indexterm zone="GstBufferPoolAcquireParams"><primary>GstBufferPoolAcquireParams</primary></indexterm>
+<programlisting language="C">struct GstBufferPoolAcquireParams {
+  GstFormat                 format;
+  gint64                    start;
+  gint64                    stop;
+  GstBufferPoolAcquireFlags flags;
+};
+</programlisting>
+<para>Parameters passed to the <link linkend="gst-buffer-pool-acquire-buffer"><function>gst_buffer_pool_acquire_buffer()</function></link> function to control the
+allocation of the buffer.</para>
+<para>The default implementation ignores the <parameter>start</parameter>
+ and <parameter>stop</parameter>
+ members but other
+implementations can use this extra information to decide what buffer to
+return.</para>
+<refsect3 id="GstBufferPoolAcquireParams.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstFormat"><type>GstFormat</type></link>&#160;<structfield id="GstBufferPoolAcquireParams.format">format</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the format of <parameter>start</parameter>
+and <parameter>stop</parameter>
+</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint64"><type>gint64</type></link>&#160;<structfield id="GstBufferPoolAcquireParams.start">start</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the start position</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint64"><type>gint64</type></link>&#160;<structfield id="GstBufferPoolAcquireParams.stop">stop</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the stop position</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstBufferPoolAcquireFlags"><type>GstBufferPoolAcquireFlags</type></link>&#160;<structfield id="GstBufferPoolAcquireParams.flags">flags</structfield>;</para></entry>
+<entry role="struct_member_description"><para>additional flags</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBufferPool.see-also">
+<title>See Also</title>
+<para><link linkend="GstBuffer"><type>GstBuffer</type></link></para>
+
+</refsect1>
+
+</refentry>

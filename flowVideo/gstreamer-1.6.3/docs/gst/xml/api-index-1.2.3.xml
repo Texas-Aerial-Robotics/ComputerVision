@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.2.3">
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gst-segment-offset-running-time"><link linkend="gst-segment-offset-running-time">gst_segment_offset_running_time</link>, function in <link linkend="GstSegment">GstSegment</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

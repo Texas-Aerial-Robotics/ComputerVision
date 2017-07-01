@@ -1,0 +1,1263 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBaseParse">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBaseParse.top_of_page">GstBaseParse</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBaseParse</refname>
+<refpurpose>Base class for stream parsers</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBaseParse.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-merge-tags">gst_base_parse_merge_tags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-duration">gst_base_parse_set_duration</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-average-bitrate">gst_base_parse_set_average_bitrate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-min-frame-size">gst_base_parse_set_min_frame_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-passthrough">gst_base_parse_set_passthrough</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-syncable">gst_base_parse_set_syncable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-has-timing-info">gst_base_parse_set_has_timing_info</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-frame-rate">gst_base_parse_set_frame_rate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-latency">gst_base_parse_set_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-infer-ts">gst_base_parse_set_infer_ts</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-pts-interpolation">gst_base_parse_set_pts_interpolation</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-set-ts-at-offset">gst_base_parse_set_ts_at_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-convert-default">gst_base_parse_convert_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-add-index-entry">gst_base_parse_add_index_entry</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBaseParseFrame"><returnvalue>GstBaseParseFrame</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-base-parse-frame-new">gst_base_parse_frame_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-frame-init">gst_base_parse_frame_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-frame-free">gst_base_parse_frame_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-push-frame">gst_base_parse_push_frame</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-parse-finish-frame">gst_base_parse_finish_frame</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-DRAINING:CAPS">GST_BASE_PARSE_DRAINING</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-LOST-SYNC:CAPS">GST_BASE_PARSE_LOST_SYNC</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-SINK-PAD:CAPS">GST_BASE_PARSE_SINK_PAD</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-SRC-PAD:CAPS">GST_BASE_PARSE_SRC_PAD</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseParse.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseParse--disable-passthrough">disable-passthrough</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseParse.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseParse-struct">GstBaseParse</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseParseClass">GstBaseParseClass</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstBaseParseFrame">GstBaseParseFrame</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstBaseParseFrameFlags">GstBaseParseFrameFlags</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-FLAG-DRAINING:CAPS">GST_BASE_PARSE_FLAG_DRAINING</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-FLAG-LOST-SYNC:CAPS">GST_BASE_PARSE_FLAG_LOST_SYNC</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-PARSE-FLOW-DROPPED:CAPS">GST_BASE_PARSE_FLOW_DROPPED</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseParse.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBaseParse
+</screen>
+</refsect1>
+
+<refsect1 id="GstBaseParse.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstbaseparse.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBaseParse.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This base class is for parser elements that process data and splits it
+into separate audio/video/whatever frames.</para>
+<para>It provides for:</para>
+<itemizedlist>
+  <listitem><para>provides one sink pad and one source pad</para></listitem>
+  <listitem><para>handles state changes</para></listitem>
+  <listitem><para>can operate in pull mode or push mode</para></listitem>
+  <listitem><para>handles seeking in both modes</para></listitem>
+  <listitem><para>handles events (SEGMENT/EOS/FLUSH)</para></listitem>
+  <listitem><para>
+       handles queries (POSITION/DURATION/SEEKING/FORMAT/CONVERT)
+  </para></listitem>
+  <listitem><para>handles flushing</para></listitem>
+</itemizedlist>
+<para>The purpose of this base class is to provide the basic functionality of
+a parser and share a lot of rather complex code.</para>
+<para>Description of the parsing mechanism:</para>
+<orderedlist>
+<listitem>
+  <itemizedlist><title>Set-up phase</title>
+  <listitem><para>
+    <link linkend="GstBaseParse"><type>GstBaseParse</type></link> calls <parameter>start</parameter> to inform subclass that data processing is
+    about to start now.
+  </para></listitem>
+  <listitem><para>
+    <link linkend="GstBaseParse"><type>GstBaseParse</type></link> class calls <parameter>set_sink_caps</parameter> to inform the subclass about
+    incoming sinkpad caps. Subclass could already set the srcpad caps
+    accordingly, but this might be delayed until calling
+    <link linkend="gst-base-parse-finish-frame"><function>gst_base_parse_finish_frame()</function></link> with a non-queued frame.
+  </para></listitem>
+  <listitem><para>
+     At least at this point subclass needs to tell the <link linkend="GstBaseParse"><type>GstBaseParse</type></link> class
+     how big data chunks it wants to receive (min_frame_size). It can do
+     this with <link linkend="gst-base-parse-set-min-frame-size"><function>gst_base_parse_set_min_frame_size()</function></link>.
+  </para></listitem>
+  <listitem><para>
+     <link linkend="GstBaseParse"><type>GstBaseParse</type></link> class sets up appropriate data passing mode (pull/push)
+     and starts to process the data.
+  </para></listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist>
+  <title>Parsing phase</title>
+    <listitem><para>
+      <link linkend="GstBaseParse"><type>GstBaseParse</type></link> gathers at least min_frame_size bytes of data either
+      by pulling it from upstream or collecting buffers in an internal
+      <link linkend="GstAdapter"><type>GstAdapter</type></link>.
+    </para></listitem>
+    <listitem><para>
+      A buffer of (at least) min_frame_size bytes is passed to subclass with
+      <parameter>handle_frame</parameter>. Subclass checks the contents and can optionally
+      return GST_FLOW_OK along with an amount of data to be skipped to find
+      a valid frame (which will result in a subsequent DISCONT).
+      If, otherwise, the buffer does not hold a complete frame,
+      <parameter>handle_frame</parameter> can merely return and will be called again when additional
+      data is available.  In push mode this amounts to an
+      additional input buffer (thus minimal additional latency), in pull mode
+      this amounts to some arbitrary reasonable buffer size increase.
+      Of course, <link linkend="gst-base-parse-set-min-frame-size"><function>gst_base_parse_set_min_frame_size()</function></link> could also be used if a
+      very specific known amount of additional data is required.
+      If, however, the buffer holds a complete valid frame, it can pass
+      the size of this frame to <link linkend="gst-base-parse-finish-frame"><function>gst_base_parse_finish_frame()</function></link>.
+      If acting as a converter, it can also merely indicate consumed input data
+      while simultaneously providing custom output data.
+      Note that baseclass performs some processing (such as tracking
+      overall consumed data rate versus duration) for each finished frame,
+      but other state is only updated upon each call to <parameter>handle_frame</parameter>
+      (such as tracking upstream input timestamp).
+      </para><para>
+      Subclass is also responsible for setting the buffer metadata
+      (e.g. buffer timestamp and duration, or keyframe if applicable).
+      (although the latter can also be done by <link linkend="GstBaseParse"><type>GstBaseParse</type></link> if it is
+      appropriately configured, see below).  Frame is provided with
+      timestamp derived from upstream (as much as generally possible),
+      duration obtained from configuration (see below), and offset
+      if meaningful (in pull mode).
+      </para><para>
+      Note that <parameter>check_valid_frame</parameter> might receive any small
+      amount of input data when leftover data is being drained (e.g. at EOS).
+    </para></listitem>
+    <listitem><para>
+      As part of finish frame processing,
+      just prior to actually pushing the buffer in question,
+      it is passed to <parameter>pre_push_frame</parameter> which gives subclass yet one
+      last chance to examine buffer metadata, or to send some custom (tag)
+      events, or to perform custom (segment) filtering.
+    </para></listitem>
+    <listitem><para>
+      During the parsing process <link linkend="GstBaseParseClass"><type>GstBaseParseClass</type></link> will handle both srcpad
+      and sinkpad events. They will be passed to subclass if <parameter>event</parameter> or
+      <parameter>src_event</parameter> callbacks have been provided.
+    </para></listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist><title>Shutdown phase</title>
+  <listitem><para>
+    <link linkend="GstBaseParse"><type>GstBaseParse</type></link> class calls <parameter>stop</parameter> to inform the subclass that data
+    parsing will be stopped.
+  </para></listitem>
+  </itemizedlist>
+</listitem>
+</orderedlist>
+<para>Subclass is responsible for providing pad template caps for
+source and sink pads. The pads need to be named "sink" and "src". It also
+needs to set the fixed caps on srcpad, when the format is ensured (e.g.
+when base class calls subclass' <parameter>set_sink_caps</parameter>
+ function).</para>
+<para>This base class uses <link linkend="GST-FORMAT-DEFAULT:CAPS"><literal>GST_FORMAT_DEFAULT</literal></link> as a meaning of frames. So,
+subclass conversion routine needs to know that conversion from
+<link linkend="GST-FORMAT-TIME:CAPS"><literal>GST_FORMAT_TIME</literal></link> to <link linkend="GST-FORMAT-DEFAULT:CAPS"><literal>GST_FORMAT_DEFAULT</literal></link> must return the
+frame number that can be found from the given byte position.</para>
+<para><link linkend="GstBaseParse"><type>GstBaseParse</type></link> uses subclasses conversion methods also for seeking (or
+otherwise uses its own default one, see also below).</para>
+<para>Subclass <parameter>start</parameter>
+ and <parameter>stop</parameter>
+ functions will be called to inform the beginning
+and end of data processing.</para>
+<para>Things that subclass need to take care of:</para>
+<itemizedlist>
+  <listitem><para>Provide pad templates</para></listitem>
+  <listitem><para>
+     Fixate the source pad caps when appropriate
+  </para></listitem>
+  <listitem><para>
+     Inform base class how big data chunks should be retrieved. This is
+     done with <link linkend="gst-base-parse-set-min-frame-size"><function>gst_base_parse_set_min_frame_size()</function></link> function.
+  </para></listitem>
+  <listitem><para>
+     Examine data chunks passed to subclass with <parameter>handle_frame</parameter> and pass
+     proper frame(s) to <link linkend="gst-base-parse-finish-frame"><function>gst_base_parse_finish_frame()</function></link>, and setting src pad
+     caps and timestamps on frame.
+  </para></listitem>
+  <listitem><para>Provide conversion functions</para></listitem>
+  <listitem><para>
+     Update the duration information with <link linkend="gst-base-parse-set-duration"><function>gst_base_parse_set_duration()</function></link>
+  </para></listitem>
+  <listitem><para>
+     Optionally passthrough using <link linkend="gst-base-parse-set-passthrough"><function>gst_base_parse_set_passthrough()</function></link>
+  </para></listitem>
+  <listitem><para>
+     Configure various baseparse parameters using
+     <link linkend="gst-base-parse-set-average-bitrate"><function>gst_base_parse_set_average_bitrate()</function></link>, <link linkend="gst-base-parse-set-syncable"><function>gst_base_parse_set_syncable()</function></link>
+     and <link linkend="gst-base-parse-set-frame-rate"><function>gst_base_parse_set_frame_rate()</function></link>.
+  </para></listitem>
+  <listitem><para>
+     In particular, if subclass is unable to determine a duration, but
+     parsing (or specs) yields a frames per seconds rate, then this can be
+     provided to <link linkend="GstBaseParse"><type>GstBaseParse</type></link> to enable it to cater for
+     buffer time metadata (which will be taken from upstream as much as
+     possible). Internally keeping track of frame durations and respective
+     sizes that have been pushed provides <link linkend="GstBaseParse"><type>GstBaseParse</type></link> with an estimated
+     bitrate. A default <parameter>convert</parameter> (used if not overridden) will then use these
+     rates to perform obvious conversions.  These rates are also used to
+     update (estimated) duration at regular frame intervals.
+  </para></listitem>
+</itemizedlist>
+
+</refsect1>
+<refsect1 id="GstBaseParse.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-base-parse-merge-tags" role="function" condition="since:1.6">
+<title>gst_base_parse_merge_tags&#160;()</title>
+<indexterm zone="gst-base-parse-merge-tags" role="1.6"><primary>gst_base_parse_merge_tags</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_merge_tags (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                           <parameter><link linkend="GstTagList"><type>GstTagList</type></link> *tags</parameter>,
+                           <parameter><link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> mode</parameter>);</programlisting>
+<para>Sets the parser subclass's tags and how they should be merged with any
+upstream stream tags. This will override any tags previously-set
+with <link linkend="gst-base-parse-merge-tags"><function>gst_base_parse_merge_tags()</function></link>.</para>
+<para>Note that this is provided for convenience, and the subclass is
+not required to use this and can still do tag handling on its own.</para>
+<refsect3 id="gst-base-parse-merge-tags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tags</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstTagList"><type>GstTagList</type></link> to merge, or NULL to unset
+previously-set tags. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTagMergeMode"><type>GstTagMergeMode</type></link> to use, usually <link linkend="GST-TAG-MERGE-REPLACE:CAPS"><type>GST_TAG_MERGE_REPLACE</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-base-parse-set-duration" role="function">
+<title>gst_base_parse_set_duration&#160;()</title>
+<indexterm zone="gst-base-parse-set-duration"><primary>gst_base_parse_set_duration</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_duration (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                             <parameter><link linkend="GstFormat"><type>GstFormat</type></link> fmt</parameter>,
+                             <parameter><link linkend="gint64"><type>gint64</type></link> duration</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> interval</parameter>);</programlisting>
+<para>Sets the duration of the currently playing media. Subclass can use this
+when it is able to determine duration and/or notices a change in the media
+duration.  Alternatively, if <parameter>interval</parameter>
+ is non-zero (default), then stream
+duration is determined based on estimated bitrate, and updated every <parameter>interval</parameter>
+
+frames.</para>
+<refsect3 id="gst-base-parse-set-duration.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParse"><type>GstBaseParse</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fmt</para></entry>
+<entry role="parameter_description"><para><link linkend="GstFormat"><type>GstFormat</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>duration</para></entry>
+<entry role="parameter_description"><para>duration value.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>how often to update the duration estimate based on bitrate, or 0.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-average-bitrate" role="function">
+<title>gst_base_parse_set_average_bitrate&#160;()</title>
+<indexterm zone="gst-base-parse-set-average-bitrate"><primary>gst_base_parse_set_average_bitrate</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_average_bitrate (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> bitrate</parameter>);</programlisting>
+<para>Optionally sets the average bitrate detected in media (if non-zero),
+e.g. based on metadata, as it will be posted to the application.</para>
+<para>By default, announced average bitrate is estimated. The average bitrate
+is used to estimate the total duration of the stream and to estimate
+a seek position, if there's no index and the format is syncable
+(see <link linkend="gst-base-parse-set-syncable"><function>gst_base_parse_set_syncable()</function></link>).</para>
+<refsect3 id="gst-base-parse-set-average-bitrate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParse"><type>GstBaseParse</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bitrate</para></entry>
+<entry role="parameter_description"><para>average bitrate in bits/second</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-min-frame-size" role="function">
+<title>gst_base_parse_set_min_frame_size&#160;()</title>
+<indexterm zone="gst-base-parse-set-min-frame-size"><primary>gst_base_parse_set_min_frame_size</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_min_frame_size (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> min_size</parameter>);</programlisting>
+<para>Subclass can use this function to tell the base class that it needs to
+give at least <link linkend="min-size"><type>min_size</type></link> buffers.</para>
+<refsect3 id="gst-base-parse-set-min-frame-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParse"><type>GstBaseParse</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_size</para></entry>
+<entry role="parameter_description"><para>Minimum size of the data that this base class should give to
+subclass.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-passthrough" role="function">
+<title>gst_base_parse_set_passthrough&#160;()</title>
+<indexterm zone="gst-base-parse-set-passthrough"><primary>gst_base_parse_set_passthrough</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_passthrough (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> passthrough</parameter>);</programlisting>
+<para>Set if the nature of the format or configuration does not allow (much)
+parsing, and the parser should operate in passthrough mode (which only
+applies when operating in push mode). That is, incoming buffers are
+pushed through unmodified, i.e. no <parameter>check_valid_frame</parameter>
+ or <parameter>parse_frame</parameter>
+
+callbacks will be invoked, but <parameter>pre_push_frame</parameter>
+ will still be invoked,
+so subclass can perform as much or as little is appropriate for
+passthrough semantics in <parameter>pre_push_frame</parameter>
+.</para>
+<refsect3 id="gst-base-parse-set-passthrough.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>passthrough</para></entry>
+<entry role="parameter_description"><para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if parser should run in passthrough mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-syncable" role="function">
+<title>gst_base_parse_set_syncable&#160;()</title>
+<indexterm zone="gst-base-parse-set-syncable"><primary>gst_base_parse_set_syncable</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_syncable (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> syncable</parameter>);</programlisting>
+<para>Set if frame starts can be identified. This is set by default and
+determines whether seeking based on bitrate averages
+is possible for a format/stream.</para>
+<refsect3 id="gst-base-parse-set-syncable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>syncable</para></entry>
+<entry role="parameter_description"><para>set if frame starts can be identified</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-has-timing-info" role="function">
+<title>gst_base_parse_set_has_timing_info&#160;()</title>
+<indexterm zone="gst-base-parse-set-has-timing-info"><primary>gst_base_parse_set_has_timing_info</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_has_timing_info (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                    <parameter><link linkend="gboolean"><type>gboolean</type></link> has_timing</parameter>);</programlisting>
+<para>Set if frames carry timing information which the subclass can (generally)
+parse and provide.  In particular, intrinsic (rather than estimated) time
+can be obtained following a seek.</para>
+<refsect3 id="gst-base-parse-set-has-timing-info.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>has_timing</para></entry>
+<entry role="parameter_description"><para>whether frames carry timing information</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-frame-rate" role="function">
+<title>gst_base_parse_set_frame_rate&#160;()</title>
+<indexterm zone="gst-base-parse-set-frame-rate"><primary>gst_base_parse_set_frame_rate</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_frame_rate (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> fps_num</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> fps_den</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> lead_in</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> lead_out</parameter>);</programlisting>
+<para>If frames per second is configured, parser can take care of buffer duration
+and timestamping.  When performing segment clipping, or seeking to a specific
+location, a corresponding decoder might need an initial <parameter>lead_in</parameter>
+ and a
+following <parameter>lead_out</parameter>
+ number of frames to ensure the desired segment is
+entirely filled upon decoding.</para>
+<refsect3 id="gst-base-parse-set-frame-rate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBaseParse"><type>GstBaseParse</type></link> to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fps_num</para></entry>
+<entry role="parameter_description"><para>frames per second (numerator).</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fps_den</para></entry>
+<entry role="parameter_description"><para>frames per second (denominator).</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>lead_in</para></entry>
+<entry role="parameter_description"><para>frames needed before a segment for subsequent decode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>lead_out</para></entry>
+<entry role="parameter_description"><para>frames needed after a segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-latency" role="function">
+<title>gst_base_parse_set_latency&#160;()</title>
+<indexterm zone="gst-base-parse-set-latency"><primary>gst_base_parse_set_latency</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_latency (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> min_latency</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> max_latency</parameter>);</programlisting>
+<para>Sets the minimum and maximum (which may likely be equal) latency introduced
+by the parsing process.  If there is such a latency, which depends on the
+particular parsing of the format, it typically corresponds to 1 frame duration.</para>
+<refsect3 id="gst-base-parse-set-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_latency</para></entry>
+<entry role="parameter_description"><para>minimum parse latency</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_latency</para></entry>
+<entry role="parameter_description"><para>maximum parse latency</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-infer-ts" role="function">
+<title>gst_base_parse_set_infer_ts&#160;()</title>
+<indexterm zone="gst-base-parse-set-infer-ts"><primary>gst_base_parse_set_infer_ts</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_infer_ts (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> infer_ts</parameter>);</programlisting>
+<para>By default, the base class might try to infer PTS from DTS and vice
+versa.  While this is generally correct for audio data, it may not
+be otherwise. Sub-classes implementing such formats should disable
+timestamp inferring.</para>
+<refsect3 id="gst-base-parse-set-infer-ts.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>infer_ts</para></entry>
+<entry role="parameter_description"><para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if parser should infer DTS/PTS from each other</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-pts-interpolation" role="function">
+<title>gst_base_parse_set_pts_interpolation&#160;()</title>
+<indexterm zone="gst-base-parse-set-pts-interpolation"><primary>gst_base_parse_set_pts_interpolation</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_pts_interpolation (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                      <parameter><link linkend="gboolean"><type>gboolean</type></link> pts_interpolate</parameter>);</programlisting>
+<para>By default, the base class will guess PTS timestamps using a simple
+interpolation (previous timestamp + duration), which is incorrect for
+data streams with reordering, where PTS can go backward. Sub-classes
+implementing such formats should disable PTS interpolation.</para>
+<refsect3 id="gst-base-parse-set-pts-interpolation.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pts_interpolate</para></entry>
+<entry role="parameter_description"><para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if parser should interpolate PTS timestamps</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-set-ts-at-offset" role="function" condition="since:1.2">
+<title>gst_base_parse_set_ts_at_offset&#160;()</title>
+<indexterm zone="gst-base-parse-set-ts-at-offset" role="1.2"><primary>gst_base_parse_set_ts_at_offset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_set_ts_at_offset (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                 <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>);</programlisting>
+<para>This function should only be called from a <parameter>handle_frame</parameter>
+ implementation.</para>
+<para><link linkend="GstBaseParse"><type>GstBaseParse</type></link> creates initial timestamps for frames by using the last
+timestamp seen in the stream before the frame starts.  In certain
+cases, the correct timestamps will occur in the stream after the
+start of the frame, but before the start of the actual picture data.
+This function can be used to set the timestamps based on the offset
+into the frame data that the picture starts.</para>
+<refsect3 id="gst-base-parse-set-ts-at-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset into current buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-base-parse-convert-default" role="function">
+<title>gst_base_parse_convert_default&#160;()</title>
+<indexterm zone="gst-base-parse-convert-default"><primary>gst_base_parse_convert_default</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_parse_convert_default (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                <parameter><link linkend="GstFormat"><type>GstFormat</type></link> src_format</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> src_value</parameter>,
+                                <parameter><link linkend="GstFormat"><type>GstFormat</type></link> dest_format</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> *dest_value</parameter>);</programlisting>
+<para>Default implementation of "convert" vmethod in <link linkend="GstBaseParse"><type>GstBaseParse</type></link> class.</para>
+<refsect3 id="gst-base-parse-convert-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParse"><type>GstBaseParse</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>src_format</para></entry>
+<entry role="parameter_description"><para><link linkend="GstFormat"><type>GstFormat</type></link> describing the source format.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>src_value</para></entry>
+<entry role="parameter_description"><para>Source value to be converted.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dest_format</para></entry>
+<entry role="parameter_description"><para><link linkend="GstFormat"><type>GstFormat</type></link> defining the converted format.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dest_value</para></entry>
+<entry role="parameter_description"><para>Pointer where the conversion result will be put.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-parse-convert-default.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if conversion was successful.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-add-index-entry" role="function">
+<title>gst_base_parse_add_index_entry&#160;()</title>
+<indexterm zone="gst-base-parse-add-index-entry"><primary>gst_base_parse_add_index_entry</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_parse_add_index_entry (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> offset</parameter>,
+                                <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> ts</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> key</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> force</parameter>);</programlisting>
+<para>Adds an entry to the index associating <parameter>offset</parameter>
+ to <parameter>ts</parameter>
+.  It is recommended
+to only add keyframe entries.  <parameter>force</parameter>
+ allows to bypass checks, such as
+whether the stream is (upstream) seekable, another entry is already "close"
+to the new entry, etc.</para>
+<refsect3 id="gst-base-parse-add-index-entry.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParse"><type>GstBaseParse</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset of entry</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ts</para></entry>
+<entry role="parameter_description"><para>timestamp associated with offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>key</para></entry>
+<entry role="parameter_description"><para>whether entry refers to keyframe</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>force</para></entry>
+<entry role="parameter_description"><para>add entry disregarding sanity checks</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-parse-add-index-entry.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="gboolean"><type>gboolean</type></link> indicating whether entry was added</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-frame-new" role="function">
+<title>gst_base_parse_frame_new&#160;()</title>
+<indexterm zone="gst-base-parse-frame-new"><primary>gst_base_parse_frame_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstBaseParseFrame"><returnvalue>GstBaseParseFrame</returnvalue></link>&#160;*
+gst_base_parse_frame_new (<parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                          <parameter><link linkend="GstBaseParseFrameFlags"><type>GstBaseParseFrameFlags</type></link> flags</parameter>,
+                          <parameter><link linkend="gint"><type>gint</type></link> overhead</parameter>);</programlisting>
+<para>Allocates a new <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link>. This function is mainly for bindings,
+elements written in C should usually allocate the frame on the stack and
+then use <link linkend="gst-base-parse-frame-init"><function>gst_base_parse_frame_init()</function></link> to initialise it.</para>
+<refsect3 id="gst-base-parse-frame-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>the flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>overhead</para></entry>
+<entry role="parameter_description"><para>number of bytes in this frame which should be counted as
+metadata overhead, ie. not used to calculate the average bitrate.
+Set to -1 to mark the entire frame as metadata. If in doubt, set to 0.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-parse-frame-new.returns" role="returns">
+<title>Returns</title>
+<para> a newly-allocated <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link>. Free with
+<link linkend="gst-base-parse-frame-free"><function>gst_base_parse_frame_free()</function></link> when no longer needed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-frame-init" role="function">
+<title>gst_base_parse_frame_init&#160;()</title>
+<indexterm zone="gst-base-parse-frame-init"><primary>gst_base_parse_frame_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_frame_init (<parameter><link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link> *frame</parameter>);</programlisting>
+<para>Sets a <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link> to initial state.  Currently this means
+all public fields are zero-ed and a private flag is set to make
+sure <link linkend="gst-base-parse-frame-free"><function>gst_base_parse_frame_free()</function></link> only frees the contents but not
+the actual frame. Use this function to initialise a <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link>
+allocated on the stack.</para>
+<refsect3 id="gst-base-parse-frame-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>frame</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-frame-free" role="function">
+<title>gst_base_parse_frame_free&#160;()</title>
+<indexterm zone="gst-base-parse-frame-free"><primary>gst_base_parse_frame_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_parse_frame_free (<parameter><link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link> *frame</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-base-parse-push-frame" role="function">
+<title>gst_base_parse_push_frame&#160;()</title>
+<indexterm zone="gst-base-parse-push-frame"><primary>gst_base_parse_push_frame</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_parse_push_frame (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                           <parameter><link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link> *frame</parameter>);</programlisting>
+<para>Pushes the frame's buffer downstream, sends any pending events and
+does some timestamp and segment handling. Takes ownership of
+frame's buffer, though caller retains ownership of <parameter>frame</parameter>
+.</para>
+<para>This must be called with sinkpad STREAM_LOCK held.</para>
+<refsect3 id="gst-base-parse-push-frame.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBaseParse"><type>GstBaseParse</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>frame</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-parse-push-frame.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-parse-finish-frame" role="function">
+<title>gst_base_parse_finish_frame&#160;()</title>
+<indexterm zone="gst-base-parse-finish-frame"><primary>gst_base_parse_finish_frame</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_parse_finish_frame (<parameter><link linkend="GstBaseParse"><type>GstBaseParse</type></link> *parse</parameter>,
+                             <parameter><link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link> *frame</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> size</parameter>);</programlisting>
+<para>Collects parsed data and pushes this downstream.
+Source pad caps must be set when this is called.</para>
+<para>If <parameter>frame</parameter>
+'s out_buffer is set, that will be used as subsequent frame data.
+Otherwise, <parameter>size</parameter>
+ samples will be taken from the input and used for output,
+and the output's metadata (timestamps etc) will be taken as (optionally)
+set by the subclass on <parameter>frame</parameter>
+'s (input) buffer (which is otherwise
+ignored for any but the above purpose/information).</para>
+<para>Note that the latter buffer is invalidated by this call, whereas the
+caller retains ownership of <parameter>frame</parameter>
+.</para>
+<refsect3 id="gst-base-parse-finish-frame.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParse"><type>GstBaseParse</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>frame</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>consumed input data represented by frame</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-parse-finish-frame.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> that should be escalated to caller (of caller)</para>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-PARSE-DRAINING:CAPS" role="macro">
+<title>GST_BASE_PARSE_DRAINING()</title>
+<indexterm zone="GST-BASE-PARSE-DRAINING:CAPS"><primary>GST_BASE_PARSE_DRAINING</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_DRAINING(parse)  (!!(GST_BASE_PARSE_CAST(parse)-&gt;flags &amp; GST_BASE_PARSE_FLAG_DRAINING))
+</programlisting>
+<para>Obtains current drain status (ie. whether EOS has been received and
+the parser is now processing the frames at the end of the stream)</para>
+<refsect3 id="GST-BASE-PARSE-DRAINING.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>base parse instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-PARSE-LOST-SYNC:CAPS" role="macro">
+<title>GST_BASE_PARSE_LOST_SYNC()</title>
+<indexterm zone="GST-BASE-PARSE-LOST-SYNC:CAPS"><primary>GST_BASE_PARSE_LOST_SYNC</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_LOST_SYNC(parse) (!!(GST_BASE_PARSE_CAST(parse)-&gt;flags &amp; GST_BASE_PARSE_FLAG_LOST_SYNC))
+</programlisting>
+<para>Obtains current sync status.</para>
+<refsect3 id="GST-BASE-PARSE-LOST-SYNC.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parse</para></entry>
+<entry role="parameter_description"><para>base parse instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-PARSE-SINK-PAD:CAPS" role="macro">
+<title>GST_BASE_PARSE_SINK_PAD()</title>
+<indexterm zone="GST-BASE-PARSE-SINK-PAD:CAPS"><primary>GST_BASE_PARSE_SINK_PAD</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_SINK_PAD(obj)    (GST_BASE_PARSE_CAST (obj)-&gt;sinkpad)
+</programlisting>
+<para>Gives the pointer to the sink <link linkend="GstPad"><type>GstPad</type></link> object of the element.</para>
+<refsect3 id="GST-BASE-PARSE-SINK-PAD.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>base parse instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-PARSE-SRC-PAD:CAPS" role="macro">
+<title>GST_BASE_PARSE_SRC_PAD()</title>
+<indexterm zone="GST-BASE-PARSE-SRC-PAD:CAPS"><primary>GST_BASE_PARSE_SRC_PAD</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_SRC_PAD(obj)    (GST_BASE_PARSE_CAST (obj)-&gt;srcpad)
+</programlisting>
+<para>Gives the pointer to the source <link linkend="GstPad"><type>GstPad</type></link> object of the element.</para>
+<refsect3 id="GST-BASE-PARSE-SRC-PAD.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>base parse instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseParse.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBaseParse-struct" role="struct">
+<title>struct GstBaseParse</title>
+<indexterm zone="GstBaseParse-struct"><primary>GstBaseParse</primary></indexterm>
+<programlisting language="C">struct GstBaseParse {
+  GstElement     element;
+};
+</programlisting>
+<para>The opaque <link linkend="GstBaseParse"><type>GstBaseParse</type></link> data structure.</para>
+<refsect3 id="GstBaseParse.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstElement"><type>GstElement</type></link>&#160;<structfield id="GstBaseParse-struct.element">element</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the parent element.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBaseParseClass" role="struct">
+<title>struct GstBaseParseClass</title>
+<indexterm zone="GstBaseParseClass"><primary>GstBaseParseClass</primary></indexterm>
+<programlisting language="C">struct GstBaseParseClass {
+  GstElementClass parent_class;
+
+  /* virtual methods for subclasses */
+
+  gboolean      (*start)              (GstBaseParse * parse);
+
+  gboolean      (*stop)               (GstBaseParse * parse);
+
+  gboolean      (*set_sink_caps)      (GstBaseParse * parse,
+                                       GstCaps      * caps);
+
+  GstFlowReturn (*handle_frame)       (GstBaseParse      * parse,
+                                       GstBaseParseFrame * frame,
+                                       gint              * skipsize);
+
+  GstFlowReturn (*pre_push_frame)     (GstBaseParse      * parse,
+                                       GstBaseParseFrame * frame);
+
+  gboolean      (*convert)            (GstBaseParse * parse,
+                                       GstFormat      src_format,
+                                       gint64         src_value,
+                                       GstFormat      dest_format,
+                                       gint64       * dest_value);
+
+  gboolean      (*sink_event)         (GstBaseParse * parse,
+                                       GstEvent     * event);
+
+  gboolean      (*src_event)          (GstBaseParse * parse,
+                                       GstEvent     * event);
+
+  GstCaps *     (*get_sink_caps)      (GstBaseParse * parse,
+                                       GstCaps      * filter);
+
+  GstFlowReturn (*detect)             (GstBaseParse * parse,
+                                       GstBuffer    * buffer);
+
+  gboolean      (*sink_query)         (GstBaseParse * parse,
+                                       GstQuery     * query);
+
+  gboolean      (*src_query)          (GstBaseParse * parse,
+                                       GstQuery     * query);
+};
+</programlisting>
+<para>Subclasses can override any of the available virtual methods or not, as
+needed. At minimum <parameter>handle_frame</parameter>
+ needs to be overridden.</para>
+<refsect3 id="GstBaseParseClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.start">start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Called when the element starts processing.
+Allows opening external resources.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.stop">stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Called when the element stops processing.
+Allows closing external resources.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.set-sink-caps">set_sink_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Allows the subclass to be notified of the actual caps set.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.handle-frame">handle_frame</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Parses the input data into valid frames as defined by subclass
+which should be passed to <link linkend="gst-base-parse-finish-frame"><function>gst_base_parse_finish_frame()</function></link>.
+The frame's input buffer is guaranteed writable,
+whereas the input frame ownership is held by caller
+(so subclass should make a copy if it needs to hang on).
+Input buffer (data) is provided by baseclass with as much
+metadata set as possible by baseclass according to upstream
+information and/or subclass settings,
+though subclass may still set buffer timestamp and duration
+if desired.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.pre-push-frame">pre_push_frame</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Called just prior to pushing a frame (after any pending
+events have been sent) to give subclass a chance to perform
+additional actions at this time (e.g. tag sending) or to
+decide whether this buffer should be dropped or not
+(e.g. custom segment clipping).</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.convert">convert</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Convert between formats.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.sink-event">sink_event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Event handler on the sink pad. This function should chain
+up to the parent implementation to let the default handler
+run.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.src-event">src_event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Event handler on the source pad. Should chain up to the
+parent to let the default handler run.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.get-sink-caps">get_sink_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Allows the subclass to do its own sink get caps if needed.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.detect">detect</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Called until it doesn't return GST_FLOW_OK anymore for
+the first buffers. Can be used by the subclass to detect
+the stream format.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.sink-query">sink_query</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Query handler on the sink pad. This function should chain
+up to the parent implementation to let the default handler
+run (Since 1.2)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseParseClass.src-query">src_query</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Query handler on the source pad. Should chain up to the
+parent to let the default handler run (Since 1.2)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBaseParseFrame" role="struct">
+<title>GstBaseParseFrame</title>
+<indexterm zone="GstBaseParseFrame"><primary>GstBaseParseFrame</primary></indexterm>
+<programlisting language="C">typedef struct {
+  GstBuffer * buffer;
+  GstBuffer * out_buffer;
+  guint       flags;
+  guint64     offset;
+  gint        overhead;
+} GstBaseParseFrame;
+</programlisting>
+<para>Frame (context) data passed to each frame parsing virtual methods.  In
+addition to providing the data to be checked for a valid frame or an already
+identified frame, it conveys additional metadata or control information
+from and to the subclass w.r.t. the particular frame in question (rather
+than global parameters).  Some of these may apply to each parsing stage, others
+only to some a particular one.  These parameters are effectively zeroed at start
+of each frame's processing, i.e. parsing virtual method invocation sequence.</para>
+<refsect3 id="GstBaseParseFrame.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstBuffer"><type>GstBuffer</type></link>&#160;*<structfield id="GstBaseParseFrame.buffer">buffer</structfield>;</para></entry>
+<entry role="struct_member_description"><para>input data to be parsed for frames.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstBuffer"><type>GstBuffer</type></link>&#160;*<structfield id="GstBaseParseFrame.out-buffer">out_buffer</structfield>;</para></entry>
+<entry role="struct_member_description"><para>output data.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstBaseParseFrame.flags">flags</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a combination of input and output <link linkend="GstBaseParseFrameFlags"><type>GstBaseParseFrameFlags</type></link> that
+convey additional context to subclass or allow subclass to tune
+subsequent <link linkend="GstBaseParse"><type>GstBaseParse</type></link> actions.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstBaseParseFrame.offset">offset</structfield>;</para></entry>
+<entry role="struct_member_description"><para>media specific offset of input frame
+Note that a converter may have a different one on the frame's buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstBaseParseFrame.overhead">overhead</structfield>;</para></entry>
+<entry role="struct_member_description"><para>subclass can set this to indicates the metadata overhead
+for the given frame, which is then used to enable more accurate bitrate
+computations. If this is -1, it is assumed that this frame should be
+skipped in bitrate calculation.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBaseParseFrameFlags" role="enum">
+<title>enum GstBaseParseFrameFlags</title>
+<indexterm zone="GstBaseParseFrameFlags"><primary>GstBaseParseFrameFlags</primary></indexterm>
+<para>Flags to be used in a <link linkend="GstBaseParseFrame"><type>GstBaseParseFrame</type></link>.</para>
+<refsect3 id="GstBaseParseFrameFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-PARSE-FRAME-FLAG-NONE:CAPS">GST_BASE_PARSE_FRAME_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>no flag</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-PARSE-FRAME-FLAG-NEW-FRAME:CAPS">GST_BASE_PARSE_FRAME_FLAG_NEW_FRAME</para></entry>
+<entry role="enum_member_description"><para>set by baseclass if current frame
+  is passed for processing to the subclass for the first time
+  (and not set on subsequent calls with same data).</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-PARSE-FRAME-FLAG-NO-FRAME:CAPS">GST_BASE_PARSE_FRAME_FLAG_NO_FRAME</para></entry>
+<entry role="enum_member_description"><para>set to indicate this buffer should not be
+  counted as frame, e.g. if this frame is dependent on a previous one.
+  As it is not counted as a frame, bitrate increases but frame to time
+  conversions are maintained.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-PARSE-FRAME-FLAG-CLIP:CAPS">GST_BASE_PARSE_FRAME_FLAG_CLIP</para></entry>
+<entry role="enum_member_description"><para><parameter>pre_push_frame</parameter>
+ can set this to indicate
+   that regular segment clipping can still be performed (as opposed to
+   any custom one having been done).</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-PARSE-FRAME-FLAG-DROP:CAPS">GST_BASE_PARSE_FRAME_FLAG_DROP</para></entry>
+<entry role="enum_member_description"><para>indicates to <parameter>finish_frame</parameter>
+ that the
+   the frame should be dropped (and might be handled internally by subclass)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-PARSE-FRAME-FLAG-QUEUE:CAPS">GST_BASE_PARSE_FRAME_FLAG_QUEUE</para></entry>
+<entry role="enum_member_description"><para>indicates to <parameter>finish_frame</parameter>
+ that the
+   the frame should be queued for now and processed fully later
+   when the first non-queued frame is finished</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-PARSE-FLAG-DRAINING:CAPS" role="macro">
+<title>GST_BASE_PARSE_FLAG_DRAINING</title>
+<indexterm zone="GST-BASE-PARSE-FLAG-DRAINING:CAPS"><primary>GST_BASE_PARSE_FLAG_DRAINING</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_FLAG_DRAINING  (1 &lt;&lt; 1)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-PARSE-FLAG-LOST-SYNC:CAPS" role="macro">
+<title>GST_BASE_PARSE_FLAG_LOST_SYNC</title>
+<indexterm zone="GST-BASE-PARSE-FLAG-LOST-SYNC:CAPS"><primary>GST_BASE_PARSE_FLAG_LOST_SYNC</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_FLAG_LOST_SYNC (1 &lt;&lt; 0)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-PARSE-FLOW-DROPPED:CAPS" role="macro">
+<title>GST_BASE_PARSE_FLOW_DROPPED</title>
+<indexterm zone="GST-BASE-PARSE-FLOW-DROPPED:CAPS"><primary>GST_BASE_PARSE_FLOW_DROPPED</primary></indexterm>
+<programlisting language="C">#define GST_BASE_PARSE_FLOW_DROPPED     GST_FLOW_CUSTOM_SUCCESS
+</programlisting>
+<para>A <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> that can be returned from parse_frame to
+indicate that no output buffer was generated, or from pre_push_frame to
+to forego pushing buffer.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseParse.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstBaseParse--disable-passthrough" role="property"><title>The <literal>“disable-passthrough”</literal> property</title>
+<indexterm zone="GstBaseParse--disable-passthrough"><primary>GstBaseParse:disable-passthrough</primary></indexterm>
+<programlisting>  “disable-passthrough”      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, baseparse will unconditionally force parsing of the
+incoming data. This can be required in the rare cases where the incoming
+side-data (caps, pts, dts, ...) is not trusted by the user and wants to
+force validation and parsing of the incoming data.
+If set to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, decision of whether to parse the data or not is up to
+the implementation (standard behaviour).</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseParse.see-also">
+<title>See Also</title>
+<para><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para>
+
+</refsect1>
+
+</refentry>

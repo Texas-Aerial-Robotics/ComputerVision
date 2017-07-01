@@ -1,0 +1,2816 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstEvent">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstEvent.top_of_page">GstEvent</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstEvent</refname>
+<refpurpose>Structure describing events that are passed up and down
+                    a pipeline</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstEvent.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-MAKE-TYPE:CAPS">GST_EVENT_MAKE_TYPE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-TYPE:CAPS">GST_EVENT_TYPE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-TYPE-NAME:CAPS">GST_EVENT_TYPE_NAME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-TIMESTAMP:CAPS">GST_EVENT_TIMESTAMP</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-SEQNUM:CAPS">GST_EVENT_SEQNUM</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-IS-UPSTREAM:CAPS">GST_EVENT_IS_UPSTREAM</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-IS-DOWNSTREAM:CAPS">GST_EVENT_IS_DOWNSTREAM</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-IS-SERIALIZED:CAPS">GST_EVENT_IS_SERIALIZED</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-IS-STICKY:CAPS">GST_EVENT_IS_STICKY</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEventTypeFlags"><returnvalue>GstEventTypeFlags</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-type-get-flags">gst_event_type_get_flags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-type-get-name">gst_event_type_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-type-to-quark">gst_event_type_to_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-ref">gst_event_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-unref">gst_event_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-replace">gst_event_replace</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-copy">gst_event_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-steal">gst_event_steal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-take">gst_event_take</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-event-is-writable">gst_event_is_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-event-make-writable">gst_event_make_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-writable-structure">gst_event_writable_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-custom">gst_event_new_custom</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-get-structure">gst_event_get_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-has-name">gst_event_has_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-get-seqnum">gst_event_get_seqnum</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-set-seqnum">gst_event_set_seqnum</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-get-running-time-offset">gst_event_get_running_time_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-set-running-time-offset">gst_event_set_running_time_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-flush-start">gst_event_new_flush_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-flush-stop">gst_event_new_flush_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-flush-stop">gst_event_parse_flush_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-eos">gst_event_new_eos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-gap">gst_event_new_gap</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-gap">gst_event_parse_gap</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-stream-start">gst_event_new_stream_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-stream-start">gst_event_parse_stream_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-set-stream-flags">gst_event_set_stream_flags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-stream-flags">gst_event_parse_stream_flags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-set-group-id">gst_event_set_group_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-group-id">gst_event_parse_group_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-segment">gst_event_new_segment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-segment">gst_event_parse_segment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-copy-segment">gst_event_copy_segment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-tag">gst_event_new_tag</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-tag">gst_event_parse_tag</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-buffer-size">gst_event_new_buffer_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-buffer-size">gst_event_parse_buffer_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-qos">gst_event_new_qos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-qos">gst_event_parse_qos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-seek">gst_event_new_seek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-seek">gst_event_parse_seek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-navigation">gst_event_new_navigation</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-latency">gst_event_new_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-latency">gst_event_parse_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-step">gst_event_new_step</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-step">gst_event_parse_step</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-sink-message">gst_event_new_sink_message</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-sink-message">gst_event_parse_sink_message</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-reconfigure">gst_event_new_reconfigure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-caps">gst_event_new_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-caps">gst_event_parse_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-toc">gst_event_new_toc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-toc">gst_event_parse_toc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-toc-select">gst_event_new_toc_select</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-toc-select">gst_event_parse_toc_select</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-segment-done">gst_event_new_segment_done</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-segment-done">gst_event_parse_segment_done</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-event-new-protection">gst_event_new_protection</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-event-parse-protection">gst_event_parse_protection</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstEvent.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstEvent-struct">GstEvent</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstEventTypeFlags">GstEventTypeFlags</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-EVENT-TYPE-BOTH:CAPS">GST_EVENT_TYPE_BOTH</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstEventType">GstEventType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstStreamFlags">GstStreamFlags</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstQOSType">GstQOSType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstSeekType">GstSeekType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstSeekFlags">GstSeekFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstEvent.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstEvent
+</screen>
+</refsect1>
+
+<refsect1 id="GstEvent.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstEvent.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The event class provides factory methods to construct events for sending
+and functions to query (parse) received events.</para>
+<para>Events are usually created with gst_event_new_*() which takes event-type
+specific parameters as arguments.
+To send an event application will usually use <link linkend="gst-element-send-event"><function>gst_element_send_event()</function></link> and
+elements will use <link linkend="gst-pad-send-event"><function>gst_pad_send_event()</function></link> or <link linkend="gst-pad-push-event"><function>gst_pad_push_event()</function></link>.
+The event should be unreffed with <link linkend="gst-event-unref"><function>gst_event_unref()</function></link> if it has not been sent.</para>
+<para>Events that have been received can be parsed with their respective
+gst_event_parse_*() functions. It is valid to pass <link linkend="NULL:CAPS"><literal>NULL</literal></link> for unwanted details.</para>
+<para>Events are passed between elements in parallel to the data stream. Some events
+are serialized with buffers, others are not. Some events only travel downstream,
+others only upstream. Some events can travel both upstream and downstream.</para>
+<para>The events are used to signal special conditions in the datastream such as
+EOS (end of stream) or the start of a new stream-segment.
+Events are also used to flush the pipeline of any pending data.</para>
+<para>Most of the event API is used inside plugins. Applications usually only
+construct and use seek events.
+To do that <link linkend="gst-event-new-seek"><function>gst_event_new_seek()</function></link> is used to create a seek event. It takes
+the needed parameters to specify seeking time and mode.</para>
+<informalexample><programlisting><![CDATA[
+  GstEvent *event;
+  gboolean result;
+  ...
+  // construct a seek event to play the media from second 2 to 5, flush
+  // the pipeline to decrease latency.
+  event = gst_event_new_seek (1.0, 
+     GST_FORMAT_TIME, 
+     GST_SEEK_FLAG_FLUSH,
+     GST_SEEK_TYPE_SET, 2 * GST_SECOND,
+     GST_SEEK_TYPE_SET, 5 * GST_SECOND);
+  ...
+  result = gst_element_send_event (pipeline, event);
+  if (!result)
+    g_warning ("seek failed");
+  ...
+]]></programlisting></informalexample>
+<para></para>
+
+</refsect1>
+<refsect1 id="GstEvent.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-EVENT-MAKE-TYPE:CAPS" role="macro">
+<title>GST_EVENT_MAKE_TYPE()</title>
+<indexterm zone="GST-EVENT-MAKE-TYPE:CAPS"><primary>GST_EVENT_MAKE_TYPE</primary></indexterm>
+<programlisting language="C">#define             GST_EVENT_MAKE_TYPE(num,flags)</programlisting>
+<para>when making custom event types, use this macro with the num and
+the given flags</para>
+<refsect3 id="GST-EVENT-MAKE-TYPE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>the event number to create</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>the event flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-TYPE:CAPS" role="macro">
+<title>GST_EVENT_TYPE()</title>
+<indexterm zone="GST-EVENT-TYPE:CAPS"><primary>GST_EVENT_TYPE</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_TYPE(event)           (GST_EVENT_CAST(event)-&gt;type)
+</programlisting>
+<para>Get the <link linkend="GstEventType"><type>GstEventType</type></link> of the event.</para>
+<refsect3 id="GST-EVENT-TYPE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-TYPE-NAME:CAPS" role="macro">
+<title>GST_EVENT_TYPE_NAME()</title>
+<indexterm zone="GST-EVENT-TYPE-NAME:CAPS"><primary>GST_EVENT_TYPE_NAME</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_TYPE_NAME(event)      (gst_event_type_get_name(GST_EVENT_TYPE(event)))
+</programlisting>
+<para>Get a constant string representation of the <link linkend="GstEventType"><type>GstEventType</type></link> of the event.</para>
+<refsect3 id="GST-EVENT-TYPE-NAME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-TIMESTAMP:CAPS" role="macro">
+<title>GST_EVENT_TIMESTAMP()</title>
+<indexterm zone="GST-EVENT-TIMESTAMP:CAPS"><primary>GST_EVENT_TIMESTAMP</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_TIMESTAMP(event)      (GST_EVENT_CAST(event)-&gt;timestamp)
+</programlisting>
+<para>Get the <link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp of the event. This is the time when the event
+was created.</para>
+<refsect3 id="GST-EVENT-TIMESTAMP.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-SEQNUM:CAPS" role="macro">
+<title>GST_EVENT_SEQNUM()</title>
+<indexterm zone="GST-EVENT-SEQNUM:CAPS"><primary>GST_EVENT_SEQNUM</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_SEQNUM(event)         (GST_EVENT_CAST(event)-&gt;seqnum)
+</programlisting>
+<para>The sequence number of <parameter>event</parameter>
+.</para>
+<refsect3 id="GST-EVENT-SEQNUM.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-IS-UPSTREAM:CAPS" role="macro">
+<title>GST_EVENT_IS_UPSTREAM()</title>
+<indexterm zone="GST-EVENT-IS-UPSTREAM:CAPS"><primary>GST_EVENT_IS_UPSTREAM</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_IS_UPSTREAM(ev)       !!(GST_EVENT_TYPE (ev) &amp; GST_EVENT_TYPE_UPSTREAM)
+</programlisting>
+<para>Check if an event can travel upstream.</para>
+<refsect3 id="GST-EVENT-IS-UPSTREAM.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ev</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-IS-DOWNSTREAM:CAPS" role="macro">
+<title>GST_EVENT_IS_DOWNSTREAM()</title>
+<indexterm zone="GST-EVENT-IS-DOWNSTREAM:CAPS"><primary>GST_EVENT_IS_DOWNSTREAM</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_IS_DOWNSTREAM(ev)     !!(GST_EVENT_TYPE (ev) &amp; GST_EVENT_TYPE_DOWNSTREAM)
+</programlisting>
+<para>Check if an event can travel downstream.</para>
+<refsect3 id="GST-EVENT-IS-DOWNSTREAM.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ev</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-IS-SERIALIZED:CAPS" role="macro">
+<title>GST_EVENT_IS_SERIALIZED()</title>
+<indexterm zone="GST-EVENT-IS-SERIALIZED:CAPS"><primary>GST_EVENT_IS_SERIALIZED</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_IS_SERIALIZED(ev)     !!(GST_EVENT_TYPE (ev) &amp; GST_EVENT_TYPE_SERIALIZED)
+</programlisting>
+<para>Check if an event is serialized with the data stream.</para>
+<refsect3 id="GST-EVENT-IS-SERIALIZED.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ev</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-IS-STICKY:CAPS" role="macro">
+<title>GST_EVENT_IS_STICKY()</title>
+<indexterm zone="GST-EVENT-IS-STICKY:CAPS"><primary>GST_EVENT_IS_STICKY</primary></indexterm>
+<programlisting language="C">#define GST_EVENT_IS_STICKY(ev)     !!(GST_EVENT_TYPE (ev) &amp; GST_EVENT_TYPE_STICKY)
+</programlisting>
+<para>Check if an event is sticky on the pads.</para>
+<refsect3 id="GST-EVENT-IS-STICKY.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ev</para></entry>
+<entry role="parameter_description"><para>the event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-type-get-flags" role="function">
+<title>gst_event_type_get_flags&#160;()</title>
+<indexterm zone="gst-event-type-get-flags"><primary>gst_event_type_get_flags</primary></indexterm>
+<programlisting language="C"><link linkend="GstEventTypeFlags"><returnvalue>GstEventTypeFlags</returnvalue></link>
+gst_event_type_get_flags (<parameter><link linkend="GstEventType"><type>GstEventType</type></link> type</parameter>);</programlisting>
+<para>Gets the <link linkend="GstEventTypeFlags"><type>GstEventTypeFlags</type></link> associated with <parameter>type</parameter>
+.</para>
+<refsect3 id="gst-event-type-get-flags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstEventType"><type>GstEventType</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-type-get-flags.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstEventTypeFlags"><type>GstEventTypeFlags</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-type-get-name" role="function">
+<title>gst_event_type_get_name&#160;()</title>
+<indexterm zone="gst-event-type-get-name"><primary>gst_event_type_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_event_type_get_name (<parameter><link linkend="GstEventType"><type>GstEventType</type></link> type</parameter>);</programlisting>
+<para>Get a printable name for the given event type. Do not modify or free.</para>
+<refsect3 id="gst-event-type-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the event type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-type-get-name.returns" role="returns">
+<title>Returns</title>
+<para> a reference to the static name of the event.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-type-to-quark" role="function">
+<title>gst_event_type_to_quark&#160;()</title>
+<indexterm zone="gst-event-type-to-quark"><primary>gst_event_type_to_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_event_type_to_quark (<parameter><link linkend="GstEventType"><type>GstEventType</type></link> type</parameter>);</programlisting>
+<para>Get the unique quark for the given event type.</para>
+<refsect3 id="gst-event-type-to-quark.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the event type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-type-to-quark.returns" role="returns">
+<title>Returns</title>
+<para> the quark associated with the event type</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-ref" role="function">
+<title>gst_event_ref&#160;()</title>
+<indexterm zone="gst-event-ref"><primary>gst_event_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_ref (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Increase the refcount of this event.</para>
+<refsect3 id="gst-event-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to refcount</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-ref.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>event</parameter>
+(for convenience when doing assignments). </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-unref" role="function">
+<title>gst_event_unref&#160;()</title>
+<indexterm zone="gst-event-unref"><primary>gst_event_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_unref (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Decrease the refcount of an event, freeing it if the refcount reaches 0.</para>
+<refsect3 id="gst-event-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para> the event to refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-replace" role="function">
+<title>gst_event_replace&#160;()</title>
+<indexterm zone="gst-event-replace"><primary>gst_event_replace</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_event_replace (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> **old_event</parameter>,
+                   <parameter><link linkend="GstEvent"><type>GstEvent</type></link> *new_event</parameter>);</programlisting>
+<para>Modifies a pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> to point to a different <link linkend="GstEvent"><type>GstEvent</type></link>. The
+modification is done atomically (so this is useful for ensuring thread safety
+in some cases), and the reference counts are updated appropriately (the old
+event is unreffed, the new one is reffed).</para>
+<para>Either <parameter>new_event</parameter>
+ or the <link linkend="GstEvent"><type>GstEvent</type></link> pointed to by <parameter>old_event</parameter>
+ may be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-event-replace.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>old_event</para></entry>
+<entry role="parameter_description"><para> pointer to a
+pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> to be replaced. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>new_event</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> that will
+replace the event pointed to by <parameter>old_event</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-replace.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>new_event</parameter>
+was different from <parameter>old_event</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-copy" role="function">
+<title>gst_event_copy&#160;()</title>
+<indexterm zone="gst-event-copy"><primary>gst_event_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_copy (<parameter>const <link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Copy the event using the event specific copy function.</para>
+<refsect3 id="gst-event-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to copy</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-copy.returns" role="returns">
+<title>Returns</title>
+<para> the new event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-steal" role="function">
+<title>gst_event_steal&#160;()</title>
+<indexterm zone="gst-event-steal"><primary>gst_event_steal</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_steal (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> **old_event</parameter>);</programlisting>
+<para>Atomically replace the <link linkend="GstEvent"><type>GstEvent</type></link> pointed to by <parameter>old_event</parameter>
+ with <link linkend="NULL:CAPS"><literal>NULL</literal></link> and
+return the original event.</para>
+<refsect3 id="gst-event-steal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>old_event</para></entry>
+<entry role="parameter_description"><para> pointer to a
+pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> to be stolen. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-steal.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstEvent"><type>GstEvent</type></link> that was in <parameter>old_event</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-take" role="function">
+<title>gst_event_take&#160;()</title>
+<indexterm zone="gst-event-take"><primary>gst_event_take</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_event_take (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> **old_event</parameter>,
+                <parameter><link linkend="GstEvent"><type>GstEvent</type></link> *new_event</parameter>);</programlisting>
+<para>Modifies a pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> to point to a different <link linkend="GstEvent"><type>GstEvent</type></link>. This
+function is similar to <link linkend="gst-event-replace"><function>gst_event_replace()</function></link> except that it takes ownership of
+<parameter>new_event</parameter>
+.</para>
+<para>Either <parameter>new_event</parameter>
+ or the <link linkend="GstEvent"><type>GstEvent</type></link> pointed to by <parameter>old_event</parameter>
+ may be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-event-take.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>old_event</para></entry>
+<entry role="parameter_description"><para> pointer to a
+pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> to be stolen. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>new_event</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="GstEvent"><type>GstEvent</type></link> that will
+replace the event pointed to by <parameter>old_event</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-take.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>new_event</parameter>
+was different from <parameter>old_event</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-is-writable" role="macro">
+<title>gst_event_is_writable()</title>
+<indexterm zone="gst-event-is-writable"><primary>gst_event_is_writable</primary></indexterm>
+<programlisting language="C">#define         gst_event_is_writable(ev)     gst_mini_object_is_writable (GST_MINI_OBJECT_CAST (ev))
+</programlisting>
+<para>Tests if you can safely write data into a event's structure or validly
+modify the seqnum and timestamp field.</para>
+<refsect3 id="gst-event-is-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ev</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstEvent"><type>GstEvent</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-make-writable" role="macro">
+<title>gst_event_make_writable()</title>
+<indexterm zone="gst-event-make-writable"><primary>gst_event_make_writable</primary></indexterm>
+<programlisting language="C">#define         gst_event_make_writable(ev)   GST_EVENT_CAST (gst_mini_object_make_writable (GST_MINI_OBJECT_CAST (ev)))
+</programlisting>
+<para>Makes a writable event from the given event. If the source event is
+already writable, this will simply return the same event. A copy will
+otherwise be made using <link linkend="gst-event-copy"><function>gst_event_copy()</function></link>.</para>
+<refsect3 id="gst-event-make-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ev</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstEvent"><type>GstEvent</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-make-writable.returns" role="returns">
+<title>Returns</title>
+<para> a writable event which may or may not be the
+same as <parameter>ev</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-writable-structure" role="function">
+<title>gst_event_writable_structure&#160;()</title>
+<indexterm zone="gst-event-writable-structure"><primary>gst_event_writable_structure</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_event_writable_structure (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Get a writable version of the structure.</para>
+<refsect3 id="gst-event-writable-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-writable-structure.returns" role="returns">
+<title>Returns</title>
+<para> The structure of the event. The structure
+is still owned by the event, which means that you should not free
+it and that the pointer becomes invalid when you free the event.
+This function checks if <parameter>event</parameter>
+is writable and will never return
+<link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-custom" role="function">
+<title>gst_event_new_custom&#160;()</title>
+<indexterm zone="gst-event-new-custom"><primary>gst_event_new_custom</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_custom (<parameter><link linkend="GstEventType"><type>GstEventType</type></link> type</parameter>,
+                      <parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Create a new custom-typed event. This can be used for anything not
+handled by other event-specific functions to pass an event to another
+element.</para>
+<para>Make sure to allocate an event type with the <link linkend="GST-EVENT-MAKE-TYPE:CAPS"><type>GST_EVENT_MAKE_TYPE</type></link> macro,
+assigning a free number and filling in the correct direction and
+serialization flags.</para>
+<para>New custom events can also be created by subclassing the event type if
+needed.</para>
+<refsect3 id="gst-event-new-custom.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>The type of the new event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para> the structure for the event. The event will
+take ownership of the structure. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-custom.returns" role="returns">
+<title>Returns</title>
+<para> the new custom event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-get-structure" role="function">
+<title>gst_event_get_structure&#160;()</title>
+<indexterm zone="gst-event-get-structure"><primary>gst_event_get_structure</primary></indexterm>
+<programlisting language="C">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_event_get_structure (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Access the structure of the event.</para>
+<refsect3 id="gst-event-get-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-get-structure.returns" role="returns">
+<title>Returns</title>
+<para> The structure of the event. The structure is still
+owned by the event, which means that you should not free it and
+that the pointer becomes invalid when you free the event.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-has-name" role="function">
+<title>gst_event_has_name&#160;()</title>
+<indexterm zone="gst-event-has-name"><primary>gst_event_has_name</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_event_has_name (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Checks if <parameter>event</parameter>
+ has the given <parameter>name</parameter>
+. This function is usually used to
+check the name of a custom event.</para>
+<refsect3 id="gst-event-has-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-has-name.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>name</parameter>
+matches the name of the event structure.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-get-seqnum" role="function">
+<title>gst_event_get_seqnum&#160;()</title>
+<indexterm zone="gst-event-get-seqnum"><primary>gst_event_get_seqnum</primary></indexterm>
+<programlisting language="C"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+gst_event_get_seqnum (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Retrieve the sequence number of a event.</para>
+<para>Events have ever-incrementing sequence numbers, which may also be set
+explicitly via <link linkend="gst-event-set-seqnum"><function>gst_event_set_seqnum()</function></link>. Sequence numbers are typically used to
+indicate that a event corresponds to some other set of events or messages,
+for example an EOS event corresponding to a SEEK event. It is considered good
+practice to make this correspondence when possible, though it is not
+required.</para>
+<para>Note that events and messages share the same sequence number incrementor;
+two events or messages will never have the same sequence number unless
+that correspondence was made explicitly.</para>
+<refsect3 id="gst-event-get-seqnum.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-get-seqnum.returns" role="returns">
+<title>Returns</title>
+<para> The event's sequence number.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-set-seqnum" role="function">
+<title>gst_event_set_seqnum&#160;()</title>
+<indexterm zone="gst-event-set-seqnum"><primary>gst_event_set_seqnum</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_set_seqnum (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                      <parameter><link linkend="guint32"><type>guint32</type></link> seqnum</parameter>);</programlisting>
+<para>Set the sequence number of a event.</para>
+<para>This function might be called by the creator of a event to indicate that the
+event relates to other events or messages. See <link linkend="gst-event-get-seqnum"><function>gst_event_get_seqnum()</function></link> for
+more information.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-event-set-seqnum.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>seqnum</para></entry>
+<entry role="parameter_description"><para>A sequence number.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-get-running-time-offset" role="function" condition="since:1.4">
+<title>gst_event_get_running_time_offset&#160;()</title>
+<indexterm zone="gst-event-get-running-time-offset" role="1.4"><primary>gst_event_get_running_time_offset</primary></indexterm>
+<programlisting language="C"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+gst_event_get_running_time_offset (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>);</programlisting>
+<para>Retrieve the accumulated running time offset of the event.</para>
+<para>Events passing through <link linkend="GstPads"><type>GstPads</type></link> that have a running time
+offset set via <link linkend="gst-pad-set-offset"><function>gst_pad_set_offset()</function></link> will get their offset
+adjusted according to the pad's offset.</para>
+<para>If the event contains any information that related to the
+running time, this information will need to be updated
+before usage with this offset.</para>
+<refsect3 id="gst-event-get-running-time-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-get-running-time-offset.returns" role="returns">
+<title>Returns</title>
+<para> The event's running time offset</para>
+<para>MT safe.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-event-set-running-time-offset" role="function" condition="since:1.4">
+<title>gst_event_set_running_time_offset&#160;()</title>
+<indexterm zone="gst-event-set-running-time-offset" role="1.4"><primary>gst_event_set_running_time_offset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_set_running_time_offset (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                                   <parameter><link linkend="gint64"><type>gint64</type></link> offset</parameter>);</programlisting>
+<para>Set the running time offset of a event. See
+<link linkend="gst-event-get-running-time-offset"><function>gst_event_get_running_time_offset()</function></link> for more information.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-event-set-running-time-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstEvent"><type>GstEvent</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>A the new running time offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-event-new-flush-start" role="function">
+<title>gst_event_new_flush_start&#160;()</title>
+<indexterm zone="gst-event-new-flush-start"><primary>gst_event_new_flush_start</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_flush_start (<parameter><type>void</type></parameter>);</programlisting>
+<para>Allocate a new flush start event. The flush start event can be sent
+upstream and downstream and travels out-of-bounds with the dataflow.</para>
+<para>It marks pads as being flushing and will make them return
+<link linkend="GST-FLOW-FLUSHING:CAPS"><type>GST_FLOW_FLUSHING</type></link> when used for data flow with <link linkend="gst-pad-push"><function>gst_pad_push()</function></link>,
+<link linkend="gst-pad-chain"><function>gst_pad_chain()</function></link>, <link linkend="gst-pad-get-range"><function>gst_pad_get_range()</function></link> and <link linkend="gst-pad-pull-range"><function>gst_pad_pull_range()</function></link>.
+Any event (except a <link linkend="GST-EVENT-FLUSH-STOP:CAPS"><type>GST_EVENT_FLUSH_STOP</type></link>) received
+on a flushing pad will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> immediately.</para>
+<para>Elements should unlock any blocking functions and exit their streaming
+functions as fast as possible when this event is received.</para>
+<para>This event is typically generated after a seek to flush out all queued data
+in the pipeline so that the new media is played as soon as possible.</para>
+<refsect3 id="gst-event-new-flush-start.returns" role="returns">
+<title>Returns</title>
+<para> a new flush start event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-flush-stop" role="function">
+<title>gst_event_new_flush_stop&#160;()</title>
+<indexterm zone="gst-event-new-flush-stop"><primary>gst_event_new_flush_stop</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_flush_stop (<parameter><link linkend="gboolean"><type>gboolean</type></link> reset_time</parameter>);</programlisting>
+<para>Allocate a new flush stop event. The flush stop event can be sent
+upstream and downstream and travels serialized with the dataflow.
+It is typically sent after sending a FLUSH_START event to make the
+pads accept data again.</para>
+<para>Elements can process this event synchronized with the dataflow since
+the preceding FLUSH_START event stopped the dataflow.</para>
+<para>This event is typically generated to complete a seek and to resume
+dataflow.</para>
+<refsect3 id="gst-event-new-flush-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reset_time</para></entry>
+<entry role="parameter_description"><para>if time should be reset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-flush-stop.returns" role="returns">
+<title>Returns</title>
+<para> a new flush stop event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-flush-stop" role="function">
+<title>gst_event_parse_flush_stop&#160;()</title>
+<indexterm zone="gst-event-parse-flush-stop"><primary>gst_event_parse_flush_stop</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_flush_stop (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                            <parameter><link linkend="gboolean"><type>gboolean</type></link> *reset_time</parameter>);</programlisting>
+<para>Parse the FLUSH_STOP event and retrieve the <parameter>reset_time</parameter>
+ member.</para>
+<refsect3 id="gst-event-parse-flush-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to parse</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>reset_time</para></entry>
+<entry role="parameter_description"><para> if time should be reset. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-eos" role="function">
+<title>gst_event_new_eos&#160;()</title>
+<indexterm zone="gst-event-new-eos"><primary>gst_event_new_eos</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_eos (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new EOS event. The eos event can only travel downstream
+synchronized with the buffer flow. Elements that receive the EOS
+event on a pad can return <link linkend="GST-FLOW-EOS:CAPS"><type>GST_FLOW_EOS</type></link> as a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link>
+when data after the EOS event arrives.</para>
+<para>The EOS event will travel down to the sink elements in the pipeline
+which will then post the <link linkend="GST-MESSAGE-EOS:CAPS"><type>GST_MESSAGE_EOS</type></link> on the bus after they have
+finished playing any buffered data.</para>
+<para>When all sinks have posted an EOS message, an EOS message is
+forwarded to the application.</para>
+<para>The EOS event itself will not cause any state transitions of the pipeline.</para>
+<refsect3 id="gst-event-new-eos.returns" role="returns">
+<title>Returns</title>
+<para> the new EOS event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-gap" role="function">
+<title>gst_event_new_gap&#160;()</title>
+<indexterm zone="gst-event-new-gap"><primary>gst_event_new_gap</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_gap (<parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> duration</parameter>);</programlisting>
+<para>Create a new GAP event. A gap event can be thought of as conceptually
+equivalent to a buffer to signal that there is no data for a certain
+amount of time. This is useful to signal a gap to downstream elements
+which may wait for data, such as muxers or mixers or overlays, especially
+for sparse streams such as subtitle streams.</para>
+<refsect3 id="gst-event-new-gap.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the start time (pts) of the gap</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>duration</para></entry>
+<entry role="parameter_description"><para>the duration of the gap</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-gap.returns" role="returns">
+<title>Returns</title>
+<para> the new GAP event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-gap" role="function">
+<title>gst_event_parse_gap&#160;()</title>
+<indexterm zone="gst-event-parse-gap"><primary>gst_event_parse_gap</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_gap (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *timestamp</parameter>,
+                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *duration</parameter>);</programlisting>
+<para>Extract timestamp and duration from a new GAP event.</para>
+<refsect3 id="gst-event-parse-gap.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstEvent"><type>GstEvent</type></link> of type <link linkend="GST-EVENT-GAP:CAPS"><type>GST_EVENT_GAP</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para> location where to store the
+start time (pts) of the gap, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>duration</para></entry>
+<entry role="parameter_description"><para> location where to store the duration of
+the gap, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-stream-start" role="function">
+<title>gst_event_new_stream_start&#160;()</title>
+<indexterm zone="gst-event-new-stream-start"><primary>gst_event_new_stream_start</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_stream_start (<parameter>const <link linkend="gchar"><type>gchar</type></link> *stream_id</parameter>);</programlisting>
+<para>Create a new STREAM_START event. The stream start event can only
+travel downstream synchronized with the buffer flow. It is expected
+to be the first event that is sent for a new stream.</para>
+<para>Source elements, demuxers and other elements that create new streams
+are supposed to send this event as the first event of a new stream. It
+should not be sent after a flushing seek or in similar situations
+and is used to mark the beginning of a new logical stream. Elements
+combining multiple streams must ensure that this event is only forwarded
+downstream once and not for every single input stream.</para>
+<para>The <parameter>stream_id</parameter>
+ should be a unique string that consists of the upstream
+stream-id, / as separator and a unique stream-id for this specific
+stream. A new stream-id should only be created for a stream if the upstream
+stream is split into (potentially) multiple new streams, e.g. in a demuxer,
+but not for every single element in the pipeline.
+<link linkend="gst-pad-create-stream-id"><function>gst_pad_create_stream_id()</function></link> or <link linkend="gst-pad-create-stream-id-printf"><function>gst_pad_create_stream_id_printf()</function></link> can be
+used to create a stream-id.</para>
+<refsect3 id="gst-event-new-stream-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream_id</para></entry>
+<entry role="parameter_description"><para>Identifier for this stream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-stream-start.returns" role="returns">
+<title>Returns</title>
+<para> the new STREAM_START event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-stream-start" role="function">
+<title>gst_event_parse_stream_start&#160;()</title>
+<indexterm zone="gst-event-parse-stream-start"><primary>gst_event_parse_stream_start</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_stream_start (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> **stream_id</parameter>);</programlisting>
+<para>Parse a stream-id <parameter>event</parameter>
+ and store the result in the given <parameter>stream_id</parameter>
+
+location. The string stored in <parameter>stream_id</parameter>
+ must not be modified and will
+remain valid only until <parameter>event</parameter>
+ gets freed. Make a copy if you want to
+modify it or store it for later use.</para>
+<refsect3 id="gst-event-parse-stream-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a stream-start event.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stream_id</para></entry>
+<entry role="parameter_description"><para> pointer to store the stream-id. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-set-stream-flags" role="function" condition="since:1.2">
+<title>gst_event_set_stream_flags&#160;()</title>
+<indexterm zone="gst-event-set-stream-flags" role="1.2"><primary>gst_event_set_stream_flags</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_set_stream_flags (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                            <parameter><link linkend="GstStreamFlags"><type>GstStreamFlags</type></link> flags</parameter>);</programlisting>
+<refsect3 id="gst-event-set-stream-flags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a stream-start event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>the stream flags to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-event-parse-stream-flags" role="function" condition="since:1.2">
+<title>gst_event_parse_stream_flags&#160;()</title>
+<indexterm zone="gst-event-parse-stream-flags" role="1.2"><primary>gst_event_parse_stream_flags</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_stream_flags (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                              <parameter><link linkend="GstStreamFlags"><type>GstStreamFlags</type></link> *flags</parameter>);</programlisting>
+<refsect3 id="gst-event-parse-stream-flags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a stream-start event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para> address of variable where to store the stream flags. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-event-set-group-id" role="function" condition="since:1.2">
+<title>gst_event_set_group_id&#160;()</title>
+<indexterm zone="gst-event-set-group-id" role="1.2"><primary>gst_event_set_group_id</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_set_group_id (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> group_id</parameter>);</programlisting>
+<para>All streams that have the same group id are supposed to be played
+together, i.e. all streams inside a container file should have the
+same group id but different stream ids. The group id should change
+each time the stream is started, resulting in different group ids
+each time a file is played for example.</para>
+<para>Use <link linkend="gst-util-group-id-next"><function>gst_util_group_id_next()</function></link> to get a new group id.</para>
+<refsect3 id="gst-event-set-group-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a stream-start event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>group_id</para></entry>
+<entry role="parameter_description"><para>the group id to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-event-parse-group-id" role="function" condition="since:1.2">
+<title>gst_event_parse_group_id&#160;()</title>
+<indexterm zone="gst-event-parse-group-id" role="1.2"><primary>gst_event_parse_group_id</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_event_parse_group_id (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                          <parameter><link linkend="guint"><type>guint</type></link> *group_id</parameter>);</programlisting>
+<refsect3 id="gst-event-parse-group-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a stream-start event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>group_id</para></entry>
+<entry role="parameter_description"><para> address of variable where to store the group id. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-parse-group-id.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if a group id was set on the event and could be parsed,
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-event-new-segment" role="function">
+<title>gst_event_new_segment&#160;()</title>
+<indexterm zone="gst-event-new-segment"><primary>gst_event_new_segment</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_segment (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>);</programlisting>
+<para>Create a new SEGMENT event for <parameter>segment</parameter>
+. The segment event can only travel
+downstream synchronized with the buffer flow and contains timing information
+and playback properties for the buffers that will follow.</para>
+<para>The segment event marks the range of buffers to be processed. All
+data not within the segment range is not to be processed. This can be
+used intelligently by plugins to apply more efficient methods of skipping
+unneeded data. The valid range is expressed with the <parameter>start</parameter>
+ and <parameter>stop</parameter>
+
+values.</para>
+<para>The time value of the segment is used in conjunction with the start
+value to convert the buffer timestamps into the stream time. This is
+usually done in sinks to report the current stream_time.
+<parameter>time</parameter>
+ represents the stream_time of a buffer carrying a timestamp of
+<parameter>start</parameter>
+. <parameter>time</parameter>
+ cannot be -1.</para>
+<para><parameter>start</parameter>
+ cannot be -1, <parameter>stop</parameter>
+ can be -1. If there
+is a valid <parameter>stop</parameter>
+ given, it must be greater or equal the <parameter>start</parameter>
+, including
+when the indicated playback <parameter>rate</parameter>
+ is &lt; 0.</para>
+<para>The <parameter>applied_rate</parameter>
+ value provides information about any rate adjustment that
+has already been made to the timestamps and content on the buffers of the
+stream. (<parameter>rate</parameter>
+ * <parameter>applied_rate</parameter>
+) should always equal the rate that has been
+requested for playback. For example, if an element has an input segment
+with intended playback <parameter>rate</parameter>
+ of 2.0 and applied_rate of 1.0, it can adjust
+incoming timestamps and buffer content by half and output a segment event
+with <parameter>rate</parameter>
+ of 1.0 and <parameter>applied_rate</parameter>
+ of 2.0</para>
+<para>After a segment event, the buffer stream time is calculated with:</para>
+<para>  time + (TIMESTAMP(buf) - start) * ABS (rate * applied_rate)</para>
+<refsect3 id="gst-event-new-segment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSegment"><type>GstSegment</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-segment.returns" role="returns">
+<title>Returns</title>
+<para> the new SEGMENT event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-segment" role="function">
+<title>gst_event_parse_segment&#160;()</title>
+<indexterm zone="gst-event-parse-segment"><primary>gst_event_parse_segment</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_segment (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                         <parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> **segment</parameter>);</programlisting>
+<para>Parses a segment <parameter>event</parameter>
+ and stores the result in the given <parameter>segment</parameter>
+ location.
+<parameter>segment</parameter>
+ remains valid only until the <parameter>event</parameter>
+ is freed. Don't modify the segment
+and make a copy if you want to modify it or store it for later use.</para>
+<refsect3 id="gst-event-parse-segment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to parse</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="GstSegment"><type>GstSegment</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-copy-segment" role="function">
+<title>gst_event_copy_segment&#160;()</title>
+<indexterm zone="gst-event-copy-segment"><primary>gst_event_copy_segment</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_copy_segment (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                        <parameter><link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>);</programlisting>
+<para>Parses a segment <parameter>event</parameter>
+ and copies the <link linkend="GstSegment"><type>GstSegment</type></link> into the location
+given by <parameter>segment</parameter>
+.</para>
+<refsect3 id="gst-event-copy-segment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to parse</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a pointer to a <link linkend="GstSegment"><type>GstSegment</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-tag" role="function">
+<title>gst_event_new_tag&#160;()</title>
+<indexterm zone="gst-event-new-tag"><primary>gst_event_new_tag</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_tag (<parameter><link linkend="GstTagList"><type>GstTagList</type></link> *taglist</parameter>);</programlisting>
+<para>Generates a metadata tag event from the given <parameter>taglist</parameter>
+.</para>
+<para>The scope of the taglist specifies if the taglist applies to the
+complete medium or only to this specific stream. As the tag event
+is a sticky event, elements should merge tags received from
+upstream with a given scope with their own tags with the same
+scope and create a new tag event from it.</para>
+<refsect3 id="gst-event-new-tag.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>taglist</para></entry>
+<entry role="parameter_description"><para> metadata list. The event will take ownership
+of the taglist. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-tag.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-tag" role="function">
+<title>gst_event_parse_tag&#160;()</title>
+<indexterm zone="gst-event-parse-tag"><primary>gst_event_parse_tag</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_tag (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                     <parameter><link linkend="GstTagList"><type>GstTagList</type></link> **taglist</parameter>);</programlisting>
+<para>Parses a tag <parameter>event</parameter>
+ and stores the results in the given <parameter>taglist</parameter>
+ location.
+No reference to the taglist will be returned, it remains valid only until
+the <parameter>event</parameter>
+ is freed. Don't modify or free the taglist, make a copy if you
+want to modify it or store it for later use.</para>
+<refsect3 id="gst-event-parse-tag.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a tag event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>taglist</para></entry>
+<entry role="parameter_description"><para> pointer to metadata list. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-buffer-size" role="function">
+<title>gst_event_new_buffer_size&#160;()</title>
+<indexterm zone="gst-event-new-buffer-size"><primary>gst_event_new_buffer_size</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_buffer_size (<parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                           <parameter><link linkend="gint64"><type>gint64</type></link> minsize</parameter>,
+                           <parameter><link linkend="gint64"><type>gint64</type></link> maxsize</parameter>,
+                           <parameter><link linkend="gboolean"><type>gboolean</type></link> async</parameter>);</programlisting>
+<para>Create a new buffersize event. The event is sent downstream and notifies
+elements that they should provide a buffer of the specified dimensions.</para>
+<para>When the <parameter>async</parameter>
+ flag is set, a thread boundary is preferred.</para>
+<refsect3 id="gst-event-new-buffer-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>buffer format</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minsize</para></entry>
+<entry role="parameter_description"><para>minimum buffer size</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>maxsize</para></entry>
+<entry role="parameter_description"><para>maximum buffer size</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>async</para></entry>
+<entry role="parameter_description"><para>thread behavior</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-buffer-size.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-buffer-size" role="function">
+<title>gst_event_parse_buffer_size&#160;()</title>
+<indexterm zone="gst-event-parse-buffer-size"><primary>gst_event_parse_buffer_size</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_buffer_size (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                             <parameter><link linkend="GstFormat"><type>GstFormat</type></link> *format</parameter>,
+                             <parameter><link linkend="gint64"><type>gint64</type></link> *minsize</parameter>,
+                             <parameter><link linkend="gint64"><type>gint64</type></link> *maxsize</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> *async</parameter>);</programlisting>
+<para>Get the format, minsize, maxsize and async-flag in the buffersize event.</para>
+<refsect3 id="gst-event-parse-buffer-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para> A pointer to store the format in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>minsize</para></entry>
+<entry role="parameter_description"><para> A pointer to store the minsize in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>maxsize</para></entry>
+<entry role="parameter_description"><para> A pointer to store the maxsize in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>async</para></entry>
+<entry role="parameter_description"><para> A pointer to store the async-flag in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-qos" role="function">
+<title>gst_event_new_qos&#160;()</title>
+<indexterm zone="gst-event-new-qos"><primary>gst_event_new_qos</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_qos (<parameter><link linkend="GstQOSType"><type>GstQOSType</type></link> type</parameter>,
+                   <parameter><link linkend="gdouble"><type>gdouble</type></link> proportion</parameter>,
+                   <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> diff</parameter>,
+                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Allocate a new qos event with the given values.
+The QOS event is generated in an element that wants an upstream
+element to either reduce or increase its rate because of
+high/low CPU load or other resource usage such as network performance or
+throttling. Typically sinks generate these events for each buffer
+they receive.</para>
+<para><parameter>type</parameter>
+ indicates the reason for the QoS event. <link linkend="GST-QOS-TYPE-OVERFLOW:CAPS"><type>GST_QOS_TYPE_OVERFLOW</type></link> is
+used when a buffer arrived in time or when the sink cannot keep up with
+the upstream datarate. <link linkend="GST-QOS-TYPE-UNDERFLOW:CAPS"><type>GST_QOS_TYPE_UNDERFLOW</type></link> is when the sink is not
+receiving buffers fast enough and thus has to drop late buffers. 
+<link linkend="GST-QOS-TYPE-THROTTLE:CAPS"><type>GST_QOS_TYPE_THROTTLE</type></link> is used when the datarate is artificially limited
+by the application, for example to reduce power consumption.</para>
+<para><parameter>proportion</parameter>
+ indicates the real-time performance of the streaming in the
+element that generated the QoS event (usually the sink). The value is
+generally computed based on more long term statistics about the streams
+timestamps compared to the clock.
+A value &lt; 1.0 indicates that the upstream element is producing data faster
+than real-time. A value &gt; 1.0 indicates that the upstream element is not
+producing data fast enough. 1.0 is the ideal <parameter>proportion</parameter>
+ value. The
+proportion value can safely be used to lower or increase the quality of
+the element.</para>
+<para><parameter>diff</parameter>
+ is the difference against the clock in running time of the last
+buffer that caused the element to generate the QOS event. A negative value
+means that the buffer with <parameter>timestamp</parameter>
+ arrived in time. A positive value
+indicates how late the buffer with <parameter>timestamp</parameter>
+ was. When throttling is
+enabled, <parameter>diff</parameter>
+ will be set to the requested throttling interval.</para>
+<para><parameter>timestamp</parameter>
+ is the timestamp of the last buffer that cause the element
+to generate the QOS event. It is expressed in running time and thus an ever
+increasing value.</para>
+<para>The upstream element can use the <parameter>diff</parameter>
+ and <parameter>timestamp</parameter>
+ values to decide
+whether to process more buffers. For positive <parameter>diff</parameter>
+, all buffers with
+timestamp &lt;= <parameter>timestamp</parameter>
+ + <parameter>diff</parameter>
+ will certainly arrive late in the sink
+as well. A (negative) <parameter>diff</parameter>
+ value so that <parameter>timestamp</parameter>
+ + <parameter>diff</parameter>
+ would yield a
+result smaller than 0 is not allowed.</para>
+<para>The application can use general event probes to intercept the QoS
+event and implement custom application specific QoS handling.</para>
+<refsect3 id="gst-event-new-qos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the QoS type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>proportion</para></entry>
+<entry role="parameter_description"><para>the proportion of the qos message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>diff</para></entry>
+<entry role="parameter_description"><para>The time difference of the last Clock sync</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>The timestamp of the buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-qos.returns" role="returns">
+<title>Returns</title>
+<para> a new QOS event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-qos" role="function">
+<title>gst_event_parse_qos&#160;()</title>
+<indexterm zone="gst-event-parse-qos"><primary>gst_event_parse_qos</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_qos (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                     <parameter><link linkend="GstQOSType"><type>GstQOSType</type></link> *type</parameter>,
+                     <parameter><link linkend="gdouble"><type>gdouble</type></link> *proportion</parameter>,
+                     <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> *diff</parameter>,
+                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *timestamp</parameter>);</programlisting>
+<para>Get the type, proportion, diff and timestamp in the qos event. See
+<link linkend="gst-event-new-qos"><function>gst_event_new_qos()</function></link> for more information about the different QoS values.</para>
+<para><parameter>timestamp</parameter>
+ will be adjusted for any pad offsets of pads it was passing through.</para>
+<refsect3 id="gst-event-parse-qos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para> A pointer to store the QoS type in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>proportion</para></entry>
+<entry role="parameter_description"><para> A pointer to store the proportion in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>diff</para></entry>
+<entry role="parameter_description"><para> A pointer to store the diff in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para> A pointer to store the timestamp in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-seek" role="function">
+<title>gst_event_new_seek&#160;()</title>
+<indexterm zone="gst-event-new-seek"><primary>gst_event_new_seek</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_seek (<parameter><link linkend="gdouble"><type>gdouble</type></link> rate</parameter>,
+                    <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                    <parameter><link linkend="GstSeekFlags"><type>GstSeekFlags</type></link> flags</parameter>,
+                    <parameter><link linkend="GstSeekType"><type>GstSeekType</type></link> start_type</parameter>,
+                    <parameter><link linkend="gint64"><type>gint64</type></link> start</parameter>,
+                    <parameter><link linkend="GstSeekType"><type>GstSeekType</type></link> stop_type</parameter>,
+                    <parameter><link linkend="gint64"><type>gint64</type></link> stop</parameter>);</programlisting>
+<para>Allocate a new seek event with the given parameters.</para>
+<para>The seek event configures playback of the pipeline between <parameter>start</parameter>
+ to <parameter>stop</parameter>
+
+at the speed given in <parameter>rate</parameter>
+, also called a playback segment.
+The <parameter>start</parameter>
+ and <parameter>stop</parameter>
+ values are expressed in <parameter>format</parameter>
+.</para>
+<para>A <parameter>rate</parameter>
+ of 1.0 means normal playback rate, 2.0 means double speed.
+Negatives values means backwards playback. A value of 0.0 for the
+rate is not allowed and should be accomplished instead by PAUSING the
+pipeline.</para>
+<para>A pipeline has a default playback segment configured with a start
+position of 0, a stop position of -1 and a rate of 1.0. The currently
+configured playback segment can be queried with <link linkend="GST-QUERY-SEGMENT:CAPS"><type>GST_QUERY_SEGMENT</type></link>. </para>
+<para><parameter>start_type</parameter>
+ and <parameter>stop_type</parameter>
+ specify how to adjust the currently configured 
+start and stop fields in playback segment. Adjustments can be made relative
+or absolute to the last configured values. A type of <link linkend="GST-SEEK-TYPE-NONE:CAPS"><type>GST_SEEK_TYPE_NONE</type></link>
+means that the position should not be updated.</para>
+<para>When the rate is positive and <parameter>start</parameter>
+ has been updated, playback will start
+from the newly configured start position. </para>
+<para>For negative rates, playback will start from the newly configured stop
+position (if any). If the stop position is updated, it must be different from
+-1 (<link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link>) for negative rates.</para>
+<para>It is not possible to seek relative to the current playback position, to do
+this, PAUSE the pipeline, query the current playback position with
+<link linkend="GST-QUERY-POSITION:CAPS"><type>GST_QUERY_POSITION</type></link> and update the playback segment current position with a
+<link linkend="GST-SEEK-TYPE-SET:CAPS"><type>GST_SEEK_TYPE_SET</type></link> to the desired position.</para>
+<refsect3 id="gst-event-new-seek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rate</para></entry>
+<entry role="parameter_description"><para>The new playback rate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>The format of the seek values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>The optional seek flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start_type</para></entry>
+<entry role="parameter_description"><para>The type and flags for the new start position</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>The value of the new start position</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop_type</para></entry>
+<entry role="parameter_description"><para>The type and flags for the new stop position</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop</para></entry>
+<entry role="parameter_description"><para>The value of the new stop position</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-seek.returns" role="returns">
+<title>Returns</title>
+<para> a new seek event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-seek" role="function">
+<title>gst_event_parse_seek&#160;()</title>
+<indexterm zone="gst-event-parse-seek"><primary>gst_event_parse_seek</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_seek (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                      <parameter><link linkend="gdouble"><type>gdouble</type></link> *rate</parameter>,
+                      <parameter><link linkend="GstFormat"><type>GstFormat</type></link> *format</parameter>,
+                      <parameter><link linkend="GstSeekFlags"><type>GstSeekFlags</type></link> *flags</parameter>,
+                      <parameter><link linkend="GstSeekType"><type>GstSeekType</type></link> *start_type</parameter>,
+                      <parameter><link linkend="gint64"><type>gint64</type></link> *start</parameter>,
+                      <parameter><link linkend="GstSeekType"><type>GstSeekType</type></link> *stop_type</parameter>,
+                      <parameter><link linkend="gint64"><type>gint64</type></link> *stop</parameter>);</programlisting>
+<para>Parses a seek <parameter>event</parameter>
+ and stores the results in the given result locations.</para>
+<refsect3 id="gst-event-parse-seek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a seek event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rate</para></entry>
+<entry role="parameter_description"><para> result location for the rate. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para> result location for the stream format. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para> result location for the <link linkend="GstSeekFlags"><type>GstSeekFlags</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>start_type</para></entry>
+<entry role="parameter_description"><para> result location for the <link linkend="GstSeekType"><type>GstSeekType</type></link> of the start position. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para> result location for the start position expressed in <parameter>format</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>stop_type</para></entry>
+<entry role="parameter_description"><para> result location for the <link linkend="GstSeekType"><type>GstSeekType</type></link> of the stop position. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>stop</para></entry>
+<entry role="parameter_description"><para> result location for the stop position expressed in <parameter>format</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-navigation" role="function">
+<title>gst_event_new_navigation&#160;()</title>
+<indexterm zone="gst-event-new-navigation"><primary>gst_event_new_navigation</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_navigation (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Create a new navigation event from the given description.</para>
+<refsect3 id="gst-event-new-navigation.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para> description of the event. The event will take
+ownership of the structure. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-navigation.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-latency" role="function">
+<title>gst_event_new_latency&#160;()</title>
+<indexterm zone="gst-event-new-latency"><primary>gst_event_new_latency</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_latency (<parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> latency</parameter>);</programlisting>
+<para>Create a new latency event. The event is sent upstream from the sinks and
+notifies elements that they should add an additional <parameter>latency</parameter>
+ to the
+running time before synchronising against the clock.</para>
+<para>The latency is mostly used in live sinks and is always expressed in
+the time format.</para>
+<refsect3 id="gst-event-new-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>latency</para></entry>
+<entry role="parameter_description"><para>the new latency value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-latency.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-latency" role="function">
+<title>gst_event_parse_latency&#160;()</title>
+<indexterm zone="gst-event-parse-latency"><primary>gst_event_parse_latency</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_latency (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                         <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *latency</parameter>);</programlisting>
+<para>Get the latency in the latency event.</para>
+<refsect3 id="gst-event-parse-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>latency</para></entry>
+<entry role="parameter_description"><para> A pointer to store the latency in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-step" role="function">
+<title>gst_event_new_step&#160;()</title>
+<indexterm zone="gst-event-new-step"><primary>gst_event_new_step</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_step (<parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                    <parameter><link linkend="guint64"><type>guint64</type></link> amount</parameter>,
+                    <parameter><link linkend="gdouble"><type>gdouble</type></link> rate</parameter>,
+                    <parameter><link linkend="gboolean"><type>gboolean</type></link> flush</parameter>,
+                    <parameter><link linkend="gboolean"><type>gboolean</type></link> intermediate</parameter>);</programlisting>
+<para>Create a new step event. The purpose of the step event is to instruct a sink
+to skip <parameter>amount</parameter>
+ (expressed in <parameter>format</parameter>
+) of media. It can be used to implement
+stepping through the video frame by frame or for doing fast trick modes.</para>
+<para>A rate of &lt;= 0.0 is not allowed. Pause the pipeline, for the effect of rate
+= 0.0 or first reverse the direction of playback using a seek event to get
+the same effect as rate &lt; 0.0.</para>
+<para>The <parameter>flush</parameter>
+ flag will clear any pending data in the pipeline before starting
+the step operation.</para>
+<para>The <parameter>intermediate</parameter>
+ flag instructs the pipeline that this step operation is
+part of a larger step operation.</para>
+<refsect3 id="gst-event-new-step.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of <parameter>amount</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>amount</para></entry>
+<entry role="parameter_description"><para>the amount of data to step</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rate</para></entry>
+<entry role="parameter_description"><para>the step rate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flush</para></entry>
+<entry role="parameter_description"><para>flushing steps</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>intermediate</para></entry>
+<entry role="parameter_description"><para>intermediate steps</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-step.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-step" role="function">
+<title>gst_event_parse_step&#160;()</title>
+<indexterm zone="gst-event-parse-step"><primary>gst_event_parse_step</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_step (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                      <parameter><link linkend="GstFormat"><type>GstFormat</type></link> *format</parameter>,
+                      <parameter><link linkend="guint64"><type>guint64</type></link> *amount</parameter>,
+                      <parameter><link linkend="gdouble"><type>gdouble</type></link> *rate</parameter>,
+                      <parameter><link linkend="gboolean"><type>gboolean</type></link> *flush</parameter>,
+                      <parameter><link linkend="gboolean"><type>gboolean</type></link> *intermediate</parameter>);</programlisting>
+<para>Parse the step event.</para>
+<refsect3 id="gst-event-parse-step.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para> a pointer to store the format in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>amount</para></entry>
+<entry role="parameter_description"><para> a pointer to store the amount in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rate</para></entry>
+<entry role="parameter_description"><para> a pointer to store the rate in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flush</para></entry>
+<entry role="parameter_description"><para> a pointer to store the flush boolean in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>intermediate</para></entry>
+<entry role="parameter_description"><para> a pointer to store the intermediate
+boolean in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-sink-message" role="function">
+<title>gst_event_new_sink_message&#160;()</title>
+<indexterm zone="gst-event-new-sink-message"><primary>gst_event_new_sink_message</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_sink_message (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                            <parameter><link linkend="GstMessage"><type>GstMessage</type></link> *msg</parameter>);</programlisting>
+<para>Create a new sink-message event. The purpose of the sink-message event is
+to instruct a sink to post the message contained in the event synchronized
+with the stream.</para>
+<para><parameter>name</parameter>
+ is used to store multiple sticky events on one pad.</para>
+<refsect3 id="gst-event-new-sink-message.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a name for the event</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstMessage"><type>GstMessage</type></link> to be posted. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-sink-message.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-sink-message" role="function">
+<title>gst_event_parse_sink_message&#160;()</title>
+<indexterm zone="gst-event-parse-sink-message"><primary>gst_event_parse_sink_message</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_sink_message (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                              <parameter><link linkend="GstMessage"><type>GstMessage</type></link> **msg</parameter>);</programlisting>
+<para>Parse the sink-message event. Unref <parameter>msg</parameter>
+ after usage.</para>
+<refsect3 id="gst-event-parse-sink-message.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para> a pointer to store the <link linkend="GstMessage"><type>GstMessage</type></link> in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-reconfigure" role="function">
+<title>gst_event_new_reconfigure&#160;()</title>
+<indexterm zone="gst-event-new-reconfigure"><primary>gst_event_new_reconfigure</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_reconfigure (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new reconfigure event. The purpose of the reconfigure event is
+to travel upstream and make elements renegotiate their caps or reconfigure
+their buffer pools. This is useful when changing properties on elements
+or changing the topology of the pipeline.</para>
+<refsect3 id="gst-event-new-reconfigure.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-caps" role="function">
+<title>gst_event_new_caps&#160;()</title>
+<indexterm zone="gst-event-new-caps"><primary>gst_event_new_caps</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_caps (<parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Create a new CAPS event for <parameter>caps</parameter>
+. The caps event can only travel downstream
+synchronized with the buffer flow and contains the format of the buffers
+that will follow after the event.</para>
+<refsect3 id="gst-event-new-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstCaps"><type>GstCaps</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-caps.returns" role="returns">
+<title>Returns</title>
+<para> the new CAPS event. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-caps" role="function">
+<title>gst_event_parse_caps&#160;()</title>
+<indexterm zone="gst-event-parse-caps"><primary>gst_event_parse_caps</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_caps (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                      <parameter><link linkend="GstCaps"><type>GstCaps</type></link> **caps</parameter>);</programlisting>
+<para>Get the caps from <parameter>event</parameter>
+. The caps remains valid as long as <parameter>event</parameter>
+ remains
+valid.</para>
+<refsect3 id="gst-event-parse-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>The event to parse</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> A pointer to the caps. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-toc" role="function">
+<title>gst_event_new_toc&#160;()</title>
+<indexterm zone="gst-event-new-toc"><primary>gst_event_new_toc</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_toc (<parameter><link linkend="GstToc"><type>GstToc</type></link> *toc</parameter>,
+                   <parameter><link linkend="gboolean"><type>gboolean</type></link> updated</parameter>);</programlisting>
+<para>Generate a TOC event from the given <parameter>toc</parameter>
+. The purpose of the TOC event is to
+inform elements that some kind of the TOC was found.</para>
+<refsect3 id="gst-event-new-toc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>toc</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstToc"><type>GstToc</type></link> structure. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>updated</para></entry>
+<entry role="parameter_description"><para>whether <parameter>toc</parameter>
+was updated or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-toc.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-toc" role="function">
+<title>gst_event_parse_toc&#160;()</title>
+<indexterm zone="gst-event-parse-toc"><primary>gst_event_parse_toc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_toc (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                     <parameter><link linkend="GstToc"><type>GstToc</type></link> **toc</parameter>,
+                     <parameter><link linkend="gboolean"><type>gboolean</type></link> *updated</parameter>);</programlisting>
+<para>Parse a TOC <parameter>event</parameter>
+ and store the results in the given <parameter>toc</parameter>
+ and <parameter>updated</parameter>
+ locations.</para>
+<refsect3 id="gst-event-parse-toc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a TOC event.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>toc</para></entry>
+<entry role="parameter_description"><para> pointer to <link linkend="GstToc"><type>GstToc</type></link> structure. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>updated</para></entry>
+<entry role="parameter_description"><para> pointer to store TOC updated flag. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-toc-select" role="function">
+<title>gst_event_new_toc_select&#160;()</title>
+<indexterm zone="gst-event-new-toc-select"><primary>gst_event_new_toc_select</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_toc_select (<parameter>const <link linkend="gchar"><type>gchar</type></link> *uid</parameter>);</programlisting>
+<para>Generate a TOC select event with the given <parameter>uid</parameter>
+. The purpose of the
+TOC select event is to start playback based on the TOC's entry with the
+given <parameter>uid</parameter>
+.</para>
+<refsect3 id="gst-event-new-toc-select.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uid</para></entry>
+<entry role="parameter_description"><para>UID in the TOC to start playback from.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-toc-select.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-toc-select" role="function">
+<title>gst_event_parse_toc_select&#160;()</title>
+<indexterm zone="gst-event-parse-toc-select"><primary>gst_event_parse_toc_select</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_toc_select (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                            <parameter><link linkend="gchar"><type>gchar</type></link> **uid</parameter>);</programlisting>
+<para>Parse a TOC select <parameter>event</parameter>
+ and store the results in the given <parameter>uid</parameter>
+ location.</para>
+<refsect3 id="gst-event-parse-toc-select.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a TOC select event.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>uid</para></entry>
+<entry role="parameter_description"><para> storage for the selection UID. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-segment-done" role="function">
+<title>gst_event_new_segment_done&#160;()</title>
+<indexterm zone="gst-event-new-segment-done"><primary>gst_event_new_segment_done</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_segment_done (<parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                            <parameter><link linkend="gint64"><type>gint64</type></link> position</parameter>);</programlisting>
+<para>Create a new segment-done event. This event is sent by elements that
+finish playback of a segment as a result of a segment seek.</para>
+<refsect3 id="gst-event-new-segment-done.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>The format of the position being done</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>position</para></entry>
+<entry role="parameter_description"><para>The position of the segment being done</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-segment-done.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstEvent"><type>GstEvent</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-event-parse-segment-done" role="function">
+<title>gst_event_parse_segment_done&#160;()</title>
+<indexterm zone="gst-event-parse-segment-done"><primary>gst_event_parse_segment_done</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_segment_done (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                              <parameter><link linkend="GstFormat"><type>GstFormat</type></link> *format</parameter>,
+                              <parameter><link linkend="gint64"><type>gint64</type></link> *position</parameter>);</programlisting>
+<para>Extracts the position and format from the segment done message.</para>
+<refsect3 id="gst-event-parse-segment-done.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>A valid <link linkend="GstEvent"><type>GstEvent</type></link> of type GST_EVENT_SEGMENT_DONE.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para> Result location for the format, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>position</para></entry>
+<entry role="parameter_description"><para> Result location for the position, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-event-new-protection" role="function" condition="since:1.6">
+<title>gst_event_new_protection&#160;()</title>
+<indexterm zone="gst-event-new-protection" role="1.6"><primary>gst_event_new_protection</primary></indexterm>
+<programlisting language="C"><link linkend="GstEvent"><returnvalue>GstEvent</returnvalue></link>&#160;*
+gst_event_new_protection (<parameter>const <link linkend="gchar"><type>gchar</type></link> *system_id</parameter>,
+                          <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *data</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *origin</parameter>);</programlisting>
+<para>Creates a new event containing information specific to a particular
+protection system (uniquely identified by <parameter>system_id</parameter>
+), by which that
+protection system can acquire key(s) to decrypt a protected stream.</para>
+<para>In order for a decryption element to decrypt media
+protected using a specific system, it first needs all the
+protection system specific information necessary to acquire the decryption
+key(s) for that stream. The functions defined here enable this information
+to be passed in events from elements that extract it
+(e.g., ISOBMFF demuxers, MPEG DASH demuxers) to protection decrypter
+elements that use it.</para>
+<para>Events containing protection system specific information are created using
+<link linkend="gst-event-new-protection"><type>gst_event_new_protection</type></link>, and they can be parsed by downstream elements
+using <link linkend="gst-event-parse-protection"><type>gst_event_parse_protection</type></link>.</para>
+<para>In Common Encryption, protection system specific information may be located
+within ISOBMFF files, both in movie (moov) boxes and movie fragment (moof)
+boxes; it may also be contained in ContentProtection elements within MPEG
+DASH MPDs. The events created by <link linkend="gst-event-new-protection"><type>gst_event_new_protection</type></link> contain data
+identifying from which of these locations the encapsulated protection system
+specific information originated. This origin information is required as
+some protection systems use different encodings depending upon where the
+information originates.</para>
+<para>The events returned by <link linkend="gst-event-new-protection"><function>gst_event_new_protection()</function></link> are implemented
+in such a way as to ensure that the most recently-pushed protection info
+event of a particular <parameter>origin</parameter>
+ and <parameter>system_id</parameter>
+ will
+be stuck to the output pad of the sending element.</para>
+<refsect3 id="gst-event-new-protection.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>system_id</para></entry>
+<entry role="parameter_description"><para> a string holding a UUID that uniquely
+identifies a protection system. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> holding protection system specific
+information. The reference count of the buffer will be incremented by one. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>origin</para></entry>
+<entry role="parameter_description"><para>a string indicating where the protection
+information carried in the event was extracted from. The allowed values
+of this string will depend upon the protection scheme.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-event-new-protection.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GST-EVENT-PROTECTION:CAPS"><type>GST_EVENT_PROTECTION</type></link> event, if successful; <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+if unsuccessful.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-event-parse-protection" role="function" condition="since:1.6">
+<title>gst_event_parse_protection&#160;()</title>
+<indexterm zone="gst-event-parse-protection" role="1.6"><primary>gst_event_parse_protection</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_event_parse_protection (<parameter><link linkend="GstEvent"><type>GstEvent</type></link> *event</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> **system_id</parameter>,
+                            <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **data</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> **origin</parameter>);</programlisting>
+<para>Parses an event containing protection system specific information and stores
+the results in <parameter>system_id</parameter>
+, <parameter>data</parameter>
+ and <parameter>origin</parameter>
+. The data stored in <parameter>system_id</parameter>
+,
+<parameter>origin</parameter>
+ and <parameter>data</parameter>
+ are valid until <parameter>event</parameter>
+ is released.</para>
+<refsect3 id="gst-event-parse-protection.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>event</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GST-EVENT-PROTECTION:CAPS"><type>GST_EVENT_PROTECTION</type></link> event.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>system_id</para></entry>
+<entry role="parameter_description"><para> pointer to store the UUID
+string uniquely identifying a content protection system. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> pointer to store a <link linkend="GstBuffer"><type>GstBuffer</type></link>
+holding protection system specific information. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>origin</para></entry>
+<entry role="parameter_description"><para> pointer to store a value that
+indicates where the protection information carried by <parameter>event</parameter>
+was extracted
+from. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstEvent.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstEvent-struct" role="struct">
+<title>struct GstEvent</title>
+<indexterm zone="GstEvent-struct"><primary>GstEvent</primary></indexterm>
+<programlisting language="C">struct GstEvent {
+  GstMiniObject mini_object;
+
+  GstEventType  type;
+  guint64       timestamp;
+  guint32       seqnum;
+};
+</programlisting>
+<para>A <link linkend="GstEvent"><type>GstEvent</type></link>.</para>
+<refsect3 id="GstEvent.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMiniObject"><type>GstMiniObject</type></link>&#160;<structfield id="GstEvent-struct.mini-object">mini_object</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the parent structure</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstEventType"><type>GstEventType</type></link>&#160;<structfield id="GstEvent-struct.type">type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the <link linkend="GstEventType"><type>GstEventType</type></link> of the event</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstEvent-struct.timestamp">timestamp</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the timestamp of the event</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint32"><type>guint32</type></link>&#160;<structfield id="GstEvent-struct.seqnum">seqnum</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the sequence number of the event</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstEventTypeFlags" role="enum">
+<title>enum GstEventTypeFlags</title>
+<indexterm zone="GstEventTypeFlags"><primary>GstEventTypeFlags</primary></indexterm>
+<para><link linkend="GstEventTypeFlags"><type>GstEventTypeFlags</type></link> indicate the aspects of the different <link linkend="GstEventType"><type>GstEventType</type></link>
+values. You can get the type flags of a <link linkend="GstEventType"><type>GstEventType</type></link> with the
+<link linkend="gst-event-type-get-flags"><function>gst_event_type_get_flags()</function></link> function.</para>
+<refsect3 id="GstEventTypeFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TYPE-UPSTREAM:CAPS">GST_EVENT_TYPE_UPSTREAM</para></entry>
+<entry role="enum_member_description"><para>Set if the event can travel upstream.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TYPE-DOWNSTREAM:CAPS">GST_EVENT_TYPE_DOWNSTREAM</para></entry>
+<entry role="enum_member_description"><para>Set if the event can travel downstream.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TYPE-SERIALIZED:CAPS">GST_EVENT_TYPE_SERIALIZED</para></entry>
+<entry role="enum_member_description"><para>Set if the event should be serialized with data
+                              flow.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TYPE-STICKY:CAPS">GST_EVENT_TYPE_STICKY</para></entry>
+<entry role="enum_member_description"><para>Set if the event is sticky on the pads.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TYPE-STICKY-MULTI:CAPS">GST_EVENT_TYPE_STICKY_MULTI</para></entry>
+<entry role="enum_member_description"><para>Multiple sticky events can be on a pad, each
+                              identified by the event name.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-EVENT-TYPE-BOTH:CAPS" role="macro">
+<title>GST_EVENT_TYPE_BOTH</title>
+<indexterm zone="GST-EVENT-TYPE-BOTH:CAPS"><primary>GST_EVENT_TYPE_BOTH</primary></indexterm>
+<programlisting language="C">#define             GST_EVENT_TYPE_BOTH</programlisting>
+<para>The same thing as <link linkend="GST-EVENT-TYPE-UPSTREAM:CAPS"><type>GST_EVENT_TYPE_UPSTREAM</type></link> | <link linkend="GST-EVENT-TYPE-DOWNSTREAM:CAPS"><type>GST_EVENT_TYPE_DOWNSTREAM</type></link>.</para>
+</refsect2>
+<refsect2 id="GstEventType" role="enum">
+<title>enum GstEventType</title>
+<indexterm zone="GstEventType"><primary>GstEventType</primary></indexterm>
+<para><link linkend="GstEventType"><type>GstEventType</type></link> lists the standard event types that can be sent in a pipeline.</para>
+<para>The custom event types can be used for private messages between elements
+that can't be expressed using normal
+GStreamer buffer passing semantics. Custom events carry an arbitrary
+<link linkend="GstStructure"><type>GstStructure</type></link>.
+Specific custom events are distinguished by the name of the structure.</para>
+<refsect3 id="GstEventType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-UNKNOWN:CAPS">GST_EVENT_UNKNOWN</para></entry>
+<entry role="enum_member_description"><para>unknown event.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-FLUSH-START:CAPS">GST_EVENT_FLUSH_START</para></entry>
+<entry role="enum_member_description"><para>Start a flush operation. This event clears all data
+                from the pipeline and unblock all streaming threads.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-FLUSH-STOP:CAPS">GST_EVENT_FLUSH_STOP</para></entry>
+<entry role="enum_member_description"><para>Stop a flush operation. This event resets the
+                running-time of the pipeline.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-STREAM-START:CAPS">GST_EVENT_STREAM_START</para></entry>
+<entry role="enum_member_description"><para>Event to mark the start of a new stream. Sent before any
+                other serialized event and only sent at the start of a new stream,
+                not after flushing seeks.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CAPS">GST_EVENT_CAPS</para></entry>
+<entry role="enum_member_description"><para><link linkend="GstCaps"><type>GstCaps</type></link> event. Notify the pad of a new media type.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-SEGMENT:CAPS">GST_EVENT_SEGMENT</para></entry>
+<entry role="enum_member_description"><para>A new media segment follows in the dataflow. The
+                segment events contains information for clipping buffers and
+                converting buffer timestamps to running-time and
+                stream-time.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TAG:CAPS">GST_EVENT_TAG</para></entry>
+<entry role="enum_member_description"><para>A new set of metadata tags has been found in the stream.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-BUFFERSIZE:CAPS">GST_EVENT_BUFFERSIZE</para></entry>
+<entry role="enum_member_description"><para>Notification of buffering requirements. Currently not
+                used yet.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-SINK-MESSAGE:CAPS">GST_EVENT_SINK_MESSAGE</para></entry>
+<entry role="enum_member_description"><para>An event that sinks turn into a message. Used to
+                         send messages that should be emitted in sync with
+                         rendering.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-EOS:CAPS">GST_EVENT_EOS</para></entry>
+<entry role="enum_member_description"><para>End-Of-Stream. No more data is to be expected to follow
+                without a SEGMENT event.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TOC:CAPS">GST_EVENT_TOC</para></entry>
+<entry role="enum_member_description"><para>An event which indicates that a new table of contents (TOC)
+                was found or updated.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-PROTECTION:CAPS">GST_EVENT_PROTECTION</para></entry>
+<entry role="enum_member_description"><para>An event which indicates that new or updated
+                encryption information has been found in the stream.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-SEGMENT-DONE:CAPS">GST_EVENT_SEGMENT_DONE</para></entry>
+<entry role="enum_member_description"><para>Marks the end of a segment playback.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-GAP:CAPS">GST_EVENT_GAP</para></entry>
+<entry role="enum_member_description"><para>Marks a gap in the datastream.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-QOS:CAPS">GST_EVENT_QOS</para></entry>
+<entry role="enum_member_description"><para>A quality message. Used to indicate to upstream elements
+                that the downstream elements should adjust their processing
+                rate.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-SEEK:CAPS">GST_EVENT_SEEK</para></entry>
+<entry role="enum_member_description"><para>A request for a new playback position and rate.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-NAVIGATION:CAPS">GST_EVENT_NAVIGATION</para></entry>
+<entry role="enum_member_description"><para>Navigation events are usually used for communicating
+                       user requests, such as mouse or keyboard movements,
+                       to upstream elements.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-LATENCY:CAPS">GST_EVENT_LATENCY</para></entry>
+<entry role="enum_member_description"><para>Notification of new latency adjustment. Sinks will use
+                    the latency information to adjust their synchronisation.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-STEP:CAPS">GST_EVENT_STEP</para></entry>
+<entry role="enum_member_description"><para>A request for stepping through the media. Sinks will usually
+                 execute the step operation.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-RECONFIGURE:CAPS">GST_EVENT_RECONFIGURE</para></entry>
+<entry role="enum_member_description"><para>A request for upstream renegotiating caps and reconfiguring.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-TOC-SELECT:CAPS">GST_EVENT_TOC_SELECT</para></entry>
+<entry role="enum_member_description"><para>A request for a new playback position based on TOC
+                       entry's UID.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CUSTOM-UPSTREAM:CAPS">GST_EVENT_CUSTOM_UPSTREAM</para></entry>
+<entry role="enum_member_description"><para>Upstream custom event</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CUSTOM-DOWNSTREAM:CAPS">GST_EVENT_CUSTOM_DOWNSTREAM</para></entry>
+<entry role="enum_member_description"><para>Downstream custom event that travels in the
+                       data flow.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CUSTOM-DOWNSTREAM-OOB:CAPS">GST_EVENT_CUSTOM_DOWNSTREAM_OOB</para></entry>
+<entry role="enum_member_description"><para>Custom out-of-band downstream event.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CUSTOM-DOWNSTREAM-STICKY:CAPS">GST_EVENT_CUSTOM_DOWNSTREAM_STICKY</para></entry>
+<entry role="enum_member_description"><para>Custom sticky downstream event.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CUSTOM-BOTH:CAPS">GST_EVENT_CUSTOM_BOTH</para></entry>
+<entry role="enum_member_description"><para>Custom upstream or downstream event.
+                        In-band when travelling downstream.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-EVENT-CUSTOM-BOTH-OOB:CAPS">GST_EVENT_CUSTOM_BOTH_OOB</para></entry>
+<entry role="enum_member_description"><para>Custom upstream or downstream out-of-band event.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstStreamFlags" role="enum" condition="since:1.2">
+<title>enum GstStreamFlags</title>
+<indexterm zone="GstStreamFlags" role="1.2"><primary>GstStreamFlags</primary></indexterm>
+<refsect3 id="GstStreamFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-STREAM-FLAG-NONE:CAPS">GST_STREAM_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>This stream has no special attributes</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-STREAM-FLAG-SPARSE:CAPS">GST_STREAM_FLAG_SPARSE</para></entry>
+<entry role="enum_member_description"><para>This stream is a sparse stream (e.g. a subtitle
+   stream), data may flow only in irregular intervals with large gaps in
+   between.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-STREAM-FLAG-SELECT:CAPS">GST_STREAM_FLAG_SELECT</para></entry>
+<entry role="enum_member_description"><para>This stream should be selected by default. This
+   flag may be used by demuxers to signal that a stream should be selected
+   by default in a playback scenario.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-STREAM-FLAG-UNSELECT:CAPS">GST_STREAM_FLAG_UNSELECT</para></entry>
+<entry role="enum_member_description"><para>This stream should not be selected by default.
+   This flag may be used by demuxers to signal that a stream should not
+   be selected by default in a playback scenario, but only if explicitly
+   selected by the user (e.g. an audio track for the hard of hearing or
+   a director's commentary track).</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstQOSType" role="enum">
+<title>enum GstQOSType</title>
+<indexterm zone="GstQOSType"><primary>GstQOSType</primary></indexterm>
+<para>The different types of QoS events that can be given to the
+<link linkend="gst-event-new-qos"><function>gst_event_new_qos()</function></link> method.</para>
+<refsect3 id="GstQOSType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-QOS-TYPE-OVERFLOW:CAPS">GST_QOS_TYPE_OVERFLOW</para></entry>
+<entry role="enum_member_description"><para>The QoS event type that is produced when upstream
+   elements are producing data too quickly and the element can't keep up
+   processing the data. Upstream should reduce their production rate. This
+   type is also used when buffers arrive early or in time.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-QOS-TYPE-UNDERFLOW:CAPS">GST_QOS_TYPE_UNDERFLOW</para></entry>
+<entry role="enum_member_description"><para>The QoS event type that is produced when upstream
+   elements are producing data too slowly and need to speed up their
+   production rate.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-QOS-TYPE-THROTTLE:CAPS">GST_QOS_TYPE_THROTTLE</para></entry>
+<entry role="enum_member_description"><para>The QoS event type that is produced when the
+   application enabled throttling to limit the data rate.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstSeekType" role="enum">
+<title>enum GstSeekType</title>
+<indexterm zone="GstSeekType"><primary>GstSeekType</primary></indexterm>
+<para>The different types of seek events. When constructing a seek event with
+<link linkend="gst-event-new-seek"><function>gst_event_new_seek()</function></link> or when doing <link linkend="gst-segment-do-seek"><function>gst_segment_do_seek()</function></link>.</para>
+<refsect3 id="GstSeekType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-TYPE-NONE:CAPS">GST_SEEK_TYPE_NONE</para></entry>
+<entry role="enum_member_description"><para>no change in position is required</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-TYPE-SET:CAPS">GST_SEEK_TYPE_SET</para></entry>
+<entry role="enum_member_description"><para>absolute position is requested</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-TYPE-END:CAPS">GST_SEEK_TYPE_END</para></entry>
+<entry role="enum_member_description"><para>relative position to duration is requested</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstSeekFlags" role="enum">
+<title>enum GstSeekFlags</title>
+<indexterm zone="GstSeekFlags"><primary>GstSeekFlags</primary></indexterm>
+<para>Flags to be used with <link linkend="gst-element-seek"><function>gst_element_seek()</function></link> or <link linkend="gst-event-new-seek"><function>gst_event_new_seek()</function></link>. All flags
+can be used together.</para>
+<para>A non flushing seek might take some time to perform as the currently
+playing data in the pipeline will not be cleared.</para>
+<para>An accurate seek might be slower for formats that don't have any indexes
+or timestamp markers in the stream. Specifying this flag might require a
+complete scan of the file in those cases.</para>
+<para>When performing a segment seek: after the playback of the segment completes,
+no EOS will be emitted by the element that performed the seek, but a
+<link linkend="GST-MESSAGE-SEGMENT-DONE:CAPS"><literal>GST_MESSAGE_SEGMENT_DONE</literal></link> message will be posted on the bus by the element.
+When this message is posted, it is possible to send a new seek event to
+continue playback. With this seek method it is possible to perform seamless
+looping or simple linear editing.</para>
+<para>When doing fast forward (rate &gt; 1.0) or fast reverse (rate &lt; -1.0) trickmode
+playback, the <link linkend="GST-SEEK-FLAG-TRICKMODE:CAPS"><literal>GST_SEEK_FLAG_TRICKMODE</literal></link> flag can be used to instruct decoders
+and demuxers to adjust the playback rate by skipping frames. This can improve
+performance and decrease CPU usage because not all frames need to be decoded.</para>
+<para>Beyond that, the <link linkend="GST-SEEK-FLAG-TRICKMODE-KEY-UNITS:CAPS"><literal>GST_SEEK_FLAG_TRICKMODE_KEY_UNITS</literal></link> flag can be used to
+request that decoders skip all frames except key units, and
+<link linkend="GST-SEEK-FLAG-TRICKMODE-NO-AUDIO:CAPS"><literal>GST_SEEK_FLAG_TRICKMODE_NO_AUDIO</literal></link> flags can be used to request that audio
+decoders do no decoding at all, and simple output silence.</para>
+<para>The <link linkend="GST-SEEK-FLAG-SNAP-BEFORE:CAPS"><literal>GST_SEEK_FLAG_SNAP_BEFORE</literal></link> flag can be used to snap to the previous
+relevant location, and the <link linkend="GST-SEEK-FLAG-SNAP-AFTER:CAPS"><literal>GST_SEEK_FLAG_SNAP_AFTER</literal></link> flag can be used to
+select the next relevant location. If <link linkend="GST-SEEK-FLAG-KEY-UNIT:CAPS"><literal>GST_SEEK_FLAG_KEY_UNIT</literal></link> is specified,
+the relevant location is a keyframe. If both flags are specified, the nearest
+of these locations will be selected. If none are specified, the implementation is
+free to select whichever it wants.</para>
+<para>The before and after here are in running time, so when playing backwards,
+the next location refers to the one that will played in next, and not the
+one that is located after in the actual source stream.</para>
+<para>Also see part-seeking.txt in the GStreamer design documentation for more
+details on the meaning of these flags and the behaviour expected of
+elements that handle them.</para>
+<refsect3 id="GstSeekFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-NONE:CAPS">GST_SEEK_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>no flag</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-FLUSH:CAPS">GST_SEEK_FLAG_FLUSH</para></entry>
+<entry role="enum_member_description"><para>flush pipeline</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-ACCURATE:CAPS">GST_SEEK_FLAG_ACCURATE</para></entry>
+<entry role="enum_member_description"><para>accurate position is requested, this might
+                    be considerably slower for some formats.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-KEY-UNIT:CAPS">GST_SEEK_FLAG_KEY_UNIT</para></entry>
+<entry role="enum_member_description"><para>seek to the nearest keyframe. This might be
+                    faster but less accurate.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-SEGMENT:CAPS">GST_SEEK_FLAG_SEGMENT</para></entry>
+<entry role="enum_member_description"><para>perform a segment seek.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-TRICKMODE:CAPS">GST_SEEK_FLAG_TRICKMODE</para></entry>
+<entry role="enum_member_description"><para>when doing fast forward or fast reverse playback, allow
+                    elements to skip frames instead of generating all
+                    frames. (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-SKIP:CAPS">GST_SEEK_FLAG_SKIP</para></entry>
+<entry role="enum_member_description"><para>Deprecated backward compatibility flag, replaced
+                    by <link linkend="GST-SEEK-FLAG-TRICKMODE:CAPS"><literal>GST_SEEK_FLAG_TRICKMODE</literal></link></para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-SNAP-BEFORE:CAPS">GST_SEEK_FLAG_SNAP_BEFORE</para></entry>
+<entry role="enum_member_description"><para>go to a location before the requested position,
+                    if <link linkend="GST-SEEK-FLAG-KEY-UNIT:CAPS"><literal>GST_SEEK_FLAG_KEY_UNIT</literal></link> this means the keyframe at or before
+                    the requested position the one at or before the seek target.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-SNAP-AFTER:CAPS">GST_SEEK_FLAG_SNAP_AFTER</para></entry>
+<entry role="enum_member_description"><para>go to a location after the requested position,
+                    if <link linkend="GST-SEEK-FLAG-KEY-UNIT:CAPS"><literal>GST_SEEK_FLAG_KEY_UNIT</literal></link> this means the keyframe at of after the
+                    requested position.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-SNAP-NEAREST:CAPS">GST_SEEK_FLAG_SNAP_NEAREST</para></entry>
+<entry role="enum_member_description"><para>go to a position near the requested position,
+                    if <link linkend="GST-SEEK-FLAG-KEY-UNIT:CAPS"><literal>GST_SEEK_FLAG_KEY_UNIT</literal></link> this means the keyframe closest
+                    to the requested position, if both keyframes are at an equal
+                    distance, behaves like <link linkend="GST-SEEK-FLAG-SNAP-BEFORE:CAPS"><literal>GST_SEEK_FLAG_SNAP_BEFORE</literal></link>.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-TRICKMODE-KEY-UNITS:CAPS">GST_SEEK_FLAG_TRICKMODE_KEY_UNITS</para></entry>
+<entry role="enum_member_description"><para>when doing fast forward or fast reverse
+                    playback, request that elements only decode keyframes
+                    and skip all other content, for formats that have
+                    keyframes. (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEEK-FLAG-TRICKMODE-NO-AUDIO:CAPS">GST_SEEK_FLAG_TRICKMODE_NO_AUDIO</para></entry>
+<entry role="enum_member_description"><para>when doing fast forward or fast reverse
+                    playback, request that audio decoder elements skip
+                    decoding and output only gap events or silence. (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstEvent.see-also">
+<title>See Also</title>
+<para><link linkend="GstPad"><type>GstPad</type></link>, <link linkend="GstElement"><type>GstElement</type></link></para>
+
+</refsect1>
+
+</refentry>

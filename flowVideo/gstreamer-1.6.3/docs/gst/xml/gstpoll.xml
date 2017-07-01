@@ -1,0 +1,714 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstPoll">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstPoll.top_of_page">GstPoll</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPoll</refname>
+<refpurpose>Keep track of file descriptors and make it possible
+                    to wait on them in a cancellable way</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstPoll.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-add-fd">gst_poll_add_fd</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-can-read">gst_poll_fd_can_read</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-can-write">gst_poll_fd_can_write</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-ctl-read">gst_poll_fd_ctl_read</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-ctl-write">gst_poll_fd_ctl_write</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-has-closed">gst_poll_fd_has_closed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-has-error">gst_poll_fd_has_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-ignored">gst_poll_fd_ignored</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-fd-init">gst_poll_fd_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-free">gst_poll_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPoll"><returnvalue>GstPoll</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-poll-new">gst_poll_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPoll"><returnvalue>GstPoll</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-poll-new-timer">gst_poll_new_timer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-get-read-gpollfd">gst_poll_get_read_gpollfd</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-remove-fd">gst_poll_remove_fd</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-restart">gst_poll_restart</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-set-controllable">gst_poll_set_controllable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-set-flushing">gst_poll_set_flushing</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-wait">gst_poll_wait</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-read-control">gst_poll_read_control</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-poll-write-control">gst_poll_write_control</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstPoll.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstPoll">GstPoll</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstPollFD">GstPollFD</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-POLL-FD-INIT:CAPS">GST_POLL_FD_INIT</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstPoll.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstPoll.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstPoll"><type>GstPoll</type></link> keeps track of file descriptors much like fd_set (used with
+<link linkend="select"><function>select()</function></link>) or a struct pollfd array (used with <link linkend="poll"><function>poll()</function></link>). Once created with
+<link linkend="gst-poll-new"><function>gst_poll_new()</function></link>, the set can be used to wait for file descriptors to be
+readable and/or writable. It is possible to make this wait be controlled
+by specifying <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for the <parameter>controllable</parameter>
+ flag when creating the set (or
+later calling <link linkend="gst-poll-set-controllable"><function>gst_poll_set_controllable()</function></link>).</para>
+<para>New file descriptors are added to the set using <link linkend="gst-poll-add-fd"><function>gst_poll_add_fd()</function></link>, and
+removed using <link linkend="gst-poll-remove-fd"><function>gst_poll_remove_fd()</function></link>. Controlling which file descriptors
+should be waited for to become readable and/or writable are done using
+<link linkend="gst-poll-fd-ctl-read"><function>gst_poll_fd_ctl_read()</function></link> and <link linkend="gst-poll-fd-ctl-write"><function>gst_poll_fd_ctl_write()</function></link>.</para>
+<para>Use <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> to wait for the file descriptors to actually become
+readable and/or writable, or to timeout if no file descriptor is available
+in time. The wait can be controlled by calling <link linkend="gst-poll-restart"><function>gst_poll_restart()</function></link> and
+<link linkend="gst-poll-set-flushing"><function>gst_poll_set_flushing()</function></link>.</para>
+<para>Once the file descriptor set has been waited for, one can use
+<link linkend="gst-poll-fd-has-closed"><function>gst_poll_fd_has_closed()</function></link> to see if the file descriptor has been closed,
+<link linkend="gst-poll-fd-has-error"><function>gst_poll_fd_has_error()</function></link> to see if it has generated an error,
+<link linkend="gst-poll-fd-can-read"><function>gst_poll_fd_can_read()</function></link> to see if it is possible to read from the file
+descriptor, and <link linkend="gst-poll-fd-can-write"><function>gst_poll_fd_can_write()</function></link> to see if it is possible to
+write to it.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstPoll.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-poll-add-fd" role="function">
+<title>gst_poll_add_fd&#160;()</title>
+<indexterm zone="gst-poll-add-fd"><primary>gst_poll_add_fd</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_add_fd (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                 <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Add a file descriptor to the file descriptor set.</para>
+<refsect3 id="gst-poll-add-fd.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-add-fd.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the file descriptor was successfully added to the set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-can-read" role="function">
+<title>gst_poll_fd_can_read&#160;()</title>
+<indexterm zone="gst-poll-fd-can-read"><primary>gst_poll_fd_can_read</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_fd_can_read (<parameter>const <link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                      <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Check if <parameter>fd</parameter>
+ in <parameter>set</parameter>
+ has data to be read.</para>
+<refsect3 id="gst-poll-fd-can-read.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-fd-can-read.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the descriptor has data to be read.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-can-write" role="function">
+<title>gst_poll_fd_can_write&#160;()</title>
+<indexterm zone="gst-poll-fd-can-write"><primary>gst_poll_fd_can_write</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_fd_can_write (<parameter>const <link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                       <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Check if <parameter>fd</parameter>
+ in <parameter>set</parameter>
+ can be used for writing.</para>
+<refsect3 id="gst-poll-fd-can-write.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-fd-can-write.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the descriptor can be used for writing.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-ctl-read" role="function">
+<title>gst_poll_fd_ctl_read&#160;()</title>
+<indexterm zone="gst-poll-fd-ctl-read"><primary>gst_poll_fd_ctl_read</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_fd_ctl_read (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                      <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>,
+                      <parameter><link linkend="gboolean"><type>gboolean</type></link> active</parameter>);</programlisting>
+<para>Control whether the descriptor <parameter>fd</parameter>
+ in <parameter>set</parameter>
+ will be monitored for
+readability.</para>
+<refsect3 id="gst-poll-fd-ctl-read.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>active</para></entry>
+<entry role="parameter_description"><para>a new status.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-fd-ctl-read.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the descriptor was successfully updated.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-ctl-write" role="function">
+<title>gst_poll_fd_ctl_write&#160;()</title>
+<indexterm zone="gst-poll-fd-ctl-write"><primary>gst_poll_fd_ctl_write</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_fd_ctl_write (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                       <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>,
+                       <parameter><link linkend="gboolean"><type>gboolean</type></link> active</parameter>);</programlisting>
+<para>Control whether the descriptor <parameter>fd</parameter>
+ in <parameter>set</parameter>
+ will be monitored for
+writability.</para>
+<refsect3 id="gst-poll-fd-ctl-write.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>active</para></entry>
+<entry role="parameter_description"><para>a new status.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-fd-ctl-write.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the descriptor was successfully updated.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-has-closed" role="function">
+<title>gst_poll_fd_has_closed&#160;()</title>
+<indexterm zone="gst-poll-fd-has-closed"><primary>gst_poll_fd_has_closed</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_fd_has_closed (<parameter>const <link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                        <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Check if <parameter>fd</parameter>
+ in <parameter>set</parameter>
+ has closed the connection.</para>
+<refsect3 id="gst-poll-fd-has-closed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-fd-has-closed.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the connection was closed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-has-error" role="function">
+<title>gst_poll_fd_has_error&#160;()</title>
+<indexterm zone="gst-poll-fd-has-error"><primary>gst_poll_fd_has_error</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_fd_has_error (<parameter>const <link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                       <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Check if <parameter>fd</parameter>
+ in <parameter>set</parameter>
+ has an error.</para>
+<refsect3 id="gst-poll-fd-has-error.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-fd-has-error.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the descriptor has an error.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-ignored" role="function">
+<title>gst_poll_fd_ignored&#160;()</title>
+<indexterm zone="gst-poll-fd-ignored"><primary>gst_poll_fd_ignored</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_poll_fd_ignored (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                     <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Mark <parameter>fd</parameter>
+ as ignored so that the next call to <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> will yield
+the same result for <parameter>fd</parameter>
+ as last time. This function must be called if no
+operation (read/write/recv/send/etc.) will be performed on <parameter>fd</parameter>
+ before
+the next call to <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link>.</para>
+<para>The reason why this is needed is because the underlying implementation
+might not allow querying the fd more than once between calls to one of
+the re-enabling operations.</para>
+<refsect3 id="gst-poll-fd-ignored.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-fd-init" role="function">
+<title>gst_poll_fd_init&#160;()</title>
+<indexterm zone="gst-poll-fd-init"><primary>gst_poll_fd_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_poll_fd_init (<parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Initializes <parameter>fd</parameter>
+. Alternatively you can initialize it with
+<link linkend="GST-POLL-FD-INIT:CAPS"><type>GST_POLL_FD_INIT</type></link>.</para>
+<refsect3 id="gst-poll-fd-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPollFD"><type>GstPollFD</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-free" role="function">
+<title>gst_poll_free&#160;()</title>
+<indexterm zone="gst-poll-free"><primary>gst_poll_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_poll_free (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>);</programlisting>
+<para>Free a file descriptor set.</para>
+<refsect3 id="gst-poll-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para> a file descriptor set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-new" role="function">
+<title>gst_poll_new&#160;()</title>
+<indexterm zone="gst-poll-new"><primary>gst_poll_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstPoll"><returnvalue>GstPoll</returnvalue></link>&#160;*
+gst_poll_new (<parameter><link linkend="gboolean"><type>gboolean</type></link> controllable</parameter>);</programlisting>
+<para>Create a new file descriptor set. If <parameter>controllable</parameter>
+, it
+is possible to restart or flush a call to <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> with
+<link linkend="gst-poll-restart"><function>gst_poll_restart()</function></link> and <link linkend="gst-poll-set-flushing"><function>gst_poll_set_flushing()</function></link> respectively.</para>
+<para>Free-function: gst_poll_free</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-poll-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>controllable</para></entry>
+<entry role="parameter_description"><para>whether it should be possible to control a wait.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPoll"><type>GstPoll</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in
+case of an error.  Free with <link linkend="gst-poll-free"><function>gst_poll_free()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-new-timer" role="function">
+<title>gst_poll_new_timer&#160;()</title>
+<indexterm zone="gst-poll-new-timer"><primary>gst_poll_new_timer</primary></indexterm>
+<programlisting language="C"><link linkend="GstPoll"><returnvalue>GstPoll</returnvalue></link>&#160;*
+gst_poll_new_timer (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new poll object that can be used for scheduling cancellable
+timeouts.</para>
+<para>A timeout is performed with <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link>. Multiple timeouts can be
+performed from different threads. </para>
+<para>Free-function: gst_poll_free</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-poll-new-timer.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPoll"><type>GstPoll</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in
+case of an error.  Free with <link linkend="gst-poll-free"><function>gst_poll_free()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-get-read-gpollfd" role="function">
+<title>gst_poll_get_read_gpollfd&#160;()</title>
+<indexterm zone="gst-poll-get-read-gpollfd"><primary>gst_poll_get_read_gpollfd</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_poll_get_read_gpollfd (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                           <parameter><link linkend="GPollFD"><type>GPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Get a GPollFD for the reading part of the control socket. This is useful when
+integrating with a GSource and GMainLoop.</para>
+<refsect3 id="gst-poll-get-read-gpollfd.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GPollFD"><type>GPollFD</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-remove-fd" role="function">
+<title>gst_poll_remove_fd&#160;()</title>
+<indexterm zone="gst-poll-remove-fd"><primary>gst_poll_remove_fd</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_remove_fd (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                    <parameter><link linkend="GstPollFD"><type>GstPollFD</type></link> *fd</parameter>);</programlisting>
+<para>Remove a file descriptor from the file descriptor set.</para>
+<refsect3 id="gst-poll-remove-fd.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a file descriptor set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>a file descriptor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-remove-fd.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the file descriptor was successfully removed from the set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-restart" role="function">
+<title>gst_poll_restart&#160;()</title>
+<indexterm zone="gst-poll-restart"><primary>gst_poll_restart</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_poll_restart (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>);</programlisting>
+<para>Restart any <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> that is in progress. This function is typically
+used after adding or removing descriptors to <parameter>set</parameter>
+.</para>
+<para>If <parameter>set</parameter>
+ is not controllable, then this call will have no effect.</para>
+<refsect3 id="gst-poll-restart.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-set-controllable" role="function">
+<title>gst_poll_set_controllable&#160;()</title>
+<indexterm zone="gst-poll-set-controllable"><primary>gst_poll_set_controllable</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_set_controllable (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                           <parameter><link linkend="gboolean"><type>gboolean</type></link> controllable</parameter>);</programlisting>
+<para>When <parameter>controllable</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, this function ensures that future calls to
+<link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> will be affected by <link linkend="gst-poll-restart"><function>gst_poll_restart()</function></link> and
+<link linkend="gst-poll-set-flushing"><function>gst_poll_set_flushing()</function></link>.</para>
+<refsect3 id="gst-poll-set-controllable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>controllable</para></entry>
+<entry role="parameter_description"><para>new controllable state.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-set-controllable.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the controllability of <parameter>set</parameter>
+could be updated.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-set-flushing" role="function">
+<title>gst_poll_set_flushing&#160;()</title>
+<indexterm zone="gst-poll-set-flushing"><primary>gst_poll_set_flushing</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_poll_set_flushing (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+                       <parameter><link linkend="gboolean"><type>gboolean</type></link> flushing</parameter>);</programlisting>
+<para>When <parameter>flushing</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, this function ensures that current and future calls
+to <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> will return -1, with errno set to EBUSY.</para>
+<para>Unsetting the flushing state will restore normal operation of <parameter>set</parameter>
+.</para>
+<refsect3 id="gst-poll-set-flushing.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flushing</para></entry>
+<entry role="parameter_description"><para>new flushing state.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-wait" role="function">
+<title>gst_poll_wait&#160;()</title>
+<indexterm zone="gst-poll-wait"><primary>gst_poll_wait</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_poll_wait (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>,
+               <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timeout</parameter>);</programlisting>
+<para>Wait for activity on the file descriptors in <parameter>set</parameter>
+. This function waits up to
+the specified <parameter>timeout</parameter>
+.  A timeout of <link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link> waits forever.</para>
+<para>For <link linkend="GstPoll"><type>GstPoll</type></link> objects created with <link linkend="gst-poll-new"><function>gst_poll_new()</function></link>, this function can only be
+called from a single thread at a time.  If called from multiple threads,
+-1 will be returned with errno set to EPERM.</para>
+<para>This is not true for timer <link linkend="GstPoll"><type>GstPoll</type></link> objects created with
+<link linkend="gst-poll-new-timer"><function>gst_poll_new_timer()</function></link>, where it is allowed to have multiple threads waiting
+simultaneously.</para>
+<refsect3 id="gst-poll-wait.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>a timeout in nanoseconds.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-wait.returns" role="returns">
+<title>Returns</title>
+<para> The number of <link linkend="GstPollFD"><type>GstPollFD</type></link> in <parameter>set</parameter>
+that have activity or 0 when no
+activity was detected after <parameter>timeout</parameter>
+. If an error occurs, -1 is returned
+and errno is set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-read-control" role="function">
+<title>gst_poll_read_control&#160;()</title>
+<indexterm zone="gst-poll-read-control"><primary>gst_poll_read_control</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_read_control (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>);</programlisting>
+<para>Read a byte from the control socket of the controllable <parameter>set</parameter>
+.
+This function is mostly useful for timer <link linkend="GstPoll"><type>GstPoll</type></link> objects created with
+<link linkend="gst-poll-new-timer"><function>gst_poll_new_timer()</function></link>.</para>
+<refsect3 id="gst-poll-read-control.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-read-control.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success. <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when <parameter>set</parameter>
+is not controllable or when there
+was no byte to read.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-poll-write-control" role="function">
+<title>gst_poll_write_control&#160;()</title>
+<indexterm zone="gst-poll-write-control"><primary>gst_poll_write_control</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_poll_write_control (<parameter><link linkend="GstPoll"><type>GstPoll</type></link> *set</parameter>);</programlisting>
+<para>Write a byte to the control socket of the controllable <parameter>set</parameter>
+.
+This function is mostly useful for timer <link linkend="GstPoll"><type>GstPoll</type></link> objects created with
+<link linkend="gst-poll-new-timer"><function>gst_poll_new_timer()</function></link>. </para>
+<para>It will make any current and future <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> function return with
+1, meaning the control socket is set. After an equal amount of calls to
+<link linkend="gst-poll-read-control"><function>gst_poll_read_control()</function></link> have been performed, calls to <link linkend="gst-poll-wait"><function>gst_poll_wait()</function></link> will
+block again until their timeout expired.</para>
+<refsect3 id="gst-poll-write-control.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>set</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPoll"><type>GstPoll</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-poll-write-control.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success. <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when <parameter>set</parameter>
+is not controllable or when the
+byte could not be written.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstPoll.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstPoll" role="struct">
+<title>GstPoll</title>
+<indexterm zone="GstPoll"><primary>GstPoll</primary></indexterm>
+<programlisting language="C">typedef struct _GstPoll GstPoll;</programlisting>
+<para>A set of file/network descriptors.</para>
+</refsect2>
+<refsect2 id="GstPollFD" role="struct">
+<title>GstPollFD</title>
+<indexterm zone="GstPollFD"><primary>GstPollFD</primary></indexterm>
+<programlisting language="C">typedef struct {
+  int fd;
+} GstPollFD;
+</programlisting>
+<para>A file descriptor object.</para>
+<refsect3 id="GstPollFD.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="int"><type>int</type></link>&#160;<structfield id="GstPollFD.fd">fd</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a file descriptor</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GST-POLL-FD-INIT:CAPS" role="macro">
+<title>GST_POLL_FD_INIT</title>
+<indexterm zone="GST-POLL-FD-INIT:CAPS"><primary>GST_POLL_FD_INIT</primary></indexterm>
+<programlisting language="C">#define GST_POLL_FD_INIT  { -1, -1 }
+</programlisting>
+<para>A <link linkend="GstPollFD"><type>GstPollFD</type></link> must be initialized with this macro, before it can be
+used. This macro can used be to initialize a variable, but it cannot
+be assigned to a variable. In that case you have to use
+<link linkend="gst-poll-fd-init"><function>gst_poll_fd_init()</function></link>.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

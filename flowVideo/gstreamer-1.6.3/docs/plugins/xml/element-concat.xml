@@ -1,0 +1,110 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-concat">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-concat.top_of_page" role="top_of_page">concat</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>concat</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-concat.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstPad"><type>GstPad</type></link> *</entry><entry role="property_name"><link linkend="GstConcat--active-pad">active-pad</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstConcat--adjust-base">adjust-base</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstConcat"/><refsect1 id="gstreamer-plugins-concat.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstConcat-struct">GstConcat</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-concat.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstConcat
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-concat.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Concatenates streams together to one continous stream.</para>
+<para>All streams but the current one are blocked until the current one
+finished with <link linkend="GST-EVENT-EOS:CAPS"><literal>GST_EVENT_EOS</literal></link>. Then the next stream is enabled, while
+keeping the running time continous for <link linkend="GST-FORMAT-TIME:CAPS"><literal>GST_FORMAT_TIME</literal></link> segments or
+keeping the segment continous for <link linkend="GST-FORMAT-BYTES:CAPS"><literal>GST_FORMAT_BYTES</literal></link> segments.</para>
+<para>Streams are switched in the order in which the sinkpads were requested.</para>
+<para>By default, the stream segment's base values are adjusted to ensure
+the segment transitions between streams are continuous. In some cases,
+it may be desirable to turn off these adjustments (for example, because
+another downstream element like a streamsynchronizer adjusts the base
+values on its own). The adjust-value property can be used for this purpose.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 concat name=c ! xvimagesink  videotestsrc num-buffers=100 ! c.   videotestsrc num-buffers=100 pattern=ball ! c.
+]]></programlisting></informalexample> Plays two video streams one after another.
+</refsect2>
+
+<include href="element-concat-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-concat.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-concat.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstConcat-struct" role="struct">
+<title>struct GstConcat</title>
+<indexterm zone="GstConcat-struct"><primary>GstConcat</primary></indexterm>
+<programlisting language="C">struct GstConcat;</programlisting>
+<para>The private concat structure</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-concat.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstConcat--active-pad" role="property"><title>The <literal>“active-pad”</literal> property</title>
+<indexterm zone="GstConcat--active-pad"><primary>GstConcat:active-pad</primary></indexterm>
+<programlisting>  “active-pad”               <link linkend="GstPad"><type>GstPad</type></link> *</programlisting>
+<para>Currently active src pad.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstConcat--adjust-base" role="property"><title>The <literal>“adjust-base”</literal> property</title>
+<indexterm zone="GstConcat--adjust-base"><primary>GstConcat:adjust-base</primary></indexterm>
+<programlisting>  “adjust-base”              <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Adjust the base value of segments to ensure they are adjacent.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-concat.see-also">
+<title>See Also</title>
+<para><link linkend="GstFunnel"><type>GstFunnel</type></link></para>
+
+</refsect1>
+
+</refentry>

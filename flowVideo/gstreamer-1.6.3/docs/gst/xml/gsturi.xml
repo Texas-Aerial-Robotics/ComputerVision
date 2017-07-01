@@ -1,0 +1,1332 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstUri">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstUri.top_of_page">GstUri</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstUri</refname>
+<refpurpose>URI parsing and manipulation.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstUri.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-URI-CAST:CAPS">GST_URI_CAST</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-URI-CONST-CAST:CAPS">GST_URI_CONST_CAST</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-new">gst_uri_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-new-with-base">gst_uri_new_with_base</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-from-string">gst_uri_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-from-string-with-base">gst_uri_from_string_with_base</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-copy">gst_uri_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-equal">gst_uri_equal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-join">gst_uri_join</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-join-strings">gst_uri_join_strings</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-is-writable">gst_uri_is_writable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-make-writable">gst_uri_make_writable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-to-string">gst_uri_to_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-ref">gst_uri_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-unref">gst_uri_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-is-normalized">gst_uri_is_normalized</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-normalize">gst_uri_normalize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-scheme">gst_uri_get_scheme</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-scheme">gst_uri_set_scheme</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-userinfo">gst_uri_get_userinfo</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-userinfo">gst_uri_set_userinfo</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-host">gst_uri_get_host</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-host">gst_uri_set_host</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-get-port">gst_uri_get_port</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-port">gst_uri_set_port</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-path">gst_uri_get_path</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-path">gst_uri_set_path</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-path-string">gst_uri_get_path_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-path-string">gst_uri_set_path_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-path-segments">gst_uri_get_path_segments</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-path-segments">gst_uri_set_path_segments</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-append-path">gst_uri_append_path</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-append-path-segment">gst_uri_append_path_segment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-query-string">gst_uri_get_query_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-query-string">gst_uri_set_query_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GHashTable"><returnvalue>GHashTable</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-query-table">gst_uri_get_query_table</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-query-table">gst_uri_set_query_table</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-query-value">gst_uri_get_query_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-query-value">gst_uri_set_query_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-remove-query-key">gst_uri_remove_query_key</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-query-has-key">gst_uri_query_has_key</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-query-keys">gst_uri_get_query_keys</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-fragment">gst_uri_get_fragment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-set-fragment">gst_uri_set_fragment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstUri.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstUri">GstUri</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstUri.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstUri.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstUri"><type>GstUri</type></link> object can be used to parse and split a URI string into its
+constituant parts. Two <link linkend="GstUri"><type>GstUri</type></link> objects can be joined to make a new <link linkend="GstUri"><type>GstUri</type></link>
+using the algorithm described in RFC3986.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstUri.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-URI-CAST:CAPS" role="macro">
+<title>GST_URI_CAST()</title>
+<indexterm zone="GST-URI-CAST:CAPS"><primary>GST_URI_CAST</primary></indexterm>
+<programlisting language="C">#define GST_URI_CAST(obj)   ((GstUri *)(obj))
+</programlisting>
+</refsect2>
+<refsect2 id="GST-URI-CONST-CAST:CAPS" role="macro">
+<title>GST_URI_CONST_CAST()</title>
+<indexterm zone="GST-URI-CONST-CAST:CAPS"><primary>GST_URI_CONST_CAST</primary></indexterm>
+<programlisting language="C">#define GST_URI_CONST_CAST(obj) ((const GstUri *)(obj))
+</programlisting>
+</refsect2>
+<refsect2 id="gst-uri-new" role="function" condition="since:1.6">
+<title>gst_uri_new&#160;()</title>
+<indexterm zone="gst-uri-new" role="1.6"><primary>gst_uri_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *scheme</parameter>,
+             <parameter>const <link linkend="gchar"><type>gchar</type></link> *userinfo</parameter>,
+             <parameter>const <link linkend="gchar"><type>gchar</type></link> *host</parameter>,
+             <parameter><link linkend="guint"><type>guint</type></link> port</parameter>,
+             <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>,
+             <parameter>const <link linkend="gchar"><type>gchar</type></link> *query</parameter>,
+             <parameter>const <link linkend="gchar"><type>gchar</type></link> *fragment</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstUri"><type>GstUri</type></link> object with the given URI parts. The path and query
+strings will be broken down into their elements. All strings should not be
+escaped except where indicated.</para>
+<refsect3 id="gst-uri-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>scheme</para></entry>
+<entry role="parameter_description"><para> The scheme for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>userinfo</para></entry>
+<entry role="parameter_description"><para> The user-info for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para> The host name for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>The port number for the new URI or <link linkend="GST-URI-NO-PORT:CAPS"><literal>GST_URI_NO_PORT</literal></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para> The path for the new URI with '/' separating path
+elements. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query</para></entry>
+<entry role="parameter_description"><para> The query string for the new URI with '&amp;' separating
+query elements. Elements containing '&amp;' characters
+should encode them as "&percnt;26". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>fragment</para></entry>
+<entry role="parameter_description"><para> The fragment name for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-new.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstUri"><type>GstUri</type></link> object. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-new-with-base" role="function" condition="since:1.6">
+<title>gst_uri_new_with_base&#160;()</title>
+<indexterm zone="gst-uri-new-with-base" role="1.6"><primary>gst_uri_new_with_base</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_new_with_base (<parameter><link linkend="GstUri"><type>GstUri</type></link> *base</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *scheme</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *userinfo</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *host</parameter>,
+                       <parameter><link linkend="guint"><type>guint</type></link> port</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *query</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *fragment</parameter>);</programlisting>
+<para>Like <link linkend="gst-uri-new"><function>gst_uri_new()</function></link>, but joins the new URI onto a base URI.</para>
+<refsect3 id="gst-uri-new-with-base.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>base</para></entry>
+<entry role="parameter_description"><para> The base URI to join the new URI to. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>scheme</para></entry>
+<entry role="parameter_description"><para> The scheme for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>userinfo</para></entry>
+<entry role="parameter_description"><para> The user-info for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para> The host name for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>The port number for the new URI or <link linkend="GST-URI-NO-PORT:CAPS"><literal>GST_URI_NO_PORT</literal></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para> The path for the new URI with '/' separating path
+elements. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query</para></entry>
+<entry role="parameter_description"><para> The query string for the new URI with '&amp;' separating
+query elements. Elements containing '&amp;' characters
+should encode them as "&percnt;26". </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>fragment</para></entry>
+<entry role="parameter_description"><para> The fragment name for the new URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-new-with-base.returns" role="returns">
+<title>Returns</title>
+<para> The new URI joined onto <parameter>base</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-from-string" role="function" condition="since:1.6">
+<title>gst_uri_from_string&#160;()</title>
+<indexterm zone="gst-uri-from-string" role="1.6"><primary>gst_uri_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_from_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>);</programlisting>
+<para>Parses a URI string into a new <link linkend="GstUri"><type>GstUri</type></link> object. Will return NULL if the URI
+cannot be parsed.</para>
+<refsect3 id="gst-uri-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>The URI string to parse.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-from-string.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstUri"><type>GstUri</type></link> object, or NULL. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-from-string-with-base" role="function" condition="since:1.6">
+<title>gst_uri_from_string_with_base&#160;()</title>
+<indexterm zone="gst-uri-from-string-with-base" role="1.6"><primary>gst_uri_from_string_with_base</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_from_string_with_base (<parameter><link linkend="GstUri"><type>GstUri</type></link> *base</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>);</programlisting>
+<para>Like <link linkend="gst-uri-from-string"><function>gst_uri_from_string()</function></link> but also joins with a base URI.</para>
+<refsect3 id="gst-uri-from-string-with-base.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>base</para></entry>
+<entry role="parameter_description"><para> The base URI to join the new URI with. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>The URI string to parse.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-from-string-with-base.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstUri"><type>GstUri</type></link> object. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-copy" role="function">
+<title>gst_uri_copy&#160;()</title>
+<indexterm zone="gst-uri-copy"><primary>gst_uri_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_copy (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Create a new <link linkend="GstUri"><type>GstUri</type></link> object with the same data as this <link linkend="GstUri"><type>GstUri</type></link> object.
+If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-uri-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>This <link linkend="GstUri"><type>GstUri</type></link> object.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-copy.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstUri"><type>GstUri</type></link> object which is a copy of this
+<link linkend="GstUri"><type>GstUri</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-equal" role="function" condition="since:1.6">
+<title>gst_uri_equal&#160;()</title>
+<indexterm zone="gst-uri-equal" role="1.6"><primary>gst_uri_equal</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_equal (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *first</parameter>,
+               <parameter>const <link linkend="GstUri"><type>GstUri</type></link> *second</parameter>);</programlisting>
+<para>Compares two <link linkend="GstUri"><type>GstUri</type></link> objects to see if they represent the same normalized
+URI.</para>
+<refsect3 id="gst-uri-equal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>first</para></entry>
+<entry role="parameter_description"><para>First <link linkend="GstUri"><type>GstUri</type></link> to compare.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>second</para></entry>
+<entry role="parameter_description"><para>Second <link linkend="GstUri"><type>GstUri</type></link> to compare.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-equal.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the normalized versions of the two URI's would be equal.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-join" role="function" condition="since:1.6">
+<title>gst_uri_join&#160;()</title>
+<indexterm zone="gst-uri-join" role="1.6"><primary>gst_uri_join</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_join (<parameter><link linkend="GstUri"><type>GstUri</type></link> *base_uri</parameter>,
+              <parameter><link linkend="GstUri"><type>GstUri</type></link> *ref_uri</parameter>);</programlisting>
+<para>Join a reference URI onto a base URI using the method from RFC 3986.
+If either URI is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then the other URI will be returned with the ref count
+increased.</para>
+<refsect3 id="gst-uri-join.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>base_uri</para></entry>
+<entry role="parameter_description"><para> The base URI to join another to. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>ref_uri</para></entry>
+<entry role="parameter_description"><para> The reference URI to join onto the
+base URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-join.returns" role="returns">
+<title>Returns</title>
+<para> A <link linkend="GstUri"><type>GstUri</type></link> which represents the base with the
+reference URI joined on. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-join-strings" role="function" condition="since:1.6">
+<title>gst_uri_join_strings&#160;()</title>
+<indexterm zone="gst-uri-join-strings" role="1.6"><primary>gst_uri_join_strings</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_join_strings (<parameter>const <link linkend="gchar"><type>gchar</type></link> *base_uri</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *ref_uri</parameter>);</programlisting>
+<para>This is a convenience function to join two URI strings and return the result.
+The returned string should be <link linkend="g-free"><function>g_free()</function></link>'d after use.</para>
+<refsect3 id="gst-uri-join-strings.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>base_uri</para></entry>
+<entry role="parameter_description"><para>The percent-encoded base URI.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ref_uri</para></entry>
+<entry role="parameter_description"><para>The percent-encoded reference URI to join to the <parameter>base_uri</parameter>
+.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-join-strings.returns" role="returns">
+<title>Returns</title>
+<para> A string representing the percent-encoded join of
+the two URIs. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-is-writable" role="function" condition="since:1.6">
+<title>gst_uri_is_writable&#160;()</title>
+<indexterm zone="gst-uri-is-writable" role="1.6"><primary>gst_uri_is_writable</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_is_writable (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Check if it is safe to write to this <link linkend="GstUri"><type>GstUri</type></link>.</para>
+<para>Check if the refcount of <parameter>uri</parameter>
+ is exactly 1, meaning that no other
+reference exists to the <link linkend="GstUri"><type>GstUri</type></link> and that the <link linkend="GstUri"><type>GstUri</type></link> is therefore writable.</para>
+<para>Modification of a <link linkend="GstUri"><type>GstUri</type></link> should only be done after verifying that it is
+writable.</para>
+<refsect3 id="gst-uri-is-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstUri"><type>GstUri</type></link> object to test.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-is-writable.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if it is safe to write to the object.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-make-writable" role="function" condition="since:1.6">
+<title>gst_uri_make_writable&#160;()</title>
+<indexterm zone="gst-uri-make-writable" role="1.6"><primary>gst_uri_make_writable</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_make_writable (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Make the <link linkend="GstUri"><type>GstUri</type></link> writable.</para>
+<para>Checks if <parameter>uri</parameter>
+ is writable, and if so the original object is returned. If
+not, then a writable copy is made and returned. This gives away the
+reference to <parameter>uri</parameter>
+ and returns a reference to the new <link linkend="GstUri"><type>GstUri</type></link>.
+If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then <link linkend="NULL:CAPS"><literal>NULL</literal></link> is returned.</para>
+<refsect3 id="gst-uri-make-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> object to make writable. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-make-writable.returns" role="returns">
+<title>Returns</title>
+<para> A writable version of <parameter>uri</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-to-string" role="function" condition="since:1.6">
+<title>gst_uri_to_string&#160;()</title>
+<indexterm zone="gst-uri-to-string" role="1.6"><primary>gst_uri_to_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_to_string (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Convert the URI to a string.</para>
+<para>Returns the URI as held in this object as a <link linkend="gchar"><type>gchar</type></link>* nul-terminated string.
+The caller should <link linkend="g-free"><function>g_free()</function></link> the string once they are finished with it.
+The string is put together as described in RFC 3986.</para>
+<refsect3 id="gst-uri-to-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>This <link linkend="GstUri"><type>GstUri</type></link> to convert to a string.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-to-string.returns" role="returns">
+<title>Returns</title>
+<para> The string version of the URI. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-ref" role="function">
+<title>gst_uri_ref&#160;()</title>
+<indexterm zone="gst-uri-ref"><primary>gst_uri_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstUri"><returnvalue>GstUri</returnvalue></link>&#160;*
+gst_uri_ref (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Add a reference to this <link linkend="GstUri"><type>GstUri</type></link> object. See <link linkend="gst-mini-object-ref"><function>gst_mini_object_ref()</function></link> for further
+info.</para>
+<refsect3 id="gst-uri-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-ref.returns" role="returns">
+<title>Returns</title>
+<para> This object with the reference count incremented.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-unref" role="function">
+<title>gst_uri_unref&#160;()</title>
+<indexterm zone="gst-uri-unref"><primary>gst_uri_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_uri_unref (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Decrement the reference count to this <link linkend="GstUri"><type>GstUri</type></link> object.</para>
+<para>If the reference count drops to 0 then finalize this object.</para>
+<para>See <link linkend="gst-mini-object-unref"><function>gst_mini_object_unref()</function></link> for further info.</para>
+<refsect3 id="gst-uri-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-is-normalized" role="function" condition="since:1.6">
+<title>gst_uri_is_normalized&#160;()</title>
+<indexterm zone="gst-uri-is-normalized" role="1.6"><primary>gst_uri_is_normalized</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_is_normalized (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Tests the <parameter>uri</parameter>
+ to see if it is normalized. A <link linkend="NULL:CAPS"><literal>NULL</literal></link> <parameter>uri</parameter>
+ is considered to be
+normalized.</para>
+<refsect3 id="gst-uri-is-normalized.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstUri"><type>GstUri</type></link> to test to see if it is normalized.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-is-normalized.returns" role="returns">
+<title>Returns</title>
+<para> TRUE if the URI is normalized or is <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-normalize" role="function" condition="since:1.6">
+<title>gst_uri_normalize&#160;()</title>
+<indexterm zone="gst-uri-normalize" role="1.6"><primary>gst_uri_normalize</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_normalize (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Normalization will remove extra path segments ("." and "..") from the URI. It
+will also convert the scheme and host name to lower case and any
+percent-encoded values to uppercase.</para>
+<para>The <link linkend="GstUri"><type>GstUri</type></link> object must be writable. Check with <link linkend="gst-uri-is-writable"><function>gst_uri_is_writable()</function></link> or use
+<link linkend="gst-uri-make-writable"><function>gst_uri_make_writable()</function></link> first.</para>
+<refsect3 id="gst-uri-normalize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to normalize. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-normalize.returns" role="returns">
+<title>Returns</title>
+<para> TRUE if the URI was modified.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-scheme" role="function">
+<title>gst_uri_get_scheme&#160;()</title>
+<indexterm zone="gst-uri-get-scheme"><primary>gst_uri_get_scheme</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_scheme (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get the scheme name from the URI or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if it doesn't exist.
+If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-uri-get-scheme.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-scheme.returns" role="returns">
+<title>Returns</title>
+<para> The scheme from the <link linkend="GstUri"><type>GstUri</type></link> object or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-set-scheme" role="function" condition="since:1.6">
+<title>gst_uri_set_scheme&#160;()</title>
+<indexterm zone="gst-uri-set-scheme" role="1.6"><primary>gst_uri_set_scheme</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_scheme (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *scheme</parameter>);</programlisting>
+<para>Set or unset the scheme for the URI.</para>
+<refsect3 id="gst-uri-set-scheme.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>scheme</para></entry>
+<entry role="parameter_description"><para>The new scheme to set or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to unset the scheme.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-scheme.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the scheme was set/unset successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-userinfo" role="function" condition="since:1.6">
+<title>gst_uri_get_userinfo&#160;()</title>
+<indexterm zone="gst-uri-get-userinfo" role="1.6"><primary>gst_uri_get_userinfo</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_userinfo (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get the userinfo (usually in the form "username:password") from the URI
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if it doesn't exist. If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-uri-get-userinfo.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-userinfo.returns" role="returns">
+<title>Returns</title>
+<para> The userinfo from the <link linkend="GstUri"><type>GstUri</type></link> object or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-userinfo" role="function" condition="since:1.6">
+<title>gst_uri_set_userinfo&#160;()</title>
+<indexterm zone="gst-uri-set-userinfo" role="1.6"><primary>gst_uri_set_userinfo</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_userinfo (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *userinfo</parameter>);</programlisting>
+<para>Set or unset the user information for the URI.</para>
+<refsect3 id="gst-uri-set-userinfo.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>userinfo</para></entry>
+<entry role="parameter_description"><para>The new user-information string to set or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to unset.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-userinfo.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the user information was set/unset successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-host" role="function" condition="since:1.6">
+<title>gst_uri_get_host&#160;()</title>
+<indexterm zone="gst-uri-get-host" role="1.6"><primary>gst_uri_get_host</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_host (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get the host name from the URI or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if it doesn't exist.
+If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-uri-get-host.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-host.returns" role="returns">
+<title>Returns</title>
+<para> The host name from the <link linkend="GstUri"><type>GstUri</type></link> object or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-host" role="function" condition="since:1.6">
+<title>gst_uri_set_host&#160;()</title>
+<indexterm zone="gst-uri-set-host" role="1.6"><primary>gst_uri_set_host</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_host (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *host</parameter>);</programlisting>
+<para>Set or unset the host for the URI.</para>
+<refsect3 id="gst-uri-set-host.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para>The new host string to set or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to unset.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-host.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the host was set/unset successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-port" role="function" condition="since:1.6">
+<title>gst_uri_get_port&#160;()</title>
+<indexterm zone="gst-uri-get-port" role="1.6"><primary>gst_uri_get_port</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_uri_get_port (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get the port number from the URI or <link linkend="GST-URI-NO-PORT:CAPS"><literal>GST_URI_NO_PORT</literal></link> if it doesn't exist.
+If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then returns <link linkend="GST-URI-NO-PORT:CAPS"><literal>GST_URI_NO_PORT</literal></link>.</para>
+<refsect3 id="gst-uri-get-port.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-port.returns" role="returns">
+<title>Returns</title>
+<para> The port number from the <link linkend="GstUri"><type>GstUri</type></link> object or <link linkend="GST-URI-NO-PORT:CAPS"><literal>GST_URI_NO_PORT</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-port" role="function" condition="since:1.6">
+<title>gst_uri_set_port&#160;()</title>
+<indexterm zone="gst-uri-set-port" role="1.6"><primary>gst_uri_set_port</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_port (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                  <parameter><link linkend="guint"><type>guint</type></link> port</parameter>);</programlisting>
+<para>Set or unset the port number for the URI.</para>
+<refsect3 id="gst-uri-set-port.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>The new port number to set or <link linkend="GST-URI-NO-PORT:CAPS"><literal>GST_URI_NO_PORT</literal></link> to unset.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-port.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the port number was set/unset successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-path" role="function" condition="since:1.6">
+<title>gst_uri_get_path&#160;()</title>
+<indexterm zone="gst-uri-get-path" role="1.6"><primary>gst_uri_get_path</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_path (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Extract the path string from the URI object.</para>
+<refsect3 id="gst-uri-get-path.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstUri"><type>GstUri</type></link> to get the path from.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-path.returns" role="returns">
+<title>Returns</title>
+<para> The path from the URI. Once finished with the
+string should be <link linkend="g-free"><function>g_free()</function></link>'d. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-path" role="function" condition="since:1.6">
+<title>gst_uri_set_path&#160;()</title>
+<indexterm zone="gst-uri-set-path" role="1.6"><primary>gst_uri_set_path</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_path (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>);</programlisting>
+<para>Sets or unsets the path in the URI.</para>
+<refsect3 id="gst-uri-set-path.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>The new path to set with path segments separated by '/', or use <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+to unset the path.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-path.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the path was set successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-path-string" role="function" condition="since:1.6">
+<title>gst_uri_get_path_string&#160;()</title>
+<indexterm zone="gst-uri-get-path-string" role="1.6"><primary>gst_uri_get_path_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_path_string (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Extract the path string from the URI object as a percent encoded URI path.</para>
+<refsect3 id="gst-uri-get-path-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstUri"><type>GstUri</type></link> to get the path from.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-path-string.returns" role="returns">
+<title>Returns</title>
+<para> The path from the URI. Once finished with the
+string should be <link linkend="g-free"><function>g_free()</function></link>'d. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-path-string" role="function" condition="since:1.6">
+<title>gst_uri_set_path_string&#160;()</title>
+<indexterm zone="gst-uri-set-path-string" role="1.6"><primary>gst_uri_set_path_string</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_path_string (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>);</programlisting>
+<para>Sets or unsets the path in the URI.</para>
+<refsect3 id="gst-uri-set-path-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>The new percent encoded path to set with path segments separated by
+'/', or use <link linkend="NULL:CAPS"><literal>NULL</literal></link> to unset the path.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-path-string.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the path was set successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-path-segments" role="function" condition="since:1.6">
+<title>gst_uri_get_path_segments&#160;()</title>
+<indexterm zone="gst-uri-get-path-segments" role="1.6"><primary>gst_uri_get_path_segments</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_uri_get_path_segments (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get a list of path segments from the URI.</para>
+<refsect3 id="gst-uri-get-path-segments.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to get the path from. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-path-segments.returns" role="returns">
+<title>Returns</title>
+<para> A <link linkend="GList"><type>GList</type></link> of path segment
+strings or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no path segments are available. Free the list
+when no longer needed with g_list_free_full(list, g_free). </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> gchar*]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-path-segments" role="function" condition="since:1.6">
+<title>gst_uri_set_path_segments&#160;()</title>
+<indexterm zone="gst-uri-set-path-segments" role="1.6"><primary>gst_uri_set_path_segments</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_path_segments (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                           <parameter><link linkend="GList"><type>GList</type></link> *path_segments</parameter>);</programlisting>
+<para>Replace the path segments list in the URI.</para>
+<refsect3 id="gst-uri-set-path-segments.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>path_segments</para></entry>
+<entry role="parameter_description"><para> The new
+path list to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>][<acronym>element-type</acronym> gchar*]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-path-segments.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the path segments were set successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-append-path" role="function" condition="since:1.6">
+<title>gst_uri_append_path&#160;()</title>
+<indexterm zone="gst-uri-append-path" role="1.6"><primary>gst_uri_append_path</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_append_path (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *relative_path</parameter>);</programlisting>
+<para>Append a path onto the end of the path in the URI. The path is not
+normalized, call <link linkend="gst-uri-normalize"><function><link linkend="gst-uri-normalize"><function>gst_uri_normalize()</function></link></function></link> to normalize the path.</para>
+<refsect3 id="gst-uri-append-path.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>relative_path</para></entry>
+<entry role="parameter_description"><para>Relative path to append to the end of the current path.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-append-path.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the path was appended successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-append-path-segment" role="function" condition="since:1.6">
+<title>gst_uri_append_path_segment&#160;()</title>
+<indexterm zone="gst-uri-append-path-segment" role="1.6"><primary>gst_uri_append_path_segment</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_append_path_segment (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *path_segment</parameter>);</programlisting>
+<para>Append a single path segment onto the end of the URI path.</para>
+<refsect3 id="gst-uri-append-path-segment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>path_segment</para></entry>
+<entry role="parameter_description"><para>The path segment string to append to the URI path.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-append-path-segment.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the path was appended successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-query-string" role="function" condition="since:1.6">
+<title>gst_uri_get_query_string&#160;()</title>
+<indexterm zone="gst-uri-get-query-string" role="1.6"><primary>gst_uri_get_query_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_query_string (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get a percent encoded URI query string from the <parameter>uri</parameter>
+.</para>
+<refsect3 id="gst-uri-get-query-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to get the query string from. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-query-string.returns" role="returns">
+<title>Returns</title>
+<para> A percent encoded query string. Use <link linkend="g-free"><function>g_free()</function></link> when
+no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-query-string" role="function" condition="since:1.6">
+<title>gst_uri_set_query_string&#160;()</title>
+<indexterm zone="gst-uri-set-query-string" role="1.6"><primary>gst_uri_set_query_string</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_query_string (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *query</parameter>);</programlisting>
+<para>Sets or unsets the query table in the URI.</para>
+<refsect3 id="gst-uri-set-query-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query</para></entry>
+<entry role="parameter_description"><para>The new percent encoded query string to use to populate the query
+table, or use <link linkend="NULL:CAPS"><literal>NULL</literal></link> to unset the query table.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-query-string.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the query table was set successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-query-table" role="function" condition="since:1.6">
+<title>gst_uri_get_query_table&#160;()</title>
+<indexterm zone="gst-uri-get-query-table" role="1.6"><primary>gst_uri_get_query_table</primary></indexterm>
+<programlisting language="C"><link linkend="GHashTable"><returnvalue>GHashTable</returnvalue></link>&#160;*
+gst_uri_get_query_table (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get the query table from the URI. Keys and values in the table are freed
+with g_free when they are deleted. A value may be <link linkend="NULL:CAPS"><literal>NULL</literal></link> to indicate that
+the key should appear in the query string in the URI, but does not have a
+value. Free the returned <link linkend="GHashTable"><type>GHashTable</type></link> with <link linkend="g-hash-table-unref"><function><link linkend="g-hash-table-unref"><function>g_hash_table_unref()</function></link></function></link> when it is
+no longer required. Modifying this hash table will modify the query in the
+URI.</para>
+<refsect3 id="gst-uri-get-query-table.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to get the query table from. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-query-table.returns" role="returns">
+<title>Returns</title>
+<para> The query hash table
+from the URI. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> gchar* gchar*]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-query-table" role="function" condition="since:1.6">
+<title>gst_uri_set_query_table&#160;()</title>
+<indexterm zone="gst-uri-set-query-table" role="1.6"><primary>gst_uri_set_query_table</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_query_table (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                         <parameter><link linkend="GHashTable"><type>GHashTable</type></link> *query_table</parameter>);</programlisting>
+<para>Set the query table to use in the URI. The old table is unreferenced and a
+reference to the new one is used instead. A value if <link linkend="NULL:CAPS"><literal>NULL</literal></link> for <parameter>query_table</parameter>
+
+will remove the query string from the URI.</para>
+<refsect3 id="gst-uri-set-query-table.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query_table</para></entry>
+<entry role="parameter_description"><para> The new
+query table to use. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>][<acronym>element-type</acronym> gchar* gchar*]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-query-table.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the new table was sucessfully used for the query table.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-query-value" role="function" condition="since:1.6">
+<title>gst_uri_get_query_value&#160;()</title>
+<indexterm zone="gst-uri-get-query-value" role="1.6"><primary>gst_uri_get_query_value</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_query_value (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *query_key</parameter>);</programlisting>
+<para>Get the value associated with the <parameter>query_key</parameter>
+ key. Will return <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the
+key has no value or if the key does not exist in the URI query table. Because
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> is returned for both missing keys and keys with no value, you should
+use <link linkend="gst-uri-query-has-key"><function>gst_uri_query_has_key()</function></link> to determine if a key is present in the URI
+query.</para>
+<refsect3 id="gst-uri-get-query-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to examine. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query_key</para></entry>
+<entry role="parameter_description"><para>The key to lookup.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-query-value.returns" role="returns">
+<title>Returns</title>
+<para> The value for the given key, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if not found.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-query-value" role="function" condition="since:1.6">
+<title>gst_uri_set_query_value&#160;()</title>
+<indexterm zone="gst-uri-set-query-value" role="1.6"><primary>gst_uri_set_query_value</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_query_value (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *query_key</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *query_value</parameter>);</programlisting>
+<para>This inserts or replaces a key in the query table. A <parameter>query_value</parameter>
+ of <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+indicates that the key has no associated value, but will still be present in
+the query string.</para>
+<refsect3 id="gst-uri-set-query-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query_key</para></entry>
+<entry role="parameter_description"><para> The key for the query entry. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query_value</para></entry>
+<entry role="parameter_description"><para> The value for the key. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-query-value.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the query table was sucessfully updated.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-remove-query-key" role="function" condition="since:1.6">
+<title>gst_uri_remove_query_key&#160;()</title>
+<indexterm zone="gst-uri-remove-query-key" role="1.6"><primary>gst_uri_remove_query_key</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_remove_query_key (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *query_key</parameter>);</programlisting>
+<para>Remove an entry from the query table by key.</para>
+<refsect3 id="gst-uri-remove-query-key.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query_key</para></entry>
+<entry role="parameter_description"><para>The key to remove.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-remove-query-key.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the key existed in the table and was removed.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-query-has-key" role="function" condition="since:1.6">
+<title>gst_uri_query_has_key&#160;()</title>
+<indexterm zone="gst-uri-query-has-key" role="1.6"><primary>gst_uri_query_has_key</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_query_has_key (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *query_key</parameter>);</programlisting>
+<para>Check if there is a query table entry for the <parameter>query_key</parameter>
+ key.</para>
+<refsect3 id="gst-uri-query-has-key.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to examine. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>query_key</para></entry>
+<entry role="parameter_description"><para>The key to lookup.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-query-has-key.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>query_key</parameter>
+exists in the URI query table.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-query-keys" role="function" condition="since:1.6">
+<title>gst_uri_get_query_keys&#160;()</title>
+<indexterm zone="gst-uri-get-query-keys" role="1.6"><primary>gst_uri_get_query_keys</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_uri_get_query_keys (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get a list of the query keys from the URI.</para>
+<refsect3 id="gst-uri-get-query-keys.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to examine. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-query-keys.returns" role="returns">
+<title>Returns</title>
+<para> A list of keys from
+the URI query. Free the list with <link linkend="g-list-free"><function>g_list_free()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer container</acronym>][<acronym>element-type</acronym> gchar*]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-get-fragment" role="function" condition="since:1.6">
+<title>gst_uri_get_fragment&#160;()</title>
+<indexterm zone="gst-uri-get-fragment" role="1.6"><primary>gst_uri_get_fragment</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_fragment (<parameter>const <link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>);</programlisting>
+<para>Get the fragment name from the URI or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if it doesn't exist.
+If <parameter>uri</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> then returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-uri-get-fragment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> This <link linkend="GstUri"><type>GstUri</type></link> object. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-fragment.returns" role="returns">
+<title>Returns</title>
+<para> The host name from the <link linkend="GstUri"><type>GstUri</type></link> object or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-uri-set-fragment" role="function" condition="since:1.6">
+<title>gst_uri_set_fragment&#160;()</title>
+<indexterm zone="gst-uri-set-fragment" role="1.6"><primary>gst_uri_set_fragment</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_set_fragment (<parameter><link linkend="GstUri"><type>GstUri</type></link> *uri</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *fragment</parameter>);</programlisting>
+<para>Sets the fragment string in the URI. Use a value of <link linkend="NULL:CAPS"><literal>NULL</literal></link> in <parameter>fragment</parameter>
+ to
+unset the fragment string.</para>
+<refsect3 id="gst-uri-set-fragment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstUri"><type>GstUri</type></link> to modify. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>fragment</para></entry>
+<entry role="parameter_description"><para> The fragment string to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-set-fragment.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the fragment was set/unset successfully.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstUri.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstUri" role="struct">
+<title>GstUri</title>
+<indexterm zone="GstUri"><primary>GstUri</primary></indexterm>
+<programlisting language="C">typedef struct _GstUri GstUri;</programlisting>
+<para>This is a private structure that holds the various parts of a parsed URI.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

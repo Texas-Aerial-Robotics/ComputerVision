@@ -1,0 +1,102 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-filesrc">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-filesrc.top_of_page" role="top_of_page">filesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>filesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-filesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstFileSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFileSrc"/><refsect1 id="gstreamer-plugins-filesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFileSrc-struct">GstFileSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> GstFileSrc
+</screen>
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFileSrc implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-filesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Read data from a file in the local file system.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=song.ogg ! decodebin ! audioconvert ! audioresample ! autoaudiosink
+]]></programlisting></informalexample> Play song.ogg audio file which must be in the current working directory.
+</refsect2>
+
+<include href="element-filesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-filesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFileSrc-struct" role="struct">
+<title>struct GstFileSrc</title>
+<indexterm zone="GstFileSrc-struct"><primary>GstFileSrc</primary></indexterm>
+<programlisting language="C">struct GstFileSrc;</programlisting>
+<para>Opaque <link linkend="GstFileSrc"><type>GstFileSrc</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFileSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstFileSrc--location"><primary>GstFileSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of the file to read.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-filesrc.see-also">
+<title>See Also</title>
+<para><link linkend="GstFileSrc"><type>GstFileSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE informaltable PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<tbody>
+<row>
+<entry><link linkend="GInitiallyUnowned">GInitiallyUnowned</link></entry>
+<entry><link linkend="GObject">GObject</link></entry>
+<entry><link linkend="GstARGBControlBinding">GstARGBControlBinding</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAdapter">GstAdapter</link></entry>
+<entry><link linkend="GstBaseParse">GstBaseParse</link></entry>
+<entry><link linkend="GstBaseSink">GstBaseSink</link></entry>
+</row>
+<row>
+<entry><link linkend="GstBaseSrc">GstBaseSrc</link></entry>
+<entry><link linkend="GstBaseTransform">GstBaseTransform</link></entry>
+<entry><link linkend="GstClock">GstClock</link></entry>
+</row>
+<row>
+<entry><link linkend="GstCollectPads">GstCollectPads</link></entry>
+<entry><link linkend="GstControlBinding">GstControlBinding</link></entry>
+<entry><link linkend="GstControlSource">GstControlSource</link></entry>
+</row>
+<row>
+<entry><link linkend="GstDirectControlBinding">GstDirectControlBinding</link></entry>
+<entry><link linkend="GstElement">GstElement</link></entry>
+<entry><link linkend="GstInterpolationControlSource">GstInterpolationControlSource</link></entry>
+</row>
+<row>
+<entry><link linkend="GstLFOControlSource">GstLFOControlSource</link></entry>
+<entry><link linkend="GstNetClientClock">GstNetClientClock</link></entry>
+<entry><link linkend="GstNetTimeProvider">GstNetTimeProvider</link></entry>
+</row>
+<row>
+<entry><link linkend="GstObject">GstObject</link></entry>
+<entry><link linkend="GstPushSrc">GstPushSrc</link></entry>
+<entry><link linkend="GstSystemClock">GstSystemClock</link></entry>
+</row>
+<row>
+<entry><link linkend="GstTestClock">GstTestClock</link></entry>
+<entry><link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link></entry>
+<entry><link linkend="GstTriggerControlSource">GstTriggerControlSource</link></entry>
+</row>
+</tbody></tgroup></informaltable>

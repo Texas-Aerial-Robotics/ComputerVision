@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstTypeFind">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstTypeFind.top_of_page">GstTypeFind</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTypeFind</refname>
+<refpurpose>Stream type detection</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstTypeFind.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstTypeFindFunction">*GstTypeFindFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-peek">gst_type_find_peek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-type-find-suggest">gst_type_find_suggest</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-type-find-suggest-simple">gst_type_find_suggest_simple</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-type-find-get-length">gst_type_find_get_length</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-type-find-register">gst_type_find_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstTypeFind.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTypeFind">GstTypeFind</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstTypeFindProbability">GstTypeFindProbability</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstTypeFind.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstTypeFind.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The following functions allow you to detect the media type of an unknown
+stream.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstTypeFind.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstTypeFindFunction" role="function">
+<title>GstTypeFindFunction&#160;()</title>
+<indexterm zone="GstTypeFindFunction"><primary>GstTypeFindFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstTypeFindFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstTypeFind"><type>GstTypeFind</type></link> *find</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called by typefinding.</para>
+<refsect3 id="GstTypeFindFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>find</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstTypeFind"><type>GstTypeFind</type></link> structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>optional data to pass to the function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-peek" role="function">
+<title>gst_type_find_peek&#160;()</title>
+<indexterm zone="gst-type-find-peek"><primary>gst_type_find_peek</primary></indexterm>
+<programlisting language="C">const <link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+gst_type_find_peek (<parameter><link linkend="GstTypeFind"><type>GstTypeFind</type></link> *find</parameter>,
+                    <parameter><link linkend="gint64"><type>gint64</type></link> offset</parameter>,
+                    <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Returns the <parameter>size</parameter>
+ bytes of the stream to identify beginning at offset. If
+offset is a positive number, the offset is relative to the beginning of the
+stream, if offset is a negative number the offset is relative to the end of
+the stream. The returned memory is valid until the typefinding function
+returns and must not be freed.</para>
+<refsect3 id="gst-type-find-peek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>find</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTypeFind"><type>GstTypeFind</type></link> object the function was called with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>The offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>The number of bytes to return</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-peek.returns" role="returns">
+<title>Returns</title>
+<para> the
+requested data, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if that data is not available. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> length=size][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-suggest" role="function">
+<title>gst_type_find_suggest&#160;()</title>
+<indexterm zone="gst-type-find-suggest"><primary>gst_type_find_suggest</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_type_find_suggest (<parameter><link linkend="GstTypeFind"><type>GstTypeFind</type></link> *find</parameter>,
+                       <parameter><link linkend="guint"><type>guint</type></link> probability</parameter>,
+                       <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>If a <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> calls this function it suggests the caps with the
+given probability. A <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> may supply different suggestions
+in one call.
+It is up to the caller of the <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> to interpret these values.</para>
+<refsect3 id="gst-type-find-suggest.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>find</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTypeFind"><type>GstTypeFind</type></link> object the function was called with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>probability</para></entry>
+<entry role="parameter_description"><para>The probability in percent that the suggestion is right</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>The fixed <link linkend="GstCaps"><type>GstCaps</type></link> to suggest</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-suggest-simple" role="function">
+<title>gst_type_find_suggest_simple&#160;()</title>
+<indexterm zone="gst-type-find-suggest-simple"><primary>gst_type_find_suggest_simple</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_type_find_suggest_simple (<parameter><link linkend="GstTypeFind"><type>GstTypeFind</type></link> *find</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> probability</parameter>,
+                              <parameter>const <link linkend="char"><type>char</type></link> *media_type</parameter>,
+                              <parameter>const <link linkend="char"><type>char</type></link> *fieldname</parameter>,
+                              <parameter>...</parameter>);</programlisting>
+<para>If a <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> calls this function it suggests the caps with the
+given probability. A <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> may supply different suggestions
+in one call. It is up to the caller of the <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> to interpret
+these values.</para>
+<para>This function is similar to <link linkend="gst-type-find-suggest"><function>gst_type_find_suggest()</function></link>, only that instead of
+passing a <link linkend="GstCaps"><type>GstCaps</type></link> argument you can create the caps on the fly in the same
+way as you can with <link linkend="gst-caps-new-simple"><function>gst_caps_new_simple()</function></link>.</para>
+<para>Make sure you terminate the list of arguments with a <link linkend="NULL:CAPS"><literal>NULL</literal></link> argument and that
+the values passed have the correct type (in terms of width in bytes when
+passed to the vararg function - this applies particularly to gdouble and
+guint64 arguments).</para>
+<refsect3 id="gst-type-find-suggest-simple.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>find</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTypeFind"><type>GstTypeFind</type></link> object the function was called with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>probability</para></entry>
+<entry role="parameter_description"><para>The probability in percent that the suggestion is right</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>media_type</para></entry>
+<entry role="parameter_description"><para>the media type of the suggested caps</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para> first field of the suggested caps, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>additional arguments to the suggested caps in the same format as the
+arguments passed to <link linkend="gst-structure-new"><function>gst_structure_new()</function></link> (ie. triplets of field name,
+field GType and field value)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-get-length" role="function">
+<title>gst_type_find_get_length&#160;()</title>
+<indexterm zone="gst-type-find-get-length"><primary>gst_type_find_get_length</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_type_find_get_length (<parameter><link linkend="GstTypeFind"><type>GstTypeFind</type></link> *find</parameter>);</programlisting>
+<para>Get the length of the data stream.</para>
+<refsect3 id="gst-type-find-get-length.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>find</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTypeFind"><type>GstTypeFind</type></link> the function was called with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-get-length.returns" role="returns">
+<title>Returns</title>
+<para> The length of the data stream, or 0 if it is not available.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-register" role="function">
+<title>gst_type_find_register&#160;()</title>
+<indexterm zone="gst-type-find-register"><primary>gst_type_find_register</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_type_find_register (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> rank</parameter>,
+                        <parameter><link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> func</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *extensions</parameter>,
+                        <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *possible_caps</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>,
+                        <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> data_notify</parameter>);</programlisting>
+<para>Registers a new typefind function to be used for typefinding. After
+registering this function will be available for typefinding.
+This function is typically called during an element's plugin initialization.</para>
+<refsect3 id="gst-type-find-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para> A <link linkend="GstPlugin"><type>GstPlugin</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> for a static typefind function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>The name for registering</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rank</para></entry>
+<entry role="parameter_description"><para>The rank (or importance) of this typefind function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>extensions</para></entry>
+<entry role="parameter_description"><para> Optional comma-separated list of extensions
+that could belong to this type. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>possible_caps</para></entry>
+<entry role="parameter_description"><para>Optionally the caps that could be returned when typefinding
+succeeds</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>Optional user data. This user data must be available until the plugin
+is unloaded.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data_notify</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> that will be called on <parameter>data</parameter>
+when the plugin
+is unloaded.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-register.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstTypeFind.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTypeFind" role="struct">
+<title>struct GstTypeFind</title>
+<indexterm zone="GstTypeFind"><primary>GstTypeFind</primary></indexterm>
+<programlisting language="C">struct GstTypeFind {
+  /* private to the caller of the typefind function */
+  const guint8 *  (* peek)       (gpointer         data,
+                                  gint64           offset,
+                                  guint            size);
+
+  void            (* suggest)    (gpointer         data,
+                                  guint            probability,
+                                  GstCaps         *caps);
+
+  gpointer         data;
+
+  /* optional */
+  guint64         (* get_length) (gpointer data);
+};
+</programlisting>
+<para>Object that stores typefind callbacks. To use with <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link>.</para>
+<refsect3 id="GstTypeFind.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTypeFind.peek">peek</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Method to peek data.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTypeFind.suggest">suggest</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Method to suggest <link linkend="GstCaps"><type>GstCaps</type></link> with a given probability.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gpointer"><type>gpointer</type></link>&#160;<structfield id="GstTypeFind.data">data</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The data used by the caller of the typefinding function.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTypeFind.get-length">get_length</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Returns the length of current data.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstTypeFindProbability" role="enum">
+<title>enum GstTypeFindProbability</title>
+<indexterm zone="GstTypeFindProbability"><primary>GstTypeFindProbability</primary></indexterm>
+<para>The probability of the typefind function. Higher values have more certainty
+in doing a reliable typefind.</para>
+<refsect3 id="GstTypeFindProbability.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TYPE-FIND-NONE:CAPS">GST_TYPE_FIND_NONE</para></entry>
+<entry role="enum_member_description"><para>type undetected.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TYPE-FIND-MINIMUM:CAPS">GST_TYPE_FIND_MINIMUM</para></entry>
+<entry role="enum_member_description"><para>unlikely typefind.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TYPE-FIND-POSSIBLE:CAPS">GST_TYPE_FIND_POSSIBLE</para></entry>
+<entry role="enum_member_description"><para>possible type detected.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TYPE-FIND-LIKELY:CAPS">GST_TYPE_FIND_LIKELY</para></entry>
+<entry role="enum_member_description"><para>likely a type was detected.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TYPE-FIND-NEARLY-CERTAIN:CAPS">GST_TYPE_FIND_NEARLY_CERTAIN</para></entry>
+<entry role="enum_member_description"><para>nearly certain that a type was detected.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TYPE-FIND-MAXIMUM:CAPS">GST_TYPE_FIND_MAXIMUM</para></entry>
+<entry role="enum_member_description"><para>very certain a type was detected.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

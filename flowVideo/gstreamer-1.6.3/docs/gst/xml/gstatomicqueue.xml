@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstAtomicQueue">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstAtomicQueue.top_of_page">GstAtomicQueue</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstAtomicQueue</refname>
+<refpurpose>An atomic queue implementation</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstAtomicQueue.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstAtomicQueue"><returnvalue>GstAtomicQueue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-new">gst_atomic_queue_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-ref">gst_atomic_queue_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-unref">gst_atomic_queue_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-push">gst_atomic_queue_push</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-peek">gst_atomic_queue_peek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-pop">gst_atomic_queue_pop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-atomic-queue-length">gst_atomic_queue_length</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstAtomicQueue.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstAtomicQueue">GstAtomicQueue</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstAtomicQueue.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstAtomicQueue.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> object implements a queue that can be used from multiple
+threads without performing any blocking operations.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstAtomicQueue.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-atomic-queue-new" role="function">
+<title>gst_atomic_queue_new&#160;()</title>
+<indexterm zone="gst-atomic-queue-new"><primary>gst_atomic_queue_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstAtomicQueue"><returnvalue>GstAtomicQueue</returnvalue></link>&#160;*
+gst_atomic_queue_new (<parameter><link linkend="guint"><type>guint</type></link> initial_size</parameter>);</programlisting>
+<para>Create a new atomic queue instance. <parameter>initial_size</parameter>
+ will be rounded up to the
+nearest power of 2 and used as the initial size of the queue.</para>
+<refsect3 id="gst-atomic-queue-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>initial_size</para></entry>
+<entry role="parameter_description"><para>initial queue size</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-atomic-queue-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-atomic-queue-ref" role="function">
+<title>gst_atomic_queue_ref&#160;()</title>
+<indexterm zone="gst-atomic-queue-ref"><primary>gst_atomic_queue_ref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_atomic_queue_ref (<parameter><link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> *queue</parameter>);</programlisting>
+<para>Increase the refcount of <parameter>queue</parameter>
+.</para>
+<refsect3 id="gst-atomic-queue-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-atomic-queue-unref" role="function">
+<title>gst_atomic_queue_unref&#160;()</title>
+<indexterm zone="gst-atomic-queue-unref"><primary>gst_atomic_queue_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_atomic_queue_unref (<parameter><link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> *queue</parameter>);</programlisting>
+<para>Unref <parameter>queue</parameter>
+ and free the memory when the refcount reaches 0.</para>
+<refsect3 id="gst-atomic-queue-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-atomic-queue-push" role="function">
+<title>gst_atomic_queue_push&#160;()</title>
+<indexterm zone="gst-atomic-queue-push"><primary>gst_atomic_queue_push</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_atomic_queue_push (<parameter><link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> *queue</parameter>,
+                       <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>Append <parameter>data</parameter>
+ to the tail of the queue.</para>
+<refsect3 id="gst-atomic-queue-push.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-atomic-queue-peek" role="function">
+<title>gst_atomic_queue_peek&#160;()</title>
+<indexterm zone="gst-atomic-queue-peek"><primary>gst_atomic_queue_peek</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_atomic_queue_peek (<parameter><link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> *queue</parameter>);</programlisting>
+<para>Peek the head element of the queue without removing it from the queue.</para>
+<refsect3 id="gst-atomic-queue-peek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-atomic-queue-peek.returns" role="returns">
+<title>Returns</title>
+<para> the head element of <parameter>queue</parameter>
+or
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> when the queue is empty. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-atomic-queue-pop" role="function">
+<title>gst_atomic_queue_pop&#160;()</title>
+<indexterm zone="gst-atomic-queue-pop"><primary>gst_atomic_queue_pop</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_atomic_queue_pop (<parameter><link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> *queue</parameter>);</programlisting>
+<para>Get the head element of the queue.</para>
+<refsect3 id="gst-atomic-queue-pop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-atomic-queue-pop.returns" role="returns">
+<title>Returns</title>
+<para> the head element of <parameter>queue</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when
+the queue is empty. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-atomic-queue-length" role="function">
+<title>gst_atomic_queue_length&#160;()</title>
+<indexterm zone="gst-atomic-queue-length"><primary>gst_atomic_queue_length</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_atomic_queue_length (<parameter><link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link> *queue</parameter>);</programlisting>
+<para>Get the amount of items in the queue.</para>
+<refsect3 id="gst-atomic-queue-length.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAtomicQueue"><type>GstAtomicQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-atomic-queue-length.returns" role="returns">
+<title>Returns</title>
+<para> the number of elements in the queue.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstAtomicQueue.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAtomicQueue" role="struct">
+<title>GstAtomicQueue</title>
+<indexterm zone="GstAtomicQueue"><primary>GstAtomicQueue</primary></indexterm>
+<programlisting language="C">typedef struct _GstAtomicQueue GstAtomicQueue;</programlisting>
+<para>Opaque atomic data queue.</para>
+<para>Use the accessor functions to get the stored values.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

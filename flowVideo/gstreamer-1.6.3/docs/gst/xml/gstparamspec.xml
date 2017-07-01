@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstParamSpec">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstParamSpec.top_of_page">GstParamSpec</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstParamSpec</refname>
+<refpurpose>GParamSpec implementations specific
+to GStreamer</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstParamSpec.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GParamSpec"><returnvalue>GParamSpec</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-param-spec-fraction">gst_param_spec_fraction</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstParamSpec.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PARAM-CONTROLLABLE:CAPS">GST_PARAM_CONTROLLABLE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PARAM-USER-SHIFT:CAPS">GST_PARAM_USER_SHIFT</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PARAM-MUTABLE-PAUSED:CAPS">GST_PARAM_MUTABLE_PAUSED</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PARAM-MUTABLE-PLAYING:CAPS">GST_PARAM_MUTABLE_PLAYING</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PARAM-MUTABLE-READY:CAPS">GST_PARAM_MUTABLE_READY</link></entry></row>
+
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstParamSpecFraction">GstParamSpecFraction</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstParamSpec.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstParamSpec.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GParamSpec implementations specific to GStreamer.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstParamSpec.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-param-spec-fraction" role="function">
+<title>gst_param_spec_fraction&#160;()</title>
+<indexterm zone="gst-param-spec-fraction"><primary>gst_param_spec_fraction</primary></indexterm>
+<programlisting language="C"><link linkend="GParamSpec"><returnvalue>GParamSpec</returnvalue></link>&#160;*
+gst_param_spec_fraction (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *nick</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *blurb</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> min_num</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> min_denom</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> max_num</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> max_denom</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> default_num</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> default_denom</parameter>,
+                         <parameter><link linkend="GParamFlags"><type>GParamFlags</type></link> flags</parameter>);</programlisting>
+<para>This function creates a fraction GParamSpec for use by objects/elements
+that want to expose properties of fraction type. This function is typically
+used in connection with <link linkend="g-object-class-install-property"><function>g_object_class_install_property()</function></link> in a GObjects's
+instance_init function.</para>
+<refsect3 id="gst-param-spec-fraction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>canonical name of the property specified</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nick</para></entry>
+<entry role="parameter_description"><para>nick name for the property specified</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>blurb</para></entry>
+<entry role="parameter_description"><para>description of the property specified</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_num</para></entry>
+<entry role="parameter_description"><para>minimum value (fraction numerator)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_denom</para></entry>
+<entry role="parameter_description"><para>minimum value (fraction denominator)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_num</para></entry>
+<entry role="parameter_description"><para>maximum value (fraction numerator)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_denom</para></entry>
+<entry role="parameter_description"><para>maximum value (fraction denominator)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>default_num</para></entry>
+<entry role="parameter_description"><para>default value (fraction numerator)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>default_denom</para></entry>
+<entry role="parameter_description"><para>default value (fraction denominator)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>flags for the property specified</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-param-spec-fraction.returns" role="returns">
+<title>Returns</title>
+<para> a newly created parameter specification. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstParamSpec.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-PARAM-CONTROLLABLE:CAPS" role="macro">
+<title>GST_PARAM_CONTROLLABLE</title>
+<indexterm zone="GST-PARAM-CONTROLLABLE:CAPS"><primary>GST_PARAM_CONTROLLABLE</primary></indexterm>
+<programlisting language="C">#define&#160;GST_PARAM_CONTROLLABLE&#160;(1 &lt;&lt; (G_PARAM_USER_SHIFT + 1))
+</programlisting>
+<para>Use this flag on GObject properties to signal they can make sense to be.
+controlled over time. This hint is used by the GstController.</para>
+</refsect2>
+<refsect2 id="GST-PARAM-USER-SHIFT:CAPS" role="macro">
+<title>GST_PARAM_USER_SHIFT</title>
+<indexterm zone="GST-PARAM-USER-SHIFT:CAPS"><primary>GST_PARAM_USER_SHIFT</primary></indexterm>
+<programlisting language="C">#define&#160;GST_PARAM_USER_SHIFT&#160;(1 &lt;&lt; (G_PARAM_USER_SHIFT + 8))
+</programlisting>
+<para>Bits based on GST_PARAM_USER_SHIFT can be used by 3rd party applications.</para>
+</refsect2>
+<refsect2 id="GST-PARAM-MUTABLE-PAUSED:CAPS" role="macro">
+<title>GST_PARAM_MUTABLE_PAUSED</title>
+<indexterm zone="GST-PARAM-MUTABLE-PAUSED:CAPS"><primary>GST_PARAM_MUTABLE_PAUSED</primary></indexterm>
+<programlisting language="C">#define GST_PARAM_MUTABLE_PAUSED  (1 &lt;&lt; (G_PARAM_USER_SHIFT + 3))
+</programlisting>
+<para>Use this flag on GObject properties of GstElements to indicate that
+they can be changed when the element is in the PAUSED or lower state.
+This flag implies GST_PARAM_MUTABLE_READY.</para>
+</refsect2>
+<refsect2 id="GST-PARAM-MUTABLE-PLAYING:CAPS" role="macro">
+<title>GST_PARAM_MUTABLE_PLAYING</title>
+<indexterm zone="GST-PARAM-MUTABLE-PLAYING:CAPS"><primary>GST_PARAM_MUTABLE_PLAYING</primary></indexterm>
+<programlisting language="C">#define GST_PARAM_MUTABLE_PLAYING  (1 &lt;&lt; (G_PARAM_USER_SHIFT + 4))
+</programlisting>
+<para>Use this flag on GObject properties of GstElements to indicate that
+they can be changed when the element is in the PLAYING or lower state.
+This flag implies GST_PARAM_MUTABLE_PAUSED.</para>
+</refsect2>
+<refsect2 id="GST-PARAM-MUTABLE-READY:CAPS" role="macro">
+<title>GST_PARAM_MUTABLE_READY</title>
+<indexterm zone="GST-PARAM-MUTABLE-READY:CAPS"><primary>GST_PARAM_MUTABLE_READY</primary></indexterm>
+<programlisting language="C">#define GST_PARAM_MUTABLE_READY  (1 &lt;&lt; (G_PARAM_USER_SHIFT + 2))
+</programlisting>
+<para>Use this flag on GObject properties of GstElements to indicate that
+they can be changed when the element is in the READY or lower state.</para>
+</refsect2>
+<refsect2 id="GstParamSpecFraction" role="struct">
+<title>struct GstParamSpecFraction</title>
+<indexterm zone="GstParamSpecFraction"><primary>GstParamSpecFraction</primary></indexterm>
+<programlisting language="C">struct GstParamSpecFraction {
+  GParamSpec    parent_instance;
+
+  gint          min_num, min_den;
+  gint          max_num, max_den;
+  gint          def_num, def_den;
+};
+</programlisting>
+<para>A GParamSpec derived structure that contains the meta data for fractional
+properties.</para>
+<refsect3 id="GstParamSpecFraction.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstParamSpecFraction.min-num">min_num</structfield>;</para></entry>
+<entry role="struct_member_description"><para>minimal numerator</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstParamSpecFraction.min-den">min_den</structfield>;</para></entry>
+<entry role="struct_member_description"><para>minimal denominator</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstParamSpecFraction.max-num">max_num</structfield>;</para></entry>
+<entry role="struct_member_description"><para>maximal numerator</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstParamSpecFraction.max-den">max_den</structfield>;</para></entry>
+<entry role="struct_member_description"><para>maximal denominator</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstParamSpecFraction.def-num">def_num</structfield>;</para></entry>
+<entry role="struct_member_description"><para>default numerator</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstParamSpecFraction.def-den">def_den</structfield>;</para></entry>
+<entry role="struct_member_description"><para>default denominator</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

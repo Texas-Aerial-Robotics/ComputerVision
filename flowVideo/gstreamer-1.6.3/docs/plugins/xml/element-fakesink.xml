@@ -1,0 +1,274 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-fakesink">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-fakesink.top_of_page" role="top_of_page">fakesink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fakesink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-fakesink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--can-activate-pull">can-activate-pull</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--can-activate-push">can-activate-push</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--dump">dump</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstFakeSink--last-message">last-message</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--num-buffers">num-buffers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--signal-handoffs">signal-handoffs</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--silent">silent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstFakeSinkStateError"><type>GstFakeSinkStateError</type></link></entry><entry role="property_name"><link linkend="GstFakeSink--state-error">state-error</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstFakeSink-handoff">handoff</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstFakeSink-preroll-handoff">preroll-handoff</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFakeSink"/><refsect1 id="gstreamer-plugins-fakesink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFakeSink-struct">GstFakeSink</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFakeSinkStateError">GstFakeSinkStateError</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstFakeSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-fakesink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Dummy sink that swallows everything.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc num-buffers=1000 ! fakesink sync=false
+]]></programlisting></informalexample> Render 1000 audio buffers (of default size) as fast as possible.
+</refsect2>
+
+<include href="element-fakesink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFakeSink-struct" role="struct">
+<title>struct GstFakeSink</title>
+<indexterm zone="GstFakeSink-struct"><primary>GstFakeSink</primary></indexterm>
+<programlisting language="C">struct GstFakeSink;</programlisting>
+<para>The opaque <link linkend="GstFakeSink"><type>GstFakeSink</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstFakeSinkStateError" role="enum">
+<title>enum GstFakeSinkStateError</title>
+<indexterm zone="GstFakeSinkStateError"><primary>GstFakeSinkStateError</primary></indexterm>
+<para>Possible state change errors for the state-error property.</para>
+<refsect3 id="GstFakeSinkStateError.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-NONE:CAPS">FAKE_SINK_STATE_ERROR_NONE</para></entry>
+<entry role="enum_member_description"><para>no error</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-NULL-READY:CAPS">FAKE_SINK_STATE_ERROR_NULL_READY</para></entry>
+<entry role="enum_member_description"><para>cause the NULL to READY state change to fail</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-READY-PAUSED:CAPS">FAKE_SINK_STATE_ERROR_READY_PAUSED</para></entry>
+<entry role="enum_member_description"><para>cause the READY to PAUSED state change to fail:</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-PAUSED-PLAYING:CAPS">FAKE_SINK_STATE_ERROR_PAUSED_PLAYING</para></entry>
+<entry role="enum_member_description"><para>cause the PAUSED to PLAYING state change to fail:</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-PLAYING-PAUSED:CAPS">FAKE_SINK_STATE_ERROR_PLAYING_PAUSED</para></entry>
+<entry role="enum_member_description"><para>cause the PLAYING to PAUSED state change to fail:</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-PAUSED-READY:CAPS">FAKE_SINK_STATE_ERROR_PAUSED_READY</para></entry>
+<entry role="enum_member_description"><para>cause the PAUSED to READY state change to fail:</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SINK-STATE-ERROR-READY-NULL:CAPS">FAKE_SINK_STATE_ERROR_READY_NULL</para></entry>
+<entry role="enum_member_description"><para>cause the READY to NULL state change to fail:</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFakeSink--can-activate-pull" role="property"><title>The <literal>“can-activate-pull”</literal> property</title>
+<indexterm zone="GstFakeSink--can-activate-pull"><primary>GstFakeSink:can-activate-pull</primary></indexterm>
+<programlisting>  “can-activate-pull”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Can activate in pull mode.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFakeSink--can-activate-push" role="property"><title>The <literal>“can-activate-push”</literal> property</title>
+<indexterm zone="GstFakeSink--can-activate-push"><primary>GstFakeSink:can-activate-push</primary></indexterm>
+<programlisting>  “can-activate-push”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Can activate in push mode.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFakeSink--dump" role="property"><title>The <literal>“dump”</literal> property</title>
+<indexterm zone="GstFakeSink--dump"><primary>GstFakeSink:dump</primary></indexterm>
+<programlisting>  “dump”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Dump buffer contents to stdout.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFakeSink--last-message" role="property"><title>The <literal>“last-message”</literal> property</title>
+<indexterm zone="GstFakeSink--last-message"><primary>GstFakeSink:last-message</primary></indexterm>
+<programlisting>  “last-message”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The message describing current status.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstFakeSink--num-buffers" role="property"><title>The <literal>“num-buffers”</literal> property</title>
+<indexterm zone="GstFakeSink--num-buffers"><primary>GstFakeSink:num-buffers</primary></indexterm>
+<programlisting>  “num-buffers”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of buffers to accept going EOS.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstFakeSink--signal-handoffs" role="property"><title>The <literal>“signal-handoffs”</literal> property</title>
+<indexterm zone="GstFakeSink--signal-handoffs"><primary>GstFakeSink:signal-handoffs</primary></indexterm>
+<programlisting>  “signal-handoffs”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Send a signal before unreffing the buffer.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFakeSink--silent" role="property"><title>The <literal>“silent”</literal> property</title>
+<indexterm zone="GstFakeSink--silent"><primary>GstFakeSink:silent</primary></indexterm>
+<programlisting>  “silent”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Don't produce last_message events.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFakeSink--state-error" role="property"><title>The <literal>“state-error”</literal> property</title>
+<indexterm zone="GstFakeSink--state-error"><primary>GstFakeSink:state-error</primary></indexterm>
+<programlisting>  “state-error”              <link linkend="GstFakeSinkStateError"><type>GstFakeSinkStateError</type></link></programlisting>
+<para>Generate a state change error.</para><para>Flags: Read / Write</para>
+<para>Default value: No state change errors</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstFakeSink-handoff" role="signal"><title>The <literal>“handoff”</literal> signal</title>
+<indexterm zone="GstFakeSink-handoff"><primary>GstFakeSink::handoff</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstFakeSink"><type>GstFakeSink</type></link> *fakesink,
+               <link linkend="GstBuffer"><type>GstBuffer</type></link>   *buffer,
+               <link linkend="GstPad"><type>GstPad</type></link>      *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>     user_data)</programlisting>
+<para>This signal gets emitted before unreffing the buffer.</para>
+<refsect3 id="GstFakeSink-handoff.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>fakesink</para></entry>
+<entry role="parameter_description"><para>the fakesink instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the buffer that just has been received</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad that received it</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstFakeSink-preroll-handoff" role="signal"><title>The <literal>“preroll-handoff”</literal> signal</title>
+<indexterm zone="GstFakeSink-preroll-handoff"><primary>GstFakeSink::preroll-handoff</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstFakeSink"><type>GstFakeSink</type></link> *fakesink,
+               <link linkend="GstBuffer"><type>GstBuffer</type></link>   *buffer,
+               <link linkend="GstPad"><type>GstPad</type></link>      *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>     user_data)</programlisting>
+<para>This signal gets emitted before unreffing the buffer.</para>
+<refsect3 id="GstFakeSink-preroll-handoff.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>fakesink</para></entry>
+<entry role="parameter_description"><para>the fakesink instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the buffer that just has been received</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad that received it</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesink.see-also">
+<title>See Also</title>
+<para><link linkend="GstFakeSrc"><type>GstFakeSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

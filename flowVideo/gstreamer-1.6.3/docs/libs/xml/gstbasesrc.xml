@@ -1,0 +1,1058 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBaseSrc">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBaseSrc.top_of_page">GstBaseSrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBaseSrc</refname>
+<refpurpose>Base class for getrange based source elements</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBaseSrc.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-wait-playing">gst_base_src_wait_playing</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-start-wait">gst_base_src_start_wait</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-start-complete">gst_base_src_start_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-is-live">gst_base_src_is_live</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-live">gst_base_src_set_live</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-format">gst_base_src_set_format</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-query-latency">gst_base_src_query_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-get-blocksize">gst_base_src_get_blocksize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-blocksize">gst_base_src_set_blocksize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-get-do-timestamp">gst_base_src_get_do_timestamp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-do-timestamp">gst_base_src_set_do_timestamp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-dynamic-size">gst_base_src_set_dynamic_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-automatic-eos">gst_base_src_set_automatic_eos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-new-seamless-segment">gst_base_src_new_seamless_segment</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-caps">gst_base_src_set_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-get-allocator">gst_base_src_get_allocator</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferPool"><returnvalue>GstBufferPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-base-src-get-buffer-pool">gst_base_src_get_buffer_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-is-async">gst_base_src_is_async</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-src-set-async">gst_base_src_set_async</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SRC-PAD:CAPS">GST_BASE_SRC_PAD</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SRC-IS-STARTED:CAPS">GST_BASE_SRC_IS_STARTED</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SRC-IS-STARTING:CAPS">GST_BASE_SRC_IS_STARTING</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseSrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstBaseSrc--blocksize">blocksize</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseSrc--do-timestamp">do-timestamp</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstBaseSrc--num-buffers">num-buffers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseSrc--typefind">typefind</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseSrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseSrc-struct">GstBaseSrc</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseSrcClass">GstBaseSrcClass</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstBaseSrcFlags">GstBaseSrcFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseSrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBaseSrc
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+</screen>
+</refsect1>
+
+<refsect1 id="GstBaseSrc.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstbasesrc.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBaseSrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This is a generic base class for source elements. The following
+types of sources are supported:</para>
+<itemizedlist>
+  <listitem><para>random access sources like files</para></listitem>
+  <listitem><para>seekable sources</para></listitem>
+  <listitem><para>live sources</para></listitem>
+</itemizedlist>
+<para>The source can be configured to operate in any <link linkend="GstFormat"><type>GstFormat</type></link> with the
+<link linkend="gst-base-src-set-format"><function>gst_base_src_set_format()</function></link> method. The currently set format determines
+the format of the internal <link linkend="GstSegment"><type>GstSegment</type></link> and any <link linkend="GST-EVENT-SEGMENT:CAPS"><literal>GST_EVENT_SEGMENT</literal></link>
+events. The default format for <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> is <link linkend="GST-FORMAT-BYTES:CAPS"><literal>GST_FORMAT_BYTES</literal></link>.</para>
+<para><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> always supports push mode scheduling. If the following
+conditions are met, it also supports pull mode scheduling:</para>
+<itemizedlist>
+  <listitem><para>The format is set to <link linkend="GST-FORMAT-BYTES:CAPS"><literal>GST_FORMAT_BYTES</literal></link> (default).</para>
+  </listitem>
+  <listitem><para><link linkend="GstBaseSrcClass.is-seekable"><function>GstBaseSrcClass.is_seekable()</function></link> returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+  </listitem>
+</itemizedlist>
+<para>If all the conditions are met for operating in pull mode, <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> is
+automatically seekable in push mode as well. The following conditions must
+be met to make the element seekable in push mode when the format is not
+<link linkend="GST-FORMAT-BYTES:CAPS"><literal>GST_FORMAT_BYTES</literal></link>:</para>
+<itemizedlist>
+  <listitem><para>
+    <link linkend="GstBaseSrcClass.is-seekable"><function>GstBaseSrcClass.is_seekable()</function></link> returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.
+  </para></listitem>
+  <listitem><para>
+    <link linkend="GstBaseSrcClass.query"><function>GstBaseSrcClass.query()</function></link> can convert all supported seek formats to the
+    internal format as set with <link linkend="gst-base-src-set-format"><function>gst_base_src_set_format()</function></link>.
+  </para></listitem>
+  <listitem><para>
+    <link linkend="GstBaseSrcClass.do-seek"><function>GstBaseSrcClass.do_seek()</function></link> is implemented, performs the seek and returns
+     <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.
+  </para></listitem>
+</itemizedlist>
+<para>When the element does not meet the requirements to operate in pull mode, the
+offset and length in the <link linkend="GstBaseSrcClass.create"><function>GstBaseSrcClass.create()</function></link> method should be ignored.
+It is recommended to subclass <link linkend="GstPushSrc"><type>GstPushSrc</type></link> instead, in this situation. If the
+element can operate in pull mode but only with specific offsets and
+lengths, it is allowed to generate an error when the wrong values are passed
+to the <link linkend="GstBaseSrcClass.create"><function>GstBaseSrcClass.create()</function></link> function.</para>
+<para><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> has support for live sources. Live sources are sources that when
+paused discard data, such as audio or video capture devices. A typical live
+source also produces data at a fixed rate and thus provides a clock to publish
+this rate.
+Use <link linkend="gst-base-src-set-live"><function>gst_base_src_set_live()</function></link> to activate the live source mode.</para>
+<para>A live source does not produce data in the PAUSED state. This means that the
+<link linkend="GstBaseSrcClass.create"><function>GstBaseSrcClass.create()</function></link> method will not be called in PAUSED but only in
+PLAYING. To signal the pipeline that the element will not produce data, the
+return value from the READY to PAUSED state will be
+<link linkend="GST-STATE-CHANGE-NO-PREROLL:CAPS"><literal>GST_STATE_CHANGE_NO_PREROLL</literal></link>.</para>
+<para>A typical live source will timestamp the buffers it creates with the
+current running time of the pipeline. This is one reason why a live source
+can only produce data in the PLAYING state, when the clock is actually
+distributed and running.</para>
+<para>Live sources that synchronize and block on the clock (an audio source, for
+example) can use <link linkend="gst-base-src-wait-playing"><function>gst_base_src_wait_playing()</function></link> when the
+<link linkend="GstBaseSrcClass.create"><function>GstBaseSrcClass.create()</function></link> function was interrupted by a state change to
+PAUSED.</para>
+<para>The <link linkend="GstBaseSrcClass.get-times"><function>GstBaseSrcClass.get_times()</function></link> method can be used to implement pseudo-live
+sources. It only makes sense to implement the <link linkend="GstBaseSrcClass.get-times"><function>GstBaseSrcClass.get_times()</function></link>
+function if the source is a live source. The <link linkend="GstBaseSrcClass.get-times"><function>GstBaseSrcClass.get_times()</function></link>
+function should return timestamps starting from 0, as if it were a non-live
+source. The base class will make sure that the timestamps are transformed
+into the current running_time. The base source will then wait for the
+calculated running_time before pushing out the buffer.</para>
+<para>For live sources, the base class will by default report a latency of 0.
+For pseudo live sources, the base class will by default measure the difference
+between the first buffer timestamp and the start time of get_times and will
+report this value as the latency.
+Subclasses should override the query function when this behaviour is not
+acceptable.</para>
+<para>There is only support in <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> for exactly one source pad, which
+should be named "src". A source implementation (subclass of <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link>)
+should install a pad template in its class_init function, like so:</para>
+<informalexample><programlisting><![CDATA[
+static void
+my_element_class_init (GstMyElementClass *klass)
+{
+  GstElementClass *gstelement_class = GST_ELEMENT_CLASS (klass);
+  // srctemplate should be a #GstStaticPadTemplate with direction
+  // %GST_PAD_SRC and name "src"
+  gst_element_class_add_pad_template (gstelement_class,
+      gst_static_pad_template_get (&srctemplate));
+
+  gst_element_class_set_static_metadata (gstelement_class,
+     "Source name",
+     "Source",
+     "My Source element",
+     "The author <my.sink@my.email>");
+}
+]]></programlisting></informalexample>
+<para></para>
+<refsect2>
+<title>Controlled shutdown of live sources in applications</title>
+<para>
+Applications that record from a live source may want to stop recording
+in a controlled way, so that the recording is stopped, but the data
+already in the pipeline is processed to the end (remember that many live
+sources would go on recording forever otherwise). For that to happen the
+application needs to make the source stop recording and send an EOS
+event down the pipeline. The application would then wait for an
+EOS message posted on the pipeline's bus to know when all data has
+been processed and the pipeline can safely be stopped.
+
+An application may send an EOS event to a source element to make it
+perform the EOS logic (send EOS event downstream or post a
+<link linkend="GST-MESSAGE-SEGMENT-DONE:CAPS"><literal>GST_MESSAGE_SEGMENT_DONE</literal></link> on the bus). This can typically be done
+with the <link linkend="gst-element-send-event"><function>gst_element_send_event()</function></link> function on the element or its parent bin.
+
+After the EOS has been sent to the element, the application should wait for
+an EOS message to be posted on the pipeline's bus. Once this EOS message is
+received, it may safely shut down the entire pipeline.
+</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-base-src-wait-playing" role="function">
+<title>gst_base_src_wait_playing&#160;()</title>
+<indexterm zone="gst-base-src-wait-playing"><primary>gst_base_src_wait_playing</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_src_wait_playing (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>);</programlisting>
+<para>If the <link linkend="GstBaseSrcClass.create"><function>GstBaseSrcClass.create()</function></link> method performs its own synchronisation
+against the clock it must unblock when going from PLAYING to the PAUSED state
+and call this method before continuing to produce the remaining data.</para>
+<para>This function will block until a state change to PLAYING happens (in which
+case this function returns <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link>) or the processing must be stopped due
+to a state change to READY or a FLUSH event (in which case this function
+returns <link linkend="GST-FLOW-FLUSHING:CAPS"><literal>GST_FLOW_FLUSHING</literal></link>).</para>
+<refsect3 id="gst-base-src-wait-playing.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the src</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-wait-playing.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link> if <parameter>src</parameter>
+is PLAYING and processing can
+continue. Any other return value should be returned from the create vmethod.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-start-wait" role="function">
+<title>gst_base_src_start_wait&#160;()</title>
+<indexterm zone="gst-base-src-start-wait"><primary>gst_base_src_start_wait</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_src_start_wait (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *basesrc</parameter>);</programlisting>
+<para>Wait until the start operation completes.</para>
+<refsect3 id="gst-base-src-start-wait.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>basesrc</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-start-wait.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-start-complete" role="function">
+<title>gst_base_src_start_complete&#160;()</title>
+<indexterm zone="gst-base-src-start-complete"><primary>gst_base_src_start_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_start_complete (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *basesrc</parameter>,
+                             <parameter><link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> ret</parameter>);</programlisting>
+<para>Complete an asynchronous start operation. When the subclass overrides the
+start method, it should call <link linkend="gst-base-src-start-complete"><function>gst_base_src_start_complete()</function></link> when the start
+operation completes either from the same thread or from an asynchronous
+helper thread.</para>
+<refsect3 id="gst-base-src-start-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>basesrc</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ret</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-is-live" role="function">
+<title>gst_base_src_is_live&#160;()</title>
+<indexterm zone="gst-base-src-is-live"><primary>gst_base_src_is_live</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_src_is_live (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>);</programlisting>
+<para>Check if an element is in live mode.</para>
+<refsect3 id="gst-base-src-is-live.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-is-live.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if element is in live mode.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-live" role="function">
+<title>gst_base_src_set_live&#160;()</title>
+<indexterm zone="gst-base-src-set-live"><primary>gst_base_src_set_live</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_live (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                       <parameter><link linkend="gboolean"><type>gboolean</type></link> live</parameter>);</programlisting>
+<para>If the element listens to a live source, <parameter>live</parameter>
+ should
+be set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+<para>A live source will not produce data in the PAUSED state and
+will therefore not be able to participate in the PREROLL phase
+of a pipeline. To signal this fact to the application and the
+pipeline, the state change return value of the live source will
+be GST_STATE_CHANGE_NO_PREROLL.</para>
+<refsect3 id="gst-base-src-set-live.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>live</para></entry>
+<entry role="parameter_description"><para>new live-mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-format" role="function">
+<title>gst_base_src_set_format&#160;()</title>
+<indexterm zone="gst-base-src-set-format"><primary>gst_base_src_set_format</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_format (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                         <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>Sets the default format of the source. This will be the format used
+for sending SEGMENT events and for performing seeks.</para>
+<para>If a format of GST_FORMAT_BYTES is set, the element will be able to
+operate in pull mode if the <link linkend="GstBaseSrcClass.is-seekable"><function>GstBaseSrcClass.is_seekable()</function></link> returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+<para>This function must only be called in states &lt; <link linkend="GST-STATE-PAUSED:CAPS"><literal>GST_STATE_PAUSED</literal></link>.</para>
+<refsect3 id="gst-base-src-set-format.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-query-latency" role="function">
+<title>gst_base_src_query_latency&#160;()</title>
+<indexterm zone="gst-base-src-query-latency"><primary>gst_base_src_query_latency</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_src_query_latency (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                            <parameter><link linkend="gboolean"><type>gboolean</type></link> *live</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *min_latency</parameter>,
+                            <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *max_latency</parameter>);</programlisting>
+<para>Query the source for the latency parameters. <parameter>live</parameter>
+ will be <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when <parameter>src</parameter>
+ is
+configured as a live source. <parameter>min_latency</parameter>
+ and <parameter>max_latency</parameter>
+ will be set
+to the difference between the running time and the timestamp of the first
+buffer.</para>
+<para>This function is mostly used by subclasses.</para>
+<refsect3 id="gst-base-src-query-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>live</para></entry>
+<entry role="parameter_description"><para> if the source is live. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>min_latency</para></entry>
+<entry role="parameter_description"><para> the min latency of the source. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>max_latency</para></entry>
+<entry role="parameter_description"><para> the max latency of the source. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-query-latency.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the query succeeded.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-get-blocksize" role="function">
+<title>gst_base_src_get_blocksize&#160;()</title>
+<indexterm zone="gst-base-src-get-blocksize"><primary>gst_base_src_get_blocksize</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_base_src_get_blocksize (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>);</programlisting>
+<para>Get the number of bytes that <parameter>src</parameter>
+ will push out with each buffer.</para>
+<refsect3 id="gst-base-src-get-blocksize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-get-blocksize.returns" role="returns">
+<title>Returns</title>
+<para> the number of bytes pushed with each buffer.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-blocksize" role="function">
+<title>gst_base_src_set_blocksize&#160;()</title>
+<indexterm zone="gst-base-src-set-blocksize"><primary>gst_base_src_set_blocksize</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_blocksize (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                            <parameter><link linkend="guint"><type>guint</type></link> blocksize</parameter>);</programlisting>
+<para>Set the number of bytes that <parameter>src</parameter>
+ will push out with each buffer. When
+<parameter>blocksize</parameter>
+ is set to -1, a default length will be used.</para>
+<refsect3 id="gst-base-src-set-blocksize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>blocksize</para></entry>
+<entry role="parameter_description"><para>the new blocksize in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-get-do-timestamp" role="function">
+<title>gst_base_src_get_do_timestamp&#160;()</title>
+<indexterm zone="gst-base-src-get-do-timestamp"><primary>gst_base_src_get_do_timestamp</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_src_get_do_timestamp (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>);</programlisting>
+<para>Query if <parameter>src</parameter>
+ timestamps outgoing buffers based on the current running_time.</para>
+<refsect3 id="gst-base-src-get-do-timestamp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-get-do-timestamp.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the base class will automatically timestamp outgoing buffers.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-do-timestamp" role="function">
+<title>gst_base_src_set_do_timestamp&#160;()</title>
+<indexterm zone="gst-base-src-set-do-timestamp"><primary>gst_base_src_set_do_timestamp</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_do_timestamp (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                               <parameter><link linkend="gboolean"><type>gboolean</type></link> timestamp</parameter>);</programlisting>
+<para>Configure <parameter>src</parameter>
+ to automatically timestamp outgoing buffers based on the
+current running_time of the pipeline. This property is mostly useful for live
+sources.</para>
+<refsect3 id="gst-base-src-set-do-timestamp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>enable or disable timestamping</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-dynamic-size" role="function">
+<title>gst_base_src_set_dynamic_size&#160;()</title>
+<indexterm zone="gst-base-src-set-dynamic-size"><primary>gst_base_src_set_dynamic_size</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_dynamic_size (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                               <parameter><link linkend="gboolean"><type>gboolean</type></link> dynamic</parameter>);</programlisting>
+<para>If not <parameter>dynamic</parameter>
+, size is only updated when needed, such as when trying to
+read past current tracked size.  Otherwise, size is checked for upon each
+read.</para>
+<refsect3 id="gst-base-src-set-dynamic-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dynamic</para></entry>
+<entry role="parameter_description"><para>new dynamic size mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-automatic-eos" role="function" condition="since:1.4">
+<title>gst_base_src_set_automatic_eos&#160;()</title>
+<indexterm zone="gst-base-src-set-automatic-eos" role="1.4"><primary>gst_base_src_set_automatic_eos</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_automatic_eos (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> automatic_eos</parameter>);</programlisting>
+<para>If <parameter>automatic_eos</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, <parameter>src</parameter>
+ will automatically go EOS if a buffer
+after the total size is returned. By default this is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> but sources
+that can't return an authoritative size and only know that they're EOS
+when trying to read more should set this to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<refsect3 id="gst-base-src-set-automatic-eos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>automatic_eos</para></entry>
+<entry role="parameter_description"><para>automatic eos</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-base-src-new-seamless-segment" role="function">
+<title>gst_base_src_new_seamless_segment&#160;()</title>
+<indexterm zone="gst-base-src-new-seamless-segment"><primary>gst_base_src_new_seamless_segment</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_src_new_seamless_segment (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                                   <parameter><link linkend="gint64"><type>gint64</type></link> start</parameter>,
+                                   <parameter><link linkend="gint64"><type>gint64</type></link> stop</parameter>,
+                                   <parameter><link linkend="gint64"><type>gint64</type></link> time</parameter>);</programlisting>
+<para>Prepare a new seamless segment for emission downstream. This function must
+only be called by derived sub-classes, and only from the <link linkend="create"><function>create()</function></link> function,
+as the stream-lock needs to be held.</para>
+<para>The format for the new segment will be the current format of the source, as
+configured with <link linkend="gst-base-src-set-format"><function>gst_base_src_set_format()</function></link></para>
+<refsect3 id="gst-base-src-new-seamless-segment.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>The source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>The new start value for the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop</para></entry>
+<entry role="parameter_description"><para>Stop value for the new segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>The new time value for the start of the new segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-new-seamless-segment.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if preparation of the seamless segment succeeded.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-caps" role="function">
+<title>gst_base_src_set_caps&#160;()</title>
+<indexterm zone="gst-base-src-set-caps"><primary>gst_base_src_set_caps</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_src_set_caps (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                       <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Set new caps on the basesrc source pad.</para>
+<refsect3 id="gst-base-src-set-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstCaps"><type>GstCaps</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-set-caps.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the caps could be set</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-get-allocator" role="function">
+<title>gst_base_src_get_allocator&#160;()</title>
+<indexterm zone="gst-base-src-get-allocator"><primary>gst_base_src_get_allocator</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_get_allocator (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                            <parameter><link linkend="GstAllocator"><type>GstAllocator</type></link> **allocator</parameter>,
+                            <parameter><link linkend="GstAllocationParams"><type>GstAllocationParams</type></link> *params</parameter>);</programlisting>
+<para>Lets <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> sub-classes to know the memory <parameter>allocator</parameter>
+
+used by the base class and its <parameter>params</parameter>
+.</para>
+<para>Unref the <parameter>allocator</parameter>
+ after usage.</para>
+<refsect3 id="gst-base-src-get-allocator.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>allocator</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstAllocator"><type>GstAllocator</type></link>
+used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>params</para></entry>
+<entry role="parameter_description"><para> the
+<link linkend="GstAllocationParams"><type>GstAllocationParams</type></link> of <parameter>allocator</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-get-buffer-pool" role="function">
+<title>gst_base_src_get_buffer_pool&#160;()</title>
+<indexterm zone="gst-base-src-get-buffer-pool"><primary>gst_base_src_get_buffer_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferPool"><returnvalue>GstBufferPool</returnvalue></link>&#160;*
+gst_base_src_get_buffer_pool (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>);</programlisting>
+<refsect3 id="gst-base-src-get-buffer-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-get-buffer-pool.returns" role="returns">
+<title>Returns</title>
+<para> the instance of the <link linkend="GstBufferPool"><type>GstBufferPool</type></link> used
+by the src; unref it after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-is-async" role="function">
+<title>gst_base_src_is_async&#160;()</title>
+<indexterm zone="gst-base-src-is-async"><primary>gst_base_src_is_async</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_src_is_async (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>);</programlisting>
+<para>Get the current async behaviour of <parameter>src</parameter>
+. See also <link linkend="gst-base-src-set-async"><function>gst_base_src_set_async()</function></link>.</para>
+<refsect3 id="gst-base-src-is-async.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-src-is-async.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>src</parameter>
+is operating in async mode.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-src-set-async" role="function">
+<title>gst_base_src_set_async&#160;()</title>
+<indexterm zone="gst-base-src-set-async"><primary>gst_base_src_set_async</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_src_set_async (<parameter><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> *src</parameter>,
+                        <parameter><link linkend="gboolean"><type>gboolean</type></link> async</parameter>);</programlisting>
+<para>Configure async behaviour in <parameter>src</parameter>
+, no state change will block. The open,
+close, start, stop, play and pause virtual methods will be executed in a
+different thread and are thus allowed to perform blocking operations. Any
+blocking operation should be unblocked with the unlock vmethod.</para>
+<refsect3 id="gst-base-src-set-async.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>async</para></entry>
+<entry role="parameter_description"><para>new async mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-SRC-PAD:CAPS" role="macro">
+<title>GST_BASE_SRC_PAD()</title>
+<indexterm zone="GST-BASE-SRC-PAD:CAPS"><primary>GST_BASE_SRC_PAD</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SRC_PAD(obj)                 (GST_BASE_SRC_CAST (obj)-&gt;srcpad)
+</programlisting>
+<para>Gives the pointer to the <link linkend="GstPad"><type>GstPad</type></link> object of the element.</para>
+<refsect3 id="GST-BASE-SRC-PAD.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>base source instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-SRC-IS-STARTED:CAPS" role="macro">
+<title>GST_BASE_SRC_IS_STARTED()</title>
+<indexterm zone="GST-BASE-SRC-IS-STARTED:CAPS"><primary>GST_BASE_SRC_IS_STARTED</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SRC_IS_STARTED(obj)  GST_OBJECT_FLAG_IS_SET ((obj), GST_BASE_SRC_FLAG_STARTED)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SRC-IS-STARTING:CAPS" role="macro">
+<title>GST_BASE_SRC_IS_STARTING()</title>
+<indexterm zone="GST-BASE-SRC-IS-STARTING:CAPS"><primary>GST_BASE_SRC_IS_STARTING</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SRC_IS_STARTING(obj) GST_OBJECT_FLAG_IS_SET ((obj), GST_BASE_SRC_FLAG_STARTING)
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBaseSrc-struct" role="struct">
+<title>struct GstBaseSrc</title>
+<indexterm zone="GstBaseSrc-struct"><primary>GstBaseSrc</primary></indexterm>
+<programlisting language="C">struct GstBaseSrc;</programlisting>
+<para>The opaque <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstBaseSrcClass" role="struct">
+<title>struct GstBaseSrcClass</title>
+<indexterm zone="GstBaseSrcClass"><primary>GstBaseSrcClass</primary></indexterm>
+<programlisting language="C">struct GstBaseSrcClass {
+  GstElementClass parent_class;
+
+  /* virtual methods for subclasses */
+
+  /* get caps from subclass */
+  GstCaps*      (*get_caps)     (GstBaseSrc *src, GstCaps *filter);
+  /* decide on caps */
+  gboolean      (*negotiate)    (GstBaseSrc *src);
+  /* called if, in negotiation, caps need fixating */
+  GstCaps *     (*fixate)       (GstBaseSrc *src, GstCaps *caps);
+  /* notify the subclass of new caps */
+  gboolean      (*set_caps)     (GstBaseSrc *src, GstCaps *caps);
+
+  /* setup allocation query */
+  gboolean      (*decide_allocation)   (GstBaseSrc *src, GstQuery *query);
+
+  /* start and stop processing, ideal for opening/closing the resource */
+  gboolean      (*start)        (GstBaseSrc *src);
+  gboolean      (*stop)         (GstBaseSrc *src);
+
+  /* given a buffer, return start and stop time when it should be pushed
+   * out. The base class will sync on the clock using these times. */
+  void          (*get_times)    (GstBaseSrc *src, GstBuffer *buffer,
+                                 GstClockTime *start, GstClockTime *end);
+
+  /* get the total size of the resource in the format set by
+   * gst_base_src_set_format() */
+  gboolean      (*get_size)     (GstBaseSrc *src, guint64 *size);
+
+  /* check if the resource is seekable */
+  gboolean      (*is_seekable)  (GstBaseSrc *src);
+
+  /* Prepare the segment on which to perform do_seek(), converting to the
+   * current basesrc format. */
+  gboolean      (*prepare_seek_segment) (GstBaseSrc *src, GstEvent *seek,
+                                         GstSegment *segment);
+  /* notify subclasses of a seek */
+  gboolean      (*do_seek)      (GstBaseSrc *src, GstSegment *segment);
+
+  /* unlock any pending access to the resource. subclasses should unlock
+   * any function ASAP. */
+  gboolean      (*unlock)       (GstBaseSrc *src);
+  /* Clear any pending unlock request, as we succeeded in unlocking */
+  gboolean      (*unlock_stop)  (GstBaseSrc *src);
+
+  /* notify subclasses of a query */
+  gboolean      (*query)        (GstBaseSrc *src, GstQuery *query);
+
+  /* notify subclasses of an event */
+  gboolean      (*event)        (GstBaseSrc *src, GstEvent *event);
+
+  /* ask the subclass to create a buffer with offset and size, the default
+   * implementation will call alloc and fill. */
+  GstFlowReturn (*create)       (GstBaseSrc *src, guint64 offset, guint size,
+                                 GstBuffer **buf);
+  /* ask the subclass to allocate an output buffer. The default implementation
+   * will use the negotiated allocator. */
+  GstFlowReturn (*alloc)        (GstBaseSrc *src, guint64 offset, guint size,
+                                 GstBuffer **buf);
+  /* ask the subclass to fill the buffer with data from offset and size */
+  GstFlowReturn (*fill)         (GstBaseSrc *src, guint64 offset, guint size,
+                                 GstBuffer *buf);
+};
+</programlisting>
+<para>Subclasses can override any of the available virtual methods or not, as
+needed. At the minimum, the <parameter>create</parameter>
+ method should be overridden to produce
+buffers.</para>
+<refsect3 id="GstBaseSrcClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.get-caps">get_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to get the caps to report</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.negotiate">negotiate</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Negotiated the caps with the peer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.fixate">fixate</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called during negotiation if caps need fixating. Implement instead of
+setting a fixate function on the source pad.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.set-caps">set_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Notify subclass of changed output caps</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.decide-allocation">decide_allocation</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>configure the allocation query</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.start">start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start processing. Subclasses should open resources and prepare
+to produce data. Implementation should call <link linkend="gst-base-src-start-complete"><function>gst_base_src_start_complete()</function></link>
+when the operation completes, either from the current thread or any other
+thread that finishes the start operation asynchronously.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.stop">stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Stop processing. Subclasses should use this to close resources.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.get-times">get_times</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Given a buffer, return the start and stop time when it
+should be pushed out. The base class will sync on the clock using
+these times.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.get-size">get_size</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Return the total size of the resource, in the format set by
+<link linkend="gst-base-src-set-format"><function>gst_base_src_set_format()</function></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.is-seekable">is_seekable</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Check if the source can seek</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.prepare-seek-segment">prepare_seek_segment</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Prepare the <link linkend="GstSegment"><type>GstSegment</type></link> that will be passed to the
+<link linkend="GstBaseSrcClass.do-seek"><function>GstBaseSrcClass.do_seek()</function></link> vmethod for executing a seek
+request. Sub-classes should override this if they support seeking in
+formats other than the configured native format. By default, it tries to
+convert the seek arguments to the configured native format and prepare a
+segment in that format.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.do-seek">do_seek</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Perform seeking on the resource to the indicated segment.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.unlock">unlock</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Unlock any pending access to the resource. Subclasses should unblock
+any blocked function ASAP. In particular, any <link linkend="create"><function>create()</function></link> function in
+progress should be unblocked and should return GST_FLOW_FLUSHING. Any
+future <link linkend="GstBaseSrcClass.create"><function>GstBaseSrcClass.create()</function></link> function call should also return
+GST_FLOW_FLUSHING until the <link linkend="GstBaseSrcClass.unlock-stop"><function>GstBaseSrcClass.unlock_stop()</function></link> function has
+been called.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.unlock-stop">unlock_stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Clear the previous unlock request. Subclasses should clear any
+state they set during <link linkend="GstBaseSrcClass.unlock"><function>GstBaseSrcClass.unlock()</function></link>, such as clearing command
+queues.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.query">query</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Handle a requested query.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.event">event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Override this to implement custom event handling.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.create">create</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Ask the subclass to create a buffer with offset and size.  When the
+subclass returns GST_FLOW_OK, it MUST return a buffer of the requested size
+unless fewer bytes are available because an EOS condition is near. No
+buffer should be returned when the return value is different from
+GST_FLOW_OK. A return value of GST_FLOW_EOS signifies that the end of
+stream is reached. The default implementation will call
+<link linkend="GstBaseSrcClass.alloc"><function>GstBaseSrcClass.alloc()</function></link> and then call <link linkend="GstBaseSrcClass.fill"><function>GstBaseSrcClass.fill()</function></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.alloc">alloc</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Ask the subclass to allocate a buffer with for offset and size. The
+default implementation will create a new buffer from the negotiated allocator.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSrcClass.fill">fill</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Ask the subclass to fill the buffer with data for offset and size. The
+passed buffer is guaranteed to hold the requested amount of bytes.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstBaseSrcFlags" role="enum">
+<title>enum GstBaseSrcFlags</title>
+<indexterm zone="GstBaseSrcFlags"><primary>GstBaseSrcFlags</primary></indexterm>
+<para>The <link linkend="GstElement"><type>GstElement</type></link> flags that a basesrc element may have.</para>
+<refsect3 id="GstBaseSrcFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-SRC-FLAG-STARTING:CAPS">GST_BASE_SRC_FLAG_STARTING</para></entry>
+<entry role="enum_member_description"><para>has source is starting</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-SRC-FLAG-STARTED:CAPS">GST_BASE_SRC_FLAG_STARTED</para></entry>
+<entry role="enum_member_description"><para>has source been started</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-BASE-SRC-FLAG-LAST:CAPS">GST_BASE_SRC_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>offset to define more flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstBaseSrc--blocksize" role="property"><title>The <literal>“blocksize”</literal> property</title>
+<indexterm zone="GstBaseSrc--blocksize"><primary>GstBaseSrc:blocksize</primary></indexterm>
+<programlisting>  “blocksize”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Size in bytes to read per buffer (-1 = default).</para><para>Flags: Read / Write</para>
+<para>Default value: 4096</para>
+</refsect2>
+<refsect2 id="GstBaseSrc--do-timestamp" role="property"><title>The <literal>“do-timestamp”</literal> property</title>
+<indexterm zone="GstBaseSrc--do-timestamp"><primary>GstBaseSrc:do-timestamp</primary></indexterm>
+<programlisting>  “do-timestamp”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Apply current stream time to buffers.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstBaseSrc--num-buffers" role="property"><title>The <literal>“num-buffers”</literal> property</title>
+<indexterm zone="GstBaseSrc--num-buffers"><primary>GstBaseSrc:num-buffers</primary></indexterm>
+<programlisting>  “num-buffers”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of buffers to output before sending EOS (-1 = unlimited).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= -1</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstBaseSrc--typefind" role="property"><title>The <literal>“typefind”</literal> property</title>
+<indexterm zone="GstBaseSrc--typefind"><primary>GstBaseSrc:typefind</primary></indexterm>
+<programlisting>  “typefind”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Run typefind before negotiating.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSrc.see-also">
+<title>See Also</title>
+<para><link linkend="GstPushSrc"><type>GstPushSrc</type></link>, <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link>, <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para>
+
+</refsect1>
+
+</refentry>

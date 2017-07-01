@@ -1,0 +1,1311 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstCheck">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstCheck.top_of_page">GstCheck</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstCheck</refname>
+<refpurpose>Common code for GStreamer unit tests</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstCheck.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-START-TEST:CAPS">GST_START_TEST</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-BUFFER-REFCOUNT:CAPS">ASSERT_BUFFER_REFCOUNT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-CAPS-REFCOUNT:CAPS">ASSERT_CAPS_REFCOUNT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-CRITICAL:CAPS">ASSERT_CRITICAL</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-WARNING:CAPS">ASSERT_WARNING</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-MINI-OBJECT-REFCOUNT:CAPS">ASSERT_MINI_OBJECT_REFCOUNT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-OBJECT-REFCOUNT:CAPS">ASSERT_OBJECT_REFCOUNT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-OBJECT-REFCOUNT-BETWEEN:CAPS">ASSERT_OBJECT_REFCOUNT_BETWEEN</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="ASSERT-SET-STATE:CAPS">ASSERT_SET_STATE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-int">fail_unless_equals_int</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-float">fail_unless_equals_float</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-string">fail_unless_equals_string</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-uint64">fail_unless_equals_uint64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-int64">fail_unless_equals_int64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-int-hex">fail_unless_equals_int_hex</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-int64-hex">fail_unless_equals_int64_hex</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-uint64-hex">fail_unless_equals_uint64_hex</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-equals-pointer">fail_unless_equals_pointer</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fail-unless-message-error">fail_unless_message_error</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-int">assert_equals_int</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-float">assert_equals_float</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-string">assert_equals_string</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-uint64">assert_equals_uint64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-int64">assert_equals_int64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-int-hex">assert_equals_int_hex</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-int64-hex">assert_equals_int64_hex</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-uint64-hex">assert_equals_uint64_hex</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-equals-pointer">assert_equals_pointer</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="assert-message-error">assert_message_error</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-init">gst_check_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-message-error">gst_check_message_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-element">gst_check_setup_element</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-sink-pad">gst_check_setup_sink_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-src-pad">gst_check_setup_src_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-sink-pad-by-name">gst_check_setup_sink_pad_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-src-pad-by-name">gst_check_setup_src_pad_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-teardown-pad-by-name">gst_check_teardown_pad_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-teardown-element">gst_check_teardown_element</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-teardown-sink-pad">gst_check_teardown_sink_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-teardown-src-pad">gst_check_teardown_src_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-drop-buffers">gst_check_drop_buffers</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-buffer-data">gst_check_buffer_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-caps-equal">gst_check_caps_equal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-element-push-buffer-list">gst_check_element_push_buffer_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-element-push-buffer">gst_check_element_push_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-run-suite">gst_check_run_suite</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-setup-events">gst_check_setup_events</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-setup-events-with-stream-id">gst_check_setup_events_with_stream_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-sink-pad-by-name-from-template">gst_check_setup_sink_pad_by_name_from_template</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-sink-pad-from-template">gst_check_setup_sink_pad_from_template</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-src-pad-by-name-from-template">gst_check_setup_src_pad_by_name_from_template</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-check-setup-src-pad-from-template">gst_check_setup_src_pad_from_template</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-objects-destroyed-on-unref">gst_check_objects_destroyed_on_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-check-object-destroyed-on-unref">gst_check_object_destroyed_on_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstCheck.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-END-TEST:CAPS">GST_END_TEST</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstCheck.includes"><title>Includes</title><synopsis>#include &lt;gst/check/gstcheck.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstCheck.description" role="desc">
+<title role="desc.title">Description</title>
+<para>These macros and functions are for internal use of the unit tests found
+inside the 'check' directories of various GStreamer packages.</para>
+<para>One notable feature is that one can use the environment variables GST_CHECKS
+and GST_CHECKS_IGNORE to select which tests to run or skip. Both variables
+can contain a comma separated list of test name globs (e.g. test_*).</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstCheck.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-START-TEST:CAPS" role="macro">
+<title>GST_START_TEST()</title>
+<indexterm zone="GST-START-TEST:CAPS"><primary>GST_START_TEST</primary></indexterm>
+<programlisting language="C">#define             GST_START_TEST(__testname)</programlisting>
+<para>wrapper for checks START_TEST</para>
+<refsect3 id="GST-START-TEST.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>__testname</para></entry>
+<entry role="parameter_description"><para>test function name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="ASSERT-BUFFER-REFCOUNT:CAPS" role="macro">
+<title>ASSERT_BUFFER_REFCOUNT()</title>
+<indexterm zone="ASSERT-BUFFER-REFCOUNT:CAPS"><primary>ASSERT_BUFFER_REFCOUNT</primary></indexterm>
+<programlisting language="C">#define             ASSERT_BUFFER_REFCOUNT(buffer, name, value)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-CAPS-REFCOUNT:CAPS" role="macro">
+<title>ASSERT_CAPS_REFCOUNT()</title>
+<indexterm zone="ASSERT-CAPS-REFCOUNT:CAPS"><primary>ASSERT_CAPS_REFCOUNT</primary></indexterm>
+<programlisting language="C">#define             ASSERT_CAPS_REFCOUNT(caps, name, value)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-CRITICAL:CAPS" role="macro">
+<title>ASSERT_CRITICAL()</title>
+<indexterm zone="ASSERT-CRITICAL:CAPS"><primary>ASSERT_CRITICAL</primary></indexterm>
+<programlisting language="C">#define             ASSERT_CRITICAL(code)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-WARNING:CAPS" role="macro">
+<title>ASSERT_WARNING()</title>
+<indexterm zone="ASSERT-WARNING:CAPS"><primary>ASSERT_WARNING</primary></indexterm>
+<programlisting language="C">#define             ASSERT_WARNING(code)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-MINI-OBJECT-REFCOUNT:CAPS" role="macro">
+<title>ASSERT_MINI_OBJECT_REFCOUNT()</title>
+<indexterm zone="ASSERT-MINI-OBJECT-REFCOUNT:CAPS"><primary>ASSERT_MINI_OBJECT_REFCOUNT</primary></indexterm>
+<programlisting language="C">#define             ASSERT_MINI_OBJECT_REFCOUNT(miniobj, name, value)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-OBJECT-REFCOUNT:CAPS" role="macro">
+<title>ASSERT_OBJECT_REFCOUNT()</title>
+<indexterm zone="ASSERT-OBJECT-REFCOUNT:CAPS"><primary>ASSERT_OBJECT_REFCOUNT</primary></indexterm>
+<programlisting language="C">#define             ASSERT_OBJECT_REFCOUNT(object, name, value)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-OBJECT-REFCOUNT-BETWEEN:CAPS" role="macro">
+<title>ASSERT_OBJECT_REFCOUNT_BETWEEN()</title>
+<indexterm zone="ASSERT-OBJECT-REFCOUNT-BETWEEN:CAPS"><primary>ASSERT_OBJECT_REFCOUNT_BETWEEN</primary></indexterm>
+<programlisting language="C">#define             ASSERT_OBJECT_REFCOUNT_BETWEEN(object, name, lower, upper)</programlisting>
+</refsect2>
+<refsect2 id="ASSERT-SET-STATE:CAPS" role="macro">
+<title>ASSERT_SET_STATE()</title>
+<indexterm zone="ASSERT-SET-STATE:CAPS"><primary>ASSERT_SET_STATE</primary></indexterm>
+<programlisting language="C">#define             ASSERT_SET_STATE(element, state, ret)</programlisting>
+</refsect2>
+<refsect2 id="fail-unless-equals-int" role="macro">
+<title>fail_unless_equals_int()</title>
+<indexterm zone="fail-unless-equals-int"><primary>fail_unless_equals_int</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_int(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to. This
+macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-int.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fail-unless-equals-float" role="macro">
+<title>fail_unless_equals_float()</title>
+<indexterm zone="fail-unless-equals-float"><primary>fail_unless_equals_float</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_float(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are (almost) equal and aborts if this
+is not the case, printing both expressions and the values they evaluated
+to. This macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-float.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gdouble"><type>gdouble</type></link> or <link linkend="gfloat"><type>gfloat</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gdouble"><type>gdouble</type></link> or <link linkend="gfloat"><type>gfloat</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fail-unless-equals-string" role="macro">
+<title>fail_unless_equals_string()</title>
+<indexterm zone="fail-unless-equals-string"><primary>fail_unless_equals_string</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_string(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal (as per strcmp) and aborts if
+this is not the case, printing both expressions and the values they
+evaluated to. This macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a string literal or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a string literal or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fail-unless-equals-uint64" role="macro">
+<title>fail_unless_equals_uint64()</title>
+<indexterm zone="fail-unless-equals-uint64"><primary>fail_unless_equals_uint64</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_uint64(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to. This
+macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-uint64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint64"><type>guint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint64"><type>guint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fail-unless-equals-int64" role="macro">
+<title>fail_unless_equals_int64()</title>
+<indexterm zone="fail-unless-equals-int64"><primary>fail_unless_equals_int64</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_int64(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to. This
+macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-int64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fail-unless-equals-int-hex" role="macro" condition="since:1.2">
+<title>fail_unless_equals_int_hex()</title>
+<indexterm zone="fail-unless-equals-int-hex" role="1.2"><primary>fail_unless_equals_int_hex</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_int_hex(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to in
+hexadecimal format. This macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-int-hex.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="fail-unless-equals-int64-hex" role="macro" condition="since:1.2">
+<title>fail_unless_equals_int64_hex()</title>
+<indexterm zone="fail-unless-equals-int64-hex" role="1.2"><primary>fail_unless_equals_int64_hex</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_int64_hex(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to in
+hexadecimal format. This macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-int64-hex.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="fail-unless-equals-uint64-hex" role="macro" condition="since:1.2">
+<title>fail_unless_equals_uint64_hex()</title>
+<indexterm zone="fail-unless-equals-uint64-hex" role="1.2"><primary>fail_unless_equals_uint64_hex</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_uint64_hex(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to in
+hexadecimal format. This macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-uint64-hex.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="fail-unless-equals-pointer" role="macro" condition="since:1.2">
+<title>fail_unless_equals_pointer()</title>
+<indexterm zone="fail-unless-equals-pointer" role="1.2"><primary>fail_unless_equals_pointer</primary></indexterm>
+<programlisting language="C">#define             fail_unless_equals_pointer(a, b)</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this
+is not the case, printing both expressions and the values they
+evaluated to. This macro is for use in unit tests.</para>
+<refsect3 id="fail-unless-equals-pointer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a pointer value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a pointer value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="fail-unless-message-error" role="macro">
+<title>fail_unless_message_error()</title>
+<indexterm zone="fail-unless-message-error"><primary>fail_unless_message_error</primary></indexterm>
+<programlisting language="C">#define             fail_unless_message_error(msg, domain, code)</programlisting>
+</refsect2>
+<refsect2 id="assert-equals-int" role="macro">
+<title>assert_equals_int()</title>
+<indexterm zone="assert-equals-int"><primary>assert_equals_int</primary></indexterm>
+<programlisting language="C">#define assert_equals_int(a, b) fail_unless_equals_int(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to. This
+macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-int.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="assert-equals-float" role="macro">
+<title>assert_equals_float()</title>
+<indexterm zone="assert-equals-float"><primary>assert_equals_float</primary></indexterm>
+<programlisting language="C">#define assert_equals_float(a, b) fail_unless_equals_float(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are (almost) equal and aborts if this
+is not the case, printing both expressions and the values they evaluated
+to. This macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-float.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gdouble"><type>gdouble</type></link> or <link linkend="gfloat"><type>gfloat</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gdouble"><type>gdouble</type></link> or <link linkend="gfloat"><type>gfloat</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="assert-equals-string" role="macro">
+<title>assert_equals_string()</title>
+<indexterm zone="assert-equals-string"><primary>assert_equals_string</primary></indexterm>
+<programlisting language="C">#define assert_equals_string(a, b) fail_unless_equals_string(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal (as per strcmp) and aborts if
+this is not the case, printing both expressions and the values they
+evaluated to. This macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a string literal or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a string literal or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="assert-equals-uint64" role="macro">
+<title>assert_equals_uint64()</title>
+<indexterm zone="assert-equals-uint64"><primary>assert_equals_uint64</primary></indexterm>
+<programlisting language="C">#define assert_equals_uint64(a, b) fail_unless_equals_uint64(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to. This
+macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-uint64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint64"><type>guint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint64"><type>guint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="assert-equals-int64" role="macro">
+<title>assert_equals_int64()</title>
+<indexterm zone="assert-equals-int64"><primary>assert_equals_int64</primary></indexterm>
+<programlisting language="C">#define assert_equals_int64(a, b) fail_unless_equals_int64(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to. This
+macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-int64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="assert-equals-int-hex" role="macro" condition="since:1.2">
+<title>assert_equals_int_hex()</title>
+<indexterm zone="assert-equals-int-hex" role="1.2"><primary>assert_equals_int_hex</primary></indexterm>
+<programlisting language="C">#define assert_equals_int_hex(a, b) fail_unless_equals_int_hex(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to in
+hexadecimal format. This macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-int-hex.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint"><type>gint</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="assert-equals-int64-hex" role="macro" condition="since:1.2">
+<title>assert_equals_int64_hex()</title>
+<indexterm zone="assert-equals-int64-hex" role="1.2"><primary>assert_equals_int64_hex</primary></indexterm>
+<programlisting language="C">#define assert_equals_int64_hex(a,b) fail_unless_equals_int64_hex(a,b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to in
+hexadecimal format. This macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-int64-hex.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gint64"><type>gint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="assert-equals-uint64-hex" role="macro" condition="since:1.2">
+<title>assert_equals_uint64_hex()</title>
+<indexterm zone="assert-equals-uint64-hex" role="1.2"><primary>assert_equals_uint64_hex</primary></indexterm>
+<programlisting language="C">#define assert_equals_uint64_hex(a,b) fail_unless_equals_uint64_hex(a,b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this is not the
+case, printing both expressions and the values they evaluated to in
+hexadecimal format. This macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-uint64-hex.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint64"><type>guint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint64"><type>guint64</type></link> value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="assert-equals-pointer" role="macro" condition="since:1.2">
+<title>assert_equals_pointer()</title>
+<indexterm zone="assert-equals-pointer" role="1.2"><primary>assert_equals_pointer</primary></indexterm>
+<programlisting language="C">#define assert_equals_pointer(a, b) fail_unless_equals_pointer(a, b)
+</programlisting>
+<para>This macro checks that <parameter>a</parameter>
+ and <parameter>b</parameter>
+ are equal and aborts if this
+is not the case, printing both expressions and the values they
+evaluated to. This macro is for use in unit tests.</para>
+<refsect3 id="assert-equals-pointer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>a pointer value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>a pointer value or expression</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="assert-message-error" role="macro">
+<title>assert_message_error()</title>
+<indexterm zone="assert-message-error"><primary>assert_message_error</primary></indexterm>
+<programlisting language="C">#define assert_message_error(m, d, c) fail_unless_message_error(m, d, c)
+</programlisting>
+</refsect2>
+<refsect2 id="gst-check-init" role="function">
+<title>gst_check_init&#160;()</title>
+<indexterm zone="gst-check-init"><primary>gst_check_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_init (<parameter><link linkend="int"><type>int</type></link> *argc</parameter>,
+                <parameter><link linkend="char"><type>char</type></link> **argv[]</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-message-error" role="function">
+<title>gst_check_message_error&#160;()</title>
+<indexterm zone="gst-check-message-error"><primary>gst_check_message_error</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_message_error (<parameter><link linkend="GstMessage"><type>GstMessage</type></link> *message</parameter>,
+                         <parameter><link linkend="GstMessageType"><type>GstMessageType</type></link> type</parameter>,
+                         <parameter><link linkend="GQuark"><type>GQuark</type></link> domain</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> code</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-setup-element" role="function">
+<title>gst_check_setup_element&#160;()</title>
+<indexterm zone="gst-check-setup-element"><primary>gst_check_setup_element</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_check_setup_element (<parameter>const <link linkend="gchar"><type>gchar</type></link> *factory</parameter>);</programlisting>
+<para>setup an element for a filter test with mysrcpad and mysinkpad</para>
+<refsect3 id="gst-check-setup-element.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-element.returns" role="returns">
+<title>Returns</title>
+<para> a new element. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-check-setup-sink-pad" role="function">
+<title>gst_check_setup_sink_pad&#160;()</title>
+<indexterm zone="gst-check-setup-sink-pad"><primary>gst_check_setup_sink_pad</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_sink_pad (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                          <parameter><link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> *tmpl</parameter>);</programlisting>
+<para>Does the same as <link linkend="gst-check-setup-sink-pad-by-name"><type>gst_check_setup_sink_pad_by_name</type></link> with the <emphasis> name </emphasis> parameter equal to "src".</para>
+<refsect3 id="gst-check-setup-sink-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-sink-pad.returns" role="returns">
+<title>Returns</title>
+<para> a new pad that can be used to check the output of <parameter>element</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-check-setup-src-pad" role="function">
+<title>gst_check_setup_src_pad&#160;()</title>
+<indexterm zone="gst-check-setup-src-pad"><primary>gst_check_setup_src_pad</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_src_pad (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                         <parameter><link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> *tmpl</parameter>);</programlisting>
+<para>Does the same as <link linkend="gst-check-setup-src-pad-by-name"><type>gst_check_setup_src_pad_by_name</type></link> with the <emphasis> name </emphasis> parameter equal to "sink".</para>
+<refsect3 id="gst-check-setup-src-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-src-pad.returns" role="returns">
+<title>Returns</title>
+<para> A new pad that can be used to inject data on <parameter>element</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-check-setup-sink-pad-by-name" role="function">
+<title>gst_check_setup_sink_pad_by_name&#160;()</title>
+<indexterm zone="gst-check-setup-sink-pad-by-name"><primary>gst_check_setup_sink_pad_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_sink_pad_by_name (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                  <parameter><link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> *tmpl</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Creates a new sink pad (based on the given <parameter>tmpl</parameter>
+) and links it to the given <parameter>element</parameter>
+ src pad 
+(the pad that matches the given <parameter>name</parameter>
+).
+You can set event/chain/query functions on this pad to check the output of the <parameter>element</parameter>
+.</para>
+<refsect3 id="gst-check-setup-sink-pad-by-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>Name of the <parameter>element</parameter>
+src pad that will be linked to the sink pad that will be setup</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-sink-pad-by-name.returns" role="returns">
+<title>Returns</title>
+<para> a new pad that can be used to check the output of <parameter>element</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-check-setup-src-pad-by-name" role="function">
+<title>gst_check_setup_src_pad_by_name&#160;()</title>
+<indexterm zone="gst-check-setup-src-pad-by-name"><primary>gst_check_setup_src_pad_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_src_pad_by_name (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                 <parameter><link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> *tmpl</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Creates a new src pad (based on the given <parameter>tmpl</parameter>
+) and links it to the given <parameter>element</parameter>
+ sink pad (the pad that matches the given <parameter>name</parameter>
+).
+Before using the src pad to push data on <parameter>element</parameter>
+ you need to call <link linkend="gst-check-setup-events"><type>gst_check_setup_events</type></link> on the created src pad.</para>
+<para>Example of how to push a buffer on <parameter>element</parameter>
+:</para>
+<informalexample><programlisting language="C"><![CDATA[
+static GstStaticPadTemplate sinktemplate = GST_STATIC_PAD_TEMPLATE ("sink",
+GST_PAD_SINK,
+GST_PAD_ALWAYS,
+GST_STATIC_CAPS (YOUR_CAPS_TEMPLATE_STRING)
+);
+static GstStaticPadTemplate srctemplate = GST_STATIC_PAD_TEMPLATE ("src",
+GST_PAD_SRC,
+GST_PAD_ALWAYS,
+GST_STATIC_CAPS (YOUR_CAPS_TEMPLATE_STRING)
+);
+
+GstElement * element = gst_check_setup_element ("element");
+GstPad * mysrcpad = gst_check_setup_src_pad (element, &srctemplate);
+GstPad * mysinkpad = gst_check_setup_sink_pad (element, &sinktemplate);
+
+gst_pad_set_active (mysrcpad, TRUE);
+gst_pad_set_active (mysinkpad, TRUE);
+fail_unless (gst_element_set_state (element, GST_STATE_PLAYING) == GST_STATE_CHANGE_SUCCESS, "could not set to playing");
+
+GstCaps * caps = gst_caps_from_string (YOUR_DESIRED_SINK_CAPS);
+gst_check_setup_events (mysrcpad, element, caps, GST_FORMAT_TIME);
+gst_caps_unref (caps);
+
+fail_unless (gst_pad_push (mysrcpad, gst_buffer_new_and_alloc(2)) == GST_FLOW_OK);
+]]></programlisting></informalexample>
+<para></para>
+<para>For very simple input/output test scenarios checkout <link linkend="gst-check-element-push-buffer-list"><type>gst_check_element_push_buffer_list</type></link> and <link linkend="gst-check-element-push-buffer"><type>gst_check_element_push_buffer</type></link>.</para>
+<refsect3 id="gst-check-setup-src-pad-by-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup src pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>Name of the <parameter>element</parameter>
+sink pad that will be linked to the src pad that will be setup</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-src-pad-by-name.returns" role="returns">
+<title>Returns</title>
+<para> A new pad that can be used to inject data on <parameter>element</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-check-teardown-pad-by-name" role="function">
+<title>gst_check_teardown_pad_by_name&#160;()</title>
+<indexterm zone="gst-check-teardown-pad-by-name"><primary>gst_check_teardown_pad_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_teardown_pad_by_name (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-teardown-element" role="function">
+<title>gst_check_teardown_element&#160;()</title>
+<indexterm zone="gst-check-teardown-element"><primary>gst_check_teardown_element</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_teardown_element (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-teardown-sink-pad" role="function">
+<title>gst_check_teardown_sink_pad&#160;()</title>
+<indexterm zone="gst-check-teardown-sink-pad"><primary>gst_check_teardown_sink_pad</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_teardown_sink_pad (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-teardown-src-pad" role="function">
+<title>gst_check_teardown_src_pad&#160;()</title>
+<indexterm zone="gst-check-teardown-src-pad"><primary>gst_check_teardown_src_pad</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_teardown_src_pad (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-drop-buffers" role="function">
+<title>gst_check_drop_buffers&#160;()</title>
+<indexterm zone="gst-check-drop-buffers"><primary>gst_check_drop_buffers</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_drop_buffers (<parameter><type>void</type></parameter>);</programlisting>
+<para>Unref and remove all buffers that are in the global <parameter>buffers</parameter>
+ GList,
+emptying the list.</para>
+</refsect2>
+<refsect2 id="gst-check-buffer-data" role="function">
+<title>gst_check_buffer_data&#160;()</title>
+<indexterm zone="gst-check-buffer-data"><primary>gst_check_buffer_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_buffer_data (<parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                       <parameter><link linkend="gconstpointer"><type>gconstpointer</type></link> data</parameter>,
+                       <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Compare the buffer contents with <parameter>data</parameter>
+ and <parameter>size</parameter>
+.</para>
+<refsect3 id="gst-check-buffer-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>buffer to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>data to compare to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>size of data to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-check-caps-equal" role="function">
+<title>gst_check_caps_equal&#160;()</title>
+<indexterm zone="gst-check-caps-equal"><primary>gst_check_caps_equal</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_caps_equal (<parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps1</parameter>,
+                      <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps2</parameter>);</programlisting>
+<para>Compare two caps with gst_caps_is_equal and fail unless they are
+equal.</para>
+<refsect3 id="gst-check-caps-equal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>caps1</para></entry>
+<entry role="parameter_description"><para>first caps to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps2</para></entry>
+<entry role="parameter_description"><para>second caps to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-check-element-push-buffer-list" role="function">
+<title>gst_check_element_push_buffer_list&#160;()</title>
+<indexterm zone="gst-check-element-push-buffer-list"><primary>gst_check_element_push_buffer_list</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_element_push_buffer_list (<parameter>const <link linkend="gchar"><type>gchar</type></link> *element_name</parameter>,
+                                    <parameter><link linkend="GList"><type>GList</type></link> *buffer_in</parameter>,
+                                    <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps_in</parameter>,
+                                    <parameter><link linkend="GList"><type>GList</type></link> *buffer_out</parameter>,
+                                    <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps_out</parameter>,
+                                    <parameter><link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> last_flow_return</parameter>);</programlisting>
+<para>Create an element using the factory providing the <parameter>element_name</parameter>
+ and push the
+buffers in <parameter>buffer_in</parameter>
+ to this element. The element should create the buffers
+equal to the buffers in <parameter>buffer_out</parameter>
+. We only check the size and the data of
+the buffers. This function unrefs the buffers in the two lists.
+The last_flow_return parameter indicates the expected flow return value from
+pushing the final buffer in the list.
+This can be used to set up a test which pushes some buffers and then an
+invalid buffer, when the final buffer is expected to fail, for example.</para>
+<refsect3 id="gst-check-element-push-buffer-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element_name</para></entry>
+<entry role="parameter_description"><para>name of the element that needs to be created</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer_in</para></entry>
+<entry role="parameter_description"><para> a list of buffers that needs to be
+pushed to the element. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> GstBuffer][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>caps_in</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCaps"><type>GstCaps</type></link> expected of the sinkpad of the element</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer_out</para></entry>
+<entry role="parameter_description"><para> a list of buffers that we expect from
+the element. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> GstBuffer][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>caps_out</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCaps"><type>GstCaps</type></link> expected of the srcpad of the element</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>last_flow_return</para></entry>
+<entry role="parameter_description"><para>the last buffer push needs to give this GstFlowReturn</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-check-element-push-buffer" role="function">
+<title>gst_check_element_push_buffer&#160;()</title>
+<indexterm zone="gst-check-element-push-buffer"><primary>gst_check_element_push_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_element_push_buffer (<parameter>const <link linkend="gchar"><type>gchar</type></link> *element_name</parameter>,
+                               <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer_in</parameter>,
+                               <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps_in</parameter>,
+                               <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer_out</parameter>,
+                               <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps_out</parameter>);</programlisting>
+<para>Create an element using the factory providing the <parameter>element_name</parameter>
+ and
+push the <parameter>buffer_in</parameter>
+ to this element. The element should create one buffer
+and this will be compared with <parameter>buffer_out</parameter>
+. We only check the caps
+and the data of the buffers. This function unrefs the buffers.</para>
+<refsect3 id="gst-check-element-push-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element_name</para></entry>
+<entry role="parameter_description"><para>name of the element that needs to be created</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer_in</para></entry>
+<entry role="parameter_description"><para>push this buffer to the element</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps_in</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCaps"><type>GstCaps</type></link> expected of the sinkpad of the element</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer_out</para></entry>
+<entry role="parameter_description"><para>compare the result with this buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps_out</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstCaps"><type>GstCaps</type></link> expected of the srcpad of the element</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-check-run-suite" role="function">
+<title>gst_check_run_suite&#160;()</title>
+<indexterm zone="gst-check-run-suite"><primary>gst_check_run_suite</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_check_run_suite (<parameter><link linkend="Suite"><type>Suite</type></link> *suite</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *fname</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-check-setup-events" role="function">
+<title>gst_check_setup_events&#160;()</title>
+<indexterm zone="gst-check-setup-events"><primary>gst_check_setup_events</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_setup_events (<parameter><link linkend="GstPad"><type>GstPad</type></link> *srcpad</parameter>,
+                        <parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                        <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>,
+                        <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>Push stream-start, caps and segment event, which consist of the minimum
+required events to allow streaming. Caps is optional to allow raw src
+testing. If <parameter>element</parameter>
+ has more than one src or sink pad, use
+<link linkend="gst-check-setup-events-with-stream-id"><function>gst_check_setup_events_with_stream_id()</function></link> instead.</para>
+<refsect3 id="gst-check-setup-events.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>srcpad</para></entry>
+<entry role="parameter_description"><para>The src <link linkend="GstPad"><type>GstPad</type></link> to push on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstElement"><type>GstElement</type></link> use to create the stream id</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstCaps"><type>GstCaps</type></link> in case caps event must be sent. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstFormat"><type>GstFormat</type></link> of the default segment to send</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-check-setup-events-with-stream-id" role="function">
+<title>gst_check_setup_events_with_stream_id&#160;()</title>
+<indexterm zone="gst-check-setup-events-with-stream-id"><primary>gst_check_setup_events_with_stream_id</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_setup_events_with_stream_id (<parameter><link linkend="GstPad"><type>GstPad</type></link> *srcpad</parameter>,
+                                       <parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                       <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>,
+                                       <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *stream_id</parameter>);</programlisting>
+<para>Push stream-start, caps and segment event, which consist of the minimum
+required events to allow streaming. Caps is optional to allow raw src
+testing.</para>
+<refsect3 id="gst-check-setup-events-with-stream-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>srcpad</para></entry>
+<entry role="parameter_description"><para>The src <link linkend="GstPad"><type>GstPad</type></link> to push on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstElement"><type>GstElement</type></link> use to create the stream id</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstCaps"><type>GstCaps</type></link> in case caps event must be sent. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstFormat"><type>GstFormat</type></link> of the default segment to send</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stream_id</para></entry>
+<entry role="parameter_description"><para>A unique identifier for the stream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-check-setup-sink-pad-by-name-from-template" role="function" condition="since:1.4">
+<title>gst_check_setup_sink_pad_by_name_from_template&#160;()</title>
+<indexterm zone="gst-check-setup-sink-pad-by-name-from-template" role="1.4"><primary>gst_check_setup_sink_pad_by_name_from_template</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_sink_pad_by_name_from_template
+                               (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                <parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *tmpl</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<refsect3 id="gst-check-setup-sink-pad-by-name-from-template.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-sink-pad-by-name-from-template.returns" role="returns">
+<title>Returns</title>
+<para> a new pad. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-check-setup-sink-pad-from-template" role="function" condition="since:1.4">
+<title>gst_check_setup_sink_pad_from_template&#160;()</title>
+<indexterm zone="gst-check-setup-sink-pad-from-template" role="1.4"><primary>gst_check_setup_sink_pad_from_template</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_sink_pad_from_template
+                               (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                <parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *tmpl</parameter>);</programlisting>
+<refsect3 id="gst-check-setup-sink-pad-from-template.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-sink-pad-from-template.returns" role="returns">
+<title>Returns</title>
+<para> a new pad. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-check-setup-src-pad-by-name-from-template" role="function" condition="since:1.4">
+<title>gst_check_setup_src_pad_by_name_from_template&#160;()</title>
+<indexterm zone="gst-check-setup-src-pad-by-name-from-template" role="1.4"><primary>gst_check_setup_src_pad_by_name_from_template</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_src_pad_by_name_from_template
+                               (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                <parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *tmpl</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<refsect3 id="gst-check-setup-src-pad-by-name-from-template.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-src-pad-by-name-from-template.returns" role="returns">
+<title>Returns</title>
+<para> a new pad. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-check-setup-src-pad-from-template" role="function" condition="since:1.4">
+<title>gst_check_setup_src_pad_from_template&#160;()</title>
+<indexterm zone="gst-check-setup-src-pad-from-template" role="1.4"><primary>gst_check_setup_src_pad_from_template</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_check_setup_src_pad_from_template (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>,
+                                       <parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *tmpl</parameter>);</programlisting>
+<refsect3 id="gst-check-setup-src-pad-from-template.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>element to setup pad on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tmpl</para></entry>
+<entry role="parameter_description"><para>pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-check-setup-src-pad-from-template.returns" role="returns">
+<title>Returns</title>
+<para> a new pad. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-check-objects-destroyed-on-unref" role="function" condition="since:1.6">
+<title>gst_check_objects_destroyed_on_unref&#160;()</title>
+<indexterm zone="gst-check-objects-destroyed-on-unref" role="1.6"><primary>gst_check_objects_destroyed_on_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_objects_destroyed_on_unref (<parameter><link linkend="gpointer"><type>gpointer</type></link> object_to_unref</parameter>,
+                                      <parameter><link linkend="gpointer"><type>gpointer</type></link> first_object</parameter>,
+                                      <parameter>...</parameter>);</programlisting>
+<para>Unrefs <parameter>object_to_unref</parameter>
+ and checks that is has properly been
+destroyed, also checks that the other objects passed in
+parametter have been destroyed as a concequence of
+unrefing <parameter>object_to_unref</parameter>
+. Last variable argument should be NULL.</para>
+<refsect3 id="gst-check-objects-destroyed-on-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object_to_unref</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GObject"><type>GObject</type></link> to unref</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_object</para></entry>
+<entry role="parameter_description"><para> The first object that should be destroyed as a
+concequence of unrefing <parameter>object_to_unref</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>Additional object that should have been destroyed.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-check-object-destroyed-on-unref" role="function" condition="since:1.6">
+<title>gst_check_object_destroyed_on_unref&#160;()</title>
+<indexterm zone="gst-check-object-destroyed-on-unref" role="1.6"><primary>gst_check_object_destroyed_on_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_check_object_destroyed_on_unref (<parameter><link linkend="gpointer"><type>gpointer</type></link> object_to_unref</parameter>);</programlisting>
+<para>Unrefs <parameter>object_to_unref</parameter>
+ and checks that is has properly been
+destroyed.</para>
+<refsect3 id="gst-check-object-destroyed-on-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object_to_unref</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GObject"><type>GObject</type></link> to unref</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstCheck.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-END-TEST:CAPS" role="macro">
+<title>GST_END_TEST</title>
+<indexterm zone="GST-END-TEST:CAPS"><primary>GST_END_TEST</primary></indexterm>
+<programlisting language="C">#define             GST_END_TEST</programlisting>
+<para>wrapper for checks END_TEST</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

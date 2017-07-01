@@ -1,0 +1,1974 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstClock">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstClock.top_of_page">GstClock</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstClock</refname>
+<refpurpose>Abstract class for global clocks</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstClock.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-TIME-IS-VALID:CAPS">GST_CLOCK_TIME_IS_VALID</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-STIME-IS-VALID:CAPS">GST_CLOCK_STIME_IS_VALID</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-AS-SECONDS:CAPS">GST_TIME_AS_SECONDS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-AS-MSECONDS:CAPS">GST_TIME_AS_MSECONDS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-AS-USECONDS:CAPS">GST_TIME_AS_USECONDS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-AS-NSECONDS:CAPS">GST_TIME_AS_NSECONDS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-DIFF:CAPS">GST_CLOCK_DIFF</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIMEVAL-TO-TIME:CAPS">GST_TIMEVAL_TO_TIME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-TO-TIMEVAL:CAPS">GST_TIME_TO_TIMEVAL</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIMESPEC-TO-TIME:CAPS">GST_TIMESPEC_TO_TIME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-TO-TIMESPEC:CAPS">GST_TIME_TO_TIMESPEC</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstClockCallback">*GstClockCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-ENTRY:CAPS">GST_CLOCK_ENTRY</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-ENTRY-CLOCK:CAPS">GST_CLOCK_ENTRY_CLOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-ENTRY-TYPE:CAPS">GST_CLOCK_ENTRY_TYPE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-ENTRY-TIME:CAPS">GST_CLOCK_ENTRY_TIME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-ENTRY-INTERVAL:CAPS">GST_CLOCK_ENTRY_INTERVAL</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-ENTRY-STATUS:CAPS">GST_CLOCK_ENTRY_STATUS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-FLAGS:CAPS">GST_CLOCK_FLAGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-add-observation">gst_clock_add_observation</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-add-observation-unapplied">gst_clock_add_observation_unapplied</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-set-master">gst_clock_set_master</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-clock-get-master">gst_clock_get_master</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-set-resolution">gst_clock_set_resolution</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-get-resolution">gst_clock_get_resolution</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-get-time">gst_clock_get_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-new-single-shot-id">gst_clock_new_single_shot_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-new-periodic-id">gst_clock_new_periodic_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-single-shot-id-reinit">gst_clock_single_shot_id_reinit</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-periodic-id-reinit">gst_clock_periodic_id_reinit</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-get-internal-time">gst_clock_get_internal_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-adjust-unlocked">gst_clock_adjust_unlocked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-unadjust-unlocked">gst_clock_unadjust_unlocked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-adjust-with-calibration">gst_clock_adjust_with_calibration</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-get-calibration">gst_clock_get_calibration</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-set-calibration">gst_clock_set_calibration</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-get-timeout">gst_clock_get_timeout</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-set-timeout">gst_clock_set_timeout</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-wait-for-sync">gst_clock_wait_for_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-is-synced">gst_clock_is_synced</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-set-synced">gst_clock_set_synced</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-get-time">gst_clock_id_get_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockReturn"><returnvalue>GstClockReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-wait">gst_clock_id_wait</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockReturn"><returnvalue>GstClockReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-wait-async">gst_clock_id_wait_async</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-unschedule">gst_clock_id_unschedule</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-compare-func">gst_clock_id_compare_func</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-ref">gst_clock_id_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-clock-id-unref">gst_clock_id_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstClock.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstClock--timeout">timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstClock--window-size">window-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstClock--window-threshold">window-threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstClock.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstClock-synced">synced</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstClock.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstClock-struct">GstClock</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstClockClass">GstClockClass</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstClockTime">GstClockTime</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstClockTimeDiff">GstClockTimeDiff</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstClockID">GstClockID</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-TIME-NONE:CAPS">GST_CLOCK_TIME_NONE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CLOCK-STIME-NONE:CAPS">GST_CLOCK_STIME_NONE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-SECOND:CAPS">GST_SECOND</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MSECOND:CAPS">GST_MSECOND</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-USECOND:CAPS">GST_USECOND</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-NSECOND:CAPS">GST_NSECOND</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstClockEntry">GstClockEntry</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstClockEntryType">GstClockEntryType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstClockReturn">GstClockReturn</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstClockFlags">GstClockFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstClock.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstClock
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstSystemClock">GstSystemClock</link>
+</screen>
+</refsect1>
+
+<refsect1 id="GstClock.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstClock.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GStreamer uses a global clock to synchronize the plugins in a pipeline.
+Different clock implementations are possible by implementing this abstract
+base class or, more conveniently, by subclassing <link linkend="GstSystemClock"><type>GstSystemClock</type></link>.</para>
+<para>The <link linkend="GstClock"><type>GstClock</type></link> returns a monotonically increasing time with the method
+<link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link>. Its accuracy and base time depend on the specific
+clock implementation but time is always expressed in nanoseconds. Since the
+baseline of the clock is undefined, the clock time returned is not
+meaningful in itself, what matters are the deltas between two clock times.
+The time returned by a clock is called the absolute time.</para>
+<para>The pipeline uses the clock to calculate the running time. Usually all
+renderers synchronize to the global clock using the buffer timestamps, the
+newsegment events and the element's base time, see <link linkend="GstPipeline"><type>GstPipeline</type></link>.</para>
+<para>A clock implementation can support periodic and single shot clock
+notifications both synchronous and asynchronous.</para>
+<para>One first needs to create a <link linkend="GstClockID"><type>GstClockID</type></link> for the periodic or single shot
+notification using <link linkend="gst-clock-new-single-shot-id"><function>gst_clock_new_single_shot_id()</function></link> or
+<link linkend="gst-clock-new-periodic-id"><function>gst_clock_new_periodic_id()</function></link>.</para>
+<para>To perform a blocking wait for the specific time of the <link linkend="GstClockID"><type>GstClockID</type></link> use the
+<link linkend="gst-clock-id-wait"><function>gst_clock_id_wait()</function></link>. To receive a callback when the specific time is reached
+in the clock use <link linkend="gst-clock-id-wait-async"><function>gst_clock_id_wait_async()</function></link>. Both these calls can be
+interrupted with the <link linkend="gst-clock-id-unschedule"><function>gst_clock_id_unschedule()</function></link> call. If the blocking wait is
+unscheduled a return value of <link linkend="GST-CLOCK-UNSCHEDULED:CAPS"><type>GST_CLOCK_UNSCHEDULED</type></link> is returned.</para>
+<para>Periodic callbacks scheduled async will be repeatedly called automatically
+until it is unscheduled. To schedule a sync periodic callback,
+<link linkend="gst-clock-id-wait"><function>gst_clock_id_wait()</function></link> should be called repeatedly.</para>
+<para>The async callbacks can happen from any thread, either provided by the core
+or from a streaming thread. The application should be prepared for this.</para>
+<para>A <link linkend="GstClockID"><type>GstClockID</type></link> that has been unscheduled cannot be used again for any wait
+operation, a new <link linkend="GstClockID"><type>GstClockID</type></link> should be created and the old unscheduled one
+should be destroyed with <link linkend="gst-clock-id-unref"><function>gst_clock_id_unref()</function></link>.</para>
+<para>It is possible to perform a blocking wait on the same <link linkend="GstClockID"><type>GstClockID</type></link> from
+multiple threads. However, registering the same <link linkend="GstClockID"><type>GstClockID</type></link> for multiple
+async notifications is not possible, the callback will only be called for
+the thread registering the entry last.</para>
+<para>None of the wait operations unref the <link linkend="GstClockID"><type>GstClockID</type></link>, the owner is responsible
+for unreffing the ids itself. This holds for both periodic and single shot
+notifications. The reason being that the owner of the <link linkend="GstClockID"><type>GstClockID</type></link> has to
+keep a handle to the <link linkend="GstClockID"><type>GstClockID</type></link> to unblock the wait on FLUSHING events or
+state changes and if the entry would be unreffed automatically, the handle 
+might become invalid without any notification.</para>
+<para>These clock operations do not operate on the running time, so the callbacks
+will also occur when not in PLAYING state as if the clock just keeps on
+running. Some clocks however do not progress when the element that provided
+the clock is not PLAYING.</para>
+<para>When a clock has the <link linkend="GST-CLOCK-FLAG-CAN-SET-MASTER:CAPS"><type>GST_CLOCK_FLAG_CAN_SET_MASTER</type></link> flag set, it can be
+slaved to another <link linkend="GstClock"><type>GstClock</type></link> with the <link linkend="gst-clock-set-master"><function>gst_clock_set_master()</function></link>. The clock will
+then automatically be synchronized to this master clock by repeatedly
+sampling the master clock and the slave clock and recalibrating the slave
+clock with <link linkend="gst-clock-set-calibration"><function>gst_clock_set_calibration()</function></link>. This feature is mostly useful for
+plugins that have an internal clock but must operate with another clock
+selected by the <link linkend="GstPipeline"><type>GstPipeline</type></link>.  They can track the offset and rate difference
+of their internal clock relative to the master clock by using the
+<link linkend="gst-clock-get-calibration"><function>gst_clock_get_calibration()</function></link> function. </para>
+<para>The master/slave synchronisation can be tuned with the <link linkend="GstClock--timeout"><type>“timeout”</type></link>,
+<link linkend="GstClock--window-size"><type>“window-size”</type></link> and <link linkend="GstClock--window-threshold"><type>“window-threshold”</type></link> properties.
+The <link linkend="GstClock--timeout"><type>“timeout”</type></link> property defines the interval to sample the master
+clock and run the calibration functions. <link linkend="GstClock--window-size"><type>“window-size”</type></link> defines the
+number of samples to use when calibrating and <link linkend="GstClock--window-threshold"><type>“window-threshold”</type></link>
+defines the minimum number of samples before the calibration is performed.</para>
+
+</refsect1>
+<refsect1 id="GstClock.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-CLOCK-TIME-IS-VALID:CAPS" role="macro">
+<title>GST_CLOCK_TIME_IS_VALID()</title>
+<indexterm zone="GST-CLOCK-TIME-IS-VALID:CAPS"><primary>GST_CLOCK_TIME_IS_VALID</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_TIME_IS_VALID(time)   (((GstClockTime)(time)) != GST_CLOCK_TIME_NONE)
+</programlisting>
+<para>Tests if a given <link linkend="GstClockTime"><type>GstClockTime</type></link> represents a valid defined time.</para>
+<refsect3 id="GST-CLOCK-TIME-IS-VALID.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>clock time to validate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-STIME-IS-VALID:CAPS" role="macro" condition="since:1.6">
+<title>GST_CLOCK_STIME_IS_VALID()</title>
+<indexterm zone="GST-CLOCK-STIME-IS-VALID:CAPS" role="1.6"><primary>GST_CLOCK_STIME_IS_VALID</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_STIME_IS_VALID(time)   (((GstClockTimeDiff)(time)) != GST_CLOCK_STIME_NONE)
+</programlisting>
+<para>Tests if a given <link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> of <link linkend="gint64"><type>gint64</type></link> represents a valid defined time.</para>
+<refsect3 id="GST-CLOCK-STIME-IS-VALID.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>signed clock time to validate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-TIME-AS-SECONDS:CAPS" role="macro">
+<title>GST_TIME_AS_SECONDS()</title>
+<indexterm zone="GST-TIME-AS-SECONDS:CAPS"><primary>GST_TIME_AS_SECONDS</primary></indexterm>
+<programlisting language="C">#define GST_TIME_AS_SECONDS(time)  ((time) / GST_SECOND)
+</programlisting>
+<para>Convert a <link linkend="GstClockTime"><type>GstClockTime</type></link> to seconds.</para>
+<refsect3 id="GST-TIME-AS-SECONDS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIME-AS-MSECONDS:CAPS" role="macro">
+<title>GST_TIME_AS_MSECONDS()</title>
+<indexterm zone="GST-TIME-AS-MSECONDS:CAPS"><primary>GST_TIME_AS_MSECONDS</primary></indexterm>
+<programlisting language="C">#define GST_TIME_AS_MSECONDS(time) ((time) / G_GINT64_CONSTANT (1000000))
+</programlisting>
+<para>Convert a <link linkend="GstClockTime"><type>GstClockTime</type></link> to milliseconds (1/1000 of a second).</para>
+<refsect3 id="GST-TIME-AS-MSECONDS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIME-AS-USECONDS:CAPS" role="macro">
+<title>GST_TIME_AS_USECONDS()</title>
+<indexterm zone="GST-TIME-AS-USECONDS:CAPS"><primary>GST_TIME_AS_USECONDS</primary></indexterm>
+<programlisting language="C">#define GST_TIME_AS_USECONDS(time) ((time) / G_GINT64_CONSTANT (1000))
+</programlisting>
+<para>Convert a <link linkend="GstClockTime"><type>GstClockTime</type></link> to microseconds (1/1000000 of a second).</para>
+<refsect3 id="GST-TIME-AS-USECONDS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIME-AS-NSECONDS:CAPS" role="macro">
+<title>GST_TIME_AS_NSECONDS()</title>
+<indexterm zone="GST-TIME-AS-NSECONDS:CAPS"><primary>GST_TIME_AS_NSECONDS</primary></indexterm>
+<programlisting language="C">#define GST_TIME_AS_NSECONDS(time) (time)
+</programlisting>
+<para>Convert a <link linkend="GstClockTime"><type>GstClockTime</type></link> to nanoseconds (1/1000000000 of a second).</para>
+<refsect3 id="GST-TIME-AS-NSECONDS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-DIFF:CAPS" role="macro">
+<title>GST_CLOCK_DIFF()</title>
+<indexterm zone="GST-CLOCK-DIFF:CAPS"><primary>GST_CLOCK_DIFF</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_DIFF(s, e)            (GstClockTimeDiff)((e) - (s))
+</programlisting>
+<para>Calculate a difference between two clock times as a <link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link>.
+The difference is calculated as <parameter>e</parameter>
+ - <parameter>s</parameter>
+.</para>
+<refsect3 id="GST-CLOCK-DIFF.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>s</para></entry>
+<entry role="parameter_description"><para>the first time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>e</para></entry>
+<entry role="parameter_description"><para>the second time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIMEVAL-TO-TIME:CAPS" role="macro">
+<title>GST_TIMEVAL_TO_TIME()</title>
+<indexterm zone="GST-TIMEVAL-TO-TIME:CAPS"><primary>GST_TIMEVAL_TO_TIME</primary></indexterm>
+<programlisting language="C">#define GST_TIMEVAL_TO_TIME(tv)         (GstClockTime)((tv).tv_sec * GST_SECOND + (tv).tv_usec * GST_USECOND)
+</programlisting>
+<para>Convert a <link linkend="GTimeVal"><type>GTimeVal</type></link> to a <link linkend="GstClockTime"><type>GstClockTime</type></link>.</para>
+<refsect3 id="GST-TIMEVAL-TO-TIME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>tv</para></entry>
+<entry role="parameter_description"><para>the timeval to convert</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIME-TO-TIMEVAL:CAPS" role="macro">
+<title>GST_TIME_TO_TIMEVAL()</title>
+<indexterm zone="GST-TIME-TO-TIMEVAL:CAPS"><primary>GST_TIME_TO_TIMEVAL</primary></indexterm>
+<programlisting language="C">#define             GST_TIME_TO_TIMEVAL(t,tv)</programlisting>
+<para>Convert a <link linkend="GstClockTime"><type>GstClockTime</type></link> to a <link linkend="GTimeVal"><type>GTimeVal</type></link></para>
+<note>on 32-bit systems, a timeval has a range of only 2^32 - 1 seconds,
+which is about 68 years.  Expect trouble if you want to schedule stuff
+in your pipeline for 2038.</note>
+<refsect3 id="GST-TIME-TO-TIMEVAL.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>t</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockTime"><type>GstClockTime</type></link> to convert</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tv</para></entry>
+<entry role="parameter_description"><para>The target timeval</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIMESPEC-TO-TIME:CAPS" role="macro">
+<title>GST_TIMESPEC_TO_TIME()</title>
+<indexterm zone="GST-TIMESPEC-TO-TIME:CAPS"><primary>GST_TIMESPEC_TO_TIME</primary></indexterm>
+<programlisting language="C">#define GST_TIMESPEC_TO_TIME(ts)        (GstClockTime)((ts).tv_sec * GST_SECOND + (ts).tv_nsec * GST_NSECOND)
+</programlisting>
+<para>Convert a struct timespec (see man pselect) to a <link linkend="GstClockTime"><type>GstClockTime</type></link>.</para>
+<refsect3 id="GST-TIMESPEC-TO-TIME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ts</para></entry>
+<entry role="parameter_description"><para>the timespec to convert</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TIME-TO-TIMESPEC:CAPS" role="macro">
+<title>GST_TIME_TO_TIMESPEC()</title>
+<indexterm zone="GST-TIME-TO-TIMESPEC:CAPS"><primary>GST_TIME_TO_TIMESPEC</primary></indexterm>
+<programlisting language="C">#define             GST_TIME_TO_TIMESPEC(t,ts)</programlisting>
+<para>Convert a <link linkend="GstClockTime"><type>GstClockTime</type></link> to a struct timespec (see man pselect)</para>
+<refsect3 id="GST-TIME-TO-TIMESPEC.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>t</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockTime"><type>GstClockTime</type></link> to convert</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ts</para></entry>
+<entry role="parameter_description"><para>The target timespec</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstClockCallback" role="function">
+<title>GstClockCallback&#160;()</title>
+<indexterm zone="GstClockCallback"><primary>GstClockCallback</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstClockCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>,
+                     <parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>,
+                     <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>The function prototype of the callback.</para>
+<refsect3 id="GstClockCallback.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>The clock that triggered the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>The time it was triggered</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockID"><type>GstClockID</type></link> that expired</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed in the <link linkend="gst-clock-id-wait-async"><function>gst_clock_id_wait_async()</function></link> function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstClockCallback.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> (currently unused)</para>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-ENTRY:CAPS" role="macro">
+<title>GST_CLOCK_ENTRY()</title>
+<indexterm zone="GST-CLOCK-ENTRY:CAPS"><primary>GST_CLOCK_ENTRY</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_ENTRY(entry)          ((GstClockEntry *)(entry))
+</programlisting>
+<para>Cast to a clock entry</para>
+<refsect3 id="GST-CLOCK-ENTRY.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>entry</para></entry>
+<entry role="parameter_description"><para>the entry to cast</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-ENTRY-CLOCK:CAPS" role="macro">
+<title>GST_CLOCK_ENTRY_CLOCK()</title>
+<indexterm zone="GST-CLOCK-ENTRY-CLOCK:CAPS"><primary>GST_CLOCK_ENTRY_CLOCK</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_ENTRY_CLOCK(entry)    ((entry)-&gt;clock)
+</programlisting>
+<para>Get the owner clock of the entry</para>
+<refsect3 id="GST-CLOCK-ENTRY-CLOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>entry</para></entry>
+<entry role="parameter_description"><para>the entry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-ENTRY-TYPE:CAPS" role="macro">
+<title>GST_CLOCK_ENTRY_TYPE()</title>
+<indexterm zone="GST-CLOCK-ENTRY-TYPE:CAPS"><primary>GST_CLOCK_ENTRY_TYPE</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_ENTRY_TYPE(entry)     ((entry)-&gt;type)
+</programlisting>
+<para>Get the type of the clock entry</para>
+<refsect3 id="GST-CLOCK-ENTRY-TYPE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>entry</para></entry>
+<entry role="parameter_description"><para>the entry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-ENTRY-TIME:CAPS" role="macro">
+<title>GST_CLOCK_ENTRY_TIME()</title>
+<indexterm zone="GST-CLOCK-ENTRY-TIME:CAPS"><primary>GST_CLOCK_ENTRY_TIME</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_ENTRY_TIME(entry)     ((entry)-&gt;time)
+</programlisting>
+<para>Get the requested time of this entry</para>
+<refsect3 id="GST-CLOCK-ENTRY-TIME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>entry</para></entry>
+<entry role="parameter_description"><para>the entry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-ENTRY-INTERVAL:CAPS" role="macro">
+<title>GST_CLOCK_ENTRY_INTERVAL()</title>
+<indexterm zone="GST-CLOCK-ENTRY-INTERVAL:CAPS"><primary>GST_CLOCK_ENTRY_INTERVAL</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_ENTRY_INTERVAL(entry) ((entry)-&gt;interval)
+</programlisting>
+<para>Get the interval of this periodic entry</para>
+<refsect3 id="GST-CLOCK-ENTRY-INTERVAL.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>entry</para></entry>
+<entry role="parameter_description"><para>the entry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-ENTRY-STATUS:CAPS" role="macro">
+<title>GST_CLOCK_ENTRY_STATUS()</title>
+<indexterm zone="GST-CLOCK-ENTRY-STATUS:CAPS"><primary>GST_CLOCK_ENTRY_STATUS</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_ENTRY_STATUS(entry)   ((entry)-&gt;status)
+</programlisting>
+<para>The status of the entry</para>
+<refsect3 id="GST-CLOCK-ENTRY-STATUS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>entry</para></entry>
+<entry role="parameter_description"><para>the entry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CLOCK-FLAGS:CAPS" role="macro">
+<title>GST_CLOCK_FLAGS()</title>
+<indexterm zone="GST-CLOCK-FLAGS:CAPS"><primary>GST_CLOCK_FLAGS</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_FLAGS(clock)  GST_OBJECT_FLAGS(clock)
+</programlisting>
+<para>Gets the <link linkend="GstClockFlags"><type>GstClockFlags</type></link> clock flags.</para>
+<refsect3 id="GST-CLOCK-FLAGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>the clock to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-add-observation" role="function">
+<title>gst_clock_add_observation&#160;()</title>
+<indexterm zone="gst-clock-add-observation"><primary>gst_clock_add_observation</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_add_observation (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> slave</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> master</parameter>,
+                           <parameter><link linkend="gdouble"><type>gdouble</type></link> *r_squared</parameter>);</programlisting>
+<para>The time <parameter>master</parameter>
+ of the master clock and the time <parameter>slave</parameter>
+ of the slave
+clock are added to the list of observations. If enough observations
+are available, a linear regression algorithm is run on the
+observations and <parameter>clock</parameter>
+ is recalibrated.</para>
+<para>If this functions returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, <parameter>r_squared</parameter>
+ will contain the 
+correlation coefficient of the interpolation. A value of 1.0
+means a perfect regression was performed. This value can
+be used to control the sampling frequency of the master and slave
+clocks.</para>
+<refsect3 id="gst-clock-add-observation.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> </para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>slave</para></entry>
+<entry role="parameter_description"><para>a time on the slave</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>master</para></entry>
+<entry role="parameter_description"><para>a time on the master</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>r_squared</para></entry>
+<entry role="parameter_description"><para> a pointer to hold the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-add-observation.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if enough observations were added to run the
+regression algorithm.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-add-observation-unapplied" role="function" condition="since:1.6">
+<title>gst_clock_add_observation_unapplied&#160;()</title>
+<indexterm zone="gst-clock-add-observation-unapplied" role="1.6"><primary>gst_clock_add_observation_unapplied</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_add_observation_unapplied (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> slave</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> master</parameter>,
+                                     <parameter><link linkend="gdouble"><type>gdouble</type></link> *r_squared</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *internal</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *external</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *rate_num</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *rate_denom</parameter>);</programlisting>
+<para>Add a clock observation to the internal slaving algorithm the same as
+<link linkend="gst-clock-add-observation"><function>gst_clock_add_observation()</function></link>, and return the result of the master clock
+estimation, without updating the internal calibration.</para>
+<para>The caller can then take the results and call <link linkend="gst-clock-set-calibration"><function>gst_clock_set_calibration()</function></link>
+with the values, or some modified version of them.</para>
+<refsect3 id="gst-clock-add-observation-unapplied.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>slave</para></entry>
+<entry role="parameter_description"><para>a time on the slave</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>master</para></entry>
+<entry role="parameter_description"><para>a time on the master</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>r_squared</para></entry>
+<entry role="parameter_description"><para> a pointer to hold the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>internal</para></entry>
+<entry role="parameter_description"><para> a location to store the internal time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>external</para></entry>
+<entry role="parameter_description"><para> a location to store the external time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rate_num</para></entry>
+<entry role="parameter_description"><para> a location to store the rate numerator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rate_denom</para></entry>
+<entry role="parameter_description"><para> a location to store the rate denominator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-clock-set-master" role="function">
+<title>gst_clock_set_master&#160;()</title>
+<indexterm zone="gst-clock-set-master"><primary>gst_clock_set_master</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_set_master (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                      <parameter><link linkend="GstClock"><type>GstClock</type></link> *master</parameter>);</programlisting>
+<para>Set <parameter>master</parameter>
+ as the master clock for <parameter>clock</parameter>
+. <parameter>clock</parameter>
+ will be automatically
+calibrated so that <link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link> reports the same time as the
+master clock.  </para>
+<para>A clock provider that slaves its clock to a master can get the current
+calibration values with <link linkend="gst-clock-get-calibration"><function>gst_clock_get_calibration()</function></link>.</para>
+<para><parameter>master</parameter>
+ can be <link linkend="NULL:CAPS"><literal>NULL</literal></link> in which case <parameter>clock</parameter>
+ will not be slaved anymore. It will
+however keep reporting its time adjusted with the last configured rate 
+and time offsets.</para>
+<refsect3 id="gst-clock-set-master.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> </para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>master</para></entry>
+<entry role="parameter_description"><para> a master <link linkend="GstClock"><type>GstClock</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-set-master.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the clock is capable of being slaved to a master clock.
+Trying to set a master on a clock without the
+<link linkend="GST-CLOCK-FLAG-CAN-SET-MASTER:CAPS"><type>GST_CLOCK_FLAG_CAN_SET_MASTER</type></link> flag will make this function return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-get-master" role="function">
+<title>gst_clock_get_master&#160;()</title>
+<indexterm zone="gst-clock-get-master"><primary>gst_clock_get_master</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_clock_get_master (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Get the master clock that <parameter>clock</parameter>
+ is slaved to or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when the clock is
+not slaved to any master clock.</para>
+<refsect3 id="gst-clock-get-master.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> </para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-get-master.returns" role="returns">
+<title>Returns</title>
+<para> a master <link linkend="GstClock"><type>GstClock</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+when this clock is not slaved to a master clock. Unref after
+usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-set-resolution" role="function">
+<title>gst_clock_set_resolution&#160;()</title>
+<indexterm zone="gst-clock-set-resolution"><primary>gst_clock_set_resolution</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_set_resolution (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                          <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> resolution</parameter>);</programlisting>
+<para>Set the accuracy of the clock. Some clocks have the possibility to operate
+with different accuracy at the expense of more resource usage. There is
+normally no need to change the default resolution of a clock. The resolution
+of a clock can only be changed if the clock has the
+<link linkend="GST-CLOCK-FLAG-CAN-SET-RESOLUTION:CAPS"><type>GST_CLOCK_FLAG_CAN_SET_RESOLUTION</type></link> flag set.</para>
+<refsect3 id="gst-clock-set-resolution.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>resolution</para></entry>
+<entry role="parameter_description"><para>The resolution to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-set-resolution.returns" role="returns">
+<title>Returns</title>
+<para> the new resolution of the clock.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-get-resolution" role="function">
+<title>gst_clock_get_resolution&#160;()</title>
+<indexterm zone="gst-clock-get-resolution"><primary>gst_clock_get_resolution</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_get_resolution (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Get the accuracy of the clock. The accuracy of the clock is the granularity
+of the values returned by <link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link>.</para>
+<refsect3 id="gst-clock-get-resolution.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-get-resolution.returns" role="returns">
+<title>Returns</title>
+<para> the resolution of the clock in units of <link linkend="GstClockTime"><type>GstClockTime</type></link>.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-get-time" role="function">
+<title>gst_clock_get_time&#160;()</title>
+<indexterm zone="gst-clock-get-time"><primary>gst_clock_get_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_get_time (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Gets the current time of the given clock. The time is always
+monotonically increasing and adjusted according to the current
+offset and rate.</para>
+<refsect3 id="gst-clock-get-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-get-time.returns" role="returns">
+<title>Returns</title>
+<para> the time of the clock. Or GST_CLOCK_TIME_NONE when
+given invalid input.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-new-single-shot-id" role="function">
+<title>gst_clock_new_single_shot_id&#160;()</title>
+<indexterm zone="gst-clock-new-single-shot-id"><primary>gst_clock_new_single_shot_id</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+gst_clock_new_single_shot_id (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>);</programlisting>
+<para>Get a <link linkend="GstClockID"><type>GstClockID</type></link> from <parameter>clock</parameter>
+ to trigger a single shot
+notification at the requested time. The single shot id should be
+unreffed after usage.</para>
+<para>Free-function: gst_clock_id_unref</para>
+<refsect3 id="gst-clock-new-single-shot-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockID"><type>GstClockID</type></link> to get a single shot notification from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the requested time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-new-single-shot-id.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstClockID"><type>GstClockID</type></link> that can be used to request the
+time notification.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-new-periodic-id" role="function">
+<title>gst_clock_new_periodic_id&#160;()</title>
+<indexterm zone="gst-clock-new-periodic-id"><primary>gst_clock_new_periodic_id</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+gst_clock_new_periodic_id (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> start_time</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>);</programlisting>
+<para>Get an ID from <parameter>clock</parameter>
+ to trigger a periodic notification.
+The periodic notifications will start at time <parameter>start_time</parameter>
+ and
+will then be fired with the given <parameter>interval</parameter>
+. <parameter>id</parameter>
+ should be unreffed
+after usage.</para>
+<para>Free-function: gst_clock_id_unref</para>
+<refsect3 id="gst-clock-new-periodic-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockID"><type>GstClockID</type></link> to get a periodic notification id from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start_time</para></entry>
+<entry role="parameter_description"><para>the requested start time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the requested interval</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-new-periodic-id.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstClockID"><type>GstClockID</type></link> that can be used to request the
+time notification.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-single-shot-id-reinit" role="function">
+<title>gst_clock_single_shot_id_reinit&#160;()</title>
+<indexterm zone="gst-clock-single-shot-id-reinit"><primary>gst_clock_single_shot_id_reinit</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_single_shot_id_reinit (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                                 <parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>,
+                                 <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>);</programlisting>
+<para>Reinitializes the provided single shot <parameter>id</parameter>
+ to the provided time. Does not
+modify the reference count.</para>
+<refsect3 id="gst-clock-single-shot-id-reinit.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockID"><type>GstClockID</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>The requested time.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-single-shot-id-reinit.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the GstClockID could be reinitialized to the provided
+<parameter>time</parameter>
+, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-periodic-id-reinit" role="function">
+<title>gst_clock_periodic_id_reinit&#160;()</title>
+<indexterm zone="gst-clock-periodic-id-reinit"><primary>gst_clock_periodic_id_reinit</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_periodic_id_reinit (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                              <parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> start_time</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>);</programlisting>
+<para>Reinitializes the provided periodic <parameter>id</parameter>
+ to the provided start time and
+interval. Does not modify the reference count.</para>
+<refsect3 id="gst-clock-periodic-id-reinit.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockID"><type>GstClockID</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start_time</para></entry>
+<entry role="parameter_description"><para>the requested start time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the requested interval</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-periodic-id-reinit.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the GstClockID could be reinitialized to the provided
+<parameter>time</parameter>
+, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-get-internal-time" role="function">
+<title>gst_clock_get_internal_time&#160;()</title>
+<indexterm zone="gst-clock-get-internal-time"><primary>gst_clock_get_internal_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_get_internal_time (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Gets the current internal time of the given clock. The time is returned
+unadjusted for the offset and the rate.</para>
+<refsect3 id="gst-clock-get-internal-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-get-internal-time.returns" role="returns">
+<title>Returns</title>
+<para> the internal time of the clock. Or GST_CLOCK_TIME_NONE when
+given invalid input.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-adjust-unlocked" role="function">
+<title>gst_clock_adjust_unlocked&#160;()</title>
+<indexterm zone="gst-clock-adjust-unlocked"><primary>gst_clock_adjust_unlocked</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_adjust_unlocked (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> internal</parameter>);</programlisting>
+<para>Converts the given <parameter>internal</parameter>
+ clock time to the external time, adjusting for the
+rate and reference time set with <link linkend="gst-clock-set-calibration"><function>gst_clock_set_calibration()</function></link> and making sure
+that the returned time is increasing. This function should be called with the
+clock's OBJECT_LOCK held and is mainly used by clock subclasses.</para>
+<para>This function is the reverse of <link linkend="gst-clock-unadjust-unlocked"><function>gst_clock_unadjust_unlocked()</function></link>.</para>
+<refsect3 id="gst-clock-adjust-unlocked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>internal</para></entry>
+<entry role="parameter_description"><para>a clock time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-adjust-unlocked.returns" role="returns">
+<title>Returns</title>
+<para> the converted time of the clock.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-unadjust-unlocked" role="function">
+<title>gst_clock_unadjust_unlocked&#160;()</title>
+<indexterm zone="gst-clock-unadjust-unlocked"><primary>gst_clock_unadjust_unlocked</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_unadjust_unlocked (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                             <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> external</parameter>);</programlisting>
+<para>Converts the given <parameter>external</parameter>
+ clock time to the internal time of <parameter>clock</parameter>
+,
+using the rate and reference time set with <link linkend="gst-clock-set-calibration"><function>gst_clock_set_calibration()</function></link>.
+This function should be called with the clock's OBJECT_LOCK held and
+is mainly used by clock subclasses.</para>
+<para>This function is the reverse of <link linkend="gst-clock-adjust-unlocked"><function>gst_clock_adjust_unlocked()</function></link>.</para>
+<refsect3 id="gst-clock-unadjust-unlocked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>external</para></entry>
+<entry role="parameter_description"><para>an external clock time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-unadjust-unlocked.returns" role="returns">
+<title>Returns</title>
+<para> the internal time of the clock corresponding to <parameter>external</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-adjust-with-calibration" role="function" condition="since:1.6">
+<title>gst_clock_adjust_with_calibration&#160;()</title>
+<indexterm zone="gst-clock-adjust-with-calibration" role="1.6"><primary>gst_clock_adjust_with_calibration</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_adjust_with_calibration (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> internal_target</parameter>,
+                                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> cinternal</parameter>,
+                                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> cexternal</parameter>,
+                                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> cnum</parameter>,
+                                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> cdenom</parameter>);</programlisting>
+<para>Converts the given <parameter>internal_target</parameter>
+ clock time to the external time,
+using the passed calibration parameters. This function performs the
+same calculation as <link linkend="gst-clock-adjust-unlocked"><function>gst_clock_adjust_unlocked()</function></link> when called using the
+current calibration parameters, but doesn't ensure a monotonically
+increasing result as <link linkend="gst-clock-adjust-unlocked"><function>gst_clock_adjust_unlocked()</function></link> does.</para>
+<refsect3 id="gst-clock-adjust-with-calibration.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>internal_target</para></entry>
+<entry role="parameter_description"><para>a clock time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cinternal</para></entry>
+<entry role="parameter_description"><para>a reference internal time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cexternal</para></entry>
+<entry role="parameter_description"><para>a reference external time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cnum</para></entry>
+<entry role="parameter_description"><para>the numerator of the rate of the clock relative to its
+internal time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cdenom</para></entry>
+<entry role="parameter_description"><para>the denominator of the rate of the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-adjust-with-calibration.returns" role="returns">
+<title>Returns</title>
+<para> the converted time of the clock.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-clock-get-calibration" role="function">
+<title>gst_clock_get_calibration&#160;()</title>
+<indexterm zone="gst-clock-get-calibration"><primary>gst_clock_get_calibration</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_clock_get_calibration (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *internal</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *external</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *rate_num</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *rate_denom</parameter>);</programlisting>
+<para>Gets the internal rate and reference time of <parameter>clock</parameter>
+. See
+<link linkend="gst-clock-set-calibration"><function>gst_clock_set_calibration()</function></link> for more information.</para>
+<para><parameter>internal</parameter>
+, <parameter>external</parameter>
+, <parameter>rate_num</parameter>
+, and <parameter>rate_denom</parameter>
+ can be left <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the
+caller is not interested in the values.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-clock-get-calibration.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> </para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>internal</para></entry>
+<entry role="parameter_description"><para> a location to store the internal time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>external</para></entry>
+<entry role="parameter_description"><para> a location to store the external time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rate_num</para></entry>
+<entry role="parameter_description"><para> a location to store the rate numerator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rate_denom</para></entry>
+<entry role="parameter_description"><para> a location to store the rate denominator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-set-calibration" role="function">
+<title>gst_clock_set_calibration&#160;()</title>
+<indexterm zone="gst-clock-set-calibration"><primary>gst_clock_set_calibration</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_clock_set_calibration (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> internal</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> external</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> rate_num</parameter>,
+                           <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> rate_denom</parameter>);</programlisting>
+<para>Adjusts the rate and time of <parameter>clock</parameter>
+. A rate of 1/1 is the normal speed of
+the clock. Values bigger than 1/1 make the clock go faster.</para>
+<para><parameter>internal</parameter>
+ and <parameter>external</parameter>
+ are calibration parameters that arrange that
+<link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link> should have been <parameter>external</parameter>
+ at internal time <parameter>internal</parameter>
+.
+This internal time should not be in the future; that is, it should be less
+than the value of <link linkend="gst-clock-get-internal-time"><function>gst_clock_get_internal_time()</function></link> when this function is called.</para>
+<para>Subsequent calls to <link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link> will return clock times computed as
+follows:</para>
+<programlisting>
+  time = (internal_time - internal) * rate_num / rate_denom + external
+</programlisting>
+<para>This formula is implemented in <link linkend="gst-clock-adjust-unlocked"><function>gst_clock_adjust_unlocked()</function></link>. Of course, it
+tries to do the integer arithmetic as precisely as possible.</para>
+<para>Note that <link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link> always returns increasing values so when you
+move the clock backwards, <link linkend="gst-clock-get-time"><function>gst_clock_get_time()</function></link> will report the previous value
+until the clock catches up.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-clock-set-calibration.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to calibrate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>internal</para></entry>
+<entry role="parameter_description"><para>a reference internal time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>external</para></entry>
+<entry role="parameter_description"><para>a reference external time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rate_num</para></entry>
+<entry role="parameter_description"><para>the numerator of the rate of the clock relative to its
+internal time </para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rate_denom</para></entry>
+<entry role="parameter_description"><para>the denominator of the rate of the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-get-timeout" role="function">
+<title>gst_clock_get_timeout&#160;()</title>
+<indexterm zone="gst-clock-get-timeout"><primary>gst_clock_get_timeout</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_get_timeout (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Get the amount of time that master and slave clocks are sampled.</para>
+<refsect3 id="gst-clock-get-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-get-timeout.returns" role="returns">
+<title>Returns</title>
+<para> the interval between samples.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-set-timeout" role="function">
+<title>gst_clock_set_timeout&#160;()</title>
+<indexterm zone="gst-clock-set-timeout"><primary>gst_clock_set_timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_clock_set_timeout (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                       <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timeout</parameter>);</programlisting>
+<para>Set the amount of time, in nanoseconds, to sample master and slave
+clocks</para>
+<refsect3 id="gst-clock-set-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>a timeout</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-wait-for-sync" role="function" condition="since:1.6">
+<title>gst_clock_wait_for_sync&#160;()</title>
+<indexterm zone="gst-clock-wait-for-sync" role="1.6"><primary>gst_clock_wait_for_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_wait_for_sync (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                         <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timeout</parameter>);</programlisting>
+<para>Waits until <parameter>clock</parameter>
+ is synced for reporting the current time. If <parameter>timeout</parameter>
+
+is <link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link> it will wait forever, otherwise it will time out
+after <parameter>timeout</parameter>
+ nanoseconds.</para>
+<para>For asynchronous waiting, the GstClock::synced signal can be used.</para>
+<para>This returns immediately with TRUE if GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC
+is not set on the clock, or if the clock is already synced.</para>
+<refsect3 id="gst-clock-wait-for-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a GstClock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>timeout for waiting or <link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-wait-for-sync.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if waiting was successful, or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on timeout</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-clock-is-synced" role="function" condition="since:1.6">
+<title>gst_clock_is_synced&#160;()</title>
+<indexterm zone="gst-clock-is-synced" role="1.6"><primary>gst_clock_is_synced</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_clock_is_synced (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Checks if the clock is currently synced.</para>
+<para>This returns if GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC is not set on the clock.</para>
+<refsect3 id="gst-clock-is-synced.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a GstClock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-is-synced.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the clock is currently synced</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-clock-set-synced" role="function" condition="since:1.6">
+<title>gst_clock_set_synced&#160;()</title>
+<indexterm zone="gst-clock-set-synced" role="1.6"><primary>gst_clock_set_synced</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_clock_set_synced (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                      <parameter><link linkend="gboolean"><type>gboolean</type></link> synced</parameter>);</programlisting>
+<para>Sets <parameter>clock</parameter>
+ to synced and emits the GstClock::synced signal, and wakes up any
+thread waiting in <link linkend="gst-clock-wait-for-sync"><function>gst_clock_wait_for_sync()</function></link>.</para>
+<para>This function must only be called if GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC
+is set on the clock, and is intended to be called by subclasses only.</para>
+<refsect3 id="gst-clock-set-synced.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a GstClock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>synced</para></entry>
+<entry role="parameter_description"><para>if the clock is synced</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-clock-id-get-time" role="function">
+<title>gst_clock_id_get_time&#160;()</title>
+<indexterm zone="gst-clock-id-get-time"><primary>gst_clock_id_get_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_clock_id_get_time (<parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>);</programlisting>
+<para>Get the time of the clock ID</para>
+<refsect3 id="gst-clock-id-get-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockID"><type>GstClockID</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-id-get-time.returns" role="returns">
+<title>Returns</title>
+<para> the time of the given clock id.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-id-wait" role="function">
+<title>gst_clock_id_wait&#160;()</title>
+<indexterm zone="gst-clock-id-wait"><primary>gst_clock_id_wait</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockReturn"><returnvalue>GstClockReturn</returnvalue></link>
+gst_clock_id_wait (<parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>,
+                   <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> *jitter</parameter>);</programlisting>
+<para>Perform a blocking wait on <parameter>id</parameter>
+. 
+<parameter>id</parameter>
+ should have been created with <link linkend="gst-clock-new-single-shot-id"><function>gst_clock_new_single_shot_id()</function></link>
+or <link linkend="gst-clock-new-periodic-id"><function>gst_clock_new_periodic_id()</function></link> and should not have been unscheduled
+with a call to <link linkend="gst-clock-id-unschedule"><function>gst_clock_id_unschedule()</function></link>. </para>
+<para>If the <parameter>jitter</parameter>
+ argument is not <link linkend="NULL:CAPS"><literal>NULL</literal></link> and this function returns <link linkend="GST-CLOCK-OK:CAPS"><type>GST_CLOCK_OK</type></link>
+or <link linkend="GST-CLOCK-EARLY:CAPS"><type>GST_CLOCK_EARLY</type></link>, it will contain the difference
+against the clock and the time of <parameter>id</parameter>
+ when this method was
+called. 
+Positive values indicate how late <parameter>id</parameter>
+ was relative to the clock
+(in which case this function will return <link linkend="GST-CLOCK-EARLY:CAPS"><type>GST_CLOCK_EARLY</type></link>). 
+Negative values indicate how much time was spent waiting on the clock 
+before this function returned.</para>
+<refsect3 id="gst-clock-id-wait.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockID"><type>GstClockID</type></link> to wait on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>jitter</para></entry>
+<entry role="parameter_description"><para> a pointer that will contain the jitter,
+can be <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-id-wait.returns" role="returns">
+<title>Returns</title>
+<para> the result of the blocking wait. <link linkend="GST-CLOCK-EARLY:CAPS"><type>GST_CLOCK_EARLY</type></link> will be returned
+if the current clock time is past the time of <parameter>id</parameter>
+, <link linkend="GST-CLOCK-OK:CAPS"><type>GST_CLOCK_OK</type></link> if
+<parameter>id</parameter>
+was scheduled in time. <link linkend="GST-CLOCK-UNSCHEDULED:CAPS"><type>GST_CLOCK_UNSCHEDULED</type></link> if <parameter>id</parameter>
+was
+unscheduled with <link linkend="gst-clock-id-unschedule"><function>gst_clock_id_unschedule()</function></link>.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-id-wait-async" role="function">
+<title>gst_clock_id_wait_async&#160;()</title>
+<indexterm zone="gst-clock-id-wait-async"><primary>gst_clock_id_wait_async</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockReturn"><returnvalue>GstClockReturn</returnvalue></link>
+gst_clock_id_wait_async (<parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>,
+                         <parameter><link linkend="GstClockCallback"><type>GstClockCallback</type></link> func</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                         <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> destroy_data</parameter>);</programlisting>
+<para>Register a callback on the given <link linkend="GstClockID"><type>GstClockID</type></link> <parameter>id</parameter>
+ with the given
+function and user_data. When passing a <link linkend="GstClockID"><type>GstClockID</type></link> with an invalid
+time to this function, the callback will be called immediately
+with  a time set to GST_CLOCK_TIME_NONE. The callback will
+be called when the time of <parameter>id</parameter>
+ has been reached.</para>
+<para>The callback <parameter>func</parameter>
+ can be invoked from any thread, either provided by the
+core or from a streaming thread. The application should be prepared for this.</para>
+<refsect3 id="gst-clock-id-wait-async.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockID"><type>GstClockID</type></link> to wait on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>The callback function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User data passed in the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>destroy_data</para></entry>
+<entry role="parameter_description"><para><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> for user_data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-id-wait-async.returns" role="returns">
+<title>Returns</title>
+<para> the result of the non blocking wait.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-id-unschedule" role="function">
+<title>gst_clock_id_unschedule&#160;()</title>
+<indexterm zone="gst-clock-id-unschedule"><primary>gst_clock_id_unschedule</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_clock_id_unschedule (<parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>);</programlisting>
+<para>Cancel an outstanding request with <parameter>id</parameter>
+. This can either
+be an outstanding async notification or a pending sync notification.
+After this call, <parameter>id</parameter>
+ cannot be used anymore to receive sync or
+async notifications, you need to create a new <link linkend="GstClockID"><type>GstClockID</type></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-clock-id-unschedule.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>The id to unschedule</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-id-compare-func" role="function">
+<title>gst_clock_id_compare_func&#160;()</title>
+<indexterm zone="gst-clock-id-compare-func"><primary>gst_clock_id_compare_func</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_clock_id_compare_func (<parameter><link linkend="gconstpointer"><type>gconstpointer</type></link> id1</parameter>,
+                           <parameter><link linkend="gconstpointer"><type>gconstpointer</type></link> id2</parameter>);</programlisting>
+<para>Compares the two <link linkend="GstClockID"><type>GstClockID</type></link> instances. This function can be used
+as a GCompareFunc when sorting ids.</para>
+<refsect3 id="gst-clock-id-compare-func.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id1</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstClockID"><type>GstClockID</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>id2</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstClockID"><type>GstClockID</type></link> to compare with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-id-compare-func.returns" role="returns">
+<title>Returns</title>
+<para> negative value if a &lt; b; zero if a = b; positive value if a &gt; b</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-id-ref" role="function">
+<title>gst_clock_id_ref&#160;()</title>
+<indexterm zone="gst-clock-id-ref"><primary>gst_clock_id_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockID"><returnvalue>GstClockID</returnvalue></link>
+gst_clock_id_ref (<parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>);</programlisting>
+<para>Increase the refcount of given <parameter>id</parameter>
+.</para>
+<refsect3 id="gst-clock-id-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstClockID"><type>GstClockID</type></link> to ref</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-clock-id-ref.returns" role="returns">
+<title>Returns</title>
+<para> The same <link linkend="GstClockID"><type>GstClockID</type></link> with increased refcount.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-clock-id-unref" role="function">
+<title>gst_clock_id_unref&#160;()</title>
+<indexterm zone="gst-clock-id-unref"><primary>gst_clock_id_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_clock_id_unref (<parameter><link linkend="GstClockID"><type>GstClockID</type></link> id</parameter>);</programlisting>
+<para>Unref given <parameter>id</parameter>
+. When the refcount reaches 0 the
+<link linkend="GstClockID"><type>GstClockID</type></link> will be freed.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-clock-id-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para> The <link linkend="GstClockID"><type>GstClockID</type></link> to unref. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstClock.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstClock-struct" role="struct">
+<title>struct GstClock</title>
+<indexterm zone="GstClock-struct"><primary>GstClock</primary></indexterm>
+<programlisting language="C">struct GstClock;</programlisting>
+<para><link linkend="GstClock"><type>GstClock</type></link> base structure. The values of this structure are
+protected for subclasses, use the methods to use the <link linkend="GstClock"><type>GstClock</type></link>.</para>
+</refsect2>
+<refsect2 id="GstClockClass" role="struct">
+<title>struct GstClockClass</title>
+<indexterm zone="GstClockClass"><primary>GstClockClass</primary></indexterm>
+<programlisting language="C">struct GstClockClass {
+  GstObjectClass        parent_class;
+
+  /* vtable */
+  GstClockTime          (*change_resolution)    (GstClock *clock,
+                                                 GstClockTime old_resolution,
+                                                 GstClockTime new_resolution);
+  GstClockTime          (*get_resolution)       (GstClock *clock);
+
+  GstClockTime          (*get_internal_time)    (GstClock *clock);
+
+  /* waiting on an ID */
+  GstClockReturn        (*wait)                 (GstClock *clock, GstClockEntry *entry,
+                                                 GstClockTimeDiff *jitter);
+  GstClockReturn        (*wait_async)           (GstClock *clock, GstClockEntry *entry);
+  void                  (*unschedule)           (GstClock *clock, GstClockEntry *entry);
+};
+</programlisting>
+<para>GStreamer clock class. Override the vmethods to implement the clock
+functionality.</para>
+<refsect3 id="GstClockClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstClockClass.change-resolution">change_resolution</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>change the resolution of the clock. Not all values might
+be acceptable. The new resolution should be returned.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstClockClass.get-resolution">get_resolution</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>get the resolution of the clock.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstClockClass.get-internal-time">get_internal_time</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>get the internal unadjusted time of the clock.
+implement <parameter>wait_jitter</parameter>
+instead.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstClockClass.wait">wait</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>perform a blocking wait on the given <link linkend="GstClockEntry"><type>GstClockEntry</type></link> and return
+the jitter.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstClockClass.wait-async">wait_async</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>perform an asynchronous wait for the given <link linkend="GstClockEntry"><type>GstClockEntry</type></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstClockClass.unschedule">unschedule</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>unblock a blocking or async wait operation.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstClockTime" role="typedef">
+<title>GstClockTime</title>
+<indexterm zone="GstClockTime"><primary>GstClockTime</primary></indexterm>
+<programlisting language="C">typedef guint64 GstClockTime;
+</programlisting>
+<para>A datatype to hold a time, measured in nanoseconds.</para>
+</refsect2>
+<refsect2 id="GstClockTimeDiff" role="typedef">
+<title>GstClockTimeDiff</title>
+<indexterm zone="GstClockTimeDiff"><primary>GstClockTimeDiff</primary></indexterm>
+<programlisting language="C">typedef gint64 GstClockTimeDiff;
+</programlisting>
+<para>A datatype to hold a time difference, measured in nanoseconds.</para>
+</refsect2>
+<refsect2 id="GstClockID" role="typedef">
+<title>GstClockID</title>
+<indexterm zone="GstClockID"><primary>GstClockID</primary></indexterm>
+<programlisting language="C">typedef gpointer GstClockID;
+</programlisting>
+<para>A datatype to hold the handle to an outstanding sync or async clock callback.</para>
+</refsect2>
+<refsect2 id="GST-CLOCK-TIME-NONE:CAPS" role="macro">
+<title>GST_CLOCK_TIME_NONE</title>
+<indexterm zone="GST-CLOCK-TIME-NONE:CAPS"><primary>GST_CLOCK_TIME_NONE</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_TIME_NONE             ((GstClockTime) -1)
+</programlisting>
+<para>Constant to define an undefined clock time.</para>
+</refsect2>
+<refsect2 id="GST-CLOCK-STIME-NONE:CAPS" role="macro">
+<title>GST_CLOCK_STIME_NONE</title>
+<indexterm zone="GST-CLOCK-STIME-NONE:CAPS"><primary>GST_CLOCK_STIME_NONE</primary></indexterm>
+<programlisting language="C">#define GST_CLOCK_STIME_NONE             G_MININT64
+</programlisting>
+<para>Constant to define an undefined clock time.</para>
+</refsect2>
+<refsect2 id="GST-SECOND:CAPS" role="macro">
+<title>GST_SECOND</title>
+<indexterm zone="GST-SECOND:CAPS"><primary>GST_SECOND</primary></indexterm>
+<programlisting language="C">#define GST_SECOND  (G_USEC_PER_SEC * G_GINT64_CONSTANT (1000))
+</programlisting>
+<para>Constant that defines one GStreamer second.</para>
+</refsect2>
+<refsect2 id="GST-MSECOND:CAPS" role="macro">
+<title>GST_MSECOND</title>
+<indexterm zone="GST-MSECOND:CAPS"><primary>GST_MSECOND</primary></indexterm>
+<programlisting language="C">#define GST_MSECOND (GST_SECOND / G_GINT64_CONSTANT (1000))
+</programlisting>
+<para>Constant that defines one GStreamer millisecond.</para>
+</refsect2>
+<refsect2 id="GST-USECOND:CAPS" role="macro">
+<title>GST_USECOND</title>
+<indexterm zone="GST-USECOND:CAPS"><primary>GST_USECOND</primary></indexterm>
+<programlisting language="C">#define GST_USECOND (GST_SECOND / G_GINT64_CONSTANT (1000000))
+</programlisting>
+<para>Constant that defines one GStreamer microsecond.</para>
+</refsect2>
+<refsect2 id="GST-NSECOND:CAPS" role="macro">
+<title>GST_NSECOND</title>
+<indexterm zone="GST-NSECOND:CAPS"><primary>GST_NSECOND</primary></indexterm>
+<programlisting language="C">#define GST_NSECOND (GST_SECOND / G_GINT64_CONSTANT (1000000000))
+</programlisting>
+<para>Constant that defines one GStreamer nanosecond</para>
+</refsect2>
+<refsect2 id="GstClockEntry" role="struct">
+<title>struct GstClockEntry</title>
+<indexterm zone="GstClockEntry"><primary>GstClockEntry</primary></indexterm>
+<programlisting language="C">struct GstClockEntry {
+  gint                  refcount;
+};
+</programlisting>
+<para>All pending timeouts or periodic notifies are converted into
+an entry.
+Note that GstClockEntry should be treated as an opaque structure. It must
+not be extended or allocated using a custom allocator.</para>
+<refsect3 id="GstClockEntry.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="GstClockEntry.refcount">refcount</structfield>;</para></entry>
+<entry role="struct_member_description"><para>reference counter (read-only)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstClockEntryType" role="enum">
+<title>enum GstClockEntryType</title>
+<indexterm zone="GstClockEntryType"><primary>GstClockEntryType</primary></indexterm>
+<para>The type of the clock entry</para>
+<refsect3 id="GstClockEntryType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-ENTRY-SINGLE:CAPS">GST_CLOCK_ENTRY_SINGLE</para></entry>
+<entry role="enum_member_description"><para>a single shot timeout</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-ENTRY-PERIODIC:CAPS">GST_CLOCK_ENTRY_PERIODIC</para></entry>
+<entry role="enum_member_description"><para>a periodic timeout request</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstClockReturn" role="enum">
+<title>enum GstClockReturn</title>
+<indexterm zone="GstClockReturn"><primary>GstClockReturn</primary></indexterm>
+<para>The return value of a clock operation.</para>
+<refsect3 id="GstClockReturn.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-OK:CAPS">GST_CLOCK_OK</para></entry>
+<entry role="enum_member_description"><para>The operation succeeded.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-EARLY:CAPS">GST_CLOCK_EARLY</para></entry>
+<entry role="enum_member_description"><para>The operation was scheduled too late.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-UNSCHEDULED:CAPS">GST_CLOCK_UNSCHEDULED</para></entry>
+<entry role="enum_member_description"><para>The clockID was unscheduled</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-BUSY:CAPS">GST_CLOCK_BUSY</para></entry>
+<entry role="enum_member_description"><para>The ClockID is busy</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-BADTIME:CAPS">GST_CLOCK_BADTIME</para></entry>
+<entry role="enum_member_description"><para>A bad time was provided to a function.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-ERROR:CAPS">GST_CLOCK_ERROR</para></entry>
+<entry role="enum_member_description"><para>An error occurred</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-UNSUPPORTED:CAPS">GST_CLOCK_UNSUPPORTED</para></entry>
+<entry role="enum_member_description"><para>Operation is not supported</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-DONE:CAPS">GST_CLOCK_DONE</para></entry>
+<entry role="enum_member_description"><para>The ClockID is done waiting</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstClockFlags" role="enum">
+<title>enum GstClockFlags</title>
+<indexterm zone="GstClockFlags"><primary>GstClockFlags</primary></indexterm>
+<para>The capabilities of this clock</para>
+<refsect3 id="GstClockFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-CAN-DO-SINGLE-SYNC:CAPS">GST_CLOCK_FLAG_CAN_DO_SINGLE_SYNC</para></entry>
+<entry role="enum_member_description"><para>clock can do a single sync timeout request</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-CAN-DO-SINGLE-ASYNC:CAPS">GST_CLOCK_FLAG_CAN_DO_SINGLE_ASYNC</para></entry>
+<entry role="enum_member_description"><para>clock can do a single async timeout request</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-CAN-DO-PERIODIC-SYNC:CAPS">GST_CLOCK_FLAG_CAN_DO_PERIODIC_SYNC</para></entry>
+<entry role="enum_member_description"><para>clock can do sync periodic timeout requests</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-CAN-DO-PERIODIC-ASYNC:CAPS">GST_CLOCK_FLAG_CAN_DO_PERIODIC_ASYNC</para></entry>
+<entry role="enum_member_description"><para>clock can do async periodic timeout callbacks</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-CAN-SET-RESOLUTION:CAPS">GST_CLOCK_FLAG_CAN_SET_RESOLUTION</para></entry>
+<entry role="enum_member_description"><para>clock's resolution can be changed</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-CAN-SET-MASTER:CAPS">GST_CLOCK_FLAG_CAN_SET_MASTER</para></entry>
+<entry role="enum_member_description"><para>clock can be slaved to a master clock</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-NEEDS-STARTUP-SYNC:CAPS">GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC</para></entry>
+<entry role="enum_member_description"><para>clock needs to be synced before it can be used
+    (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-FLAG-LAST:CAPS">GST_CLOCK_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>subclasses can add additional flags starting from this flag</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstClock.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstClock--timeout" role="property"><title>The <literal>“timeout”</literal> property</title>
+<indexterm zone="GstClock--timeout"><primary>GstClock:timeout</primary></indexterm>
+<programlisting>  “timeout”                  <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>The amount of time, in nanoseconds, to sample master and slave clocks.</para><para>Flags: Read / Write</para>
+<para>Default value: 100000000</para>
+</refsect2>
+<refsect2 id="GstClock--window-size" role="property"><title>The <literal>“window-size”</literal> property</title>
+<indexterm zone="GstClock--window-size"><primary>GstClock:window-size</primary></indexterm>
+<programlisting>  “window-size”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The size of the window used to calculate rate and offset.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [2,1024]</para>
+<para>Default value: 32</para>
+</refsect2>
+<refsect2 id="GstClock--window-threshold" role="property"><title>The <literal>“window-threshold”</literal> property</title>
+<indexterm zone="GstClock--window-threshold"><primary>GstClock:window-threshold</primary></indexterm>
+<programlisting>  “window-threshold”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The threshold to start calculating rate and offset.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [2,1024]</para>
+<para>Default value: 4</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstClock.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstClock-synced" role="signal"><title>The <literal>“synced”</literal> signal</title>
+<indexterm zone="GstClock-synced" role="1.6"><primary>GstClock::synced</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstClock"><type>GstClock</type></link> *clock,
+               <link linkend="gboolean"><type>gboolean</type></link>  synced,
+               <link linkend="gpointer"><type>gpointer</type></link>  user_data)</programlisting>
+<para>Signaled on clocks with GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC set once
+the clock is synchronized, or when it completely lost synchronization.
+This signal will not be emitted on clocks without the flag.</para>
+<para>This signal will be emitted from an arbitrary thread, most likely not
+the application's main thread.</para>
+<refsect3 id="GstClock-synced.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>synced</para></entry>
+<entry role="parameter_description"><para>if the clock is synced now</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+</refsect1>
+<refsect1 id="GstClock.see-also">
+<title>See Also</title>
+<para><link linkend="GstSystemClock"><type>GstSystemClock</type></link>, <link linkend="GstPipeline"><type>GstPipeline</type></link></para>
+
+</refsect1>
+
+</refentry>

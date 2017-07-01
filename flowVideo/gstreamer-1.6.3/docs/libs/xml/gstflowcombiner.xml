@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstFlowCombiner">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstFlowCombiner.top_of_page">GstFlowCombiner</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstFlowCombiner</refname>
+<refpurpose>Utility to combine multiple flow returns into one</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstFlowCombiner.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstFlowCombiner"><returnvalue>GstFlowCombiner</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-flow-combiner-new">gst_flow_combiner_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-flow-combiner-free">gst_flow_combiner_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-flow-combiner-update-flow">gst_flow_combiner_update_flow</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-flow-combiner-add-pad">gst_flow_combiner_add_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-flow-combiner-remove-pad">gst_flow_combiner_remove_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-flow-combiner-clear">gst_flow_combiner_clear</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstFlowCombiner.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstFlowCombiner">GstFlowCombiner</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstFlowCombiner.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstflowcombiner.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstFlowCombiner.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Utility struct to help handling <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> combination. Useful for
+<link linkend="GstElement"><type>GstElement</type></link><!-- -->s that have multiple source pads and need to combine
+the different <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> for those pads.</para>
+<para><link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> works by using the last <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> for all <link linkend="GstPad"><type>GstPad</type></link>
+it has in its list and computes the combined return value and provides
+it to the caller.</para>
+<para>To add a new pad to the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> use <link linkend="gst-flow-combiner-add-pad"><function>gst_flow_combiner_add_pad()</function></link>.
+The new <link linkend="GstPad"><type>GstPad</type></link> is stored with a default value of <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link>.</para>
+<para>In case you want a <link linkend="GstPad"><type>GstPad</type></link> to be removed, use <link linkend="gst-flow-combiner-remove-pad"><function>gst_flow_combiner_remove_pad()</function></link>.</para>
+<para>Please be aware that this struct isn't thread safe as its designed to be
+ used by demuxers, those usually will have a single thread operating it.</para>
+<para>These functions will take refs on the passed <link linkend="GstPad"><type>GstPad</type></link><!-- -->s.</para>
+<para>Aside from reducing the user's code size, the main advantage of using this
+helper struct is to follow the standard rules for <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> combination.
+These rules are:</para>
+<itemizedlist>
+<listitem><para><link linkend="GST-FLOW-EOS:CAPS"><literal>GST_FLOW_EOS</literal></link>: only if all returns are EOS too</para></listitem>
+<listitem><para><link linkend="GST-FLOW-NOT-LINKED:CAPS"><literal>GST_FLOW_NOT_LINKED</literal></link>: only if all returns are NOT_LINKED too</para></listitem>
+<listitem><para><link linkend="GST-FLOW-ERROR:CAPS"><literal>GST_FLOW_ERROR</literal></link> or below: if at least one returns an error return</para></listitem>
+<listitem><para><link linkend="GST-FLOW-NOT-NEGOTIATED:CAPS"><literal>GST_FLOW_NOT_NEGOTIATED</literal></link>: if at least one returns a not-negotiated return</para></listitem>
+<listitem><para><link linkend="GST-FLOW-FLUSHING:CAPS"><literal>GST_FLOW_FLUSHING</literal></link>: if at least one returns flushing</para></listitem>
+<listitem>
+<para><link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link>: otherwise</para>
+</listitem>
+</itemizedlist>
+<para><link linkend="GST-FLOW-ERROR:CAPS"><literal>GST_FLOW_ERROR</literal></link> or below, GST_FLOW_NOT_NEGOTIATED and GST_FLOW_FLUSHING are
+returned immediatelly from the <link linkend="gst-flow-combiner-update-flow"><function>gst_flow_combiner_update_flow()</function></link> function.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstFlowCombiner.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-flow-combiner-new" role="function" condition="since:1.4">
+<title>gst_flow_combiner_new&#160;()</title>
+<indexterm zone="gst-flow-combiner-new" role="1.4"><primary>gst_flow_combiner_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowCombiner"><returnvalue>GstFlowCombiner</returnvalue></link>&#160;*
+gst_flow_combiner_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link>, use <link linkend="gst-flow-combiner-free"><function>gst_flow_combiner_free()</function></link> to free it.</para>
+<refsect3 id="gst-flow-combiner-new.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-flow-combiner-free" role="function" condition="since:1.4">
+<title>gst_flow_combiner_free&#160;()</title>
+<indexterm zone="gst-flow-combiner-free" role="1.4"><primary>gst_flow_combiner_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_flow_combiner_free (<parameter><link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> *combiner</parameter>);</programlisting>
+<para>Frees a <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> struct and all its internal data.</para>
+<refsect3 id="gst-flow-combiner-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>combiner</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> to free</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-flow-combiner-update-flow" role="function" condition="since:1.4">
+<title>gst_flow_combiner_update_flow&#160;()</title>
+<indexterm zone="gst-flow-combiner-update-flow" role="1.4"><primary>gst_flow_combiner_update_flow</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_flow_combiner_update_flow (<parameter><link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> *combiner</parameter>,
+                               <parameter><link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> fret</parameter>);</programlisting>
+<para>Computes the combined flow return for the pads in it.</para>
+<para>The <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> parameter should be the last flow return update for a pad
+in this <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link>. It will use this value to be able to shortcut some
+combinations and avoid looking over all pads again. e.g. The last combined
+return is the same as the latest obtained <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link>.</para>
+<refsect3 id="gst-flow-combiner-update-flow.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>combiner</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fret</para></entry>
+<entry role="parameter_description"><para>the latest <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> received for a pad in this <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-flow-combiner-update-flow.returns" role="returns">
+<title>Returns</title>
+<para> The combined <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-flow-combiner-add-pad" role="function" condition="since:1.4">
+<title>gst_flow_combiner_add_pad&#160;()</title>
+<indexterm zone="gst-flow-combiner-add-pad" role="1.4"><primary>gst_flow_combiner_add_pad</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_flow_combiner_add_pad (<parameter><link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> *combiner</parameter>,
+                           <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Adds a new <link linkend="GstPad"><type>GstPad</type></link> to the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link>.</para>
+<refsect3 id="gst-flow-combiner-add-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>combiner</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstPad"><type>GstPad</type></link> that is being added. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-flow-combiner-remove-pad" role="function" condition="since:1.4">
+<title>gst_flow_combiner_remove_pad&#160;()</title>
+<indexterm zone="gst-flow-combiner-remove-pad" role="1.4"><primary>gst_flow_combiner_remove_pad</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_flow_combiner_remove_pad (<parameter><link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> *combiner</parameter>,
+                              <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Removes a <link linkend="GstPad"><type>GstPad</type></link> from the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link>.</para>
+<refsect3 id="gst-flow-combiner-remove-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>combiner</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstPad"><type>GstPad</type></link> to remove. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-flow-combiner-clear" role="function" condition="since:1.6">
+<title>gst_flow_combiner_clear&#160;()</title>
+<indexterm zone="gst-flow-combiner-clear" role="1.6"><primary>gst_flow_combiner_clear</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_flow_combiner_clear (<parameter><link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> *combiner</parameter>);</programlisting>
+<para>Removes all pads from a <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> and resets it to its initial state.</para>
+<refsect3 id="gst-flow-combiner-clear.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>combiner</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstFlowCombiner"><type>GstFlowCombiner</type></link> to clear</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstFlowCombiner.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFlowCombiner" role="struct" condition="since:1.4">
+<title>GstFlowCombiner</title>
+<indexterm zone="GstFlowCombiner" role="1.4"><primary>GstFlowCombiner</primary></indexterm>
+<programlisting language="C">typedef struct _GstFlowCombiner GstFlowCombiner;</programlisting>
+<para>Opaque helper structure to aggregate flow returns.</para>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+
+</refentry>

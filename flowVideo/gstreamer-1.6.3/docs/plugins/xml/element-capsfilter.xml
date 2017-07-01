@@ -1,0 +1,125 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-capsfilter">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-capsfilter.top_of_page" role="top_of_page">capsfilter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>capsfilter</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-capsfilter.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link> *</entry><entry role="property_name"><link linkend="GstCapsFilter--caps">caps</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstCapsFilterCapsChangeMode"><type>GstCapsFilterCapsChangeMode</type></link></entry><entry role="property_name"><link linkend="GstCapsFilter--caps-change-mode">caps-change-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstCapsFilter"/><refsect1 id="gstreamer-plugins-capsfilter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCapsFilter-struct">GstCapsFilter</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstCapsFilterCapsChangeMode">GstCapsFilterCapsChangeMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-capsfilter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstCapsFilter
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-capsfilter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The element does not modify data as such, but can enforce limitations on the
+data format.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! capsfilter caps=video/x-raw,format=GRAY8 ! videoconvert ! autovideosink
+]]></programlisting></informalexample> Limits acceptable video from videotestsrc to be grayscale. Equivalent to
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! video/x-raw,format=GRAY8 ! videoconvert ! autovideosink
+]]></programlisting></informalexample> which is a short notation for the capsfilter element.
+</refsect2>
+
+<include href="element-capsfilter-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-capsfilter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-capsfilter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCapsFilter-struct" role="struct">
+<title>struct GstCapsFilter</title>
+<indexterm zone="GstCapsFilter-struct"><primary>GstCapsFilter</primary></indexterm>
+<programlisting language="C">struct GstCapsFilter;</programlisting>
+<para>The opaque <link linkend="GstCapsFilter"><type>GstCapsFilter</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstCapsFilterCapsChangeMode" role="enum">
+<title>enum GstCapsFilterCapsChangeMode</title>
+<indexterm zone="GstCapsFilterCapsChangeMode"><primary>GstCapsFilterCapsChangeMode</primary></indexterm>
+<para>Filter caps change behaviour</para>
+<refsect3 id="GstCapsFilterCapsChangeMode.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CAPS-FILTER-CAPS-CHANGE-MODE-IMMEDIATE:CAPS">GST_CAPS_FILTER_CAPS_CHANGE_MODE_IMMEDIATE</para></entry>
+<entry role="enum_member_description"><para>Only accept the current filter caps</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CAPS-FILTER-CAPS-CHANGE-MODE-DELAYED:CAPS">GST_CAPS_FILTER_CAPS_CHANGE_MODE_DELAYED</para></entry>
+<entry role="enum_member_description"><para>Temporarily accept previous filter caps</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-capsfilter.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstCapsFilter--caps" role="property"><title>The <literal>“caps”</literal> property</title>
+<indexterm zone="GstCapsFilter--caps"><primary>GstCapsFilter:caps</primary></indexterm>
+<programlisting>  “caps”                     <link linkend="GstCaps"><type>GstCaps</type></link> *</programlisting>
+<para>Restrict the possible allowed capabilities (NULL means ANY). Setting this property takes a reference to the supplied GstCaps object.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstCapsFilter--caps-change-mode" role="property"><title>The <literal>“caps-change-mode”</literal> property</title>
+<indexterm zone="GstCapsFilter--caps-change-mode"><primary>GstCapsFilter:caps-change-mode</primary></indexterm>
+<programlisting>  “caps-change-mode”         <link linkend="GstCapsFilterCapsChangeMode"><type>GstCapsFilterCapsChangeMode</type></link></programlisting>
+<para>Filter caps change behaviour.</para><para>Flags: Read / Write</para>
+<para>Default value: Only accept the current filter caps</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

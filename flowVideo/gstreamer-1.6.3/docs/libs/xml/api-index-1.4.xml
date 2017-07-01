@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.4">
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="gst-adapter-copy-bytes"><link linkend="gst-adapter-copy-bytes">gst_adapter_copy_bytes</link>, function in <link linkend="GstAdapter">GstAdapter</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gst-base-src-set-automatic-eos"><link linkend="gst-base-src-set-automatic-eos">gst_base_src_set_automatic_eos</link>, function in <link linkend="GstBaseSrc">GstBaseSrc</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gst-check-setup-sink-pad-by-name-from-template"><link linkend="gst-check-setup-sink-pad-by-name-from-template">gst_check_setup_sink_pad_by_name_from_template</link>, function in <link linkend="gstreamer-libs-GstCheck">GstCheck</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-check-setup-sink-pad-from-template"><link linkend="gst-check-setup-sink-pad-from-template">gst_check_setup_sink_pad_from_template</link>, function in <link linkend="gstreamer-libs-GstCheck">GstCheck</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-check-setup-src-pad-by-name-from-template"><link linkend="gst-check-setup-src-pad-by-name-from-template">gst_check_setup_src_pad_by_name_from_template</link>, function in <link linkend="gstreamer-libs-GstCheck">GstCheck</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-check-setup-src-pad-from-template"><link linkend="gst-check-setup-src-pad-from-template">gst_check_setup_src_pad_from_template</link>, function in <link linkend="gstreamer-libs-GstCheck">GstCheck</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstCollectPadsFlushFunction"><link linkend="GstCollectPadsFlushFunction">GstCollectPadsFlushFunction</link>, user_function in <link linkend="GstCollectPads">GstCollectPads</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-collect-pads-set-flush-function"><link linkend="gst-collect-pads-set-flush-function">gst_collect_pads_set_flush_function</link>, function in <link linkend="GstCollectPads">GstCollectPads</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-collect-pads-src-event-default"><link linkend="gst-collect-pads-src-event-default">gst_collect_pads_src_event_default</link>, function in <link linkend="GstCollectPads">GstCollectPads</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="GstFlowCombiner"><link linkend="GstFlowCombiner">GstFlowCombiner</link>, struct in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-flow-combiner-add-pad"><link linkend="gst-flow-combiner-add-pad">gst_flow_combiner_add_pad</link>, function in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-flow-combiner-free"><link linkend="gst-flow-combiner-free">gst_flow_combiner_free</link>, function in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-flow-combiner-new"><link linkend="gst-flow-combiner-new">gst_flow_combiner_new</link>, function in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-flow-combiner-remove-pad"><link linkend="gst-flow-combiner-remove-pad">gst_flow_combiner_remove_pad</link>, function in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-flow-combiner-update-flow"><link linkend="gst-flow-combiner-update-flow">gst_flow_combiner_update_flow</link>, function in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gst-test-clock-id-list-get-latest-time"><link linkend="gst-test-clock-id-list-get-latest-time">gst_test_clock_id_list_get_latest_time</link>, function in <link linkend="GstTestClock">GstTestClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-test-clock-process-id-list"><link linkend="gst-test-clock-process-id-list">gst_test_clock_process_id_list</link>, function in <link linkend="GstTestClock">GstTestClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-test-clock-wait-for-multiple-pending-ids"><link linkend="gst-test-clock-wait-for-multiple-pending-ids">gst_test_clock_wait_for_multiple_pending_ids</link>, function in <link linkend="GstTestClock">GstTestClock</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

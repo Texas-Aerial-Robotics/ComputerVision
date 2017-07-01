@@ -1,0 +1,134 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-output-selector">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-output-selector.top_of_page" role="top_of_page">output-selector</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>output-selector</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-output-selector.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstPad"><type>GstPad</type></link> *</entry><entry role="property_name"><link linkend="GstOutputSelector--active-pad">active-pad</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstOutputSelectorPadNegotiationMode"><type>GstOutputSelectorPadNegotiationMode</type></link></entry><entry role="property_name"><link linkend="GstOutputSelector--pad-negotiation-mode">pad-negotiation-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstOutputSelector--resend-latest">resend-latest</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstOutputSelector"/><refsect1 id="gstreamer-plugins-output-selector.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstOutputSelector-struct">GstOutputSelector</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstOutputSelectorPadNegotiationMode">GstOutputSelectorPadNegotiationMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-output-selector.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstOutputSelector
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-output-selector.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Direct input stream to one out of N output pads.</para>
+
+<include href="element-output-selector-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-output-selector.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-output-selector.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstOutputSelector-struct" role="struct">
+<title>struct GstOutputSelector</title>
+<indexterm zone="GstOutputSelector-struct"><primary>GstOutputSelector</primary></indexterm>
+<programlisting language="C">struct GstOutputSelector;</programlisting>
+</refsect2>
+<refsect2 id="GstOutputSelectorPadNegotiationMode" role="enum">
+<title>enum GstOutputSelectorPadNegotiationMode</title>
+<indexterm zone="GstOutputSelectorPadNegotiationMode"><primary>GstOutputSelectorPadNegotiationMode</primary></indexterm>
+<para>To what output pad the input stream should be directed.</para>
+<refsect3 id="GstOutputSelectorPadNegotiationMode.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-OUTPUT-SELECTOR-PAD-NEGOTIATION-MODE-NONE:CAPS">GST_OUTPUT_SELECTOR_PAD_NEGOTIATION_MODE_NONE</para></entry>
+<entry role="enum_member_description"><para>don't propagate the input
+stream.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-OUTPUT-SELECTOR-PAD-NEGOTIATION-MODE-ALL:CAPS">GST_OUTPUT_SELECTOR_PAD_NEGOTIATION_MODE_ALL</para></entry>
+<entry role="enum_member_description"><para>direct input stream to all
+output pads.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-OUTPUT-SELECTOR-PAD-NEGOTIATION-MODE-ACTIVE:CAPS">GST_OUTPUT_SELECTOR_PAD_NEGOTIATION_MODE_ACTIVE</para></entry>
+<entry role="enum_member_description"><para>direct input stream to the
+currently active output pad as described by the <link linkend="GstOutputSelector--active-pad"><type>“active-pad”</type></link>
+property.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-output-selector.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstOutputSelector--active-pad" role="property"><title>The <literal>“active-pad”</literal> property</title>
+<indexterm zone="GstOutputSelector--active-pad"><primary>GstOutputSelector:active-pad</primary></indexterm>
+<programlisting>  “active-pad”               <link linkend="GstPad"><type>GstPad</type></link> *</programlisting>
+<para>Currently active src pad.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstOutputSelector--pad-negotiation-mode" role="property"><title>The <literal>“pad-negotiation-mode”</literal> property</title>
+<indexterm zone="GstOutputSelector--pad-negotiation-mode"><primary>GstOutputSelector:pad-negotiation-mode</primary></indexterm>
+<programlisting>  “pad-negotiation-mode”     <link linkend="GstOutputSelectorPadNegotiationMode"><type>GstOutputSelectorPadNegotiationMode</type></link></programlisting>
+<para>The mode to be used for pad negotiation.</para><para>Flags: Read / Write</para>
+<para>Default value: All</para>
+</refsect2>
+<refsect2 id="GstOutputSelector--resend-latest" role="property"><title>The <literal>“resend-latest”</literal> property</title>
+<indexterm zone="GstOutputSelector--resend-latest"><primary>GstOutputSelector:resend-latest</primary></indexterm>
+<programlisting>  “resend-latest”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Resend latest buffer after a switch to a new pad.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-output-selector.see-also">
+<title>See Also</title>
+<para><link linkend="GstOutputSelector"><type>GstOutputSelector</type></link>, <link linkend="GstInputSelector"><type>GstInputSelector</type></link></para>
+
+</refsect1>
+
+</refentry>

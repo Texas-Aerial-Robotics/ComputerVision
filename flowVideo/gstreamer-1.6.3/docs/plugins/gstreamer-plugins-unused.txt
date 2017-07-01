@@ -1,0 +1,13 @@
+GstSparseFile
+GstSparseFileIOErrorEnum
+gst_buffer_get_flags_string
+gst_sparse_file_clear
+gst_sparse_file_free
+gst_sparse_file_get_range_after
+gst_sparse_file_get_range_before
+gst_sparse_file_n_ranges
+gst_sparse_file_new
+gst_sparse_file_read
+gst_sparse_file_set_fd
+gst_sparse_file_write
+gst_writev_buffers

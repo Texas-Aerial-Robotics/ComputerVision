@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.0.1">
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gst-base-transform-set-prefer-passthrough"><link linkend="gst-base-transform-set-prefer-passthrough">gst_base_transform_set_prefer_passthrough</link>, function in <link linkend="GstBaseTransform">GstBaseTransform</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

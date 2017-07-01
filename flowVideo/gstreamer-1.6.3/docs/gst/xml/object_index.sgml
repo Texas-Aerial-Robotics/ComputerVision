@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE informaltable PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<tbody>
+<row>
+<entry><link linkend="GBoxed">GBoxed</link></entry>
+<entry><link linkend="GInitiallyUnowned">GInitiallyUnowned</link></entry>
+<entry><link linkend="GInterface">GInterface</link></entry>
+</row>
+<row>
+<entry><link linkend="GObject">GObject</link></entry>
+<entry><link linkend="GstAllocationParams">GstAllocationParams</link></entry>
+<entry><link linkend="GstAllocator">GstAllocator</link></entry>
+</row>
+<row>
+<entry><link linkend="GstBin">GstBin</link></entry>
+<entry><link linkend="GstBuffer">GstBuffer</link></entry>
+<entry><link linkend="GstBufferList">GstBufferList</link></entry>
+</row>
+<row>
+<entry><link linkend="GstBufferPool">GstBufferPool</link></entry>
+<entry><link linkend="GstBus">GstBus</link></entry>
+<entry><link linkend="GstCaps">GstCaps</link></entry>
+</row>
+<row>
+<entry><link linkend="GstCapsFeatures">GstCapsFeatures</link></entry>
+<entry><link linkend="GstChildProxy">GstChildProxy</link></entry>
+<entry><link linkend="GstClock">GstClock</link></entry>
+</row>
+<row>
+<entry><link linkend="GstContext">GstContext</link></entry>
+<entry><link linkend="GstControlBinding">GstControlBinding</link></entry>
+<entry><link linkend="GstControlSource">GstControlSource</link></entry>
+</row>
+<row>
+<entry><link linkend="GstDateTime">GstDateTime</link></entry>
+<entry><link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></entry>
+<entry><link linkend="GstElement">GstElement</link></entry>
+</row>
+<row>
+<entry><link linkend="GstElementFactory">GstElementFactory</link></entry>
+<entry><link linkend="GstEvent">GstEvent</link></entry>
+<entry><link linkend="GstGhostPad">GstGhostPad</link></entry>
+</row>
+<row>
+<entry><link linkend="GstMemory">GstMemory</link></entry>
+<entry><link linkend="GstMessage">GstMessage</link></entry>
+<entry><link linkend="GstObject">GstObject</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPad">GstPad</link></entry>
+<entry><link linkend="GstPadTemplate">GstPadTemplate</link></entry>
+<entry><link linkend="GstParseContext">GstParseContext</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPipeline">GstPipeline</link></entry>
+<entry><link linkend="GstPlugin">GstPlugin</link></entry>
+<entry><link linkend="GstPluginFeature">GstPluginFeature</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPreset">GstPreset</link></entry>
+<entry><link linkend="GstProxyPad">GstProxyPad</link></entry>
+<entry><link linkend="GstQuery">GstQuery</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRegistry">GstRegistry</link></entry>
+<entry><link linkend="GstSample">GstSample</link></entry>
+<entry><link linkend="GstSegment">GstSegment</link></entry>
+</row>
+<row>
+<entry><link linkend="GstStructure">GstStructure</link></entry>
+<entry><link linkend="GstSystemClock">GstSystemClock</link></entry>
+<entry><link linkend="GstTagList">GstTagList</link></entry>
+</row>
+<row>
+<entry><link linkend="GstTagSetter">GstTagSetter</link></entry>
+<entry><link linkend="GstTask">GstTask</link></entry>
+<entry><link linkend="GstTaskPool">GstTaskPool</link></entry>
+</row>
+<row>
+<entry><link linkend="GstToc">GstToc</link></entry>
+<entry><link linkend="GstTocEntry">GstTocEntry</link></entry>
+<entry><link linkend="GstTypeFindFactory">GstTypeFindFactory</link></entry>
+</row>
+<row>
+<entry><link linkend="GstURIHandler">GstURIHandler</link></entry>
+</row>
+</tbody></tgroup></informaltable>

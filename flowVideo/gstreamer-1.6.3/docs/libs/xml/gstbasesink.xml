@@ -1,0 +1,1347 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBaseSink">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBaseSink.top_of_page">GstBaseSink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBaseSink</refname>
+<refpurpose>Base class for sink elements</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBaseSink.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-query-latency">gst_base_sink_query_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-latency">gst_base_sink_get_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-do-preroll">gst_base_sink_do_preroll</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-wait">gst_base_sink_wait</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-wait-preroll">gst_base_sink_wait_preroll</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockReturn"><returnvalue>GstClockReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-wait-clock">gst_base_sink_wait_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-sync">gst_base_sink_set_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-sync">gst_base_sink_get_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-max-lateness">gst_base_sink_set_max_lateness</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-max-lateness">gst_base_sink_get_max_lateness</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-qos-enabled">gst_base_sink_set_qos_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-is-qos-enabled">gst_base_sink_is_qos_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-async-enabled">gst_base_sink_set_async_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-is-async-enabled">gst_base_sink_is_async_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-ts-offset">gst_base_sink_set_ts_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTimeDiff"><returnvalue>GstClockTimeDiff</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-ts-offset">gst_base_sink_get_ts_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-render-delay">gst_base_sink_set_render_delay</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-render-delay">gst_base_sink_get_render_delay</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstSample"><returnvalue>GstSample</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-last-sample">gst_base_sink_get_last_sample</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-blocksize">gst_base_sink_set_blocksize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-blocksize">gst_base_sink_get_blocksize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-throttle-time">gst_base_sink_get_throttle_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-throttle-time">gst_base_sink_set_throttle_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-max-bitrate">gst_base_sink_set_max_bitrate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-get-max-bitrate">gst_base_sink_get_max_bitrate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-set-last-sample-enabled">gst_base_sink_set_last_sample_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-sink-is-last-sample-enabled">gst_base_sink_is_last_sample_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PAD:CAPS">GST_BASE_SINK_PAD</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-GET-PREROLL-COND:CAPS">GST_BASE_SINK_GET_PREROLL_COND</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-GET-PREROLL-LOCK:CAPS">GST_BASE_SINK_GET_PREROLL_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-BROADCAST:CAPS">GST_BASE_SINK_PREROLL_BROADCAST</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-LOCK:CAPS">GST_BASE_SINK_PREROLL_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-SIGNAL:CAPS">GST_BASE_SINK_PREROLL_SIGNAL</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-TRYLOCK:CAPS">GST_BASE_SINK_PREROLL_TRYLOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-UNLOCK:CAPS">GST_BASE_SINK_PREROLL_UNLOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-WAIT:CAPS">GST_BASE_SINK_PREROLL_WAIT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-SINK-PREROLL-WAIT-UNTIL:CAPS">GST_BASE_SINK_PREROLL_WAIT_UNTIL</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseSink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--async">async</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--blocksize">blocksize</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--enable-last-sample">enable-last-sample</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstSample"><type>GstSample</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstBaseSink--last-sample">last-sample</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--max-bitrate">max-bitrate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--max-lateness">max-lateness</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--qos">qos</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--render-delay">render-delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--sync">sync</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--throttle-time">throttle-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstBaseSink--ts-offset">ts-offset</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseSink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseSink-struct">GstBaseSink</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseSinkClass">GstBaseSinkClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseSink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBaseSink
+</screen>
+</refsect1>
+
+<refsect1 id="GstBaseSink.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstbasesink.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBaseSink.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstBaseSink"><type>GstBaseSink</type></link> is the base class for sink elements in GStreamer, such as
+xvimagesink or filesink. It is a layer on top of <link linkend="GstElement"><type>GstElement</type></link> that provides a
+simplified interface to plugin writers. <link linkend="GstBaseSink"><type>GstBaseSink</type></link> handles many details
+for you, for example: preroll, clock synchronization, state changes,
+activation in push or pull mode, and queries.</para>
+<para>In most cases, when writing sink elements, there is no need to implement
+class methods from <link linkend="GstElement"><type>GstElement</type></link> or to set functions on pads, because the
+<link linkend="GstBaseSink"><type>GstBaseSink</type></link> infrastructure should be sufficient.</para>
+<para><link linkend="GstBaseSink"><type>GstBaseSink</type></link> provides support for exactly one sink pad, which should be
+named "sink". A sink implementation (subclass of <link linkend="GstBaseSink"><type>GstBaseSink</type></link>) should
+install a pad template in its class_init function, like so:</para>
+<informalexample><programlisting><![CDATA[
+static void
+my_element_class_init (GstMyElementClass *klass)
+{
+  GstElementClass *gstelement_class = GST_ELEMENT_CLASS (klass);
+
+  // sinktemplate should be a #GstStaticPadTemplate with direction
+  // %GST_PAD_SINK and name "sink"
+  gst_element_class_add_pad_template (gstelement_class,
+      gst_static_pad_template_get (&sinktemplate));
+
+  gst_element_class_set_static_metadata (gstelement_class,
+      "Sink name",
+      "Sink",
+      "My Sink element",
+      "The author <my.sink@my.email>");
+}
+]]></programlisting></informalexample>
+<para></para>
+<para><link linkend="GstBaseSink"><type>GstBaseSink</type></link> will handle the prerolling correctly. This means that it will
+return <link linkend="GST-STATE-CHANGE-ASYNC:CAPS"><literal>GST_STATE_CHANGE_ASYNC</literal></link> from a state change to PAUSED until the first
+buffer arrives in this element. The base class will call the
+<link linkend="GstBaseSinkClass.preroll"><function>GstBaseSinkClass.preroll()</function></link> vmethod with this preroll buffer and will then
+commit the state change to the next asynchronously pending state.</para>
+<para>When the element is set to PLAYING, <link linkend="GstBaseSink"><type>GstBaseSink</type></link> will synchronise on the
+clock using the times returned from <link linkend="GstBaseSinkClass.get-times"><function>GstBaseSinkClass.get_times()</function></link>. If this
+function returns <link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link> for the start time, no synchronisation
+will be done. Synchronisation can be disabled entirely by setting the object
+<link linkend="GstBaseSink--sync"><type>“sync”</type></link> property to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>After synchronisation the virtual method <link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link> will be
+called. Subclasses should minimally implement this method.</para>
+<para>Subclasses that synchronise on the clock in the <link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link>
+method are supported as well. These classes typically receive a buffer in
+the render method and can then potentially block on the clock while
+rendering. A typical example is an audiosink.
+These subclasses can use <link linkend="gst-base-sink-wait-preroll"><function>gst_base_sink_wait_preroll()</function></link> to perform the
+blocking wait.</para>
+<para>Upon receiving the EOS event in the PLAYING state, <link linkend="GstBaseSink"><type>GstBaseSink</type></link> will wait
+for the clock to reach the time indicated by the stop time of the last
+<link linkend="GstBaseSinkClass.get-times"><function>GstBaseSinkClass.get_times()</function></link> call before posting an EOS message. When the
+element receives EOS in PAUSED, preroll completes, the event is queued and an
+EOS message is posted when going to PLAYING.</para>
+<para><link linkend="GstBaseSink"><type>GstBaseSink</type></link> will internally use the <link linkend="GST-EVENT-SEGMENT:CAPS"><literal>GST_EVENT_SEGMENT</literal></link> events to schedule
+synchronisation and clipping of buffers. Buffers that fall completely outside
+of the current segment are dropped. Buffers that fall partially in the
+segment are rendered (and prerolled). Subclasses should do any subbuffer
+clipping themselves when needed.</para>
+<para><link linkend="GstBaseSink"><type>GstBaseSink</type></link> will by default report the current playback position in
+<link linkend="GST-FORMAT-TIME:CAPS"><literal>GST_FORMAT_TIME</literal></link> based on the current clock time and segment information.
+If no clock has been set on the element, the query will be forwarded
+upstream.</para>
+<para>The <link linkend="GstBaseSinkClass.set-caps"><function>GstBaseSinkClass.set_caps()</function></link> function will be called when the subclass
+should configure itself to process a specific media type.</para>
+<para>The <link linkend="GstBaseSinkClass.start"><function>GstBaseSinkClass.start()</function></link> and <link linkend="GstBaseSinkClass.stop"><function>GstBaseSinkClass.stop()</function></link> virtual methods
+will be called when resources should be allocated. Any 
+<link linkend="GstBaseSinkClass.preroll"><function>GstBaseSinkClass.preroll()</function></link>, <link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link> and
+<link linkend="GstBaseSinkClass.set-caps"><function>GstBaseSinkClass.set_caps()</function></link> function will be called between the
+<link linkend="GstBaseSinkClass.start"><function>GstBaseSinkClass.start()</function></link> and <link linkend="GstBaseSinkClass.stop"><function>GstBaseSinkClass.stop()</function></link> calls.</para>
+<para>The <link linkend="GstBaseSinkClass.event"><function>GstBaseSinkClass.event()</function></link> virtual method will be called when an event is
+received by <link linkend="GstBaseSink"><type>GstBaseSink</type></link>. Normally this method should only be overridden by
+very specific elements (such as file sinks) which need to handle the
+newsegment event specially.</para>
+<para>The <link linkend="GstBaseSinkClass.unlock"><function>GstBaseSinkClass.unlock()</function></link> method is called when the elements should
+unblock any blocking operations they perform in the
+<link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link> method. This is mostly useful when the
+<link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link> method performs a blocking write on a file
+descriptor, for example.</para>
+<para>The <link linkend="GstBaseSink--max-lateness"><type>“max-lateness”</type></link> property affects how the sink deals with
+buffers that arrive too late in the sink. A buffer arrives too late in the
+sink when the presentation time (as a combination of the last segment, buffer
+timestamp and element base_time) plus the duration is before the current
+time of the clock.
+If the frame is later than max-lateness, the sink will drop the buffer
+without calling the render method.
+This feature is disabled if sync is disabled, the
+<link linkend="GstBaseSinkClass.get-times"><function>GstBaseSinkClass.get_times()</function></link> method does not return a valid start time or
+max-lateness is set to -1 (the default).
+Subclasses can use <link linkend="gst-base-sink-set-max-lateness"><function>gst_base_sink_set_max_lateness()</function></link> to configure the
+max-lateness value.</para>
+<para>The <link linkend="GstBaseSink--qos"><type>“qos”</type></link> property will enable the quality-of-service features of
+the basesink which gather statistics about the real-time performance of the
+clock synchronisation. For each buffer received in the sink, statistics are
+gathered and a QOS event is sent upstream with these numbers. This
+information can then be used by upstream elements to reduce their processing
+rate, for example.</para>
+<para>The <link linkend="GstBaseSink--async"><type>“async”</type></link> property can be used to instruct the sink to never
+perform an ASYNC state change. This feature is mostly usable when dealing
+with non-synchronized streams or sparse streams.</para>
+
+</refsect1>
+<refsect1 id="GstBaseSink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-base-sink-query-latency" role="function">
+<title>gst_base_sink_query_latency&#160;()</title>
+<indexterm zone="gst-base-sink-query-latency"><primary>gst_base_sink_query_latency</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_sink_query_latency (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> *live</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> *upstream_live</parameter>,
+                             <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *min_latency</parameter>,
+                             <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *max_latency</parameter>);</programlisting>
+<para>Query the sink for the latency parameters. The latency will be queried from
+the upstream elements. <parameter>live</parameter>
+ will be <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>sink</parameter>
+ is configured to
+synchronize against the clock. <parameter>upstream_live</parameter>
+ will be <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if an upstream
+element is live.</para>
+<para>If both <parameter>live</parameter>
+ and <parameter>upstream_live</parameter>
+ are <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the sink will want to compensate
+for the latency introduced by the upstream elements by setting the
+<parameter>min_latency</parameter>
+ to a strictly positive value.</para>
+<para>This function is mostly used by subclasses.</para>
+<refsect3 id="gst-base-sink-query-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>live</para></entry>
+<entry role="parameter_description"><para> if the sink is live. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>upstream_live</para></entry>
+<entry role="parameter_description"><para> if an upstream element is live. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>min_latency</para></entry>
+<entry role="parameter_description"><para> the min latency of the upstream elements. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>max_latency</para></entry>
+<entry role="parameter_description"><para> the max latency of the upstream elements. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-query-latency.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the query succeeded.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-latency" role="function">
+<title>gst_base_sink_get_latency&#160;()</title>
+<indexterm zone="gst-base-sink-get-latency"><primary>gst_base_sink_get_latency</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_base_sink_get_latency (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the currently configured latency.</para>
+<refsect3 id="gst-base-sink-get-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-latency.returns" role="returns">
+<title>Returns</title>
+<para> The configured latency.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-do-preroll" role="function">
+<title>gst_base_sink_do_preroll&#160;()</title>
+<indexterm zone="gst-base-sink-do-preroll"><primary>gst_base_sink_do_preroll</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_sink_do_preroll (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                          <parameter><link linkend="GstMiniObject"><type>GstMiniObject</type></link> *obj</parameter>);</programlisting>
+<para>If the <parameter>sink</parameter>
+ spawns its own thread for pulling buffers from upstream it
+should call this method after it has pulled a buffer. If the element needed
+to preroll, this function will perform the preroll and will then block
+until the element state is changed.</para>
+<para>This function should be called with the PREROLL_LOCK held.</para>
+<refsect3 id="gst-base-sink-do-preroll.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para> the mini object that caused the preroll. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-do-preroll.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link> if the preroll completed and processing can
+continue. Any other return value should be returned from the render vmethod.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-wait" role="function">
+<title>gst_base_sink_wait&#160;()</title>
+<indexterm zone="gst-base-sink-wait"><primary>gst_base_sink_wait</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_sink_wait (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                    <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>,
+                    <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> *jitter</parameter>);</programlisting>
+<para>This function will wait for preroll to complete and will then block until <parameter>time</parameter>
+
+is reached. It is usually called by subclasses that use their own internal
+synchronisation but want to let some synchronization (like EOS) be handled
+by the base class.</para>
+<para>This function should only be called with the PREROLL_LOCK held (like when
+receiving an EOS event in the ::event vmethod or when handling buffers in
+::render).</para>
+<para>The <parameter>time</parameter>
+ argument should be the running_time of when the timeout should happen
+and will be adjusted with any latency and offset configured in the sink.</para>
+<refsect3 id="gst-base-sink-wait.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the running_time to be reached</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>jitter</para></entry>
+<entry role="parameter_description"><para> the jitter to be filled with time diff, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-wait.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-wait-preroll" role="function">
+<title>gst_base_sink_wait_preroll&#160;()</title>
+<indexterm zone="gst-base-sink-wait-preroll"><primary>gst_base_sink_wait_preroll</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_base_sink_wait_preroll (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>If the <link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link> method performs its own synchronisation
+against the clock it must unblock when going from PLAYING to the PAUSED state
+and call this method before continuing to render the remaining data.</para>
+<para>This function will block until a state change to PLAYING happens (in which
+case this function returns <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link>) or the processing must be stopped due
+to a state change to READY or a FLUSH event (in which case this function
+returns <link linkend="GST-FLOW-FLUSHING:CAPS"><literal>GST_FLOW_FLUSHING</literal></link>).</para>
+<para>This function should only be called with the PREROLL_LOCK held, like in the
+render function.</para>
+<refsect3 id="gst-base-sink-wait-preroll.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-wait-preroll.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GST-FLOW-OK:CAPS"><literal>GST_FLOW_OK</literal></link> if the preroll completed and processing can
+continue. Any other return value should be returned from the render vmethod.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-wait-clock" role="function">
+<title>gst_base_sink_wait_clock&#160;()</title>
+<indexterm zone="gst-base-sink-wait-clock"><primary>gst_base_sink_wait_clock</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockReturn"><returnvalue>GstClockReturn</returnvalue></link>
+gst_base_sink_wait_clock (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                          <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>,
+                          <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> *jitter</parameter>);</programlisting>
+<para>This function will block until <parameter>time</parameter>
+ is reached. It is usually called by
+subclasses that use their own internal synchronisation.</para>
+<para>If <parameter>time</parameter>
+ is not valid, no synchronisation is done and <link linkend="GST-CLOCK-BADTIME:CAPS"><literal>GST_CLOCK_BADTIME</literal></link> is
+returned. Likewise, if synchronisation is disabled in the element or there
+is no clock, no synchronisation is done and <link linkend="GST-CLOCK-BADTIME:CAPS"><literal>GST_CLOCK_BADTIME</literal></link> is returned.</para>
+<para>This function should only be called with the PREROLL_LOCK held, like when
+receiving an EOS event in the <link linkend="GstBaseSinkClass.event"><function>GstBaseSinkClass.event()</function></link> vmethod or when
+receiving a buffer in
+the <link linkend="GstBaseSinkClass.render"><function>GstBaseSinkClass.render()</function></link> vmethod.</para>
+<para>The <parameter>time</parameter>
+ argument should be the running_time of when this method should
+return and is not adjusted with any latency or offset configured in the
+sink.</para>
+<refsect3 id="gst-base-sink-wait-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the running_time to be reached</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>jitter</para></entry>
+<entry role="parameter_description"><para> the jitter to be filled with time diff, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-wait-clock.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstClockReturn"><type>GstClockReturn</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-sync" role="function">
+<title>gst_base_sink_set_sync&#160;()</title>
+<indexterm zone="gst-base-sink-set-sync"><primary>gst_base_sink_set_sync</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_sync (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                        <parameter><link linkend="gboolean"><type>gboolean</type></link> sync</parameter>);</programlisting>
+<para>Configures <parameter>sink</parameter>
+ to synchronize on the clock or not. When
+<parameter>sync</parameter>
+ is <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, incoming samples will be played as fast as
+possible. If <parameter>sync</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the timestamps of the incoming
+buffers will be used to schedule the exact render time of its
+contents.</para>
+<refsect3 id="gst-base-sink-set-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>sync</para></entry>
+<entry role="parameter_description"><para>the new sync value.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-sync" role="function">
+<title>gst_base_sink_get_sync&#160;()</title>
+<indexterm zone="gst-base-sink-get-sync"><primary>gst_base_sink_get_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_sink_get_sync (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Checks if <parameter>sink</parameter>
+ is currently configured to synchronize against the
+clock.</para>
+<refsect3 id="gst-base-sink-get-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-sync.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the sink is configured to synchronize against the clock.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-max-lateness" role="function">
+<title>gst_base_sink_set_max_lateness&#160;()</title>
+<indexterm zone="gst-base-sink-set-max-lateness"><primary>gst_base_sink_set_max_lateness</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_max_lateness (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> max_lateness</parameter>);</programlisting>
+<para>Sets the new max lateness value to <parameter>max_lateness</parameter>
+. This value is
+used to decide if a buffer should be dropped or not based on the
+buffer timestamp and the current clock time. A value of -1 means
+an unlimited time.</para>
+<refsect3 id="gst-base-sink-set-max-lateness.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_lateness</para></entry>
+<entry role="parameter_description"><para>the new max lateness value.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-max-lateness" role="function">
+<title>gst_base_sink_get_max_lateness&#160;()</title>
+<indexterm zone="gst-base-sink-get-max-lateness"><primary>gst_base_sink_get_max_lateness</primary></indexterm>
+<programlisting language="C"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+gst_base_sink_get_max_lateness (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Gets the max lateness value. See gst_base_sink_set_max_lateness for
+more details.</para>
+<refsect3 id="gst-base-sink-get-max-lateness.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-max-lateness.returns" role="returns">
+<title>Returns</title>
+<para> The maximum time in nanoseconds that a buffer can be late
+before it is dropped and not rendered. A value of -1 means an
+unlimited time.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-qos-enabled" role="function">
+<title>gst_base_sink_set_qos_enabled&#160;()</title>
+<indexterm zone="gst-base-sink-set-qos-enabled"><primary>gst_base_sink_set_qos_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_qos_enabled (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                               <parameter><link linkend="gboolean"><type>gboolean</type></link> enabled</parameter>);</programlisting>
+<para>Configures <parameter>sink</parameter>
+ to send Quality-of-Service events upstream.</para>
+<refsect3 id="gst-base-sink-set-qos-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enabled</para></entry>
+<entry role="parameter_description"><para>the new qos value.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-is-qos-enabled" role="function">
+<title>gst_base_sink_is_qos_enabled&#160;()</title>
+<indexterm zone="gst-base-sink-is-qos-enabled"><primary>gst_base_sink_is_qos_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_sink_is_qos_enabled (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Checks if <parameter>sink</parameter>
+ is currently configured to send Quality-of-Service events
+upstream.</para>
+<refsect3 id="gst-base-sink-is-qos-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-is-qos-enabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the sink is configured to perform Quality-of-Service.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-async-enabled" role="function">
+<title>gst_base_sink_set_async_enabled&#160;()</title>
+<indexterm zone="gst-base-sink-set-async-enabled"><primary>gst_base_sink_set_async_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_async_enabled (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                                 <parameter><link linkend="gboolean"><type>gboolean</type></link> enabled</parameter>);</programlisting>
+<para>Configures <parameter>sink</parameter>
+ to perform all state changes asynchronously. When async is
+disabled, the sink will immediately go to PAUSED instead of waiting for a
+preroll buffer. This feature is useful if the sink does not synchronize
+against the clock or when it is dealing with sparse streams.</para>
+<refsect3 id="gst-base-sink-set-async-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enabled</para></entry>
+<entry role="parameter_description"><para>the new async value.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-is-async-enabled" role="function">
+<title>gst_base_sink_is_async_enabled&#160;()</title>
+<indexterm zone="gst-base-sink-is-async-enabled"><primary>gst_base_sink_is_async_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_sink_is_async_enabled (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Checks if <parameter>sink</parameter>
+ is currently configured to perform asynchronous state
+changes to PAUSED.</para>
+<refsect3 id="gst-base-sink-is-async-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-is-async-enabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the sink is configured to perform asynchronous state
+changes.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-ts-offset" role="function">
+<title>gst_base_sink_set_ts_offset&#160;()</title>
+<indexterm zone="gst-base-sink-set-ts-offset"><primary>gst_base_sink_set_ts_offset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_ts_offset (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                             <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> offset</parameter>);</programlisting>
+<para>Adjust the synchronisation of <parameter>sink</parameter>
+ with <parameter>offset</parameter>
+. A negative value will
+render buffers earlier than their timestamp. A positive value will delay
+rendering. This function can be used to fix playback of badly timestamped
+buffers.</para>
+<refsect3 id="gst-base-sink-set-ts-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the new offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-ts-offset" role="function">
+<title>gst_base_sink_get_ts_offset&#160;()</title>
+<indexterm zone="gst-base-sink-get-ts-offset"><primary>gst_base_sink_get_ts_offset</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTimeDiff"><returnvalue>GstClockTimeDiff</returnvalue></link>
+gst_base_sink_get_ts_offset (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the synchronisation offset of <parameter>sink</parameter>
+.</para>
+<refsect3 id="gst-base-sink-get-ts-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-ts-offset.returns" role="returns">
+<title>Returns</title>
+<para> The synchronisation offset.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-render-delay" role="function">
+<title>gst_base_sink_set_render_delay&#160;()</title>
+<indexterm zone="gst-base-sink-set-render-delay"><primary>gst_base_sink_set_render_delay</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_render_delay (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                                <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> delay</parameter>);</programlisting>
+<para>Set the render delay in <parameter>sink</parameter>
+ to <parameter>delay</parameter>
+. The render delay is the time
+between actual rendering of a buffer and its synchronisation time. Some
+devices might delay media rendering which can be compensated for with this
+function.</para>
+<para>After calling this function, this sink will report additional latency and
+other sinks will adjust their latency to delay the rendering of their media.</para>
+<para>This function is usually called by subclasses.</para>
+<refsect3 id="gst-base-sink-set-render-delay.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>delay</para></entry>
+<entry role="parameter_description"><para>the new delay</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-render-delay" role="function">
+<title>gst_base_sink_get_render_delay&#160;()</title>
+<indexterm zone="gst-base-sink-get-render-delay"><primary>gst_base_sink_get_render_delay</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_base_sink_get_render_delay (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the render delay of <parameter>sink</parameter>
+. see <link linkend="gst-base-sink-set-render-delay"><function>gst_base_sink_set_render_delay()</function></link> for more
+information about the render delay.</para>
+<refsect3 id="gst-base-sink-get-render-delay.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-render-delay.returns" role="returns">
+<title>Returns</title>
+<para> the render delay of <parameter>sink</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-last-sample" role="function">
+<title>gst_base_sink_get_last_sample&#160;()</title>
+<indexterm zone="gst-base-sink-get-last-sample"><primary>gst_base_sink_get_last_sample</primary></indexterm>
+<programlisting language="C"><link linkend="GstSample"><returnvalue>GstSample</returnvalue></link>&#160;*
+gst_base_sink_get_last_sample (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the last sample that arrived in the sink and was used for preroll or for
+rendering. This property can be used to generate thumbnails.</para>
+<para>The <link linkend="GstCaps"><type>GstCaps</type></link> on the sample can be used to determine the type of the buffer.</para>
+<para>Free-function: gst_sample_unref</para>
+<refsect3 id="gst-base-sink-get-last-sample.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-last-sample.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstSample"><type>GstSample</type></link>. <link linkend="gst-sample-unref"><function>gst_sample_unref()</function></link> after
+usage.  This function returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> when no buffer has arrived in the
+sink yet or when the sink is not in PAUSED or PLAYING. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-blocksize" role="function">
+<title>gst_base_sink_set_blocksize&#160;()</title>
+<indexterm zone="gst-base-sink-set-blocksize"><primary>gst_base_sink_set_blocksize</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_blocksize (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                             <parameter><link linkend="guint"><type>guint</type></link> blocksize</parameter>);</programlisting>
+<para>Set the number of bytes that the sink will pull when it is operating in pull
+mode.</para>
+<refsect3 id="gst-base-sink-set-blocksize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>blocksize</para></entry>
+<entry role="parameter_description"><para>the blocksize in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-blocksize" role="function">
+<title>gst_base_sink_get_blocksize&#160;()</title>
+<indexterm zone="gst-base-sink-get-blocksize"><primary>gst_base_sink_get_blocksize</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_base_sink_get_blocksize (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the number of bytes that the sink will pull when it is operating in pull
+mode.</para>
+<refsect3 id="gst-base-sink-get-blocksize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-blocksize.returns" role="returns">
+<title>Returns</title>
+<para> the number of bytes <parameter>sink</parameter>
+will pull in pull mode.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-get-throttle-time" role="function">
+<title>gst_base_sink_get_throttle_time&#160;()</title>
+<indexterm zone="gst-base-sink-get-throttle-time"><primary>gst_base_sink_get_throttle_time</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_base_sink_get_throttle_time (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the time that will be inserted between frames to control the 
+maximum buffers per second.</para>
+<refsect3 id="gst-base-sink-get-throttle-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-throttle-time.returns" role="returns">
+<title>Returns</title>
+<para> the number of nanoseconds <parameter>sink</parameter>
+will put between frames.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-throttle-time" role="function">
+<title>gst_base_sink_set_throttle_time&#160;()</title>
+<indexterm zone="gst-base-sink-set-throttle-time"><primary>gst_base_sink_set_throttle_time</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_throttle_time (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                                 <parameter><link linkend="guint64"><type>guint64</type></link> throttle</parameter>);</programlisting>
+<para>Set the time that will be inserted between rendered buffers. This
+can be used to control the maximum buffers per second that the sink
+will render.</para>
+<refsect3 id="gst-base-sink-set-throttle-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>throttle</para></entry>
+<entry role="parameter_description"><para>the throttle time in nanoseconds</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-set-max-bitrate" role="function" condition="since:1.2">
+<title>gst_base_sink_set_max_bitrate&#160;()</title>
+<indexterm zone="gst-base-sink-set-max-bitrate" role="1.2"><primary>gst_base_sink_set_max_bitrate</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_max_bitrate (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                               <parameter><link linkend="guint64"><type>guint64</type></link> max_bitrate</parameter>);</programlisting>
+<para>Set the maximum amount of bits per second that the sink will render.</para>
+<refsect3 id="gst-base-sink-set-max-bitrate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_bitrate</para></entry>
+<entry role="parameter_description"><para>the max_bitrate in bits per second</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-base-sink-get-max-bitrate" role="function" condition="since:1.2">
+<title>gst_base_sink_get_max_bitrate&#160;()</title>
+<indexterm zone="gst-base-sink-get-max-bitrate" role="1.2"><primary>gst_base_sink_get_max_bitrate</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_base_sink_get_max_bitrate (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Get the maximum amount of bits per second that the sink will render.</para>
+<refsect3 id="gst-base-sink-get-max-bitrate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-get-max-bitrate.returns" role="returns">
+<title>Returns</title>
+<para> the maximum number of bits per second <parameter>sink</parameter>
+will render.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-base-sink-set-last-sample-enabled" role="function">
+<title>gst_base_sink_set_last_sample_enabled&#160;()</title>
+<indexterm zone="gst-base-sink-set-last-sample-enabled"><primary>gst_base_sink_set_last_sample_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_sink_set_last_sample_enabled (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>,
+                                       <parameter><link linkend="gboolean"><type>gboolean</type></link> enabled</parameter>);</programlisting>
+<para>Configures <parameter>sink</parameter>
+ to store the last received sample in the last-sample
+property.</para>
+<refsect3 id="gst-base-sink-set-last-sample-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enabled</para></entry>
+<entry role="parameter_description"><para>the new enable-last-sample value.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-sink-is-last-sample-enabled" role="function">
+<title>gst_base_sink_is_last_sample_enabled&#160;()</title>
+<indexterm zone="gst-base-sink-is-last-sample-enabled"><primary>gst_base_sink_is_last_sample_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_sink_is_last_sample_enabled (<parameter><link linkend="GstBaseSink"><type>GstBaseSink</type></link> *sink</parameter>);</programlisting>
+<para>Checks if <parameter>sink</parameter>
+ is currently configured to store the last received sample in
+the last-sample property.</para>
+<refsect3 id="gst-base-sink-is-last-sample-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sink</para></entry>
+<entry role="parameter_description"><para>the sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-sink-is-last-sample-enabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the sink is configured to store the last received sample.</para>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-SINK-PAD:CAPS" role="macro">
+<title>GST_BASE_SINK_PAD()</title>
+<indexterm zone="GST-BASE-SINK-PAD:CAPS"><primary>GST_BASE_SINK_PAD</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_PAD(obj)          (GST_BASE_SINK_CAST (obj)-&gt;sinkpad)
+</programlisting>
+<para>Gives the pointer to the <link linkend="GstPad"><type>GstPad</type></link> object of the element.</para>
+<refsect3 id="GST-BASE-SINK-PAD.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>base sink instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-SINK-GET-PREROLL-COND:CAPS" role="macro">
+<title>GST_BASE_SINK_GET_PREROLL_COND()</title>
+<indexterm zone="GST-BASE-SINK-GET-PREROLL-COND:CAPS"><primary>GST_BASE_SINK_GET_PREROLL_COND</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_GET_PREROLL_COND(pad)   (&amp;GST_BASE_SINK_CAST(pad)-&gt;preroll_cond)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-GET-PREROLL-LOCK:CAPS" role="macro">
+<title>GST_BASE_SINK_GET_PREROLL_LOCK()</title>
+<indexterm zone="GST-BASE-SINK-GET-PREROLL-LOCK:CAPS"><primary>GST_BASE_SINK_GET_PREROLL_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_GET_PREROLL_LOCK(pad)   (&amp;GST_BASE_SINK_CAST(pad)-&gt;preroll_lock)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-BROADCAST:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_BROADCAST()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-BROADCAST:CAPS"><primary>GST_BASE_SINK_PREROLL_BROADCAST</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_PREROLL_BROADCAST(pad)  g_cond_broadcast (GST_BASE_SINK_GET_PREROLL_COND (pad));
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-LOCK:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_LOCK()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-LOCK:CAPS"><primary>GST_BASE_SINK_PREROLL_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_PREROLL_LOCK(pad)       (g_mutex_lock(GST_BASE_SINK_GET_PREROLL_LOCK(pad)))
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-SIGNAL:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_SIGNAL()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-SIGNAL:CAPS"><primary>GST_BASE_SINK_PREROLL_SIGNAL</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_PREROLL_SIGNAL(pad)     g_cond_signal (GST_BASE_SINK_GET_PREROLL_COND (pad));
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-TRYLOCK:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_TRYLOCK()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-TRYLOCK:CAPS"><primary>GST_BASE_SINK_PREROLL_TRYLOCK</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_PREROLL_TRYLOCK(pad)    (g_mutex_trylock(GST_BASE_SINK_GET_PREROLL_LOCK(pad)))
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-UNLOCK:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_UNLOCK()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-UNLOCK:CAPS"><primary>GST_BASE_SINK_PREROLL_UNLOCK</primary></indexterm>
+<programlisting language="C">#define GST_BASE_SINK_PREROLL_UNLOCK(pad)     (g_mutex_unlock(GST_BASE_SINK_GET_PREROLL_LOCK(pad)))
+</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-WAIT:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_WAIT()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-WAIT:CAPS"><primary>GST_BASE_SINK_PREROLL_WAIT</primary></indexterm>
+<programlisting language="C">#define             GST_BASE_SINK_PREROLL_WAIT(pad)</programlisting>
+</refsect2>
+<refsect2 id="GST-BASE-SINK-PREROLL-WAIT-UNTIL:CAPS" role="macro">
+<title>GST_BASE_SINK_PREROLL_WAIT_UNTIL()</title>
+<indexterm zone="GST-BASE-SINK-PREROLL-WAIT-UNTIL:CAPS"><primary>GST_BASE_SINK_PREROLL_WAIT_UNTIL</primary></indexterm>
+<programlisting language="C">#define             GST_BASE_SINK_PREROLL_WAIT_UNTIL(pad, end_time)</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBaseSink-struct" role="struct">
+<title>struct GstBaseSink</title>
+<indexterm zone="GstBaseSink-struct"><primary>GstBaseSink</primary></indexterm>
+<programlisting language="C">struct GstBaseSink;</programlisting>
+<para>The opaque <link linkend="GstBaseSink"><type>GstBaseSink</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstBaseSinkClass" role="struct">
+<title>struct GstBaseSinkClass</title>
+<indexterm zone="GstBaseSinkClass"><primary>GstBaseSinkClass</primary></indexterm>
+<programlisting language="C">struct GstBaseSinkClass {
+  GstElementClass parent_class;
+
+  /* get caps from subclass */
+  GstCaps*      (*get_caps)     (GstBaseSink *sink, GstCaps *filter);
+  /* notify subclass of new caps */
+  gboolean      (*set_caps)     (GstBaseSink *sink, GstCaps *caps);
+
+  /* fixate sink caps during pull-mode negotiation */
+  GstCaps *     (*fixate)       (GstBaseSink *sink, GstCaps *caps);
+  /* start or stop a pulling thread */
+  gboolean      (*activate_pull)(GstBaseSink *sink, gboolean active);
+
+  /* get the start and end times for syncing on this buffer */
+  void          (*get_times)    (GstBaseSink *sink, GstBuffer *buffer,
+                                 GstClockTime *start, GstClockTime *end);
+
+  /* propose allocation parameters for upstream */
+  gboolean      (*propose_allocation)   (GstBaseSink *sink, GstQuery *query);
+
+  /* start and stop processing, ideal for opening/closing the resource */
+  gboolean      (*start)        (GstBaseSink *sink);
+  gboolean      (*stop)         (GstBaseSink *sink);
+
+  /* unlock any pending access to the resource. subclasses should unlock
+   * any function ASAP. */
+  gboolean      (*unlock)       (GstBaseSink *sink);
+  /* Clear a previously indicated unlock request not that unlocking is
+   * complete. Sub-classes should clear any command queue or indicator they
+   * set during unlock */
+  gboolean      (*unlock_stop)  (GstBaseSink *sink);
+
+  /* notify subclass of query */
+  gboolean      (*query)        (GstBaseSink *sink, GstQuery *query);
+
+  /* notify subclass of event */
+  gboolean      (*event)        (GstBaseSink *sink, GstEvent *event);
+  /* wait for eos or gap, subclasses should chain up to parent first */
+  GstFlowReturn (*wait_event)   (GstBaseSink *sink, GstEvent *event);
+
+  /* notify subclass of buffer or list before doing sync */
+  GstFlowReturn (*prepare)      (GstBaseSink *sink, GstBuffer *buffer);
+  GstFlowReturn (*prepare_list) (GstBaseSink *sink, GstBufferList *buffer_list);
+
+  /* notify subclass of preroll buffer or real buffer */
+  GstFlowReturn (*preroll)      (GstBaseSink *sink, GstBuffer *buffer);
+  GstFlowReturn (*render)       (GstBaseSink *sink, GstBuffer *buffer);
+  /* Render a BufferList */
+  GstFlowReturn (*render_list)  (GstBaseSink *sink, GstBufferList *buffer_list);
+};
+</programlisting>
+<para>Subclasses can override any of the available virtual methods or not, as
+needed. At the minimum, the <parameter>render</parameter>
+ method should be overridden to
+output/present buffers.</para>
+<refsect3 id="GstBaseSinkClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.get-caps">get_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to get sink pad caps from the subclass</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.set-caps">set_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Notify subclass of changed caps</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.fixate">fixate</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Only useful in pull mode. Implement if you have
+ideas about what should be the default values for the caps you support.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.activate-pull">activate_pull</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Subclasses should override this when they can provide an
+alternate method of spawning a thread to drive the pipeline in pull mode.
+Should start or stop the pulling thread, depending on the value of the
+"active" argument. Called after actually activating the sink pad in pull
+mode. The default implementation starts a task on the sink pad.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.get-times">get_times</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to get the start and end times for synchronising
+the passed buffer to the clock</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.propose-allocation">propose_allocation</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>configure the allocation query</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.start">start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start processing. Ideal for opening resources in the subclass</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.stop">stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Stop processing. Subclasses should use this to close resources.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.unlock">unlock</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Unlock any pending access to the resource. Subclasses should
+unblock any blocked function ASAP</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.unlock-stop">unlock_stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Clear the previous unlock request. Subclasses should clear
+any state they set during <link linkend="unlock"><function>unlock()</function></link>, such as clearing command queues.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.query">query</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>perform a <link linkend="GstQuery"><type>GstQuery</type></link> on the element.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.event">event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Override this to handle events arriving on the sink pad</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.wait-event">wait_event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Override this to implement custom logic to wait for the event
+time (for events like EOS and GAP). Subclasses should always first
+chain up to the default implementation.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.prepare">prepare</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to prepare the buffer for <parameter>render</parameter>
+and <parameter>preroll</parameter>
+. This
+function is called before synchronisation is performed.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.prepare-list">prepare_list</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to prepare the buffer list for <parameter>render_list</parameter>
+. This
+function is called before synchronisation is performed.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.preroll">preroll</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to present the preroll buffer if desired.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.render">render</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called when a buffer should be presented or output, at the
+correct moment if the <link linkend="GstBaseSink"><type>GstBaseSink</type></link> has been set to sync to the clock.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseSinkClass.render-list">render_list</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Same as <parameter>render</parameter>
+but used with buffer lists instead of
+buffers.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstBaseSink--async" role="property"><title>The <literal>“async”</literal> property</title>
+<indexterm zone="GstBaseSink--async"><primary>GstBaseSink:async</primary></indexterm>
+<programlisting>  “async”                    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the basesink will perform asynchronous state changes.
+When set to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, the sink will not signal the parent when it prerolls.
+Use this option when dealing with sparse streams or when synchronisation is
+not required.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstBaseSink--blocksize" role="property"><title>The <literal>“blocksize”</literal> property</title>
+<indexterm zone="GstBaseSink--blocksize"><primary>GstBaseSink:blocksize</primary></indexterm>
+<programlisting>  “blocksize”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The amount of bytes to pull when operating in pull mode.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 4096</para>
+</refsect2>
+<refsect2 id="GstBaseSink--enable-last-sample" role="property"><title>The <literal>“enable-last-sample”</literal> property</title>
+<indexterm zone="GstBaseSink--enable-last-sample"><primary>GstBaseSink:enable-last-sample</primary></indexterm>
+<programlisting>  “enable-last-sample”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable the last-sample property. If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, basesink doesn't keep a
+reference to the last buffer arrived and the last-sample property is always
+set to <link linkend="NULL:CAPS"><literal>NULL</literal></link>. This can be useful if you need buffers to be released as soon
+as possible, eg. if you're using a buffer pool.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstBaseSink--last-sample" role="property"><title>The <literal>“last-sample”</literal> property</title>
+<indexterm zone="GstBaseSink--last-sample"><primary>GstBaseSink:last-sample</primary></indexterm>
+<programlisting>  “last-sample”              <link linkend="GstSample"><type>GstSample</type></link>&#160;*</programlisting>
+<para>The last buffer that arrived in the sink and was used for preroll or for
+rendering. This property can be used to generate thumbnails. This property
+can be <link linkend="NULL:CAPS"><literal>NULL</literal></link> when the sink has not yet received a buffer.</para>
+<para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstBaseSink--max-bitrate" role="property"><title>The <literal>“max-bitrate”</literal> property</title>
+<indexterm zone="GstBaseSink--max-bitrate" role="1.2"><primary>GstBaseSink:max-bitrate</primary></indexterm>
+<programlisting>  “max-bitrate”              <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Control the maximum amount of bits that will be rendered per second.
+Setting this property to a value bigger than 0 will make the sink delay
+rendering of the buffers when it would exceed to max-bitrate.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstBaseSink--max-lateness" role="property"><title>The <literal>“max-lateness”</literal> property</title>
+<indexterm zone="GstBaseSink--max-lateness"><primary>GstBaseSink:max-lateness</primary></indexterm>
+<programlisting>  “max-lateness”             <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Maximum number of nanoseconds that a buffer can be late before it is dropped (-1 unlimited).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= -1</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstBaseSink--qos" role="property"><title>The <literal>“qos”</literal> property</title>
+<indexterm zone="GstBaseSink--qos"><primary>GstBaseSink:qos</primary></indexterm>
+<programlisting>  “qos”                      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Generate Quality-of-Service events upstream.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstBaseSink--render-delay" role="property"><title>The <literal>“render-delay”</literal> property</title>
+<indexterm zone="GstBaseSink--render-delay"><primary>GstBaseSink:render-delay</primary></indexterm>
+<programlisting>  “render-delay”             <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>The additional delay between synchronisation and actual rendering of the
+media. This property will add additional latency to the device in order to
+make other sinks compensate for the delay.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstBaseSink--sync" role="property"><title>The <literal>“sync”</literal> property</title>
+<indexterm zone="GstBaseSink--sync"><primary>GstBaseSink:sync</primary></indexterm>
+<programlisting>  “sync”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Sync on the clock.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstBaseSink--throttle-time" role="property"><title>The <literal>“throttle-time”</literal> property</title>
+<indexterm zone="GstBaseSink--throttle-time"><primary>GstBaseSink:throttle-time</primary></indexterm>
+<programlisting>  “throttle-time”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>The time to insert between buffers. This property can be used to control
+the maximum amount of buffers per second to render. Setting this property
+to a value bigger than 0 will make the sink create THROTTLE QoS events.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstBaseSink--ts-offset" role="property"><title>The <literal>“ts-offset”</literal> property</title>
+<indexterm zone="GstBaseSink--ts-offset"><primary>GstBaseSink:ts-offset</primary></indexterm>
+<programlisting>  “ts-offset”                <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Controls the final synchronisation, a negative value will render the buffer
+earlier while a positive value delays playback. This property can be
+used to fix synchronisation in bad files.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseSink.see-also">
+<title>See Also</title>
+<para><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link>, <link linkend="GstBaseSrc"><type>GstBaseSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

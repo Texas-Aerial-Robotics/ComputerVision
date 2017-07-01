@@ -1,0 +1,622 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstUriHandler">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstUriHandler.top_of_page">GstUriHandler</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstUriHandler</refname>
+<refpurpose>Interface to ease URI handling in plugins.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstUriHandler.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-error-quark">gst_uri_error_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-URI-TYPE-IS-VALID:CAPS">GST_URI_TYPE_IS_VALID</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-protocol-is-valid">gst_uri_protocol_is_valid</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-protocol-is-supported">gst_uri_protocol_is_supported</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-is-valid">gst_uri_is_valid</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-has-protocol">gst_uri_has_protocol</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-protocol">gst_uri_get_protocol</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-get-location">gst_uri_get_location</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-construct">gst_uri_construct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-filename-to-uri">gst_filename_to_uri</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-make-from-uri">gst_element_make_from_uri</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstURIType"><returnvalue>GstURIType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-handler-get-uri-type">gst_uri_handler_get_uri_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const *
+</entry><entry role="function_name"><link linkend="gst-uri-handler-get-protocols">gst_uri_handler_get_protocols</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-uri-handler-get-uri">gst_uri_handler_get_uri</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-uri-handler-set-uri">gst_uri_handler_set_uri</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstURIHandler"/><refsect1 id="gstreamer-GstUriHandler.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstURIHandler-struct">GstURIHandler</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstURIHandlerInterface">GstURIHandlerInterface</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstURIType">GstURIType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstURIError">GstURIError</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-URI-NO-PORT:CAPS">GST_URI_NO_PORT</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstUriHandler.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GInterface">GInterface</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstURIHandler
+</screen>
+</refsect1>
+
+<refsect1 id="gstreamer-GstUriHandler.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstUriHandler.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstURIHandler"><type>GstURIHandler</type></link> is an interface that is implemented by Source and Sink
+<link linkend="GstElement"><type>GstElement</type></link> to unify handling of URI.</para>
+<para>An application can use the following functions to quickly get an element
+that handles the given URI for reading or writing
+(<link linkend="gst-element-make-from-uri"><function>gst_element_make_from_uri()</function></link>).</para>
+<para>Source and Sink plugins should implement this interface when possible.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstUriHandler.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-uri-error-quark" role="function">
+<title>gst_uri_error_quark&#160;()</title>
+<indexterm zone="gst-uri-error-quark"><primary>gst_uri_error_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_uri_error_quark (<parameter><type>void</type></parameter>);</programlisting>
+</refsect2>
+<refsect2 id="GST-URI-TYPE-IS-VALID:CAPS" role="macro">
+<title>GST_URI_TYPE_IS_VALID()</title>
+<indexterm zone="GST-URI-TYPE-IS-VALID:CAPS"><primary>GST_URI_TYPE_IS_VALID</primary></indexterm>
+<programlisting language="C">#define GST_URI_TYPE_IS_VALID(type) ((type) == GST_URI_SRC || (type) == GST_URI_SINK)
+</programlisting>
+<para>Tests if the type direction is valid.</para>
+<refsect3 id="GST-URI-TYPE-IS-VALID.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstURIType"><type>GstURIType</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-protocol-is-valid" role="function">
+<title>gst_uri_protocol_is_valid&#160;()</title>
+<indexterm zone="gst-uri-protocol-is-valid"><primary>gst_uri_protocol_is_valid</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_protocol_is_valid (<parameter>const <link linkend="gchar"><type>gchar</type></link> *protocol</parameter>);</programlisting>
+<para>Tests if the given string is a valid protocol identifier. Protocols
+must consist of alphanumeric characters, '+', '-' and '.' and must
+start with a alphabetic character. See RFC 3986 Section 3.1.</para>
+<refsect3 id="gst-uri-protocol-is-valid.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>protocol</para></entry>
+<entry role="parameter_description"><para>A string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-protocol-is-valid.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the string is a valid protocol identifier, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-protocol-is-supported" role="function">
+<title>gst_uri_protocol_is_supported&#160;()</title>
+<indexterm zone="gst-uri-protocol-is-supported"><primary>gst_uri_protocol_is_supported</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_protocol_is_supported (<parameter>const <link linkend="GstURIType"><type>GstURIType</type></link> type</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *protocol</parameter>);</programlisting>
+<para>Checks if an element exists that supports the given URI protocol. Note
+that a positive return value does not imply that a subsequent call to
+<link linkend="gst-element-make-from-uri"><function>gst_element_make_from_uri()</function></link> is guaranteed to work.</para>
+<refsect3 id="gst-uri-protocol-is-supported.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>Whether to check for a source or a sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>protocol</para></entry>
+<entry role="parameter_description"><para>Protocol that should be checked for (e.g. "http" or "smb")</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-protocol-is-supported.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-is-valid" role="function">
+<title>gst_uri_is_valid&#160;()</title>
+<indexterm zone="gst-uri-is-valid"><primary>gst_uri_is_valid</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_is_valid (<parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>);</programlisting>
+<para>Tests if the given string is a valid URI identifier. URIs start with a valid
+scheme followed by ":" and maybe a string identifying the location.</para>
+<refsect3 id="gst-uri-is-valid.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>A URI string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-is-valid.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the string is a valid URI</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-has-protocol" role="function">
+<title>gst_uri_has_protocol&#160;()</title>
+<indexterm zone="gst-uri-has-protocol"><primary>gst_uri_has_protocol</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_has_protocol (<parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *protocol</parameter>);</programlisting>
+<para>Checks if the protocol of a given valid URI matches <parameter>protocol</parameter>
+.</para>
+<refsect3 id="gst-uri-has-protocol.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>a URI string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>protocol</para></entry>
+<entry role="parameter_description"><para>a protocol string (e.g. "http")</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-has-protocol.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the protocol matches.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-get-protocol" role="function">
+<title>gst_uri_get_protocol&#160;()</title>
+<indexterm zone="gst-uri-get-protocol"><primary>gst_uri_get_protocol</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_protocol (<parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>);</programlisting>
+<para>Extracts the protocol out of a given valid URI. The returned string must be
+freed using <link linkend="g-free"><function>g_free()</function></link>.</para>
+<refsect3 id="gst-uri-get-protocol.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>A URI string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-protocol.returns" role="returns">
+<title>Returns</title>
+<para> The protocol for this URI.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-get-location" role="function">
+<title>gst_uri_get_location&#160;()</title>
+<indexterm zone="gst-uri-get-location"><primary>gst_uri_get_location</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_get_location (<parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>);</programlisting>
+<para>Extracts the location out of a given valid URI, ie. the protocol and "://"
+are stripped from the URI, which means that the location returned includes
+the hostname if one is specified. The returned string must be freed using
+<link linkend="g-free"><function>g_free()</function></link>.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-uri-get-location.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>A URI string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-get-location.returns" role="returns">
+<title>Returns</title>
+<para> the location for this URI. Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the
+URI isn't valid. If the URI does not contain a location, an empty
+string is returned. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-construct" role="function">
+<title>gst_uri_construct&#160;()</title>
+<indexterm zone="gst-uri-construct"><primary>gst_uri_construct</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_construct (<parameter>const <link linkend="gchar"><type>gchar</type></link> *protocol</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *location</parameter>);</programlisting>
+<para>Constructs a URI for a given valid protocol and location.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-uri-construct.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>protocol</para></entry>
+<entry role="parameter_description"><para>Protocol for URI</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>location</para></entry>
+<entry role="parameter_description"><para> Location for URI. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-construct.returns" role="returns">
+<title>Returns</title>
+<para> a new string for this URI. Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the
+given URI protocol is not valid, or the given location is <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-filename-to-uri" role="function">
+<title>gst_filename_to_uri&#160;()</title>
+<indexterm zone="gst-filename-to-uri"><primary>gst_filename_to_uri</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_filename_to_uri (<parameter>const <link linkend="gchar"><type>gchar</type></link> *filename</parameter>,
+                     <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Similar to <link linkend="g-filename-to-uri"><function>g_filename_to_uri()</function></link>, but attempts to handle relative file paths
+as well. Before converting <parameter>filename</parameter>
+ into an URI, it will be prefixed by
+the current working directory if it is a relative path, and then the path
+will be canonicalised so that it doesn't contain any './' or '../' segments.</para>
+<para>On Windows <link linkend="filename"><type>filename</type></link> should be in UTF-8 encoding.</para>
+<refsect3 id="gst-filename-to-uri.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>filename</para></entry>
+<entry role="parameter_description"><para>absolute or relative file name path</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>pointer to error, or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-filename-to-uri.returns" role="returns">
+<title>Returns</title>
+<para> newly-allocated URI string, or NULL on error. The caller must
+free the URI string with <link linkend="g-free"><function>g_free()</function></link> when no longer needed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-make-from-uri" role="function">
+<title>gst_element_make_from_uri&#160;()</title>
+<indexterm zone="gst-element-make-from-uri"><primary>gst_element_make_from_uri</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_element_make_from_uri (<parameter>const <link linkend="GstURIType"><type>GstURIType</type></link> type</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *elementname</parameter>,
+                           <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Creates an element for handling the given URI.</para>
+<refsect3 id="gst-element-make-from-uri.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>Whether to create a source or a sink</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>URI to create an element for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>elementname</para></entry>
+<entry role="parameter_description"><para> Name of created element, can be <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para> address where to store error information, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-make-from-uri.returns" role="returns">
+<title>Returns</title>
+<para> a new element or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none could be created. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-handler-get-uri-type" role="function">
+<title>gst_uri_handler_get_uri_type&#160;()</title>
+<indexterm zone="gst-uri-handler-get-uri-type"><primary>gst_uri_handler_get_uri_type</primary></indexterm>
+<programlisting language="C"><link linkend="GstURIType"><returnvalue>GstURIType</returnvalue></link>
+gst_uri_handler_get_uri_type (<parameter><link linkend="GstURIHandler"><type>GstURIHandler</type></link> *handler</parameter>);</programlisting>
+<para>Gets the type of the given URI handler</para>
+<refsect3 id="gst-uri-handler-get-uri-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>handler</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstURIHandler"><type>GstURIHandler</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-handler-get-uri-type.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstURIType"><type>GstURIType</type></link> of the URI handler.
+Returns <link linkend="GST-URI-UNKNOWN:CAPS"><type>GST_URI_UNKNOWN</type></link> if the <parameter>handler</parameter>
+isn't implemented correctly.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-handler-get-protocols" role="function">
+<title>gst_uri_handler_get_protocols&#160;()</title>
+<indexterm zone="gst-uri-handler-get-protocols"><primary>gst_uri_handler_get_protocols</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const *
+gst_uri_handler_get_protocols (<parameter><link linkend="GstURIHandler"><type>GstURIHandler</type></link> *handler</parameter>);</programlisting>
+<para>Gets the list of protocols supported by <parameter>handler</parameter>
+. This list may not be
+modified.</para>
+<refsect3 id="gst-uri-handler-get-protocols.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>handler</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstURIHandler"><type>GstURIHandler</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-handler-get-protocols.returns" role="returns">
+<title>Returns</title>
+<para> the
+supported protocols.  Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the <parameter>handler</parameter>
+isn't
+implemented properly, or the <parameter>handler</parameter>
+doesn't support any
+protocols. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> utf8][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-handler-get-uri" role="function">
+<title>gst_uri_handler_get_uri&#160;()</title>
+<indexterm zone="gst-uri-handler-get-uri"><primary>gst_uri_handler_get_uri</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_uri_handler_get_uri (<parameter><link linkend="GstURIHandler"><type>GstURIHandler</type></link> *handler</parameter>);</programlisting>
+<para>Gets the currently handled URI.</para>
+<refsect3 id="gst-uri-handler-get-uri.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>handler</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstURIHandler"><type>GstURIHandler</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-handler-get-uri.returns" role="returns">
+<title>Returns</title>
+<para> the URI currently handled by
+the <parameter>handler</parameter>
+.  Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if there are no URI currently
+handled. The returned string must be freed with <link linkend="g-free"><function>g_free()</function></link> when no
+longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-uri-handler-set-uri" role="function">
+<title>gst_uri_handler_set_uri&#160;()</title>
+<indexterm zone="gst-uri-handler-set-uri"><primary>gst_uri_handler_set_uri</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_uri_handler_set_uri (<parameter><link linkend="GstURIHandler"><type>GstURIHandler</type></link> *handler</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Tries to set the URI of the given handler.</para>
+<refsect3 id="gst-uri-handler-set-uri.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>handler</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstURIHandler"><type>GstURIHandler</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>URI to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para> address where to store a <link linkend="GError"><type>GError</type></link> in case of
+an error, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-uri-handler-set-uri.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the URI was set successfully, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstUriHandler.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstURIHandler-struct" role="struct">
+<title>GstURIHandler</title>
+<indexterm zone="GstURIHandler-struct"><primary>GstURIHandler</primary></indexterm>
+<programlisting language="C">typedef struct _GstURIHandler GstURIHandler;</programlisting>
+<para>Opaque <link linkend="GstURIHandler"><type>GstURIHandler</type></link> structure.</para>
+</refsect2>
+<refsect2 id="GstURIHandlerInterface" role="struct">
+<title>struct GstURIHandlerInterface</title>
+<indexterm zone="GstURIHandlerInterface"><primary>GstURIHandlerInterface</primary></indexterm>
+<programlisting language="C">struct GstURIHandlerInterface {
+  GTypeInterface parent;
+
+  /* vtable */
+  /* querying capabilities */
+  GstURIType             (* get_type)           (GType type);
+  const gchar * const *  (* get_protocols)      (GType type);
+
+  /* using the interface */
+  gchar *                (* get_uri)            (GstURIHandler * handler);
+  gboolean               (* set_uri)            (GstURIHandler * handler,
+                                                 const gchar   * uri,
+                                                 GError       ** error);
+};
+</programlisting>
+<para>Any <link linkend="GstElement"><type>GstElement</type></link> using this interface should implement these methods.</para>
+<refsect3 id="GstURIHandlerInterface.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GTypeInterface"><type>GTypeInterface</type></link>&#160;<structfield id="GstURIHandlerInterface.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The parent interface type</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstURIHandlerInterface.get-type">get_type</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Method to tell whether the element handles source or sink URI.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstURIHandlerInterface.get-protocols">get_protocols</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Method to return the list of protocols handled by the element.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstURIHandlerInterface.get-uri">get_uri</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Method to return the URI currently handled by the element.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstURIHandlerInterface.set-uri">set_uri</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Method to set a new URI.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstURIType" role="enum">
+<title>enum GstURIType</title>
+<indexterm zone="GstURIType"><primary>GstURIType</primary></indexterm>
+<para>The different types of URI direction.</para>
+<refsect3 id="GstURIType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-UNKNOWN:CAPS">GST_URI_UNKNOWN</para></entry>
+<entry role="enum_member_description"><para>The URI direction is unknown</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-SINK:CAPS">GST_URI_SINK</para></entry>
+<entry role="enum_member_description"><para>The URI is a consumer.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-SRC:CAPS">GST_URI_SRC</para></entry>
+<entry role="enum_member_description"><para>The URI is a producer.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstURIError" role="enum">
+<title>enum GstURIError</title>
+<indexterm zone="GstURIError"><primary>GstURIError</primary></indexterm>
+<para>Different URI-related errors that can occur.</para>
+<refsect3 id="GstURIError.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-ERROR-UNSUPPORTED-PROTOCOL:CAPS">GST_URI_ERROR_UNSUPPORTED_PROTOCOL</para></entry>
+<entry role="enum_member_description"><para>The protocol is not supported</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-ERROR-BAD-URI:CAPS">GST_URI_ERROR_BAD_URI</para></entry>
+<entry role="enum_member_description"><para>There was a problem with the URI</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-ERROR-BAD-STATE:CAPS">GST_URI_ERROR_BAD_STATE</para></entry>
+<entry role="enum_member_description"><para>Could not set or change the URI because the
+    URI handler was in a state where that is not possible or not permitted</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-URI-ERROR-BAD-REFERENCE:CAPS">GST_URI_ERROR_BAD_REFERENCE</para></entry>
+<entry role="enum_member_description"><para>There was a problem with the entity that
+    the URI references</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-URI-NO-PORT:CAPS" role="macro">
+<title>GST_URI_NO_PORT</title>
+<indexterm zone="GST-URI-NO-PORT:CAPS"><primary>GST_URI_NO_PORT</primary></indexterm>
+<programlisting language="C">#define GST_URI_NO_PORT 0
+</programlisting>
+<para>Value for <link linkend="GstUri"><type>GstUri</type></link><!-- -->.port to indicate no port number.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

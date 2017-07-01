@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTypeFindFactory">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTypeFindFactory.top_of_page">GstTypeFindFactory</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTypeFindFactory</refname>
+<refpurpose>Information about registered typefind functions</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTypeFindFactory.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-factory-get-list">gst_type_find_factory_get_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const *
+</entry><entry role="function_name"><link linkend="gst-type-find-factory-get-extensions">gst_type_find_factory_get_extensions</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-factory-get-caps">gst_type_find_factory_get_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-type-find-factory-has-function">gst_type_find_factory_has_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-type-find-factory-call-function">gst_type_find_factory_call_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTypeFindFactory.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstTypeFindFactory-struct">GstTypeFindFactory</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTypeFindFactory.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPluginFeature">GstPluginFeature</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTypeFindFactory
+</screen>
+</refsect1>
+
+<refsect1 id="GstTypeFindFactory.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTypeFindFactory.description" role="desc">
+<title role="desc.title">Description</title>
+<para>These functions allow querying informations about registered typefind
+functions. How to create and register these functions is described in
+the section <link linkend="gstreamer-Writing-typefind-functions">
+"Writing typefind functions"</link>.</para>
+<para>The following example shows how to write a very simple typefinder that
+identifies the given data. You can get quite a bit more complicated than
+that though.</para>
+<informalexample><programlisting><![CDATA[
+  typedef struct {
+    guint8 *data;
+    guint size;
+    guint probability;
+    GstCaps *data;
+  } MyTypeFind;
+  static void
+  my_peek (gpointer data, gint64 offset, guint size)
+  {
+    MyTypeFind *find = (MyTypeFind *) data;
+    if (offset >= 0 && offset + size <= find->size) {
+      return find->data + offset;
+    }
+    return NULL;
+  }
+  static void
+  my_suggest (gpointer data, guint probability, GstCaps *caps)
+  {
+    MyTypeFind *find = (MyTypeFind *) data;
+    if (probability > find->probability) {
+      find->probability = probability;
+      gst_caps_replace (&find->caps, caps);
+    }
+  }
+  static GstCaps *
+  find_type (guint8 *data, guint size)
+  {
+    GList *walk, *type_list;
+    MyTypeFind find = {data, size, 0, NULL};
+    GstTypeFind gst_find = {my_peek, my_suggest, &find, };
+    walk = type_list = gst_type_find_factory_get_list ();
+    while (walk) {
+      GstTypeFindFactory *factory = GST_TYPE_FIND_FACTORY (walk->data);
+      walk = g_list_next (walk)
+      gst_type_find_factory_call_function (factory, &gst_find);
+    }
+    g_list_free (type_list);
+    return find.caps;
+  };
+]]></programlisting></informalexample>
+<para></para>
+
+</refsect1>
+<refsect1 id="GstTypeFindFactory.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-type-find-factory-get-list" role="function">
+<title>gst_type_find_factory_get_list&#160;()</title>
+<indexterm zone="gst-type-find-factory-get-list"><primary>gst_type_find_factory_get_list</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_type_find_factory_get_list (<parameter><type>void</type></parameter>);</programlisting>
+<para>Gets the list of all registered typefind factories. You must free the
+list using <link linkend="gst-plugin-feature-list-free"><function>gst_plugin_feature_list_free()</function></link>.</para>
+<para>The returned factories are sorted by highest rank first, and then by
+factory name.</para>
+<para>Free-function: gst_plugin_feature_list_free</para>
+<refsect3 id="gst-type-find-factory-get-list.returns" role="returns">
+<title>Returns</title>
+<para> the list of all
+registered <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.TypeFindFactory]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-factory-get-extensions" role="function">
+<title>gst_type_find_factory_get_extensions&#160;()</title>
+<indexterm zone="gst-type-find-factory-get-extensions"><primary>gst_type_find_factory_get_extensions</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const *
+gst_type_find_factory_get_extensions (<parameter><link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link> *factory</parameter>);</programlisting>
+<para>Gets the extensions associated with a <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link>. The returned
+array should not be changed. If you need to change stuff in it, you should
+copy it using <link linkend="g-strdupv"><function>g_strdupv()</function></link>.  This function may return <link linkend="NULL:CAPS"><literal>NULL</literal></link> to indicate
+a 0-length list.</para>
+<refsect3 id="gst-type-find-factory-get-extensions.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-factory-get-extensions.returns" role="returns">
+<title>Returns</title>
+<para>    a <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of extensions associated with this factory. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>element-type</acronym> utf8][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-factory-get-caps" role="function">
+<title>gst_type_find_factory_get_caps&#160;()</title>
+<indexterm zone="gst-type-find-factory-get-caps"><primary>gst_type_find_factory_get_caps</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_type_find_factory_get_caps (<parameter><link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link> *factory</parameter>);</programlisting>
+<para>Gets the <link linkend="GstCaps"><type>GstCaps</type></link> associated with a typefind factory.</para>
+<refsect3 id="gst-type-find-factory-get-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-factory-get-caps.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> associated with this factory. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-factory-has-function" role="function">
+<title>gst_type_find_factory_has_function&#160;()</title>
+<indexterm zone="gst-type-find-factory-has-function"><primary>gst_type_find_factory_has_function</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_type_find_factory_has_function (<parameter><link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link> *factory</parameter>);</programlisting>
+<para>Check whether the factory has a typefind function. Typefind factories
+without typefind functions are a last-effort fallback mechanism to
+e.g. assume a certain media type based on the file extension.</para>
+<refsect3 id="gst-type-find-factory-has-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-factory-has-function.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the factory has a typefind functions set, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-factory-call-function" role="function">
+<title>gst_type_find_factory_call_function&#160;()</title>
+<indexterm zone="gst-type-find-factory-call-function"><primary>gst_type_find_factory_call_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_type_find_factory_call_function (<parameter><link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link> *factory</parameter>,
+                                     <parameter><link linkend="GstTypeFind"><type>GstTypeFind</type></link> *find</parameter>);</programlisting>
+<para>Calls the <link linkend="GstTypeFindFunction"><type>GstTypeFindFunction</type></link> associated with this factory.</para>
+<refsect3 id="gst-type-find-factory-call-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>find</para></entry>
+<entry role="parameter_description"><para> a properly setup <link linkend="GstTypeFind"><type>GstTypeFind</type></link> entry. The get_data
+and suggest_type members must be set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstTypeFindFactory.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTypeFindFactory-struct" role="struct">
+<title>GstTypeFindFactory</title>
+<indexterm zone="GstTypeFindFactory-struct"><primary>GstTypeFindFactory</primary></indexterm>
+<programlisting language="C">typedef struct _GstTypeFindFactory GstTypeFindFactory;</programlisting>
+<para>Opaque object that stores information about a typefind function.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

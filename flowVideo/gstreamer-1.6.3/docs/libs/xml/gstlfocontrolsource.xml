@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstLFOControlSource">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstLFOControlSource.top_of_page">GstLFOControlSource</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstLFOControlSource</refname>
+<refpurpose>LFO control source</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstLFOControlSource.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstControlSource"><returnvalue>GstControlSource</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-lfo-control-source-new">gst_lfo_control_source_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstLFOControlSource.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstLFOControlSource--amplitude">amplitude</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstLFOControlSource--frequency">frequency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstLFOControlSource--offset">offset</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstLFOControlSource--timeshift">timeshift</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstLFOWaveform"><type>GstLFOWaveform</type></link></entry><entry role="property_name"><link linkend="GstLFOControlSource--waveform">waveform</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstLFOControlSource.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstLFOControlSource-struct">GstLFOControlSource</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstLFOWaveform">GstLFOWaveform</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstLFOControlSource.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstLFOControlSource
+</screen>
+</refsect1>
+
+<refsect1 id="GstLFOControlSource.includes"><title>Includes</title><synopsis>#include &lt;libs/controller/gstlfocontrolsource.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstLFOControlSource.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link> is a <link linkend="GstControlSource"><type>GstControlSource</type></link>, that provides several periodic
+waveforms as control values.</para>
+<para>To use <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link> get a new instance by calling
+<link linkend="gst-lfo-control-source-new"><function>gst_lfo_control_source_new()</function></link>, bind it to a <link linkend="GParamSpec"><type>GParamSpec</type></link> and set the relevant
+properties.</para>
+<para>All functions are MT-safe.</para>
+
+</refsect1>
+<refsect1 id="GstLFOControlSource.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-lfo-control-source-new" role="function">
+<title>gst_lfo_control_source_new&#160;()</title>
+<indexterm zone="gst-lfo-control-source-new"><primary>gst_lfo_control_source_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstControlSource"><returnvalue>GstControlSource</returnvalue></link>&#160;*
+gst_lfo_control_source_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>This returns a new, unbound <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link>.</para>
+<refsect3 id="gst-lfo-control-source-new.returns" role="returns">
+<title>Returns</title>
+<para> a new, unbound <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstLFOControlSource.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstLFOControlSource-struct" role="struct">
+<title>struct GstLFOControlSource</title>
+<indexterm zone="GstLFOControlSource-struct"><primary>GstLFOControlSource</primary></indexterm>
+<programlisting language="C">struct GstLFOControlSource;</programlisting>
+<para>The instance structure of <link linkend="GstControlSource"><type>GstControlSource</type></link>.</para>
+</refsect2>
+<refsect2 id="GstLFOWaveform" role="enum">
+<title>enum GstLFOWaveform</title>
+<indexterm zone="GstLFOWaveform"><primary>GstLFOWaveform</primary></indexterm>
+<para>The various waveform modes available.</para>
+<refsect3 id="GstLFOWaveform.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LFO-WAVEFORM-SINE:CAPS">GST_LFO_WAVEFORM_SINE</para></entry>
+<entry role="enum_member_description"><para>sine waveform</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LFO-WAVEFORM-SQUARE:CAPS">GST_LFO_WAVEFORM_SQUARE</para></entry>
+<entry role="enum_member_description"><para>square waveform</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LFO-WAVEFORM-SAW:CAPS">GST_LFO_WAVEFORM_SAW</para></entry>
+<entry role="enum_member_description"><para>saw waveform</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LFO-WAVEFORM-REVERSE-SAW:CAPS">GST_LFO_WAVEFORM_REVERSE_SAW</para></entry>
+<entry role="enum_member_description"><para>reverse saw waveform</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LFO-WAVEFORM-TRIANGLE:CAPS">GST_LFO_WAVEFORM_TRIANGLE</para></entry>
+<entry role="enum_member_description"><para>triangle waveform</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstLFOControlSource.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstLFOControlSource--amplitude" role="property"><title>The <literal>“amplitude”</literal> property</title>
+<indexterm zone="GstLFOControlSource--amplitude"><primary>GstLFOControlSource:amplitude</primary></indexterm>
+<programlisting>  “amplitude”                <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Specifies the amplitude for the waveform of this <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link>.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstLFOControlSource--frequency" role="property"><title>The <literal>“frequency”</literal> property</title>
+<indexterm zone="GstLFOControlSource--frequency"><primary>GstLFOControlSource:frequency</primary></indexterm>
+<programlisting>  “frequency”                <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Specifies the frequency that should be used for the waveform
+of this <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link>. It should be large enough
+so that the period is longer than one nanosecond.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MINDOUBLE</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstLFOControlSource--offset" role="property"><title>The <literal>“offset”</literal> property</title>
+<indexterm zone="GstLFOControlSource--offset"><primary>GstLFOControlSource:offset</primary></indexterm>
+<programlisting>  “offset”                   <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Specifies the value offset for the waveform of this <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link>.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstLFOControlSource--timeshift" role="property"><title>The <literal>“timeshift”</literal> property</title>
+<indexterm zone="GstLFOControlSource--timeshift"><primary>GstLFOControlSource:timeshift</primary></indexterm>
+<programlisting>  “timeshift”                <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Specifies the timeshift to the right that should be used for the waveform
+of this <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link> in nanoseconds.</para>
+<para>To get a n nanosecond shift to the left use
+"(GST_SECOND / frequency) - n".</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstLFOControlSource--waveform" role="property"><title>The <literal>“waveform”</literal> property</title>
+<indexterm zone="GstLFOControlSource--waveform"><primary>GstLFOControlSource:waveform</primary></indexterm>
+<programlisting>  “waveform”                 <link linkend="GstLFOWaveform"><type>GstLFOWaveform</type></link></programlisting>
+<para>Specifies the waveform that should be used for this <link linkend="GstLFOControlSource"><type>GstLFOControlSource</type></link>.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: GST_LFO_WAVEFORM_SINE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

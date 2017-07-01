@@ -1,0 +1,151 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-downloadbuffer">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-downloadbuffer.top_of_page" role="top_of_page">downloadbuffer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>downloadbuffer</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-downloadbuffer.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDownloadBuffer--high-percent">high-percent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDownloadBuffer--low-percent">low-percent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstDownloadBuffer--max-size-bytes">max-size-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstDownloadBuffer--max-size-time">max-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstDownloadBuffer--temp-location">temp-location</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDownloadBuffer--temp-remove">temp-remove</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstDownloadBuffer--temp-template">temp-template</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstDownloadBuffer"/><refsect1 id="gstreamer-plugins-downloadbuffer.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDownloadBuffer-struct">GstDownloadBuffer</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-downloadbuffer.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstDownloadBuffer
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-downloadbuffer.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The downloadbuffer element provides on-disk buffering and caching of, typically,
+a network file. temp-template should be set to a value such as
+/tmp/gstreamer-XXXXXX and the element will allocate a random free filename and
+buffer the data in the file.</para>
+<para>With max-size-bytes and max-size-time you can configure the buffering limits.
+The downloadbuffer element will try to read-ahead these amounts of data. When
+the amount of read-ahead data drops below low-percent of the configured max,
+the element will start emiting BUFFERING messages until high-percent of max is
+reached again.</para>
+<para>The downloadbuffer provides push and pull based scheduling on its source pad
+and will efficiently seek in the upstream element when needed.</para>
+<para>The temp-location property will be used to notify the application of the
+allocated filename.</para>
+<para>When the downloadbuffer has completely downloaded the media, it will
+post an application message named  <classname>&quot;GstCacheDownloadComplete&quot;</classname>
+with the following information:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  G_TYPE_STRING
+  <classname>&quot;location&quot;</classname>:
+  the location of the completely downloaded file.
+  </para>
+</listitem>
+</itemizedlist>
+
+<include href="element-downloadbuffer-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-downloadbuffer.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-downloadbuffer.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDownloadBuffer-struct" role="struct">
+<title>struct GstDownloadBuffer</title>
+<indexterm zone="GstDownloadBuffer-struct"><primary>GstDownloadBuffer</primary></indexterm>
+<programlisting language="C">struct GstDownloadBuffer;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-downloadbuffer.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDownloadBuffer--high-percent" role="property"><title>The <literal>“high-percent”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--high-percent"><primary>GstDownloadBuffer:high-percent</primary></indexterm>
+<programlisting>  “high-percent”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>High threshold for buffering to finish. Only used if use-buffering is True.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 99</para>
+</refsect2>
+<refsect2 id="GstDownloadBuffer--low-percent" role="property"><title>The <literal>“low-percent”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--low-percent"><primary>GstDownloadBuffer:low-percent</primary></indexterm>
+<programlisting>  “low-percent”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Low threshold for buffering to start. Only used if use-buffering is True.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 10</para>
+</refsect2>
+<refsect2 id="GstDownloadBuffer--max-size-bytes" role="property"><title>The <literal>“max-size-bytes”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--max-size-bytes"><primary>GstDownloadBuffer:max-size-bytes</primary></indexterm>
+<programlisting>  “max-size-bytes”           <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max. amount of data to buffer (bytes, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 2097152</para>
+</refsect2>
+<refsect2 id="GstDownloadBuffer--max-size-time" role="property"><title>The <literal>“max-size-time”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--max-size-time"><primary>GstDownloadBuffer:max-size-time</primary></indexterm>
+<programlisting>  “max-size-time”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Max. amount of data to buffer (in ns, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 2000000000</para>
+</refsect2>
+<refsect2 id="GstDownloadBuffer--temp-location" role="property"><title>The <literal>“temp-location”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--temp-location"><primary>GstDownloadBuffer:temp-location</primary></indexterm>
+<programlisting>  “temp-location”            <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location to store temporary files in (Only read this property, use temp-template to configure the name template).</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstDownloadBuffer--temp-remove" role="property"><title>The <literal>“temp-remove”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--temp-remove"><primary>GstDownloadBuffer:temp-remove</primary></indexterm>
+<programlisting>  “temp-remove”              <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>When temp-template is set, remove the temporary file when going to READY.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstDownloadBuffer--temp-template" role="property"><title>The <literal>“temp-template”</literal> property</title>
+<indexterm zone="GstDownloadBuffer--temp-template"><primary>GstDownloadBuffer:temp-template</primary></indexterm>
+<programlisting>  “temp-template”            <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>File template to store temporary files in, should contain directory and XXXXXX. (NULL == disabled).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

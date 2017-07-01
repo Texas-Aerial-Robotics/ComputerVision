@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstNetClientClock">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstNetClientClock.top_of_page">GstNetClientClock</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstNetClientClock</refname>
+<refpurpose>Special clock that synchronizes to a remote time
+                    provider.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstNetClientClock.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-net-client-clock-new">gst_net_client_clock_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ntp-clock-new">gst_ntp_clock_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstNetClientClock.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstNetClientClock--address">address</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstNetClientClock--base-time">base-time</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="GstBus"><type>GstBus</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstNetClientClock--bus">bus</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstClock"><type>GstClock</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstNetClientClock--internal-clock">internal-clock</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstNetClientClock--minimum-update-interval">minimum-update-interval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstNetClientClock--port">port</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstNetClientClock--round-trip-limit">round-trip-limit</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstNetClientClock.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstNetClientClock-struct">GstNetClientClock</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstNtpClock">GstNtpClock</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstNetClientClock.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstClock">GstClock</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstSystemClock">GstSystemClock</link>
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstNetClientClock
+</screen>
+</refsect1>
+
+<refsect1 id="GstNetClientClock.includes"><title>Includes</title><synopsis>#include &lt;gst/net/gstnet.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstNetClientClock.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstNetClientClock"><type>GstNetClientClock</type></link> implements a custom <link linkend="GstClock"><type>GstClock</type></link> that synchronizes its time
+to a remote time provider such as <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link>. <link linkend="GstNtpClock"><type>GstNtpClock</type></link>
+implements a <link linkend="GstClock"><type>GstClock</type></link> that synchronizes its time to a remote NTPv4 server.</para>
+<para>A new clock is created with <link linkend="gst-net-client-clock-new"><function>gst_net_client_clock_new()</function></link> or
+<link linkend="gst-ntp-clock-new"><function>gst_ntp_clock_new()</function></link>, which takes the address and port of the remote time
+provider along with a name and an initial time.</para>
+<para>This clock will poll the time provider and will update its calibration
+parameters based on the local and remote observations.</para>
+<para>The "round-trip" property limits the maximum round trip packets can take.</para>
+<para>Various parameters of the clock can be configured with the parent <link linkend="GstClock"><type>GstClock</type></link>
+"timeout", "window-size" and "window-threshold" object properties.</para>
+<para>A <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link> and <link linkend="GstNtpClock"><type>GstNtpClock</type></link> is typically set on a <link linkend="GstPipeline"><type>GstPipeline</type></link> with
+<link linkend="gst-pipeline-use-clock"><function>gst_pipeline_use_clock()</function></link>.</para>
+<para>If you set a <link linkend="GstBus"><type>GstBus</type></link> on the clock via the "bus" object property, it will
+send <parameter>GST_MESSAGE_ELEMENT</parameter>
+ messages with an attached <link linkend="GstStructure"><type>GstStructure</type></link> containing
+statistics about clock accuracy and network traffic.</para>
+
+</refsect1>
+<refsect1 id="GstNetClientClock.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-net-client-clock-new" role="function">
+<title>gst_net_client_clock_new&#160;()</title>
+<indexterm zone="gst-net-client-clock-new"><primary>gst_net_client_clock_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_net_client_clock_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *remote_address</parameter>,
+                          <parameter><link linkend="gint"><type>gint</type></link> remote_port</parameter>,
+                          <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> base_time</parameter>);</programlisting>
+<para>Create a new <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link> that will report the time
+provided by the <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> on <parameter>remote_address</parameter>
+ and 
+<parameter>remote_port</parameter>
+.</para>
+<refsect3 id="gst-net-client-clock-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a name for the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>remote_address</para></entry>
+<entry role="parameter_description"><para>the address of the remote clock provider</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>remote_port</para></entry>
+<entry role="parameter_description"><para>the port of the remote clock provider</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>base_time</para></entry>
+<entry role="parameter_description"><para>initial time of the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-client-clock-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstClock"><type>GstClock</type></link> that receives a time from the remote
+clock.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-ntp-clock-new" role="function" condition="since:1.6">
+<title>gst_ntp_clock_new&#160;()</title>
+<indexterm zone="gst-ntp-clock-new" role="1.6"><primary>gst_ntp_clock_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_ntp_clock_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *remote_address</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> remote_port</parameter>,
+                   <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> base_time</parameter>);</programlisting>
+<para>Create a new <link linkend="GstNtpClock"><type>GstNtpClock</type></link> that will report the time provided by
+the NTPv4 server on <parameter>remote_address</parameter>
+ and <parameter>remote_port</parameter>
+.</para>
+<refsect3 id="gst-ntp-clock-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a name for the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>remote_address</para></entry>
+<entry role="parameter_description"><para>the address of the remote clock provider</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>remote_port</para></entry>
+<entry role="parameter_description"><para>the port of the remote clock provider</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>base_time</para></entry>
+<entry role="parameter_description"><para>initial time of the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ntp-clock-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstClock"><type>GstClock</type></link> that receives a time from the remote
+clock.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstNetClientClock.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstNetClientClock-struct" role="struct">
+<title>struct GstNetClientClock</title>
+<indexterm zone="GstNetClientClock-struct"><primary>GstNetClientClock</primary></indexterm>
+<programlisting language="C">struct GstNetClientClock;</programlisting>
+<para>Opaque <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link> structure.</para>
+</refsect2>
+<refsect2 id="GstNtpClock" role="typedef">
+<title>GstNtpClock</title>
+<indexterm zone="GstNtpClock"><primary>GstNtpClock</primary></indexterm>
+<programlisting language="C">typedef struct _GstNetClientClock GstNtpClock;
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstNetClientClock.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstNetClientClock--address" role="property"><title>The <literal>“address”</literal> property</title>
+<indexterm zone="GstNetClientClock--address"><primary>GstNetClientClock:address</primary></indexterm>
+<programlisting>  “address”                  <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The IP address of the machine providing a time server.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: "127.0.0.1"</para>
+</refsect2>
+<refsect2 id="GstNetClientClock--base-time" role="property"><title>The <literal>“base-time”</literal> property</title>
+<indexterm zone="GstNetClientClock--base-time"><primary>GstNetClientClock:base-time</primary></indexterm>
+<programlisting>  “base-time”                <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Initial time that is reported before synchronization.</para><para>Flags: Read / Write / Construct Only</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstNetClientClock--bus" role="property"><title>The <literal>“bus”</literal> property</title>
+<indexterm zone="GstNetClientClock--bus"><primary>GstNetClientClock:bus</primary></indexterm>
+<programlisting>  “bus”                      <link linkend="GstBus"><type>GstBus</type></link>&#160;*</programlisting>
+<para>A GstBus on which to send clock status information.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstNetClientClock--internal-clock" role="property"><title>The <literal>“internal-clock”</literal> property</title>
+<indexterm zone="GstNetClientClock--internal-clock"><primary>GstNetClientClock:internal-clock</primary></indexterm>
+<programlisting>  “internal-clock”           <link linkend="GstClock"><type>GstClock</type></link>&#160;*</programlisting>
+<para>Internal clock that directly slaved to the remote clock.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstNetClientClock--minimum-update-interval" role="property"><title>The <literal>“minimum-update-interval”</literal> property</title>
+<indexterm zone="GstNetClientClock--minimum-update-interval"><primary>GstNetClientClock:minimum-update-interval</primary></indexterm>
+<programlisting>  “minimum-update-interval”  <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Minimum polling interval for packets, in nanoseconds(0 = no limit).</para><para>Flags: Read / Write</para>
+<para>Default value: 50000000</para>
+</refsect2>
+<refsect2 id="GstNetClientClock--port" role="property"><title>The <literal>“port”</literal> property</title>
+<indexterm zone="GstNetClientClock--port"><primary>GstNetClientClock:port</primary></indexterm>
+<programlisting>  “port”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The port on which the remote server is listening.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: [0,65535]</para>
+<para>Default value: 5637</para>
+</refsect2>
+<refsect2 id="GstNetClientClock--round-trip-limit" role="property"><title>The <literal>“round-trip-limit”</literal> property</title>
+<indexterm zone="GstNetClientClock--round-trip-limit"><primary>GstNetClientClock:round-trip-limit</primary></indexterm>
+<programlisting>  “round-trip-limit”         <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Maximum tolerable round-trip interval for packets, in nanoseconds (0 = no limit).</para><para>Flags: Read / Write</para>
+<para>Default value: 1000000000</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstNetClientClock.see-also">
+<title>See Also</title>
+<para><link linkend="GstClock"><type>GstClock</type></link>, <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link>, <link linkend="GstPipeline"><type>GstPipeline</type></link></para>
+
+</refsect1>
+
+</refentry>

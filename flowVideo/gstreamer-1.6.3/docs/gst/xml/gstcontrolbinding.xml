@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstControlBinding">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstControlBinding.top_of_page">GstControlBinding</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstControlBinding</refname>
+<refpurpose>attachment for control source sources</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstControlBinding.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-binding-sync-values">gst_control_binding_sync_values</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-control-binding-get-value">gst_control_binding_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-binding-get-value-array">gst_control_binding_get_value_array</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-binding-get-g-value-array">gst_control_binding_get_g_value_array</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-binding-set-disabled">gst_control_binding_set_disabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-control-binding-is-disabled">gst_control_binding_is_disabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstControlBinding.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstControlBinding--name">name</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="GstObject"><type>GstObject</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstControlBinding--object">object</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstControlBinding.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstControlBinding-struct">GstControlBinding</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstControlBindingClass">GstControlBindingClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstControlBinding.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstControlBinding
+</screen>
+</refsect1>
+
+<refsect1 id="GstControlBinding.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstControlBinding.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A base class for value mapping objects that attaches control sources to gobject
+properties. Such an object is taking one or more <link linkend="GstControlSource"><type>GstControlSource</type></link> instances,
+combines them and maps the resulting value to the type and value range of the
+bound property.</para>
+
+</refsect1>
+<refsect1 id="GstControlBinding.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-control-binding-sync-values" role="function">
+<title>gst_control_binding_sync_values&#160;()</title>
+<indexterm zone="gst-control-binding-sync-values"><primary>gst_control_binding_sync_values</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_control_binding_sync_values (<parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>,
+                                 <parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                 <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                                 <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> last_sync</parameter>);</programlisting>
+<para>Sets the property of the <parameter>object</parameter>
+, according to the <link linkend="GstControlSources"><type>GstControlSources</type></link> that
+handle them and for the given timestamp.</para>
+<para>If this function fails, it is most likely the application developers fault.
+Most probably the control sources are not setup correctly.</para>
+<refsect3 id="gst-control-binding-sync-values.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the control binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object that has controlled properties</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time that should be processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>last_sync</para></entry>
+<entry role="parameter_description"><para>the last time this was called</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-binding-sync-values.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the controller value could be applied to the object
+property, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-control-binding-get-value" role="function">
+<title>gst_control_binding_get_value&#160;()</title>
+<indexterm zone="gst-control-binding-get-value"><primary>gst_control_binding_get_value</primary></indexterm>
+<programlisting language="C"><link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_control_binding_get_value (<parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>,
+                               <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Gets the value for the given controlled property at the requested time.</para>
+<refsect3 id="gst-control-binding-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the control binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time the control-change should be read from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-binding-get-value.returns" role="returns">
+<title>Returns</title>
+<para> the GValue of the property at the given time,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the property isn't controlled. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-control-binding-get-value-array" role="function">
+<title>gst_control_binding_get_value_array&#160;()</title>
+<indexterm zone="gst-control-binding-get-value-array"><primary>gst_control_binding_get_value_array</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_control_binding_get_value_array (<parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                                     <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>,
+                                     <parameter><link linkend="guint"><type>guint</type></link> n_values</parameter>,
+                                     <parameter><link linkend="gpointer"><type>gpointer</type></link> values</parameter>);</programlisting>
+<para>Gets a number of values for the given controlled property starting at the
+requested time. The array <parameter>values</parameter>
+ need to hold enough space for <parameter>n_values</parameter>
+ of
+the same type as the objects property's type.</para>
+<para>This function is useful if one wants to e.g. draw a graph of the control
+curve or apply a control curve sample by sample.</para>
+<para>The values are unboxed and ready to be used. The similar function 
+<link linkend="gst-control-binding-get-g-value-array"><function>gst_control_binding_get_g_value_array()</function></link> returns the array as <link linkend="GValues"><type>GValues</type></link> and is
+more suitable for bindings.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-control-binding-get-value-array.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the control binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time that should be processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the time spacing between subsequent values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_values</para></entry>
+<entry role="parameter_description"><para>the number of values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>values</para></entry>
+<entry role="parameter_description"><para> array to put control-values in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=n_values]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-binding-get-value-array.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the given array could be filled, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-control-binding-get-g-value-array" role="function">
+<title>gst_control_binding_get_g_value_array&#160;()</title>
+<indexterm zone="gst-control-binding-get-g-value-array"><primary>gst_control_binding_get_g_value_array</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_control_binding_get_g_value_array (<parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>,
+                                       <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                                       <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> interval</parameter>,
+                                       <parameter><link linkend="guint"><type>guint</type></link> n_values</parameter>,
+                                       <parameter><link linkend="GValue"><type>GValue</type></link> *values</parameter>);</programlisting>
+<para>Gets a number of <link linkend="GValues"><type>GValues</type></link> for the given controlled property starting at the
+requested time. The array <parameter>values</parameter>
+ need to hold enough space for <parameter>n_values</parameter>
+ of
+<link linkend="GValue"><type>GValue</type></link>.</para>
+<para>This function is useful if one wants to e.g. draw a graph of the control
+curve or apply a control curve sample by sample.</para>
+<refsect3 id="gst-control-binding-get-g-value-array.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the control binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time that should be processed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>the time spacing between subsequent values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_values</para></entry>
+<entry role="parameter_description"><para>the number of values</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>values</para></entry>
+<entry role="parameter_description"><para> array to put control-values in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=n_values]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-binding-get-g-value-array.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the given array could be filled, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-control-binding-set-disabled" role="function">
+<title>gst_control_binding_set_disabled&#160;()</title>
+<indexterm zone="gst-control-binding-set-disabled"><primary>gst_control_binding_set_disabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_control_binding_set_disabled (<parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>,
+                                  <parameter><link linkend="gboolean"><type>gboolean</type></link> disabled</parameter>);</programlisting>
+<para>This function is used to disable a control binding for some time, i.e.
+<link linkend="gst-object-sync-values"><function>gst_object_sync_values()</function></link> will do nothing.</para>
+<refsect3 id="gst-control-binding-set-disabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the control binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>disabled</para></entry>
+<entry role="parameter_description"><para>boolean that specifies whether to disable the controller
+or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-control-binding-is-disabled" role="function">
+<title>gst_control_binding_is_disabled&#160;()</title>
+<indexterm zone="gst-control-binding-is-disabled"><primary>gst_control_binding_is_disabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_control_binding_is_disabled (<parameter><link linkend="GstControlBinding"><type>GstControlBinding</type></link> *binding</parameter>);</programlisting>
+<para>Check if the control binding is disabled.</para>
+<refsect3 id="gst-control-binding-is-disabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>binding</para></entry>
+<entry role="parameter_description"><para>the control binding</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-control-binding-is-disabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the binding is inactive</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstControlBinding.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstControlBinding-struct" role="struct">
+<title>struct GstControlBinding</title>
+<indexterm zone="GstControlBinding-struct"><primary>GstControlBinding</primary></indexterm>
+<programlisting language="C">struct GstControlBinding {
+  gchar *name;
+  GParamSpec *pspec;
+};
+</programlisting>
+<para>The instance structure of <link linkend="GstControlBinding"><type>GstControlBinding</type></link>.</para>
+<refsect3 id="GstControlBinding.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstControlBinding-struct.name">name</structfield>;</para></entry>
+<entry role="struct_member_description"><para>name of the property of this binding</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GParamSpec"><type>GParamSpec</type></link>&#160;*<structfield id="GstControlBinding-struct.pspec">pspec</structfield>;</para></entry>
+<entry role="struct_member_description"><para><link linkend="GParamSpec"><type>GParamSpec</type></link> for this property</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstControlBindingClass" role="struct">
+<title>struct GstControlBindingClass</title>
+<indexterm zone="GstControlBindingClass"><primary>GstControlBindingClass</primary></indexterm>
+<programlisting language="C">struct GstControlBindingClass {
+  GstObjectClass parent_class;
+
+  gboolean (* sync_values) (GstControlBinding *binding, GstObject *object, GstClockTime timestamp, GstClockTime last_sync);
+  GValue * (* get_value) (GstControlBinding *binding, GstClockTime timestamp);
+  gboolean (* get_value_array) (GstControlBinding *binding, GstClockTime timestamp,GstClockTime interval, guint n_values, gpointer values);
+  gboolean (* get_g_value_array) (GstControlBinding *binding, GstClockTime timestamp,GstClockTime interval, guint n_values, GValue *values);
+};
+</programlisting>
+<para>The class structure of <link linkend="GstControlBinding"><type>GstControlBinding</type></link>.</para>
+<refsect3 id="GstControlBindingClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstControlBindingClass.sync-values">sync_values</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>implementation for updating the target values</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstControlBindingClass.get-value">get_value</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>implementation to fetch a single control-value</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstControlBindingClass.get-value-array">get_value_array</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>implementation to fetch a series of control-values</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstControlBindingClass.get-g-value-array">get_g_value_array</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>implementation to fetch a series of control-values
+as g_values</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstControlBinding.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstControlBinding--name" role="property"><title>The <literal>“name”</literal> property</title>
+<indexterm zone="GstControlBinding--name"><primary>GstControlBinding:name</primary></indexterm>
+<programlisting>  “name”                     <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The name of the property.</para><para>Flags: Read / Write / Construct Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstControlBinding--object" role="property"><title>The <literal>“object”</literal> property</title>
+<indexterm zone="GstControlBinding--object"><primary>GstControlBinding:object</primary></indexterm>
+<programlisting>  “object”                   <link linkend="GstObject"><type>GstObject</type></link>&#160;*</programlisting>
+<para>The object of the property.</para><para>Flags: Read / Write / Construct Only</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

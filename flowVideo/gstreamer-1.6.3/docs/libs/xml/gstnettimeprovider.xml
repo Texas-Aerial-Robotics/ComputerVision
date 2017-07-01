@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstNetTimeProvider">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstNetTimeProvider.top_of_page">GstNetTimeProvider</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstNetTimeProvider</refname>
+<refpurpose>Special object that exposed the time of a clock
+                    on the network.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstNetTimeProvider.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstNetTimeProvider"><returnvalue>GstNetTimeProvider</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-net-time-provider-new">gst_net_time_provider_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstNetTimeProvider.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstNetTimeProvider--active">active</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstNetTimeProvider--address">address</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstClock"><type>GstClock</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstNetTimeProvider--clock">clock</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstNetTimeProvider--port">port</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstNetTimeProvider.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstNetTimeProvider-struct">GstNetTimeProvider</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstNetTimeProvider.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstNetTimeProvider
+</screen>
+</refsect1>
+
+<refsect1 id="GstNetTimeProvider.includes"><title>Includes</title><synopsis>#include &lt;gst/net/gstnet.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstNetTimeProvider.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This object exposes the time of a <link linkend="GstClock"><type>GstClock</type></link> on the network.</para>
+<para>A <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> is created with <link linkend="gst-net-time-provider-new"><function>gst_net_time_provider_new()</function></link> which
+takes a <link linkend="GstClock"><type>GstClock</type></link>, an address and a port number as arguments.</para>
+<para>After creating the object, a client clock such as <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link> can
+query the exposed clock over the network for its values.</para>
+<para>The <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> typically wraps the clock used by a <link linkend="GstPipeline"><type>GstPipeline</type></link>.</para>
+
+</refsect1>
+<refsect1 id="GstNetTimeProvider.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-net-time-provider-new" role="function">
+<title>gst_net_time_provider_new&#160;()</title>
+<indexterm zone="gst-net-time-provider-new"><primary>gst_net_time_provider_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstNetTimeProvider"><returnvalue>GstNetTimeProvider</returnvalue></link>&#160;*
+gst_net_time_provider_new (<parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *address</parameter>,
+                           <parameter><link linkend="gint"><type>gint</type></link> port</parameter>);</programlisting>
+<para>Allows network clients to get the current time of <parameter>clock</parameter>
+.</para>
+<refsect3 id="gst-net-time-provider-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link> to export over the network</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>address</para></entry>
+<entry role="parameter_description"><para> an address to bind on as a dotted quad
+(xxx.xxx.xxx.xxx), IPv6 address, or NULL to bind to all addresses. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>a port to bind on, or 0 to let the kernel choose</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-net-time-provider-new.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link>, or NULL on error</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstNetTimeProvider.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstNetTimeProvider-struct" role="struct">
+<title>struct GstNetTimeProvider</title>
+<indexterm zone="GstNetTimeProvider-struct"><primary>GstNetTimeProvider</primary></indexterm>
+<programlisting language="C">struct GstNetTimeProvider;</programlisting>
+<para>Opaque <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstNetTimeProvider.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstNetTimeProvider--active" role="property"><title>The <literal>“active”</literal> property</title>
+<indexterm zone="GstNetTimeProvider--active"><primary>GstNetTimeProvider:active</primary></indexterm>
+<programlisting>  “active”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>TRUE if the clock will respond to queries over the network.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstNetTimeProvider--address" role="property"><title>The <literal>“address”</literal> property</title>
+<indexterm zone="GstNetTimeProvider--address"><primary>GstNetTimeProvider:address</primary></indexterm>
+<programlisting>  “address”                  <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The address to bind on, as a dotted quad (x.x.x.x).</para><para>Flags: Read / Write</para>
+<para>Default value: "0.0.0.0"</para>
+</refsect2>
+<refsect2 id="GstNetTimeProvider--clock" role="property"><title>The <literal>“clock”</literal> property</title>
+<indexterm zone="GstNetTimeProvider--clock"><primary>GstNetTimeProvider:clock</primary></indexterm>
+<programlisting>  “clock”                    <link linkend="GstClock"><type>GstClock</type></link>&#160;*</programlisting>
+<para>The clock to export over the network.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstNetTimeProvider--port" role="property"><title>The <literal>“port”</literal> property</title>
+<indexterm zone="GstNetTimeProvider--port"><primary>GstNetTimeProvider:port</primary></indexterm>
+<programlisting>  “port”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The port to receive the packets from, 0=allocate.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,65535]</para>
+<para>Default value: 5637</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstNetTimeProvider.see-also">
+<title>See Also</title>
+<para><link linkend="GstClock"><type>GstClock</type></link>, <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link>, <link linkend="GstPipeline"><type>GstPipeline</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,100 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-fdsink">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-fdsink.top_of_page" role="top_of_page">fdsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fdsink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-fdsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFdSink--fd">fd</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFdSink"/><refsect1 id="gstreamer-plugins-fdsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFdSink-struct">GstFdSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstFdSink
+</screen>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFdSink implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-fdsink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Write data to a unix file descriptor.</para>
+<para>This element will synchronize on the clock before writing the data on the
+socket. For file descriptors where this does not make sense (files, ...) the
+<link linkend="GstBaseSink--sync"><type>“sync”</type></link> property can be used to disable synchronisation.</para>
+
+<include href="element-fdsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-fdsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFdSink-struct" role="struct">
+<title>struct GstFdSink</title>
+<indexterm zone="GstFdSink-struct"><primary>GstFdSink</primary></indexterm>
+<programlisting language="C">struct GstFdSink;</programlisting>
+<para>The opaque <link linkend="GstFdSink"><type>GstFdSink</type></link> data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFdSink--fd" role="property"><title>The <literal>“fd”</literal> property</title>
+<indexterm zone="GstFdSink--fd"><primary>GstFdSink:fd</primary></indexterm>
+<programlisting>  “fd”                       <link linkend="gint"><type>gint</type></link></programlisting>
+<para>An open file descriptor to write to.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsink.see-also">
+<title>See Also</title>
+<para><link linkend="GstFdSrc"><type>GstFdSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE informaltable PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<informaltable pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<tbody>
+<row>
+<entry><link linkend="GInitiallyUnowned">GInitiallyUnowned</link></entry>
+<entry><link linkend="GObject">GObject</link></entry>
+<entry><link linkend="GstBaseSink">GstBaseSink</link></entry>
+</row>
+<row>
+<entry><link linkend="GstBaseSrc">GstBaseSrc</link></entry>
+<entry><link linkend="GstBaseTransform">GstBaseTransform</link></entry>
+<entry><link linkend="GstCapsFilter">GstCapsFilter</link></entry>
+</row>
+<row>
+<entry><link linkend="GstConcat">GstConcat</link></entry>
+<entry><link linkend="GstDownloadBuffer">GstDownloadBuffer</link></entry>
+<entry><link linkend="GstElement">GstElement</link></entry>
+</row>
+<row>
+<entry><link linkend="GstFakeSink">GstFakeSink</link></entry>
+<entry><link linkend="GstFakeSrc">GstFakeSrc</link></entry>
+<entry><link linkend="GstFdSink">GstFdSink</link></entry>
+</row>
+<row>
+<entry><link linkend="GstFdSrc">GstFdSrc</link></entry>
+<entry><link linkend="GstFileSink">GstFileSink</link></entry>
+<entry><link linkend="GstFileSrc">GstFileSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstFunnel">GstFunnel</link></entry>
+<entry><link linkend="GstIdentity">GstIdentity</link></entry>
+<entry><link linkend="GstInputSelector">GstInputSelector</link></entry>
+</row>
+<row>
+<entry><link linkend="GstMultiQueue">GstMultiQueue</link></entry>
+<entry><link linkend="GstObject">GstObject</link></entry>
+<entry><link linkend="GstOutputSelector">GstOutputSelector</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPushSrc">GstPushSrc</link></entry>
+<entry><link linkend="GstQueue">GstQueue</link></entry>
+<entry><link linkend="GstQueue2">GstQueue2</link></entry>
+</row>
+<row>
+<entry><link linkend="GstStreamidDemux">GstStreamidDemux</link></entry>
+<entry><link linkend="GstTee">GstTee</link></entry>
+<entry><link linkend="GstTypeFindElement">GstTypeFindElement</link></entry>
+</row>
+<row>
+<entry><link linkend="GstValve">GstValve</link></entry>
+</row>
+</tbody></tgroup></informaltable>

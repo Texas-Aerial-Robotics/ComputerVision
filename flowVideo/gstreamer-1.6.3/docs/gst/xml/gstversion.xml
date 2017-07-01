@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstVersion">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstVersion.top_of_page">GstVersion</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstVersion</refname>
+<refpurpose>GStreamer version macros.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstVersion.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CHECK-VERSION:CAPS">GST_CHECK_VERSION</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstVersion.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VERSION-MAJOR:CAPS">GST_VERSION_MAJOR</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VERSION-MINOR:CAPS">GST_VERSION_MINOR</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VERSION-MICRO:CAPS">GST_VERSION_MICRO</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VERSION-NANO:CAPS">GST_VERSION_NANO</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstVersion.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstVersion.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Use the GST_VERSION_* macros e.g. when defining own plugins. The GStreamer
+runtime checks if these plugin and core version match and refuses to use a
+plugin compiled against a different version of GStreamer.
+You can also use the macros to keep the GStreamer version information in
+your application.</para>
+<para>Use the <link linkend="gst-version"><function>gst_version()</function></link> function if you want to know which version of
+GStreamer you are currently linked against.</para>
+<para>The version macros get defined by including "gst/gst.h".</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstVersion.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-CHECK-VERSION:CAPS" role="macro">
+<title>GST_CHECK_VERSION()</title>
+<indexterm zone="GST-CHECK-VERSION:CAPS"><primary>GST_CHECK_VERSION</primary></indexterm>
+<programlisting language="C">#define             GST_CHECK_VERSION(major,minor,micro)</programlisting>
+<para>Check whether a GStreamer version equal to or greater than
+major.minor.micro is present.</para>
+<refsect3 id="GST-CHECK-VERSION.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>major</para></entry>
+<entry role="parameter_description"><para>a number indicating the major version</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minor</para></entry>
+<entry role="parameter_description"><para>a number indicating the minor version</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>micro</para></entry>
+<entry role="parameter_description"><para>a number indicating the micro version</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstVersion.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-VERSION-MAJOR:CAPS" role="macro">
+<title>GST_VERSION_MAJOR</title>
+<indexterm zone="GST-VERSION-MAJOR:CAPS"><primary>GST_VERSION_MAJOR</primary></indexterm>
+<programlisting language="C">#define GST_VERSION_MAJOR (1)
+</programlisting>
+<para>The major version of GStreamer at compile time:</para>
+</refsect2>
+<refsect2 id="GST-VERSION-MINOR:CAPS" role="macro">
+<title>GST_VERSION_MINOR</title>
+<indexterm zone="GST-VERSION-MINOR:CAPS"><primary>GST_VERSION_MINOR</primary></indexterm>
+<programlisting language="C">#define GST_VERSION_MINOR (6)
+</programlisting>
+<para>The minor version of GStreamer at compile time:</para>
+</refsect2>
+<refsect2 id="GST-VERSION-MICRO:CAPS" role="macro">
+<title>GST_VERSION_MICRO</title>
+<indexterm zone="GST-VERSION-MICRO:CAPS"><primary>GST_VERSION_MICRO</primary></indexterm>
+<programlisting language="C">#define GST_VERSION_MICRO (3)
+</programlisting>
+<para>The micro version of GStreamer at compile time:</para>
+</refsect2>
+<refsect2 id="GST-VERSION-NANO:CAPS" role="macro">
+<title>GST_VERSION_NANO</title>
+<indexterm zone="GST-VERSION-NANO:CAPS"><primary>GST_VERSION_NANO</primary></indexterm>
+<programlisting language="C">#define GST_VERSION_NANO (0)
+</programlisting>
+<para>The nano version of GStreamer at compile time:
+Actual releases have 0, GIT versions have 1, prerelease versions have 2-...</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

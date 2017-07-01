@@ -1,0 +1,506 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstParse">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstParse.top_of_page">GstParse</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstParse</refname>
+<refpurpose>Get a pipeline from a text pipeline description</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstParse.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-parse-error-quark">gst_parse_error_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-launch">gst_parse_launch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-launch-full">gst_parse_launch_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-launchv">gst_parse_launchv</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-launchv-full">gst_parse_launchv_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-bin-from-description">gst_parse_bin_from_description</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-bin-from-description-full">gst_parse_bin_from_description_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="GstParseContext"><returnvalue>GstParseContext</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-parse-context-new">gst_parse_context_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-parse-context-free">gst_parse_context_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+</entry><entry role="function_name"><link linkend="gst-parse-context-get-missing-elements">gst_parse_context_get_missing_elements</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstParseContext"/><refsect1 id="gstreamer-GstParse.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PARSE-ERROR:CAPS">GST_PARSE_ERROR</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstParseError">GstParseError</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstParseContext-struct">GstParseContext</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstParseFlags">GstParseFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstParse.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstParseContext
+</screen>
+</refsect1>
+
+<refsect1 id="gstreamer-GstParse.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstParse.description" role="desc">
+<title role="desc.title">Description</title>
+<para>These function allow to create a pipeline based on the syntax used in the
+gst-launch-1.0 utility (see man-page for syntax documentation).</para>
+<para>Please note that these functions take several measures to create
+somewhat dynamic pipelines. Due to that such pipelines are not always
+reusable (set the state to NULL and back to PLAYING).</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstParse.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-parse-error-quark" role="function">
+<title>gst_parse_error_quark&#160;()</title>
+<indexterm zone="gst-parse-error-quark"><primary>gst_parse_error_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_parse_error_quark (<parameter><type>void</type></parameter>);</programlisting>
+<para>Get the error quark used by the parsing subsystem.</para>
+<refsect3 id="gst-parse-error-quark.returns" role="returns">
+<title>Returns</title>
+<para> the quark of the parse errors.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-launch" role="function">
+<title>gst_parse_launch&#160;()</title>
+<indexterm zone="gst-parse-launch"><primary>gst_parse_launch</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_parse_launch (<parameter>const <link linkend="gchar"><type>gchar</type></link> *pipeline_description</parameter>,
+                  <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Create a new pipeline based on command line syntax.
+Please note that you might get a return value that is not <link linkend="NULL:CAPS"><literal>NULL</literal></link> even though
+the <parameter>error</parameter>
+ is set. In this case there was a recoverable parsing error and you
+can try to play the pipeline.</para>
+<refsect3 id="gst-parse-launch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline_description</para></entry>
+<entry role="parameter_description"><para>the command line describing the pipeline</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>the error message in case of an erroneous pipeline.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-launch.returns" role="returns">
+<title>Returns</title>
+<para> a new element on success, <link linkend="NULL:CAPS"><literal>NULL</literal></link> on failure. If
+more than one toplevel element is specified by the <parameter>pipeline_description</parameter>
+,
+all elements are put into a <link linkend="GstPipeline"><type>GstPipeline</type></link>, which than is returned. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-launch-full" role="function">
+<title>gst_parse_launch_full&#160;()</title>
+<indexterm zone="gst-parse-launch-full"><primary>gst_parse_launch_full</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_parse_launch_full (<parameter>const <link linkend="gchar"><type>gchar</type></link> *pipeline_description</parameter>,
+                       <parameter><link linkend="GstParseContext"><type>GstParseContext</type></link> *context</parameter>,
+                       <parameter><link linkend="GstParseFlags"><type>GstParseFlags</type></link> flags</parameter>,
+                       <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Create a new pipeline based on command line syntax.
+Please note that you might get a return value that is not <link linkend="NULL:CAPS"><literal>NULL</literal></link> even though
+the <parameter>error</parameter>
+ is set. In this case there was a recoverable parsing error and you
+can try to play the pipeline.</para>
+<refsect3 id="gst-parse-launch-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline_description</para></entry>
+<entry role="parameter_description"><para>the command line describing the pipeline</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para> a parse context allocated with
+<link linkend="gst-parse-context-new"><function>gst_parse_context_new()</function></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>parsing options, or <link linkend="GST-PARSE-FLAG-NONE:CAPS"><type>GST_PARSE_FLAG_NONE</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>the error message in case of an erroneous pipeline.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-launch-full.returns" role="returns">
+<title>Returns</title>
+<para> a new element on success, <link linkend="NULL:CAPS"><literal>NULL</literal></link> on failure. If
+more than one toplevel element is specified by the <parameter>pipeline_description</parameter>
+,
+all elements are put into a <link linkend="GstPipeline"><type>GstPipeline</type></link>, which then is returned. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-launchv" role="function">
+<title>gst_parse_launchv&#160;()</title>
+<indexterm zone="gst-parse-launchv"><primary>gst_parse_launchv</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_parse_launchv (<parameter>const <link linkend="gchar"><type>gchar</type></link> **argv</parameter>,
+                   <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Create a new element based on command line syntax.
+<parameter>error</parameter>
+ will contain an error message if an erroneous pipeline is specified.
+An error does not mean that the pipeline could not be constructed.</para>
+<refsect3 id="gst-parse-launchv.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>argv</para></entry>
+<entry role="parameter_description"><para> null-terminated array of arguments. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>pointer to a <link linkend="GError"><type>GError</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-launchv.returns" role="returns">
+<title>Returns</title>
+<para> a new element on success and <link linkend="NULL:CAPS"><literal>NULL</literal></link> on failure. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-launchv-full" role="function">
+<title>gst_parse_launchv_full&#160;()</title>
+<indexterm zone="gst-parse-launchv-full"><primary>gst_parse_launchv_full</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_parse_launchv_full (<parameter>const <link linkend="gchar"><type>gchar</type></link> **argv</parameter>,
+                        <parameter><link linkend="GstParseContext"><type>GstParseContext</type></link> *context</parameter>,
+                        <parameter><link linkend="GstParseFlags"><type>GstParseFlags</type></link> flags</parameter>,
+                        <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Create a new element based on command line syntax.
+<parameter>error</parameter>
+ will contain an error message if an erroneous pipeline is specified.
+An error does not mean that the pipeline could not be constructed.</para>
+<refsect3 id="gst-parse-launchv-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>argv</para></entry>
+<entry role="parameter_description"><para> null-terminated array of arguments. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para> a parse context allocated with
+<link linkend="gst-parse-context-new"><function>gst_parse_context_new()</function></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>parsing options, or <link linkend="GST-PARSE-FLAG-NONE:CAPS"><type>GST_PARSE_FLAG_NONE</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>pointer to a <link linkend="GError"><type>GError</type></link> (which must be initialised to <link linkend="NULL:CAPS"><literal>NULL</literal></link>)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-launchv-full.returns" role="returns">
+<title>Returns</title>
+<para> a new element on success; on failure, either <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+or a partially-constructed bin or element will be returned and <parameter>error</parameter>
+will
+be set (unless you passed <link linkend="GST-PARSE-FLAG-FATAL-ERRORS:CAPS"><type>GST_PARSE_FLAG_FATAL_ERRORS</type></link> in <parameter>flags</parameter>
+, then
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> will always be returned on failure). </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-bin-from-description" role="function">
+<title>gst_parse_bin_from_description&#160;()</title>
+<indexterm zone="gst-parse-bin-from-description"><primary>gst_parse_bin_from_description</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_parse_bin_from_description (<parameter>const <link linkend="gchar"><type>gchar</type></link> *bin_description</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> ghost_unlinked_pads</parameter>,
+                                <parameter><link linkend="GError"><type>GError</type></link> **err</parameter>);</programlisting>
+<para>This is a convenience wrapper around <link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link> to create a
+<link linkend="GstBin"><type>GstBin</type></link> from a gst-launch-style pipeline description. See
+<link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link> and the gst-launch man page for details about the
+syntax. Ghost pads on the bin for unlinked source or sink pads
+within the bin can automatically be created (but only a maximum of
+one ghost pad for each direction will be created; if you expect
+multiple unlinked source pads or multiple unlinked sink pads
+and want them all ghosted, you will have to create the ghost pads
+yourself).</para>
+<refsect3 id="gst-parse-bin-from-description.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin_description</para></entry>
+<entry role="parameter_description"><para>command line describing the bin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ghost_unlinked_pads</para></entry>
+<entry role="parameter_description"><para>whether to automatically create ghost pads
+for unlinked source or sink pads within the bin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>err</para></entry>
+<entry role="parameter_description"><para>where to store the error message in case of an error, or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-bin-from-description.returns" role="returns">
+<title>Returns</title>
+<para> a
+newly-created bin, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if an error occurred. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>][<acronym>type</acronym> Gst.Bin][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-bin-from-description-full" role="function">
+<title>gst_parse_bin_from_description_full&#160;()</title>
+<indexterm zone="gst-parse-bin-from-description-full"><primary>gst_parse_bin_from_description_full</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_parse_bin_from_description_full (<parameter>const <link linkend="gchar"><type>gchar</type></link> *bin_description</parameter>,
+                                     <parameter><link linkend="gboolean"><type>gboolean</type></link> ghost_unlinked_pads</parameter>,
+                                     <parameter><link linkend="GstParseContext"><type>GstParseContext</type></link> *context</parameter>,
+                                     <parameter><link linkend="GstParseFlags"><type>GstParseFlags</type></link> flags</parameter>,
+                                     <parameter><link linkend="GError"><type>GError</type></link> **err</parameter>);</programlisting>
+<para>This is a convenience wrapper around <link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link> to create a
+<link linkend="GstBin"><type>GstBin</type></link> from a gst-launch-style pipeline description. See
+<link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link> and the gst-launch man page for details about the
+syntax. Ghost pads on the bin for unlinked source or sink pads
+within the bin can automatically be created (but only a maximum of
+one ghost pad for each direction will be created; if you expect
+multiple unlinked source pads or multiple unlinked sink pads
+and want them all ghosted, you will have to create the ghost pads
+yourself).</para>
+<refsect3 id="gst-parse-bin-from-description-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin_description</para></entry>
+<entry role="parameter_description"><para>command line describing the bin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ghost_unlinked_pads</para></entry>
+<entry role="parameter_description"><para>whether to automatically create ghost pads
+for unlinked source or sink pads within the bin</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para> a parse context allocated with
+<link linkend="gst-parse-context-new"><function>gst_parse_context_new()</function></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>parsing options, or <link linkend="GST-PARSE-FLAG-NONE:CAPS"><type>GST_PARSE_FLAG_NONE</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>err</para></entry>
+<entry role="parameter_description"><para>where to store the error message in case of an error, or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-bin-from-description-full.returns" role="returns">
+<title>Returns</title>
+<para> a newly-created
+element, which is guaranteed to be a bin unless
+GST_FLAG_NO_SINGLE_ELEMENT_BINS was passed, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if an error
+occurred. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>][<acronym>type</acronym> Gst.Element]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-context-new" role="function">
+<title>gst_parse_context_new&#160;()</title>
+<indexterm zone="gst-parse-context-new"><primary>gst_parse_context_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstParseContext"><returnvalue>GstParseContext</returnvalue></link>&#160;*
+gst_parse_context_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Allocates a parse context for use with <link linkend="gst-parse-launch-full"><function>gst_parse_launch_full()</function></link> or
+<link linkend="gst-parse-launchv-full"><function>gst_parse_launchv_full()</function></link>.</para>
+<para>Free-function: gst_parse_context_free</para>
+<refsect3 id="gst-parse-context-new.returns" role="returns">
+<title>Returns</title>
+<para> a newly-allocated parse context. Free with
+<link linkend="gst-parse-context-free"><function>gst_parse_context_free()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-context-free" role="function">
+<title>gst_parse_context_free&#160;()</title>
+<indexterm zone="gst-parse-context-free"><primary>gst_parse_context_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_parse_context_free (<parameter><link linkend="GstParseContext"><type>GstParseContext</type></link> *context</parameter>);</programlisting>
+<para>Frees a parse context previously allocated with <link linkend="gst-parse-context-new"><function>gst_parse_context_new()</function></link>.</para>
+<refsect3 id="gst-parse-context-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstParseContext"><type>GstParseContext</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-parse-context-get-missing-elements" role="function">
+<title>gst_parse_context_get_missing_elements&#160;()</title>
+<indexterm zone="gst-parse-context-get-missing-elements"><primary>gst_parse_context_get_missing_elements</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+gst_parse_context_get_missing_elements
+                               (<parameter><link linkend="GstParseContext"><type>GstParseContext</type></link> *context</parameter>);</programlisting>
+<para>Retrieve missing elements from a previous run of <link linkend="gst-parse-launch-full"><function>gst_parse_launch_full()</function></link>
+or <link linkend="gst-parse-launchv-full"><function>gst_parse_launchv_full()</function></link>. Will only return results if an error code
+of <link linkend="GST-PARSE-ERROR-NO-SUCH-ELEMENT:CAPS"><literal>GST_PARSE_ERROR_NO_SUCH_ELEMENT</literal></link> was returned.</para>
+<refsect3 id="gst-parse-context-get-missing-elements.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstParseContext"><type>GstParseContext</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-parse-context-get-missing-elements.returns" role="returns">
+<title>Returns</title>
+<para> a
+<link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of element factory name strings of missing
+elements. Free with <link linkend="g-strfreev"><function>g_strfreev()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>element-type</acronym> gchar*]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstParse.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-PARSE-ERROR:CAPS" role="macro">
+<title>GST_PARSE_ERROR</title>
+<indexterm zone="GST-PARSE-ERROR:CAPS"><primary>GST_PARSE_ERROR</primary></indexterm>
+<programlisting language="C">#define GST_PARSE_ERROR gst_parse_error_quark ()
+</programlisting>
+<para>Get access to the error quark of the parse subsystem.</para>
+</refsect2>
+<refsect2 id="GstParseError" role="enum">
+<title>enum GstParseError</title>
+<indexterm zone="GstParseError"><primary>GstParseError</primary></indexterm>
+<para>The different parsing errors that can occur.</para>
+<refsect3 id="GstParseError.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-SYNTAX:CAPS">GST_PARSE_ERROR_SYNTAX</para></entry>
+<entry role="enum_member_description"><para>A syntax error occurred.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-NO-SUCH-ELEMENT:CAPS">GST_PARSE_ERROR_NO_SUCH_ELEMENT</para></entry>
+<entry role="enum_member_description"><para>The description contained an unknown element</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-NO-SUCH-PROPERTY:CAPS">GST_PARSE_ERROR_NO_SUCH_PROPERTY</para></entry>
+<entry role="enum_member_description"><para>An element did not have a specified property</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-LINK:CAPS">GST_PARSE_ERROR_LINK</para></entry>
+<entry role="enum_member_description"><para>There was an error linking two pads.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-COULD-NOT-SET-PROPERTY:CAPS">GST_PARSE_ERROR_COULD_NOT_SET_PROPERTY</para></entry>
+<entry role="enum_member_description"><para>There was an error setting a property</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-EMPTY-BIN:CAPS">GST_PARSE_ERROR_EMPTY_BIN</para></entry>
+<entry role="enum_member_description"><para>An empty bin was specified.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-ERROR-EMPTY:CAPS">GST_PARSE_ERROR_EMPTY</para></entry>
+<entry role="enum_member_description"><para>An empty description was specified</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstParseContext-struct" role="struct">
+<title>GstParseContext</title>
+<indexterm zone="GstParseContext-struct"><primary>GstParseContext</primary></indexterm>
+<programlisting language="C">typedef struct _GstParseContext GstParseContext;</programlisting>
+<para>Opaque structure.</para>
+</refsect2>
+<refsect2 id="GstParseFlags" role="enum">
+<title>enum GstParseFlags</title>
+<indexterm zone="GstParseFlags"><primary>GstParseFlags</primary></indexterm>
+<para>Parsing options.</para>
+<refsect3 id="GstParseFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-FLAG-NONE:CAPS">GST_PARSE_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>Do not use any special parsing options.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-FLAG-FATAL-ERRORS:CAPS">GST_PARSE_FLAG_FATAL_ERRORS</para></entry>
+<entry role="enum_member_description"><para>Always return <link linkend="NULL:CAPS"><literal>NULL</literal></link> when an error occurs
+    (default behaviour is to return partially constructed bins or elements
+     in some cases)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PARSE-FLAG-NO-SINGLE-ELEMENT-BINS:CAPS">GST_PARSE_FLAG_NO_SINGLE_ELEMENT_BINS</para></entry>
+<entry role="enum_member_description"><para>If a bin only has a single element,
+    just return the element.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

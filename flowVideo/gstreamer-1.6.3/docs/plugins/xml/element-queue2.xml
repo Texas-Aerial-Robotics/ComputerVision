@@ -1,0 +1,194 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-queue2">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-queue2.top_of_page" role="top_of_page">queue2</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>queue2</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-queue2.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstQueue2--current-level-buffers">current-level-buffers</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstQueue2--current-level-bytes">current-level-bytes</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstQueue2--current-level-time">current-level-time</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstQueue2--high-percent">high-percent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstQueue2--low-percent">low-percent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstQueue2--max-size-buffers">max-size-buffers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstQueue2--max-size-bytes">max-size-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstQueue2--max-size-time">max-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstQueue2--ring-buffer-max-size">ring-buffer-max-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstQueue2--temp-location">temp-location</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstQueue2--temp-remove">temp-remove</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstQueue2--temp-template">temp-template</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstQueue2--use-buffering">use-buffering</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstQueue2--use-rate-estimate">use-rate-estimate</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstQueue2"/><refsect1 id="gstreamer-plugins-queue2.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstQueue2-struct">GstQueue2</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-queue2.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstQueue2
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-queue2.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Data is queued until one of the limits specified by the
+<link linkend="GstQueue2--max-size-buffers"><type>“max-size-buffers”</type></link>, <link linkend="GstQueue2--max-size-bytes"><type>“max-size-bytes”</type></link> and/or
+<link linkend="GstQueue2--max-size-time"><type>“max-size-time”</type></link> properties has been reached. Any attempt to push
+more buffers into the queue will block the pushing thread until more space
+becomes available.</para>
+<para>The queue will create a new thread on the source pad to decouple the
+processing on sink and source pad.</para>
+<para>You can query how many buffers are queued by reading the
+<link linkend="GstQueue2--current-level-buffers"><type>“current-level-buffers”</type></link> property.</para>
+<para>The default queue size limits are 100 buffers, 2MB of data, or
+two seconds worth of data, whichever is reached first.</para>
+<para>If you set temp-template to a value such as /tmp/gstreamer-XXXXXX, the element
+will allocate a random free filename and buffer data in the file.
+By using this, it will buffer the entire stream data on the file independently
+of the queue size limits, they will only be used for buffering statistics.</para>
+<para>The temp-location property will be used to notify the application of the
+allocated filename.</para>
+
+<include href="element-queue2-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-queue2.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-queue2.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstQueue2-struct" role="struct">
+<title>struct GstQueue2</title>
+<indexterm zone="GstQueue2-struct"><primary>GstQueue2</primary></indexterm>
+<programlisting language="C">struct GstQueue2;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-queue2.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstQueue2--current-level-buffers" role="property"><title>The <literal>“current-level-buffers”</literal> property</title>
+<indexterm zone="GstQueue2--current-level-buffers"><primary>GstQueue2:current-level-buffers</primary></indexterm>
+<programlisting>  “current-level-buffers”    <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Current number of buffers in the queue.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstQueue2--current-level-bytes" role="property"><title>The <literal>“current-level-bytes”</literal> property</title>
+<indexterm zone="GstQueue2--current-level-bytes"><primary>GstQueue2:current-level-bytes</primary></indexterm>
+<programlisting>  “current-level-bytes”      <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Current amount of data in the queue (bytes).</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstQueue2--current-level-time" role="property"><title>The <literal>“current-level-time”</literal> property</title>
+<indexterm zone="GstQueue2--current-level-time"><primary>GstQueue2:current-level-time</primary></indexterm>
+<programlisting>  “current-level-time”       <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Current amount of data in the queue (in ns).</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstQueue2--high-percent" role="property"><title>The <literal>“high-percent”</literal> property</title>
+<indexterm zone="GstQueue2--high-percent"><primary>GstQueue2:high-percent</primary></indexterm>
+<programlisting>  “high-percent”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>High threshold for buffering to finish. Only used if use-buffering is True.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 99</para>
+</refsect2>
+<refsect2 id="GstQueue2--low-percent" role="property"><title>The <literal>“low-percent”</literal> property</title>
+<indexterm zone="GstQueue2--low-percent"><primary>GstQueue2:low-percent</primary></indexterm>
+<programlisting>  “low-percent”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Low threshold for buffering to start. Only used if use-buffering is True.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 10</para>
+</refsect2>
+<refsect2 id="GstQueue2--max-size-buffers" role="property"><title>The <literal>“max-size-buffers”</literal> property</title>
+<indexterm zone="GstQueue2--max-size-buffers"><primary>GstQueue2:max-size-buffers</primary></indexterm>
+<programlisting>  “max-size-buffers”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max. number of buffers in the queue (0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstQueue2--max-size-bytes" role="property"><title>The <literal>“max-size-bytes”</literal> property</title>
+<indexterm zone="GstQueue2--max-size-bytes"><primary>GstQueue2:max-size-bytes</primary></indexterm>
+<programlisting>  “max-size-bytes”           <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max. amount of data in the queue (bytes, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 2097152</para>
+</refsect2>
+<refsect2 id="GstQueue2--max-size-time" role="property"><title>The <literal>“max-size-time”</literal> property</title>
+<indexterm zone="GstQueue2--max-size-time"><primary>GstQueue2:max-size-time</primary></indexterm>
+<programlisting>  “max-size-time”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Max. amount of data in the queue (in ns, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 2000000000</para>
+</refsect2>
+<refsect2 id="GstQueue2--ring-buffer-max-size" role="property"><title>The <literal>“ring-buffer-max-size”</literal> property</title>
+<indexterm zone="GstQueue2--ring-buffer-max-size"><primary>GstQueue2:ring-buffer-max-size</primary></indexterm>
+<programlisting>  “ring-buffer-max-size”     <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>The maximum size of the ring buffer in bytes. If set to 0, the ring
+buffer is disabled. Default 0.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstQueue2--temp-location" role="property"><title>The <literal>“temp-location”</literal> property</title>
+<indexterm zone="GstQueue2--temp-location"><primary>GstQueue2:temp-location</primary></indexterm>
+<programlisting>  “temp-location”            <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location to store temporary files in (Only read this property, use temp-template to configure the name template).</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstQueue2--temp-remove" role="property"><title>The <literal>“temp-remove”</literal> property</title>
+<indexterm zone="GstQueue2--temp-remove"><primary>GstQueue2:temp-remove</primary></indexterm>
+<programlisting>  “temp-remove”              <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>When temp-template is set, remove the temporary file when going to READY.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstQueue2--temp-template" role="property"><title>The <literal>“temp-template”</literal> property</title>
+<indexterm zone="GstQueue2--temp-template"><primary>GstQueue2:temp-template</primary></indexterm>
+<programlisting>  “temp-template”            <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>File template to store temporary files in, should contain directory and XXXXXX. (NULL == disabled).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstQueue2--use-buffering" role="property"><title>The <literal>“use-buffering”</literal> property</title>
+<indexterm zone="GstQueue2--use-buffering"><primary>GstQueue2:use-buffering</primary></indexterm>
+<programlisting>  “use-buffering”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Emit GST_MESSAGE_BUFFERING based on low-/high-percent thresholds.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstQueue2--use-rate-estimate" role="property"><title>The <literal>“use-rate-estimate”</literal> property</title>
+<indexterm zone="GstQueue2--use-rate-estimate"><primary>GstQueue2:use-rate-estimate</primary></indexterm>
+<programlisting>  “use-rate-estimate”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Estimate the bitrate of the stream to calculate time level.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

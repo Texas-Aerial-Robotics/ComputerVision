@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstStreamConsistency">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstStreamConsistency.top_of_page">GstStreamConsistency</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstStreamConsistency</refname>
+<refpurpose>Data flow consistency checker for GStreamer unit tests.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstStreamConsistency.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstStreamConsistency"><returnvalue>GstStreamConsistency</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-consistency-checker-new">gst_consistency_checker_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-consistency-checker-reset">gst_consistency_checker_reset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-consistency-checker-free">gst_consistency_checker_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-consistency-checker-add-pad">gst_consistency_checker_add_pad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstStreamConsistency.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstStreamConsistency">GstStreamConsistency</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstStreamConsistency.includes"><title>Includes</title><synopsis>#include &lt;gst/check/gstconsistencychecker.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstStreamConsistency.description" role="desc">
+<title role="desc.title">Description</title>
+<para>These macros and functions are for internal use of the unit tests found
+inside the 'check' directories of various GStreamer packages.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstStreamConsistency.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-consistency-checker-new" role="function">
+<title>gst_consistency_checker_new&#160;()</title>
+<indexterm zone="gst-consistency-checker-new"><primary>gst_consistency_checker_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstStreamConsistency"><returnvalue>GstStreamConsistency</returnvalue></link>&#160;*
+gst_consistency_checker_new (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Sets up a data probe on the given pad which will raise assertions if the
+data flow is inconsistent.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-consistency-checker-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstPad"><type>GstPad</type></link> on which the dataflow will be checked.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-consistency-checker-new.returns" role="returns">
+<title>Returns</title>
+<para> A <link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> structure used to track data flow.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-consistency-checker-reset" role="function">
+<title>gst_consistency_checker_reset&#160;()</title>
+<indexterm zone="gst-consistency-checker-reset"><primary>gst_consistency_checker_reset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_consistency_checker_reset (<parameter><link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> *consist</parameter>);</programlisting>
+<para>Reset the stream checker's internal variables.</para>
+<refsect3 id="gst-consistency-checker-reset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>consist</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> to reset.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-consistency-checker-free" role="function">
+<title>gst_consistency_checker_free&#160;()</title>
+<indexterm zone="gst-consistency-checker-free"><primary>gst_consistency_checker_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_consistency_checker_free (<parameter><link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> *consist</parameter>);</programlisting>
+<para>Frees the allocated data and probes associated with <parameter>consist</parameter>
+.</para>
+<refsect3 id="gst-consistency-checker-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>consist</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> to free.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-consistency-checker-add-pad" role="function">
+<title>gst_consistency_checker_add_pad&#160;()</title>
+<indexterm zone="gst-consistency-checker-add-pad"><primary>gst_consistency_checker_add_pad</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_consistency_checker_add_pad (<parameter><link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> *consist</parameter>,
+                                 <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Sets up a data probe on the given pad which will raise assertions if the
+data flow is inconsistent.</para>
+<refsect3 id="gst-consistency-checker-add-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>consist</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstStreamConsistency"><type>GstStreamConsistency</type></link> handle</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstPad"><type>GstPad</type></link> on which the dataflow will be checked.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-consistency-checker-add-pad.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the pad was added</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstStreamConsistency.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstStreamConsistency" role="struct">
+<title>GstStreamConsistency</title>
+<indexterm zone="GstStreamConsistency"><primary>GstStreamConsistency</primary></indexterm>
+<programlisting language="C">typedef struct _GstStreamConsistency GstStreamConsistency;</programlisting>
+<para>Opaque consistency checker handle.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

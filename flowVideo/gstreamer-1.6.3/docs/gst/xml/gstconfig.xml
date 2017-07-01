@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstConfig">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstConfig.top_of_page">GstConfig</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstConfig</refname>
+<refpurpose>Build configuration options</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstConfig.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DISABLE-GST-DEBUG:CAPS">GST_DISABLE_GST_DEBUG</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DISABLE-PARSE:CAPS">GST_DISABLE_PARSE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DISABLE-TRACE:CAPS">GST_DISABLE_TRACE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DISABLE-ALLOC-TRACE:CAPS">GST_DISABLE_ALLOC_TRACE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DISABLE-REGISTRY:CAPS">GST_DISABLE_REGISTRY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DISABLE-PLUGIN:CAPS">GST_DISABLE_PLUGIN</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstConfig.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstConfig.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This describes the configuration options for GStreamer. When building
+GStreamer there are a lot of parts (known internally as "subsystems" ) that
+can be disabled for various reasons. The most common reasons are speed and
+size, which is important because GStreamer is designed to run on embedded
+systems.</para>
+<para>If a subsystem is disabled, most of this changes are done in an API
+compatible way, so you don't need to adapt your code in most cases. It is
+never done in an ABI compatible way though. So if you want to disable a
+subsystem, you have to rebuild all programs depending on GStreamer, too.</para>
+<para>If a subsystem is disabled in GStreamer, a value is defined in
+&lt;gst/gst.h&gt;. You can check this if you do subsystem-specific stuff.</para>
+<example id="example-gstconfig">
+<title>Doing subsystem specific things</title>
+<programlisting>
+&hash;ifndef GST_DISABLE_GST_DEBUG
+// do stuff specific to the debugging subsystem
+&hash;endif // GST_DISABLE_GST_DEBUG
+</programlisting>
+</example>
+
+</refsect1>
+<refsect1 id="gstreamer-GstConfig.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para />
+</refsect1>
+<refsect1 id="gstreamer-GstConfig.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-DISABLE-GST-DEBUG:CAPS" role="macro">
+<title>GST_DISABLE_GST_DEBUG</title>
+<indexterm zone="GST-DISABLE-GST-DEBUG:CAPS"><primary>GST_DISABLE_GST_DEBUG</primary></indexterm>
+<programlisting language="C">#define GST_DISABLE_GST_DEBUG 1
+</programlisting>
+<para>Configures the inclusion of the debugging subsystem</para>
+</refsect2>
+<refsect2 id="GST-DISABLE-PARSE:CAPS" role="macro">
+<title>GST_DISABLE_PARSE</title>
+<indexterm zone="GST-DISABLE-PARSE:CAPS"><primary>GST_DISABLE_PARSE</primary></indexterm>
+<programlisting language="C">#define GST_DISABLE_PARSE 1
+</programlisting>
+<para>Configures the inclusion of the gst-launch parser</para>
+</refsect2>
+<refsect2 id="GST-DISABLE-TRACE:CAPS" role="macro">
+<title>GST_DISABLE_TRACE</title>
+<indexterm zone="GST-DISABLE-TRACE:CAPS"><primary>GST_DISABLE_TRACE</primary></indexterm>
+<programlisting language="C">#define GST_DISABLE_TRACE 1
+</programlisting>
+<para>Configures the inclusion of a resource tracing facility
+(seems to be unused)</para>
+</refsect2>
+<refsect2 id="GST-DISABLE-ALLOC-TRACE:CAPS" role="macro">
+<title>GST_DISABLE_ALLOC_TRACE</title>
+<indexterm zone="GST-DISABLE-ALLOC-TRACE:CAPS"><primary>GST_DISABLE_ALLOC_TRACE</primary></indexterm>
+<programlisting language="C">#define GST_DISABLE_ALLOC_TRACE 1
+</programlisting>
+<para>Configures the use of a memory tracer based on the resource tracer
+if TRACE is disabled, ALLOC_TRACE is disabled as well</para>
+</refsect2>
+<refsect2 id="GST-DISABLE-REGISTRY:CAPS" role="macro">
+<title>GST_DISABLE_REGISTRY</title>
+<indexterm zone="GST-DISABLE-REGISTRY:CAPS"><primary>GST_DISABLE_REGISTRY</primary></indexterm>
+<programlisting language="C">#define GST_DISABLE_REGISTRY 1
+</programlisting>
+<para>Configures the use of the plugin registry.
+If one disables this, required plugins need to be loaded and registered
+manually</para>
+</refsect2>
+<refsect2 id="GST-DISABLE-PLUGIN:CAPS" role="macro">
+<title>GST_DISABLE_PLUGIN</title>
+<indexterm zone="GST-DISABLE-PLUGIN:CAPS"><primary>GST_DISABLE_PLUGIN</primary></indexterm>
+<programlisting language="C">#define GST_DISABLE_PLUGIN 1
+</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,2108 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstUtils">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstUtils.top_of_page">GstUtils</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstUtils</refname>
+<refpurpose>Various utility functions</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstUtils.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CALL-PARENT:CAPS">GST_CALL_PARENT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CALL-PARENT-WITH-DEFAULT:CAPS">GST_CALL_PARENT_WITH_DEFAULT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT8:CAPS">GST_READ_UINT8</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT16-LE:CAPS">GST_READ_UINT16_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT16-BE:CAPS">GST_READ_UINT16_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT24-LE:CAPS">GST_READ_UINT24_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT24-BE:CAPS">GST_READ_UINT24_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT32-LE:CAPS">GST_READ_UINT32_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT32-BE:CAPS">GST_READ_UINT32_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT64-LE:CAPS">GST_READ_UINT64_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-READ-UINT64-BE:CAPS">GST_READ_UINT64_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-READ-FLOAT-LE:CAPS">GST_READ_FLOAT_LE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-READ-FLOAT-BE:CAPS">GST_READ_FLOAT_BE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-READ-DOUBLE-LE:CAPS">GST_READ_DOUBLE_LE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-READ-DOUBLE-BE:CAPS">GST_READ_DOUBLE_BE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT8:CAPS">GST_WRITE_UINT8</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT16-LE:CAPS">GST_WRITE_UINT16_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT16-BE:CAPS">GST_WRITE_UINT16_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT24-LE:CAPS">GST_WRITE_UINT24_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT24-BE:CAPS">GST_WRITE_UINT24_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT32-LE:CAPS">GST_WRITE_UINT32_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT32-BE:CAPS">GST_WRITE_UINT32_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT64-LE:CAPS">GST_WRITE_UINT64_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WRITE-UINT64-BE:CAPS">GST_WRITE_UINT64_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-WRITE-FLOAT-LE:CAPS">GST_WRITE_FLOAT_LE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-WRITE-FLOAT-BE:CAPS">GST_WRITE_FLOAT_BE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-WRITE-DOUBLE-LE:CAPS">GST_WRITE_DOUBLE_LE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GST-WRITE-DOUBLE-BE:CAPS">GST_WRITE_DOUBLE_BE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-2:CAPS">GST_ROUND_UP_2</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-4:CAPS">GST_ROUND_UP_4</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-8:CAPS">GST_ROUND_UP_8</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-16:CAPS">GST_ROUND_UP_16</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-32:CAPS">GST_ROUND_UP_32</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-64:CAPS">GST_ROUND_UP_64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-128:CAPS">GST_ROUND_UP_128</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-UP-N:CAPS">GST_ROUND_UP_N</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-2:CAPS">GST_ROUND_DOWN_2</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-4:CAPS">GST_ROUND_DOWN_4</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-8:CAPS">GST_ROUND_DOWN_8</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-16:CAPS">GST_ROUND_DOWN_16</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-32:CAPS">GST_ROUND_DOWN_32</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-64:CAPS">GST_ROUND_DOWN_64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-128:CAPS">GST_ROUND_DOWN_128</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ROUND-DOWN-N:CAPS">GST_ROUND_DOWN_N</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GDOUBLE-FROM-BE:CAPS">GDOUBLE_FROM_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GDOUBLE-FROM-LE:CAPS">GDOUBLE_FROM_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GDOUBLE-SWAP-LE-BE:CAPS">GDOUBLE_SWAP_LE_BE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GDOUBLE-TO-BE:CAPS">GDOUBLE_TO_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GDOUBLE-TO-LE:CAPS">GDOUBLE_TO_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GFLOAT-FROM-BE:CAPS">GFLOAT_FROM_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GFLOAT-FROM-LE:CAPS">GFLOAT_FROM_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+</entry><entry role="function_name"><link linkend="GFLOAT-SWAP-LE-BE:CAPS">GFLOAT_SWAP_LE_BE</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GFLOAT-TO-BE:CAPS">GFLOAT_TO_BE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GFLOAT-TO-LE:CAPS">GFLOAT_TO_LE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-guint64-to-gdouble">gst_guint64_to_gdouble</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-gdouble-to-guint64">gst_gdouble_to_guint64</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-dump-mem">gst_util_dump_mem</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-uint64-scale">gst_util_uint64_scale</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-uint64-scale-round">gst_util_uint64_scale_round</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-uint64-scale-ceil">gst_util_uint64_scale_ceil</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-uint64-scale-int">gst_util_uint64_scale_int</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-uint64-scale-int-round">gst_util_uint64_scale_int_round</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-uint64-scale-int-ceil">gst_util_uint64_scale_int_ceil</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-greatest-common-divisor">gst_util_greatest_common_divisor</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-greatest-common-divisor-int64">gst_util_greatest_common_divisor_int64</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-fraction-to-double">gst_util_fraction_to_double</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-double-to-fraction">gst_util_double_to_fraction</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-fraction-multiply">gst_util_fraction_multiply</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-fraction-add">gst_util_fraction_add</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-fraction-compare">gst_util_fraction_compare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-seqnum-next">gst_util_seqnum_next</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint32"><returnvalue>gint32</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-seqnum-compare">gst_util_seqnum_compare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-group-id-next">gst_util_group_id_next</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-set-object-arg">gst_util_set_object_arg</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-set-value-from-string">gst_util_set_value_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-get-timestamp">gst_util_get_timestamp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-util-array-binary-search">gst_util_array_binary_search</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstUtils.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstSearchMode">GstSearchMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstUtils.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstUtils.description" role="desc">
+<title role="desc.title">Description</title>
+
+</refsect1>
+<refsect1 id="gstreamer-GstUtils.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-CALL-PARENT:CAPS" role="macro">
+<title>GST_CALL_PARENT()</title>
+<indexterm zone="GST-CALL-PARENT:CAPS"><primary>GST_CALL_PARENT</primary></indexterm>
+<programlisting language="C">#define             GST_CALL_PARENT(parent_class_cast, name, args)</programlisting>
+<para>Just call the parent handler.  This assumes that there is a variable
+named parent_class that points to the (duh!) parent class.  Note that
+this macro is not to be used with things that return something, use
+the _WITH_DEFAULT version for that</para>
+<refsect3 id="GST-CALL-PARENT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent_class_cast</para></entry>
+<entry role="parameter_description"><para>the name of the class cast macro for the parent type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the function to call</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>args</para></entry>
+<entry role="parameter_description"><para>arguments enclosed in '( )'</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CALL-PARENT-WITH-DEFAULT:CAPS" role="macro">
+<title>GST_CALL_PARENT_WITH_DEFAULT()</title>
+<indexterm zone="GST-CALL-PARENT-WITH-DEFAULT:CAPS"><primary>GST_CALL_PARENT_WITH_DEFAULT</primary></indexterm>
+<programlisting language="C">#define             GST_CALL_PARENT_WITH_DEFAULT(parent_class_cast, name, args, def_return)</programlisting>
+<para>Same as <link linkend="GST-CALL-PARENT:CAPS"><function>GST_CALL_PARENT()</function></link>, but in case there is no implementation, it
+evaluates to <parameter>def_return</parameter>
+.</para>
+<refsect3 id="GST-CALL-PARENT-WITH-DEFAULT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent_class_cast</para></entry>
+<entry role="parameter_description"><para>the name of the class cast macro for the parent type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the function to call</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>args</para></entry>
+<entry role="parameter_description"><para>arguments enclosed in '( )'</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>def_return</para></entry>
+<entry role="parameter_description"><para>default result</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT8:CAPS" role="macro">
+<title>GST_READ_UINT8()</title>
+<indexterm zone="GST-READ-UINT8:CAPS"><primary>GST_READ_UINT8</primary></indexterm>
+<programlisting language="C">#define GST_READ_UINT8(data)            (_GST_GET (data, 0,  8,  0))
+</programlisting>
+<para>Read an 8 bit unsigned integer value from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT16-LE:CAPS" role="macro">
+<title>GST_READ_UINT16_LE()</title>
+<indexterm zone="GST-READ-UINT16-LE:CAPS"><primary>GST_READ_UINT16_LE</primary></indexterm>
+<programlisting language="C">#  define GST_READ_UINT16_LE(data)      _GST_FAST_READ_SWAP (16, data)
+</programlisting>
+<para>Read a 16 bit unsigned integer value in little endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT16-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT16-BE:CAPS" role="macro">
+<title>GST_READ_UINT16_BE()</title>
+<indexterm zone="GST-READ-UINT16-BE:CAPS"><primary>GST_READ_UINT16_BE</primary></indexterm>
+<programlisting language="C">#  define GST_READ_UINT16_BE(data)      _GST_FAST_READ (16, data)
+</programlisting>
+<para>Read a 16 bit unsigned integer value in big endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT16-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT24-LE:CAPS" role="macro">
+<title>GST_READ_UINT24_LE()</title>
+<indexterm zone="GST-READ-UINT24-LE:CAPS"><primary>GST_READ_UINT24_LE</primary></indexterm>
+<programlisting language="C">#define GST_READ_UINT24_LE(data) __gst_slow_read24_le((const guint8 *)(data))
+</programlisting>
+<para>Read a 24 bit unsigned integer value in little endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT24-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT24-BE:CAPS" role="macro">
+<title>GST_READ_UINT24_BE()</title>
+<indexterm zone="GST-READ-UINT24-BE:CAPS"><primary>GST_READ_UINT24_BE</primary></indexterm>
+<programlisting language="C">#define GST_READ_UINT24_BE(data) __gst_slow_read24_be((const guint8 *)(data))
+</programlisting>
+<para>Read a 24 bit unsigned integer value in big endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT24-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT32-LE:CAPS" role="macro">
+<title>GST_READ_UINT32_LE()</title>
+<indexterm zone="GST-READ-UINT32-LE:CAPS"><primary>GST_READ_UINT32_LE</primary></indexterm>
+<programlisting language="C">#  define GST_READ_UINT32_LE(data)      _GST_FAST_READ_SWAP (32, data)
+</programlisting>
+<para>Read a 32 bit unsigned integer value in little endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT32-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT32-BE:CAPS" role="macro">
+<title>GST_READ_UINT32_BE()</title>
+<indexterm zone="GST-READ-UINT32-BE:CAPS"><primary>GST_READ_UINT32_BE</primary></indexterm>
+<programlisting language="C">#  define GST_READ_UINT32_BE(data)      _GST_FAST_READ (32, data)
+</programlisting>
+<para>Read a 32 bit unsigned integer value in big endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT32-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT64-LE:CAPS" role="macro">
+<title>GST_READ_UINT64_LE()</title>
+<indexterm zone="GST-READ-UINT64-LE:CAPS"><primary>GST_READ_UINT64_LE</primary></indexterm>
+<programlisting language="C">#  define GST_READ_UINT64_LE(data)      _GST_FAST_READ_SWAP (64, data)
+</programlisting>
+<para>Read a 64 bit unsigned integer value in little endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT64-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-UINT64-BE:CAPS" role="macro">
+<title>GST_READ_UINT64_BE()</title>
+<indexterm zone="GST-READ-UINT64-BE:CAPS"><primary>GST_READ_UINT64_BE</primary></indexterm>
+<programlisting language="C">#  define GST_READ_UINT64_BE(data)      _GST_FAST_READ (64, data)
+</programlisting>
+<para>Read a 64 bit unsigned integer value in big endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-UINT64-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-FLOAT-LE:CAPS" role="function">
+<title>GST_READ_FLOAT_LE&#160;()</title>
+<indexterm zone="GST-READ-FLOAT-LE:CAPS"><primary>GST_READ_FLOAT_LE</primary></indexterm>
+<programlisting language="C"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+GST_READ_FLOAT_LE (<parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>);</programlisting>
+<para>Read a 32 bit float value in little endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-FLOAT-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GST-READ-FLOAT-LE.returns" role="returns">
+<title>Returns</title>
+<para> The floating point value read from <parameter>data</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-FLOAT-BE:CAPS" role="function">
+<title>GST_READ_FLOAT_BE&#160;()</title>
+<indexterm zone="GST-READ-FLOAT-BE:CAPS"><primary>GST_READ_FLOAT_BE</primary></indexterm>
+<programlisting language="C"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+GST_READ_FLOAT_BE (<parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>);</programlisting>
+<para>Read a 32 bit float value in big endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-FLOAT-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GST-READ-FLOAT-BE.returns" role="returns">
+<title>Returns</title>
+<para> The floating point value read from <parameter>data</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-DOUBLE-LE:CAPS" role="function">
+<title>GST_READ_DOUBLE_LE&#160;()</title>
+<indexterm zone="GST-READ-DOUBLE-LE:CAPS"><primary>GST_READ_DOUBLE_LE</primary></indexterm>
+<programlisting language="C"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+GST_READ_DOUBLE_LE (<parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>);</programlisting>
+<para>Read a 64 bit double value in little endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-DOUBLE-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GST-READ-DOUBLE-LE.returns" role="returns">
+<title>Returns</title>
+<para> The double-precision floating point value read from <parameter>data</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="GST-READ-DOUBLE-BE:CAPS" role="function">
+<title>GST_READ_DOUBLE_BE&#160;()</title>
+<indexterm zone="GST-READ-DOUBLE-BE:CAPS"><primary>GST_READ_DOUBLE_BE</primary></indexterm>
+<programlisting language="C"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+GST_READ_DOUBLE_BE (<parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>);</programlisting>
+<para>Read a 64 bit double value in big endian format from the memory buffer.</para>
+<refsect3 id="GST-READ-DOUBLE-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GST-READ-DOUBLE-BE.returns" role="returns">
+<title>Returns</title>
+<para> The double-precision floating point value read from <parameter>data</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT8:CAPS" role="macro">
+<title>GST_WRITE_UINT8()</title>
+<indexterm zone="GST-WRITE-UINT8:CAPS"><primary>GST_WRITE_UINT8</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT8(data, num)</programlisting>
+<para>Store an 8 bit unsigned integer value into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT16-LE:CAPS" role="macro">
+<title>GST_WRITE_UINT16_LE()</title>
+<indexterm zone="GST-WRITE-UINT16-LE:CAPS"><primary>GST_WRITE_UINT16_LE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT16_LE(data, num)</programlisting>
+<para>Store a 16 bit unsigned integer value in little endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT16-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT16-BE:CAPS" role="macro">
+<title>GST_WRITE_UINT16_BE()</title>
+<indexterm zone="GST-WRITE-UINT16-BE:CAPS"><primary>GST_WRITE_UINT16_BE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT16_BE(data, num)</programlisting>
+<para>Store a 16 bit unsigned integer value in big endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT16-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT24-LE:CAPS" role="macro">
+<title>GST_WRITE_UINT24_LE()</title>
+<indexterm zone="GST-WRITE-UINT24-LE:CAPS"><primary>GST_WRITE_UINT24_LE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT24_LE(data, num)</programlisting>
+<para>Store a 24 bit unsigned integer value in little endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT24-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT24-BE:CAPS" role="macro">
+<title>GST_WRITE_UINT24_BE()</title>
+<indexterm zone="GST-WRITE-UINT24-BE:CAPS"><primary>GST_WRITE_UINT24_BE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT24_BE(data, num)</programlisting>
+<para>Store a 24 bit unsigned integer value in big endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT24-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT32-LE:CAPS" role="macro">
+<title>GST_WRITE_UINT32_LE()</title>
+<indexterm zone="GST-WRITE-UINT32-LE:CAPS"><primary>GST_WRITE_UINT32_LE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT32_LE(data, num)</programlisting>
+<para>Store a 32 bit unsigned integer value in little endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT32-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT32-BE:CAPS" role="macro">
+<title>GST_WRITE_UINT32_BE()</title>
+<indexterm zone="GST-WRITE-UINT32-BE:CAPS"><primary>GST_WRITE_UINT32_BE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT32_BE(data, num)</programlisting>
+<para>Store a 32 bit unsigned integer value in big endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT32-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT64-LE:CAPS" role="macro">
+<title>GST_WRITE_UINT64_LE()</title>
+<indexterm zone="GST-WRITE-UINT64-LE:CAPS"><primary>GST_WRITE_UINT64_LE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT64_LE(data, num)</programlisting>
+<para>Store a 64 bit unsigned integer value in little endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT64-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-UINT64-BE:CAPS" role="macro">
+<title>GST_WRITE_UINT64_BE()</title>
+<indexterm zone="GST-WRITE-UINT64-BE:CAPS"><primary>GST_WRITE_UINT64_BE</primary></indexterm>
+<programlisting language="C">#define             GST_WRITE_UINT64_BE(data, num)</programlisting>
+<para>Store a 64 bit unsigned integer value in big endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-UINT64-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-FLOAT-LE:CAPS" role="function">
+<title>GST_WRITE_FLOAT_LE&#160;()</title>
+<indexterm zone="GST-WRITE-FLOAT-LE:CAPS"><primary>GST_WRITE_FLOAT_LE</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+GST_WRITE_FLOAT_LE (<parameter><link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                    <parameter><link linkend="gfloat"><type>gfloat</type></link> num</parameter>);</programlisting>
+<para>Store a 32 bit float value in little endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-FLOAT-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-FLOAT-BE:CAPS" role="function">
+<title>GST_WRITE_FLOAT_BE&#160;()</title>
+<indexterm zone="GST-WRITE-FLOAT-BE:CAPS"><primary>GST_WRITE_FLOAT_BE</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+GST_WRITE_FLOAT_BE (<parameter><link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                    <parameter><link linkend="gfloat"><type>gfloat</type></link> num</parameter>);</programlisting>
+<para>Store a 32 bit float value in big endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-FLOAT-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-DOUBLE-LE:CAPS" role="function">
+<title>GST_WRITE_DOUBLE_LE&#160;()</title>
+<indexterm zone="GST-WRITE-DOUBLE-LE:CAPS"><primary>GST_WRITE_DOUBLE_LE</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+GST_WRITE_DOUBLE_LE (<parameter><link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                     <parameter><link linkend="gdouble"><type>gdouble</type></link> num</parameter>);</programlisting>
+<para>Store a 64 bit double value in little endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-DOUBLE-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WRITE-DOUBLE-BE:CAPS" role="function">
+<title>GST_WRITE_DOUBLE_BE&#160;()</title>
+<indexterm zone="GST-WRITE-DOUBLE-BE:CAPS"><primary>GST_WRITE_DOUBLE_BE</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+GST_WRITE_DOUBLE_BE (<parameter><link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                     <parameter><link linkend="gdouble"><type>gdouble</type></link> num</parameter>);</programlisting>
+<para>Store a 64 bit double value in big endian format into the memory buffer.</para>
+<refsect3 id="GST-WRITE-DOUBLE-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>memory location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>value to store</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-2:CAPS" role="macro">
+<title>GST_ROUND_UP_2()</title>
+<indexterm zone="GST-ROUND-UP-2:CAPS"><primary>GST_ROUND_UP_2</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_2(num)  (((num)+1)&amp;~1)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 2.</para>
+<refsect3 id="GST-ROUND-UP-2.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-4:CAPS" role="macro">
+<title>GST_ROUND_UP_4()</title>
+<indexterm zone="GST-ROUND-UP-4:CAPS"><primary>GST_ROUND_UP_4</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_4(num)  (((num)+3)&amp;~3)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 4.</para>
+<refsect3 id="GST-ROUND-UP-4.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-8:CAPS" role="macro">
+<title>GST_ROUND_UP_8()</title>
+<indexterm zone="GST-ROUND-UP-8:CAPS"><primary>GST_ROUND_UP_8</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_8(num)  (((num)+7)&amp;~7)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 8.</para>
+<refsect3 id="GST-ROUND-UP-8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-16:CAPS" role="macro">
+<title>GST_ROUND_UP_16()</title>
+<indexterm zone="GST-ROUND-UP-16:CAPS"><primary>GST_ROUND_UP_16</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_16(num) (((num)+15)&amp;~15)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 16.</para>
+<refsect3 id="GST-ROUND-UP-16.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-32:CAPS" role="macro">
+<title>GST_ROUND_UP_32()</title>
+<indexterm zone="GST-ROUND-UP-32:CAPS"><primary>GST_ROUND_UP_32</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_32(num) (((num)+31)&amp;~31)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 32.</para>
+<refsect3 id="GST-ROUND-UP-32.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-64:CAPS" role="macro">
+<title>GST_ROUND_UP_64()</title>
+<indexterm zone="GST-ROUND-UP-64:CAPS"><primary>GST_ROUND_UP_64</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_64(num) (((num)+63)&amp;~63)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 64.</para>
+<refsect3 id="GST-ROUND-UP-64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-UP-128:CAPS" role="macro" condition="since:1.4">
+<title>GST_ROUND_UP_128()</title>
+<indexterm zone="GST-ROUND-UP-128:CAPS" role="1.4"><primary>GST_ROUND_UP_128</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_128(num) (((num)+127)&amp;~127)
+</programlisting>
+<para>Rounds an integer value up to the next multiple of 128.</para>
+<refsect3 id="GST-ROUND-UP-128.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GST-ROUND-UP-N:CAPS" role="macro">
+<title>GST_ROUND_UP_N()</title>
+<indexterm zone="GST-ROUND-UP-N:CAPS"><primary>GST_ROUND_UP_N</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_UP_N(num,align) ((((num) + ((align) - 1)) &amp; ~((align) - 1)))
+</programlisting>
+<para>Rounds an integer value up to the next multiple of <parameter>align</parameter>
+. <parameter>align</parameter>
+ MUST be a
+power of two.</para>
+<refsect3 id="GST-ROUND-UP-N.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integrer value to round up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>align</para></entry>
+<entry role="parameter_description"><para>a power of two to round up to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-2:CAPS" role="macro">
+<title>GST_ROUND_DOWN_2()</title>
+<indexterm zone="GST-ROUND-DOWN-2:CAPS"><primary>GST_ROUND_DOWN_2</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_2(num)  ((num)&amp;(~1))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 2.</para>
+<refsect3 id="GST-ROUND-DOWN-2.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-4:CAPS" role="macro">
+<title>GST_ROUND_DOWN_4()</title>
+<indexterm zone="GST-ROUND-DOWN-4:CAPS"><primary>GST_ROUND_DOWN_4</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_4(num)  ((num)&amp;(~3))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 4.</para>
+<refsect3 id="GST-ROUND-DOWN-4.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-8:CAPS" role="macro">
+<title>GST_ROUND_DOWN_8()</title>
+<indexterm zone="GST-ROUND-DOWN-8:CAPS"><primary>GST_ROUND_DOWN_8</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_8(num)  ((num)&amp;(~7))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 8.</para>
+<refsect3 id="GST-ROUND-DOWN-8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-16:CAPS" role="macro">
+<title>GST_ROUND_DOWN_16()</title>
+<indexterm zone="GST-ROUND-DOWN-16:CAPS"><primary>GST_ROUND_DOWN_16</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_16(num) ((num)&amp;(~15))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 16.</para>
+<refsect3 id="GST-ROUND-DOWN-16.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-32:CAPS" role="macro">
+<title>GST_ROUND_DOWN_32()</title>
+<indexterm zone="GST-ROUND-DOWN-32:CAPS"><primary>GST_ROUND_DOWN_32</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_32(num) ((num)&amp;(~31))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 32.</para>
+<refsect3 id="GST-ROUND-DOWN-32.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-64:CAPS" role="macro">
+<title>GST_ROUND_DOWN_64()</title>
+<indexterm zone="GST-ROUND-DOWN-64:CAPS"><primary>GST_ROUND_DOWN_64</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_64(num) ((num)&amp;(~63))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 64.</para>
+<refsect3 id="GST-ROUND-DOWN-64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ROUND-DOWN-128:CAPS" role="macro" condition="since:1.4">
+<title>GST_ROUND_DOWN_128()</title>
+<indexterm zone="GST-ROUND-DOWN-128:CAPS" role="1.4"><primary>GST_ROUND_DOWN_128</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_128(num) ((num)&amp;(~127))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of 128.</para>
+<refsect3 id="GST-ROUND-DOWN-128.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GST-ROUND-DOWN-N:CAPS" role="macro">
+<title>GST_ROUND_DOWN_N()</title>
+<indexterm zone="GST-ROUND-DOWN-N:CAPS"><primary>GST_ROUND_DOWN_N</primary></indexterm>
+<programlisting language="C">#define GST_ROUND_DOWN_N(num,align) (((num) &amp; ~((align) - 1)))
+</programlisting>
+<para>Rounds an integer value down to the next multiple of <parameter>align</parameter>
+. <parameter>align</parameter>
+ MUST be a
+power of two.</para>
+<refsect3 id="GST-ROUND-DOWN-N.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>integrer value to round down</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>align</para></entry>
+<entry role="parameter_description"><para>a power of two to round down to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GDOUBLE-FROM-BE:CAPS" role="macro">
+<title>GDOUBLE_FROM_BE()</title>
+<indexterm zone="GDOUBLE-FROM-BE:CAPS"><primary>GDOUBLE_FROM_BE</primary></indexterm>
+<programlisting language="C">#define GDOUBLE_FROM_BE(val) (GDOUBLE_TO_BE (val))
+</programlisting>
+<para>Convert 64-bit floating point value (double) from big endian byte order
+into native byte order.</para>
+<refsect3 id="GDOUBLE-FROM-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GDOUBLE-FROM-LE:CAPS" role="macro">
+<title>GDOUBLE_FROM_LE()</title>
+<indexterm zone="GDOUBLE-FROM-LE:CAPS"><primary>GDOUBLE_FROM_LE</primary></indexterm>
+<programlisting language="C">#define GDOUBLE_FROM_LE(val) (GDOUBLE_TO_LE (val))
+</programlisting>
+<para>Convert 64-bit floating point value (double) from little endian byte order
+into native byte order.</para>
+<refsect3 id="GDOUBLE-FROM-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GDOUBLE-SWAP-LE-BE:CAPS" role="function">
+<title>GDOUBLE_SWAP_LE_BE&#160;()</title>
+<indexterm zone="GDOUBLE-SWAP-LE-BE:CAPS"><primary>GDOUBLE_SWAP_LE_BE</primary></indexterm>
+<programlisting language="C"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+GDOUBLE_SWAP_LE_BE (<parameter><link linkend="gdouble"><type>gdouble</type></link> in</parameter>);</programlisting>
+<para>Swap byte order of a 64-bit floating point value (double).</para>
+<refsect3 id="GDOUBLE-SWAP-LE-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>in</para></entry>
+<entry role="parameter_description"><para>input value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GDOUBLE-SWAP-LE-BE.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>in</parameter>
+byte-swapped.</para>
+</refsect3></refsect2>
+<refsect2 id="GDOUBLE-TO-BE:CAPS" role="macro">
+<title>GDOUBLE_TO_BE()</title>
+<indexterm zone="GDOUBLE-TO-BE:CAPS"><primary>GDOUBLE_TO_BE</primary></indexterm>
+<programlisting language="C">#define GDOUBLE_TO_BE(val)   (GDOUBLE_SWAP_LE_BE (val))
+</programlisting>
+<para>Convert 64-bit floating point value (double) from native byte order into
+big endian byte order.</para>
+<refsect3 id="GDOUBLE-TO-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GDOUBLE-TO-LE:CAPS" role="macro">
+<title>GDOUBLE_TO_LE()</title>
+<indexterm zone="GDOUBLE-TO-LE:CAPS"><primary>GDOUBLE_TO_LE</primary></indexterm>
+<programlisting language="C">#define GDOUBLE_TO_LE(val)   ((gdouble) (val))
+</programlisting>
+<para>Convert 64-bit floating point value (double) from native byte order into
+little endian byte order.</para>
+<refsect3 id="GDOUBLE-TO-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GFLOAT-FROM-BE:CAPS" role="macro">
+<title>GFLOAT_FROM_BE()</title>
+<indexterm zone="GFLOAT-FROM-BE:CAPS"><primary>GFLOAT_FROM_BE</primary></indexterm>
+<programlisting language="C">#define GFLOAT_FROM_BE(val)  (GFLOAT_TO_BE (val))
+</programlisting>
+<para>Convert 32-bit floating point value (float) from big endian byte order
+into native byte order.</para>
+<refsect3 id="GFLOAT-FROM-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GFLOAT-FROM-LE:CAPS" role="macro">
+<title>GFLOAT_FROM_LE()</title>
+<indexterm zone="GFLOAT-FROM-LE:CAPS"><primary>GFLOAT_FROM_LE</primary></indexterm>
+<programlisting language="C">#define GFLOAT_FROM_LE(val)  (GFLOAT_TO_LE (val))
+</programlisting>
+<para>Convert 32-bit floating point value (float) from little endian byte order
+into native byte order.</para>
+<refsect3 id="GFLOAT-FROM-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GFLOAT-SWAP-LE-BE:CAPS" role="function">
+<title>GFLOAT_SWAP_LE_BE&#160;()</title>
+<indexterm zone="GFLOAT-SWAP-LE-BE:CAPS"><primary>GFLOAT_SWAP_LE_BE</primary></indexterm>
+<programlisting language="C"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+GFLOAT_SWAP_LE_BE (<parameter><link linkend="gfloat"><type>gfloat</type></link> in</parameter>);</programlisting>
+<para>Swap byte order of a 32-bit floating point value (float).</para>
+<refsect3 id="GFLOAT-SWAP-LE-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>in</para></entry>
+<entry role="parameter_description"><para>input value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GFLOAT-SWAP-LE-BE.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>in</parameter>
+byte-swapped.</para>
+</refsect3></refsect2>
+<refsect2 id="GFLOAT-TO-BE:CAPS" role="macro">
+<title>GFLOAT_TO_BE()</title>
+<indexterm zone="GFLOAT-TO-BE:CAPS"><primary>GFLOAT_TO_BE</primary></indexterm>
+<programlisting language="C">#define GFLOAT_TO_BE(val)    (GFLOAT_SWAP_LE_BE (val))
+</programlisting>
+<para>Convert 32-bit floating point value (float) from native byte order into
+big endian byte order.</para>
+<refsect3 id="GFLOAT-TO-BE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GFLOAT-TO-LE:CAPS" role="macro">
+<title>GFLOAT_TO_LE()</title>
+<indexterm zone="GFLOAT-TO-LE:CAPS"><primary>GFLOAT_TO_LE</primary></indexterm>
+<programlisting language="C">#define GFLOAT_TO_LE(val)    ((gfloat) (val))
+</programlisting>
+<para>Convert 32-bit floating point value (float) from native byte order into
+little endian byte order.</para>
+<refsect3 id="GFLOAT-TO-LE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-guint64-to-gdouble" role="macro">
+<title>gst_guint64_to_gdouble()</title>
+<indexterm zone="gst-guint64-to-gdouble"><primary>gst_guint64_to_gdouble</primary></indexterm>
+<programlisting language="C">#define         gst_guint64_to_gdouble(value)   gst_util_guint64_to_gdouble(value)
+</programlisting>
+<para>Convert <parameter>value</parameter>
+ to a gdouble.</para>
+<refsect3 id="gst-guint64-to-gdouble.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the <link linkend="guint64"><type>guint64</type></link> value to convert</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-guint64-to-gdouble.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>value</parameter>
+converted to a <link linkend="gdouble"><type>gdouble</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-gdouble-to-guint64" role="macro">
+<title>gst_gdouble_to_guint64()</title>
+<indexterm zone="gst-gdouble-to-guint64"><primary>gst_gdouble_to_guint64</primary></indexterm>
+<programlisting language="C">#define         gst_gdouble_to_guint64(value)   gst_util_gdouble_to_guint64(value)
+</programlisting>
+<para>Convert <parameter>value</parameter>
+ to a guint64.</para>
+<refsect3 id="gst-gdouble-to-guint64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the <link linkend="gdouble"><type>gdouble</type></link> value to convert</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-gdouble-to-guint64.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>value</parameter>
+converted to a <link linkend="guint64"><type>guint64</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-dump-mem" role="function">
+<title>gst_util_dump_mem&#160;()</title>
+<indexterm zone="gst-util-dump-mem"><primary>gst_util_dump_mem</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_util_dump_mem (<parameter>const <link linkend="guchar"><type>guchar</type></link> *mem</parameter>,
+                   <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Dumps the memory block into a hex representation. Useful for debugging.</para>
+<refsect3 id="gst-util-dump-mem.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a pointer to the memory to dump</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the size of the memory block to dump</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-util-uint64-scale" role="function">
+<title>gst_util_uint64_scale&#160;()</title>
+<indexterm zone="gst-util-uint64-scale"><primary>gst_util_uint64_scale</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_util_uint64_scale (<parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>,
+                       <parameter><link linkend="guint64"><type>guint64</type></link> num</parameter>,
+                       <parameter><link linkend="guint64"><type>guint64</type></link> denom</parameter>);</programlisting>
+<para>Scale <parameter>val</parameter>
+ by the rational number <parameter>num</parameter>
+ / <parameter>denom</parameter>
+, avoiding overflows and
+underflows and without loss of precision.</para>
+<para>This function can potentially be very slow if val and num are both
+greater than G_MAXUINT32.</para>
+<refsect3 id="gst-util-uint64-scale.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>the number to scale</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>the numerator of the scale ratio</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denom</para></entry>
+<entry role="parameter_description"><para>the denominator of the scale ratio</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-uint64-scale.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>val</parameter>
+* <parameter>num</parameter>
+/ <parameter>denom</parameter>
+.  In the case of an overflow, this
+function returns G_MAXUINT64.  If the result is not exactly
+representable as an integer it is truncated.  See also
+<link linkend="gst-util-uint64-scale-round"><function>gst_util_uint64_scale_round()</function></link>, <link linkend="gst-util-uint64-scale-ceil"><function>gst_util_uint64_scale_ceil()</function></link>,
+<link linkend="gst-util-uint64-scale-int"><function>gst_util_uint64_scale_int()</function></link>, <link linkend="gst-util-uint64-scale-int-round"><function>gst_util_uint64_scale_int_round()</function></link>,
+<link linkend="gst-util-uint64-scale-int-ceil"><function>gst_util_uint64_scale_int_ceil()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-uint64-scale-round" role="function">
+<title>gst_util_uint64_scale_round&#160;()</title>
+<indexterm zone="gst-util-uint64-scale-round"><primary>gst_util_uint64_scale_round</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_util_uint64_scale_round (<parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>,
+                             <parameter><link linkend="guint64"><type>guint64</type></link> num</parameter>,
+                             <parameter><link linkend="guint64"><type>guint64</type></link> denom</parameter>);</programlisting>
+<para>Scale <parameter>val</parameter>
+ by the rational number <parameter>num</parameter>
+ / <parameter>denom</parameter>
+, avoiding overflows and
+underflows and without loss of precision.</para>
+<para>This function can potentially be very slow if val and num are both
+greater than G_MAXUINT32.</para>
+<refsect3 id="gst-util-uint64-scale-round.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>the number to scale</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>the numerator of the scale ratio</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denom</para></entry>
+<entry role="parameter_description"><para>the denominator of the scale ratio</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-uint64-scale-round.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>val</parameter>
+* <parameter>num</parameter>
+/ <parameter>denom</parameter>
+.  In the case of an overflow, this
+function returns G_MAXUINT64.  If the result is not exactly
+representable as an integer, it is rounded to the nearest integer
+(half-way cases are rounded up).  See also <link linkend="gst-util-uint64-scale"><function>gst_util_uint64_scale()</function></link>,
+<link linkend="gst-util-uint64-scale-ceil"><function>gst_util_uint64_scale_ceil()</function></link>, <link linkend="gst-util-uint64-scale-int"><function>gst_util_uint64_scale_int()</function></link>,
+<link linkend="gst-util-uint64-scale-int-round"><function>gst_util_uint64_scale_int_round()</function></link>, <link linkend="gst-util-uint64-scale-int-ceil"><function>gst_util_uint64_scale_int_ceil()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-uint64-scale-ceil" role="function">
+<title>gst_util_uint64_scale_ceil&#160;()</title>
+<indexterm zone="gst-util-uint64-scale-ceil"><primary>gst_util_uint64_scale_ceil</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_util_uint64_scale_ceil (<parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>,
+                            <parameter><link linkend="guint64"><type>guint64</type></link> num</parameter>,
+                            <parameter><link linkend="guint64"><type>guint64</type></link> denom</parameter>);</programlisting>
+<para>Scale <parameter>val</parameter>
+ by the rational number <parameter>num</parameter>
+ / <parameter>denom</parameter>
+, avoiding overflows and
+underflows and without loss of precision.</para>
+<para>This function can potentially be very slow if val and num are both
+greater than G_MAXUINT32.</para>
+<refsect3 id="gst-util-uint64-scale-ceil.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>the number to scale</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>the numerator of the scale ratio</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denom</para></entry>
+<entry role="parameter_description"><para>the denominator of the scale ratio</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-uint64-scale-ceil.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>val</parameter>
+* <parameter>num</parameter>
+/ <parameter>denom</parameter>
+.  In the case of an overflow, this
+function returns G_MAXUINT64.  If the result is not exactly
+representable as an integer, it is rounded up.  See also
+<link linkend="gst-util-uint64-scale"><function>gst_util_uint64_scale()</function></link>, <link linkend="gst-util-uint64-scale-round"><function>gst_util_uint64_scale_round()</function></link>,
+<link linkend="gst-util-uint64-scale-int"><function>gst_util_uint64_scale_int()</function></link>, <link linkend="gst-util-uint64-scale-int-round"><function>gst_util_uint64_scale_int_round()</function></link>,
+<link linkend="gst-util-uint64-scale-int-ceil"><function>gst_util_uint64_scale_int_ceil()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-uint64-scale-int" role="function">
+<title>gst_util_uint64_scale_int&#160;()</title>
+<indexterm zone="gst-util-uint64-scale-int"><primary>gst_util_uint64_scale_int</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_util_uint64_scale_int (<parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>,
+                           <parameter><link linkend="gint"><type>gint</type></link> num</parameter>,
+                           <parameter><link linkend="gint"><type>gint</type></link> denom</parameter>);</programlisting>
+<para>Scale <parameter>val</parameter>
+ by the rational number <parameter>num</parameter>
+ / <parameter>denom</parameter>
+, avoiding overflows and
+underflows and without loss of precision.  <parameter>num</parameter>
+ must be non-negative and
+<parameter>denom</parameter>
+ must be positive.</para>
+<refsect3 id="gst-util-uint64-scale-int.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>guint64 (such as a <link linkend="GstClockTime"><type>GstClockTime</type></link>) to scale.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>numerator of the scale factor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denom</para></entry>
+<entry role="parameter_description"><para>denominator of the scale factor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-uint64-scale-int.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>val</parameter>
+* <parameter>num</parameter>
+/ <parameter>denom</parameter>
+.  In the case of an overflow, this
+function returns G_MAXUINT64.  If the result is not exactly
+representable as an integer, it is truncated.  See also
+<link linkend="gst-util-uint64-scale-int-round"><function>gst_util_uint64_scale_int_round()</function></link>, <link linkend="gst-util-uint64-scale-int-ceil"><function>gst_util_uint64_scale_int_ceil()</function></link>,
+<link linkend="gst-util-uint64-scale"><function>gst_util_uint64_scale()</function></link>, <link linkend="gst-util-uint64-scale-round"><function>gst_util_uint64_scale_round()</function></link>,
+<link linkend="gst-util-uint64-scale-ceil"><function>gst_util_uint64_scale_ceil()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-uint64-scale-int-round" role="function">
+<title>gst_util_uint64_scale_int_round&#160;()</title>
+<indexterm zone="gst-util-uint64-scale-int-round"><primary>gst_util_uint64_scale_int_round</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_util_uint64_scale_int_round (<parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>,
+                                 <parameter><link linkend="gint"><type>gint</type></link> num</parameter>,
+                                 <parameter><link linkend="gint"><type>gint</type></link> denom</parameter>);</programlisting>
+<para>Scale <parameter>val</parameter>
+ by the rational number <parameter>num</parameter>
+ / <parameter>denom</parameter>
+, avoiding overflows and
+underflows and without loss of precision.  <parameter>num</parameter>
+ must be non-negative and
+<parameter>denom</parameter>
+ must be positive.</para>
+<refsect3 id="gst-util-uint64-scale-int-round.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>guint64 (such as a <link linkend="GstClockTime"><type>GstClockTime</type></link>) to scale.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>numerator of the scale factor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denom</para></entry>
+<entry role="parameter_description"><para>denominator of the scale factor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-uint64-scale-int-round.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>val</parameter>
+* <parameter>num</parameter>
+/ <parameter>denom</parameter>
+.  In the case of an overflow, this
+function returns G_MAXUINT64.  If the result is not exactly
+representable as an integer, it is rounded to the nearest integer
+(half-way cases are rounded up).  See also <link linkend="gst-util-uint64-scale-int"><function>gst_util_uint64_scale_int()</function></link>,
+<link linkend="gst-util-uint64-scale-int-ceil"><function>gst_util_uint64_scale_int_ceil()</function></link>, <link linkend="gst-util-uint64-scale"><function>gst_util_uint64_scale()</function></link>,
+<link linkend="gst-util-uint64-scale-round"><function>gst_util_uint64_scale_round()</function></link>, <link linkend="gst-util-uint64-scale-ceil"><function>gst_util_uint64_scale_ceil()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-uint64-scale-int-ceil" role="function">
+<title>gst_util_uint64_scale_int_ceil&#160;()</title>
+<indexterm zone="gst-util-uint64-scale-int-ceil"><primary>gst_util_uint64_scale_int_ceil</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_util_uint64_scale_int_ceil (<parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>,
+                                <parameter><link linkend="gint"><type>gint</type></link> num</parameter>,
+                                <parameter><link linkend="gint"><type>gint</type></link> denom</parameter>);</programlisting>
+<para>Scale <parameter>val</parameter>
+ by the rational number <parameter>num</parameter>
+ / <parameter>denom</parameter>
+, avoiding overflows and
+underflows and without loss of precision.  <parameter>num</parameter>
+ must be non-negative and
+<parameter>denom</parameter>
+ must be positive.</para>
+<refsect3 id="gst-util-uint64-scale-int-ceil.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>guint64 (such as a <link linkend="GstClockTime"><type>GstClockTime</type></link>) to scale.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>numerator of the scale factor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denom</para></entry>
+<entry role="parameter_description"><para>denominator of the scale factor.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-uint64-scale-int-ceil.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>val</parameter>
+* <parameter>num</parameter>
+/ <parameter>denom</parameter>
+.  In the case of an overflow, this
+function returns G_MAXUINT64.  If the result is not exactly
+representable as an integer, it is rounded up.  See also
+<link linkend="gst-util-uint64-scale-int"><function>gst_util_uint64_scale_int()</function></link>, <link linkend="gst-util-uint64-scale-int-round"><function>gst_util_uint64_scale_int_round()</function></link>,
+<link linkend="gst-util-uint64-scale"><function>gst_util_uint64_scale()</function></link>, <link linkend="gst-util-uint64-scale-round"><function>gst_util_uint64_scale_round()</function></link>,
+<link linkend="gst-util-uint64-scale-ceil"><function>gst_util_uint64_scale_ceil()</function></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-greatest-common-divisor" role="function">
+<title>gst_util_greatest_common_divisor&#160;()</title>
+<indexterm zone="gst-util-greatest-common-divisor"><primary>gst_util_greatest_common_divisor</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_util_greatest_common_divisor (<parameter><link linkend="gint"><type>gint</type></link> a</parameter>,
+                                  <parameter><link linkend="gint"><type>gint</type></link> b</parameter>);</programlisting>
+<para>Calculates the greatest common divisor of <parameter>a</parameter>
+
+and <parameter>b</parameter>
+.</para>
+<refsect3 id="gst-util-greatest-common-divisor.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>First value as <link linkend="gint"><type>gint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>Second value as <link linkend="gint"><type>gint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-greatest-common-divisor.returns" role="returns">
+<title>Returns</title>
+<para> Greatest common divisor of <parameter>a</parameter>
+and <parameter>b</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-greatest-common-divisor-int64" role="function">
+<title>gst_util_greatest_common_divisor_int64&#160;()</title>
+<indexterm zone="gst-util-greatest-common-divisor-int64"><primary>gst_util_greatest_common_divisor_int64</primary></indexterm>
+<programlisting language="C"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+gst_util_greatest_common_divisor_int64
+                               (<parameter><link linkend="gint64"><type>gint64</type></link> a</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> b</parameter>);</programlisting>
+<para>Calculates the greatest common divisor of <parameter>a</parameter>
+
+and <parameter>b</parameter>
+.</para>
+<refsect3 id="gst-util-greatest-common-divisor-int64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>First value as <link linkend="gint64"><type>gint64</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>Second value as <link linkend="gint64"><type>gint64</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-greatest-common-divisor-int64.returns" role="returns">
+<title>Returns</title>
+<para> Greatest common divisor of <parameter>a</parameter>
+and <parameter>b</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-fraction-to-double" role="function">
+<title>gst_util_fraction_to_double&#160;()</title>
+<indexterm zone="gst-util-fraction-to-double"><primary>gst_util_fraction_to_double</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_util_fraction_to_double (<parameter><link linkend="gint"><type>gint</type></link> src_n</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> src_d</parameter>,
+                             <parameter><link linkend="gdouble"><type>gdouble</type></link> *dest</parameter>);</programlisting>
+<para>Transforms a fraction to a <link linkend="gdouble"><type>gdouble</type></link>.</para>
+<refsect3 id="gst-util-fraction-to-double.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src_n</para></entry>
+<entry role="parameter_description"><para>Fraction numerator as <link linkend="gint"><type>gint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>src_d</para></entry>
+<entry role="parameter_description"><para>Fraction denominator <link linkend="gint"><type>gint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="gdouble"><type>gdouble</type></link> for the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-util-double-to-fraction" role="function">
+<title>gst_util_double_to_fraction&#160;()</title>
+<indexterm zone="gst-util-double-to-fraction"><primary>gst_util_double_to_fraction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_util_double_to_fraction (<parameter><link linkend="gdouble"><type>gdouble</type></link> src</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> *dest_n</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> *dest_d</parameter>);</programlisting>
+<para>Transforms a <link linkend="gdouble"><type>gdouble</type></link> to a fraction and simplifies
+the result.</para>
+<refsect3 id="gst-util-double-to-fraction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para><link linkend="gdouble"><type>gdouble</type></link> to transform</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dest_n</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="gint"><type>gint</type></link> to hold the result numerator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>dest_d</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="gint"><type>gint</type></link> to hold the result denominator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-util-fraction-multiply" role="function">
+<title>gst_util_fraction_multiply&#160;()</title>
+<indexterm zone="gst-util-fraction-multiply"><primary>gst_util_fraction_multiply</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_util_fraction_multiply (<parameter><link linkend="gint"><type>gint</type></link> a_n</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> a_d</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> b_n</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> b_d</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> *res_n</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> *res_d</parameter>);</programlisting>
+<para>Multiplies the fractions <parameter>a_n</parameter>
+/<parameter>a_d</parameter>
+ and <parameter>b_n</parameter>
+/<parameter>b_d</parameter>
+ and stores
+the result in <parameter>res_n</parameter>
+ and <parameter>res_d</parameter>
+.</para>
+<refsect3 id="gst-util-fraction-multiply.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a_n</para></entry>
+<entry role="parameter_description"><para>Numerator of first value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>a_d</para></entry>
+<entry role="parameter_description"><para>Denominator of first value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b_n</para></entry>
+<entry role="parameter_description"><para>Numerator of second value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b_d</para></entry>
+<entry role="parameter_description"><para>Denominator of second value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>res_n</para></entry>
+<entry role="parameter_description"><para> Pointer to <link linkend="gint"><type>gint</type></link> to hold the result numerator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>res_d</para></entry>
+<entry role="parameter_description"><para> Pointer to <link linkend="gint"><type>gint</type></link> to hold the result denominator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-fraction-multiply.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on overflow, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-fraction-add" role="function">
+<title>gst_util_fraction_add&#160;()</title>
+<indexterm zone="gst-util-fraction-add"><primary>gst_util_fraction_add</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_util_fraction_add (<parameter><link linkend="gint"><type>gint</type></link> a_n</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> a_d</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> b_n</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> b_d</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> *res_n</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> *res_d</parameter>);</programlisting>
+<para>Adds the fractions <parameter>a_n</parameter>
+/<parameter>a_d</parameter>
+ and <parameter>b_n</parameter>
+/<parameter>b_d</parameter>
+ and stores
+the result in <parameter>res_n</parameter>
+ and <parameter>res_d</parameter>
+.</para>
+<refsect3 id="gst-util-fraction-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a_n</para></entry>
+<entry role="parameter_description"><para>Numerator of first value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>a_d</para></entry>
+<entry role="parameter_description"><para>Denominator of first value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b_n</para></entry>
+<entry role="parameter_description"><para>Numerator of second value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b_d</para></entry>
+<entry role="parameter_description"><para>Denominator of second value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>res_n</para></entry>
+<entry role="parameter_description"><para> Pointer to <link linkend="gint"><type>gint</type></link> to hold the result numerator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>res_d</para></entry>
+<entry role="parameter_description"><para> Pointer to <link linkend="gint"><type>gint</type></link> to hold the result denominator. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-fraction-add.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on overflow, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-fraction-compare" role="function">
+<title>gst_util_fraction_compare&#160;()</title>
+<indexterm zone="gst-util-fraction-compare"><primary>gst_util_fraction_compare</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_util_fraction_compare (<parameter><link linkend="gint"><type>gint</type></link> a_n</parameter>,
+                           <parameter><link linkend="gint"><type>gint</type></link> a_d</parameter>,
+                           <parameter><link linkend="gint"><type>gint</type></link> b_n</parameter>,
+                           <parameter><link linkend="gint"><type>gint</type></link> b_d</parameter>);</programlisting>
+<para>Compares the fractions <parameter>a_n</parameter>
+/<parameter>a_d</parameter>
+ and <parameter>b_n</parameter>
+/<parameter>b_d</parameter>
+ and returns
+-1 if a &lt; b, 0 if a = b and 1 if a &gt; b.</para>
+<refsect3 id="gst-util-fraction-compare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a_n</para></entry>
+<entry role="parameter_description"><para>Numerator of first value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>a_d</para></entry>
+<entry role="parameter_description"><para>Denominator of first value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b_n</para></entry>
+<entry role="parameter_description"><para>Numerator of second value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b_d</para></entry>
+<entry role="parameter_description"><para>Denominator of second value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-fraction-compare.returns" role="returns">
+<title>Returns</title>
+<para> -1 if a &lt; b; 0 if a = b; 1 if a &gt; b.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-seqnum-next" role="function">
+<title>gst_util_seqnum_next&#160;()</title>
+<indexterm zone="gst-util-seqnum-next"><primary>gst_util_seqnum_next</primary></indexterm>
+<programlisting language="C"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+gst_util_seqnum_next (<parameter><type>void</type></parameter>);</programlisting>
+<para>Return a constantly incrementing sequence number.</para>
+<para>This function is used internally to GStreamer to be able to determine which
+events and messages are "the same". For example, elements may set the seqnum
+on a segment-done message to be the same as that of the last seek event, to
+indicate that event and the message correspond to the same segment.</para>
+<refsect3 id="gst-util-seqnum-next.returns" role="returns">
+<title>Returns</title>
+<para> A constantly incrementing 32-bit unsigned integer, which might
+overflow back to 0 at some point. Use <link linkend="gst-util-seqnum-compare"><function>gst_util_seqnum_compare()</function></link> to make sure
+you handle wraparound correctly.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-seqnum-compare" role="function">
+<title>gst_util_seqnum_compare&#160;()</title>
+<indexterm zone="gst-util-seqnum-compare"><primary>gst_util_seqnum_compare</primary></indexterm>
+<programlisting language="C"><link linkend="gint32"><returnvalue>gint32</returnvalue></link>
+gst_util_seqnum_compare (<parameter><link linkend="guint32"><type>guint32</type></link> s1</parameter>,
+                         <parameter><link linkend="guint32"><type>guint32</type></link> s2</parameter>);</programlisting>
+<para>Compare two sequence numbers, handling wraparound.</para>
+<para>The current implementation just returns (gint32)(<parameter>s1</parameter>
+ - <parameter>s2</parameter>
+).</para>
+<refsect3 id="gst-util-seqnum-compare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>s1</para></entry>
+<entry role="parameter_description"><para>A sequence number.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>s2</para></entry>
+<entry role="parameter_description"><para>Another sequence number.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-seqnum-compare.returns" role="returns">
+<title>Returns</title>
+<para> A negative number if <parameter>s1</parameter>
+is before <parameter>s2</parameter>
+, 0 if they are equal, or a
+positive number if <parameter>s1</parameter>
+is after <parameter>s2</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-group-id-next" role="function">
+<title>gst_util_group_id_next&#160;()</title>
+<indexterm zone="gst-util-group-id-next"><primary>gst_util_group_id_next</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_util_group_id_next (<parameter><type>void</type></parameter>);</programlisting>
+<para>Return a constantly incrementing group id.</para>
+<para>This function is used to generate a new group-id for the
+stream-start event.</para>
+<refsect3 id="gst-util-group-id-next.returns" role="returns">
+<title>Returns</title>
+<para> A constantly incrementing unsigned integer, which might
+overflow back to 0 at some point.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-set-object-arg" role="function">
+<title>gst_util_set_object_arg&#160;()</title>
+<indexterm zone="gst-util-set-object-arg"><primary>gst_util_set_object_arg</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_util_set_object_arg (<parameter><link linkend="GObject"><type>GObject</type></link> *object</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *value</parameter>);</programlisting>
+<para>Converts the string value to the type of the objects argument and
+sets the argument with it.</para>
+<para>Note that this function silently returns if <parameter>object</parameter>
+ has no property named
+<parameter>name</parameter>
+ or when <parameter>value</parameter>
+ cannot be converted to the type of the property.</para>
+<refsect3 id="gst-util-set-object-arg.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object to set the argument of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name of the argument to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the string value to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-util-set-value-from-string" role="function">
+<title>gst_util_set_value_from_string&#160;()</title>
+<indexterm zone="gst-util-set-value-from-string"><primary>gst_util_set_value_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_util_set_value_from_string (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *value_str</parameter>);</programlisting>
+<para>Converts the string to the type of the value and
+sets the value with it.</para>
+<para>Note that this function is dangerous as it does not return any indication
+if the conversion worked or not.</para>
+<refsect3 id="gst-util-set-value-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> the value to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value_str</para></entry>
+<entry role="parameter_description"><para>the string to get the value from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-util-get-timestamp" role="function">
+<title>gst_util_get_timestamp&#160;()</title>
+<indexterm zone="gst-util-get-timestamp"><primary>gst_util_get_timestamp</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_util_get_timestamp (<parameter><type>void</type></parameter>);</programlisting>
+<para>Get a timestamp as GstClockTime to be used for interval measurements.
+The timestamp should not be interpreted in any other way.</para>
+<refsect3 id="gst-util-get-timestamp.returns" role="returns">
+<title>Returns</title>
+<para> the timestamp</para>
+</refsect3></refsect2>
+<refsect2 id="gst-util-array-binary-search" role="function">
+<title>gst_util_array_binary_search&#160;()</title>
+<indexterm zone="gst-util-array-binary-search"><primary>gst_util_array_binary_search</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_util_array_binary_search (<parameter><link linkend="gpointer"><type>gpointer</type></link> array</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> num_elements</parameter>,
+                              <parameter><link linkend="gsize"><type>gsize</type></link> element_size</parameter>,
+                              <parameter><link linkend="GCompareDataFunc"><type>GCompareDataFunc</type></link> search_func</parameter>,
+                              <parameter><link linkend="GstSearchMode"><type>GstSearchMode</type></link> mode</parameter>,
+                              <parameter><link linkend="gconstpointer"><type>gconstpointer</type></link> search_data</parameter>,
+                              <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Searches inside <parameter>array</parameter>
+ for <parameter>search_data</parameter>
+ by using the comparison function
+<parameter>search_func</parameter>
+. <parameter>array</parameter>
+ must be sorted ascending.</para>
+<para>As <parameter>search_data</parameter>
+ is always passed as second argument to <parameter>search_func</parameter>
+ it's
+not required that <parameter>search_data</parameter>
+ has the same type as the array elements.</para>
+<para>The complexity of this search function is O(log (num_elements)).</para>
+<refsect3 id="gst-util-array-binary-search.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>the sorted input array</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num_elements</para></entry>
+<entry role="parameter_description"><para>number of elements in the array</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>element_size</para></entry>
+<entry role="parameter_description"><para>size of every element in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>search_func</para></entry>
+<entry role="parameter_description"><para> function to compare two elements, <parameter>search_data</parameter>
+will always be passed as second argument. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>search mode that should be used</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>search_data</para></entry>
+<entry role="parameter_description"><para>element that should be found</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> data to pass to <parameter>search_func</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-util-array-binary-search.returns" role="returns">
+<title>Returns</title>
+<para> The address of the found
+element or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if nothing was found. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstUtils.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSearchMode" role="enum">
+<title>enum GstSearchMode</title>
+<indexterm zone="GstSearchMode"><primary>GstSearchMode</primary></indexterm>
+<para>The different search modes.</para>
+<refsect3 id="GstSearchMode.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEARCH-MODE-EXACT:CAPS">GST_SEARCH_MODE_EXACT</para></entry>
+<entry role="enum_member_description"><para>Only search for exact matches.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEARCH-MODE-BEFORE:CAPS">GST_SEARCH_MODE_BEFORE</para></entry>
+<entry role="enum_member_description"><para>Search for an exact match or the element just before.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEARCH-MODE-AFTER:CAPS">GST_SEARCH_MODE_AFTER</para></entry>
+<entry role="enum_member_description"><para>Search for an exact match or the element just after.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

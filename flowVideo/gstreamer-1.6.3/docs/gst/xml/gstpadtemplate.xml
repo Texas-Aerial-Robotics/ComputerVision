@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstPadTemplate">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstPadTemplate.top_of_page">GstPadTemplate</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPadTemplate</refname>
+<refpurpose>Describe the media type of a pad.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstPadTemplate.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-STATIC-PAD-TEMPLATE:CAPS">GST_STATIC_PAD_TEMPLATE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPadTemplate"><returnvalue>GstPadTemplate</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-static-pad-template-get">gst_static_pad_template_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-static-pad-template-get-caps">gst_static_pad_template_get_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PAD-TEMPLATE-NAME-TEMPLATE:CAPS">GST_PAD_TEMPLATE_NAME_TEMPLATE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PAD-TEMPLATE-DIRECTION:CAPS">GST_PAD_TEMPLATE_DIRECTION</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PAD-TEMPLATE-PRESENCE:CAPS">GST_PAD_TEMPLATE_PRESENCE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PAD-TEMPLATE-CAPS">GST_PAD_TEMPLATE_CAPS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PAD-TEMPLATE-IS-FIXED:CAPS">GST_PAD_TEMPLATE_IS_FIXED</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPadTemplate"><returnvalue>GstPadTemplate</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-pad-template-new">gst_pad_template_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-pad-template-get-caps">gst_pad_template_get_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPadTemplate.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstPadTemplate--caps">caps</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="GstPadDirection"><type>GstPadDirection</type></link></entry><entry role="property_name"><link linkend="GstPadTemplate--direction">direction</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstPadTemplate--name-template">name-template</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="GstPadPresence"><type>GstPadPresence</type></link></entry><entry role="property_name"><link linkend="GstPadTemplate--presence">presence</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPadTemplate.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstPadTemplate-pad-created">pad-created</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPadTemplate.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstStaticPadTemplate">GstStaticPadTemplate</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPadTemplate-struct">GstPadTemplate</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstPadTemplateFlags">GstPadTemplateFlags</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstPadPresence">GstPadPresence</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPadTemplate.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstPadTemplate
+</screen>
+</refsect1>
+
+<refsect1 id="GstPadTemplate.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstPadTemplate.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Padtemplates describe the possible media types a pad or an elementfactory can
+handle. This allows for both inspection of handled types before loading the
+element plugin as well as identifying pads on elements that are not yet
+created (request or sometimes pads).</para>
+<para>Pad and PadTemplates have <link linkend="GstCaps"><type>GstCaps</type></link> attached to it to describe the media type
+they are capable of dealing with. <link linkend="gst-pad-template-get-caps"><function>gst_pad_template_get_caps()</function></link> or
+<link linkend="GST-PAD-TEMPLATE-CAPS"><function>GST_PAD_TEMPLATE_CAPS()</function></link> are used to get the caps of a padtemplate. It's not
+possible to modify the caps of a padtemplate after creation.</para>
+<para>PadTemplates have a <link linkend="GstPadPresence"><type>GstPadPresence</type></link> property which identifies the lifetime
+of the pad and that can be retrieved with <link linkend="GST-PAD-TEMPLATE-PRESENCE:CAPS"><function>GST_PAD_TEMPLATE_PRESENCE()</function></link>. Also
+the direction of the pad can be retrieved from the <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> with
+<link linkend="GST-PAD-TEMPLATE-DIRECTION:CAPS"><function>GST_PAD_TEMPLATE_DIRECTION()</function></link>.</para>
+<para>The <link linkend="GST-PAD-TEMPLATE-NAME-TEMPLATE:CAPS"><function>GST_PAD_TEMPLATE_NAME_TEMPLATE()</function></link> is important for GST_PAD_REQUEST pads
+because it has to be used as the name in the <link linkend="gst-element-get-request-pad"><function>gst_element_get_request_pad()</function></link>
+call to instantiate a pad from this template.</para>
+<para>Padtemplates can be created with <link linkend="gst-pad-template-new"><function>gst_pad_template_new()</function></link> or with
+<link linkend="gst-static-pad-template-get"><function>gst_static_pad_template_get()</function></link>, which creates a <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> from a
+<link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> that can be filled with the
+convenient <link linkend="GST-STATIC-PAD-TEMPLATE:CAPS"><function>GST_STATIC_PAD_TEMPLATE()</function></link> macro.</para>
+<para>A padtemplate can be used to create a pad (see <link linkend="gst-pad-new-from-template"><function>gst_pad_new_from_template()</function></link>
+or <link linkend="gst-pad-new-from-static-template"><function>gst_pad_new_from_static_template()</function></link>) or to add to an element class
+(see <link linkend="gst-element-class-add-pad-template"><function>gst_element_class_add_pad_template()</function></link>).</para>
+<para>The following code example shows the code to create a pad from a padtemplate.</para>
+<informalexample><programlisting><![CDATA[
+  GstStaticPadTemplate my_template =
+  GST_STATIC_PAD_TEMPLATE (
+    "sink",          // the name of the pad
+    GST_PAD_SINK,    // the direction of the pad
+    GST_PAD_ALWAYS,  // when this pad will be present
+    GST_STATIC_CAPS (        // the capabilities of the padtemplate
+      "audio/x-raw, "
+        "channels = (int) [ 1, 6 ]"
+    )
+  );
+  void
+  my_method (void)
+  {
+    GstPad *pad;
+    pad = gst_pad_new_from_static_template (&my_template, "sink");
+    ...
+  }
+]]></programlisting></informalexample>
+<para></para>
+<para>The following example shows you how to add the padtemplate to an
+element class, this is usually done in the class_init of the class:</para>
+<informalexample><programlisting><![CDATA[
+  static void
+  my_element_class_init (GstMyElementClass *klass)
+  {
+    GstElementClass *gstelement_class = GST_ELEMENT_CLASS (klass);
+
+    gst_element_class_add_pad_template (gstelement_class,
+        gst_static_pad_template_get (&my_template));
+  }
+]]></programlisting></informalexample>
+<para></para>
+
+</refsect1>
+<refsect1 id="GstPadTemplate.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-STATIC-PAD-TEMPLATE:CAPS" role="macro">
+<title>GST_STATIC_PAD_TEMPLATE()</title>
+<indexterm zone="GST-STATIC-PAD-TEMPLATE:CAPS"><primary>GST_STATIC_PAD_TEMPLATE</primary></indexterm>
+<programlisting language="C">#define             GST_STATIC_PAD_TEMPLATE(padname, dir, pres, caps)</programlisting>
+<para>Convenience macro to fill the values of a GstStaticPadTemplate
+structure.</para>
+<refsect3 id="GST-STATIC-PAD-TEMPLATE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>padname</para></entry>
+<entry role="parameter_description"><para>the name template of the pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dir</para></entry>
+<entry role="parameter_description"><para>the GstPadDirection of the pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pres</para></entry>
+<entry role="parameter_description"><para>the GstPadPresence of the pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the GstStaticCaps of the pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-static-pad-template-get" role="function">
+<title>gst_static_pad_template_get&#160;()</title>
+<indexterm zone="gst-static-pad-template-get"><primary>gst_static_pad_template_get</primary></indexterm>
+<programlisting language="C"><link linkend="GstPadTemplate"><returnvalue>GstPadTemplate</returnvalue></link>&#160;*
+gst_static_pad_template_get (<parameter><link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> *pad_template</parameter>);</programlisting>
+<para>Converts a <link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> into a <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link>.</para>
+<refsect3 id="gst-static-pad-template-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad_template</para></entry>
+<entry role="parameter_description"><para>the static pad template</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-static-pad-template-get.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-static-pad-template-get-caps" role="function">
+<title>gst_static_pad_template_get_caps&#160;()</title>
+<indexterm zone="gst-static-pad-template-get-caps"><primary>gst_static_pad_template_get_caps</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_static_pad_template_get_caps (<parameter><link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> *templ</parameter>);</programlisting>
+<para>Gets the capabilities of the static pad template.</para>
+<refsect3 id="gst-static-pad-template-get-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> to get capabilities of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-static-pad-template-get-caps.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> of the static pad template.
+Unref after usage. Since the core holds an additional
+ref to the returned caps, use <link linkend="gst-caps-make-writable"><function>gst_caps_make_writable()</function></link>
+on the returned caps to modify it. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GST-PAD-TEMPLATE-NAME-TEMPLATE:CAPS" role="macro">
+<title>GST_PAD_TEMPLATE_NAME_TEMPLATE()</title>
+<indexterm zone="GST-PAD-TEMPLATE-NAME-TEMPLATE:CAPS"><primary>GST_PAD_TEMPLATE_NAME_TEMPLATE</primary></indexterm>
+<programlisting language="C">#define GST_PAD_TEMPLATE_NAME_TEMPLATE(templ)&#160;(((GstPadTemplate *)(templ))-&gt;name_template)
+</programlisting>
+<para>Get the nametemplate of the padtemplate.</para>
+<refsect3 id="GST-PAD-TEMPLATE-NAME-TEMPLATE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>the template to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-PAD-TEMPLATE-DIRECTION:CAPS" role="macro">
+<title>GST_PAD_TEMPLATE_DIRECTION()</title>
+<indexterm zone="GST-PAD-TEMPLATE-DIRECTION:CAPS"><primary>GST_PAD_TEMPLATE_DIRECTION</primary></indexterm>
+<programlisting language="C">#define GST_PAD_TEMPLATE_DIRECTION(templ)&#160;(((GstPadTemplate *)(templ))-&gt;direction)
+</programlisting>
+<para>Get the <link linkend="GstPadDirection"><type>GstPadDirection</type></link> of the padtemplate.</para>
+<refsect3 id="GST-PAD-TEMPLATE-DIRECTION.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>the template to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-PAD-TEMPLATE-PRESENCE:CAPS" role="macro">
+<title>GST_PAD_TEMPLATE_PRESENCE()</title>
+<indexterm zone="GST-PAD-TEMPLATE-PRESENCE:CAPS"><primary>GST_PAD_TEMPLATE_PRESENCE</primary></indexterm>
+<programlisting language="C">#define GST_PAD_TEMPLATE_PRESENCE(templ)&#160;(((GstPadTemplate *)(templ))-&gt;presence)
+</programlisting>
+<para>Get the <link linkend="GstPadPresence"><type>GstPadPresence</type></link> of the padtemplate.</para>
+<refsect3 id="GST-PAD-TEMPLATE-PRESENCE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>the template to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-PAD-TEMPLATE-CAPS" role="macro">
+<title>GST_PAD_TEMPLATE_CAPS()</title>
+<indexterm zone="GST-PAD-TEMPLATE-CAPS"><primary>GST_PAD_TEMPLATE_CAPS</primary></indexterm>
+<programlisting language="C">#define GST_PAD_TEMPLATE_CAPS(templ)		(((GstPadTemplate *)(templ))-&gt;caps)
+</programlisting>
+<para>Get a handle to the padtemplate <link linkend="GstCaps"><type>GstCaps</type></link></para>
+<refsect3 id="GST-PAD-TEMPLATE-CAPS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>the template to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-PAD-TEMPLATE-IS-FIXED:CAPS" role="macro">
+<title>GST_PAD_TEMPLATE_IS_FIXED()</title>
+<indexterm zone="GST-PAD-TEMPLATE-IS-FIXED:CAPS"><primary>GST_PAD_TEMPLATE_IS_FIXED</primary></indexterm>
+<programlisting language="C">#define GST_PAD_TEMPLATE_IS_FIXED(templ)&#160;(GST_OBJECT_FLAG_IS_SET(templ, GST_PAD_TEMPLATE_FIXED))
+</programlisting>
+<para>Check if the properties of the padtemplate are fixed</para>
+<refsect3 id="GST-PAD-TEMPLATE-IS-FIXED.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>the template to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-pad-template-new" role="function">
+<title>gst_pad_template_new&#160;()</title>
+<indexterm zone="gst-pad-template-new"><primary>gst_pad_template_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstPadTemplate"><returnvalue>GstPadTemplate</returnvalue></link>&#160;*
+gst_pad_template_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name_template</parameter>,
+                      <parameter><link linkend="GstPadDirection"><type>GstPadDirection</type></link> direction</parameter>,
+                      <parameter><link linkend="GstPadPresence"><type>GstPadPresence</type></link> presence</parameter>,
+                      <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Creates a new pad template with a name according to the given template
+and with the given arguments.</para>
+<refsect3 id="gst-pad-template-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name_template</para></entry>
+<entry role="parameter_description"><para>the name template.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>direction</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPadDirection"><type>GstPadDirection</type></link> of the template.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>presence</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPadPresence"><type>GstPadPresence</type></link> of the pad.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstCaps"><type>GstCaps</type></link> set for the template. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pad-template-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-pad-template-get-caps" role="function">
+<title>gst_pad_template_get_caps&#160;()</title>
+<indexterm zone="gst-pad-template-get-caps"><primary>gst_pad_template_get_caps</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_pad_template_get_caps (<parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *templ</parameter>);</programlisting>
+<para>Gets the capabilities of the pad template.</para>
+<refsect3 id="gst-pad-template-get-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> to get capabilities of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pad-template-get-caps.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> of the pad template.
+Unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPadTemplate.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstStaticPadTemplate" role="struct">
+<title>struct GstStaticPadTemplate</title>
+<indexterm zone="GstStaticPadTemplate"><primary>GstStaticPadTemplate</primary></indexterm>
+<programlisting language="C">struct GstStaticPadTemplate {
+  const gchar     *name_template;
+  GstPadDirection  direction;
+  GstPadPresence   presence;
+  GstStaticCaps    static_caps;
+};
+</programlisting>
+<para>Structure describing the <link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link>.</para>
+<refsect3 id="GstStaticPadTemplate.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="GstStaticPadTemplate.name-template">name_template</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the name of the template</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstPadDirection"><type>GstPadDirection</type></link>&#160;<structfield id="GstStaticPadTemplate.direction">direction</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the direction of the template</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstPadPresence"><type>GstPadPresence</type></link>&#160;<structfield id="GstStaticPadTemplate.presence">presence</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the presence of the template</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstStaticCaps"><type>GstStaticCaps</type></link>&#160;<structfield id="GstStaticPadTemplate.static-caps">static_caps</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the caps of the template.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstPadTemplate-struct" role="struct">
+<title>struct GstPadTemplate</title>
+<indexterm zone="GstPadTemplate-struct"><primary>GstPadTemplate</primary></indexterm>
+<programlisting language="C">struct GstPadTemplate;</programlisting>
+<para>The padtemplate object.</para>
+</refsect2>
+<refsect2 id="GstPadTemplateFlags" role="enum">
+<title>enum GstPadTemplateFlags</title>
+<indexterm zone="GstPadTemplateFlags"><primary>GstPadTemplateFlags</primary></indexterm>
+<para>Flags for the padtemplate</para>
+<refsect3 id="GstPadTemplateFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PAD-TEMPLATE-FLAG-LAST:CAPS">GST_PAD_TEMPLATE_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>first flag that can be used by subclasses.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstPadPresence" role="enum">
+<title>enum GstPadPresence</title>
+<indexterm zone="GstPadPresence"><primary>GstPadPresence</primary></indexterm>
+<para>Indicates when this pad will become available.</para>
+<refsect3 id="GstPadPresence.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PAD-ALWAYS:CAPS">GST_PAD_ALWAYS</para></entry>
+<entry role="enum_member_description"><para>the pad is always available</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PAD-SOMETIMES:CAPS">GST_PAD_SOMETIMES</para></entry>
+<entry role="enum_member_description"><para>the pad will become available depending on the media stream</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PAD-REQUEST:CAPS">GST_PAD_REQUEST</para></entry>
+<entry role="enum_member_description"><para>the pad is only available on request with
+ <link linkend="gst-element-request-pad"><function>gst_element_request_pad()</function></link>.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPadTemplate.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstPadTemplate--caps" role="property"><title>The <literal>“caps”</literal> property</title>
+<indexterm zone="GstPadTemplate--caps"><primary>GstPadTemplate:caps</primary></indexterm>
+<programlisting>  “caps”                     <link linkend="GstCaps"><type>GstCaps</type></link>&#160;*</programlisting>
+<para>The capabilities of the pad described by the pad template.</para>
+<para>Flags: Read / Write / Construct Only</para>
+</refsect2>
+<refsect2 id="GstPadTemplate--direction" role="property"><title>The <literal>“direction”</literal> property</title>
+<indexterm zone="GstPadTemplate--direction"><primary>GstPadTemplate:direction</primary></indexterm>
+<programlisting>  “direction”                <link linkend="GstPadDirection"><type>GstPadDirection</type></link></programlisting>
+<para>The direction of the pad described by the pad template.</para>
+<para>Flags: Read / Write / Construct Only</para>
+<para>Default value: GST_PAD_UNKNOWN</para>
+</refsect2>
+<refsect2 id="GstPadTemplate--name-template" role="property"><title>The <literal>“name-template”</literal> property</title>
+<indexterm zone="GstPadTemplate--name-template"><primary>GstPadTemplate:name-template</primary></indexterm>
+<programlisting>  “name-template”            <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The name template of the pad template.</para>
+<para>Flags: Read / Write / Construct Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstPadTemplate--presence" role="property"><title>The <literal>“presence”</literal> property</title>
+<indexterm zone="GstPadTemplate--presence"><primary>GstPadTemplate:presence</primary></indexterm>
+<programlisting>  “presence”                 <link linkend="GstPadPresence"><type>GstPadPresence</type></link></programlisting>
+<para>When the pad described by the pad template will become available.</para>
+<para>Flags: Read / Write / Construct Only</para>
+<para>Default value: GST_PAD_ALWAYS</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstPadTemplate.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstPadTemplate-pad-created" role="signal"><title>The <literal>“pad-created”</literal> signal</title>
+<indexterm zone="GstPadTemplate-pad-created"><primary>GstPadTemplate::pad-created</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *pad_template,
+               <link linkend="GstPad"><type>GstPad</type></link>         *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>        user_data)</programlisting>
+<para>This signal is fired when an element creates a pad from this template.</para>
+<refsect3 id="GstPadTemplate-pad-created.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad_template</para></entry>
+<entry role="parameter_description"><para>the object which received the signal.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad that was created.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstPadTemplate.see-also">
+<title>See Also</title>
+<para><link linkend="GstPad"><type>GstPad</type></link>, <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para>
+
+</refsect1>
+
+</refentry>

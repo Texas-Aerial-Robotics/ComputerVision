@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstPluginFeature">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstPluginFeature.top_of_page">GstPluginFeature</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPluginFeature</refname>
+<refpurpose>Base class for contents of a GstPlugin</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstPluginFeature.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstPluginFeatureFilter">*GstPluginFeatureFilter</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-set-rank">gst_plugin_feature_set_rank</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-plugin-feature-set-name">gst_plugin_feature_set_name</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-get-rank">gst_plugin_feature_get_rank</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-plugin-feature-get-name">gst_plugin_feature_get_name</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-get-plugin">gst_plugin_feature_get_plugin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-get-plugin-name">gst_plugin_feature_get_plugin_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPluginFeature"><returnvalue>GstPluginFeature</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-load">gst_plugin_feature_load</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-list-copy">gst_plugin_feature_list_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-list-free">gst_plugin_feature_list_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PLUGIN-FEATURE-LIST-DEBUG:CAPS">GST_PLUGIN_FEATURE_LIST_DEBUG</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-check-version">gst_plugin_feature_check_version</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-plugin-feature-rank-compare-func">gst_plugin_feature_rank_compare_func</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPluginFeature.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstPluginFeature-struct">GstPluginFeature</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstRank">GstRank</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPluginFeature.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstPluginFeature
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstElementFactory">GstElementFactory</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTypeFindFactory">GstTypeFindFactory</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link>
+</screen>
+</refsect1>
+
+<refsect1 id="GstPluginFeature.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstPluginFeature.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This is a base class for anything that can be added to a <link linkend="GstPlugin"><type>GstPlugin</type></link>.</para>
+
+</refsect1>
+<refsect1 id="GstPluginFeature.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstPluginFeatureFilter" role="function">
+<title>GstPluginFeatureFilter&#160;()</title>
+<indexterm zone="GstPluginFeatureFilter"><primary>GstPluginFeatureFilter</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstPluginFeatureFilter<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>,
+                           <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that can be used with e.g. <link linkend="gst-registry-feature-filter"><function>gst_registry_feature_filter()</function></link>
+to get a list of pluginfeature that match certain criteria.</para>
+<refsect3 id="GstPluginFeatureFilter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>the pluginfeature to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the user_data that has been passed on e.g.
+<link linkend="gst-registry-feature-filter"><function>gst_registry_feature_filter()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstPluginFeatureFilter.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for a positive match, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-set-rank" role="function">
+<title>gst_plugin_feature_set_rank&#160;()</title>
+<indexterm zone="gst-plugin-feature-set-rank"><primary>gst_plugin_feature_set_rank</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_plugin_feature_set_rank (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>,
+                             <parameter><link linkend="guint"><type>guint</type></link> rank</parameter>);</programlisting>
+<para>Specifies a rank for a plugin feature, so that autoplugging uses
+the most appropriate feature.</para>
+<refsect3 id="gst-plugin-feature-set-rank.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>feature to rank</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rank</para></entry>
+<entry role="parameter_description"><para>rank value - higher number means more priority rank</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-set-name" role="macro">
+<title>gst_plugin_feature_set_name()</title>
+<indexterm zone="gst-plugin-feature-set-name"><primary>gst_plugin_feature_set_name</primary></indexterm>
+<programlisting language="C">#define                 gst_plugin_feature_set_name(feature,name) gst_object_set_name(GST_OBJECT_CAST(feature),name)
+</programlisting>
+<para>Sets the name of the plugin feature, getting rid of the old name if there was one.</para>
+<refsect3 id="gst-plugin-feature-set-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> to set the name of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the new name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-get-rank" role="function">
+<title>gst_plugin_feature_get_rank&#160;()</title>
+<indexterm zone="gst-plugin-feature-get-rank"><primary>gst_plugin_feature_get_rank</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_plugin_feature_get_rank (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>);</programlisting>
+<para>Gets the rank of a plugin feature.</para>
+<refsect3 id="gst-plugin-feature-get-rank.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-get-rank.returns" role="returns">
+<title>Returns</title>
+<para> The rank of the feature</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-get-name" role="macro">
+<title>gst_plugin_feature_get_name()</title>
+<indexterm zone="gst-plugin-feature-get-name"><primary>gst_plugin_feature_get_name</primary></indexterm>
+<programlisting language="C">#define                 gst_plugin_feature_get_name(feature)      GST_OBJECT_NAME(feature)
+</programlisting>
+<para>Returns the name of <parameter>feature</parameter>
+.
+For a nameless plugin feature, this returns <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-plugin-feature-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> to get the name of <parameter>feature</parameter>
+.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-get-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of <parameter>feature</parameter>
+. MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-get-plugin" role="function">
+<title>gst_plugin_feature_get_plugin&#160;()</title>
+<indexterm zone="gst-plugin-feature-get-plugin"><primary>gst_plugin_feature_get_plugin</primary></indexterm>
+<programlisting language="C"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+gst_plugin_feature_get_plugin (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>);</programlisting>
+<para>Get the plugin that provides this feature.</para>
+<refsect3 id="gst-plugin-feature-get-plugin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-get-plugin.returns" role="returns">
+<title>Returns</title>
+<para> the plugin that provides this
+feature, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.  Unref with <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> when no
+longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-get-plugin-name" role="function" condition="since:1.2">
+<title>gst_plugin_feature_get_plugin_name&#160;()</title>
+<indexterm zone="gst-plugin-feature-get-plugin-name" role="1.2"><primary>gst_plugin_feature_get_plugin_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_plugin_feature_get_plugin_name (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>);</programlisting>
+<para>Get the name of the plugin that provides this feature.</para>
+<refsect3 id="gst-plugin-feature-get-plugin-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-get-plugin-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of the plugin that provides this
+feature, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the feature is not associated with a
+plugin. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-plugin-feature-load" role="function">
+<title>gst_plugin_feature_load&#160;()</title>
+<indexterm zone="gst-plugin-feature-load"><primary>gst_plugin_feature_load</primary></indexterm>
+<programlisting language="C"><link linkend="GstPluginFeature"><returnvalue>GstPluginFeature</returnvalue></link>&#160;*
+gst_plugin_feature_load (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>);</programlisting>
+<para>Loads the plugin containing <parameter>feature</parameter>
+ if it's not already loaded. <parameter>feature</parameter>
+ is
+unaffected; use the return value instead.</para>
+<para>Normally this function is used like this:</para>
+<informalexample><programlisting><![CDATA[
+GstPluginFeature *loaded_feature;
+
+loaded_feature = gst_plugin_feature_load (feature);
+// presumably, we're no longer interested in the potentially-unloaded feature
+gst_object_unref (feature);
+feature = loaded_feature;
+]]></programlisting></informalexample>
+<para></para>
+<refsect3 id="gst-plugin-feature-load.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para> the plugin feature to check. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-load.returns" role="returns">
+<title>Returns</title>
+<para> a reference to the loaded
+feature, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-list-copy" role="function">
+<title>gst_plugin_feature_list_copy&#160;()</title>
+<indexterm zone="gst-plugin-feature-list-copy"><primary>gst_plugin_feature_list_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_plugin_feature_list_copy (<parameter><link linkend="GList"><type>GList</type></link> *list</parameter>);</programlisting>
+<para>Copies the list of features. Caller should call <parameter>gst_plugin_feature_list_free</parameter>
+
+when done with the list.</para>
+<refsect3 id="gst-plugin-feature-list-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> list
+of <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-list-copy.returns" role="returns">
+<title>Returns</title>
+<para> a copy of <parameter>list</parameter>
+,
+with each feature's reference count incremented. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-list-free" role="function">
+<title>gst_plugin_feature_list_free&#160;()</title>
+<indexterm zone="gst-plugin-feature-list-free"><primary>gst_plugin_feature_list_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_plugin_feature_list_free (<parameter><link linkend="GList"><type>GList</type></link> *list</parameter>);</programlisting>
+<para>Unrefs each member of <parameter>list</parameter>
+, then frees the list.</para>
+<refsect3 id="gst-plugin-feature-list-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> list
+of <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-PLUGIN-FEATURE-LIST-DEBUG:CAPS" role="macro">
+<title>GST_PLUGIN_FEATURE_LIST_DEBUG()</title>
+<indexterm zone="GST-PLUGIN-FEATURE-LIST-DEBUG:CAPS"><primary>GST_PLUGIN_FEATURE_LIST_DEBUG</primary></indexterm>
+<programlisting language="C">#define GST_PLUGIN_FEATURE_LIST_DEBUG(list) gst_plugin_feature_list_debug(list)
+</programlisting>
+<para>Debug the plugin feature names in <parameter>list</parameter>
+.</para>
+<refsect3 id="GST-PLUGIN-FEATURE-LIST-DEBUG.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GList"><type>GList</type></link> of
+plugin features. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-check-version" role="function">
+<title>gst_plugin_feature_check_version&#160;()</title>
+<indexterm zone="gst-plugin-feature-check-version"><primary>gst_plugin_feature_check_version</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_plugin_feature_check_version (<parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> min_major</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> min_minor</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> min_micro</parameter>);</programlisting>
+<para>Checks whether the given plugin feature is at least
+ the required version</para>
+<refsect3 id="gst-plugin-feature-check-version.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_major</para></entry>
+<entry role="parameter_description"><para>minimum required major version</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_minor</para></entry>
+<entry role="parameter_description"><para>minimum required minor version</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_micro</para></entry>
+<entry role="parameter_description"><para>minimum required micro version</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-check-version.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the plugin feature has at least
+the required version, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-plugin-feature-rank-compare-func" role="function">
+<title>gst_plugin_feature_rank_compare_func&#160;()</title>
+<indexterm zone="gst-plugin-feature-rank-compare-func"><primary>gst_plugin_feature_rank_compare_func</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_plugin_feature_rank_compare_func (<parameter><link linkend="gconstpointer"><type>gconstpointer</type></link> p1</parameter>,
+                                      <parameter><link linkend="gconstpointer"><type>gconstpointer</type></link> p2</parameter>);</programlisting>
+<para>Compares the two given <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> instances. This function can be
+used as a <link linkend="GCompareFunc"><type>GCompareFunc</type></link> when sorting by rank and then by name.</para>
+<refsect3 id="gst-plugin-feature-rank-compare-func.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>p1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>p2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-plugin-feature-rank-compare-func.returns" role="returns">
+<title>Returns</title>
+<para> negative value if the rank of p1 &gt; the rank of p2 or the ranks are
+equal but the name of p1 comes before the name of p2; zero if the rank
+and names are equal; positive value if the rank of p1 &lt; the rank of p2 or the
+ranks are equal but the name of p2 comes before the name of p1</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPluginFeature.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstPluginFeature-struct" role="struct">
+<title>GstPluginFeature</title>
+<indexterm zone="GstPluginFeature-struct"><primary>GstPluginFeature</primary></indexterm>
+<programlisting language="C">typedef struct _GstPluginFeature GstPluginFeature;</programlisting>
+<para>Opaque <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> structure.</para>
+</refsect2>
+<refsect2 id="GstRank" role="enum">
+<title>enum GstRank</title>
+<indexterm zone="GstRank"><primary>GstRank</primary></indexterm>
+<para>Element priority ranks. Defines the order in which the autoplugger (or
+similar rank-picking mechanisms, such as e.g. <link linkend="gst-element-make-from-uri"><function>gst_element_make_from_uri()</function></link>)
+will choose this element over an alternative one with the same function.</para>
+<para>These constants serve as a rough guidance for defining the rank of a
+<link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>. Any value is valid, including values bigger than
+<parameter>GST_RANK_PRIMARY</parameter>
+.</para>
+<refsect3 id="GstRank.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RANK-NONE:CAPS">GST_RANK_NONE</para></entry>
+<entry role="enum_member_description"><para>will be chosen last or not at all</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RANK-MARGINAL:CAPS">GST_RANK_MARGINAL</para></entry>
+<entry role="enum_member_description"><para>unlikely to be chosen</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RANK-SECONDARY:CAPS">GST_RANK_SECONDARY</para></entry>
+<entry role="enum_member_description"><para>likely to be chosen</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RANK-PRIMARY:CAPS">GST_RANK_PRIMARY</para></entry>
+<entry role="enum_member_description"><para>will be chosen first</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPluginFeature.see-also">
+<title>See Also</title>
+<para><link linkend="GstPlugin"><type>GstPlugin</type></link></para>
+
+</refsect1>
+
+</refentry>

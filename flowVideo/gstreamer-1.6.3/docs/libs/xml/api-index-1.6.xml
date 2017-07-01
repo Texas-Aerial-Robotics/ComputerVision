@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.6">
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="gst-adapter-get-buffer"><link linkend="gst-adapter-get-buffer">gst_adapter_get_buffer</link>, function in <link linkend="GstAdapter">GstAdapter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-adapter-get-buffer-fast"><link linkend="gst-adapter-get-buffer-fast">gst_adapter_get_buffer_fast</link>, function in <link linkend="GstAdapter">GstAdapter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-adapter-get-buffer-list"><link linkend="gst-adapter-get-buffer-list">gst_adapter_get_buffer_list</link>, function in <link linkend="GstAdapter">GstAdapter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-adapter-get-list"><link linkend="gst-adapter-get-list">gst_adapter_get_list</link>, function in <link linkend="GstAdapter">GstAdapter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-adapter-take-buffer-list"><link linkend="gst-adapter-take-buffer-list">gst_adapter_take_buffer_list</link>, function in <link linkend="GstAdapter">GstAdapter</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gst-base-parse-merge-tags"><link linkend="gst-base-parse-merge-tags">gst_base_parse_merge_tags</link>, function in <link linkend="GstBaseParse">GstBaseParse</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-base-transform-update-src-caps"><link linkend="gst-base-transform-update-src-caps">gst_base_transform_update_src_caps</link>, function in <link linkend="GstBaseTransform">GstBaseTransform</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-byte-reader-get-sub-reader"><link linkend="gst-byte-reader-get-sub-reader">gst_byte_reader_get_sub_reader</link>, function in <link linkend="gstreamer-libs-GstByteReader">GstByteReader</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-byte-reader-masked-scan-uint32-peek"><link linkend="gst-byte-reader-masked-scan-uint32-peek">gst_byte_reader_masked_scan_uint32_peek</link>, function in <link linkend="gstreamer-libs-GstByteReader">GstByteReader</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-byte-reader-peek-sub-reader"><link linkend="gst-byte-reader-peek-sub-reader">gst_byte_reader_peek_sub_reader</link>, function in <link linkend="gstreamer-libs-GstByteReader">GstByteReader</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gst-check-objects-destroyed-on-unref"><link linkend="gst-check-objects-destroyed-on-unref">gst_check_objects_destroyed_on_unref</link>, function in <link linkend="gstreamer-libs-GstCheck">GstCheck</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-check-object-destroyed-on-unref"><link linkend="gst-check-object-destroyed-on-unref">gst_check_object_destroyed_on_unref</link>, function in <link linkend="gstreamer-libs-GstCheck">GstCheck</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-COLLECT-PADS-DTS:CAPS"><link linkend="GST-COLLECT-PADS-DTS:CAPS">GST_COLLECT_PADS_DTS</link>, macro in <link linkend="GstCollectPads">GstCollectPads</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-COLLECT-PADS-DTS-IS-VALID:CAPS"><link linkend="GST-COLLECT-PADS-DTS-IS-VALID:CAPS">GST_COLLECT_PADS_DTS_IS_VALID</link>, macro in <link linkend="GstCollectPads">GstCollectPads</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gst-direct-control-binding-new-absolute"><link linkend="gst-direct-control-binding-new-absolute">gst_direct_control_binding_new_absolute</link>, function in <link linkend="GstDirectControlBinding">GstDirectControlBinding</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="gst-flow-combiner-clear"><link linkend="gst-flow-combiner-clear">gst_flow_combiner_clear</link>, function in <link linkend="gstreamer-libs-GstFlowCombiner">GstFlowCombiner</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>H</title>
+<indexentry><primaryie linkends="GstHarness"><link linkend="GstHarness">GstHarness</link>, struct in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstHarnessPrepareBufferFunc"><link linkend="GstHarnessPrepareBufferFunc">GstHarnessPrepareBufferFunc</link>, user_function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstHarnessThread"><link linkend="GstHarnessThread">GstHarnessThread</link>, struct in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-element-sink-pad"><link linkend="gst-harness-add-element-sink-pad">gst_harness_add_element_sink_pad</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-element-src-pad"><link linkend="gst-harness-add-element-src-pad">gst_harness_add_element_src_pad</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-probe"><link linkend="gst-harness-add-probe">gst_harness_add_probe</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-sink"><link linkend="gst-harness-add-sink">gst_harness_add_sink</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-sink-harness"><link linkend="gst-harness-add-sink-harness">gst_harness_add_sink_harness</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-sink-parse"><link linkend="gst-harness-add-sink-parse">gst_harness_add_sink_parse</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-src"><link linkend="gst-harness-add-src">gst_harness_add_src</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-src-harness"><link linkend="gst-harness-add-src-harness">gst_harness_add_src_harness</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-add-src-parse"><link linkend="gst-harness-add-src-parse">gst_harness_add_src_parse</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-buffers-in-queue"><link linkend="gst-harness-buffers-in-queue">gst_harness_buffers_in_queue</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-buffers-received"><link linkend="gst-harness-buffers-received">gst_harness_buffers_received</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-crank-multiple-clock-waits"><link linkend="gst-harness-crank-multiple-clock-waits">gst_harness_crank_multiple_clock_waits</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-crank-single-clock-wait"><link linkend="gst-harness-crank-single-clock-wait">gst_harness_crank_single_clock_wait</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-create-buffer"><link linkend="gst-harness-create-buffer">gst_harness_create_buffer</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-dump-to-file"><link linkend="gst-harness-dump-to-file">gst_harness_dump_to_file</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-events-in-queue"><link linkend="gst-harness-events-in-queue">gst_harness_events_in_queue</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-events-received"><link linkend="gst-harness-events-received">gst_harness_events_received</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-find-element"><link linkend="gst-harness-find-element">gst_harness_find_element</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-get"><link linkend="gst-harness-get">gst_harness_get</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-get-allocator"><link linkend="gst-harness-get-allocator">gst_harness_get_allocator</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-get-last-pushed-timestamp"><link linkend="gst-harness-get-last-pushed-timestamp">gst_harness_get_last_pushed_timestamp</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-get-testclock"><link linkend="gst-harness-get-testclock">gst_harness_get_testclock</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-new"><link linkend="gst-harness-new">gst_harness_new</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-new-full"><link linkend="gst-harness-new-full">gst_harness_new_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-new-parse"><link linkend="gst-harness-new-parse">gst_harness_new_parse</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-new-with-element"><link linkend="gst-harness-new-with-element">gst_harness_new_with_element</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-new-with-padnames"><link linkend="gst-harness-new-with-padnames">gst_harness_new_with_padnames</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-new-with-templates"><link linkend="gst-harness-new-with-templates">gst_harness_new_with_templates</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-play"><link linkend="gst-harness-play">gst_harness_play</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-pull"><link linkend="gst-harness-pull">gst_harness_pull</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-pull-event"><link linkend="gst-harness-pull-event">gst_harness_pull_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-pull-upstream-event"><link linkend="gst-harness-pull-upstream-event">gst_harness_pull_upstream_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-push"><link linkend="gst-harness-push">gst_harness_push</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-push-and-pull"><link linkend="gst-harness-push-and-pull">gst_harness_push_and_pull</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-push-event"><link linkend="gst-harness-push-event">gst_harness_push_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-push-from-src"><link linkend="gst-harness-push-from-src">gst_harness_push_from_src</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-push-to-sink"><link linkend="gst-harness-push-to-sink">gst_harness_push_to_sink</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-push-upstream-event"><link linkend="gst-harness-push-upstream-event">gst_harness_push_upstream_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-query-latency"><link linkend="gst-harness-query-latency">gst_harness_query_latency</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set"><link linkend="gst-harness-set">gst_harness_set</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-blocking-push-mode"><link linkend="gst-harness-set-blocking-push-mode">gst_harness_set_blocking_push_mode</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-caps"><link linkend="gst-harness-set-caps">gst_harness_set_caps</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-caps-str"><link linkend="gst-harness-set-caps-str">gst_harness_set_caps_str</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-drop-buffers"><link linkend="gst-harness-set-drop-buffers">gst_harness_set_drop_buffers</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-forwarding"><link linkend="gst-harness-set-forwarding">gst_harness_set_forwarding</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-propose-allocator"><link linkend="gst-harness-set-propose-allocator">gst_harness_set_propose_allocator</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-sink-caps"><link linkend="gst-harness-set-sink-caps">gst_harness_set_sink_caps</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-sink-caps-str"><link linkend="gst-harness-set-sink-caps-str">gst_harness_set_sink_caps_str</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-src-caps"><link linkend="gst-harness-set-src-caps">gst_harness_set_src_caps</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-src-caps-str"><link linkend="gst-harness-set-src-caps-str">gst_harness_set_src_caps_str</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-time"><link linkend="gst-harness-set-time">gst_harness_set_time</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-set-upstream-latency"><link linkend="gst-harness-set-upstream-latency">gst_harness_set_upstream_latency</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-sink-push-many"><link linkend="gst-harness-sink-push-many">gst_harness_sink_push_many</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-src-crank-and-push-many"><link linkend="gst-harness-src-crank-and-push-many">gst_harness_src_crank_and_push_many</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-src-push-event"><link linkend="gst-harness-src-push-event">gst_harness_src_push_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-custom-start"><link linkend="gst-harness-stress-custom-start">gst_harness_stress_custom_start</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-property-start-full"><link linkend="gst-harness-stress-property-start-full">gst_harness_stress_property_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-push-buffer-start-full"><link linkend="gst-harness-stress-push-buffer-start-full">gst_harness_stress_push_buffer_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-push-buffer-with-cb-start-full"><link linkend="gst-harness-stress-push-buffer-with-cb-start-full">gst_harness_stress_push_buffer_with_cb_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-push-event-start-full"><link linkend="gst-harness-stress-push-event-start-full">gst_harness_stress_push_event_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-push-upstream-event-start-full"><link linkend="gst-harness-stress-push-upstream-event-start-full">gst_harness_stress_push_upstream_event_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-requestpad-start-full"><link linkend="gst-harness-stress-requestpad-start-full">gst_harness_stress_requestpad_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-statechange-start-full"><link linkend="gst-harness-stress-statechange-start-full">gst_harness_stress_statechange_start_full</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-stress-thread-stop"><link linkend="gst-harness-stress-thread-stop">gst_harness_stress_thread_stop</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-teardown"><link linkend="gst-harness-teardown">gst_harness_teardown</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-try-pull"><link linkend="gst-harness-try-pull">gst_harness_try_pull</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-try-pull-event"><link linkend="gst-harness-try-pull-event">gst_harness_try_pull_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-try-pull-upstream-event"><link linkend="gst-harness-try-pull-upstream-event">gst_harness_try_pull_upstream_event</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-upstream-events-in-queue"><link linkend="gst-harness-upstream-events-in-queue">gst_harness_upstream_events_in_queue</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-upstream-events-received"><link linkend="gst-harness-upstream-events-received">gst_harness_upstream_events_received</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-use-systemclock"><link linkend="gst-harness-use-systemclock">gst_harness_use_systemclock</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-use-testclock"><link linkend="gst-harness-use-testclock">gst_harness_use_testclock</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-harness-wait-for-clock-id-waits"><link linkend="gst-harness-wait-for-clock-id-waits">gst_harness_wait_for_clock_id_waits</link>, function in <link linkend="gstreamer-libs-GstHarness">GstHarness</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>N</title>
+<indexentry><primaryie linkends="gst-ntp-clock-new"><link linkend="gst-ntp-clock-new">gst_ntp_clock_new</link>, function in <link linkend="GstNetClientClock">GstNetClientClock</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gst-ptp-clock-new"><link linkend="gst-ptp-clock-new">gst_ptp_clock_new</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-ptp-deinit"><link linkend="gst-ptp-deinit">gst_ptp_deinit</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-ptp-init"><link linkend="gst-ptp-init">gst_ptp_init</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-ptp-is-initialized"><link linkend="gst-ptp-is-initialized">gst_ptp_is_initialized</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-ptp-is-supported"><link linkend="gst-ptp-is-supported">gst_ptp_is_supported</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-ptp-statistics-callback-add"><link linkend="gst-ptp-statistics-callback-add">gst_ptp_statistics_callback_add</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-ptp-statistics-callback-remove"><link linkend="gst-ptp-statistics-callback-remove">gst_ptp_statistics_callback_remove</link>, function in <link linkend="gstreamer-libs-GstPtpClock">GstPtpClock</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>Q</title>
+<indexentry><primaryie linkends="gst-queue-array-drop-struct"><link linkend="gst-queue-array-drop-struct">gst_queue_array_drop_struct</link>, function in <link linkend="gstreamer-libs-GstQueueArray">GstQueueArray</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-queue-array-new-for-struct"><link linkend="gst-queue-array-new-for-struct">gst_queue_array_new_for_struct</link>, function in <link linkend="gstreamer-libs-GstQueueArray">GstQueueArray</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-queue-array-peek-head-struct"><link linkend="gst-queue-array-peek-head-struct">gst_queue_array_peek_head_struct</link>, function in <link linkend="gstreamer-libs-GstQueueArray">GstQueueArray</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-queue-array-pop-head-struct"><link linkend="gst-queue-array-pop-head-struct">gst_queue_array_pop_head_struct</link>, function in <link linkend="gstreamer-libs-GstQueueArray">GstQueueArray</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="GstTimedValueControlSource-value-added"><link linkend="GstTimedValueControlSource-value-added">GstTimedValueControlSource::value-added</link>, object signal in <link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstTimedValueControlSource-value-changed"><link linkend="GstTimedValueControlSource-value-changed">GstTimedValueControlSource::value-changed</link>, object signal in <link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstTimedValueControlSource-value-removed"><link linkend="GstTimedValueControlSource-value-removed">GstTimedValueControlSource::value-removed</link>, object signal in <link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,72 @@
+92% symbol docs coverage.
+758 symbols documented.
+45 symbols incomplete.
+66 not documented.
+
+
+ASSERT_BUFFER_REFCOUNT (<parameters>)
+ASSERT_CAPS_REFCOUNT (<parameters>)
+ASSERT_CRITICAL (<parameters>)
+ASSERT_MINI_OBJECT_REFCOUNT (<parameters>)
+ASSERT_OBJECT_REFCOUNT (<parameters>)
+ASSERT_OBJECT_REFCOUNT_BETWEEN (<parameters>)
+ASSERT_SET_STATE (<parameters>)
+ASSERT_WARNING (<parameters>)
+GST_BASE_PARSE_FLAG_DRAINING
+GST_BASE_PARSE_FLAG_LOST_SYNC
+GST_BASE_SINK_GET_PREROLL_COND (<parameters>)
+GST_BASE_SINK_GET_PREROLL_LOCK (<parameters>)
+GST_BASE_SINK_PREROLL_BROADCAST (<parameters>)
+GST_BASE_SINK_PREROLL_LOCK (<parameters>)
+GST_BASE_SINK_PREROLL_SIGNAL (<parameters>)
+GST_BASE_SINK_PREROLL_TRYLOCK (<parameters>)
+GST_BASE_SINK_PREROLL_UNLOCK (<parameters>)
+GST_BASE_SINK_PREROLL_WAIT (<parameters>)
+GST_BASE_SINK_PREROLL_WAIT_UNTIL (<parameters>)
+GST_BASE_SRC_IS_STARTED (<parameters>)
+GST_BASE_SRC_IS_STARTING (<parameters>)
+GST_PTP_CLOCK_ID_NONE
+GST_TYPE_TRIGGER_WAVEFORM
+GstCollectPadsStateFlags
+GstDataQueueClass
+GstDataQueueEmptyCallback (<parameters>)
+GstDataQueueFullCallback (<parameters>)
+GstHarness
+GstHarnessPrepareBufferFunc
+GstNtpClock
+GstQueueArray
+assert_message_error (<parameters>)
+fail_unless_message_error (<parameters>)
+gst_base_parse_frame_free (<parameters>)
+gst_base_src_get_buffer_pool
+gst_base_transform_get_buffer_pool
+gst_buffer_get_net_address_meta (<parameters>)
+gst_buffer_get_net_control_message_meta (<parameters>)
+gst_byte_reader_dup_string (<parameters>)
+gst_byte_reader_get_string (<parameters>)
+gst_byte_reader_peek_data_unchecked
+gst_byte_writer_get_pos
+gst_byte_writer_get_size
+gst_byte_writer_put_buffer_unchecked (<parameters>)
+gst_byte_writer_put_int8_unchecked (<parameters>)
+gst_check_init (<parameters>)
+gst_check_message_error (<parameters>)
+gst_check_run_suite (<parameters>)
+gst_check_setup_sink_pad_by_name_from_template
+gst_check_setup_sink_pad_from_template
+gst_check_setup_src_pad_by_name_from_template
+gst_check_setup_src_pad_from_template
+gst_check_teardown_element (<parameters>)
+gst_check_teardown_pad_by_name (<parameters>)
+gst_check_teardown_sink_pad (<parameters>)
+gst_check_teardown_src_pad (<parameters>)
+gst_harness_stress_property_start (<parameters>)
+gst_harness_stress_push_buffer_start (<parameters>)
+gst_harness_stress_push_buffer_with_cb_start (<parameters>)
+gst_harness_stress_push_event_start (<parameters>)
+gst_harness_stress_requestpad_start (<parameters>)
+gst_harness_stress_send_upstream_event_start (<parameters>)
+gst_harness_stress_statechange_start (<parameters>)
+gst_net_address_meta_get_info
+gst_net_control_message_meta_get_info
+gst_queue_array_push_tail_struct (<parameters>)

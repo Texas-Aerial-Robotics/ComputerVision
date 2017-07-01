@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstPtpClock">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstPtpClock.top_of_page">GstPtpClock</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPtpClock</refname>
+<refpurpose>Special clock that synchronizes to a remote time
+                    provider via PTP (IEEE1588:2008).</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstPtpClock.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ptp-init">gst_ptp_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ptp-deinit">gst_ptp_deinit</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ptp-is-initialized">gst_ptp_is_initialized</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ptp-is-supported">gst_ptp_is_supported</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ptp-clock-new">gst_ptp_clock_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstPtpStatisticsCallback">*GstPtpStatisticsCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gulong"><returnvalue>gulong</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ptp-statistics-callback-add">gst_ptp_statistics_callback_add</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ptp-statistics-callback-remove">gst_ptp_statistics_callback_remove</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstPtpClock.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PTP-CLOCK-ID-NONE:CAPS">GST_PTP_CLOCK_ID_NONE</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPtpClock">GstPtpClock</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstPtpClock.includes"><title>Includes</title><synopsis>#include &lt;gst/net/net.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstPtpClock.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GstPtpClock implements a PTP (IEEE1588:2008) ordinary clock in slave-only
+mode, that allows a GStreamer pipeline to synchronize to a PTP network
+clock in some specific domain.</para>
+<para>The PTP subsystem can be initialized with <link linkend="gst-ptp-init"><function>gst_ptp_init()</function></link>, which then starts
+a helper process to do the actual communication via the PTP ports. This is
+required as PTP listens on ports &lt; 1024 and thus requires special
+privileges. Once this helper process is started, the main process will
+synchronize to all PTP domains that are detected on the selected
+interfaces.</para>
+<para>gst_ptp_clock_new() then allows to create a GstClock that provides the PTP
+time from a master clock inside a specific PTP domain. This clock will only
+return valid timestamps once the timestamps in the PTP domain are known. To
+check this, you can use <link linkend="gst-clock-wait-for-sync"><function>gst_clock_wait_for_sync()</function></link>, the GstClock::synced
+signal and <link linkend="gst-clock-is-synced"><function>gst_clock_is_synced()</function></link>.</para>
+<para>To gather statistics about the PTP clock synchronization,
+<link linkend="gst-ptp-statistics-callback-add"><function>gst_ptp_statistics_callback_add()</function></link> can be used. This gives the application
+the possibility to collect all kinds of statistics from the clock
+synchronization.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstPtpClock.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-ptp-init" role="function" condition="since:1.6">
+<title>gst_ptp_init&#160;()</title>
+<indexterm zone="gst-ptp-init" role="1.6"><primary>gst_ptp_init</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ptp_init (<parameter><link linkend="guint64"><type>guint64</type></link> clock_id</parameter>,
+              <parameter><link linkend="gchar"><type>gchar</type></link> **interfaces</parameter>);</programlisting>
+<para>Initialize the GStreamer PTP subsystem and create a PTP ordinary clock in
+slave-only mode for all domains on the given <parameter>interfaces</parameter>
+ with the
+given <parameter>clock_id</parameter>
+.</para>
+<para>If <parameter>clock_id</parameter>
+ is <link linkend="GST-PTP-CLOCK-ID-NONE:CAPS"><literal>GST_PTP_CLOCK_ID_NONE</literal></link>, a clock id is automatically
+generated from the MAC address of the first network interface.</para>
+<para>This function is automatically called by <link linkend="gst-ptp-clock-new"><function>gst_ptp_clock_new()</function></link> with default
+parameters if it wasn't called before.</para>
+<refsect3 id="gst-ptp-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>clock_id</para></entry>
+<entry role="parameter_description"><para>PTP clock id of this process' clock or <link linkend="GST-PTP-CLOCK-ID-NONE:CAPS"><literal>GST_PTP_CLOCK_ID_NONE</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interfaces</para></entry>
+<entry role="parameter_description"><para> network interfaces to run the clock on. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ptp-init.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the GStreamer PTP clock subsystem could be initialized.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-ptp-deinit" role="function" condition="since:1.6">
+<title>gst_ptp_deinit&#160;()</title>
+<indexterm zone="gst-ptp-deinit" role="1.6"><primary>gst_ptp_deinit</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_ptp_deinit (<parameter><type>void</type></parameter>);</programlisting>
+<para>Deinitialize the GStreamer PTP subsystem and stop the PTP clock. If there
+are any remaining GstPtpClock instances, they won't be further synchronized
+to the PTP network clock.</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-ptp-is-initialized" role="function" condition="since:1.6">
+<title>gst_ptp_is_initialized&#160;()</title>
+<indexterm zone="gst-ptp-is-initialized" role="1.6"><primary>gst_ptp_is_initialized</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ptp_is_initialized (<parameter><type>void</type></parameter>);</programlisting>
+<para>Check if the GStreamer PTP clock subsystem is initialized.</para>
+<refsect3 id="gst-ptp-is-initialized.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the GStreamer PTP clock subsystem is intialized.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-ptp-is-supported" role="function" condition="since:1.6">
+<title>gst_ptp_is_supported&#160;()</title>
+<indexterm zone="gst-ptp-is-supported" role="1.6"><primary>gst_ptp_is_supported</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ptp_is_supported (<parameter><type>void</type></parameter>);</programlisting>
+<para>Check if PTP clocks are generally supported on this system, and if previous
+initializations did not fail.</para>
+<refsect3 id="gst-ptp-is-supported.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if PTP clocks are generally supported on this system, and
+previous initializations did not fail.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-ptp-clock-new" role="function" condition="since:1.6">
+<title>gst_ptp_clock_new&#160;()</title>
+<indexterm zone="gst-ptp-clock-new" role="1.6"><primary>gst_ptp_clock_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_ptp_clock_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                   <parameter><link linkend="guint"><type>guint</type></link> domain</parameter>);</programlisting>
+<para>Creates a new PTP clock instance that exports the PTP time of the master
+clock in <parameter>domain</parameter>
+. This clock can be slaved to other clocks as needed.</para>
+<para>If <link linkend="gst-ptp-init"><function>gst_ptp_init()</function></link> was not called before, this will call <link linkend="gst-ptp-init"><function>gst_ptp_init()</function></link> with
+default parameters.</para>
+<para>This clock only returns valid timestamps after it received the first
+times from the PTP master clock on the network. Once this happens the
+GstPtpClock::internal-clock property will become non-NULL. You can
+check this with <link linkend="gst-clock-wait-for-sync"><function>gst_clock_wait_for_sync()</function></link>, the GstClock::synced signal and
+<link linkend="gst-clock-is-synced"><function>gst_clock_is_synced()</function></link>.</para>
+<refsect3 id="gst-ptp-clock-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>Name of the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>domain</para></entry>
+<entry role="parameter_description"><para>PTP domain</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstPtpStatisticsCallback" role="function">
+<title>GstPtpStatisticsCallback&#160;()</title>
+<indexterm zone="GstPtpStatisticsCallback"><primary>GstPtpStatisticsCallback</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstPtpStatisticsCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="guint8"><type>guint8</type></link> domain</parameter>,
+                             <parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *stats</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>The statistics can be the following structures:</para>
+<para>GST_PTP_STATISTICS_NEW_DOMAIN_FOUND:
+"domain"                G_TYPE_UINT          The domain identifier of the domain
+"clock"                 GST_TYPE_CLOCK       The internal clock that is slaved to the
+                                             PTP domain</para>
+<para>GST_PTP_STATISTICS_BEST_MASTER_CLOCK_SELECTED:
+"domain"                G_TYPE_UINT          The domain identifier of the domain
+"master-clock-id"       G_TYPE_UINT64        PTP clock identifier of the selected master
+                                             clock
+"master-clock-port"     G_TYPE_UINT          PTP port number of the selected master clock
+"grandmaster-clock-id"  G_TYPE_UINT64        PTP clock identifier of the grandmaster clock</para>
+<para>GST_PTP_STATISTICS_PATH_DELAY_MEASURED:
+"domain"                G_TYPE_UINT          The domain identifier of the domain
+"mean-path-delay-avg"   GST_TYPE_CLOCK_TIME  Average mean path delay
+"mean-path-delay"       GST_TYPE_CLOCK_TIME  Latest mean path delay
+"delay-request-delay"   GST_TYPE_CLOCK_TIME  Delay of DELAY_REQ / DELAY_RESP messages</para>
+<para>GST_PTP_STATISTICS_TIME_UPDATED:
+"domain"                G_TYPE_UINT          The domain identifier of the domain
+"mean-path-delay-avg"   GST_TYPE_CLOCK_TIME  Average mean path delay
+"local-time"            GST_TYPE_CLOCK_TIME  Local time that corresponds to ptp-time
+"ptp-time"              GST_TYPE_CLOCK_TIME  Newly measured PTP time at local-time
+"estimated-ptp-time"    GST_TYPE_CLOCK_TIME  Estimated PTP time based on previous measurements
+"discontinuity"         G_TYPE_INT64         Difference between estimated and measured PTP time
+"synced"                G_TYPE_BOOLEAN       Currently synced to the remote clock
+"r-squared"             G_TYPE_DOUBLE        R² of clock estimation regression
+"internal-time"         GST_TYPE_CLOCK_TIME  Internal time clock parameter
+"external-time"         GST_TYPE_CLOCK_TIME  External time clock parameter
+"rate-num"              G_TYPE_UINT64        Internal/external rate numerator
+"rate-den"              G_TYPE_UINT64        Internal/external rate denominator
+"rate"                  G_TYPE_DOUBLE        Internal/external rate</para>
+<para>If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is returned, the callback is removed and never called again.</para>
+<refsect3 id="GstPtpStatisticsCallback.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>domain</para></entry>
+<entry role="parameter_description"><para>PTP domain identifier</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stats</para></entry>
+<entry role="parameter_description"><para>New statistics</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>Data passed to <link linkend="gst-ptp-statistics-callback-add"><function>gst_ptp_statistics_callback_add()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-ptp-statistics-callback-add" role="function" condition="since:1.6">
+<title>gst_ptp_statistics_callback_add&#160;()</title>
+<indexterm zone="gst-ptp-statistics-callback-add" role="1.6"><primary>gst_ptp_statistics_callback_add</primary></indexterm>
+<programlisting language="C"><link linkend="gulong"><returnvalue>gulong</returnvalue></link>
+gst_ptp_statistics_callback_add (<parameter><link linkend="GstPtpStatisticsCallback"><type>GstPtpStatisticsCallback</type></link> callback</parameter>,
+                                 <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                                 <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> destroy_data</parameter>);</programlisting>
+<para>Installs a new statistics callback for gathering PTP statistics. See
+GstPtpStatisticsCallback for a list of statistics that are provided.</para>
+<refsect3 id="gst-ptp-statistics-callback-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>GstPtpStatisticsCallback to call</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>Data to pass to the callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>destroy_data</para></entry>
+<entry role="parameter_description"><para>GDestroyNotify to destroy the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ptp-statistics-callback-add.returns" role="returns">
+<title>Returns</title>
+<para> Id for the callback that can be passed to
+<link linkend="gst-ptp-statistics-callback-remove"><function>gst_ptp_statistics_callback_remove()</function></link></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-ptp-statistics-callback-remove" role="function" condition="since:1.6">
+<title>gst_ptp_statistics_callback_remove&#160;()</title>
+<indexterm zone="gst-ptp-statistics-callback-remove" role="1.6"><primary>gst_ptp_statistics_callback_remove</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_ptp_statistics_callback_remove (<parameter><link linkend="gulong"><type>gulong</type></link> id</parameter>);</programlisting>
+<para>Removes a PTP statistics callback that was previously added with
+<link linkend="gst-ptp-statistics-callback-add"><function>gst_ptp_statistics_callback_add()</function></link>.</para>
+<refsect3 id="gst-ptp-statistics-callback-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>Callback id to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstPtpClock.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-PTP-CLOCK-ID-NONE:CAPS" role="macro">
+<title>GST_PTP_CLOCK_ID_NONE</title>
+<indexterm zone="GST-PTP-CLOCK-ID-NONE:CAPS"><primary>GST_PTP_CLOCK_ID_NONE</primary></indexterm>
+<programlisting language="C">#define GST_PTP_CLOCK_ID_NONE ((guint64) -1)
+</programlisting>
+</refsect2>
+<refsect2 id="GstPtpClock" role="struct">
+<title>struct GstPtpClock</title>
+<indexterm zone="GstPtpClock"><primary>GstPtpClock</primary></indexterm>
+<programlisting language="C">struct GstPtpClock {
+  GstSystemClock clock;
+};
+</programlisting>
+<para>Opaque <link linkend="GstPtpClock"><type>GstPtpClock</type></link> structure.</para>
+<refsect3 id="GstPtpClock.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstSystemClock"><type>GstSystemClock</type></link>&#160;<structfield id="GstPtpClock.clock">clock</structfield>;</para></entry>
+<entry role="struct_member_description"><para>parented to <link linkend="GstSystemClock"><type>GstSystemClock</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstPtpClock.see-also">
+<title>See Also</title>
+<para><link linkend="GstClock"><type>GstClock</type></link>, <link linkend="GstNetClientClock"><type>GstNetClientClock</type></link>, <link linkend="GstPipeline"><type>GstPipeline</type></link></para>
+
+</refsect1>
+
+</refentry>

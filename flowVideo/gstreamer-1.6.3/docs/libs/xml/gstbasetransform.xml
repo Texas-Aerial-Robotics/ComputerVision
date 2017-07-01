@@ -1,0 +1,1034 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstBaseTransform">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstBaseTransform.top_of_page">GstBaseTransform</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBaseTransform</refname>
+<refpurpose>Base class for simple transform filters</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstBaseTransform.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-is-passthrough">gst_base_transform_is_passthrough</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-set-passthrough">gst_base_transform_set_passthrough</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-set-prefer-passthrough">gst_base_transform_set_prefer_passthrough</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-is-in-place">gst_base_transform_is_in_place</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-set-in-place">gst_base_transform_set_in_place</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-is-qos-enabled">gst_base_transform_is_qos_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-set-qos-enabled">gst_base_transform_set_qos_enabled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-update-qos">gst_base_transform_update_qos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-set-gap-aware">gst_base_transform_set_gap_aware</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-get-allocator">gst_base_transform_get_allocator</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferPool"><returnvalue>GstBufferPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-base-transform-get-buffer-pool">gst_base_transform_get_buffer_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-reconfigure-sink">gst_base_transform_reconfigure_sink</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-reconfigure-src">gst_base_transform_reconfigure_src</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-base-transform-update-src-caps">gst_base_transform_update_src_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-TRANSFORM-SINK-PAD:CAPS">GST_BASE_TRANSFORM_SINK_PAD</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-TRANSFORM-SRC-PAD:CAPS">GST_BASE_TRANSFORM_SRC_PAD</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseTransform.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstBaseTransform--qos">qos</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseTransform.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseTransform-struct">GstBaseTransform</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstBaseTransformClass">GstBaseTransformClass</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-TRANSFORM-SINK-NAME:CAPS">GST_BASE_TRANSFORM_SINK_NAME</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-TRANSFORM-SRC-NAME:CAPS">GST_BASE_TRANSFORM_SRC_NAME</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BASE-TRANSFORM-FLOW-DROPPED:CAPS">GST_BASE_TRANSFORM_FLOW_DROPPED</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstBaseTransform.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstBaseTransform
+</screen>
+</refsect1>
+
+<refsect1 id="GstBaseTransform.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstbasetransform.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstBaseTransform.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This base class is for filter elements that process data. Elements
+that are suitable for implementation using <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> are ones
+where the size and caps of the output is known entirely from the input
+caps and buffer sizes. These include elements that directly transform
+one buffer into another, modify the contents of a buffer in-place, as
+well as elements that collate multiple input buffers into one output buffer,
+or that expand one input buffer into multiple output buffers. See below
+for more concrete use cases.</para>
+<para>It provides for:</para>
+<itemizedlist>
+  <listitem><para>one sinkpad and one srcpad</para></listitem>
+  <listitem><para>
+     Possible formats on sink and source pad implemented
+     with custom transform_caps function. By default uses
+     same format on sink and source.
+  </para></listitem>
+  <listitem><para>Handles state changes</para></listitem>
+  <listitem><para>Does flushing</para></listitem>
+  <listitem><para>Push mode</para></listitem>
+  <listitem><para>
+      Pull mode if the sub-class transform can operate on arbitrary data
+   </para></listitem>
+</itemizedlist>
+<refsect2>
+<title>Use Cases</title>
+<para>
+<orderedlist>
+<listitem>
+  <itemizedlist><title>Passthrough mode</title>
+  <listitem><para>
+    Element has no interest in modifying the buffer. It may want to inspect it,
+    in which case the element should have a transform_ip function. If there
+    is no transform_ip function in passthrough mode, the buffer is pushed
+    intact.
+  </para></listitem>
+  <listitem><para>
+    The <link linkend="GstBaseTransformClass.passthrough-on-same-caps"><type>GstBaseTransformClass.passthrough_on_same_caps</type></link> variable
+    will automatically set/unset passthrough based on whether the
+    element negotiates the same caps on both pads.
+  </para></listitem>
+  <listitem><para>
+    <link linkend="GstBaseTransformClass.passthrough-on-same-caps"><type>GstBaseTransformClass.passthrough_on_same_caps</type></link> on an element that
+    doesn't implement a transform_caps function is useful for elements that
+    only inspect data (such as level)
+  </para></listitem>
+  </itemizedlist>
+  <itemizedlist>
+  <title>Example elements</title>
+    <listitem>Level</listitem>
+    <listitem>Videoscale, audioconvert, videoconvert, audioresample in
+    certain modes.</listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist>
+    <title>Modifications in-place - input buffer and output buffer are the
+    same thing.</title>
+  <listitem><para>
+    The element must implement a transform_ip function.
+  </para></listitem>
+  <listitem><para>
+    Output buffer size must &lt;= input buffer size
+  </para></listitem>
+  <listitem><para>
+    If the always_in_place flag is set, non-writable buffers will be copied
+    and passed to the transform_ip function, otherwise a new buffer will be
+    created and the transform function called.
+  </para></listitem>
+  <listitem><para>
+    Incoming writable buffers will be passed to the transform_ip function
+    immediately.  </para></listitem>
+  <listitem><para>
+    only implementing transform_ip and not transform implies always_in_place
+    = <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>
+  </para></listitem>
+  </itemizedlist>
+  <itemizedlist>
+  <title>Example elements</title>
+    <listitem>Volume</listitem>
+    <listitem>Audioconvert in certain modes (signed/unsigned
+    conversion)</listitem>
+    <listitem>videoconvert in certain modes (endianness
+    swapping)</listitem>
+  </itemizedlist>
+ </listitem>
+<listitem>
+  <itemizedlist>
+  <title>Modifications only to the caps/metadata of a buffer</title>
+  <listitem><para>
+    The element does not require writable data, but non-writable buffers
+    should be subbuffered so that the meta-information can be replaced.
+  </para></listitem>
+  <listitem><para>
+    Elements wishing to operate in this mode should replace the
+    prepare_output_buffer method to create subbuffers of the input buffer
+    and set always_in_place to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>
+  </para></listitem>
+  </itemizedlist>
+  <itemizedlist>
+  <title>Example elements</title>
+    <listitem>Capsfilter when setting caps on outgoing buffers that have
+    none.</listitem>
+    <listitem>identity when it is going to re-timestamp buffers by
+    datarate.</listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist><title>Normal mode</title>
+  <listitem><para>
+    always_in_place flag is not set, or there is no transform_ip function
+  </para></listitem>
+  <listitem><para>
+    Element will receive an input buffer and output buffer to operate on.
+  </para></listitem>
+  <listitem><para>
+    Output buffer is allocated by calling the prepare_output_buffer function.
+  </para></listitem>
+  </itemizedlist>
+  <itemizedlist>
+  <title>Example elements</title>
+    <listitem>Videoscale, videoconvert, audioconvert when doing
+    scaling/conversions</listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist><title>Special output buffer allocations</title>
+  <listitem><para>
+    Elements which need to do special allocation of their output buffers
+    beyond allocating output buffers via the negotiated allocator or
+    buffer pool should implement the prepare_output_buffer method.
+  </para></listitem>
+  </itemizedlist>
+  <itemizedlist>
+  <title>Example elements</title>
+    <listitem>efence</listitem>
+  </itemizedlist>
+</listitem>
+</orderedlist>
+</para>
+</refsect2>
+<refsect2>
+<title>Sub-class settable flags on GstBaseTransform</title>
+<para>
+<itemizedlist>
+<listitem><para>
+  <itemizedlist><title>passthrough</title>
+    <listitem><para>
+      Implies that in the current configuration, the sub-class is not
+      interested in modifying the buffers.
+    </para></listitem>
+    <listitem><para>
+      Elements which are always in passthrough mode whenever the same caps
+      has been negotiated on both pads can set the class variable
+      passthrough_on_same_caps to have this behaviour automatically.
+    </para></listitem>
+  </itemizedlist>
+</para></listitem>
+<listitem><para>
+  <itemizedlist><title>always_in_place</title>
+    <listitem><para>
+      Determines whether a non-writable buffer will be copied before passing
+      to the transform_ip function.
+    </para></listitem>
+    <listitem><para>
+      Implied <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if no transform function is implemented.
+    </para></listitem>
+    <listitem><para>
+      Implied <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if ONLY transform function is implemented.
+    </para></listitem>
+  </itemizedlist>
+</para></listitem>
+</itemizedlist>
+</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseTransform.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-base-transform-is-passthrough" role="function">
+<title>gst_base_transform_is_passthrough&#160;()</title>
+<indexterm zone="gst-base-transform-is-passthrough"><primary>gst_base_transform_is_passthrough</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_transform_is_passthrough (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>);</programlisting>
+<para>See if <parameter>trans</parameter>
+ is configured as a passthrough transform.</para>
+<refsect3 id="gst-base-transform-is-passthrough.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-transform-is-passthrough.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> is the transform is configured in passthrough mode.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-set-passthrough" role="function">
+<title>gst_base_transform_set_passthrough&#160;()</title>
+<indexterm zone="gst-base-transform-set-passthrough"><primary>gst_base_transform_set_passthrough</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_set_passthrough (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                    <parameter><link linkend="gboolean"><type>gboolean</type></link> passthrough</parameter>);</programlisting>
+<para>Set passthrough mode for this filter by default. This is mostly
+useful for filters that do not care about negotiation.</para>
+<para>Always <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for filters which don't implement either a transform
+or transform_ip method.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-base-transform-set-passthrough.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>passthrough</para></entry>
+<entry role="parameter_description"><para>boolean indicating passthrough mode.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-set-prefer-passthrough" role="function" condition="since:1.0.1">
+<title>gst_base_transform_set_prefer_passthrough&#160;()</title>
+<indexterm zone="gst-base-transform-set-prefer-passthrough" role="1.0.1"><primary>gst_base_transform_set_prefer_passthrough</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_set_prefer_passthrough
+                               (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> prefer_passthrough</parameter>);</programlisting>
+<para>If <parameter>prefer_passthrough</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> (the default), <parameter>trans</parameter>
+ will check and
+prefer passthrough caps from the list of caps returned by the
+transform_caps vmethod.</para>
+<para>If set to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, the element must order the caps returned from the
+transform_caps function in such a way that the preferred format is
+first in the list. This can be interesting for transforms that can do
+passthrough transforms but prefer to do something else, like a
+capsfilter.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-base-transform-set-prefer-passthrough.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prefer_passthrough</para></entry>
+<entry role="parameter_description"><para>New state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.0.1">1.0.1</link></para></refsect2>
+<refsect2 id="gst-base-transform-is-in-place" role="function">
+<title>gst_base_transform_is_in_place&#160;()</title>
+<indexterm zone="gst-base-transform-is-in-place"><primary>gst_base_transform_is_in_place</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_transform_is_in_place (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>);</programlisting>
+<para>See if <parameter>trans</parameter>
+ is configured as a in_place transform.</para>
+<refsect3 id="gst-base-transform-is-in-place.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-transform-is-in-place.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> is the transform is configured in in_place mode.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-set-in-place" role="function">
+<title>gst_base_transform_set_in_place&#160;()</title>
+<indexterm zone="gst-base-transform-set-in-place"><primary>gst_base_transform_set_in_place</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_set_in_place (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                 <parameter><link linkend="gboolean"><type>gboolean</type></link> in_place</parameter>);</programlisting>
+<para>Determines whether a non-writable buffer will be copied before passing
+to the transform_ip function.</para>
+<itemizedlist>
+  <listitem>Always <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if no transform function is implemented.</listitem>
+  <listitem>Always <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if ONLY transform function is implemented.</listitem>
+</itemizedlist>
+<para>MT safe.</para>
+<refsect3 id="gst-base-transform-set-in-place.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> to modify</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>in_place</para></entry>
+<entry role="parameter_description"><para>Boolean value indicating that we would like to operate
+on in_place buffers.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-is-qos-enabled" role="function">
+<title>gst_base_transform_is_qos_enabled&#160;()</title>
+<indexterm zone="gst-base-transform-is-qos-enabled"><primary>gst_base_transform_is_qos_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_transform_is_qos_enabled (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>);</programlisting>
+<para>Queries if the transform will handle QoS.</para>
+<refsect3 id="gst-base-transform-is-qos-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-transform-is-qos-enabled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if QoS is enabled.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-set-qos-enabled" role="function">
+<title>gst_base_transform_set_qos_enabled&#160;()</title>
+<indexterm zone="gst-base-transform-set-qos-enabled"><primary>gst_base_transform_set_qos_enabled</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_set_qos_enabled (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                    <parameter><link linkend="gboolean"><type>gboolean</type></link> enabled</parameter>);</programlisting>
+<para>Enable or disable QoS handling in the transform.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-base-transform-set-qos-enabled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enabled</para></entry>
+<entry role="parameter_description"><para>new state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-update-qos" role="function">
+<title>gst_base_transform_update_qos&#160;()</title>
+<indexterm zone="gst-base-transform-update-qos"><primary>gst_base_transform_update_qos</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_update_qos (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                               <parameter><link linkend="gdouble"><type>gdouble</type></link> proportion</parameter>,
+                               <parameter><link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> diff</parameter>,
+                               <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Set the QoS parameters in the transform. This function is called internally
+when a QOS event is received but subclasses can provide custom information
+when needed.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-base-transform-update-qos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>proportion</para></entry>
+<entry role="parameter_description"><para>the proportion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>diff</para></entry>
+<entry role="parameter_description"><para>the diff against the clock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the timestamp of the buffer generating the QoS expressed in
+running_time.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-set-gap-aware" role="function">
+<title>gst_base_transform_set_gap_aware&#160;()</title>
+<indexterm zone="gst-base-transform-set-gap-aware"><primary>gst_base_transform_set_gap_aware</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_set_gap_aware (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                  <parameter><link linkend="gboolean"><type>gboolean</type></link> gap_aware</parameter>);</programlisting>
+<para>If <parameter>gap_aware</parameter>
+ is <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> (the default), output buffers will have the
+<link linkend="GST-BUFFER-FLAG-GAP:CAPS"><literal>GST_BUFFER_FLAG_GAP</literal></link> flag unset.</para>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, the element must handle output buffers with this flag set
+correctly, i.e. it can assume that the buffer contains neutral data but must
+unset the flag if the output is no neutral data.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-base-transform-set-gap-aware.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>gap_aware</para></entry>
+<entry role="parameter_description"><para>New state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-get-allocator" role="function">
+<title>gst_base_transform_get_allocator&#160;()</title>
+<indexterm zone="gst-base-transform-get-allocator"><primary>gst_base_transform_get_allocator</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_get_allocator (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                  <parameter><link linkend="GstAllocator"><type>GstAllocator</type></link> **allocator</parameter>,
+                                  <parameter><link linkend="GstAllocationParams"><type>GstAllocationParams</type></link> *params</parameter>);</programlisting>
+<para>Lets <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> sub-classes to know the memory <parameter>allocator</parameter>
+
+used by the base class and its <parameter>params</parameter>
+.</para>
+<para>Unref the <parameter>allocator</parameter>
+ after use it.</para>
+<refsect3 id="gst-base-transform-get-allocator.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>allocator</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstAllocator"><type>GstAllocator</type></link>
+used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>params</para></entry>
+<entry role="parameter_description"><para> the
+<link linkend="GstAllocationParams"><type>GstAllocationParams</type></link> of <parameter>allocator</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-get-buffer-pool" role="function">
+<title>gst_base_transform_get_buffer_pool&#160;()</title>
+<indexterm zone="gst-base-transform-get-buffer-pool"><primary>gst_base_transform_get_buffer_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferPool"><returnvalue>GstBufferPool</returnvalue></link>&#160;*
+gst_base_transform_get_buffer_pool (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>);</programlisting>
+<refsect3 id="gst-base-transform-get-buffer-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-transform-get-buffer-pool.returns" role="returns">
+<title>Returns</title>
+<para> the instance of the <link linkend="GstBufferPool"><type>GstBufferPool</type></link> used
+by <parameter>trans</parameter>
+; free it after use it. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-reconfigure-sink" role="function">
+<title>gst_base_transform_reconfigure_sink&#160;()</title>
+<indexterm zone="gst-base-transform-reconfigure-sink"><primary>gst_base_transform_reconfigure_sink</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_reconfigure_sink (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>);</programlisting>
+<para>Instructs <parameter>trans</parameter>
+ to request renegotiation upstream. This function is
+typically called after properties on the transform were set that
+influence the input format.</para>
+<refsect3 id="gst-base-transform-reconfigure-sink.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-reconfigure-src" role="function">
+<title>gst_base_transform_reconfigure_src&#160;()</title>
+<indexterm zone="gst-base-transform-reconfigure-src"><primary>gst_base_transform_reconfigure_src</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_base_transform_reconfigure_src (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>);</programlisting>
+<para>Instructs <parameter>trans</parameter>
+ to renegotiate a new downstream transform on the next
+buffer. This function is typically called after properties on the transform
+were set that influence the output format.</para>
+<refsect3 id="gst-base-transform-reconfigure-src.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-base-transform-update-src-caps" role="function" condition="since:1.6">
+<title>gst_base_transform_update_src_caps&#160;()</title>
+<indexterm zone="gst-base-transform-update-src-caps" role="1.6"><primary>gst_base_transform_update_src_caps</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_base_transform_update_src_caps (<parameter><link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> *trans</parameter>,
+                                    <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *updated_caps</parameter>);</programlisting>
+<para>Updates the srcpad caps and send the caps downstream. This function
+can be used by subclasses when they have already negotiated their caps
+but found a change in them (or computed new informations). This way,
+they can notify downstream about that change without loosing any
+buffer.</para>
+<refsect3 id="gst-base-transform-update-src-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>updated_caps</para></entry>
+<entry role="parameter_description"><para>An updated version of the srcpad caps to be pushed
+downstream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-base-transform-update-src-caps.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the caps could be send downstream <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-BASE-TRANSFORM-SINK-PAD:CAPS" role="macro">
+<title>GST_BASE_TRANSFORM_SINK_PAD()</title>
+<indexterm zone="GST-BASE-TRANSFORM-SINK-PAD:CAPS"><primary>GST_BASE_TRANSFORM_SINK_PAD</primary></indexterm>
+<programlisting language="C">#define GST_BASE_TRANSFORM_SINK_PAD(obj)&#160;(GST_BASE_TRANSFORM_CAST (obj)-&gt;sinkpad)
+</programlisting>
+<para>Gives the pointer to the sink <link linkend="GstPad"><type>GstPad</type></link> object of the element.</para>
+<refsect3 id="GST-BASE-TRANSFORM-SINK-PAD.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>base transform instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-BASE-TRANSFORM-SRC-PAD:CAPS" role="macro">
+<title>GST_BASE_TRANSFORM_SRC_PAD()</title>
+<indexterm zone="GST-BASE-TRANSFORM-SRC-PAD:CAPS"><primary>GST_BASE_TRANSFORM_SRC_PAD</primary></indexterm>
+<programlisting language="C">#define GST_BASE_TRANSFORM_SRC_PAD(obj)		(GST_BASE_TRANSFORM_CAST (obj)-&gt;srcpad)
+</programlisting>
+<para>Gives the pointer to the source <link linkend="GstPad"><type>GstPad</type></link> object of the element.</para>
+<refsect3 id="GST-BASE-TRANSFORM-SRC-PAD.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>base transform instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseTransform.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBaseTransform-struct" role="struct">
+<title>struct GstBaseTransform</title>
+<indexterm zone="GstBaseTransform-struct"><primary>GstBaseTransform</primary></indexterm>
+<programlisting language="C">struct GstBaseTransform;</programlisting>
+<para>The opaque <link linkend="GstBaseTransform"><type>GstBaseTransform</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstBaseTransformClass" role="struct">
+<title>struct GstBaseTransformClass</title>
+<indexterm zone="GstBaseTransformClass"><primary>GstBaseTransformClass</primary></indexterm>
+<programlisting language="C">struct GstBaseTransformClass {
+  GstElementClass parent_class;
+
+  gboolean       passthrough_on_same_caps;
+  gboolean       transform_ip_on_passthrough;
+
+  /* virtual methods for subclasses */
+  GstCaps*&#160;(*transform_caps) (GstBaseTransform *trans,
+                                   GstPadDirection direction,
+                                   GstCaps *caps, GstCaps *filter);
+  GstCaps*&#160;(*fixate_caps)	  (GstBaseTransform *trans,
+                                   GstPadDirection direction, GstCaps *caps,
+                                   GstCaps *othercaps);
+  gboolean      (*accept_caps)    (GstBaseTransform *trans, GstPadDirection direction,
+                                   GstCaps *caps);
+  gboolean      (*set_caps)       (GstBaseTransform *trans, GstCaps *incaps,
+                                   GstCaps *outcaps);
+  gboolean      (*query)          (GstBaseTransform *trans, GstPadDirection direction,
+                                   GstQuery *query);
+
+  /* decide allocation query for output buffers */
+  gboolean      (*decide_allocation)  (GstBaseTransform *trans, GstQuery *query);
+  gboolean      (*filter_meta)        (GstBaseTransform *trans, GstQuery *query,
+                                       GType api, const GstStructure *params);
+
+  /* propose allocation query parameters for input buffers */
+  gboolean      (*propose_allocation) (GstBaseTransform *trans, GstQuery *decide_query,
+                                       GstQuery *query);
+
+  /* transform size */
+  gboolean      (*transform_size) (GstBaseTransform *trans,
+                                   GstPadDirection direction,
+                                   GstCaps *caps, gsize size,
+                                   GstCaps *othercaps, gsize *othersize);
+
+  gboolean      (*get_unit_size)  (GstBaseTransform *trans, GstCaps *caps,
+                                   gsize *size);
+
+  /* states */
+  gboolean      (*start)        (GstBaseTransform *trans);
+  gboolean      (*stop)         (GstBaseTransform *trans);
+
+  /* sink and src pad event handlers */
+  gboolean      (*sink_event)   (GstBaseTransform *trans, GstEvent *event);
+  gboolean      (*src_event)    (GstBaseTransform *trans, GstEvent *event);
+
+  GstFlowReturn (*prepare_output_buffer) (GstBaseTransform * trans,
+                                          GstBuffer *input, GstBuffer **outbuf);
+
+  /* metadata */
+  gboolean      (*copy_metadata)     (GstBaseTransform *trans, GstBuffer *input,
+                                      GstBuffer *outbuf);
+  gboolean      (*transform_meta)    (GstBaseTransform *trans, GstBuffer *outbuf,
+                                      GstMeta *meta, GstBuffer *inbuf);
+
+  void          (*before_transform)  (GstBaseTransform *trans, GstBuffer *buffer);
+
+  /* transform */
+  GstFlowReturn (*transform)    (GstBaseTransform *trans, GstBuffer *inbuf,
+                                 GstBuffer *outbuf);
+  GstFlowReturn (*transform_ip) (GstBaseTransform *trans, GstBuffer *buf);
+
+  GstFlowReturn (*submit_input_buffer) (GstBaseTransform *trans, gboolean is_discont, GstBuffer *input);
+  GstFlowReturn (*generate_output) (GstBaseTransform *trans, GstBuffer **outbuf);
+};
+</programlisting>
+<para>Subclasses can override any of the available virtual methods or not, as
+needed. At minimum either <parameter>transform</parameter>
+ or <parameter>transform_ip</parameter>
+ need to be overridden.
+If the element can overwrite the input data with the results (data is of the
+same type and quantity) it should provide <parameter>transform_ip</parameter>
+.</para>
+<refsect3 id="GstBaseTransformClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstBaseTransformClass.passthrough-on-same-caps">passthrough_on_same_caps</structfield>;</para></entry>
+<entry role="struct_member_description"><para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, passthrough mode will be
+automatically enabled if the caps are the same.
+Set to <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> by default.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstBaseTransformClass.transform-ip-on-passthrough">transform_ip_on_passthrough</structfield>;</para></entry>
+<entry role="struct_member_description"><para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, <parameter>transform_ip</parameter>
+will be called in
+passthrough mode. The passed buffer might not be
+writable. When <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, neither <parameter>transform</parameter>
+nor
+<parameter>transform_ip</parameter>
+will be called in passthrough mode.
+Set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> by default.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.transform-caps">transform_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.  Given the pad in this direction and the given
+caps, what caps are allowed on the other pad in this
+element ?</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.fixate-caps">fixate_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional. Given the pad in this direction and the given
+caps, fixate the caps on the other pad. The function takes
+ownership of <parameter>othercaps</parameter>
+and returns a fixated version of
+<parameter>othercaps</parameter>
+. <parameter>othercaps</parameter>
+is not guaranteed to be writable.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.accept-caps">accept_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Subclasses can override this method to check if <parameter>caps</parameter>
+can be
+handled by the element. The default implementation might not be
+the most optimal way to check this in all cases.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.set-caps">set_caps</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>allows the subclass to be notified of the actual caps set.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.query">query</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Handle a requested query. Subclasses that implement this
+should must chain up to the parent if they didn't handle the
+query</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.decide-allocation">decide_allocation</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Setup the allocation parameters for allocating output
+buffers. The passed in query contains the result of the
+downstream allocation query. This function is only called
+when not operating in passthrough mode. The default
+implementation will remove all memory dependent metadata.
+If there is a <parameter>filter_meta</parameter>
+method implementation, it will
+be called for all metadata API in the downstream query,
+otherwise the metadata API is removed.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.filter-meta">filter_meta</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Return <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the metadata API should be proposed in the
+upstream allocation query. The default implementation is <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+and will cause all metadata to be removed.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.propose-allocation">propose_allocation</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Propose buffer allocation parameters for upstream elements.
+This function must be implemented if the element reads or
+writes the buffer content. The query that was passed to
+the decide_allocation is passed in this method (or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+when the element is in passthrough mode). The default
+implementation will pass the query downstream when in
+passthrough mode and will copy all the filtered metadata
+API in non-passthrough mode.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.transform-size">transform_size</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional. Given the size of a buffer in the given direction
+with the given caps, calculate the size in bytes of a buffer
+on the other pad with the given other caps.
+The default implementation uses get_unit_size and keeps
+the number of units the same.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.get-unit-size">get_unit_size</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Required if the transform is not in-place.
+get the size in bytes of one unit for the given caps.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.start">start</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Called when the element starts processing.
+Allows opening external resources.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.stop">stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Called when the element stops processing.
+Allows closing external resources.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.sink-event">sink_event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Event handler on the sink pad. The default implementation
+handles the event and forwards it downstream.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.src-event">src_event</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Event handler on the source pad. The default implementation
+handles the event and forwards it upstream.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.prepare-output-buffer">prepare_output_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Subclasses can override this to do their own
+allocation of output buffers.  Elements that only do
+analysis can return a subbuffer or even just
+return a reference to the input buffer (if in
+passthrough mode). The default implementation will
+use the negotiated allocator or bufferpool and
+transform_size to allocate an output buffer or it
+will return the input buffer in passthrough mode.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.copy-metadata">copy_metadata</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+Copy the metadata from the input buffer to the output buffer.
+The default implementation will copy the flags, timestamps and
+offsets of the buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.transform-meta">transform_meta</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional. Transform the metadata on the input buffer to the
+output buffer. By default this method copies all meta without
+tags. subclasses can implement this method and return <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if
+the metadata is to be copied.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.before-transform">before_transform</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Optional.
+This method is called right before the base class will
+start processing. Dynamic properties or other delayed
+configuration could be performed in this method.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.transform">transform</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Required if the element does not operate in-place.
+Transforms one incoming buffer to one outgoing buffer.
+The function is allowed to change size/timestamp/duration
+of the outgoing buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.transform-ip">transform_ip</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Required if the element operates in-place.
+Transform the incoming buffer in-place.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.submit-input-buffer">submit_input_buffer</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Function which accepts a new input buffer and pre-processes it.
+The default implementation performs caps (re)negotiation, then
+QoS if needed, and places the input buffer into the <parameter>queued_buf</parameter>
+member variable. If the buffer is dropped due to QoS, it returns
+GST_BASE_TRANSFORM_FLOW_DROPPED. If this input buffer is not
+contiguous with any previous input buffer, then <parameter>is_discont</parameter>
+is set to <link linkend="TRUE:CAPS"><type>TRUE</type></link>. (Since 1.6)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstBaseTransformClass.generate-output">generate_output</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called after each new input buffer is submitted repeatedly
+until it either generates an error or fails to generate an output
+buffer. The default implementation takes the contents of the
+<parameter>queued_buf</parameter>
+variable, generates an output buffer if needed
+by calling the class <parameter>prepare_output_buffer</parameter>
+, and then
+calls either <parameter>transform</parameter>
+or <parameter>transform_ip</parameter>
+. Elements that don't
+do 1-to-1 transformations on input to output buffers can either
+return GST_BASE_TRANSFORM_FLOW_DROPPED or simply not generate
+an output buffer until they are ready to do so. (Since 1.6)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GST-BASE-TRANSFORM-SINK-NAME:CAPS" role="macro">
+<title>GST_BASE_TRANSFORM_SINK_NAME</title>
+<indexterm zone="GST-BASE-TRANSFORM-SINK-NAME:CAPS"><primary>GST_BASE_TRANSFORM_SINK_NAME</primary></indexterm>
+<programlisting language="C">#define GST_BASE_TRANSFORM_SINK_NAME&#160;"sink"
+</programlisting>
+<para>The name of the templates for the sink pad.</para>
+</refsect2>
+<refsect2 id="GST-BASE-TRANSFORM-SRC-NAME:CAPS" role="macro">
+<title>GST_BASE_TRANSFORM_SRC_NAME</title>
+<indexterm zone="GST-BASE-TRANSFORM-SRC-NAME:CAPS"><primary>GST_BASE_TRANSFORM_SRC_NAME</primary></indexterm>
+<programlisting language="C">#define GST_BASE_TRANSFORM_SRC_NAME&#160;"src"
+</programlisting>
+<para>The name of the templates for the source pad.</para>
+</refsect2>
+<refsect2 id="GST-BASE-TRANSFORM-FLOW-DROPPED:CAPS" role="macro">
+<title>GST_BASE_TRANSFORM_FLOW_DROPPED</title>
+<indexterm zone="GST-BASE-TRANSFORM-FLOW-DROPPED:CAPS"><primary>GST_BASE_TRANSFORM_FLOW_DROPPED</primary></indexterm>
+<programlisting language="C">#define GST_BASE_TRANSFORM_FLOW_DROPPED   GST_FLOW_CUSTOM_SUCCESS
+</programlisting>
+<para>A <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> that can be returned from transform and transform_ip to
+indicate that no output buffer was generated.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseTransform.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstBaseTransform--qos" role="property"><title>The <literal>“qos”</literal> property</title>
+<indexterm zone="GstBaseTransform--qos"><primary>GstBaseTransform:qos</primary></indexterm>
+<programlisting>  “qos”                      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Handle Quality-of-Service events.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstBaseTransform.see-also">
+<title>See Also</title>
+<para><link linkend="GstBaseSrc"><type>GstBaseSrc</type></link>, <link linkend="GstBaseSink"><type>GstBaseSink</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,2113 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstByteWriter">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstByteWriter.top_of_page">GstByteWriter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstByteWriter</refname>
+<refpurpose>Writes different integer, string and floating point
+    types to a memory buffer and allows reading</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstByteWriter.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstByteWriter"><returnvalue>GstByteWriter</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-new">gst_byte_writer_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstByteWriter"><returnvalue>GstByteWriter</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-new-with-data">gst_byte_writer_new_with_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstByteWriter"><returnvalue>GstByteWriter</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-new-with-size">gst_byte_writer_new_with_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-init">gst_byte_writer_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-init-with-data">gst_byte_writer_init_with_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-init-with-size">gst_byte_writer_init_with_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-free">gst_byte_writer_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-free-and-get-buffer">gst_byte_writer_free_and_get_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-free-and-get-data">gst_byte_writer_free_and_get_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-reset">gst_byte_writer_reset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-reset-and-get-data">gst_byte_writer_reset_and_get_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-byte-writer-reset-and-get-buffer">gst_byte_writer_reset_and_get_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-get-pos">gst_byte_writer_get_pos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-set-pos">gst_byte_writer_set_pos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-get-remaining">gst_byte_writer_get_remaining</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-get-size">gst_byte_writer_get_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-ensure-free-space">gst_byte_writer_ensure_free_space</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int8">gst_byte_writer_put_int8</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int16-be">gst_byte_writer_put_int16_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int16-le">gst_byte_writer_put_int16_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int24-be">gst_byte_writer_put_int24_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int24-le">gst_byte_writer_put_int24_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int32-be">gst_byte_writer_put_int32_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int32-le">gst_byte_writer_put_int32_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int64-be">gst_byte_writer_put_int64_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int64-le">gst_byte_writer_put_int64_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint8">gst_byte_writer_put_uint8</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint16-be">gst_byte_writer_put_uint16_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint16-le">gst_byte_writer_put_uint16_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint24-be">gst_byte_writer_put_uint24_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint24-le">gst_byte_writer_put_uint24_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint32-be">gst_byte_writer_put_uint32_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint32-le">gst_byte_writer_put_uint32_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint64-be">gst_byte_writer_put_uint64_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint64-le">gst_byte_writer_put_uint64_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float32-be">gst_byte_writer_put_float32_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float32-le">gst_byte_writer_put_float32_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float64-be">gst_byte_writer_put_float64_be</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float64-le">gst_byte_writer_put_float64_le</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-byte-writer-put-string">gst_byte_writer_put_string</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-string-utf16">gst_byte_writer_put_string_utf16</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-string-utf32">gst_byte_writer_put_string_utf32</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-string-utf8">gst_byte_writer_put_string_utf8</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-data">gst_byte_writer_put_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-fill">gst_byte_writer_fill</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-buffer">gst_byte_writer_put_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-buffer-unchecked">gst_byte_writer_put_buffer_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int8-unchecked">gst_byte_writer_put_int8_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int16-be-unchecked">gst_byte_writer_put_int16_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int16-le-unchecked">gst_byte_writer_put_int16_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int24-be-unchecked">gst_byte_writer_put_int24_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int24-le-unchecked">gst_byte_writer_put_int24_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int32-be-unchecked">gst_byte_writer_put_int32_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int32-le-unchecked">gst_byte_writer_put_int32_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int64-be-unchecked">gst_byte_writer_put_int64_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-int64-le-unchecked">gst_byte_writer_put_int64_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint8-unchecked">gst_byte_writer_put_uint8_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint16-be-unchecked">gst_byte_writer_put_uint16_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint16-le-unchecked">gst_byte_writer_put_uint16_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint24-be-unchecked">gst_byte_writer_put_uint24_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint24-le-unchecked">gst_byte_writer_put_uint24_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint32-be-unchecked">gst_byte_writer_put_uint32_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint32-le-unchecked">gst_byte_writer_put_uint32_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint64-be-unchecked">gst_byte_writer_put_uint64_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-uint64-le-unchecked">gst_byte_writer_put_uint64_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float32-be-unchecked">gst_byte_writer_put_float32_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float32-le-unchecked">gst_byte_writer_put_float32_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float64-be-unchecked">gst_byte_writer_put_float64_be_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-float64-le-unchecked">gst_byte_writer_put_float64_le_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-put-data-unchecked">gst_byte_writer_put_data_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-byte-writer-fill-unchecked">gst_byte_writer_fill_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstByteWriter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstByteWriter">GstByteWriter</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstByteWriter.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstbytewriter.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstByteWriter.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> provides a byte writer and reader that can write/read different
+integer and floating point types to/from a memory buffer. It provides functions
+for writing/reading signed/unsigned, little/big endian integers of 8, 16, 24,
+32 and 64 bits and functions for reading little/big endian floating points numbers of
+32 and 64 bits. It also provides functions to write/read NUL-terminated strings
+in various character encodings.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstByteWriter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-byte-writer-new" role="function">
+<title>gst_byte_writer_new&#160;()</title>
+<indexterm zone="gst-byte-writer-new"><primary>gst_byte_writer_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstByteWriter"><returnvalue>GstByteWriter</returnvalue></link>&#160;*
+gst_byte_writer_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new, empty <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para>
+<para>Free-function: gst_byte_writer_free</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-byte-writer-new.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-new-with-data" role="function">
+<title>gst_byte_writer_new_with_data&#160;()</title>
+<indexterm zone="gst-byte-writer-new-with-data"><primary>gst_byte_writer_new_with_data</primary></indexterm>
+<programlisting language="C"><link linkend="GstByteWriter"><returnvalue>GstByteWriter</returnvalue></link>&#160;*
+gst_byte_writer_new_with_data (<parameter><link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                               <parameter><link linkend="gboolean"><type>gboolean</type></link> initialized</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance with the given
+memory area. If <parameter>initialized</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> it is possible to
+read <parameter>size</parameter>
+ bytes from the <link linkend="GstByteWriter"><type>GstByteWriter</type></link> from the beginning.</para>
+<para>Free-function: gst_byte_writer_free</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-byte-writer-new-with-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>Memory area for writing</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>initialized</para></entry>
+<entry role="parameter_description"><para>If <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> the complete data can be read from the beginning</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-new-with-data.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-new-with-size" role="function">
+<title>gst_byte_writer_new_with_size&#160;()</title>
+<indexterm zone="gst-byte-writer-new-with-size"><primary>gst_byte_writer_new_with_size</primary></indexterm>
+<programlisting language="C"><link linkend="GstByteWriter"><returnvalue>GstByteWriter</returnvalue></link>&#160;*
+gst_byte_writer_new_with_size (<parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                               <parameter><link linkend="gboolean"><type>gboolean</type></link> fixed</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance with the given
+initial data size.</para>
+<para>Free-function: gst_byte_writer_free</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-byte-writer-new-with-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Initial size of data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fixed</para></entry>
+<entry role="parameter_description"><para>If <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> the data can't be reallocated</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-new-with-size.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-init" role="function">
+<title>gst_byte_writer_init&#160;()</title>
+<indexterm zone="gst-byte-writer-init"><primary>gst_byte_writer_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_init (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Initializes <parameter>writer</parameter>
+ to an empty instance</para>
+<refsect3 id="gst-byte-writer-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-init-with-data" role="function">
+<title>gst_byte_writer_init_with_data&#160;()</title>
+<indexterm zone="gst-byte-writer-init-with-data"><primary>gst_byte_writer_init_with_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_init_with_data (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> initialized</parameter>);</programlisting>
+<para>Initializes <parameter>writer</parameter>
+ with the given
+memory area. If <parameter>initialized</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> it is possible to
+read <parameter>size</parameter>
+ bytes from the <link linkend="GstByteWriter"><type>GstByteWriter</type></link> from the beginning.</para>
+<refsect3 id="gst-byte-writer-init-with-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> Memory area for writing. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=size][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>initialized</para></entry>
+<entry role="parameter_description"><para>If <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> the complete data can be read from the beginning</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-init-with-size" role="function">
+<title>gst_byte_writer_init_with_size&#160;()</title>
+<indexterm zone="gst-byte-writer-init-with-size"><primary>gst_byte_writer_init_with_size</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_init_with_size (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> fixed</parameter>);</programlisting>
+<para>Initializes <parameter>writer</parameter>
+ with the given initial data size.</para>
+<refsect3 id="gst-byte-writer-init-with-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Initial size of data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fixed</para></entry>
+<entry role="parameter_description"><para>If <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> the data can't be reallocated</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-free" role="function">
+<title>gst_byte_writer_free&#160;()</title>
+<indexterm zone="gst-byte-writer-free"><primary>gst_byte_writer_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_free (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Frees <parameter>writer</parameter>
+ and all memory allocated by it.</para>
+<refsect3 id="gst-byte-writer-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-free-and-get-buffer" role="function">
+<title>gst_byte_writer_free_and_get_buffer&#160;()</title>
+<indexterm zone="gst-byte-writer-free-and-get-buffer"><primary>gst_byte_writer_free_and_get_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_byte_writer_free_and_get_buffer (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Frees <parameter>writer</parameter>
+ and all memory allocated by it except
+the current data, which is returned as <link linkend="GstBuffer"><type>GstBuffer</type></link>.</para>
+<para>Free-function: gst_buffer_unref</para>
+<refsect3 id="gst-byte-writer-free-and-get-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-free-and-get-buffer.returns" role="returns">
+<title>Returns</title>
+<para> the current data as buffer. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link>
+after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-free-and-get-data" role="function">
+<title>gst_byte_writer_free_and_get_data&#160;()</title>
+<indexterm zone="gst-byte-writer-free-and-get-data"><primary>gst_byte_writer_free_and_get_data</primary></indexterm>
+<programlisting language="C"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+gst_byte_writer_free_and_get_data (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Frees <parameter>writer</parameter>
+ and all memory allocated by it except
+the current data, which is returned.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-byte-writer-free-and-get-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-free-and-get-data.returns" role="returns">
+<title>Returns</title>
+<para> the current data. <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-reset" role="function">
+<title>gst_byte_writer_reset&#160;()</title>
+<indexterm zone="gst-byte-writer-reset"><primary>gst_byte_writer_reset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_reset (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Resets <parameter>writer</parameter>
+ and frees the data if it's
+owned by <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-reset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-reset-and-get-data" role="function">
+<title>gst_byte_writer_reset_and_get_data&#160;()</title>
+<indexterm zone="gst-byte-writer-reset-and-get-data"><primary>gst_byte_writer_reset_and_get_data</primary></indexterm>
+<programlisting language="C"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>&#160;*
+gst_byte_writer_reset_and_get_data (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Resets <parameter>writer</parameter>
+ and returns the current data.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-byte-writer-reset-and-get-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-reset-and-get-data.returns" role="returns">
+<title>Returns</title>
+<para> the current data. <link linkend="g-free"><function>g_free()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>array</acronym>][<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-reset-and-get-buffer" role="function">
+<title>gst_byte_writer_reset_and_get_buffer&#160;()</title>
+<indexterm zone="gst-byte-writer-reset-and-get-buffer"><primary>gst_byte_writer_reset_and_get_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_byte_writer_reset_and_get_buffer (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Resets <parameter>writer</parameter>
+ and returns the current data as buffer.</para>
+<para>Free-function: gst_buffer_unref</para>
+<refsect3 id="gst-byte-writer-reset-and-get-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-reset-and-get-buffer.returns" role="returns">
+<title>Returns</title>
+<para> the current data as buffer. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link>
+after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-get-pos" role="function">
+<title>gst_byte_writer_get_pos&#160;()</title>
+<indexterm zone="gst-byte-writer-get-pos"><primary>gst_byte_writer_get_pos</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_byte_writer_get_pos (<parameter>const <link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<refsect3 id="gst-byte-writer-get-pos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-get-pos.returns" role="returns">
+<title>Returns</title>
+<para> The current position of the read/write cursor</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-set-pos" role="function">
+<title>gst_byte_writer_set_pos&#160;()</title>
+<indexterm zone="gst-byte-writer-set-pos"><primary>gst_byte_writer_set_pos</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_set_pos (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                         <parameter><link linkend="guint"><type>guint</type></link> pos</parameter>);</programlisting>
+<para>Sets the current read/write cursor of <parameter>writer</parameter>
+. The new position
+can only be between 0 and the current size.</para>
+<refsect3 id="gst-byte-writer-set-pos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pos</para></entry>
+<entry role="parameter_description"><para>new position</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-set-pos.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the new position could be set</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-get-remaining" role="function">
+<title>gst_byte_writer_get_remaining&#160;()</title>
+<indexterm zone="gst-byte-writer-get-remaining"><primary>gst_byte_writer_get_remaining</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_byte_writer_get_remaining (<parameter>const <link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<para>Returns the remaining size of data that can still be written. If
+-1 is returned the remaining size is only limited by system resources.</para>
+<refsect3 id="gst-byte-writer-get-remaining.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-get-remaining.returns" role="returns">
+<title>Returns</title>
+<para> the remaining size of data that can still be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-get-size" role="function">
+<title>gst_byte_writer_get_size&#160;()</title>
+<indexterm zone="gst-byte-writer-get-size"><primary>gst_byte_writer_get_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_byte_writer_get_size (<parameter>const <link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>);</programlisting>
+<refsect3 id="gst-byte-writer-get-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-get-size.returns" role="returns">
+<title>Returns</title>
+<para> The current, initialized size of the data</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-ensure-free-space" role="function">
+<title>gst_byte_writer_ensure_free_space&#160;()</title>
+<indexterm zone="gst-byte-writer-ensure-free-space"><primary>gst_byte_writer_ensure_free_space</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_ensure_free_space (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                   <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Checks if enough free space from the current write cursor is
+available and reallocates if necessary.</para>
+<refsect3 id="gst-byte-writer-ensure-free-space.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Number of bytes that should be available</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-ensure-free-space.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if at least <parameter>size</parameter>
+bytes are still available</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int8" role="function">
+<title>gst_byte_writer_put_int8&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int8"><primary>gst_byte_writer_put_int8</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int8 (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                          <parameter><link linkend="gint8"><type>gint8</type></link> val</parameter>);</programlisting>
+<para>Writes a signed 8 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int16-be" role="function">
+<title>gst_byte_writer_put_int16_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int16-be"><primary>gst_byte_writer_put_int16_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int16_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint16"><type>gint16</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 16 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int16-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int16-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int16-le" role="function">
+<title>gst_byte_writer_put_int16_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int16-le"><primary>gst_byte_writer_put_int16_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int16_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint16"><type>gint16</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 16 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int16-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int16-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int24-be" role="function">
+<title>gst_byte_writer_put_int24_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int24-be"><primary>gst_byte_writer_put_int24_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int24_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 24 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int24-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int24-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int24-le" role="function">
+<title>gst_byte_writer_put_int24_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int24-le"><primary>gst_byte_writer_put_int24_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int24_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 24 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int24-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int24-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int32-be" role="function">
+<title>gst_byte_writer_put_int32_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int32-be"><primary>gst_byte_writer_put_int32_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int32_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 32 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int32-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int32-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int32-le" role="function">
+<title>gst_byte_writer_put_int32_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int32-le"><primary>gst_byte_writer_put_int32_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int32_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 32 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int32-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int32-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int64-be" role="function">
+<title>gst_byte_writer_put_int64_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int64-be"><primary>gst_byte_writer_put_int64_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int64_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint64"><type>gint64</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 64 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int64-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int64-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int64-le" role="function">
+<title>gst_byte_writer_put_int64_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int64-le"><primary>gst_byte_writer_put_int64_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_int64_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                              <parameter><link linkend="gint64"><type>gint64</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 64 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-int64-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-int64-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint8" role="function">
+<title>gst_byte_writer_put_uint8&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint8"><primary>gst_byte_writer_put_uint8</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint8 (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                           <parameter><link linkend="guint8"><type>guint8</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned 8 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint8.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint16-be" role="function">
+<title>gst_byte_writer_put_uint16_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint16-be"><primary>gst_byte_writer_put_uint16_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint16_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint16"><type>guint16</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 16 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint16-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint16-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint16-le" role="function">
+<title>gst_byte_writer_put_uint16_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint16-le"><primary>gst_byte_writer_put_uint16_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint16_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint16"><type>guint16</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 16 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint16-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint16-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint24-be" role="function">
+<title>gst_byte_writer_put_uint24_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint24-be"><primary>gst_byte_writer_put_uint24_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint24_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 24 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint24-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint24-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint24-le" role="function">
+<title>gst_byte_writer_put_uint24_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint24-le"><primary>gst_byte_writer_put_uint24_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint24_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 24 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint24-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint24-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint32-be" role="function">
+<title>gst_byte_writer_put_uint32_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint32-be"><primary>gst_byte_writer_put_uint32_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint32_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 32 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint32-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint32-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint32-le" role="function">
+<title>gst_byte_writer_put_uint32_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint32-le"><primary>gst_byte_writer_put_uint32_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint32_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 32 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint32-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint32-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint64-be" role="function">
+<title>gst_byte_writer_put_uint64_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint64-be"><primary>gst_byte_writer_put_uint64_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint64_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 64 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint64-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint64-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint64-le" role="function">
+<title>gst_byte_writer_put_uint64_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint64-le"><primary>gst_byte_writer_put_uint64_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_uint64_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                               <parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 64 bit integer to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-uint64-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-uint64-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float32-be" role="function">
+<title>gst_byte_writer_put_float32_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float32-be"><primary>gst_byte_writer_put_float32_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_float32_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gfloat"><type>gfloat</type></link> val</parameter>);</programlisting>
+<para>Writes a big endian 32 bit float to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-float32-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-float32-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float32-le" role="function">
+<title>gst_byte_writer_put_float32_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float32-le"><primary>gst_byte_writer_put_float32_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_float32_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gfloat"><type>gfloat</type></link> val</parameter>);</programlisting>
+<para>Writes a little endian 32 bit float to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-float32-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-float32-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float64-be" role="function">
+<title>gst_byte_writer_put_float64_be&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float64-be"><primary>gst_byte_writer_put_float64_be</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_float64_be (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gdouble"><type>gdouble</type></link> val</parameter>);</programlisting>
+<para>Writes a big endian 64 bit float to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-float64-be.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-float64-be.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float64-le" role="function">
+<title>gst_byte_writer_put_float64_le&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float64-le"><primary>gst_byte_writer_put_float64_le</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_float64_le (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gdouble"><type>gdouble</type></link> val</parameter>);</programlisting>
+<para>Writes a little endian 64 bit float to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-float64-le.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-float64-le.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-string" role="macro">
+<title>gst_byte_writer_put_string()</title>
+<indexterm zone="gst-byte-writer-put-string"><primary>gst_byte_writer_put_string</primary></indexterm>
+<programlisting language="C">#define             gst_byte_writer_put_string(writer, data)</programlisting>
+<para>Write a NUL-terminated string to <parameter>writer</parameter>
+ (including the terminator). The
+string is assumed to be in an 8-bit encoding (e.g. ASCII,UTF-8 or
+ISO-8859-1).</para>
+<refsect3 id="gst-byte-writer-put-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> Null terminated string. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-string.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the string could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-string-utf16" role="function">
+<title>gst_byte_writer_put_string_utf16&#160;()</title>
+<indexterm zone="gst-byte-writer-put-string-utf16"><primary>gst_byte_writer_put_string_utf16</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_string_utf16 (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                  <parameter>const <link linkend="guint16"><type>guint16</type></link> *data</parameter>);</programlisting>
+<para>Writes a NUL-terminated UTF16 string to <parameter>writer</parameter>
+ (including the terminator).</para>
+<refsect3 id="gst-byte-writer-put-string-utf16.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> UTF16 string to write. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-string-utf16.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-string-utf32" role="function">
+<title>gst_byte_writer_put_string_utf32&#160;()</title>
+<indexterm zone="gst-byte-writer-put-string-utf32"><primary>gst_byte_writer_put_string_utf32</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_string_utf32 (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                  <parameter>const <link linkend="guint32"><type>guint32</type></link> *data</parameter>);</programlisting>
+<para>Writes a NUL-terminated UTF32 string to <parameter>writer</parameter>
+ (including the terminator).</para>
+<refsect3 id="gst-byte-writer-put-string-utf32.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> UTF32 string to write. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-string-utf32.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-string-utf8" role="function">
+<title>gst_byte_writer_put_string_utf8&#160;()</title>
+<indexterm zone="gst-byte-writer-put-string-utf8"><primary>gst_byte_writer_put_string_utf8</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_string_utf8 (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *data</parameter>);</programlisting>
+<para>Writes a NUL-terminated UTF8 string to <parameter>writer</parameter>
+ (including the terminator).</para>
+<refsect3 id="gst-byte-writer-put-string-utf8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> UTF8 string to
+write. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>type</acronym> utf8]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-string-utf8.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-data" role="function">
+<title>gst_byte_writer_put_data&#160;()</title>
+<indexterm zone="gst-byte-writer-put-data"><primary>gst_byte_writer_put_data</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_data (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                          <parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                          <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Writes <parameter>size</parameter>
+ bytes of <parameter>data</parameter>
+ to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> Data to write. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> length=size]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-data.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-fill" role="function">
+<title>gst_byte_writer_fill&#160;()</title>
+<indexterm zone="gst-byte-writer-fill"><primary>gst_byte_writer_fill</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_fill (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                      <parameter><link linkend="guint8"><type>guint8</type></link> value</parameter>,
+                      <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Writes <parameter>size</parameter>
+ bytes containing <parameter>value</parameter>
+ to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-fill.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>Value to be written</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Number of bytes to be written</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-fill.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-buffer" role="function">
+<title>gst_byte_writer_put_buffer&#160;()</title>
+<indexterm zone="gst-byte-writer-put-buffer"><primary>gst_byte_writer_put_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_byte_writer_put_buffer (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                            <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                            <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                            <parameter><link linkend="gssize"><type>gssize</type></link> size</parameter>);</programlisting>
+<para>Writes <parameter>size</parameter>
+ bytes of <parameter>data</parameter>
+ to <parameter>writer</parameter>
+.</para>
+<refsect3 id="gst-byte-writer-put-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> source <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset to copy from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>total size to copy. If -1, all data is copied</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-byte-writer-put-buffer.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the data could be written</para>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-buffer-unchecked" role="function">
+<title>gst_byte_writer_put_buffer_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-buffer-unchecked"><primary>gst_byte_writer_put_buffer_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_buffer_unchecked (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                      <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                                      <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                                      <parameter><link linkend="gssize"><type>gssize</type></link> size</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-byte-writer-put-int8-unchecked" role="function">
+<title>gst_byte_writer_put_int8_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int8-unchecked"><primary>gst_byte_writer_put_int8_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int8_unchecked (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                    <parameter><link linkend="gint8"><type>gint8</type></link> val</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-byte-writer-put-int16-be-unchecked" role="function">
+<title>gst_byte_writer_put_int16_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int16-be-unchecked"><primary>gst_byte_writer_put_int16_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int16_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint16"><type>gint16</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 16 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int16-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int16-le-unchecked" role="function">
+<title>gst_byte_writer_put_int16_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int16-le-unchecked"><primary>gst_byte_writer_put_int16_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int16_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint16"><type>gint16</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 16 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int16-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int24-be-unchecked" role="function">
+<title>gst_byte_writer_put_int24_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int24-be-unchecked"><primary>gst_byte_writer_put_int24_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int24_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 24 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int24-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int24-le-unchecked" role="function">
+<title>gst_byte_writer_put_int24_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int24-le-unchecked"><primary>gst_byte_writer_put_int24_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int24_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 24 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int24-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int32-be-unchecked" role="function">
+<title>gst_byte_writer_put_int32_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int32-be-unchecked"><primary>gst_byte_writer_put_int32_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int32_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 32 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int32-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int32-le-unchecked" role="function">
+<title>gst_byte_writer_put_int32_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int32-le-unchecked"><primary>gst_byte_writer_put_int32_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int32_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint32"><type>gint32</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 32 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int32-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int64-be-unchecked" role="function">
+<title>gst_byte_writer_put_int64_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int64-be-unchecked"><primary>gst_byte_writer_put_int64_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int64_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> val</parameter>);</programlisting>
+<para>Writes a signed big endian 64 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int64-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-int64-le-unchecked" role="function">
+<title>gst_byte_writer_put_int64_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-int64-le-unchecked"><primary>gst_byte_writer_put_int64_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_int64_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> val</parameter>);</programlisting>
+<para>Writes a signed little endian 64 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-int64-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint8-unchecked" role="function">
+<title>gst_byte_writer_put_uint8_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint8-unchecked"><primary>gst_byte_writer_put_uint8_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint8_unchecked (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                     <parameter><link linkend="guint8"><type>guint8</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned 8 bit integer to <parameter>writer</parameter>
+ without checking if there
+is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint8-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint16-be-unchecked" role="function">
+<title>gst_byte_writer_put_uint16_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint16-be-unchecked"><primary>gst_byte_writer_put_uint16_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint16_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint16"><type>guint16</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 16 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint16-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint16-le-unchecked" role="function">
+<title>gst_byte_writer_put_uint16_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint16-le-unchecked"><primary>gst_byte_writer_put_uint16_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint16_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint16"><type>guint16</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 16 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint16-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint24-be-unchecked" role="function">
+<title>gst_byte_writer_put_uint24_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint24-be-unchecked"><primary>gst_byte_writer_put_uint24_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint24_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 24 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint24-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint24-le-unchecked" role="function">
+<title>gst_byte_writer_put_uint24_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint24-le-unchecked"><primary>gst_byte_writer_put_uint24_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint24_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 24 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint24-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint32-be-unchecked" role="function">
+<title>gst_byte_writer_put_uint32_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint32-be-unchecked"><primary>gst_byte_writer_put_uint32_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint32_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 32 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint32-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint32-le-unchecked" role="function">
+<title>gst_byte_writer_put_uint32_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint32-le-unchecked"><primary>gst_byte_writer_put_uint32_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint32_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 32 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint32-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint64-be-unchecked" role="function">
+<title>gst_byte_writer_put_uint64_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint64-be-unchecked"><primary>gst_byte_writer_put_uint64_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint64_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned big endian 64 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint64-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-uint64-le-unchecked" role="function">
+<title>gst_byte_writer_put_uint64_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-uint64-le-unchecked"><primary>gst_byte_writer_put_uint64_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_uint64_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> val</parameter>);</programlisting>
+<para>Writes a unsigned little endian 64 bit integer to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-uint64-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float32-be-unchecked" role="function">
+<title>gst_byte_writer_put_float32_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float32-be-unchecked"><primary>gst_byte_writer_put_float32_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_float32_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gfloat"><type>gfloat</type></link> val</parameter>);</programlisting>
+<para>Writes a big endian 32 bit float to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-float32-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float32-le-unchecked" role="function">
+<title>gst_byte_writer_put_float32_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float32-le-unchecked"><primary>gst_byte_writer_put_float32_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_float32_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gfloat"><type>gfloat</type></link> val</parameter>);</programlisting>
+<para>Writes a little endian 32 bit float to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-float32-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float64-be-unchecked" role="function">
+<title>gst_byte_writer_put_float64_be_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float64-be-unchecked"><primary>gst_byte_writer_put_float64_be_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_float64_be_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gdouble"><type>gdouble</type></link> val</parameter>);</programlisting>
+<para>Writes a big endian 64 bit float to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-float64-be-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-float64-le-unchecked" role="function">
+<title>gst_byte_writer_put_float64_le_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-float64-le-unchecked"><primary>gst_byte_writer_put_float64_le_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_float64_le_unchecked
+                               (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="gdouble"><type>gdouble</type></link> val</parameter>);</programlisting>
+<para>Writes a little endian 64 bit float to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-float64-le-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para>Value to write</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-put-data-unchecked" role="function">
+<title>gst_byte_writer_put_data_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-put-data-unchecked"><primary>gst_byte_writer_put_data_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_put_data_unchecked (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                    <parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Writes <parameter>size</parameter>
+ bytes of <parameter>data</parameter>
+ to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-put-data-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> Data to write. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer none</acronym>][<acronym>array</acronym> length=size]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-byte-writer-fill-unchecked" role="function">
+<title>gst_byte_writer_fill_unchecked&#160;()</title>
+<indexterm zone="gst-byte-writer-fill-unchecked"><primary>gst_byte_writer_fill_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_byte_writer_fill_unchecked (<parameter><link linkend="GstByteWriter"><type>GstByteWriter</type></link> *writer</parameter>,
+                                <parameter><link linkend="guint8"><type>guint8</type></link> value</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Writes <parameter>size</parameter>
+ bytes containing <parameter>value</parameter>
+ to <parameter>writer</parameter>
+ without
+checking if there is enough free space available in the byte writer.</para>
+<refsect3 id="gst-byte-writer-fill-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>writer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstByteWriter"><type>GstByteWriter</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>Value to be written</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Number of bytes to be written</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstByteWriter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstByteWriter" role="struct">
+<title>GstByteWriter</title>
+<indexterm zone="GstByteWriter"><primary>GstByteWriter</primary></indexterm>
+<programlisting language="C">typedef struct {
+  GstByteReader parent;
+
+  guint alloc_size;
+
+  gboolean fixed;
+  gboolean owned;
+} GstByteWriter;
+</programlisting>
+<para>A byte writer instance.</para>
+<refsect3 id="GstByteWriter.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstByteReader"><type>GstByteReader</type></link>&#160;<structfield id="GstByteWriter.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para><link linkend="GstByteReader"><type>GstByteReader</type></link> parent</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstByteWriter.alloc-size">alloc_size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Allocation size of the data</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstByteWriter.fixed">fixed</structfield>;</para></entry>
+<entry role="struct_member_description"><para>If <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> no reallocations are allowed</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstByteWriter.owned">owned</structfield>;</para></entry>
+<entry role="struct_member_description"><para>If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> no reallocations are allowed and copies of data are returned</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstDeviceProviderFactory">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstDeviceProviderFactory.top_of_page">GstDeviceProviderFactory</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDeviceProviderFactory</refname>
+<refpurpose>Create GstDeviceProviders from a factory</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstDeviceProviderFactory.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstDeviceProviderFactory"><returnvalue>GstDeviceProviderFactory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-find">gst_device_provider_factory_find</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDeviceProvider"><returnvalue>GstDeviceProvider</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-get">gst_device_provider_factory_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDeviceProvider"><returnvalue>GstDeviceProvider</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-get-by-name">gst_device_provider_factory_get_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-get-device-provider-type">gst_device_provider_factory_get_device_provider_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-get-metadata">gst_device_provider_factory_get_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-get-metadata-keys">gst_device_provider_factory_get_metadata_keys</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-has-classes">gst_device_provider_factory_has_classes</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-has-classesv">gst_device_provider_factory_has_classesv</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-provider-factory-list-get-device-providers">gst_device_provider_factory_list_get_device_providers</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstDeviceProviderFactory.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstDeviceProviderFactory-struct">GstDeviceProviderFactory</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstDeviceProviderFactoryClass">GstDeviceProviderFactoryClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstDeviceProviderFactory.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPluginFeature">GstPluginFeature</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstDeviceProviderFactory
+</screen>
+</refsect1>
+
+<refsect1 id="GstDeviceProviderFactory.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstDeviceProviderFactory.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> is used to create instances of device providers. A
+GstDeviceProviderfactory can be added to a <link linkend="GstPlugin"><type>GstPlugin</type></link> as it is also a
+<link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>.</para>
+<para>Use the <link linkend="gst-device-provider-factory-find"><function>gst_device_provider_factory_find()</function></link> and
+<link linkend="gst-device-provider-factory-get"><function>gst_device_provider_factory_get()</function></link> functions to create device
+provider instances or use <link linkend="gst-device-provider-factory-get-by-name"><function>gst_device_provider_factory_get_by_name()</function></link> as a
+convenient shortcut.</para>
+
+</refsect1>
+<refsect1 id="GstDeviceProviderFactory.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-device-provider-factory-find" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_find&#160;()</title>
+<indexterm zone="gst-device-provider-factory-find" role="1.4"><primary>gst_device_provider_factory_find</primary></indexterm>
+<programlisting language="C"><link linkend="GstDeviceProviderFactory"><returnvalue>GstDeviceProviderFactory</returnvalue></link>&#160;*
+gst_device_provider_factory_find (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Search for an device provider factory of the given name. Refs the returned
+device provider factory; caller is responsible for unreffing.</para>
+<refsect3 id="gst-device-provider-factory-find.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of factory to find</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-find.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> if
+found, <link linkend="NULL:CAPS"><literal>NULL</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-get" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_get&#160;()</title>
+<indexterm zone="gst-device-provider-factory-get" role="1.4"><primary>gst_device_provider_factory_get</primary></indexterm>
+<programlisting language="C"><link linkend="GstDeviceProvider"><returnvalue>GstDeviceProvider</returnvalue></link>&#160;*
+gst_device_provider_factory_get (<parameter><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> *factory</parameter>);</programlisting>
+<para>Returns the device provider of the type defined by the given device
+providerfactory.</para>
+<refsect3 id="gst-device-provider-factory-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to instantiate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-get.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+if the device provider couldn't be created. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-get-by-name" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_get_by_name&#160;()</title>
+<indexterm zone="gst-device-provider-factory-get-by-name" role="1.4"><primary>gst_device_provider_factory_get_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="GstDeviceProvider"><returnvalue>GstDeviceProvider</returnvalue></link>&#160;*
+gst_device_provider_factory_get_by_name
+                               (<parameter>const <link linkend="gchar"><type>gchar</type></link> *factoryname</parameter>);</programlisting>
+<para>Returns the device provider of the type defined by the given device
+provider factory.</para>
+<refsect3 id="gst-device-provider-factory-get-by-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factoryname</para></entry>
+<entry role="parameter_description"><para>a named factory to instantiate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-get-by-name.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+if unable to create device provider. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-get-device-provider-type" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_get_device_provider_type&#160;()</title>
+<indexterm zone="gst-device-provider-factory-get-device-provider-type" role="1.4"><primary>gst_device_provider_factory_get_device_provider_type</primary></indexterm>
+<programlisting language="C"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+gst_device_provider_factory_get_device_provider_type
+                               (<parameter><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> *factory</parameter>);</programlisting>
+<para>Get the <link linkend="GType"><type>GType</type></link> for device providers managed by this factory. The type can
+only be retrieved if the device provider factory is loaded, which can be
+assured with <link linkend="gst-plugin-feature-load"><function>gst_plugin_feature_load()</function></link>.</para>
+<refsect3 id="gst-device-provider-factory-get-device-provider-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to get managed <link linkend="GType"><type>GType</type></link> from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-get-device-provider-type.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> for device providers managed by this factory.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-get-metadata" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_get_metadata&#160;()</title>
+<indexterm zone="gst-device-provider-factory-get-metadata" role="1.4"><primary>gst_device_provider_factory_get_metadata</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_device_provider_factory_get_metadata
+                               (<parameter><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> *factory</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *key</parameter>);</programlisting>
+<para>Get the metadata on <parameter>factory</parameter>
+ with <parameter>key</parameter>
+.</para>
+<refsect3 id="gst-device-provider-factory-get-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>key</para></entry>
+<entry role="parameter_description"><para>a key</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-get-metadata.returns" role="returns">
+<title>Returns</title>
+<para> the metadata with <parameter>key</parameter>
+on <parameter>factory</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+when there was no metadata with the given <parameter>key</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-get-metadata-keys" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_get_metadata_keys&#160;()</title>
+<indexterm zone="gst-device-provider-factory-get-metadata-keys" role="1.4"><primary>gst_device_provider_factory_get_metadata_keys</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+gst_device_provider_factory_get_metadata_keys
+                               (<parameter><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> *factory</parameter>);</programlisting>
+<para>Get the available keys for the metadata on <parameter>factory</parameter>
+.</para>
+<refsect3 id="gst-device-provider-factory-get-metadata-keys.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-get-metadata-keys.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of key strings, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when there is no
+metadata. Free with <link linkend="g-strfreev"><function>g_strfreev()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> utf8][<acronym>array</acronym> zero-terminated=1][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-has-classes" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_has_classes&#160;()</title>
+<indexterm zone="gst-device-provider-factory-has-classes" role="1.4"><primary>gst_device_provider_factory_has_classes</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_provider_factory_has_classes
+                               (<parameter><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> *factory</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *classes</parameter>);</programlisting>
+<para>Check if <parameter>factory</parameter>
+ matches all of the given <parameter>classes</parameter>
+</para>
+<refsect3 id="gst-device-provider-factory-has-classes.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>classes</para></entry>
+<entry role="parameter_description"><para> a "/" separate list of classes to match, only match
+if all classes are matched. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-has-classes.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>factory</parameter>
+matches or if <parameter>classes</parameter>
+is <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-has-classesv" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_has_classesv&#160;()</title>
+<indexterm zone="gst-device-provider-factory-has-classesv" role="1.4"><primary>gst_device_provider_factory_has_classesv</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_provider_factory_has_classesv
+                               (<parameter><link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> *factory</parameter>,
+                                <parameter><link linkend="gchar"><type>gchar</type></link> **classes</parameter>);</programlisting>
+<para>Check if <parameter>factory</parameter>
+ matches all of the given classes</para>
+<refsect3 id="gst-device-provider-factory-has-classesv.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>classes</para></entry>
+<entry role="parameter_description"><para> a <link linkend="NULL:CAPS"><literal>NULL</literal></link> terminated array
+of classes to match, only match if all classes are matched. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> zero-terminated=1][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-has-classesv.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>factory</parameter>
+matches.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-provider-factory-list-get-device-providers" role="function" condition="since:1.4">
+<title>gst_device_provider_factory_list_get_device_providers&#160;()</title>
+<indexterm zone="gst-device-provider-factory-list-get-device-providers" role="1.4"><primary>gst_device_provider_factory_list_get_device_providers</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_device_provider_factory_list_get_device_providers
+                               (<parameter><link linkend="GstRank"><type>GstRank</type></link> minrank</parameter>);</programlisting>
+<para>Get a list of factories with a rank greater or equal to <parameter>minrank</parameter>
+.
+The list of factories is returned by decreasing rank.</para>
+<refsect3 id="gst-device-provider-factory-list-get-device-providers.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>minrank</para></entry>
+<entry role="parameter_description"><para>Minimum rank</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-provider-factory-list-get-device-providers.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GList"><type>GList</type></link> of <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> device providers. Use
+<link linkend="gst-plugin-feature-list-free"><function>gst_plugin_feature_list_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.DeviceProviderFactory]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstDeviceProviderFactory.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDeviceProviderFactory-struct" role="struct">
+<title>GstDeviceProviderFactory</title>
+<indexterm zone="GstDeviceProviderFactory-struct" role="1.4"><primary>GstDeviceProviderFactory</primary></indexterm>
+<programlisting language="C">typedef struct _GstDeviceProviderFactory GstDeviceProviderFactory;</programlisting>
+<para>The opaque <link linkend="GstDeviceProviderFactory"><type>GstDeviceProviderFactory</type></link> data structure.</para>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GstDeviceProviderFactoryClass" role="struct" condition="since:1.4">
+<title>GstDeviceProviderFactoryClass</title>
+<indexterm zone="GstDeviceProviderFactoryClass" role="1.4"><primary>GstDeviceProviderFactoryClass</primary></indexterm>
+<programlisting language="C">typedef struct _GstDeviceProviderFactoryClass GstDeviceProviderFactoryClass;</programlisting>
+<para>The opaque <link linkend="GstDeviceProviderFactoryClass"><type>GstDeviceProviderFactoryClass</type></link> data structure.</para>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstDeviceProviderFactory.see-also">
+<title>See Also</title>
+<para><link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link>, <link linkend="GstPlugin"><type>GstPlugin</type></link>, <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>, <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link>.</para>
+
+</refsect1>
+
+</refentry>

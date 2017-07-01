@@ -1,0 +1,815 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstRegistry">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRegistry.top_of_page">GstRegistry</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRegistry</refname>
+<refpurpose>Abstract base class for management of <link linkend="GstPlugin"><type>GstPlugin</type></link> objects</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRegistry.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRegistry"><returnvalue>GstRegistry</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-get">gst_registry_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-get-feature-list">gst_registry_get_feature_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-get-feature-list-cookie">gst_registry_get_feature_list_cookie</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-get-feature-list-by-plugin">gst_registry_get_feature_list_by_plugin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-get-plugin-list">gst_registry_get_plugin_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-add-plugin">gst_registry_add_plugin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-remove-plugin">gst_registry_remove_plugin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-plugin-filter">gst_registry_plugin_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-feature-filter">gst_registry_feature_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-find-plugin">gst_registry_find_plugin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPluginFeature"><returnvalue>GstPluginFeature</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-find-feature">gst_registry_find_feature</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPluginFeature"><returnvalue>GstPluginFeature</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-lookup-feature">gst_registry_lookup_feature</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-add-path">gst_registry_add_path</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-get-path-list">gst_registry_get_path_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-scan-path">gst_registry_scan_path</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-registry-lookup">gst_registry_lookup</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-remove-feature">gst_registry_remove_feature</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-add-feature">gst_registry_add_feature</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-registry-check-feature-version">gst_registry_check_feature_version</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRegistry.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRegistry-feature-added">feature-added</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRegistry-plugin-added">plugin-added</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRegistry.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRegistry-struct">GstRegistry</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRegistry.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRegistry
+</screen>
+</refsect1>
+
+<refsect1 id="GstRegistry.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstRegistry.description" role="desc">
+<title role="desc.title">Description</title>
+<para>One registry holds the metadata of a set of plugins.</para>
+<para><emphasis role="bold">Design:</emphasis></para>
+<para>The <link linkend="GstRegistry"><type>GstRegistry</type></link> object is a list of plugins and some functions for dealing
+with them. Each <link linkend="GstPlugin"><type>GstPlugin</type></link> is matched 1-1 with a file on disk, and may or may
+not be loaded at a given time.</para>
+<para>The primary source, at all times, of plugin information is each plugin file
+itself. Thus, if an application wants information about a particular plugin,
+or wants to search for a feature that satisfies given criteria, the primary
+means of doing so is to load every plugin and look at the resulting
+information that is gathered in the default registry. Clearly, this is a time
+consuming process, so we cache information in the registry file. The format
+and location of the cache file is internal to gstreamer.</para>
+<para>On startup, plugins are searched for in the plugin search path. The following
+locations are checked in this order:</para>
+<itemizedlist>
+  <listitem>
+    <para>location from --gst-plugin-path commandline option.</para>
+  </listitem>
+  <listitem>
+    <para>the GST_PLUGIN_PATH environment variable.</para>
+  </listitem>
+  <listitem>
+    <para>the GST_PLUGIN_SYSTEM_PATH environment variable.</para>
+  </listitem>
+  <listitem>
+    <para>default locations (if GST_PLUGIN_SYSTEM_PATH is not set). Those
+      default locations are:
+      <filename>$XDG_DATA_HOME/gstreamer-$GST_API_VERSION/plugins/</filename>
+      and <filename>$prefix/libs/gstreamer-$GST_API_VERSION/</filename>.
+      <ulink url="http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html">
+      <filename>$XDG_DATA_HOME</filename></ulink> defaults to
+      <filename>$HOME/.local/share</filename>.
+    </para>
+  </listitem>
+</itemizedlist>
+<para>The registry cache file is loaded from
+<filename>$XDG_CACHE_HOME/gstreamer-$GST_API_VERSION/registry-$ARCH.bin</filename>
+(where</para>
+<ulink url="http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html">
+<filename>$XDG_CACHE_HOME</filename></ulink> defaults to
+<para><filename>$HOME/.cache</filename>) or the file listed in the GST_REGISTRY
+env var. One reason to change the registry location is for testing.</para>
+<para>For each plugin that is found in the plugin search path, there could be 3
+possibilities for cached information:</para>
+<itemizedlist>
+  <listitem>
+    <para>the cache may not contain information about a given file.</para>
+  </listitem>
+  <listitem>
+    <para>the cache may have stale information.</para>
+  </listitem>
+  <listitem>
+    <para>the cache may have current information.</para>
+  </listitem>
+</itemizedlist>
+<para>In the first two cases, the plugin is loaded and the cache updated. In
+addition to these cases, the cache may have entries for plugins that are not
+relevant to the current process. These are marked as not available to the
+current process. If the cache is updated for whatever reason, it is marked
+dirty.</para>
+<para>A dirty cache is written out at the end of initialization. Each entry is
+checked to make sure the information is minimally valid. If not, the entry is
+simply dropped.</para>
+<para><emphasis role="bold">Implementation notes:</emphasis></para>
+<para>The "cache" and "registry" are different concepts and can represent
+different sets of plugins. For various reasons, at init time, the cache is
+stored in the default registry, and plugins not relevant to the current
+process are marked with the <link linkend="GST-PLUGIN-FLAG-CACHED:CAPS"><literal>GST_PLUGIN_FLAG_CACHED</literal></link> bit. These plugins are
+removed at the end of initialization.</para>
+
+</refsect1>
+<refsect1 id="GstRegistry.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-registry-get" role="function">
+<title>gst_registry_get&#160;()</title>
+<indexterm zone="gst-registry-get"><primary>gst_registry_get</primary></indexterm>
+<programlisting language="C"><link linkend="GstRegistry"><returnvalue>GstRegistry</returnvalue></link>&#160;*
+gst_registry_get (<parameter><type>void</type></parameter>);</programlisting>
+<para>Retrieves the singleton plugin registry. The caller does not own a
+reference on the registry, as it is alive as long as GStreamer is
+initialized.</para>
+<refsect3 id="gst-registry-get.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstRegistry"><type>GstRegistry</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-get-feature-list" role="function">
+<title>gst_registry_get_feature_list&#160;()</title>
+<indexterm zone="gst-registry-get-feature-list"><primary>gst_registry_get_feature_list</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_registry_get_feature_list (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                               <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Retrieves a <link linkend="GList"><type>GList</type></link> of <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> of <parameter>type</parameter>
+.</para>
+<refsect3 id="gst-registry-get-feature-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRegistry"><type>GstRegistry</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GType"><type>GType</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-get-feature-list.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> of <parameter>type</parameter>
+. Use <link linkend="gst-plugin-feature-list-free"><function>gst_plugin_feature_list_free()</function></link> after use</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-get-feature-list-cookie" role="function">
+<title>gst_registry_get_feature_list_cookie&#160;()</title>
+<indexterm zone="gst-registry-get-feature-list-cookie"><primary>gst_registry_get_feature_list_cookie</primary></indexterm>
+<programlisting language="C"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+gst_registry_get_feature_list_cookie (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>);</programlisting>
+<para>Returns the registry's feature list cookie. This changes
+every time a feature is added or removed from the registry.</para>
+<refsect3 id="gst-registry-get-feature-list-cookie.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-get-feature-list-cookie.returns" role="returns">
+<title>Returns</title>
+<para> the feature list cookie.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-get-feature-list-by-plugin" role="function">
+<title>gst_registry_get_feature_list_by_plugin&#160;()</title>
+<indexterm zone="gst-registry-get-feature-list-by-plugin"><primary>gst_registry_get_feature_list_by_plugin</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_registry_get_feature_list_by_plugin
+                               (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Retrieves a <link linkend="GList"><type>GList</type></link> of features of the plugin with name <parameter>name</parameter>
+.</para>
+<refsect3 id="gst-registry-get-feature-list-by-plugin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRegistry"><type>GstRegistry</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a plugin name.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-get-feature-list-by-plugin.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>. Use <link linkend="gst-plugin-feature-list-free"><function>gst_plugin_feature_list_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-get-plugin-list" role="function">
+<title>gst_registry_get_plugin_list&#160;()</title>
+<indexterm zone="gst-registry-get-plugin-list"><primary>gst_registry_get_plugin_list</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_registry_get_plugin_list (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>);</programlisting>
+<para>Get a copy of all plugins registered in the given registry. The refcount
+of each element in the list in incremented.</para>
+<refsect3 id="gst-registry-get-plugin-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to search</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-get-plugin-list.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of <link linkend="GstPlugin"><type>GstPlugin</type></link>.
+Use <link linkend="gst-plugin-list-free"><function>gst_plugin_list_free()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.Plugin]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-add-plugin" role="function">
+<title>gst_registry_add_plugin&#160;()</title>
+<indexterm zone="gst-registry-add-plugin"><primary>gst_registry_add_plugin</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_registry_add_plugin (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                         <parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Add the plugin to the registry. The plugin-added signal will be emitted.
+This function will sink <parameter>plugin</parameter>
+.</para>
+<refsect3 id="gst-registry-add-plugin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to add the plugin to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para> the plugin to add. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-add-plugin.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-remove-plugin" role="function">
+<title>gst_registry_remove_plugin&#160;()</title>
+<indexterm zone="gst-registry-remove-plugin"><primary>gst_registry_remove_plugin</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_registry_remove_plugin (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                            <parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>);</programlisting>
+<para>Remove the plugin from the registry.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-registry-remove-plugin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to remove the plugin from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para> the plugin to remove. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-plugin-filter" role="function">
+<title>gst_registry_plugin_filter&#160;()</title>
+<indexterm zone="gst-registry-plugin-filter"><primary>gst_registry_plugin_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_registry_plugin_filter (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                            <parameter><link linkend="GstPluginFilter"><type>GstPluginFilter</type></link> filter</parameter>,
+                            <parameter><link linkend="gboolean"><type>gboolean</type></link> first</parameter>,
+                            <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Runs a filter against all plugins in the registry and returns a <link linkend="GList"><type>GList</type></link> with
+the results. If the first flag is set, only the first match is
+returned (as a list with a single object).
+Every plugin is reffed; use <link linkend="gst-plugin-list-free"><function>gst_plugin_list_free()</function></link> after use, which
+will unref again.</para>
+<refsect3 id="gst-registry-plugin-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>registry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>filter</para></entry>
+<entry role="parameter_description"><para> the filter to use. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>first</para></entry>
+<entry role="parameter_description"><para>only return first match</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the filter function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-plugin-filter.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of <link linkend="GstPlugin"><type>GstPlugin</type></link>.
+Use <link linkend="gst-plugin-list-free"><function>gst_plugin_list_free()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.Plugin]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-feature-filter" role="function">
+<title>gst_registry_feature_filter&#160;()</title>
+<indexterm zone="gst-registry-feature-filter"><primary>gst_registry_feature_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_registry_feature_filter (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                             <parameter><link linkend="GstPluginFeatureFilter"><type>GstPluginFeatureFilter</type></link> filter</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> first</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Runs a filter against all features of the plugins in the registry
+and returns a GList with the results.
+If the first flag is set, only the first match is
+returned (as a list with a single object).</para>
+<refsect3 id="gst-registry-feature-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>registry to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>filter</para></entry>
+<entry role="parameter_description"><para> the filter to use. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>first</para></entry>
+<entry role="parameter_description"><para>only return first match</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the filter function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-feature-filter.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>. Use <link linkend="gst-plugin-feature-list-free"><function>gst_plugin_feature_list_free()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.PluginFeature]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-find-plugin" role="function">
+<title>gst_registry_find_plugin&#160;()</title>
+<indexterm zone="gst-registry-find-plugin"><primary>gst_registry_find_plugin</primary></indexterm>
+<programlisting language="C"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+gst_registry_find_plugin (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Find the plugin with the given name in the registry.
+The plugin will be reffed; caller is responsible for unreffing.</para>
+<refsect3 id="gst-registry-find-plugin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to search</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the plugin name to find</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-find-plugin.returns" role="returns">
+<title>Returns</title>
+<para> the plugin with the given name
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the plugin was not found. <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> after
+usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-find-feature" role="function">
+<title>gst_registry_find_feature&#160;()</title>
+<indexterm zone="gst-registry-find-feature"><primary>gst_registry_find_feature</primary></indexterm>
+<programlisting language="C"><link linkend="GstPluginFeature"><returnvalue>GstPluginFeature</returnvalue></link>&#160;*
+gst_registry_find_feature (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                           <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Find the pluginfeature with the given name and type in the registry.</para>
+<refsect3 id="gst-registry-find-feature.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to search</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the pluginfeature name to find</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the pluginfeature type to find</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-find-feature.returns" role="returns">
+<title>Returns</title>
+<para> the pluginfeature with the
+given name and type or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the plugin was not
+found. <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-lookup-feature" role="function">
+<title>gst_registry_lookup_feature&#160;()</title>
+<indexterm zone="gst-registry-lookup-feature"><primary>gst_registry_lookup_feature</primary></indexterm>
+<programlisting language="C"><link linkend="GstPluginFeature"><returnvalue>GstPluginFeature</returnvalue></link>&#160;*
+gst_registry_lookup_feature (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                             <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>);</programlisting>
+<para>Find a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> with <parameter>name</parameter>
+ in <parameter>registry</parameter>
+.</para>
+<refsect3 id="gst-registry-lookup-feature.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRegistry"><type>GstRegistry</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-lookup-feature.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> with its refcount incremented,
+use <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-add-path" role="function">
+<title>gst_registry_add_path&#160;()</title>
+<indexterm zone="gst-registry-add-path"><primary>gst_registry_add_path</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_registry_add_path (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>);</programlisting>
+<para>Add the given path to the registry. The syntax of the
+path is specific to the registry. If the path has already been
+added, do nothing.</para>
+<refsect3 id="gst-registry-add-path.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to add the path to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>the path to add to the registry</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-get-path-list" role="function">
+<title>gst_registry_get_path_list&#160;()</title>
+<indexterm zone="gst-registry-get-path-list"><primary>gst_registry_get_path_list</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_registry_get_path_list (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>);</programlisting>
+<para>Get the list of paths for the given registry.</para>
+<refsect3 id="gst-registry-get-path-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to get the pathlist of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-get-path-list.returns" role="returns">
+<title>Returns</title>
+<para> A <link linkend="GList"><type>GList</type></link> of paths as
+strings. g_list_free after use.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer container</acronym>][<acronym>element-type</acronym> char*]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-scan-path" role="function">
+<title>gst_registry_scan_path&#160;()</title>
+<indexterm zone="gst-registry-scan-path"><primary>gst_registry_scan_path</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_registry_scan_path (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>);</programlisting>
+<para>Scan the given path for plugins to add to the registry. The syntax of the
+path is specific to the registry.</para>
+<refsect3 id="gst-registry-scan-path.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to add found plugins to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>the path to scan</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-scan-path.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if registry changed</para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-lookup" role="function">
+<title>gst_registry_lookup&#160;()</title>
+<indexterm zone="gst-registry-lookup"><primary>gst_registry_lookup</primary></indexterm>
+<programlisting language="C"><link linkend="GstPlugin"><returnvalue>GstPlugin</returnvalue></link>&#160;*
+gst_registry_lookup (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                     <parameter>const <link linkend="char"><type>char</type></link> *filename</parameter>);</programlisting>
+<para>Look up a plugin in the given registry with the given filename.
+If found, plugin is reffed.</para>
+<refsect3 id="gst-registry-lookup.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to look up in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>filename</para></entry>
+<entry role="parameter_description"><para>the name of the file to look up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-lookup.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstPlugin"><type>GstPlugin</type></link> if found, or
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> if not.  <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-remove-feature" role="function">
+<title>gst_registry_remove_feature&#160;()</title>
+<indexterm zone="gst-registry-remove-feature"><primary>gst_registry_remove_feature</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_registry_remove_feature (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                             <parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>);</programlisting>
+<para>Remove the feature from the registry.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-registry-remove-feature.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to remove the feature from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para> the feature to remove. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-add-feature" role="function">
+<title>gst_registry_add_feature&#160;()</title>
+<indexterm zone="gst-registry-add-feature"><primary>gst_registry_add_feature</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_registry_add_feature (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                          <parameter><link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature</parameter>);</programlisting>
+<para>Add the feature to the registry. The feature-added signal will be emitted.
+This function sinks <parameter>feature</parameter>
+.</para>
+<refsect3 id="gst-registry-add-feature.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry to add the plugin to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para> the feature to add. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-add-feature.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-registry-check-feature-version" role="function">
+<title>gst_registry_check_feature_version&#160;()</title>
+<indexterm zone="gst-registry-check-feature-version"><primary>gst_registry_check_feature_version</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_registry_check_feature_version (<parameter><link linkend="GstRegistry"><type>GstRegistry</type></link> *registry</parameter>,
+                                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *feature_name</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> min_major</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> min_minor</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> min_micro</parameter>);</programlisting>
+<para>Checks whether a plugin feature by the given name exists in
+<parameter>registry</parameter>
+ and whether its version is at least the
+version required.</para>
+<refsect3 id="gst-registry-check-feature-version.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRegistry"><type>GstRegistry</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature_name</para></entry>
+<entry role="parameter_description"><para>the name of the feature (e.g. "oggdemux")</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_major</para></entry>
+<entry role="parameter_description"><para>the minimum major version number</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_minor</para></entry>
+<entry role="parameter_description"><para>the minimum minor version number</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>min_micro</para></entry>
+<entry role="parameter_description"><para>the minimum micro version number</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-registry-check-feature-version.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the feature could be found and the version is
+the same as the required version or newer, and <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRegistry.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRegistry-struct" role="struct">
+<title>struct GstRegistry</title>
+<indexterm zone="GstRegistry-struct"><primary>GstRegistry</primary></indexterm>
+<programlisting language="C">struct GstRegistry;</programlisting>
+<para>Opaque <link linkend="GstRegistry"><type>GstRegistry</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRegistry.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRegistry-feature-added" role="signal"><title>The <literal>“feature-added”</literal> signal</title>
+<indexterm zone="GstRegistry-feature-added"><primary>GstRegistry::feature-added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRegistry"><type>GstRegistry</type></link>      *registry,
+               <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link> *feature,
+               <link linkend="gpointer"><type>gpointer</type></link>          user_data)</programlisting>
+<para>Signals that a feature has been added to the registry (possibly
+replacing a previously-added one by the same name)</para>
+<refsect3 id="GstRegistry-feature-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry that emitted the signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>the feature that has been added</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRegistry-plugin-added" role="signal"><title>The <literal>“plugin-added”</literal> signal</title>
+<indexterm zone="GstRegistry-plugin-added"><primary>GstRegistry::plugin-added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRegistry"><type>GstRegistry</type></link> *registry,
+               <link linkend="GstPlugin"><type>GstPlugin</type></link>   *plugin,
+               <link linkend="gpointer"><type>gpointer</type></link>     user_data)</programlisting>
+<para>Signals that a plugin has been added to the registry (possibly
+replacing a previously-added one by the same name)</para>
+<refsect3 id="GstRegistry-plugin-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>registry</para></entry>
+<entry role="parameter_description"><para>the registry that emitted the signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para>the plugin that has been added</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstRegistry.see-also">
+<title>See Also</title>
+<para><link linkend="GstPlugin"><type>GstPlugin</type></link>, <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link></para>
+
+</refsect1>
+
+</refentry>

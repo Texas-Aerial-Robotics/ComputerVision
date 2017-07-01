@@ -1,0 +1,875 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstElementFactory">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstElementFactory.top_of_page">GstElementFactory</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstElementFactory</refname>
+<refpurpose>Create GstElements from a factory</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstElementFactory.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-register">gst_element_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElementFactory"><returnvalue>GstElementFactory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-find">gst_element_factory_find</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-element-type">gst_element_factory_get_element_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-metadata">gst_element_factory_get_metadata</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-metadata-keys">gst_element_factory_get_metadata_keys</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-num-pad-templates">gst_element_factory_get_num_pad_templates</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstURIType"><returnvalue>GstURIType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-uri-type">gst_element_factory_get_uri_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const *
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-uri-protocols">gst_element_factory_get_uri_protocols</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-has-interface">gst_element_factory_has_interface</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-create">gst_element_factory_create</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-make">gst_element_factory_make</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-can-sink-all-caps">gst_element_factory_can_sink_all_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-can-src-all-caps">gst_element_factory_can_src_all_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-can-sink-any-caps">gst_element_factory_can_sink_any_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-can-src-any-caps">gst_element_factory_can_src_any_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-get-static-pad-templates">gst_element_factory_get_static_pad_templates</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-list-filter">gst_element_factory_list_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-element-factory-list-get-elements">gst_element_factory_list_get_elements</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-element-factory-list-is-type">gst_element_factory_list_is_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstElementFactory.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstElementFactory-struct">GstElementFactory</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstElementFactoryListType">GstElementFactoryListType</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-ANY:CAPS">GST_ELEMENT_FACTORY_TYPE_ANY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-AUDIOVIDEO-SINKS:CAPS">GST_ELEMENT_FACTORY_TYPE_AUDIOVIDEO_SINKS</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-AUDIO-ENCODER:CAPS">GST_ELEMENT_FACTORY_TYPE_AUDIO_ENCODER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-DECODABLE:CAPS">GST_ELEMENT_FACTORY_TYPE_DECODABLE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-DECODER:CAPS">GST_ELEMENT_FACTORY_TYPE_DECODER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-DECRYPTOR:CAPS">GST_ELEMENT_FACTORY_TYPE_DECRYPTOR</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-DEMUXER:CAPS">GST_ELEMENT_FACTORY_TYPE_DEMUXER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-DEPAYLOADER:CAPS">GST_ELEMENT_FACTORY_TYPE_DEPAYLOADER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-ENCODER:CAPS">GST_ELEMENT_FACTORY_TYPE_ENCODER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-ENCRYPTOR:CAPS">GST_ELEMENT_FACTORY_TYPE_ENCRYPTOR</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-FORMATTER:CAPS">GST_ELEMENT_FACTORY_TYPE_FORMATTER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MAX-ELEMENTS:CAPS">GST_ELEMENT_FACTORY_TYPE_MAX_ELEMENTS</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MEDIA-AUDIO:CAPS">GST_ELEMENT_FACTORY_TYPE_MEDIA_AUDIO</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MEDIA-IMAGE:CAPS">GST_ELEMENT_FACTORY_TYPE_MEDIA_IMAGE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MEDIA-METADATA:CAPS">GST_ELEMENT_FACTORY_TYPE_MEDIA_METADATA</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MEDIA-SUBTITLE:CAPS">GST_ELEMENT_FACTORY_TYPE_MEDIA_SUBTITLE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MEDIA-VIDEO:CAPS">GST_ELEMENT_FACTORY_TYPE_MEDIA_VIDEO</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MEDIA-ANY:CAPS">GST_ELEMENT_FACTORY_TYPE_MEDIA_ANY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-MUXER:CAPS">GST_ELEMENT_FACTORY_TYPE_MUXER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-PARSER:CAPS">GST_ELEMENT_FACTORY_TYPE_PARSER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-PAYLOADER:CAPS">GST_ELEMENT_FACTORY_TYPE_PAYLOADER</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-SINK:CAPS">GST_ELEMENT_FACTORY_TYPE_SINK</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-SRC:CAPS">GST_ELEMENT_FACTORY_TYPE_SRC</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ELEMENT-FACTORY-TYPE-VIDEO-ENCODER:CAPS">GST_ELEMENT_FACTORY_TYPE_VIDEO_ENCODER</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstElementFactory.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPluginFeature">GstPluginFeature</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstElementFactory
+</screen>
+</refsect1>
+
+<refsect1 id="GstElementFactory.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstElementFactory.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstElementFactory"><type>GstElementFactory</type></link> is used to create instances of elements. A
+GstElementFactory can be added to a <link linkend="GstPlugin"><type>GstPlugin</type></link> as it is also a
+<link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>.</para>
+<para>Use the <link linkend="gst-element-factory-find"><function>gst_element_factory_find()</function></link> and <link linkend="gst-element-factory-create"><function>gst_element_factory_create()</function></link>
+functions to create element instances or use <link linkend="gst-element-factory-make"><function>gst_element_factory_make()</function></link> as a
+convenient shortcut.</para>
+<para>The following code example shows you how to create a GstFileSrc element.</para>
+<example>
+<title>Using an element factory</title>
+<programlisting language="c">
+  #include &lt;gst/gst.h&gt;
+
+  GstElement *src;
+  GstElementFactory *srcfactory;
+
+  gst_init (&amp;argc, &amp;argv);
+
+  srcfactory = gst_element_factory_find ("filesrc");
+  g_return_if_fail (srcfactory != NULL);
+  src = gst_element_factory_create (srcfactory, "src");
+  g_return_if_fail (src != NULL);
+  ...
+</programlisting>
+</example>
+
+</refsect1>
+<refsect1 id="GstElementFactory.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-element-register" role="function">
+<title>gst_element_register&#160;()</title>
+<indexterm zone="gst-element-register"><primary>gst_element_register</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_register (<parameter><link linkend="GstPlugin"><type>GstPlugin</type></link> *plugin</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                      <parameter><link linkend="guint"><type>guint</type></link> rank</parameter>,
+                      <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Create a new elementfactory capable of instantiating objects of the
+<parameter>type</parameter>
+ and add the factory to <parameter>plugin</parameter>
+.</para>
+<refsect3 id="gst-element-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>plugin</para></entry>
+<entry role="parameter_description"><para> <link linkend="GstPlugin"><type>GstPlugin</type></link> to register the element with, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> for
+a static element. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of elements of this type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rank</para></entry>
+<entry role="parameter_description"><para>rank of element (higher rank means more importance when autoplugging)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>GType of element to register</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-register.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, if the registering succeeded, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-find" role="function">
+<title>gst_element_factory_find&#160;()</title>
+<indexterm zone="gst-element-factory-find"><primary>gst_element_factory_find</primary></indexterm>
+<programlisting language="C"><link linkend="GstElementFactory"><returnvalue>GstElementFactory</returnvalue></link>&#160;*
+gst_element_factory_find (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Search for an element factory of the given name. Refs the returned
+element factory; caller is responsible for unreffing.</para>
+<refsect3 id="gst-element-factory-find.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of factory to find</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-find.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstElementFactory"><type>GstElementFactory</type></link> if found,
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-element-type" role="function">
+<title>gst_element_factory_get_element_type&#160;()</title>
+<indexterm zone="gst-element-factory-get-element-type"><primary>gst_element_factory_get_element_type</primary></indexterm>
+<programlisting language="C"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+gst_element_factory_get_element_type (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>);</programlisting>
+<para>Get the <link linkend="GType"><type>GType</type></link> for elements managed by this factory. The type can
+only be retrieved if the element factory is loaded, which can be
+assured with <link linkend="gst-plugin-feature-load"><function>gst_plugin_feature_load()</function></link>.</para>
+<refsect3 id="gst-element-factory-get-element-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to get managed <link linkend="GType"><type>GType</type></link> from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-element-type.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> for elements managed by this factory or 0 if
+the factory is not loaded.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-metadata" role="function">
+<title>gst_element_factory_get_metadata&#160;()</title>
+<indexterm zone="gst-element-factory-get-metadata"><primary>gst_element_factory_get_metadata</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_element_factory_get_metadata (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *key</parameter>);</programlisting>
+<para>Get the metadata on <parameter>factory</parameter>
+ with <parameter>key</parameter>
+.</para>
+<refsect3 id="gst-element-factory-get-metadata.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>key</para></entry>
+<entry role="parameter_description"><para>a key</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-metadata.returns" role="returns">
+<title>Returns</title>
+<para> the metadata with <parameter>key</parameter>
+on <parameter>factory</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+when there was no metadata with the given <parameter>key</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-metadata-keys" role="function">
+<title>gst_element_factory_get_metadata_keys&#160;()</title>
+<indexterm zone="gst-element-factory-get-metadata-keys"><primary>gst_element_factory_get_metadata_keys</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+gst_element_factory_get_metadata_keys (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>);</programlisting>
+<para>Get the available keys for the metadata on <parameter>factory</parameter>
+.</para>
+<refsect3 id="gst-element-factory-get-metadata-keys.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-metadata-keys.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of key strings, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when there is no
+metadata. Free with <link linkend="g-strfreev"><function>g_strfreev()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> utf8][<acronym>array</acronym> zero-terminated=1][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-num-pad-templates" role="function">
+<title>gst_element_factory_get_num_pad_templates&#160;()</title>
+<indexterm zone="gst-element-factory-get-num-pad-templates"><primary>gst_element_factory_get_num_pad_templates</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_element_factory_get_num_pad_templates
+                               (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>);</programlisting>
+<para>Gets the number of pad_templates in this factory.</para>
+<refsect3 id="gst-element-factory-get-num-pad-templates.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-num-pad-templates.returns" role="returns">
+<title>Returns</title>
+<para> the number of pad_templates</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-uri-type" role="function">
+<title>gst_element_factory_get_uri_type&#160;()</title>
+<indexterm zone="gst-element-factory-get-uri-type"><primary>gst_element_factory_get_uri_type</primary></indexterm>
+<programlisting language="C"><link linkend="GstURIType"><returnvalue>GstURIType</returnvalue></link>
+gst_element_factory_get_uri_type (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>);</programlisting>
+<para>Gets the type of URIs the element supports or <link linkend="GST-URI-UNKNOWN:CAPS"><type>GST_URI_UNKNOWN</type></link> if none.</para>
+<refsect3 id="gst-element-factory-get-uri-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-uri-type.returns" role="returns">
+<title>Returns</title>
+<para> type of URIs this element supports</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-uri-protocols" role="function">
+<title>gst_element_factory_get_uri_protocols&#160;()</title>
+<indexterm zone="gst-element-factory-get-uri-protocols"><primary>gst_element_factory_get_uri_protocols</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;* const *
+gst_element_factory_get_uri_protocols (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>);</programlisting>
+<para>Gets a <link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated array of protocols this element supports or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if
+no protocols are supported. You may not change the contents of the returned
+array, as it is still owned by the element factory. Use <link linkend="g-strdupv"><function>g_strdupv()</function></link> to
+make a copy of the protocol string array if you need to.</para>
+<refsect3 id="gst-element-factory-get-uri-protocols.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-uri-protocols.returns" role="returns">
+<title>Returns</title>
+<para> the supported protocols
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> zero-terminated=1]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-has-interface" role="function">
+<title>gst_element_factory_has_interface&#160;()</title>
+<indexterm zone="gst-element-factory-has-interface"><primary>gst_element_factory_has_interface</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_factory_has_interface (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *interfacename</parameter>);</programlisting>
+<para>Check if <parameter>factory</parameter>
+ implements the interface with name <parameter>interfacename</parameter>
+.</para>
+<refsect3 id="gst-element-factory-has-interface.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interfacename</para></entry>
+<entry role="parameter_description"><para>an interface name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-has-interface.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when <parameter>factory</parameter>
+implement the interface.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-create" role="function">
+<title>gst_element_factory_create&#160;()</title>
+<indexterm zone="gst-element-factory-create"><primary>gst_element_factory_create</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_element_factory_create (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Create a new element of the type defined by the given elementfactory.
+It will be given the name supplied, since all elements require a name as
+their first argument.</para>
+<refsect3 id="gst-element-factory-create.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to instantiate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> name of new element, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to automatically create
+a unique name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-create.returns" role="returns">
+<title>Returns</title>
+<para> new <link linkend="GstElement"><type>GstElement</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+if the element couldn't be created. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-make" role="function">
+<title>gst_element_factory_make&#160;()</title>
+<indexterm zone="gst-element-factory-make"><primary>gst_element_factory_make</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_element_factory_make (<parameter>const <link linkend="gchar"><type>gchar</type></link> *factoryname</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Create a new element of the type defined by the given element factory.
+If name is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, then the element will receive a guaranteed unique name,
+consisting of the element factory name and a number.
+If name is given, it will be given the name supplied.</para>
+<refsect3 id="gst-element-factory-make.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factoryname</para></entry>
+<entry role="parameter_description"><para>a named factory to instantiate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> name of new element, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to automatically create
+a unique name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-make.returns" role="returns">
+<title>Returns</title>
+<para> new <link linkend="GstElement"><type>GstElement</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+if unable to create element. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-can-sink-all-caps" role="function">
+<title>gst_element_factory_can_sink_all_caps&#160;()</title>
+<indexterm zone="gst-element-factory-can-sink-all-caps"><primary>gst_element_factory_can_sink_all_caps</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_factory_can_sink_all_caps (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                       <parameter>const <link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Checks if the factory can sink all possible capabilities.</para>
+<refsect3 id="gst-element-factory-can-sink-all-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the caps to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-can-sink-all-caps.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the caps are fully compatible.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-can-src-all-caps" role="function">
+<title>gst_element_factory_can_src_all_caps&#160;()</title>
+<indexterm zone="gst-element-factory-can-src-all-caps"><primary>gst_element_factory_can_src_all_caps</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_factory_can_src_all_caps (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                      <parameter>const <link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Checks if the factory can src all possible capabilities.</para>
+<refsect3 id="gst-element-factory-can-src-all-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the caps to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-can-src-all-caps.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the caps are fully compatible.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-can-sink-any-caps" role="function">
+<title>gst_element_factory_can_sink_any_caps&#160;()</title>
+<indexterm zone="gst-element-factory-can-sink-any-caps"><primary>gst_element_factory_can_sink_any_caps</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_factory_can_sink_any_caps (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                       <parameter>const <link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Checks if the factory can sink any possible capability.</para>
+<refsect3 id="gst-element-factory-can-sink-any-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the caps to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-can-sink-any-caps.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the caps have a common subset.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-can-src-any-caps" role="function">
+<title>gst_element_factory_can_src_any_caps&#160;()</title>
+<indexterm zone="gst-element-factory-can-src-any-caps"><primary>gst_element_factory_can_src_any_caps</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_factory_can_src_any_caps (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                      <parameter>const <link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Checks if the factory can src any possible capability.</para>
+<refsect3 id="gst-element-factory-can-src-any-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>factory to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the caps to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-can-src-any-caps.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the caps have a common subset.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-get-static-pad-templates" role="function">
+<title>gst_element_factory_get_static_pad_templates&#160;()</title>
+<indexterm zone="gst-element-factory-get-static-pad-templates"><primary>gst_element_factory_get_static_pad_templates</primary></indexterm>
+<programlisting language="C">const <link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_element_factory_get_static_pad_templates
+                               (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>);</programlisting>
+<para>Gets the <link linkend="GList"><type>GList</type></link> of <link linkend="GstStaticPadTemplate"><type>GstStaticPadTemplate</type></link> for this factory.</para>
+<refsect3 id="gst-element-factory-get-static-pad-templates.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-get-static-pad-templates.returns" role="returns">
+<title>Returns</title>
+<para> the
+static pad templates. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> Gst.StaticPadTemplate]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-list-filter" role="function">
+<title>gst_element_factory_list_filter&#160;()</title>
+<indexterm zone="gst-element-factory-list-filter"><primary>gst_element_factory_list_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_element_factory_list_filter (<parameter><link linkend="GList"><type>GList</type></link> *list</parameter>,
+                                 <parameter>const <link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>,
+                                 <parameter><link linkend="GstPadDirection"><type>GstPadDirection</type></link> direction</parameter>,
+                                 <parameter><link linkend="gboolean"><type>gboolean</type></link> subsetonly</parameter>);</programlisting>
+<para>Filter out all the elementfactories in <parameter>list</parameter>
+ that can handle <parameter>caps</parameter>
+ in
+the given direction.</para>
+<para>If <parameter>subsetonly</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, then only the elements whose pads templates
+are a complete superset of <parameter>caps</parameter>
+ will be returned. Else any element
+whose pad templates caps can intersect with <parameter>caps</parameter>
+ will be returned.</para>
+<refsect3 id="gst-element-factory-list-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstElementFactory"><type>GstElementFactory</type></link> to filter. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> Gst.ElementFactory]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCaps"><type>GstCaps</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>direction</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPadDirection"><type>GstPadDirection</type></link> to filter on</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>subsetonly</para></entry>
+<entry role="parameter_description"><para>whether to filter on caps subsets or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-list-filter.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstElementFactory"><type>GstElementFactory</type></link> elements that match the given requisites.
+Use <link linkend="gst-plugin-feature-list-free"><type>gst_plugin_feature_list_free</type></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.ElementFactory]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-list-get-elements" role="function">
+<title>gst_element_factory_list_get_elements&#160;()</title>
+<indexterm zone="gst-element-factory-list-get-elements"><primary>gst_element_factory_list_get_elements</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_element_factory_list_get_elements (<parameter><link linkend="GstElementFactoryListType"><type>GstElementFactoryListType</type></link> type</parameter>,
+                                       <parameter><link linkend="GstRank"><type>GstRank</type></link> minrank</parameter>);</programlisting>
+<para>Get a list of factories that match the given <parameter>type</parameter>
+. Only elements
+with a rank greater or equal to <parameter>minrank</parameter>
+ will be returned.
+The list of factories is returned by decreasing rank.</para>
+<refsect3 id="gst-element-factory-list-get-elements.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactoryListType"><type>GstElementFactoryListType</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minrank</para></entry>
+<entry role="parameter_description"><para>Minimum rank</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-list-get-elements.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstElementFactory"><type>GstElementFactory</type></link> elements. Use <link linkend="gst-plugin-feature-list-free"><function>gst_plugin_feature_list_free()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> Gst.ElementFactory]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-element-factory-list-is-type" role="function">
+<title>gst_element_factory_list_is_type&#160;()</title>
+<indexterm zone="gst-element-factory-list-is-type"><primary>gst_element_factory_list_is_type</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_element_factory_list_is_type (<parameter><link linkend="GstElementFactory"><type>GstElementFactory</type></link> *factory</parameter>,
+                                  <parameter><link linkend="GstElementFactoryListType"><type>GstElementFactoryListType</type></link> type</parameter>);</programlisting>
+<para>Check if <parameter>factory</parameter>
+ is of the given types.</para>
+<refsect3 id="gst-element-factory-list-is-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactory"><type>GstElementFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElementFactoryListType"><type>GstElementFactoryListType</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-element-factory-list-is-type.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>factory</parameter>
+is of <parameter>type</parameter>
+.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstElementFactory.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstElementFactory-struct" role="struct">
+<title>GstElementFactory</title>
+<indexterm zone="GstElementFactory-struct"><primary>GstElementFactory</primary></indexterm>
+<programlisting language="C">typedef struct _GstElementFactory GstElementFactory;</programlisting>
+<para>The opaque <link linkend="GstElementFactory"><type>GstElementFactory</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstElementFactoryListType" role="typedef">
+<title>GstElementFactoryListType</title>
+<indexterm zone="GstElementFactoryListType"><primary>GstElementFactoryListType</primary></indexterm>
+<programlisting language="C">typedef guint64 GstElementFactoryListType;
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-ANY:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_ANY</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-ANY:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_ANY</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_ANY ((G_GUINT64_CONSTANT (1) &lt;&lt; 49) - 1)
+</programlisting>
+<para>Elements of any of the defined GST_ELEMENT_FACTORY_LIST types</para>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-AUDIOVIDEO-SINKS:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_AUDIOVIDEO_SINKS</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-AUDIOVIDEO-SINKS:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_AUDIOVIDEO_SINKS</primary></indexterm>
+<programlisting language="C">#define GST_ELEMENT_FACTORY_TYPE_AUDIOVIDEO_SINKS (GST_ELEMENT_FACTORY_TYPE_SINK | GST_ELEMENT_FACTORY_TYPE_MEDIA_AUDIO | GST_ELEMENT_FACTORY_TYPE_MEDIA_VIDEO | GST_ELEMENT_FACTORY_TYPE_MEDIA_IMAGE)
+</programlisting>
+<para>All sinks handling audio, video or image media types</para>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-AUDIO-ENCODER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_AUDIO_ENCODER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-AUDIO-ENCODER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_AUDIO_ENCODER</primary></indexterm>
+<programlisting language="C">#define GST_ELEMENT_FACTORY_TYPE_AUDIO_ENCODER (GST_ELEMENT_FACTORY_TYPE_ENCODER | GST_ELEMENT_FACTORY_TYPE_MEDIA_AUDIO)
+</programlisting>
+<para>All encoders handling audio media types</para>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-DECODABLE:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_DECODABLE</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-DECODABLE:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_DECODABLE</primary></indexterm>
+<programlisting language="C">#define             GST_ELEMENT_FACTORY_TYPE_DECODABLE</programlisting>
+<para>All elements used to 'decode' streams (decoders, demuxers, parsers, depayloaders)</para>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-DECODER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_DECODER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-DECODER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_DECODER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_DECODER        (G_GUINT64_CONSTANT (1) &lt;&lt; 0)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-DECRYPTOR:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_DECRYPTOR</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-DECRYPTOR:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_DECRYPTOR</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_DECRYPTOR      (G_GUINT64_CONSTANT (1) &lt;&lt; 10)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-DEMUXER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_DEMUXER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-DEMUXER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_DEMUXER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_DEMUXER        (G_GUINT64_CONSTANT (1) &lt;&lt; 5)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-DEPAYLOADER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_DEPAYLOADER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-DEPAYLOADER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_DEPAYLOADER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_DEPAYLOADER    (G_GUINT64_CONSTANT (1) &lt;&lt; 8)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-ENCODER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_ENCODER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-ENCODER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_ENCODER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_ENCODER        (G_GUINT64_CONSTANT (1) &lt;&lt; 1)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-ENCRYPTOR:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_ENCRYPTOR</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-ENCRYPTOR:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_ENCRYPTOR</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_ENCRYPTOR      (G_GUINT64_CONSTANT (1) &lt;&lt; 11)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-FORMATTER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_FORMATTER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-FORMATTER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_FORMATTER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_FORMATTER      (G_GUINT64_CONSTANT (1) &lt;&lt; 9)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MAX-ELEMENTS:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MAX_ELEMENTS</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MAX-ELEMENTS:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MAX_ELEMENTS</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MAX_ELEMENTS   (G_GUINT64_CONSTANT (1) &lt;&lt; 48)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MEDIA-AUDIO:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MEDIA_AUDIO</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MEDIA-AUDIO:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MEDIA_AUDIO</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MEDIA_AUDIO    (G_GUINT64_CONSTANT (1) &lt;&lt; 50)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MEDIA-IMAGE:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MEDIA_IMAGE</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MEDIA-IMAGE:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MEDIA_IMAGE</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MEDIA_IMAGE    (G_GUINT64_CONSTANT (1) &lt;&lt; 51)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MEDIA-METADATA:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MEDIA_METADATA</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MEDIA-METADATA:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MEDIA_METADATA</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MEDIA_METADATA (G_GUINT64_CONSTANT (1) &lt;&lt; 53)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MEDIA-SUBTITLE:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MEDIA_SUBTITLE</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MEDIA-SUBTITLE:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MEDIA_SUBTITLE</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MEDIA_SUBTITLE (G_GUINT64_CONSTANT (1) &lt;&lt; 52)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MEDIA-VIDEO:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MEDIA_VIDEO</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MEDIA-VIDEO:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MEDIA_VIDEO</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MEDIA_VIDEO    (G_GUINT64_CONSTANT (1) &lt;&lt; 49)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MEDIA-ANY:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MEDIA_ANY</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MEDIA-ANY:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MEDIA_ANY</primary></indexterm>
+<programlisting language="C">#define GST_ELEMENT_FACTORY_TYPE_MEDIA_ANY (~G_GUINT64_CONSTANT (0) &lt;&lt; 48)
+</programlisting>
+<para>Elements matching any of the defined GST_ELEMENT_FACTORY_TYPE_MEDIA types</para>
+<para>Note: Do not use this if you wish to not filter against any of the defined
+media types. If you wish to do this, simply don't specify any
+GST_ELEMENT_FACTORY_TYPE_MEDIA flag.</para>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-MUXER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_MUXER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-MUXER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_MUXER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_MUXER          (G_GUINT64_CONSTANT (1) &lt;&lt; 4)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-PARSER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_PARSER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-PARSER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_PARSER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_PARSER         (G_GUINT64_CONSTANT (1) &lt;&lt; 6)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-PAYLOADER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_PAYLOADER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-PAYLOADER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_PAYLOADER</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_PAYLOADER      (G_GUINT64_CONSTANT (1) &lt;&lt; 7)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-SINK:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_SINK</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-SINK:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_SINK</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_SINK           (G_GUINT64_CONSTANT (1) &lt;&lt; 2)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-SRC:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_SRC</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-SRC:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_SRC</primary></indexterm>
+<programlisting language="C">#define  GST_ELEMENT_FACTORY_TYPE_SRC            (G_GUINT64_CONSTANT (1) &lt;&lt; 3)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-ELEMENT-FACTORY-TYPE-VIDEO-ENCODER:CAPS" role="macro">
+<title>GST_ELEMENT_FACTORY_TYPE_VIDEO_ENCODER</title>
+<indexterm zone="GST-ELEMENT-FACTORY-TYPE-VIDEO-ENCODER:CAPS"><primary>GST_ELEMENT_FACTORY_TYPE_VIDEO_ENCODER</primary></indexterm>
+<programlisting language="C">#define GST_ELEMENT_FACTORY_TYPE_VIDEO_ENCODER (GST_ELEMENT_FACTORY_TYPE_ENCODER | GST_ELEMENT_FACTORY_TYPE_MEDIA_VIDEO | GST_ELEMENT_FACTORY_TYPE_MEDIA_IMAGE)
+</programlisting>
+<para>All encoders handling video or image media types</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstElementFactory.see-also">
+<title>See Also</title>
+<para><link linkend="GstElement"><type>GstElement</type></link>, <link linkend="GstPlugin"><type>GstPlugin</type></link>, <link linkend="GstPluginFeature"><type>GstPluginFeature</type></link>, <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link>.</para>
+
+</refsect1>
+
+</refentry>

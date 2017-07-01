@@ -1,0 +1,773 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTask">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTask.top_of_page">GstTask</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTask</refname>
+<refpurpose>Abstraction of GStreamer streaming threads.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTask.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstTaskFunction">*GstTaskFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TASK-BROADCAST:CAPS">GST_TASK_BROADCAST</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TASK-GET-COND:CAPS">GST_TASK_GET_COND</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TASK-GET-LOCK:CAPS">GST_TASK_GET_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TASK-SIGNAL:CAPS">GST_TASK_SIGNAL</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TASK-STATE:CAPS">GST_TASK_STATE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TASK-WAIT:CAPS">GST_TASK_WAIT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstTask"><returnvalue>GstTask</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-task-new">gst_task_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-set-lock">gst_task_set_lock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-set-pool">gst_task_set_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstTaskPool"><returnvalue>GstTaskPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-task-get-pool">gst_task_get_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstTaskThreadFunc">*GstTaskThreadFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-set-enter-callback">gst_task_set_enter_callback</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-set-leave-callback">gst_task_set_leave_callback</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstTaskState"><returnvalue>GstTaskState</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-get-state">gst_task_get_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-set-state">gst_task_set_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-pause">gst_task_pause</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-start">gst_task_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-stop">gst_task_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-join">gst_task_join</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-cleanup-all">gst_task_cleanup_all</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTask.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTask-struct">GstTask</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstTaskState">GstTaskState</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTask.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTask
+</screen>
+</refsect1>
+
+<refsect1 id="GstTask.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTask.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstTask"><type>GstTask</type></link> is used by <link linkend="GstElement"><type>GstElement</type></link> and <link linkend="GstPad"><type>GstPad</type></link> to provide the data passing
+threads in a <link linkend="GstPipeline"><type>GstPipeline</type></link>.</para>
+<para>A <link linkend="GstPad"><type>GstPad</type></link> will typically start a <link linkend="GstTask"><type>GstTask</type></link> to push or pull data to/from the
+peer pads. Most source elements start a <link linkend="GstTask"><type>GstTask</type></link> to push data. In some cases
+a demuxer element can start a <link linkend="GstTask"><type>GstTask</type></link> to pull data from a peer element. This
+is typically done when the demuxer can perform random access on the upstream
+peer element for improved performance.</para>
+<para>Although convenience functions exist on <link linkend="GstPad"><type>GstPad</type></link> to start/pause/stop tasks, it
+might sometimes be needed to create a <link linkend="GstTask"><type>GstTask</type></link> manually if it is not related to
+a <link linkend="GstPad"><type>GstPad</type></link>.</para>
+<para>Before the <link linkend="GstTask"><type>GstTask</type></link> can be run, it needs a <link linkend="GRecMutex"><type>GRecMutex</type></link> that can be set with
+<link linkend="gst-task-set-lock"><function>gst_task_set_lock()</function></link>.</para>
+<para>The task can be started, paused and stopped with <link linkend="gst-task-start"><function>gst_task_start()</function></link>, <link linkend="gst-task-pause"><function>gst_task_pause()</function></link>
+and <link linkend="gst-task-stop"><function>gst_task_stop()</function></link> respectively or with the <link linkend="gst-task-set-state"><function>gst_task_set_state()</function></link> function.</para>
+<para>A <link linkend="GstTask"><type>GstTask</type></link> will repeatedly call the <link linkend="GstTaskFunction"><type>GstTaskFunction</type></link> with the user data
+that was provided when creating the task with <link linkend="gst-task-new"><function>gst_task_new()</function></link>. While calling
+the function it will acquire the provided lock. The provided lock is released
+when the task pauses or stops.</para>
+<para>Stopping a task with <link linkend="gst-task-stop"><function>gst_task_stop()</function></link> will not immediately make sure the task is
+not running anymore. Use <link linkend="gst-task-join"><function>gst_task_join()</function></link> to make sure the task is completely
+stopped and the thread is stopped.</para>
+<para>After creating a <link linkend="GstTask"><type>GstTask</type></link>, use <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> to free its resources. This can
+only be done when the task is not running anymore.</para>
+<para>Task functions can send a <link linkend="GstMessage"><type>GstMessage</type></link> to send out-of-band data to the
+application. The application can receive messages from the <link linkend="GstBus"><type>GstBus</type></link> in its
+mainloop.</para>
+<para>For debugging purposes, the task will configure its object name as the thread
+name on Linux. Please note that the object name should be configured before the
+task is started; changing the object name after the task has been started, has
+no effect on the thread name.</para>
+
+</refsect1>
+<refsect1 id="GstTask.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstTaskFunction" role="function">
+<title>GstTaskFunction&#160;()</title>
+<indexterm zone="GstTaskFunction"><primary>GstTaskFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstTaskFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will repeatedly be called in the thread created by
+a <link linkend="GstTask"><type>GstTask</type></link>.</para>
+<refsect3 id="GstTaskFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to the function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TASK-BROADCAST:CAPS" role="macro">
+<title>GST_TASK_BROADCAST()</title>
+<indexterm zone="GST-TASK-BROADCAST:CAPS"><primary>GST_TASK_BROADCAST</primary></indexterm>
+<programlisting language="C">#define GST_TASK_BROADCAST(task)        g_cond_broadcast(GST_TASK_GET_COND (task))
+</programlisting>
+<para>Send a broadcast signal to all waiting task conds</para>
+<refsect3 id="GST-TASK-BROADCAST.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>Task to broadcast</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TASK-GET-COND:CAPS" role="macro">
+<title>GST_TASK_GET_COND()</title>
+<indexterm zone="GST-TASK-GET-COND:CAPS"><primary>GST_TASK_GET_COND</primary></indexterm>
+<programlisting language="C">#define GST_TASK_GET_COND(task)         (&amp;GST_TASK_CAST(task)-&gt;cond)
+</programlisting>
+<para>Get access to the cond of the task.</para>
+<refsect3 id="GST-TASK-GET-COND.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>Task to get the cond of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TASK-GET-LOCK:CAPS" role="macro">
+<title>GST_TASK_GET_LOCK()</title>
+<indexterm zone="GST-TASK-GET-LOCK:CAPS"><primary>GST_TASK_GET_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_TASK_GET_LOCK(task)         (GST_TASK_CAST(task)-&gt;lock)
+</programlisting>
+<para>Get access to the task lock.</para>
+<refsect3 id="GST-TASK-GET-LOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>Task to get the lock of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TASK-SIGNAL:CAPS" role="macro">
+<title>GST_TASK_SIGNAL()</title>
+<indexterm zone="GST-TASK-SIGNAL:CAPS"><primary>GST_TASK_SIGNAL</primary></indexterm>
+<programlisting language="C">#define GST_TASK_SIGNAL(task)           g_cond_signal(GST_TASK_GET_COND (task))
+</programlisting>
+<para>Signal the task cond</para>
+<refsect3 id="GST-TASK-SIGNAL.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>Task to signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TASK-STATE:CAPS" role="macro">
+<title>GST_TASK_STATE()</title>
+<indexterm zone="GST-TASK-STATE:CAPS"><primary>GST_TASK_STATE</primary></indexterm>
+<programlisting language="C">#define GST_TASK_STATE(task)            (GST_TASK_CAST(task)-&gt;state)
+</programlisting>
+<para>Get access to the state of the task.</para>
+<refsect3 id="GST-TASK-STATE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>Task to get the state of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TASK-WAIT:CAPS" role="macro">
+<title>GST_TASK_WAIT()</title>
+<indexterm zone="GST-TASK-WAIT:CAPS"><primary>GST_TASK_WAIT</primary></indexterm>
+<programlisting language="C">#define GST_TASK_WAIT(task)             g_cond_wait(GST_TASK_GET_COND (task), GST_OBJECT_GET_LOCK (task))
+</programlisting>
+<para>Wait for the task cond to be signalled</para>
+<refsect3 id="GST-TASK-WAIT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>Task to wait for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-new" role="function">
+<title>gst_task_new&#160;()</title>
+<indexterm zone="gst-task-new"><primary>gst_task_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstTask"><returnvalue>GstTask</returnvalue></link>&#160;*
+gst_task_new (<parameter><link linkend="GstTaskFunction"><type>GstTaskFunction</type></link> func</parameter>,
+              <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+              <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> notify</parameter>);</programlisting>
+<para>Create a new Task that will repeatedly call the provided <parameter>func</parameter>
+
+with <parameter>user_data</parameter>
+ as a parameter. Typically the task will run in
+a new thread.</para>
+<para>The function cannot be changed after the task has been created. You
+must create a new <link linkend="GstTask"><type>GstTask</type></link> to change the function.</para>
+<para>This function will not yet create and start a thread. Use <link linkend="gst-task-start"><function>gst_task_start()</function></link> or
+<link linkend="gst-task-pause"><function>gst_task_pause()</function></link> to create and start the GThread.</para>
+<para>Before the task can be used, a <link linkend="GRecMutex"><type>GRecMutex</type></link> must be configured using the
+<link linkend="gst-task-set-lock"><function>gst_task_set_lock()</function></link> function. This lock will always be acquired while
+<parameter>func</parameter>
+ is called.</para>
+<refsect3 id="gst-task-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTaskFunction"><type>GstTaskFunction</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User data to pass to <parameter>func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>notify</para></entry>
+<entry role="parameter_description"><para>the function to call when <parameter>user_data</parameter>
+is no longer needed.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-new.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstTask"><type>GstTask</type></link>.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-set-lock" role="function">
+<title>gst_task_set_lock&#160;()</title>
+<indexterm zone="gst-task-set-lock"><primary>gst_task_set_lock</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_set_lock (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>,
+                   <parameter><link linkend="GRecMutex"><type>GRecMutex</type></link> *mutex</parameter>);</programlisting>
+<para>Set the mutex used by the task. The mutex will be acquired before
+calling the <link linkend="GstTaskFunction"><type>GstTaskFunction</type></link>.</para>
+<para>This function has to be called before calling <link linkend="gst-task-pause"><function>gst_task_pause()</function></link> or
+<link linkend="gst-task-start"><function>gst_task_start()</function></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-task-set-lock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mutex</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GRecMutex"><type>GRecMutex</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-set-pool" role="function">
+<title>gst_task_set_pool&#160;()</title>
+<indexterm zone="gst-task-set-pool"><primary>gst_task_set_pool</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_set_pool (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>,
+                   <parameter><link linkend="GstTaskPool"><type>GstTaskPool</type></link> *pool</parameter>);</programlisting>
+<para>Set <parameter>pool</parameter>
+ as the new GstTaskPool for <parameter>task</parameter>
+. Any new streaming threads that
+will be created by <parameter>task</parameter>
+ will now use <parameter>pool</parameter>
+.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-task-set-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTask"><type>GstTask</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstTaskPool"><type>GstTaskPool</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-get-pool" role="function">
+<title>gst_task_get_pool&#160;()</title>
+<indexterm zone="gst-task-get-pool"><primary>gst_task_get_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstTaskPool"><returnvalue>GstTaskPool</returnvalue></link>&#160;*
+gst_task_get_pool (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>);</programlisting>
+<para>Get the <link linkend="GstTaskPool"><type>GstTaskPool</type></link> that this task will use for its streaming
+threads.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-task-get-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTask"><type>GstTask</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-get-pool.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstTaskPool"><type>GstTaskPool</type></link> used by <parameter>task</parameter>
+. <link linkend="gst-object-unref"><function>gst_object_unref()</function></link>
+after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GstTaskThreadFunc" role="function">
+<title>GstTaskThreadFunc&#160;()</title>
+<indexterm zone="GstTaskThreadFunc"><primary>GstTaskThreadFunc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstTaskThreadFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>,
+                      <parameter><link linkend="GThread"><type>GThread</type></link> *thread</parameter>,
+                      <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Custom GstTask thread callback functions that can be installed.</para>
+<refsect3 id="GstTaskThreadFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>thread</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GThread"><type>GThread</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-set-enter-callback" role="function">
+<title>gst_task_set_enter_callback&#160;()</title>
+<indexterm zone="gst-task-set-enter-callback"><primary>gst_task_set_enter_callback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_set_enter_callback (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>,
+                             <parameter><link linkend="GstTaskThreadFunc"><type>GstTaskThreadFunc</type></link> enter_func</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                             <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> notify</parameter>);</programlisting>
+<para>Call <parameter>enter_func</parameter>
+ when the task function of <parameter>task</parameter>
+ is entered. <parameter>user_data</parameter>
+ will
+be passed to <parameter>enter_func</parameter>
+ and <parameter>notify</parameter>
+ will be called when <parameter>user_data</parameter>
+ is no
+longer referenced.</para>
+<refsect3 id="gst-task-set-enter-callback.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enter_func</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstTaskThreadFunc"><type>GstTaskThreadFunc</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>enter_func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>notify</para></entry>
+<entry role="parameter_description"><para>called when <parameter>user_data</parameter>
+is no longer referenced</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-set-leave-callback" role="function">
+<title>gst_task_set_leave_callback&#160;()</title>
+<indexterm zone="gst-task-set-leave-callback"><primary>gst_task_set_leave_callback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_set_leave_callback (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>,
+                             <parameter><link linkend="GstTaskThreadFunc"><type>GstTaskThreadFunc</type></link> leave_func</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                             <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> notify</parameter>);</programlisting>
+<para>Call <parameter>leave_func</parameter>
+ when the task function of <parameter>task</parameter>
+ is left. <parameter>user_data</parameter>
+ will
+be passed to <parameter>leave_func</parameter>
+ and <parameter>notify</parameter>
+ will be called when <parameter>user_data</parameter>
+ is no
+longer referenced.</para>
+<refsect3 id="gst-task-set-leave-callback.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>leave_func</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstTaskThreadFunc"><type>GstTaskThreadFunc</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>leave_func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>notify</para></entry>
+<entry role="parameter_description"><para>called when <parameter>user_data</parameter>
+is no longer referenced</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-get-state" role="function">
+<title>gst_task_get_state&#160;()</title>
+<indexterm zone="gst-task-get-state"><primary>gst_task_get_state</primary></indexterm>
+<programlisting language="C"><link linkend="GstTaskState"><returnvalue>GstTaskState</returnvalue></link>
+gst_task_get_state (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>);</programlisting>
+<para>Get the current state of the task.</para>
+<refsect3 id="gst-task-get-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-get-state.returns" role="returns">
+<title>Returns</title>
+<para> The <link linkend="GstTaskState"><type>GstTaskState</type></link> of the task</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-set-state" role="function">
+<title>gst_task_set_state&#160;()</title>
+<indexterm zone="gst-task-set-state"><primary>gst_task_set_state</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_task_set_state (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>,
+                    <parameter><link linkend="GstTaskState"><type>GstTaskState</type></link> state</parameter>);</programlisting>
+<para>Sets the state of <parameter>task</parameter>
+ to <parameter>state</parameter>
+.</para>
+<para>The <parameter>task</parameter>
+ must have a lock associated with it using
+<link linkend="gst-task-set-lock"><function>gst_task_set_lock()</function></link> when going to GST_TASK_STARTED or GST_TASK_PAUSED or
+this function will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-task-set-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTask"><type>GstTask</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>state</para></entry>
+<entry role="parameter_description"><para>the new task state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-set-state.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the state could be changed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-pause" role="function">
+<title>gst_task_pause&#160;()</title>
+<indexterm zone="gst-task-pause"><primary>gst_task_pause</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_task_pause (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>);</programlisting>
+<para>Pauses <parameter>task</parameter>
+. This method can also be called on a task in the
+stopped state, in which case a thread will be started and will remain
+in the paused state. This function does not wait for the task to complete
+the paused state.</para>
+<refsect3 id="gst-task-pause.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to pause</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-pause.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the task could be paused.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-start" role="function">
+<title>gst_task_start&#160;()</title>
+<indexterm zone="gst-task-start"><primary>gst_task_start</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_task_start (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>);</programlisting>
+<para>Starts <parameter>task</parameter>
+. The <parameter>task</parameter>
+ must have a lock associated with it using
+<link linkend="gst-task-set-lock"><function>gst_task_set_lock()</function></link> or this function will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<refsect3 id="gst-task-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to start</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-start.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the task could be started.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-stop" role="function">
+<title>gst_task_stop&#160;()</title>
+<indexterm zone="gst-task-stop"><primary>gst_task_stop</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_task_stop (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>);</programlisting>
+<para>Stops <parameter>task</parameter>
+. This method merely schedules the task to stop and
+will not wait for the task to have completely stopped. Use
+<link linkend="gst-task-join"><function>gst_task_join()</function></link> to stop and wait for completion.</para>
+<refsect3 id="gst-task-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to stop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-stop.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the task could be stopped.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-join" role="function">
+<title>gst_task_join&#160;()</title>
+<indexterm zone="gst-task-join"><primary>gst_task_join</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_task_join (<parameter><link linkend="GstTask"><type>GstTask</type></link> *task</parameter>);</programlisting>
+<para>Joins <parameter>task</parameter>
+. After this call, it is safe to unref the task
+and clean up the lock set with <link linkend="gst-task-set-lock"><function>gst_task_set_lock()</function></link>.</para>
+<para>The task will automatically be stopped with this call.</para>
+<para>This function cannot be called from within a task function as this
+would cause a deadlock. The function will detect this and print a
+g_warning.</para>
+<refsect3 id="gst-task-join.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>task</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTask"><type>GstTask</type></link> to join</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-join.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the task could be joined.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-cleanup-all" role="function">
+<title>gst_task_cleanup_all&#160;()</title>
+<indexterm zone="gst-task-cleanup-all"><primary>gst_task_cleanup_all</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_cleanup_all (<parameter><type>void</type></parameter>);</programlisting>
+<para>Wait for all tasks to be stopped. This is mainly used internally
+to ensure proper cleanup of internal data structures in test suites.</para>
+<para>MT safe.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstTask.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTask-struct" role="struct">
+<title>struct GstTask</title>
+<indexterm zone="GstTask-struct"><primary>GstTask</primary></indexterm>
+<programlisting language="C">struct GstTask {
+  GstTaskState     state;
+  GCond            cond;
+
+  GRecMutex       *lock;
+
+  GstTaskFunction  func;
+  gpointer         user_data;
+  GDestroyNotify   notify;
+
+  gboolean         running;
+};
+</programlisting>
+<para>The <link linkend="GstTask"><type>GstTask</type></link> object.</para>
+<refsect3 id="GstTask.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstTaskState"><type>GstTaskState</type></link>&#160;<structfield id="GstTask-struct.state">state</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the state of the task</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GCond"><type>GCond</type></link>&#160;<structfield id="GstTask-struct.cond">cond</structfield>;</para></entry>
+<entry role="struct_member_description"><para>used to pause/resume the task</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GRecMutex"><type>GRecMutex</type></link>&#160;*<structfield id="GstTask-struct.lock">lock</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The lock taken when iterating the task function</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstTaskFunction"><type>GstTaskFunction</type></link>&#160;<structfield id="GstTask-struct.func">func</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the function executed by this task</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gpointer"><type>gpointer</type></link>&#160;<structfield id="GstTask-struct.user-data">user_data</structfield>;</para></entry>
+<entry role="struct_member_description"><para>user_data passed to the task function</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link>&#160;<structfield id="GstTask-struct.notify">notify</structfield>;</para></entry>
+<entry role="struct_member_description"><para>GDestroyNotify for <parameter>user_data</parameter>
+</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstTask-struct.running">running</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a flag indicating that the task is running</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstTaskState" role="enum">
+<title>enum GstTaskState</title>
+<indexterm zone="GstTaskState"><primary>GstTaskState</primary></indexterm>
+<para>The different states a task can be in</para>
+<refsect3 id="GstTaskState.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TASK-STARTED:CAPS">GST_TASK_STARTED</para></entry>
+<entry role="enum_member_description"><para>the task is started and running</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TASK-STOPPED:CAPS">GST_TASK_STOPPED</para></entry>
+<entry role="enum_member_description"><para>the task is stopped</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-TASK-PAUSED:CAPS">GST_TASK_PAUSED</para></entry>
+<entry role="enum_member_description"><para>the task is paused</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstTask.see-also">
+<title>See Also</title>
+<para><link linkend="GstElement"><type>GstElement</type></link>, <link linkend="GstPad"><type>GstPad</type></link></para>
+
+</refsect1>
+
+</refentry>

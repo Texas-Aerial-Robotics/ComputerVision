@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstDeviceMonitor">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstDeviceMonitor.top_of_page">GstDeviceMonitor</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDeviceMonitor</refname>
+<refpurpose>A device monitor and prober</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstDeviceMonitor.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstDeviceMonitor"><returnvalue>GstDeviceMonitor</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-monitor-new">gst_device_monitor_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-monitor-get-bus">gst_device_monitor_get_bus</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-monitor-add-filter">gst_device_monitor_add_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-monitor-remove-filter">gst_device_monitor_remove_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-monitor-start">gst_device_monitor_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-device-monitor-stop">gst_device_monitor_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-device-monitor-get-devices">gst_device_monitor_get_devices</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceMonitor.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeviceMonitor">GstDeviceMonitor</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeviceMonitorClass">GstDeviceMonitorClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstDeviceMonitor.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstDeviceMonitor.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Applications should create a <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> when they want
+to probe, list and monitor devices of a specific type. The
+<link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> will create the appropriate
+<link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link> objects and manage them. It will then post
+messages on its <link linkend="GstBus"><type>GstBus</type></link> for devices that have been added and
+removed.</para>
+<para>The device monitor will monitor all devices matching the filters that
+the application has set.</para>
+<para>The basic use pattern of a device monitor is as follows:</para>
+<informalexample><programlisting><![CDATA[
+  static gboolean
+  my_bus_func (GstBus * bus, GstMessage * message, gpointer user_data)
+  {
+     GstDevice *device;
+     gchar *name;
+
+     switch (GST_MESSAGE_TYPE (message)) {
+       case GST_MESSAGE_DEVICE_ADDED:
+         gst_message_parse_device_added (message, &device);
+         name = gst_device_get_display_name (device);
+         g_print("Device added: %s\n", name);
+         g_free (name);
+         break;
+       case GST_MESSAGE_DEVICE_REMOVED:
+         gst_message_parse_device_removed (message, &device);
+         name = gst_device_get_display_name (device);
+         g_print("Device removed: %s\n", name);
+         g_free (name);
+         break;
+       default:
+         break;
+     }
+
+     return G_SOURCE_CONTINUE;
+  }
+
+  GstDeviceMonitor *
+  setup_raw_video_source_device_monitor (void) {
+     GstDeviceMonitor *monitor;
+     GstBus *bus;
+     GstCaps *caps;
+
+     monitor = gst_device_monitor_new ();
+
+     bus = gst_device_monitor_get_bus (monitor);
+     gst_bus_add_watch (bus, my_bus_func, NULL);
+     gst_object_unref (bus);
+
+     caps = gst_caps_new_empty_simple ("video/x-raw");
+     gst_device_monitor_add_filter (monitor, "Video/Source", caps);
+     gst_caps_unref (caps);
+
+     gst_device_monitor_start (monitor);
+
+     return monitor;
+  }
+]]></programlisting></informalexample>
+<para></para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceMonitor.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-device-monitor-new" role="function" condition="since:1.4">
+<title>gst_device_monitor_new&#160;()</title>
+<indexterm zone="gst-device-monitor-new" role="1.4"><primary>gst_device_monitor_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstDeviceMonitor"><returnvalue>GstDeviceMonitor</returnvalue></link>&#160;*
+gst_device_monitor_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link></para>
+<refsect3 id="gst-device-monitor-new.returns" role="returns">
+<title>Returns</title>
+<para> a new device monitor. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-monitor-get-bus" role="function" condition="since:1.4">
+<title>gst_device_monitor_get_bus&#160;()</title>
+<indexterm zone="gst-device-monitor-get-bus" role="1.4"><primary>gst_device_monitor_get_bus</primary></indexterm>
+<programlisting language="C"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+gst_device_monitor_get_bus (<parameter><link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> *monitor</parameter>);</programlisting>
+<para>Gets the <link linkend="GstBus"><type>GstBus</type></link> of this <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link></para>
+<refsect3 id="gst-device-monitor-get-bus.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>monitor</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-monitor-get-bus.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBus"><type>GstBus</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-monitor-add-filter" role="function" condition="since:1.4">
+<title>gst_device_monitor_add_filter&#160;()</title>
+<indexterm zone="gst-device-monitor-add-filter" role="1.4"><primary>gst_device_monitor_add_filter</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_device_monitor_add_filter (<parameter><link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> *monitor</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *classes</parameter>,
+                               <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Adds a filter for which <link linkend="GstDevice"><type>GstDevice</type></link> will be monitored, any device that matches
+all classes and the <link linkend="GstCaps"><type>GstCaps</type></link> will be returned.</para>
+<para>Filters must be added before the <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> is started.</para>
+<refsect3 id="gst-device-monitor-add-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>monitor</para></entry>
+<entry role="parameter_description"><para>a device monitor</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>classes</para></entry>
+<entry role="parameter_description"><para> device classes to use as filter or <link linkend="NULL:CAPS"><literal>NULL</literal></link> for any class. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstCaps"><type>GstCaps</type></link> to filter or <link linkend="NULL:CAPS"><literal>NULL</literal></link> for ANY. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-monitor-add-filter.returns" role="returns">
+<title>Returns</title>
+<para> The id of the new filter or 0 if no provider matched the filter's
+classes.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-monitor-remove-filter" role="function" condition="since:1.4">
+<title>gst_device_monitor_remove_filter&#160;()</title>
+<indexterm zone="gst-device-monitor-remove-filter" role="1.4"><primary>gst_device_monitor_remove_filter</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_monitor_remove_filter (<parameter><link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> *monitor</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> filter_id</parameter>);</programlisting>
+<para>Removes a filter from the <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> using the id that was returned
+by <link linkend="gst-device-monitor-add-filter"><function>gst_device_monitor_add_filter()</function></link>.</para>
+<refsect3 id="gst-device-monitor-remove-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>monitor</para></entry>
+<entry role="parameter_description"><para>a device monitor</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>filter_id</para></entry>
+<entry role="parameter_description"><para>the id of the filter</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-monitor-remove-filter.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> of the filter id was valid, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-monitor-start" role="function" condition="since:1.4">
+<title>gst_device_monitor_start&#160;()</title>
+<indexterm zone="gst-device-monitor-start" role="1.4"><primary>gst_device_monitor_start</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_device_monitor_start (<parameter><link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> *monitor</parameter>);</programlisting>
+<para>Starts monitoring the devices, one this has succeeded, the
+<link linkend="GST-MESSAGE-DEVICE-ADDED:CAPS"><literal>GST_MESSAGE_DEVICE_ADDED</literal></link> and <link linkend="GST-MESSAGE-DEVICE-REMOVED:CAPS"><literal>GST_MESSAGE_DEVICE_REMOVED</literal></link> messages
+will be emitted on the bus when the list of devices changes.</para>
+<refsect3 id="gst-device-monitor-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>monitor</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-monitor-start.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the device monitoring could be started</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-monitor-stop" role="function" condition="since:1.4">
+<title>gst_device_monitor_stop&#160;()</title>
+<indexterm zone="gst-device-monitor-stop" role="1.4"><primary>gst_device_monitor_stop</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_device_monitor_stop (<parameter><link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> *monitor</parameter>);</programlisting>
+<para>Stops monitoring the devices.</para>
+<refsect3 id="gst-device-monitor-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>monitor</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-device-monitor-get-devices" role="function" condition="since:1.4">
+<title>gst_device_monitor_get_devices&#160;()</title>
+<indexterm zone="gst-device-monitor-get-devices" role="1.4"><primary>gst_device_monitor_get_devices</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_device_monitor_get_devices (<parameter><link linkend="GstDeviceMonitor"><type>GstDeviceMonitor</type></link> *monitor</parameter>);</programlisting>
+<para>Gets a list of devices from all of the relevant monitors. This may actually
+probe the hardware if the monitor is not currently started.</para>
+<refsect3 id="gst-device-monitor-get-devices.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>monitor</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-device-monitor-get-devices.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+<link linkend="GstDevice"><type>GstDevice</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>element-type</acronym> GstDevice]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceMonitor.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDeviceMonitor" role="struct" condition="since:1.4">
+<title>struct GstDeviceMonitor</title>
+<indexterm zone="GstDeviceMonitor" role="1.4"><primary>GstDeviceMonitor</primary></indexterm>
+<programlisting language="C">struct GstDeviceMonitor {
+  GstObject                parent;
+};
+</programlisting>
+<para>Opaque device monitor object structure.</para>
+<refsect3 id="GstDeviceMonitor.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstObject"><type>GstObject</type></link>&#160;<structfield id="GstDeviceMonitor.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the parent <link linkend="GstObject"><type>GstObject</type></link> structure</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GstDeviceMonitorClass" role="struct" condition="since:1.4">
+<title>struct GstDeviceMonitorClass</title>
+<indexterm zone="GstDeviceMonitorClass" role="1.4"><primary>GstDeviceMonitorClass</primary></indexterm>
+<programlisting language="C">struct GstDeviceMonitorClass {
+  GstObjectClass           parent_class;
+};
+</programlisting>
+<para>Opaque device monitor class structure.</para>
+<refsect3 id="GstDeviceMonitorClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstDeviceMonitor.see-also">
+<title>See Also</title>
+<para><link linkend="GstDevice"><type>GstDevice</type></link>, <link linkend="GstDeviceProvider"><type>GstDeviceProvider</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstCompat">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstCompat.top_of_page">GstCompat</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstCompat</refname>
+<refpurpose>Deprecated API entries</refpurpose>
+</refnamediv>
+
+
+<refsect1 id="gstreamer-GstCompat.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstCompat.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Please do not use these in new code.
+These symbols are only available by defining GST_DISABLE_DEPRECATED.
+This can be done in CFLAGS for compiling old code.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstCompat.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para />
+</refsect1>
+<refsect1 id="gstreamer-GstCompat.other_details" role="details">
+<title role="details.title">Types and Values</title>
+
+</refsect1>
+
+</refentry>

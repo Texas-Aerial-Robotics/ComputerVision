@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE screen PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<screen>
+    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstAllocator">GstAllocator</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPad">GstPad</link>
+            <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstProxyPad">GstProxyPad</link>
+            <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstGhostPad">GstGhostPad</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPadTemplate">GstPadTemplate</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPluginFeature">GstPluginFeature</link>
+            <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstElementFactory">GstElementFactory</link>
+            <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTypeFindFactory">GstTypeFindFactory</link>
+            <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+            <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstBin">GstBin</link>
+            <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPipeline">GstPipeline</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBus">GstBus</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTask">GstTask</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTaskPool">GstTaskPool</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstClock">GstClock</link>
+            <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstSystemClock">GstSystemClock</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstControlBinding">GstControlBinding</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPlugin">GstPlugin</link>
+            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRegistry">GstRegistry</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstBufferPool">GstBufferPool</link>
+    <link linkend="GInterface">GInterface</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstChildProxy">GstChildProxy</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstURIHandler">GstURIHandler</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstPreset">GstPreset</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstTagSetter">GstTagSetter</link>
+    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstMemory">GstMemory</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstQuery">GstQuery</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstStructure">GstStructure</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstCaps">GstCaps</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstCapsFeatures">GstCapsFeatures</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstMessage">GstMessage</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstEvent">GstEvent</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBuffer">GstBuffer</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBufferList">GstBufferList</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstSample">GstSample</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstContext">GstContext</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstDateTime">GstDateTime</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTagList">GstTagList</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstToc">GstToc</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTocEntry">GstTocEntry</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstSegment">GstSegment</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstAllocationParams">GstAllocationParams</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstParseContext">GstParseContext</link>
+</screen>

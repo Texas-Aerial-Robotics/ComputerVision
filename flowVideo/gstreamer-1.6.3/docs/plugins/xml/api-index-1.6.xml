@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-1.6">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstTee--allow-not-linked"><link linkend="GstTee--allow-not-linked">GstTee:allow-not-linked</link>, object property in <link linkend="gstreamer-plugins-tee">tee</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

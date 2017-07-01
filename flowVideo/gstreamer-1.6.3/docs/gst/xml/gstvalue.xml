@@ -1,0 +1,2769 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstValue">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstValue.top_of_page">GstValue</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstValue</refname>
+<refpurpose>GValue implementations specific
+to GStreamer</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstValue.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MAKE-FOURCC:CAPS">GST_MAKE_FOURCC</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-STR-FOURCC:CAPS">GST_STR_FOURCC</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FOURCC-ARGS:CAPS">GST_FOURCC_ARGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-INT-RANGE:CAPS">GST_VALUE_HOLDS_INT_RANGE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-int-range">gst_value_set_int_range</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-int-range-min">gst_value_get_int_range_min</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-int-range-max">gst_value_get_int_range_max</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-int-range-step">gst_value_set_int_range_step</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-int-range-step">gst_value_get_int_range_step</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-BITMASK:CAPS">GST_VALUE_HOLDS_BITMASK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-bitmask">gst_value_set_bitmask</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-bitmask">gst_value_get_bitmask</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-FLAG-SET:CAPS">GST_VALUE_HOLDS_FLAG_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-flagset">gst_structure_get_flagset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-flagset-flags">gst_value_get_flagset_flags</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-flagset-mask">gst_value_get_flagset_mask</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-flagset">gst_value_set_flagset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-INT64-RANGE:CAPS">GST_VALUE_HOLDS_INT64_RANGE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-int64-range">gst_value_set_int64_range</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-int64-range-min">gst_value_get_int64_range_min</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-int64-range-max">gst_value_get_int64_range_max</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-int64-range-step">gst_value_set_int64_range_step</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-int64-range-step">gst_value_get_int64_range_step</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-DOUBLE-RANGE:CAPS">GST_VALUE_HOLDS_DOUBLE_RANGE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-double-range">gst_value_set_double_range</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-double-range-min">gst_value_get_double_range_min</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-double-range-max">gst_value_get_double_range_max</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-LIST:CAPS">GST_VALUE_HOLDS_LIST</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-ARRAY:CAPS">GST_VALUE_HOLDS_ARRAY</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-list-append-value">gst_value_list_append_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-list-append-and-take-value">gst_value_list_append_and_take_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-list-prepend-value">gst_value_list_prepend_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-list-concat">gst_value_list_concat</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-list-merge">gst_value_list_merge</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-list-get-size">gst_value_list_get_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-list-get-value">gst_value_list_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-FRACTION:CAPS">GST_VALUE_HOLDS_FRACTION</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-fraction">gst_value_set_fraction</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-fraction-numerator">gst_value_get_fraction_numerator</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-get-fraction-denominator">gst_value_get_fraction_denominator</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-fraction-multiply">gst_value_fraction_multiply</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-fraction-subtract">gst_value_fraction_subtract</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-FRACTION-RANGE:CAPS">GST_VALUE_HOLDS_FRACTION_RANGE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-fraction-range">gst_value_set_fraction_range</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-get-fraction-range-min">gst_value_get_fraction_range_min</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-get-fraction-range-max">gst_value_get_fraction_range_max</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-fraction-range-full">gst_value_set_fraction_range_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-DATE-TIME:CAPS">GST_VALUE_HOLDS_DATE_TIME</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-CAPS">GST_VALUE_HOLDS_CAPS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-caps">gst_value_set_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-get-caps">gst_value_get_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-CAPS-FEATURES:CAPS">GST_VALUE_HOLDS_CAPS_FEATURES</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-caps-features">gst_value_set_caps_features</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-get-caps-features">gst_value_get_caps_features</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-STRUCTURE:CAPS">GST_VALUE_HOLDS_STRUCTURE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-set-structure">gst_value_set_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-get-structure">gst_value_get_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-BUFFER:CAPS">GST_VALUE_HOLDS_BUFFER</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-value-get-buffer">gst_value_get_buffer</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-value-set-buffer">gst_value_set_buffer</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-value-take-buffer">gst_value_take_buffer</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-HOLDS-SAMPLE:CAPS">GST_VALUE_HOLDS_SAMPLE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-value-get-sample">gst_value_get_sample</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-value-set-sample">gst_value_set_sample</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-value-take-sample">gst_value_take_sample</link><phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstValueCompareFunc">*GstValueCompareFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstValueSerializeFunc">*GstValueSerializeFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstValueDeserializeFunc">*GstValueDeserializeFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-is-fixed">gst_value_is_fixed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-register">gst_value_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-init-and-copy">gst_value_init_and_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-serialize">gst_value_serialize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-deserialize">gst_value_deserialize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-compare">gst_value_compare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-can-compare">gst_value_can_compare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-union">gst_value_union</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-can-union">gst_value_can_union</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-subtract">gst_value_subtract</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-can-subtract">gst_value_can_subtract</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-intersect">gst_value_intersect</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-can-intersect">gst_value_can_intersect</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-is-subset">gst_value_is_subset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-array-append-value">gst_value_array_append_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-array-append-and-take-value">gst_value_array_append_and_take_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-array-get-size">gst_value_array_get_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-value-array-get-value">gst_value_array_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-array-prepend-value">gst_value_array_prepend_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-value-fixate">gst_value_fixate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-flagset-register">gst_flagset_register</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstValue.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FOURCC-FORMAT:CAPS">GST_FOURCC_FORMAT</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-INT-RANGE:CAPS">GST_TYPE_INT_RANGE</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-BITMASK:CAPS">GST_TYPE_BITMASK</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-FLAG-SET:CAPS">GST_TYPE_FLAG_SET</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FLAG-SET-MASK-EXACT:CAPS">GST_FLAG_SET_MASK_EXACT</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-INT64-RANGE:CAPS">GST_TYPE_INT64_RANGE</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-DOUBLE-RANGE:CAPS">GST_TYPE_DOUBLE_RANGE</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-LIST:CAPS">GST_TYPE_LIST</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-ARRAY:CAPS">GST_TYPE_ARRAY</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-FRACTION:CAPS">GST_TYPE_FRACTION</link></entry></row>
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-FRACTION-RANGE:CAPS">GST_TYPE_FRACTION_RANGE</link></entry></row>
+
+
+
+
+
+
+
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-LESS-THAN:CAPS">GST_VALUE_LESS_THAN</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-EQUAL:CAPS">GST_VALUE_EQUAL</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-GREATER-THAN:CAPS">GST_VALUE_GREATER_THAN</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-VALUE-UNORDERED:CAPS">GST_VALUE_UNORDERED</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstValueTable">GstValueTable</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstValue.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstValue.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GValue implementations specific to GStreamer.</para>
+<para>Note that operations on the same <link linkend="GValue"><type>GValue</type></link> from multiple threads may lead to
+undefined behaviour.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstValue.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-MAKE-FOURCC:CAPS" role="macro">
+<title>GST_MAKE_FOURCC()</title>
+<indexterm zone="GST-MAKE-FOURCC:CAPS"><primary>GST_MAKE_FOURCC</primary></indexterm>
+<programlisting language="C">#define GST_MAKE_FOURCC(a,b,c,d)        ((guint32)((a)|(b)&lt;&lt;8|(c)&lt;&lt;16|(d)&lt;&lt;24))
+</programlisting>
+<para>Transform four characters into a <link linkend="guint32"><type>guint32</type></link> fourcc value with host
+endianness.</para>
+<informalexample>
+<programlisting>
+guint32 fourcc = GST_MAKE_FOURCC ('M', 'J', 'P', 'G');
+</programlisting>
+</informalexample>
+<refsect3 id="GST-MAKE-FOURCC.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>a</para></entry>
+<entry role="parameter_description"><para>the first character</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para>the second character</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>c</para></entry>
+<entry role="parameter_description"><para>the third character</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>d</para></entry>
+<entry role="parameter_description"><para>the fourth character</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-STR-FOURCC:CAPS" role="macro">
+<title>GST_STR_FOURCC()</title>
+<indexterm zone="GST-STR-FOURCC:CAPS"><primary>GST_STR_FOURCC</primary></indexterm>
+<programlisting language="C">#define GST_STR_FOURCC(f)               ((guint32)(((f)[0])|((f)[1]&lt;&lt;8)|((f)[2]&lt;&lt;16)|((f)[3]&lt;&lt;24)))
+</programlisting>
+<para>Transform an input string into a <link linkend="guint32"><type>guint32</type></link> fourcc value with host
+endianness.
+Caller is responsible for ensuring the input string consists of at least
+four characters.</para>
+<informalexample>
+<programlisting>
+guint32 fourcc = GST_STR_FOURCC ("MJPG");
+</programlisting>
+</informalexample>
+<refsect3 id="GST-STR-FOURCC.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>f</para></entry>
+<entry role="parameter_description"><para>a string with at least four characters</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-FOURCC-ARGS:CAPS" role="macro">
+<title>GST_FOURCC_ARGS()</title>
+<indexterm zone="GST-FOURCC-ARGS:CAPS"><primary>GST_FOURCC_ARGS</primary></indexterm>
+<programlisting language="C">#define             GST_FOURCC_ARGS(fourcc)</programlisting>
+<para>Can be used together with <link linkend="GST-FOURCC-FORMAT:CAPS"><type>GST_FOURCC_FORMAT</type></link> to properly output a
+<link linkend="guint32"><type>guint32</type></link> fourcc value in a <link linkend="printf"><function>printf()</function></link>-style text message.</para>
+<refsect3 id="GST-FOURCC-ARGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>fourcc</para></entry>
+<entry role="parameter_description"><para>a <link linkend="guint32"><type>guint32</type></link> fourcc value to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-INT-RANGE:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_INT_RANGE()</title>
+<indexterm zone="GST-VALUE-HOLDS-INT-RANGE:CAPS"><primary>GST_VALUE_HOLDS_INT_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_INT_RANGE(x)      ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_int_range_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-INT-RANGE:CAPS"><type>GST_TYPE_INT_RANGE</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-INT-RANGE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-int-range" role="function">
+<title>gst_value_set_int_range&#160;()</title>
+<indexterm zone="gst-value-set-int-range"><primary>gst_value_set_int_range</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_int_range (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> start</parameter>,
+                         <parameter><link linkend="gint"><type>gint</type></link> end</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>start</parameter>
+ and <parameter>end</parameter>
+.</para>
+<refsect3 id="gst-value-set-int-range.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para>the end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-int-range-min" role="function">
+<title>gst_value_get_int_range_min&#160;()</title>
+<indexterm zone="gst-value-get-int-range-min"><primary>gst_value_get_int_range_min</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_value_get_int_range_min (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the minimum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-int-range-min.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-int-range-min.returns" role="returns">
+<title>Returns</title>
+<para> the minimum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-int-range-max" role="function">
+<title>gst_value_get_int_range_max&#160;()</title>
+<indexterm zone="gst-value-get-int-range-max"><primary>gst_value_get_int_range_max</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_value_get_int_range_max (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the maximum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-int-range-max.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-int-range-max.returns" role="returns">
+<title>Returns</title>
+<para> the maximum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-int-range-step" role="function">
+<title>gst_value_set_int_range_step&#160;()</title>
+<indexterm zone="gst-value-set-int-range-step"><primary>gst_value_set_int_range_step</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_int_range_step (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> start</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> end</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> step</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>start</parameter>
+, <parameter>end</parameter>
+ and <parameter>step</parameter>
+.</para>
+<refsect3 id="gst-value-set-int-range-step.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para>the end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>step</para></entry>
+<entry role="parameter_description"><para>the step of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-int-range-step" role="function">
+<title>gst_value_get_int_range_step&#160;()</title>
+<indexterm zone="gst-value-get-int-range-step"><primary>gst_value_get_int_range_step</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_value_get_int_range_step (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the step of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-int-range-step.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-int-range-step.returns" role="returns">
+<title>Returns</title>
+<para> the step of the range</para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-BITMASK:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_BITMASK()</title>
+<indexterm zone="GST-VALUE-HOLDS-BITMASK:CAPS"><primary>GST_VALUE_HOLDS_BITMASK</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_BITMASK(x)      ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_bitmask_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-BITMASK:CAPS"><type>GST_TYPE_BITMASK</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-BITMASK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-bitmask" role="function">
+<title>gst_value_set_bitmask&#160;()</title>
+<indexterm zone="gst-value-set-bitmask"><primary>gst_value_set_bitmask</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_bitmask (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                       <parameter><link linkend="guint64"><type>guint64</type></link> bitmask</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the bitmask specified by <parameter>bitmask</parameter>
+.</para>
+<refsect3 id="gst-value-set-bitmask.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-BITMASK:CAPS"><type>GST_TYPE_BITMASK</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bitmask</para></entry>
+<entry role="parameter_description"><para>the bitmask</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-bitmask" role="function">
+<title>gst_value_get_bitmask&#160;()</title>
+<indexterm zone="gst-value-get-bitmask"><primary>gst_value_get_bitmask</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_value_get_bitmask (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the bitmask specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-bitmask.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-BITMASK:CAPS"><type>GST_TYPE_BITMASK</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-bitmask.returns" role="returns">
+<title>Returns</title>
+<para> the bitmask.</para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-FLAG-SET:CAPS" role="macro" condition="since:1.6">
+<title>GST_VALUE_HOLDS_FLAG_SET()</title>
+<indexterm zone="GST-VALUE-HOLDS-FLAG-SET:CAPS" role="1.6"><primary>GST_VALUE_HOLDS_FLAG_SET</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_FLAG_SET(x)     (G_TYPE_CHECK_VALUE_TYPE ((x), GST_TYPE_FLAG_SET))
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-FLAG-SET:CAPS"><type>GST_TYPE_FLAG_SET</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-FLAG-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-structure-get-flagset" role="function" condition="since:1.6">
+<title>gst_structure_get_flagset&#160;()</title>
+<indexterm zone="gst-structure-get-flagset" role="1.6"><primary>gst_structure_get_flagset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_flagset (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                           <parameter><link linkend="guint"><type>guint</type></link> *value_flags</parameter>,
+                           <parameter><link linkend="guint"><type>guint</type></link> *value_mask</parameter>);</programlisting>
+<para>Read the GstFlagSet flags and mask out of the structure into the
+provided pointers.</para>
+<refsect3 id="gst-structure-get-flagset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value_flags</para></entry>
+<entry role="parameter_description"><para> a pointer to a guint for the flags field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value_mask</para></entry>
+<entry role="parameter_description"><para> a pointer to a guint for the mask field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-flagset.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the values could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a GstFlagSet, this
+function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-value-get-flagset-flags" role="function" condition="since:1.6">
+<title>gst_value_get_flagset_flags&#160;()</title>
+<indexterm zone="gst-value-get-flagset-flags" role="1.6"><primary>gst_value_get_flagset_flags</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_value_get_flagset_flags (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Retrieve the flags field of a GstFlagSet <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-flagset-flags.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FLAG-SET:CAPS"><type>GST_TYPE_FLAG_SET</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-flagset-flags.returns" role="returns">
+<title>Returns</title>
+<para> the flags field of the flagset instance.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-value-get-flagset-mask" role="function" condition="since:1.6">
+<title>gst_value_get_flagset_mask&#160;()</title>
+<indexterm zone="gst-value-get-flagset-mask" role="1.6"><primary>gst_value_get_flagset_mask</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_value_get_flagset_mask (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Retrieve the mask field of a GstFlagSet <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-flagset-mask.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FLAG-SET:CAPS"><type>GST_TYPE_FLAG_SET</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-flagset-mask.returns" role="returns">
+<title>Returns</title>
+<para> the mask field of the flagset instance.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-value-set-flagset" role="function" condition="since:1.6">
+<title>gst_value_set_flagset&#160;()</title>
+<indexterm zone="gst-value-set-flagset" role="1.6"><primary>gst_value_set_flagset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_flagset (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                       <parameter><link linkend="guint"><type>guint</type></link> flags</parameter>,
+                       <parameter><link linkend="guint"><type>guint</type></link> mask</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the flags and mask values provided in <parameter>flags</parameter>
+ and <parameter>mask</parameter>
+.
+The <parameter>flags</parameter>
+ value indicates the values of flags, the <parameter>mask</parameter>
+ represents
+which bits in the flag value have been set, and which are "don't care"</para>
+<refsect3 id="gst-value-set-flagset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FLAG-SET:CAPS"><literal>GST_TYPE_FLAG_SET</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>The value of the flags set or unset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mask</para></entry>
+<entry role="parameter_description"><para>The mask indicate which flags bits must match for comparisons</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-INT64-RANGE:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_INT64_RANGE()</title>
+<indexterm zone="GST-VALUE-HOLDS-INT64-RANGE:CAPS"><primary>GST_VALUE_HOLDS_INT64_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_INT64_RANGE(x)    ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_int64_range_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-INT64-RANGE:CAPS"><type>GST_TYPE_INT64_RANGE</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-INT64-RANGE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-int64-range" role="function">
+<title>gst_value_set_int64_range&#160;()</title>
+<indexterm zone="gst-value-set-int64-range"><primary>gst_value_set_int64_range</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_int64_range (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                           <parameter><link linkend="gint64"><type>gint64</type></link> start</parameter>,
+                           <parameter><link linkend="gint64"><type>gint64</type></link> end</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>start</parameter>
+ and <parameter>end</parameter>
+.</para>
+<refsect3 id="gst-value-set-int64-range.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT64_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para>the end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-int64-range-min" role="function">
+<title>gst_value_get_int64_range_min&#160;()</title>
+<indexterm zone="gst-value-get-int64-range-min"><primary>gst_value_get_int64_range_min</primary></indexterm>
+<programlisting language="C"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+gst_value_get_int64_range_min (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the minimum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-int64-range-min.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT64_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-int64-range-min.returns" role="returns">
+<title>Returns</title>
+<para> the minimum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-int64-range-max" role="function">
+<title>gst_value_get_int64_range_max&#160;()</title>
+<indexterm zone="gst-value-get-int64-range-max"><primary>gst_value_get_int64_range_max</primary></indexterm>
+<programlisting language="C"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+gst_value_get_int64_range_max (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the maximum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-int64-range-max.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT64_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-int64-range-max.returns" role="returns">
+<title>Returns</title>
+<para> the maximum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-int64-range-step" role="function">
+<title>gst_value_set_int64_range_step&#160;()</title>
+<indexterm zone="gst-value-set-int64-range-step"><primary>gst_value_set_int64_range_step</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_int64_range_step (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> start</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> end</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> step</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>start</parameter>
+, <parameter>end</parameter>
+ and <parameter>step</parameter>
+.</para>
+<refsect3 id="gst-value-set-int64-range-step.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT64_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para>the end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>step</para></entry>
+<entry role="parameter_description"><para>the step of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-int64-range-step" role="function">
+<title>gst_value_get_int64_range_step&#160;()</title>
+<indexterm zone="gst-value-get-int64-range-step"><primary>gst_value_get_int64_range_step</primary></indexterm>
+<programlisting language="C"><link linkend="gint64"><returnvalue>gint64</returnvalue></link>
+gst_value_get_int64_range_step (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the step of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-int64-range-step.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_INT64_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-int64-range-step.returns" role="returns">
+<title>Returns</title>
+<para> the step of the range</para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-DOUBLE-RANGE:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_DOUBLE_RANGE()</title>
+<indexterm zone="GST-VALUE-HOLDS-DOUBLE-RANGE:CAPS"><primary>GST_VALUE_HOLDS_DOUBLE_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_DOUBLE_RANGE(x)   ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_double_range_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-DOUBLE-RANGE:CAPS"><type>GST_TYPE_DOUBLE_RANGE</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-DOUBLE-RANGE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-double-range" role="function">
+<title>gst_value_set_double_range&#160;()</title>
+<indexterm zone="gst-value-set-double-range"><primary>gst_value_set_double_range</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_double_range (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                            <parameter><link linkend="gdouble"><type>gdouble</type></link> start</parameter>,
+                            <parameter><link linkend="gdouble"><type>gdouble</type></link> end</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>start</parameter>
+ and <parameter>end</parameter>
+.</para>
+<refsect3 id="gst-value-set-double-range.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_DOUBLE_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para>the end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-double-range-min" role="function">
+<title>gst_value_get_double_range_min&#160;()</title>
+<indexterm zone="gst-value-get-double-range-min"><primary>gst_value_get_double_range_min</primary></indexterm>
+<programlisting language="C"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+gst_value_get_double_range_min (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the minimum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-double-range-min.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_DOUBLE_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-double-range-min.returns" role="returns">
+<title>Returns</title>
+<para> the minimum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-double-range-max" role="function">
+<title>gst_value_get_double_range_max&#160;()</title>
+<indexterm zone="gst-value-get-double-range-max"><primary>gst_value_get_double_range_max</primary></indexterm>
+<programlisting language="C"><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>
+gst_value_get_double_range_max (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the maximum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-double-range-max.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_DOUBLE_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-double-range-max.returns" role="returns">
+<title>Returns</title>
+<para> the maximum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-LIST:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_LIST()</title>
+<indexterm zone="GST-VALUE-HOLDS-LIST:CAPS"><primary>GST_VALUE_HOLDS_LIST</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_LIST(x)         ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_value_list_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-LIST.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-ARRAY:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_ARRAY()</title>
+<indexterm zone="GST-VALUE-HOLDS-ARRAY:CAPS"><primary>GST_VALUE_HOLDS_ARRAY</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_ARRAY(x)        ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_value_array_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-ARRAY:CAPS"><type>GST_TYPE_ARRAY</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-ARRAY.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-list-append-value" role="function">
+<title>gst_value_list_append_value&#160;()</title>
+<indexterm zone="gst-value-list-append-value"><primary>gst_value_list_append_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_list_append_value (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                             <parameter>const <link linkend="GValue"><type>GValue</type></link> *append_value</parameter>);</programlisting>
+<para>Appends <parameter>append_value</parameter>
+ to the GstValueList in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-list-append-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>append_value</para></entry>
+<entry role="parameter_description"><para> the value to append. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-list-append-and-take-value" role="function" condition="since:1.2">
+<title>gst_value_list_append_and_take_value&#160;()</title>
+<indexterm zone="gst-value-list-append-and-take-value" role="1.2"><primary>gst_value_list_append_and_take_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_list_append_and_take_value (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                                      <parameter><link linkend="GValue"><type>GValue</type></link> *append_value</parameter>);</programlisting>
+<para>Appends <parameter>append_value</parameter>
+ to the GstValueList in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-list-append-and-take-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>append_value</para></entry>
+<entry role="parameter_description"><para> the value to append. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-value-list-prepend-value" role="function">
+<title>gst_value_list_prepend_value&#160;()</title>
+<indexterm zone="gst-value-list-prepend-value"><primary>gst_value_list_prepend_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_list_prepend_value (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                              <parameter>const <link linkend="GValue"><type>GValue</type></link> *prepend_value</parameter>);</programlisting>
+<para>Prepends <parameter>prepend_value</parameter>
+ to the GstValueList in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-list-prepend-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prepend_value</para></entry>
+<entry role="parameter_description"><para>the value to prepend</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-list-concat" role="function">
+<title>gst_value_list_concat&#160;()</title>
+<indexterm zone="gst-value-list-concat"><primary>gst_value_list_concat</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_list_concat (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                       <parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                       <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Concatenates copies of <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+ into a list.  Values that are not
+of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link> are treated as if they were lists of length 1.
+<parameter>dest</parameter>
+ will be initialized to the type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link>.</para>
+<refsect3 id="gst-value-list-concat.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> an uninitialized <link linkend="GValue"><type>GValue</type></link> to take the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-list-merge" role="function">
+<title>gst_value_list_merge&#160;()</title>
+<indexterm zone="gst-value-list-merge"><primary>gst_value_list_merge</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_list_merge (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                      <parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                      <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Merges copies of <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+.  Values that are not
+of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link> are treated as if they were lists of length 1.</para>
+<para>The result will be put into <parameter>dest</parameter>
+ and will either be a list that will not
+contain any duplicates, or a non-list type (if <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+
+were equal).</para>
+<refsect3 id="gst-value-list-merge.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> an uninitialized <link linkend="GValue"><type>GValue</type></link> to take the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-list-get-size" role="function">
+<title>gst_value_list_get_size&#160;()</title>
+<indexterm zone="gst-value-list-get-size"><primary>gst_value_list_get_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_value_list_get_size (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the number of values contained in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-list-get-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-list-get-size.returns" role="returns">
+<title>Returns</title>
+<para> the number of values</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-list-get-value" role="function">
+<title>gst_value_list_get_value&#160;()</title>
+<indexterm zone="gst-value-list-get-value"><primary>gst_value_list_get_value</primary></indexterm>
+<programlisting language="C">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_value_list_get_value (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                          <parameter><link linkend="guint"><type>guint</type></link> index</parameter>);</programlisting>
+<para>Gets the value that is a member of the list contained in <parameter>value</parameter>
+ and
+has the index <parameter>index</parameter>
+.</para>
+<refsect3 id="gst-value-list-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-LIST:CAPS"><type>GST_TYPE_LIST</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>index</para></entry>
+<entry role="parameter_description"><para>index of value to get from the list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-list-get-value.returns" role="returns">
+<title>Returns</title>
+<para> the value at the given index. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-FRACTION:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_FRACTION()</title>
+<indexterm zone="GST-VALUE-HOLDS-FRACTION:CAPS"><primary>GST_VALUE_HOLDS_FRACTION</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_FRACTION(x)     ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_fraction_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-FRACTION.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-fraction" role="function">
+<title>gst_value_set_fraction&#160;()</title>
+<indexterm zone="gst-value-set-fraction"><primary>gst_value_set_fraction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_fraction (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                        <parameter><link linkend="gint"><type>gint</type></link> numerator</parameter>,
+                        <parameter><link linkend="gint"><type>gint</type></link> denominator</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the fraction specified by <parameter>numerator</parameter>
+ over <parameter>denominator</parameter>
+.
+The fraction gets reduced to the smallest numerator and denominator,
+and if necessary the sign is moved to the numerator.</para>
+<refsect3 id="gst-value-set-fraction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>numerator</para></entry>
+<entry role="parameter_description"><para>the numerator of the fraction</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denominator</para></entry>
+<entry role="parameter_description"><para>the denominator of the fraction</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-fraction-numerator" role="function">
+<title>gst_value_get_fraction_numerator&#160;()</title>
+<indexterm zone="gst-value-get-fraction-numerator"><primary>gst_value_get_fraction_numerator</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_value_get_fraction_numerator (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the numerator of the fraction specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-fraction-numerator.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-fraction-numerator.returns" role="returns">
+<title>Returns</title>
+<para> the numerator of the fraction.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-fraction-denominator" role="function">
+<title>gst_value_get_fraction_denominator&#160;()</title>
+<indexterm zone="gst-value-get-fraction-denominator"><primary>gst_value_get_fraction_denominator</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_value_get_fraction_denominator (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the denominator of the fraction specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-fraction-denominator.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-fraction-denominator.returns" role="returns">
+<title>Returns</title>
+<para> the denominator of the fraction.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-fraction-multiply" role="function">
+<title>gst_value_fraction_multiply&#160;()</title>
+<indexterm zone="gst-value-fraction-multiply"><primary>gst_value_fraction_multiply</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_fraction_multiply (<parameter><link linkend="GValue"><type>GValue</type></link> *product</parameter>,
+                             <parameter>const <link linkend="GValue"><type>GValue</type></link> *factor1</parameter>,
+                             <parameter>const <link linkend="GValue"><type>GValue</type></link> *factor2</parameter>);</programlisting>
+<para>Multiplies the two <link linkend="GValue"><type>GValue</type></link> items containing a <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link> and sets
+<parameter>product</parameter>
+ to the product of the two fractions.</para>
+<refsect3 id="gst-value-fraction-multiply.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>product</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>factor1</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>factor2</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-fraction-multiply.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> in case of an error (like integer overflow), <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-fraction-subtract" role="function">
+<title>gst_value_fraction_subtract&#160;()</title>
+<indexterm zone="gst-value-fraction-subtract"><primary>gst_value_fraction_subtract</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_fraction_subtract (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                             <parameter>const <link linkend="GValue"><type>GValue</type></link> *minuend</parameter>,
+                             <parameter>const <link linkend="GValue"><type>GValue</type></link> *subtrahend</parameter>);</programlisting>
+<para>Subtracts the <parameter>subtrahend</parameter>
+ from the <parameter>minuend</parameter>
+ and sets <parameter>dest</parameter>
+ to the result.</para>
+<refsect3 id="gst-value-fraction-subtract.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minuend</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>subtrahend</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to <link linkend="GST-TYPE-FRACTION:CAPS"><type>GST_TYPE_FRACTION</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-fraction-subtract.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> in case of an error (like integer overflow), <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-FRACTION-RANGE:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_FRACTION_RANGE()</title>
+<indexterm zone="GST-VALUE-HOLDS-FRACTION-RANGE:CAPS"><primary>GST_VALUE_HOLDS_FRACTION_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_FRACTION_RANGE(x) ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_fraction_range_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-FRACTION-RANGE:CAPS"><type>GST_TYPE_FRACTION_RANGE</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-FRACTION-RANGE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-fraction-range" role="function">
+<title>gst_value_set_fraction_range&#160;()</title>
+<indexterm zone="gst-value-set-fraction-range"><primary>gst_value_set_fraction_range</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_fraction_range (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                              <parameter>const <link linkend="GValue"><type>GValue</type></link> *start</parameter>,
+                              <parameter>const <link linkend="GValue"><type>GValue</type></link> *end</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>start</parameter>
+ and <parameter>end</parameter>
+.</para>
+<refsect3 id="gst-value-set-fraction-range.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_FRACTION_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start of the range (a GST_TYPE_FRACTION GValue)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para>the end of the range (a GST_TYPE_FRACTION GValue)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-fraction-range-min" role="function">
+<title>gst_value_get_fraction_range_min&#160;()</title>
+<indexterm zone="gst-value-get-fraction-range-min"><primary>gst_value_get_fraction_range_min</primary></indexterm>
+<programlisting language="C">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_value_get_fraction_range_min (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the minimum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-fraction-range-min.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_FRACTION_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-fraction-range-min.returns" role="returns">
+<title>Returns</title>
+<para> the minimum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-fraction-range-max" role="function">
+<title>gst_value_get_fraction_range_max&#160;()</title>
+<indexterm zone="gst-value-get-fraction-range-max"><primary>gst_value_get_fraction_range_max</primary></indexterm>
+<programlisting language="C">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_value_get_fraction_range_max (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the maximum of the range specified by <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-fraction-range-max.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_FRACTION_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-fraction-range-max.returns" role="returns">
+<title>Returns</title>
+<para> the maximum of the range</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-fraction-range-full" role="function">
+<title>gst_value_set_fraction_range_full&#160;()</title>
+<indexterm zone="gst-value-set-fraction-range-full"><primary>gst_value_set_fraction_range_full</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_fraction_range_full (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                                   <parameter><link linkend="gint"><type>gint</type></link> numerator_start</parameter>,
+                                   <parameter><link linkend="gint"><type>gint</type></link> denominator_start</parameter>,
+                                   <parameter><link linkend="gint"><type>gint</type></link> numerator_end</parameter>,
+                                   <parameter><link linkend="gint"><type>gint</type></link> denominator_end</parameter>);</programlisting>
+<para>Sets <parameter>value</parameter>
+ to the range specified by <parameter>numerator_start</parameter>
+/<parameter>denominator_start</parameter>
+
+and <parameter>numerator_end</parameter>
+/<parameter>denominator_end</parameter>
+.</para>
+<refsect3 id="gst-value-set-fraction-range-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_FRACTION_RANGE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>numerator_start</para></entry>
+<entry role="parameter_description"><para>the numerator start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denominator_start</para></entry>
+<entry role="parameter_description"><para>the denominator start of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>numerator_end</para></entry>
+<entry role="parameter_description"><para>the numerator end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>denominator_end</para></entry>
+<entry role="parameter_description"><para>the denominator end of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-DATE-TIME:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_DATE_TIME()</title>
+<indexterm zone="GST-VALUE-HOLDS-DATE-TIME:CAPS"><primary>GST_VALUE_HOLDS_DATE_TIME</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_DATE_TIME(x)    ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_date_time_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-DATE-TIME:CAPS"><type>GST_TYPE_DATE_TIME</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-DATE-TIME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-CAPS" role="macro">
+<title>GST_VALUE_HOLDS_CAPS()</title>
+<indexterm zone="GST-VALUE-HOLDS-CAPS"><primary>GST_VALUE_HOLDS_CAPS</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_CAPS(x)         ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_caps_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-CAPS"><type>GST_TYPE_CAPS</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-CAPS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-caps" role="function">
+<title>gst_value_set_caps&#160;()</title>
+<indexterm zone="gst-value-set-caps"><primary>gst_value_set_caps</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_caps (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                    <parameter>const <link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Sets the contents of <parameter>value</parameter>
+ to <parameter>caps</parameter>
+. A reference to the
+provided <parameter>caps</parameter>
+ will be taken by the <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-set-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_CAPS</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para> the caps to set the value to. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-caps" role="function">
+<title>gst_value_get_caps&#160;()</title>
+<indexterm zone="gst-value-get-caps"><primary>gst_value_get_caps</primary></indexterm>
+<programlisting language="C">const <link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_value_get_caps (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the contents of <parameter>value</parameter>
+. The reference count of the returned
+<link linkend="GstCaps"><type>GstCaps</type></link> will not be modified, therefore the caller must take one
+before getting rid of the <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_CAPS</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-caps.returns" role="returns">
+<title>Returns</title>
+<para> the contents of <parameter>value</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-CAPS-FEATURES:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_CAPS_FEATURES()</title>
+<indexterm zone="GST-VALUE-HOLDS-CAPS-FEATURES:CAPS"><primary>GST_VALUE_HOLDS_CAPS_FEATURES</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_CAPS_FEATURES(x)        (G_VALUE_HOLDS((x), _gst_caps_features_type))
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-CAPS-FEATURES:CAPS"><type>GST_TYPE_CAPS_FEATURES</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-CAPS-FEATURES.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-caps-features" role="function">
+<title>gst_value_set_caps_features&#160;()</title>
+<indexterm zone="gst-value-set-caps-features"><primary>gst_value_set_caps_features</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_caps_features (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                             <parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>);</programlisting>
+<para>Sets the contents of <parameter>value</parameter>
+ to <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-value-set-caps-features.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_CAPS_FEATURES</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>the features to set the value to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-caps-features" role="function">
+<title>gst_value_get_caps_features&#160;()</title>
+<indexterm zone="gst-value-get-caps-features"><primary>gst_value_get_caps_features</primary></indexterm>
+<programlisting language="C">const <link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_value_get_caps_features (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the contents of <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-caps-features.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_CAPS_FEATURES</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-caps-features.returns" role="returns">
+<title>Returns</title>
+<para> the contents of <parameter>value</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-STRUCTURE:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_STRUCTURE()</title>
+<indexterm zone="GST-VALUE-HOLDS-STRUCTURE:CAPS"><primary>GST_VALUE_HOLDS_STRUCTURE</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_STRUCTURE(x)            (G_VALUE_HOLDS((x), _gst_structure_type))
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-STRUCTURE:CAPS"><type>GST_TYPE_STRUCTURE</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-STRUCTURE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-structure" role="function">
+<title>gst_value_set_structure&#160;()</title>
+<indexterm zone="gst-value-set-structure"><primary>gst_value_set_structure</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_set_structure (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                         <parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Sets the contents of <parameter>value</parameter>
+ to <parameter>structure</parameter>
+.  The actual</para>
+<refsect3 id="gst-value-set-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_STRUCTURE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>the structure to set the value to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-structure" role="function">
+<title>gst_value_get_structure&#160;()</title>
+<indexterm zone="gst-value-get-structure"><primary>gst_value_get_structure</primary></indexterm>
+<programlisting language="C">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_value_get_structure (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the contents of <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-get-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a GValue initialized to GST_TYPE_STRUCTURE</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-structure.returns" role="returns">
+<title>Returns</title>
+<para> the contents of <parameter>value</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-BUFFER:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_BUFFER()</title>
+<indexterm zone="GST-VALUE-HOLDS-BUFFER:CAPS"><primary>GST_VALUE_HOLDS_BUFFER</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_BUFFER(x)       ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_buffer_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-BUFFER:CAPS"><type>GST_TYPE_BUFFER</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-BUFFER.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-buffer" role="macro">
+<title>gst_value_get_buffer()</title>
+<indexterm zone="gst-value-get-buffer"><primary>gst_value_get_buffer</primary></indexterm>
+<programlisting language="C">#define         gst_value_get_buffer(v)         GST_BUFFER_CAST (g_value_get_boxed(v))
+</programlisting>
+<para>Receives a <link linkend="GstBuffer"><type>GstBuffer</type></link> as the value of <parameter>v</parameter>
+. Does not return a reference to
+the buffer, so the pointer is only valid for as long as the caller owns
+a reference to <parameter>v</parameter>
+.</para>
+<refsect3 id="gst-value-get-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-buffer.returns" role="returns">
+<title>Returns</title>
+<para> buffer. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-buffer" role="macro">
+<title>gst_value_set_buffer()</title>
+<indexterm zone="gst-value-set-buffer"><primary>gst_value_set_buffer</primary></indexterm>
+<programlisting language="C">#define         gst_value_set_buffer(v,b)       g_value_set_boxed((v),(b))
+</programlisting>
+<para>Sets <parameter>b</parameter>
+ as the value of <parameter>v</parameter>
+.  Caller retains reference to buffer.</para>
+<refsect3 id="gst-value-set-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to receive the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> to assign to the GstValue. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-take-buffer" role="macro">
+<title>gst_value_take_buffer()</title>
+<indexterm zone="gst-value-take-buffer"><primary>gst_value_take_buffer</primary></indexterm>
+<programlisting language="C">#define         gst_value_take_buffer(v,b)      g_value_take_boxed(v,(b))
+</programlisting>
+<para>Sets <parameter>b</parameter>
+ as the value of <parameter>v</parameter>
+.  Caller gives away reference to buffer.</para>
+<refsect3 id="gst-value-take-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to receive the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> to assign to the GstValue. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-HOLDS-SAMPLE:CAPS" role="macro">
+<title>GST_VALUE_HOLDS_SAMPLE()</title>
+<indexterm zone="GST-VALUE-HOLDS-SAMPLE:CAPS"><primary>GST_VALUE_HOLDS_SAMPLE</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_HOLDS_SAMPLE(x)       ((x) != NULL &amp;&amp; G_VALUE_TYPE(x) == _gst_sample_type)
+</programlisting>
+<para>Checks if the given <link linkend="GValue"><type>GValue</type></link> contains a <link linkend="GST-TYPE-SAMPLE:CAPS"><type>GST_TYPE_SAMPLE</type></link> value.</para>
+<refsect3 id="GST-VALUE-HOLDS-SAMPLE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>x</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-get-sample" role="macro">
+<title>gst_value_get_sample()</title>
+<indexterm zone="gst-value-get-sample"><primary>gst_value_get_sample</primary></indexterm>
+<programlisting language="C">#define         gst_value_get_sample(v)         GST_SAMPLE_CAST (g_value_get_boxed(v))
+</programlisting>
+<para>Receives a <link linkend="GstSample"><type>GstSample</type></link> as the value of <parameter>v</parameter>
+. Does not return a reference to
+the sample, so the pointer is only valid for as long as the caller owns
+a reference to <parameter>v</parameter>
+.</para>
+<refsect3 id="gst-value-get-sample.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-get-sample.returns" role="returns">
+<title>Returns</title>
+<para> sample. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-set-sample" role="macro">
+<title>gst_value_set_sample()</title>
+<indexterm zone="gst-value-set-sample"><primary>gst_value_set_sample</primary></indexterm>
+<programlisting language="C">#define         gst_value_set_sample(v,b)       g_value_set_boxed((v),(b))
+</programlisting>
+<para>Sets <parameter>b</parameter>
+ as the value of <parameter>v</parameter>
+.  Caller retains reference to sample.</para>
+<refsect3 id="gst-value-set-sample.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to receive the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSample"><type>GstSample</type></link> to assign to the GstValue. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-take-sample" role="macro">
+<title>gst_value_take_sample()</title>
+<indexterm zone="gst-value-take-sample"><primary>gst_value_take_sample</primary></indexterm>
+<programlisting language="C">#define         gst_value_take_sample(v,b)      g_value_take_boxed(v,(b))
+</programlisting>
+<para>Sets <parameter>b</parameter>
+ as the value of <parameter>v</parameter>
+.  Caller gives away reference to sample.</para>
+<refsect3 id="gst-value-take-sample.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to receive the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>b</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSample"><type>GstSample</type></link> to assign to the GstValue. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstValueCompareFunc" role="function">
+<title>GstValueCompareFunc&#160;()</title>
+<indexterm zone="GstValueCompareFunc"><primary>GstValueCompareFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstValueCompareFunc<phrase role="c_punctuation">)</phrase> (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                        <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Used together with <link linkend="gst-value-compare"><function>gst_value_compare()</function></link> to compare <link linkend="GValue"><type>GValue</type></link> items.</para>
+<refsect3 id="GstValueCompareFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>first value for comparison</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>second value for comparison</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstValueCompareFunc.returns" role="returns">
+<title>Returns</title>
+<para> one of GST_VALUE_LESS_THAN, GST_VALUE_EQUAL, GST_VALUE_GREATER_THAN
+or GST_VALUE_UNORDERED</para>
+</refsect3></refsect2>
+<refsect2 id="GstValueSerializeFunc" role="function">
+<title>GstValueSerializeFunc&#160;()</title>
+<indexterm zone="GstValueSerializeFunc"><primary>GstValueSerializeFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+<phrase role="c_punctuation">(</phrase>*GstValueSerializeFunc<phrase role="c_punctuation">)</phrase> (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>);</programlisting>
+<para>Used by <link linkend="gst-value-serialize"><function>gst_value_serialize()</function></link> to obtain a non-binary form of the <link linkend="GValue"><type>GValue</type></link>.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="GstValueSerializeFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstValueSerializeFunc.returns" role="returns">
+<title>Returns</title>
+<para> the string representation of the value. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GstValueDeserializeFunc" role="function">
+<title>GstValueDeserializeFunc&#160;()</title>
+<indexterm zone="GstValueDeserializeFunc"><primary>GstValueDeserializeFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstValueDeserializeFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *s</parameter>);</programlisting>
+<para>Used by <link linkend="gst-value-deserialize"><function>gst_value_deserialize()</function></link> to parse a non-binary form into the <link linkend="GValue"><type>GValue</type></link>.</para>
+<refsect3 id="GstValueDeserializeFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>s</para></entry>
+<entry role="parameter_description"><para>a string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstValueDeserializeFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-is-fixed" role="function">
+<title>gst_value_is_fixed&#160;()</title>
+<indexterm zone="gst-value-is-fixed"><primary>gst_value_is_fixed</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_is_fixed (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Tests if the given GValue, if available in a GstStructure (or any other
+container) contains a "fixed" (which means: one value) or an "unfixed"
+(which means: multiple possible values, such as data lists or data
+ranges) value.</para>
+<refsect3 id="gst-value-is-fixed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-is-fixed.returns" role="returns">
+<title>Returns</title>
+<para> true if the value is "fixed".</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-register" role="function">
+<title>gst_value_register&#160;()</title>
+<indexterm zone="gst-value-register"><primary>gst_value_register</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_register (<parameter>const <link linkend="GstValueTable"><type>GstValueTable</type></link> *table</parameter>);</programlisting>
+<para>Registers functions to perform calculations on <link linkend="GValue"><type>GValue</type></link> items of a given
+type. Each type can only be added once.</para>
+<refsect3 id="gst-value-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>table</para></entry>
+<entry role="parameter_description"><para>structure containing functions to register</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-init-and-copy" role="function">
+<title>gst_value_init_and_copy&#160;()</title>
+<indexterm zone="gst-value-init-and-copy"><primary>gst_value_init_and_copy</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_init_and_copy (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                         <parameter>const <link linkend="GValue"><type>GValue</type></link> *src</parameter>);</programlisting>
+<para>Initialises the target value to be of the same type as source and then copies
+the contents from source to target.</para>
+<refsect3 id="gst-value-init-and-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> the target value. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the source value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-serialize" role="function">
+<title>gst_value_serialize&#160;()</title>
+<indexterm zone="gst-value-serialize"><primary>gst_value_serialize</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_value_serialize (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>tries to transform the given <parameter>value</parameter>
+ into a string representation that allows
+getting back this string later on using <link linkend="gst-value-deserialize"><function>gst_value_deserialize()</function></link>.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-value-serialize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> to serialize</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-serialize.returns" role="returns">
+<title>Returns</title>
+<para> the serialization for <parameter>value</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none exists. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-deserialize" role="function">
+<title>gst_value_deserialize&#160;()</title>
+<indexterm zone="gst-value-deserialize"><primary>gst_value_deserialize</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_deserialize (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *src</parameter>);</programlisting>
+<para>Tries to deserialize a string into the type specified by the given GValue.
+If the operation succeeds, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> is returned, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+<refsect3 id="gst-value-deserialize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> <link linkend="GValue"><type>GValue</type></link> to fill with contents of
+deserialization. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>string to deserialize</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-deserialize.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-compare" role="function">
+<title>gst_value_compare&#160;()</title>
+<indexterm zone="gst-value-compare"><primary>gst_value_compare</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_value_compare (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                   <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Compares <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+.  If <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+ cannot be
+compared, the function returns GST_VALUE_UNORDERED.  Otherwise,
+if <parameter>value1</parameter>
+ is greater than <parameter>value2</parameter>
+, GST_VALUE_GREATER_THAN is returned.
+If <parameter>value1</parameter>
+ is less than <parameter>value2</parameter>
+, GST_VALUE_LESS_THAN is returned.
+If the values are equal, GST_VALUE_EQUAL is returned.</para>
+<refsect3 id="gst-value-compare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a value to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>another value to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-compare.returns" role="returns">
+<title>Returns</title>
+<para> comparison result</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-can-compare" role="function">
+<title>gst_value_can_compare&#160;()</title>
+<indexterm zone="gst-value-can-compare"><primary>gst_value_can_compare</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_can_compare (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                       <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Determines if <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+ can be compared.</para>
+<refsect3 id="gst-value-can-compare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a value to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>another value to compare</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-can-compare.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the values can be compared</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-union" role="function">
+<title>gst_value_union&#160;()</title>
+<indexterm zone="gst-value-union"><primary>gst_value_union</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_union (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                 <parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                 <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Creates a GValue corresponding to the union of <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+.</para>
+<refsect3 id="gst-value-union.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> the destination value. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a value to union</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>another value to union</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-union.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the union succeeded.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-can-union" role="function">
+<title>gst_value_can_union&#160;()</title>
+<indexterm zone="gst-value-can-union"><primary>gst_value_can_union</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_can_union (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                     <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Determines if <parameter>value1</parameter>
+ and <parameter>value2</parameter>
+ can be non-trivially unioned.
+Any two values can be trivially unioned by adding both of them
+to a GstValueList.  However, certain types have the possibility
+to be unioned in a simpler way.  For example, an integer range
+and an integer can be unioned if the integer is a subset of the
+integer range.  If there is the possibility that two values can
+be unioned, this function returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+<refsect3 id="gst-value-can-union.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a value to union</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>another value to union</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-can-union.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if there is a function allowing the two values to
+be unioned.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-subtract" role="function">
+<title>gst_value_subtract&#160;()</title>
+<indexterm zone="gst-value-subtract"><primary>gst_value_subtract</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_subtract (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                    <parameter>const <link linkend="GValue"><type>GValue</type></link> *minuend</parameter>,
+                    <parameter>const <link linkend="GValue"><type>GValue</type></link> *subtrahend</parameter>);</programlisting>
+<para>Subtracts <parameter>subtrahend</parameter>
+ from <parameter>minuend</parameter>
+ and stores the result in <parameter>dest</parameter>
+.
+Note that this means subtraction as in sets, not as in mathematics.</para>
+<refsect3 id="gst-value-subtract.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> the destination value
+for the result if the subtraction is not empty. May be <link linkend="NULL:CAPS"><literal>NULL</literal></link>,
+in which case the resulting set will not be computed, which can
+give a fair speedup. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>minuend</para></entry>
+<entry role="parameter_description"><para>the value to subtract from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>subtrahend</para></entry>
+<entry role="parameter_description"><para>the value to subtract</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-subtract.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the subtraction is not empty</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-can-subtract" role="function">
+<title>gst_value_can_subtract&#160;()</title>
+<indexterm zone="gst-value-can-subtract"><primary>gst_value_can_subtract</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_can_subtract (<parameter>const <link linkend="GValue"><type>GValue</type></link> *minuend</parameter>,
+                        <parameter>const <link linkend="GValue"><type>GValue</type></link> *subtrahend</parameter>);</programlisting>
+<para>Checks if it's possible to subtract <parameter>subtrahend</parameter>
+ from <parameter>minuend</parameter>
+.</para>
+<refsect3 id="gst-value-can-subtract.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>minuend</para></entry>
+<entry role="parameter_description"><para>the value to subtract from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>subtrahend</para></entry>
+<entry role="parameter_description"><para>the value to subtract</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-can-subtract.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if a subtraction is possible</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-intersect" role="function">
+<title>gst_value_intersect&#160;()</title>
+<indexterm zone="gst-value-intersect"><primary>gst_value_intersect</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_intersect (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                     <parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                     <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Calculates the intersection of two values.  If the values have
+a non-empty intersection, the value representing the intersection
+is placed in <parameter>dest</parameter>
+, unless <link linkend="NULL:CAPS"><literal>NULL</literal></link>.  If the intersection is non-empty,
+<parameter>dest</parameter>
+ is not modified.</para>
+<refsect3 id="gst-value-intersect.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para>  a uninitialized <link linkend="GValue"><type>GValue</type></link> that will hold the calculated
+intersection value. May be <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the resulting set if not
+needed. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>][<acronym>transfer full</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a value to intersect</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>another value to intersect</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-intersect.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the intersection is non-empty</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-can-intersect" role="function">
+<title>gst_value_can_intersect&#160;()</title>
+<indexterm zone="gst-value-can-intersect"><primary>gst_value_can_intersect</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_can_intersect (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                         <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Determines if intersecting two values will produce a valid result.
+Two values will produce a valid intersection if they have the same
+type.</para>
+<refsect3 id="gst-value-can-intersect.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a value to intersect</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>another value to intersect</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-can-intersect.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the values can intersect</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-is-subset" role="function">
+<title>gst_value_is_subset&#160;()</title>
+<indexterm zone="gst-value-is-subset"><primary>gst_value_is_subset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_is_subset (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value1</parameter>,
+                     <parameter>const <link linkend="GValue"><type>GValue</type></link> *value2</parameter>);</programlisting>
+<para>Check that <parameter>value1</parameter>
+ is a subset of <parameter>value2</parameter>
+.</para>
+<para>Return: <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> is <parameter>value1</parameter>
+ is a subset of <parameter>value2</parameter>
+</para>
+<refsect3 id="gst-value-is-subset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-array-append-value" role="function">
+<title>gst_value_array_append_value&#160;()</title>
+<indexterm zone="gst-value-array-append-value"><primary>gst_value_array_append_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_array_append_value (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                              <parameter>const <link linkend="GValue"><type>GValue</type></link> *append_value</parameter>);</programlisting>
+<para>Appends <parameter>append_value</parameter>
+ to the GstValueArray in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-array-append-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-ARRAY:CAPS"><type>GST_TYPE_ARRAY</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>append_value</para></entry>
+<entry role="parameter_description"><para>the value to append</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-array-append-and-take-value" role="function" condition="since:1.2">
+<title>gst_value_array_append_and_take_value&#160;()</title>
+<indexterm zone="gst-value-array-append-and-take-value" role="1.2"><primary>gst_value_array_append_and_take_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_array_append_and_take_value (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                                       <parameter><link linkend="GValue"><type>GValue</type></link> *append_value</parameter>);</programlisting>
+<para>Appends <parameter>append_value</parameter>
+ to the GstValueArray in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-array-append-and-take-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-ARRAY:CAPS"><type>GST_TYPE_ARRAY</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>append_value</para></entry>
+<entry role="parameter_description"><para> the value to append. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-value-array-get-size" role="function">
+<title>gst_value_array_get_size&#160;()</title>
+<indexterm zone="gst-value-array-get-size"><primary>gst_value_array_get_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_value_array_get_size (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets the number of values contained in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-array-get-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-ARRAY:CAPS"><type>GST_TYPE_ARRAY</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-array-get-size.returns" role="returns">
+<title>Returns</title>
+<para> the number of values</para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-array-get-value" role="function">
+<title>gst_value_array_get_value&#160;()</title>
+<indexterm zone="gst-value-array-get-value"><primary>gst_value_array_get_value</primary></indexterm>
+<programlisting language="C">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_value_array_get_value (<parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                           <parameter><link linkend="guint"><type>guint</type></link> index</parameter>);</programlisting>
+<para>Gets the value that is a member of the array contained in <parameter>value</parameter>
+ and
+has the index <parameter>index</parameter>
+.</para>
+<refsect3 id="gst-value-array-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-ARRAY:CAPS"><type>GST_TYPE_ARRAY</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>index</para></entry>
+<entry role="parameter_description"><para>index of value to get from the array</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-array-get-value.returns" role="returns">
+<title>Returns</title>
+<para> the value at the given index. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-value-array-prepend-value" role="function">
+<title>gst_value_array_prepend_value&#160;()</title>
+<indexterm zone="gst-value-array-prepend-value"><primary>gst_value_array_prepend_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_value_array_prepend_value (<parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                               <parameter>const <link linkend="GValue"><type>GValue</type></link> *prepend_value</parameter>);</programlisting>
+<para>Prepends <parameter>prepend_value</parameter>
+ to the GstValueArray in <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-value-array-prepend-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> of type <link linkend="GST-TYPE-ARRAY:CAPS"><type>GST_TYPE_ARRAY</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prepend_value</para></entry>
+<entry role="parameter_description"><para>the value to prepend</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-value-fixate" role="function">
+<title>gst_value_fixate&#160;()</title>
+<indexterm zone="gst-value-fixate"><primary>gst_value_fixate</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_value_fixate (<parameter><link linkend="GValue"><type>GValue</type></link> *dest</parameter>,
+                  <parameter>const <link linkend="GValue"><type>GValue</type></link> *src</parameter>);</programlisting>
+<para>Fixate <parameter>src</parameter>
+ into a new value <parameter>dest</parameter>
+.
+For ranges, the first element is taken. For lists and arrays, the
+first item is fixated and returned.
+If <parameter>src</parameter>
+ is already fixed, this function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<refsect3 id="gst-value-fixate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> destination</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> to fixate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-value-fixate.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>dest</parameter>
+contains a fixated version of <parameter>src</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-flagset-register" role="function" condition="since:1.6">
+<title>gst_flagset_register&#160;()</title>
+<indexterm zone="gst-flagset-register" role="1.6"><primary>gst_flagset_register</primary></indexterm>
+<programlisting language="C"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+gst_flagset_register (<parameter><link linkend="GType"><type>GType</type></link> flags_type</parameter>);</programlisting>
+<para>Create a new sub-class of <link linkend="GST-TYPE-FLAG-SET:CAPS"><type>GST_TYPE_FLAG_SET</type></link>
+which will pretty-print the human-readable flags
+when serializing, for easier debugging.</para>
+<refsect3 id="gst-flagset-register.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>flags_type</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GType"><type>GType</type></link> of a <link linkend="G-TYPE-FLAGS:CAPS"><type>G_TYPE_FLAGS</type></link> type.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstValue.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GST-FOURCC-FORMAT:CAPS" role="macro">
+<title>GST_FOURCC_FORMAT</title>
+<indexterm zone="GST-FOURCC-FORMAT:CAPS"><primary>GST_FOURCC_FORMAT</primary></indexterm>
+<programlisting language="C">#define GST_FOURCC_FORMAT "c%c%c%c"
+</programlisting>
+<para>Can be used together with <link linkend="GST-FOURCC-ARGS:CAPS"><type>GST_FOURCC_ARGS</type></link> to properly output a
+<link linkend="guint32"><type>guint32</type></link> fourcc value in a <link linkend="printf"><function>printf()</function></link>-style text message.</para>
+<informalexample>
+<programlisting>
+printf ("fourcc: %" GST_FOURCC_FORMAT "\n", GST_FOURCC_ARGS (fcc));
+</programlisting>
+</informalexample>
+</refsect2>
+<refsect2 id="GST-TYPE-INT-RANGE:CAPS" role="macro">
+<title>GST_TYPE_INT_RANGE</title>
+<indexterm zone="GST-TYPE-INT-RANGE:CAPS"><primary>GST_TYPE_INT_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_INT_RANGE               (_gst_int_range_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents an integer range</para>
+<refsect3 id="GST-TYPE-INT-RANGE.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstIntRange</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-BITMASK:CAPS" role="macro">
+<title>GST_TYPE_BITMASK</title>
+<indexterm zone="GST-TYPE-BITMASK:CAPS"><primary>GST_TYPE_BITMASK</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_BITMASK                 (_gst_bitmask_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents a 64-bit bitmask.</para>
+<refsect3 id="GST-TYPE-BITMASK.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstBitmask (which is not explicitly typed)</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-FLAG-SET:CAPS" role="macro" condition="since:1.6">
+<title>GST_TYPE_FLAG_SET</title>
+<indexterm zone="GST-TYPE-FLAG-SET:CAPS" role="1.6"><primary>GST_TYPE_FLAG_SET</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_FLAG_SET                   (_gst_flagset_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents a 32-bit flag bitfield, with 32-bit
+mask indicating which of the bits in the field are explicitly set.
+Useful for negotiation.</para>
+<refsect3 id="GST-TYPE-FLAG-SET.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstFlags (which is not explicitly typed)</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-FLAG-SET-MASK-EXACT:CAPS" role="macro">
+<title>GST_FLAG_SET_MASK_EXACT</title>
+<indexterm zone="GST-FLAG-SET-MASK-EXACT:CAPS"><primary>GST_FLAG_SET_MASK_EXACT</primary></indexterm>
+<programlisting language="C">#define GST_FLAG_SET_MASK_EXACT ((guint)(-1))
+</programlisting>
+</refsect2>
+<refsect2 id="GST-TYPE-INT64-RANGE:CAPS" role="macro">
+<title>GST_TYPE_INT64_RANGE</title>
+<indexterm zone="GST-TYPE-INT64-RANGE:CAPS"><primary>GST_TYPE_INT64_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_INT64_RANGE             (_gst_int64_range_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents an <link linkend="gint64"><type>gint64</type></link> range</para>
+<refsect3 id="GST-TYPE-INT64-RANGE.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstInt64Range</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-DOUBLE-RANGE:CAPS" role="macro">
+<title>GST_TYPE_DOUBLE_RANGE</title>
+<indexterm zone="GST-TYPE-DOUBLE-RANGE:CAPS"><primary>GST_TYPE_DOUBLE_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_DOUBLE_RANGE            (_gst_double_range_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents a floating point range with double precision</para>
+<refsect3 id="GST-TYPE-DOUBLE-RANGE.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstIntRange</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-LIST:CAPS" role="macro">
+<title>GST_TYPE_LIST</title>
+<indexterm zone="GST-TYPE-LIST:CAPS"><primary>GST_TYPE_LIST</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_LIST                    (_gst_value_list_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents an unordered list of <link linkend="GValue"><type>GValue</type></link> values. This
+is used for example to express a list of possible values for a field in
+a caps structure, like a list of possible sample rates, of which only one
+will be chosen in the end. This means that all values in the list are
+meaningful on their own.</para>
+<refsect3 id="GST-TYPE-LIST.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstValueList (which is not explicitly typed)</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-ARRAY:CAPS" role="macro">
+<title>GST_TYPE_ARRAY</title>
+<indexterm zone="GST-TYPE-ARRAY:CAPS"><primary>GST_TYPE_ARRAY</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_ARRAY                   (_gst_value_array_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents an ordered list of <link linkend="GValue"><type>GValue</type></link> values. This is
+used to express a set of values that is meaningful only in their specific
+combination and order of values. Each value on its own is not particularly
+meaningful, only the ordered array in its entirety is meaningful. This is
+used for example to express channel layouts for multichannel audio where
+each channel needs to be mapped to a position in the room.</para>
+<refsect3 id="GST-TYPE-ARRAY.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstArrayList (which is not explicitly typed)</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-FRACTION:CAPS" role="macro">
+<title>GST_TYPE_FRACTION</title>
+<indexterm zone="GST-TYPE-FRACTION:CAPS"><primary>GST_TYPE_FRACTION</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_FRACTION                (_gst_fraction_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents a fraction of an integer numerator over
+an integer denominator</para>
+<refsect3 id="GST-TYPE-FRACTION.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstFraction (which is not explicitly typed)</para>
+</refsect3></refsect2>
+<refsect2 id="GST-TYPE-FRACTION-RANGE:CAPS" role="macro">
+<title>GST_TYPE_FRACTION_RANGE</title>
+<indexterm zone="GST-TYPE-FRACTION-RANGE:CAPS"><primary>GST_TYPE_FRACTION_RANGE</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_FRACTION_RANGE           (_gst_fraction_range_type)
+</programlisting>
+<para>a <link linkend="GValue"><type>GValue</type></link> type that represents a GstFraction range</para>
+<refsect3 id="GST-TYPE-FRACTION-RANGE.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstFractionRange</para>
+</refsect3></refsect2>
+<refsect2 id="GST-VALUE-LESS-THAN:CAPS" role="macro">
+<title>GST_VALUE_LESS_THAN</title>
+<indexterm zone="GST-VALUE-LESS-THAN:CAPS"><primary>GST_VALUE_LESS_THAN</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_LESS_THAN              (-1)
+</programlisting>
+<para>Indicates that the first value provided to a comparison function
+(<link linkend="gst-value-compare"><function>gst_value_compare()</function></link>) is lesser than the second one.</para>
+</refsect2>
+<refsect2 id="GST-VALUE-EQUAL:CAPS" role="macro">
+<title>GST_VALUE_EQUAL</title>
+<indexterm zone="GST-VALUE-EQUAL:CAPS"><primary>GST_VALUE_EQUAL</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_EQUAL                   0
+</programlisting>
+<para>Indicates that the first value provided to a comparison function
+(<link linkend="gst-value-compare"><function>gst_value_compare()</function></link>) is equal to the second one.</para>
+</refsect2>
+<refsect2 id="GST-VALUE-GREATER-THAN:CAPS" role="macro">
+<title>GST_VALUE_GREATER_THAN</title>
+<indexterm zone="GST-VALUE-GREATER-THAN:CAPS"><primary>GST_VALUE_GREATER_THAN</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_GREATER_THAN            1
+</programlisting>
+<para>Indicates that the first value provided to a comparison function
+(<link linkend="gst-value-compare"><function>gst_value_compare()</function></link>) is greater than the second one.</para>
+</refsect2>
+<refsect2 id="GST-VALUE-UNORDERED:CAPS" role="macro">
+<title>GST_VALUE_UNORDERED</title>
+<indexterm zone="GST-VALUE-UNORDERED:CAPS"><primary>GST_VALUE_UNORDERED</primary></indexterm>
+<programlisting language="C">#define GST_VALUE_UNORDERED               2
+</programlisting>
+<para>Indicates that the comparison function (<link linkend="gst-value-compare"><function>gst_value_compare()</function></link>) can not
+determine a order for the two provided values.</para>
+</refsect2>
+<refsect2 id="GstValueTable" role="struct">
+<title>struct GstValueTable</title>
+<indexterm zone="GstValueTable"><primary>GstValueTable</primary></indexterm>
+<programlisting language="C">struct GstValueTable {
+  GType type;
+  GstValueCompareFunc compare;
+  GstValueSerializeFunc serialize;
+  GstValueDeserializeFunc deserialize;
+};
+</programlisting>
+<para>VTable for the <link linkend="GValue"><type>GValue</type></link> <parameter>type</parameter>
+.</para>
+<refsect3 id="GstValueTable.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GType"><type>GType</type></link>&#160;<structfield id="GstValueTable.type">type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GType"><type>GType</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstValueCompareFunc"><type>GstValueCompareFunc</type></link>&#160;<structfield id="GstValueTable.compare">compare</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GstValueCompareFunc"><type>GstValueCompareFunc</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstValueSerializeFunc"><type>GstValueSerializeFunc</type></link>&#160;<structfield id="GstValueTable.serialize">serialize</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GstValueSerializeFunc"><type>GstValueSerializeFunc</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstValueDeserializeFunc"><type>GstValueDeserializeFunc</type></link>&#160;<structfield id="GstValueTable.deserialize">deserialize</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GstValueDeserializeFunc"><type>GstValueDeserializeFunc</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

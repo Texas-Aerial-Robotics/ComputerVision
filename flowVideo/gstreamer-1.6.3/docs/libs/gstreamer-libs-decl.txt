@@ -1,0 +1,5847 @@
+<MACRO>
+<NAME>GST_TYPE_NET_CLIENT_CLOCK</NAME>
+#define GST_TYPE_NET_CLIENT_CLOCK \
+  (gst_net_client_clock_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_NET_CLIENT_CLOCK</NAME>
+#define GST_NET_CLIENT_CLOCK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_NET_CLIENT_CLOCK,GstNetClientClock))
+</MACRO>
+<MACRO>
+<NAME>GST_NET_CLIENT_CLOCK_CLASS</NAME>
+#define GST_NET_CLIENT_CLOCK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_NET_CLIENT_CLOCK,GstNetClientClockClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_NET_CLIENT_CLOCK</NAME>
+#define GST_IS_NET_CLIENT_CLOCK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_NET_CLIENT_CLOCK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_NET_CLIENT_CLOCK_CLASS</NAME>
+#define GST_IS_NET_CLIENT_CLOCK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_NET_CLIENT_CLOCK))
+</MACRO>
+<STRUCT>
+<NAME>GstNetClientClock</NAME>
+struct _GstNetClientClock {
+  GstSystemClock clock;
+
+  /*< private >*/
+  GstNetClientClockPrivate *priv;
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstNetClientClockClass</NAME>
+struct _GstNetClientClockClass {
+  GstSystemClockClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_net_client_clock_get_type</NAME>
+<RETURNS>GType            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_client_clock_new</NAME>
+<RETURNS>GstClock *	</RETURNS>
+const gchar *name, const gchar *remote_address, gint remote_port, GstClockTime base_time
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_NTP_CLOCK</NAME>
+#define GST_TYPE_NTP_CLOCK \
+  (gst_ntp_clock_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_NTP_CLOCK</NAME>
+#define GST_NTP_CLOCK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_NTP_CLOCK,GstNtpClock))
+</MACRO>
+<MACRO>
+<NAME>GST_NTP_CLOCK_CLASS</NAME>
+#define GST_NTP_CLOCK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_NTP_CLOCK,GstNtpClockClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_NTP_CLOCK</NAME>
+#define GST_IS_NTP_CLOCK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_NTP_CLOCK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_NTP_CLOCK_CLASS</NAME>
+#define GST_IS_NTP_CLOCK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_NTP_CLOCK))
+</MACRO>
+<TYPEDEF>
+<NAME>GstNtpClock</NAME>
+typedef struct _GstNetClientClock GstNtpClock;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstNtpClockClass</NAME>
+typedef struct _GstNetClientClockClass GstNtpClockClass;
+</TYPEDEF>
+<FUNCTION>
+<NAME>gst_ntp_clock_get_type</NAME>
+<RETURNS>GType            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_clock_new</NAME>
+<RETURNS>GstClock *	</RETURNS>
+const gchar *name, const gchar *remote_address, gint remote_port, GstClockTime base_time
+</FUNCTION>
+<STRUCT>
+<NAME>GstNetClientClockPrivate</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GstNetAddressMeta</NAME>
+struct _GstNetAddressMeta {
+  GstMeta       meta;
+
+  GSocketAddress *addr;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_net_address_meta_api_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_NET_ADDRESS_META_API_TYPE</NAME>
+#define GST_NET_ADDRESS_META_API_TYPE (gst_net_address_meta_api_get_type())
+</MACRO>
+<MACRO>
+<NAME>gst_buffer_get_net_address_meta</NAME>
+#define gst_buffer_get_net_address_meta(b) \
+  ((GstNetAddressMeta*)gst_buffer_get_meta((b),GST_NET_ADDRESS_META_API_TYPE))
+</MACRO>
+<FUNCTION>
+<NAME>gst_net_address_meta_get_info</NAME>
+<RETURNS>const GstMetaInfo  *</RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_NET_ADDRESS_META_INFO</NAME>
+#define GST_NET_ADDRESS_META_INFO (gst_net_address_meta_get_info())
+</MACRO>
+<FUNCTION>
+<NAME>gst_buffer_add_net_address_meta</NAME>
+<RETURNS>GstNetAddressMeta  * </RETURNS>
+GstBuffer      *buffer, GSocketAddress *addr
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_PTP_CLOCK</NAME>
+#define GST_TYPE_PTP_CLOCK \
+  (gst_ptp_clock_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_PTP_CLOCK</NAME>
+#define GST_PTP_CLOCK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_PTP_CLOCK,GstPtpClock))
+</MACRO>
+<MACRO>
+<NAME>GST_PTP_CLOCK_CLASS</NAME>
+#define GST_PTP_CLOCK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_PTP_CLOCK,GstPtpClockClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_PTP_CLOCK</NAME>
+#define GST_IS_PTP_CLOCK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_PTP_CLOCK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_PTP_CLOCK_CLASS</NAME>
+#define GST_IS_PTP_CLOCK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_PTP_CLOCK))
+</MACRO>
+<STRUCT>
+<NAME>GstPtpClock</NAME>
+struct _GstPtpClock {
+  GstSystemClock clock;
+
+  /*< private >*/
+  GstPtpClockPrivate *priv;
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstPtpClockClass</NAME>
+struct _GstPtpClockClass {
+  GstSystemClockClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_PTP_CLOCK_ID_NONE</NAME>
+#define GST_PTP_CLOCK_ID_NONE ((guint64) -1)
+</MACRO>
+<FUNCTION>
+<NAME>gst_ptp_clock_get_type</NAME>
+<RETURNS>GType            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_is_supported</NAME>
+<RETURNS>gboolean         </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_is_initialized</NAME>
+<RETURNS>gboolean         </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_init</NAME>
+<RETURNS>gboolean         </RETURNS>
+guint64 clock_id, gchar ** interfaces
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_deinit</NAME>
+<RETURNS>void             </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_PTP_STATISTICS_NEW_DOMAIN_FOUND</NAME>
+#define GST_PTP_STATISTICS_NEW_DOMAIN_FOUND           "GstPtpStatisticsNewDomainFound"
+</MACRO>
+<MACRO>
+<NAME>GST_PTP_STATISTICS_BEST_MASTER_CLOCK_SELECTED</NAME>
+#define GST_PTP_STATISTICS_BEST_MASTER_CLOCK_SELECTED "GstPtpStatisticsBestMasterClockSelected"
+</MACRO>
+<MACRO>
+<NAME>GST_PTP_STATISTICS_PATH_DELAY_MEASURED</NAME>
+#define GST_PTP_STATISTICS_PATH_DELAY_MEASURED        "GstPtpStatisticsPathDelayMeasured"
+</MACRO>
+<MACRO>
+<NAME>GST_PTP_STATISTICS_TIME_UPDATED</NAME>
+#define GST_PTP_STATISTICS_TIME_UPDATED               "GstPtpStatisticsTimeUpdated"
+</MACRO>
+<USER_FUNCTION>
+<NAME>GstPtpStatisticsCallback</NAME>
+<RETURNS>gboolean </RETURNS>
+guint8 domain,
+                                                    const GstStructure * stats,
+                                                    gpointer user_data
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_statistics_callback_add</NAME>
+<RETURNS>gulong           </RETURNS>
+GstPtpStatisticsCallback callback, gpointer user_data, GDestroyNotify destroy_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_statistics_callback_remove</NAME>
+<RETURNS>void             </RETURNS>
+gulong id
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ptp_clock_new</NAME>
+<RETURNS>GstClock *       </RETURNS>
+const gchar *name, guint domain
+</FUNCTION>
+<STRUCT>
+<NAME>GstPtpClockPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_NET_TIME_PACKET_SIZE</NAME>
+#define GST_NET_TIME_PACKET_SIZE 16
+</MACRO>
+<STRUCT>
+<NAME>GstNetTimePacket</NAME>
+struct _GstNetTimePacket {
+  GstClockTime local_time;
+  GstClockTime remote_time;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_net_time_packet_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_packet_new</NAME>
+<RETURNS>GstNetTimePacket *       </RETURNS>
+const guint8 *buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_packet_copy</NAME>
+<RETURNS>GstNetTimePacket *       </RETURNS>
+const GstNetTimePacket *packet
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_packet_free</NAME>
+<RETURNS>void                     </RETURNS>
+GstNetTimePacket *packet
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_packet_serialize</NAME>
+<RETURNS>guint8 *                 </RETURNS>
+const GstNetTimePacket *packet
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_packet_receive</NAME>
+<RETURNS>GstNetTimePacket *	</RETURNS>
+GSocket         * socket, GSocketAddress ** src_address, GError         ** error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_packet_send</NAME>
+<RETURNS>gboolean                 </RETURNS>
+const GstNetTimePacket * packet, GSocket                * socket, GSocketAddress         * dest_address, GError                ** error
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_NET_TIME_PROVIDER</NAME>
+#define GST_TYPE_NET_TIME_PROVIDER \
+  (gst_net_time_provider_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_NET_TIME_PROVIDER</NAME>
+#define GST_NET_TIME_PROVIDER(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_NET_TIME_PROVIDER,GstNetTimeProvider))
+</MACRO>
+<MACRO>
+<NAME>GST_NET_TIME_PROVIDER_CLASS</NAME>
+#define GST_NET_TIME_PROVIDER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_NET_TIME_PROVIDER,GstNetTimeProviderClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_NET_TIME_PROVIDER</NAME>
+#define GST_IS_NET_TIME_PROVIDER(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_NET_TIME_PROVIDER))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_NET_TIME_PROVIDER_CLASS</NAME>
+#define GST_IS_NET_TIME_PROVIDER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_NET_TIME_PROVIDER))
+</MACRO>
+<STRUCT>
+<NAME>GstNetTimeProvider</NAME>
+struct _GstNetTimeProvider {
+  GstObject parent;
+
+  /*< private >*/
+  GstNetTimeProviderPrivate *priv;
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstNetTimeProviderClass</NAME>
+struct _GstNetTimeProviderClass {
+  GstObjectClass parent_class;
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_net_time_provider_get_type</NAME>
+<RETURNS>GType                    </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_net_time_provider_new</NAME>
+<RETURNS>GstNetTimeProvider *     </RETURNS>
+GstClock *clock, const gchar *address, gint port
+</FUNCTION>
+<STRUCT>
+<NAME>GstNetTimeProviderPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_NTP_PACKET_SIZE</NAME>
+#define GST_NTP_PACKET_SIZE 48
+</MACRO>
+<STRUCT>
+<NAME>GstNtpPacket</NAME>
+struct _GstNtpPacket {
+  GstClockTime origin_time;
+  GstClockTime receive_time;
+  GstClockTime transmit_time;
+
+  GstClockTime poll_interval;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_ntp_packet_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_error_quark</NAME>
+<RETURNS>GQuark  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_NTP_ERROR</NAME>
+#define GST_NTP_ERROR (gst_ntp_error_quark ())
+</MACRO>
+<FUNCTION>
+<NAME>gst_ntp_packet_new</NAME>
+<RETURNS>GstNtpPacket *           </RETURNS>
+const guint8 *buffer, GError      ** error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_packet_copy</NAME>
+<RETURNS>GstNtpPacket *           </RETURNS>
+const GstNtpPacket *packet
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_packet_free</NAME>
+<RETURNS>void                     </RETURNS>
+GstNtpPacket *packet
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_packet_serialize</NAME>
+<RETURNS>guint8 *                 </RETURNS>
+const GstNtpPacket *packet
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_packet_receive</NAME>
+<RETURNS>GstNtpPacket *           </RETURNS>
+GSocket         * socket, GSocketAddress ** src_address, GError         ** error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_ntp_packet_send</NAME>
+<RETURNS>gboolean                 </RETURNS>
+const GstNtpPacket * packet, GSocket            * socket, GSocketAddress     * dest_address, GError            ** error
+</FUNCTION>
+<STRUCT>
+<NAME>GstNetControlMessageMeta</NAME>
+struct _GstNetControlMessageMeta {
+  GstMeta       meta;
+
+  GSocketControlMessage *message;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_net_control_message_meta_api_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_NET_CONTROL_MESSAGE_META_API_TYPE</NAME>
+#define GST_NET_CONTROL_MESSAGE_META_API_TYPE \
+  (gst_net_control_message_meta_api_get_type())
+</MACRO>
+<MACRO>
+<NAME>gst_buffer_get_net_control_message_meta</NAME>
+#define gst_buffer_get_net_control_message_meta(b) ((GstNetControlMessageMeta*)\
+  gst_buffer_get_meta((b),GST_NET_CONTROL_MESSAGE_META_API_TYPE))
+</MACRO>
+<FUNCTION>
+<NAME>gst_net_control_message_meta_get_info</NAME>
+<RETURNS>const GstMetaInfo  *</RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_NET_CONTROL_MESSAGE_META_INFO</NAME>
+#define GST_NET_CONTROL_MESSAGE_META_INFO \
+  (gst_net_control_message_meta_get_info())
+</MACRO>
+<FUNCTION>
+<NAME>gst_buffer_add_net_control_message_meta</NAME>
+<RETURNS>GstNetControlMessageMeta  * </RETURNS>
+GstBuffer             * buffer, GSocketControlMessage * message
+</FUNCTION>
+<STRUCT>
+<NAME>GstHarness</NAME>
+struct _GstHarness {
+  GstElement * element;
+
+  GstPad * srcpad;
+  GstPad * sinkpad;
+
+  GstHarness * src_harness;
+  GstHarness * sink_harness;
+
+  /*< private >*/
+  GstHarnessPrivate * priv;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_harness_new_full</NAME>
+<RETURNS>GstHarness  * </RETURNS>
+GstElement * element, GstStaticPadTemplate * hsrc, const gchar          * element_sinkpad_name, GstStaticPadTemplate * hsink, const gchar          * element_srcpad_name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_new_with_element</NAME>
+<RETURNS>GstHarness  * </RETURNS>
+GstElement  * element, const gchar * element_sinkpad_name, const gchar * element_srcpad_name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_new_with_padnames</NAME>
+<RETURNS>GstHarness  * </RETURNS>
+const gchar * element_name, const gchar * element_sinkpad_name, const gchar * element_srcpad_name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_new_with_templates</NAME>
+<RETURNS>GstHarness  * </RETURNS>
+const gchar * element_name, GstStaticPadTemplate * hsrc, GstStaticPadTemplate * hsink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_new</NAME>
+<RETURNS>GstHarness  * </RETURNS>
+const gchar * element_name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_new_parse</NAME>
+<RETURNS>GstHarness  * </RETURNS>
+const gchar * launchline
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_teardown</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_element_src_pad</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, GstPad * srcpad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_element_sink_pad</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, GstPad * sinkpad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_src_caps</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, GstCaps * caps
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_sink_caps</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, GstCaps * caps
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_caps</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, GstCaps * in, GstCaps * out
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_src_caps_str</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, const gchar * str
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_sink_caps_str</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, const gchar * str
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_caps_str</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness  * h, const gchar * in, const gchar * out
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_use_systemclock</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_use_testclock</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_get_testclock</NAME>
+<RETURNS>GstTestClock  * </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_time</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstHarness * h, GstClockTime time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_wait_for_clock_id_waits</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstHarness * h, guint waits, guint timeout
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_crank_single_clock_wait</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_crank_multiple_clock_waits</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstHarness * h, guint waits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_play</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_blocking_push_mode</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_forwarding</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h, gboolean forwarding
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_create_buffer</NAME>
+<RETURNS>GstBuffer  *    </RETURNS>
+GstHarness * h, gsize size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_push</NAME>
+<RETURNS>GstFlowReturn   </RETURNS>
+GstHarness * h, GstBuffer * buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_pull</NAME>
+<RETURNS>GstBuffer  *    </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_try_pull</NAME>
+<RETURNS>GstBuffer  *    </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_push_and_pull</NAME>
+<RETURNS>GstBuffer  *    </RETURNS>
+GstHarness * h, GstBuffer * buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_buffers_received</NAME>
+<RETURNS>guint           </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_buffers_in_queue</NAME>
+<RETURNS>guint           </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_drop_buffers</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h, gboolean drop_buffers
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_dump_to_file</NAME>
+<RETURNS>void            </RETURNS>
+GstHarness * h, const gchar * filename
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_get_last_pushed_timestamp</NAME>
+<RETURNS>GstClockTime    </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_push_event</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstHarness * h, GstEvent * event
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_pull_event</NAME>
+<RETURNS>GstEvent  *     </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_try_pull_event</NAME>
+<RETURNS>GstEvent  *     </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_events_received</NAME>
+<RETURNS>guint           </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_events_in_queue</NAME>
+<RETURNS>guint           </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_push_upstream_event</NAME>
+<RETURNS>gboolean    </RETURNS>
+GstHarness * h, GstEvent * event
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_pull_upstream_event</NAME>
+<RETURNS>GstEvent  * </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_try_pull_upstream_event</NAME>
+<RETURNS>GstEvent  * </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_upstream_events_received</NAME>
+<RETURNS>guint       </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_upstream_events_in_queue</NAME>
+<RETURNS>guint       </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_query_latency</NAME>
+<RETURNS>GstClockTime  </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_upstream_latency</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness * h, GstClockTime latency
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set_propose_allocator</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness                * h, GstAllocator              * allocator, const GstAllocationParams * params
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_get_allocator</NAME>
+<RETURNS>void          </RETURNS>
+GstHarness          * h, GstAllocator       ** allocator, GstAllocationParams * params
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_src_harness</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness * h, GstHarness * src_harness, gboolean has_clock_wait
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_src</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness  * h, const gchar * src_element_name, gboolean      has_clock_wait
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_src_parse</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness  * h, const gchar * launchline, gboolean      has_clock_wait
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_push_from_src</NAME>
+<RETURNS>GstFlowReturn  </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_src_crank_and_push_many</NAME>
+<RETURNS>GstFlowReturn  </RETURNS>
+GstHarness * h, gint         cranks, gint         pushes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_src_push_event</NAME>
+<RETURNS>gboolean       </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_sink_harness</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness * h, GstHarness * sink_harness
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_sink</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness  * h, const gchar * sink_element_name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_sink_parse</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness  * h, const gchar * launchline
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_push_to_sink</NAME>
+<RETURNS>GstFlowReturn  </RETURNS>
+GstHarness * h
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_sink_push_many</NAME>
+<RETURNS>GstFlowReturn  </RETURNS>
+GstHarness * h, gint pushes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_find_element</NAME>
+<RETURNS>GstElement  *  </RETURNS>
+GstHarness * h, const gchar * element_name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_set</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness  * h, const gchar * element_name, const gchar * first_property_name, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_get</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness  * h, const gchar * element_name, const gchar * first_property_name, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_add_probe</NAME>
+<RETURNS>void           </RETURNS>
+GstHarness        * h, const gchar       * element_name, const gchar       * pad_name, GstPadProbeType     mask, GstPadProbeCallback callback, gpointer            user_data, GDestroyNotify      destroy_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_stress_thread_stop</NAME>
+<RETURNS>guint               </RETURNS>
+GstHarnessThread * t
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_harness_stress_custom_start</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness * h, GFunc        init, GFunc        callback, gpointer     data, gulong       sleep
+</FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_statechange_start</NAME>
+#define gst_harness_stress_statechange_start(h)                                \
+  gst_harness_stress_statechange_start_full (h, G_USEC_PER_SEC / 100)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_statechange_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness * h, gulong       sleep
+</FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_push_buffer_start</NAME>
+#define gst_harness_stress_push_buffer_start(h, c, s, b)                       \
+  gst_harness_stress_push_buffer_start_full (h, c, s, b, 0)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_push_buffer_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness * h, GstCaps    * caps, const GstSegment * segment, GstBuffer  * buf, gulong       sleep
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>GstHarnessPrepareBufferFunc</NAME>
+<RETURNS>GstBuffer *</RETURNS>
+GstHarness * h, gpointer data
+</USER_FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_push_buffer_with_cb_start</NAME>
+#define gst_harness_stress_push_buffer_with_cb_start(h, c, s, f, d, n)         \
+  gst_harness_stress_push_buffer_with_cb_start_full (h, c, s, f, d, n, 0)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_push_buffer_with_cb_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness   * h, GstCaps      * caps, const GstSegment * segment, GstHarnessPrepareBufferFunc func, gpointer       data, GDestroyNotify notify, gulong         sleep
+</FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_push_event_start</NAME>
+#define gst_harness_stress_push_event_start(h, e)                              \
+  gst_harness_stress_push_event_start_full (h, e, 0)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_push_event_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness * h, GstEvent   * event, gulong       sleep
+</FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_send_upstream_event_start</NAME>
+#define gst_harness_stress_send_upstream_event_start(h, e)                     \
+  gst_harness_stress_push_upstream_event_start_full (h, e, 0)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_push_upstream_event_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness * h, GstEvent   * event, gulong       sleep
+</FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_property_start</NAME>
+#define gst_harness_stress_property_start(h, n, v)                             \
+  gst_harness_stress_property_start_full (h, n, v, G_USEC_PER_SEC / 1000)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_property_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness   * h, const gchar  * name, const GValue * value, gulong         sleep
+</FUNCTION>
+<MACRO>
+<NAME>gst_harness_stress_requestpad_start</NAME>
+#define gst_harness_stress_requestpad_start(h, t, n, c, r)                     \
+  gst_harness_stress_requestpad_start_full (h, t, n, c, r, G_USEC_PER_SEC / 100)
+</MACRO>
+<FUNCTION>
+<NAME>gst_harness_stress_requestpad_start_full</NAME>
+<RETURNS>GstHarnessThread  * </RETURNS>
+GstHarness     * h, GstPadTemplate * templ, const gchar    * name, GstCaps        * caps, gboolean         release, gulong           sleep
+</FUNCTION>
+<STRUCT>
+<NAME>GstHarnessPrivate</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GstHarnessThread</NAME>
+</STRUCT>
+<MACRO>
+<NAME>CK_CPPSTART</NAME>
+#define CK_CPPSTART extern "C" {
+</MACRO>
+<MACRO>
+<NAME>CK_CPPEND</NAME>
+#define CK_CPPEND }
+</MACRO>
+<MACRO>
+<NAME>GCC_VERSION_AT_LEAST</NAME>
+#define GCC_VERSION_AT_LEAST(major, minor) \
+((__GNUC__ > (major)) || \
+ (__GNUC__ == (major) && __GNUC_MINOR__ >= (minor)))
+</MACRO>
+<MACRO>
+<NAME>CK_ATTRIBUTE_UNUSED</NAME>
+#define CK_ATTRIBUTE_UNUSED __attribute__ ((unused))
+</MACRO>
+<MACRO>
+<NAME>CK_ATTRIBUTE_NORETURN</NAME>
+#define CK_ATTRIBUTE_NORETURN __attribute__ ((noreturn))
+</MACRO>
+<MACRO>
+<NAME>CK_EXPORT</NAME>
+#define CK_EXPORT
+</MACRO>
+<MACRO>
+<NAME>CK_DLL_EXP</NAME>
+#define CK_DLL_EXP
+</MACRO>
+<MACRO>
+<NAME>CHECK_MAJOR_VERSION</NAME>
+#define CHECK_MAJOR_VERSION (0)
+</MACRO>
+<MACRO>
+<NAME>CHECK_MINOR_VERSION</NAME>
+#define CHECK_MINOR_VERSION (9)
+</MACRO>
+<MACRO>
+<NAME>CHECK_MICRO_VERSION</NAME>
+#define CHECK_MICRO_VERSION (14)
+</MACRO>
+<MACRO>
+<NAME>NULL</NAME>
+#define NULL ((void*)0)
+</MACRO>
+<TYPEDEF>
+<NAME>TCase</NAME>
+typedef struct TCase TCase;
+</TYPEDEF>
+<USER_FUNCTION>
+<NAME>TFun</NAME>
+<RETURNS>void </RETURNS>
+int
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>SFun</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<TYPEDEF>
+<NAME>Suite</NAME>
+typedef struct Suite Suite;
+</TYPEDEF>
+<MACRO>
+<NAME>tcase_add_test</NAME>
+#define tcase_add_test(tc,tf) tcase_add_test_raise_signal(tc,tf,0)
+</MACRO>
+<MACRO>
+<NAME>tcase_add_test_raise_signal</NAME>
+#define tcase_add_test_raise_signal(tc,tf,signal) \
+   _tcase_add_test((tc),(tf),"" # tf "",(signal), 0, 0, 1)
+</MACRO>
+<MACRO>
+<NAME>tcase_add_exit_test</NAME>
+#define tcase_add_exit_test(tc, tf, expected_exit_value) \
+  _tcase_add_test((tc),(tf),"" # tf "",0,(expected_exit_value),0,1)
+</MACRO>
+<MACRO>
+<NAME>tcase_add_loop_test</NAME>
+#define tcase_add_loop_test(tc,tf,s,e) \
+  _tcase_add_test((tc),(tf),"" # tf "",0,0,(s),(e))
+</MACRO>
+<MACRO>
+<NAME>tcase_add_loop_test_raise_signal</NAME>
+#define tcase_add_loop_test_raise_signal(tc,tf,signal,s,e) \
+  _tcase_add_test((tc),(tf),"" # tf "",(signal),0,(s),(e))
+</MACRO>
+<MACRO>
+<NAME>tcase_add_loop_exit_test</NAME>
+#define tcase_add_loop_exit_test(tc,tf,expected_exit_value,s,e) \
+  _tcase_add_test((tc),(tf),"" # tf "",0,(expected_exit_value),(s),(e))
+</MACRO>
+<MACRO>
+<NAME>START_TEST</NAME>
+#define START_TEST(__testname)\
+static void __testname (int _i CK_ATTRIBUTE_UNUSED)\
+{\
+  tcase_fn_start (""# __testname, __FILE__, __LINE__);
+</MACRO>
+<MACRO>
+<NAME>END_TEST</NAME>
+#define END_TEST }
+</MACRO>
+<MACRO>
+<NAME>fail_unless</NAME>
+#define fail_unless ck_assert_msg
+</MACRO>
+<MACRO>
+<NAME>fail_if</NAME>
+#define fail_if(expr, ...)\
+  (expr) ? \
+     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+     : _mark_point(__FILE__, __LINE__)
+</MACRO>
+<MACRO>
+<NAME>fail</NAME>
+#define fail ck_abort_msg
+</MACRO>
+<MACRO>
+<NAME>ck_assert</NAME>
+#define ck_assert(expr) ck_assert_msg(expr, NULL)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_msg</NAME>
+#define ck_assert_msg(expr, ...) \
+  (expr) ? \
+     _mark_point(__FILE__, __LINE__) : \
+     _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__, NULL)
+</MACRO>
+<MACRO>
+<NAME>ck_abort</NAME>
+#define ck_abort() ck_abort_msg(NULL)
+</MACRO>
+<MACRO>
+<NAME>ck_abort_msg</NAME>
+#define ck_abort_msg(...) _ck_assert_failed(__FILE__, __LINE__, "Failed" , ## __VA_ARGS__, NULL)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_int_eq</NAME>
+#define ck_assert_int_eq(X, Y) _ck_assert_int(X, ==, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_int_ne</NAME>
+#define ck_assert_int_ne(X, Y) _ck_assert_int(X, !=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_int_lt</NAME>
+#define ck_assert_int_lt(X, Y) _ck_assert_int(X, <, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_int_le</NAME>
+#define ck_assert_int_le(X, Y) _ck_assert_int(X, <=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_int_gt</NAME>
+#define ck_assert_int_gt(X, Y) _ck_assert_int(X, >, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_int_ge</NAME>
+#define ck_assert_int_ge(X, Y) _ck_assert_int(X, >=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_uint_eq</NAME>
+#define ck_assert_uint_eq(X, Y) _ck_assert_uint(X, ==, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_uint_ne</NAME>
+#define ck_assert_uint_ne(X, Y) _ck_assert_uint(X, !=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_uint_lt</NAME>
+#define ck_assert_uint_lt(X, Y) _ck_assert_uint(X, <, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_uint_le</NAME>
+#define ck_assert_uint_le(X, Y) _ck_assert_uint(X, <=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_uint_gt</NAME>
+#define ck_assert_uint_gt(X, Y) _ck_assert_uint(X, >, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_uint_ge</NAME>
+#define ck_assert_uint_ge(X, Y) _ck_assert_uint(X, >=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_str_eq</NAME>
+#define ck_assert_str_eq(X, Y) _ck_assert_str(X, ==, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_str_ne</NAME>
+#define ck_assert_str_ne(X, Y) _ck_assert_str(X, !=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_str_lt</NAME>
+#define ck_assert_str_lt(X, Y) _ck_assert_str(X, <, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_str_le</NAME>
+#define ck_assert_str_le(X, Y) _ck_assert_str(X, <=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_str_gt</NAME>
+#define ck_assert_str_gt(X, Y) _ck_assert_str(X, >, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_str_ge</NAME>
+#define ck_assert_str_ge(X, Y) _ck_assert_str(X, >=, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_ptr_eq</NAME>
+#define ck_assert_ptr_eq(X, Y) _ck_assert_ptr(X, ==, Y)
+</MACRO>
+<MACRO>
+<NAME>ck_assert_ptr_ne</NAME>
+#define ck_assert_ptr_ne(X, Y) _ck_assert_ptr(X, !=, Y)
+</MACRO>
+<MACRO>
+<NAME>mark_point</NAME>
+#define mark_point() _mark_point(__FILE__,__LINE__)
+</MACRO>
+<TYPEDEF>
+<NAME>SRunner</NAME>
+typedef struct SRunner SRunner;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>TestResult</NAME>
+typedef struct TestResult TestResult;
+</TYPEDEF>
+<FUNCTION>
+<NAME>gst_consistency_checker_new</NAME>
+<RETURNS>GstStreamConsistency  * </RETURNS>
+GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_consistency_checker_add_pad</NAME>
+<RETURNS>gboolean                </RETURNS>
+GstStreamConsistency * consist, GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_consistency_checker_reset</NAME>
+<RETURNS>void                    </RETURNS>
+GstStreamConsistency * consist
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_consistency_checker_free</NAME>
+<RETURNS>void                    </RETURNS>
+GstStreamConsistency * consist
+</FUNCTION>
+<STRUCT>
+<NAME>GstStreamConsistency</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_TEST_CLOCK</NAME>
+#define GST_TYPE_TEST_CLOCK (gst_test_clock_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_TEST_CLOCK</NAME>
+#define GST_TEST_CLOCK(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj),\
+    GST_TYPE_TEST_CLOCK, GstTestClock))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TEST_CLOCK</NAME>
+#define GST_IS_TEST_CLOCK(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj),\
+    GST_TYPE_TEST_CLOCK))
+</MACRO>
+<MACRO>
+<NAME>GST_TEST_CLOCK_CLASS</NAME>
+#define GST_TEST_CLOCK_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass),\
+    GST_TYPE_TEST_CLOCK, GstTestClockClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TEST_CLOCK_CLASS</NAME>
+#define GST_IS_TEST_CLOCK_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE (\
+    (klass), GST_TYPE_TEST_CLOCK))
+</MACRO>
+<MACRO>
+<NAME>GST_TEST_CLOCK_GET_CLASS</NAME>
+#define GST_TEST_CLOCK_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS (\
+    (obj), GST_TYPE_TEST_CLOCK, GstTestClockClass))
+</MACRO>
+<MACRO>
+<NAME>GST_TEST_CLOCK_CAST</NAME>
+#define GST_TEST_CLOCK_CAST(obj) ((GstTestClock*)(obj))
+</MACRO>
+<STRUCT>
+<NAME>GstTestClock</NAME>
+struct _GstTestClock
+{
+  GstClock parent;
+
+  /*< private >*/
+  GstTestClockPrivate *priv;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstTestClockClass</NAME>
+struct _GstTestClockClass
+{
+  GstClockClass parent_class;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_test_clock_get_type</NAME>
+<RETURNS>GType          </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_new</NAME>
+<RETURNS>GstClock  *    </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_new_with_start_time</NAME>
+<RETURNS>GstClock  *    </RETURNS>
+GstClockTime start_time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_set_time</NAME>
+<RETURNS>void           </RETURNS>
+GstTestClock * test_clock, GstClockTime   new_time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_advance_time</NAME>
+<RETURNS>void           </RETURNS>
+GstTestClock *   test_clock, GstClockTimeDiff delta
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_peek_id_count</NAME>
+<RETURNS>guint          </RETURNS>
+GstTestClock * test_clock
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_has_id</NAME>
+<RETURNS>gboolean       </RETURNS>
+GstTestClock * test_clock, GstClockID id
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_peek_next_pending_id</NAME>
+<RETURNS>gboolean       </RETURNS>
+GstTestClock * test_clock, GstClockID   * pending_id
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_wait_for_next_pending_id</NAME>
+<RETURNS>void           </RETURNS>
+GstTestClock * test_clock, GstClockID   * pending_id
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_wait_for_pending_id_count</NAME>
+<DEPRECATED/>
+<RETURNS>void           </RETURNS>
+GstTestClock * test_clock, guint          count
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_process_next_clock_id</NAME>
+<RETURNS>GstClockID     </RETURNS>
+GstTestClock * test_clock
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_get_next_entry_time</NAME>
+<RETURNS>GstClockTime   </RETURNS>
+GstTestClock * test_clock
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_wait_for_multiple_pending_ids</NAME>
+<RETURNS>void           </RETURNS>
+GstTestClock * test_clock, guint          count, GList       ** pending_list
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_process_id_list</NAME>
+<RETURNS>guint          </RETURNS>
+GstTestClock * test_clock, const GList  * pending_list
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_test_clock_id_list_get_latest_time</NAME>
+<RETURNS>GstClockTime   </RETURNS>
+const GList * pending_list
+</FUNCTION>
+<STRUCT>
+<NAME>GstTestClockPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_CAT_DEFAULT</NAME>
+#define GST_CAT_DEFAULT check_debug
+</MACRO>
+<VARIABLE>
+<NAME>buffers</NAME>
+extern GList * buffers;
+</VARIABLE>
+<VARIABLE>
+<NAME>check_mutex</NAME>
+extern GMutex check_mutex;
+</VARIABLE>
+<VARIABLE>
+<NAME>check_cond</NAME>
+extern GCond check_cond;
+</VARIABLE>
+<FUNCTION>
+<NAME>gst_check_init</NAME>
+<RETURNS>void  </RETURNS>
+int *argc, char **argv[]
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_chain_func</NAME>
+<RETURNS>GstFlowReturn  </RETURNS>
+GstPad * pad, GstObject * parent, GstBuffer * buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_message_error</NAME>
+<RETURNS>void  </RETURNS>
+GstMessage * message, GstMessageType type, GQuark domain, gint code
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_element</NAME>
+<RETURNS>GstElement  *</RETURNS>
+const gchar * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_teardown_element</NAME>
+<RETURNS>void  </RETURNS>
+GstElement * element
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_src_pad</NAME>
+<RETURNS>GstPad  *</RETURNS>
+GstElement * element, GstStaticPadTemplate * tmpl
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_src_pad_from_template</NAME>
+<RETURNS>GstPad  *</RETURNS>
+GstElement * element, GstPadTemplate * tmpl
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_src_pad_by_name</NAME>
+<RETURNS>GstPad  * </RETURNS>
+GstElement * element, GstStaticPadTemplate * tmpl, const gchar *name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_src_pad_by_name_from_template</NAME>
+<RETURNS>GstPad  * </RETURNS>
+GstElement * element, GstPadTemplate * tmpl, const gchar *name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_sink_pad</NAME>
+<RETURNS>GstPad  *</RETURNS>
+GstElement * element, GstStaticPadTemplate * tmpl
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_sink_pad_from_template</NAME>
+<RETURNS>GstPad  *</RETURNS>
+GstElement * element, GstPadTemplate * tmpl
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_sink_pad_by_name</NAME>
+<RETURNS>GstPad  * </RETURNS>
+GstElement * element, GstStaticPadTemplate * tmpl, const gchar *name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_sink_pad_by_name_from_template</NAME>
+<RETURNS>GstPad  * </RETURNS>
+GstElement * element, GstPadTemplate * tmpl, const gchar *name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_teardown_pad_by_name</NAME>
+<RETURNS>void  </RETURNS>
+GstElement * element, const gchar *name
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_teardown_src_pad</NAME>
+<RETURNS>void  </RETURNS>
+GstElement * element
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_drop_buffers</NAME>
+<RETURNS>void  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_caps_equal</NAME>
+<RETURNS>void  </RETURNS>
+GstCaps * caps1, GstCaps * caps2
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_buffer_data</NAME>
+<RETURNS>void  </RETURNS>
+GstBuffer * buffer, gconstpointer data, gsize size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_element_push_buffer_list</NAME>
+<RETURNS>void  </RETURNS>
+const gchar * element_name, GList * buffer_in, GstCaps * caps_in, GList * buffer_out, GstCaps * caps_out, GstFlowReturn last_flow_return
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_element_push_buffer</NAME>
+<RETURNS>void  </RETURNS>
+const gchar * element_name, GstBuffer * buffer_in, GstCaps * caps_in, GstBuffer * buffer_out, GstCaps *caps_out
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_teardown_sink_pad</NAME>
+<RETURNS>void  </RETURNS>
+GstElement * element
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_abi_list</NAME>
+<RETURNS>void  </RETURNS>
+GstCheckABIStruct list[], gboolean have_abi_sizes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_run_suite</NAME>
+<RETURNS>gint  </RETURNS>
+Suite * suite, const gchar * name, const gchar * fname
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_events</NAME>
+<RETURNS>void  </RETURNS>
+GstPad * srcpad, GstElement * element, GstCaps * caps, GstFormat format
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_setup_events_with_stream_id</NAME>
+<RETURNS>void  </RETURNS>
+GstPad * srcpad, GstElement * element, GstCaps * caps, GstFormat format, const gchar * stream_id
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_objects_destroyed_on_unref</NAME>
+<RETURNS>void  </RETURNS>
+gpointer object_to_unref, gpointer first_object, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_check_object_destroyed_on_unref</NAME>
+<RETURNS>void  </RETURNS>
+gpointer object_to_unref
+</FUNCTION>
+<MACRO>
+<NAME>fail_unless_message_error</NAME>
+#define fail_unless_message_error(msg, domain, code)            \
+gst_check_message_error (msg, GST_MESSAGE_ERROR,                \
+  GST_ ## domain ## _ERROR, GST_ ## domain ## _ERROR_ ## code)
+</MACRO>
+<MACRO>
+<NAME>assert_message_error</NAME>
+#define assert_message_error(m, d, c) fail_unless_message_error(m, d, c)
+</MACRO>
+<MACRO>
+<NAME>GST_DO_CHECK_TEST_ENVIRONMENT</NAME>
+#define GST_DO_CHECK_TEST_ENVIRONMENT \
+G_STMT_START {                        \
+  if (g_getenv (GST_CHECK_TEST_ENVIRONMENT_BEACON) == NULL) \
+    fail ("Test environment not set up correctly! Expected environment " \
+       "variable '%s' to be set.", GST_CHECK_TEST_ENVIRONMENT_BEACON); \
+} G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>GST_START_TEST</NAME>
+#define GST_START_TEST(__testname) \
+static void __testname (int __i__)\
+{\
+  GST_DEBUG ("test start"); \
+  GST_DO_CHECK_TEST_ENVIRONMENT; \
+  tcase_fn_start (""# __testname, __FILE__, __LINE__);
+</MACRO>
+<MACRO>
+<NAME>GST_END_TEST</NAME>
+#define GST_END_TEST GST_LOG ("cleaning up tasks"); \
+                     gst_task_cleanup_all (); \
+                     END_TEST
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_int</NAME>
+#define fail_unless_equals_int(a, b)                                    \
+G_STMT_START {                                                          \
+  int first = a;                                                        \
+  int second = b;                                                       \
+  fail_unless(first == second,                                          \
+    "'" #a "' (%d) is not equal to '" #b"' (%d)", first, second);       \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_int</NAME>
+#define assert_equals_int(a, b) fail_unless_equals_int(a, b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_int_hex</NAME>
+#define fail_unless_equals_int_hex(a, b)                                \
+G_STMT_START {								\
+  int first = a;							\
+  int second = b;							\
+  fail_unless(first == second,						\
+    "'" #a "' (0x%08x) is not equal to '" #b"' (0x%08x)", first, second);\
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_int_hex</NAME>
+#define assert_equals_int_hex(a, b) fail_unless_equals_int_hex(a, b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_int64</NAME>
+#define fail_unless_equals_int64(a, b)                                  \
+G_STMT_START {                                                          \
+  gint64 first = a;                                                     \
+  gint64 second = b;                                                    \
+  fail_unless(first == second,                                          \
+    "'" #a "' (%" G_GINT64_FORMAT") is not equal to '" #b"' (%"         \
+    G_GINT64_FORMAT")", first, second);                                 \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_int64</NAME>
+#define assert_equals_int64(a, b) fail_unless_equals_int64(a, b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_int64_hex</NAME>
+#define fail_unless_equals_int64_hex(a, b)                              \
+G_STMT_START {								\
+  gint64 first = a;							\
+  gint64 second = b;							\
+  fail_unless(first == second,						\
+    "'" #a "' (0x%016x) is not equal to '" #b"' (0x%016x)", first, second);\
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_int64_hex</NAME>
+#define assert_equals_int64_hex(a,b) fail_unless_equals_int64_hex(a,b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_uint64</NAME>
+#define fail_unless_equals_uint64(a, b)                                 \
+G_STMT_START {                                                          \
+  guint64 first = a;                                                    \
+  guint64 second = b;                                                   \
+  fail_unless(first == second,                                          \
+    "'" #a "' (%" G_GUINT64_FORMAT ") is not equal to '" #b"' (%"       \
+    G_GUINT64_FORMAT ")", first, second);                               \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_uint64</NAME>
+#define assert_equals_uint64(a, b) fail_unless_equals_uint64(a, b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_uint64_hex</NAME>
+#define fail_unless_equals_uint64_hex(a, b)                             \
+G_STMT_START {								\
+  guint64 first = a;							\
+  guint64 second = b;							\
+  fail_unless(first == second,						\
+    "'" #a "' (0x%016x) is not equal to '" #b"' (0x%016x)", first, second);\
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_uint64_hex</NAME>
+#define assert_equals_uint64_hex(a,b) fail_unless_equals_uint64_hex(a,b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_string</NAME>
+#define fail_unless_equals_string(a, b)                             \
+G_STMT_START {                                                      \
+  const gchar * first = a;                                          \
+  const gchar * second = b;                                         \
+  fail_unless(g_strcmp0 (first, second) == 0,                          \
+    "'" #a "' (%s) is not equal to '" #b"' (%s)", first, second);   \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_string</NAME>
+#define assert_equals_string(a, b) fail_unless_equals_string(a, b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_float</NAME>
+#define fail_unless_equals_float(a, b)                            \
+G_STMT_START {                                                    \
+  double first = a;                                               \
+  double second = b;                                              \
+  /* This will only work for 'normal' values and values around 0, \
+   * which should be good enough for our purposes here */         \
+  fail_unless(fabs (first - second) < 0.0000001,                  \
+    "'" #a "' (%g) is not equal to '" #b "' (%g)", first, second);\
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_float</NAME>
+#define assert_equals_float(a, b) fail_unless_equals_float(a, b)
+</MACRO>
+<MACRO>
+<NAME>fail_unless_equals_pointer</NAME>
+#define fail_unless_equals_pointer(a, b)                          \
+G_STMT_START {                                                    \
+  gpointer first = a;                                             \
+  gpointer second = b;                                            \
+  fail_unless(first == second,                                    \
+    "'" #a "' (%p) is not equal to '" #b "' (%p)", first, second);\
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>assert_equals_pointer</NAME>
+#define assert_equals_pointer(a, b) fail_unless_equals_pointer(a, b)
+</MACRO>
+<VARIABLE>
+<NAME>thread_list</NAME>
+extern GList *thread_list;
+</VARIABLE>
+<VARIABLE>
+<NAME>mutex</NAME>
+extern GMutex mutex;
+</VARIABLE>
+<VARIABLE>
+<NAME>start_cond</NAME>
+extern GCond start_cond;       /* used to notify main thread of thread startups */
+</VARIABLE>
+<VARIABLE>
+<NAME>sync_cond</NAME>
+extern GCond sync_cond;        /* used to synchronize all threads and main thread */
+</VARIABLE>
+<MACRO>
+<NAME>MAIN_START_THREADS</NAME>
+#define MAIN_START_THREADS(count, function, data)               \
+MAIN_INIT();                                                    \
+MAIN_START_THREAD_FUNCTIONS(count, function, data);             \
+MAIN_SYNCHRONIZE();
+</MACRO>
+<MACRO>
+<NAME>MAIN_INIT</NAME>
+#define MAIN_INIT()                     \
+G_STMT_START {                          \
+  g_mutex_init (&mutex);                \
+  g_cond_init (&start_cond);            \
+  g_cond_init (&sync_cond);             \
+  _gst_check_threads_running = TRUE;    \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>MAIN_START_THREAD_FUNCTIONS</NAME>
+#define MAIN_START_THREAD_FUNCTIONS(count, function, data)      \
+G_STMT_START {                                                  \
+  int i;                                                        \
+  for (i = 0; i < count; ++i) {                                 \
+    MAIN_START_THREAD_FUNCTION (i, function, data);             \
+  }                                                             \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>MAIN_START_THREAD_FUNCTION</NAME>
+#define MAIN_START_THREAD_FUNCTION(i, function, data)           \
+G_STMT_START {                                                  \
+    GThread *thread = NULL;                                     \
+    GST_DEBUG ("MAIN: creating thread %d", i);                  \
+    g_mutex_lock (&mutex);                                      \
+    thread = g_thread_try_new ("gst-check",                     \
+        (GThreadFunc) function, data, NULL);                    \
+    /* wait for thread to signal us that it's ready */          \
+    GST_DEBUG ("MAIN: waiting for thread %d", i);               \
+    g_cond_wait (&start_cond, &mutex);                          \
+    g_mutex_unlock (&mutex);                                    \
+                                                                \
+    thread_list = g_list_append (thread_list, thread);          \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>MAIN_SYNCHRONIZE</NAME>
+#define MAIN_SYNCHRONIZE()              \
+G_STMT_START {                          \
+  GST_DEBUG ("MAIN: synchronizing");    \
+  g_cond_broadcast (&sync_cond);        \
+  GST_DEBUG ("MAIN: synchronized");     \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>MAIN_STOP_THREADS</NAME>
+#define MAIN_STOP_THREADS()                                     \
+G_STMT_START {                                                  \
+  _gst_check_threads_running = FALSE;                           \
+                                                                \
+  /* join all threads */                                        \
+  GST_DEBUG ("MAIN: joining");                                  \
+  g_list_foreach (thread_list, (GFunc) g_thread_join, NULL);    \
+  g_list_free (thread_list);                                    \
+  thread_list = NULL;                                           \
+  g_mutex_clear (&mutex);                                       \
+  g_cond_clear (&start_cond);                                   \
+  g_cond_clear (&sync_cond);                                    \
+  GST_DEBUG ("MAIN: joined");                                   \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>THREAD_START</NAME>
+#define THREAD_START()                                          \
+THREAD_STARTED();                                               \
+THREAD_SYNCHRONIZE();
+</MACRO>
+<MACRO>
+<NAME>THREAD_STARTED</NAME>
+#define THREAD_STARTED()                                        \
+G_STMT_START {                                                  \
+  /* signal main thread that we started */                      \
+  GST_DEBUG ("THREAD %p: started", g_thread_self ());           \
+  g_mutex_lock (&mutex);                                        \
+  g_cond_signal (&start_cond);                                  \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>THREAD_SYNCHRONIZE</NAME>
+#define THREAD_SYNCHRONIZE()                                    \
+G_STMT_START {                                                  \
+  /* synchronize everyone */                                    \
+  GST_DEBUG ("THREAD %p: syncing", g_thread_self ());           \
+  fail_if (g_mutex_trylock (&mutex),                            \
+      "bug in unit test, mutex should be locked at this point");\
+  g_cond_wait (&sync_cond, &mutex);                             \
+  GST_DEBUG ("THREAD %p: synced", g_thread_self ());            \
+  g_mutex_unlock (&mutex);                                      \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>THREAD_SWITCH</NAME>
+#define THREAD_SWITCH()                                         \
+G_STMT_START {                                                  \
+  /* a minimal sleep is a context switch */                     \
+  g_usleep (1);                                                 \
+} G_STMT_END;
+</MACRO>
+<MACRO>
+<NAME>THREAD_TEST_RUNNING</NAME>
+#define THREAD_TEST_RUNNING()   (!!_gst_check_threads_running)
+</MACRO>
+<MACRO>
+<NAME>ASSERT_CRITICAL</NAME>
+#define ASSERT_CRITICAL(code)                                   \
+G_STMT_START {                                                  \
+  _gst_check_expecting_log = TRUE;                              \
+  _gst_check_raised_critical = FALSE;                           \
+  code;                                                         \
+  if (!_gst_check_raised_critical)                              \
+    _ck_assert_failed (__FILE__, __LINE__,                      \
+        "Expected g_critical, got nothing", NULL);              \
+  _gst_check_expecting_log = FALSE;                             \
+} G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>ASSERT_WARNING</NAME>
+#define ASSERT_WARNING(code)                                    \
+G_STMT_START {                                                  \
+  _gst_check_expecting_log = TRUE;                              \
+  _gst_check_raised_warning = FALSE;                            \
+  code;                                                         \
+  if (!_gst_check_raised_warning)                               \
+    _ck_assert_failed (__FILE__, __LINE__,                      \
+        "Expected g_warning, got nothing", NULL);               \
+  _gst_check_expecting_log = FALSE;                             \
+} G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>ASSERT_OBJECT_REFCOUNT</NAME>
+#define ASSERT_OBJECT_REFCOUNT(object, name, value)             \
+G_STMT_START {                                                  \
+  int rc;                                                       \
+  rc = GST_OBJECT_REFCOUNT_VALUE (object);                      \
+  fail_unless (rc == value,                                     \
+      "%s (%p) refcount is %d instead of %d",                   \
+      name, object, rc, value);                                 \
+} G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>ASSERT_OBJECT_REFCOUNT_BETWEEN</NAME>
+#define ASSERT_OBJECT_REFCOUNT_BETWEEN(object, name, lower, upper)      \
+G_STMT_START {                                                          \
+  int rc = GST_OBJECT_REFCOUNT_VALUE (object);                          \
+  int lo = lower;                                                       \
+  int hi = upper;                                                       \
+                                                                        \
+  fail_unless (rc >= lo,                                                \
+      "%s (%p) refcount %d is smaller than %d",                         \
+      name, object, rc, lo);                                            \
+  fail_unless (rc <= hi,                                                \
+      "%s (%p) refcount %d is bigger than %d",                          \
+      name, object, rc, hi);                                            \
+} G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>ASSERT_CAPS_REFCOUNT</NAME>
+#define ASSERT_CAPS_REFCOUNT(caps, name, value)                 \
+        ASSERT_MINI_OBJECT_REFCOUNT(caps, name, value)
+</MACRO>
+<MACRO>
+<NAME>ASSERT_BUFFER_REFCOUNT</NAME>
+#define ASSERT_BUFFER_REFCOUNT(buffer, name, value)             \
+        ASSERT_MINI_OBJECT_REFCOUNT(buffer, name, value)
+</MACRO>
+<MACRO>
+<NAME>ASSERT_MINI_OBJECT_REFCOUNT</NAME>
+#define ASSERT_MINI_OBJECT_REFCOUNT(miniobj, name, value)       \
+G_STMT_START {                                                  \
+  int rc;                                                       \
+  rc = GST_MINI_OBJECT_REFCOUNT_VALUE (miniobj);                \
+  fail_unless (rc == value,                                     \
+               name " (%p) refcount is %d instead of %d", miniobj, rc, value); \
+} G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>ASSERT_SET_STATE</NAME>
+#define ASSERT_SET_STATE(element, state, ret)                   \
+fail_unless (gst_element_set_state (GST_ELEMENT(element),       \
+  state) == ret,                                                \
+  "could not change state to " #state);
+</MACRO>
+<MACRO>
+<NAME>GST_CHECK_MAIN</NAME>
+#define GST_CHECK_MAIN(name)                                    \
+int main (int argc, char **argv)                                \
+{                                                               \
+  Suite *s;                                                     \
+  gst_check_init (&argc, &argv);                                \
+  s = name ## _suite ();                                        \
+  return gst_check_run_suite (s, # name, __FILE__);             \
+}
+</MACRO>
+<MACRO>
+<NAME>tcase_skip_broken_test</NAME>
+#define tcase_skip_broken_test(chain,test_func) \
+G_STMT_START {                                                  \
+  const char *env = g_getenv ("GST_CHECKS");                    \
+                                                                \
+  if (env != NULL && g_pattern_match_simple (env, G_STRINGIFY (test_func))) {   \
+    tcase_add_test(chain,test_func);                            \
+  } else {                                                      \
+    g_printerr ("FIXME: skipping test %s because it's broken\n", G_STRINGIFY (test_func)); \
+  } \
+} G_STMT_END
+</MACRO>
+<FUNCTION>
+<NAME>gst_buffer_straw_start_pipeline</NAME>
+<RETURNS>void         </RETURNS>
+GstElement * bin, GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_buffer_straw_get_buffer</NAME>
+<RETURNS>GstBuffer  * </RETURNS>
+GstElement * bin, GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_buffer_straw_stop_pipeline</NAME>
+<RETURNS>void         </RETURNS>
+GstElement * bin, GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>rcvmsg_free</NAME>
+<RETURNS>void  </RETURNS>
+RcvMsg * rmsg
+</FUNCTION>
+<FUNCTION>
+<NAME>pack</NAME>
+<RETURNS>int  </RETURNS>
+enum ck_msg_type type, char **buf, CheckMsg * msg
+</FUNCTION>
+<FUNCTION>
+<NAME>upack</NAME>
+<RETURNS>int  </RETURNS>
+char *buf, CheckMsg * msg, enum ck_msg_type *type
+</FUNCTION>
+<FUNCTION>
+<NAME>ppack</NAME>
+<RETURNS>void  </RETURNS>
+FILE * fdes, enum ck_msg_type type, CheckMsg * msg
+</FUNCTION>
+<FUNCTION>
+<NAME>punpack</NAME>
+<RETURNS>RcvMsg  *</RETURNS>
+FILE * fdes
+</FUNCTION>
+<MACRO>
+<NAME>GCC_VERSION_AT_LEAST</NAME>
+#define GCC_VERSION_AT_LEAST(major, minor) \
+((__GNUC__ > (major)) || \
+ (__GNUC__ == (major) && __GNUC_MINOR__ >= (minor)))
+</MACRO>
+<MACRO>
+<NAME>CK_ATTRIBUTE_UNUSED</NAME>
+#define CK_ATTRIBUTE_UNUSED __attribute__ ((unused))
+</MACRO>
+<MACRO>
+<NAME>CK_ATTRIBUTE_NORETURN</NAME>
+#define CK_ATTRIBUTE_NORETURN __attribute__ ((noreturn))
+</MACRO>
+<MACRO>
+<NAME>CK_DLL_EXP</NAME>
+#define CK_DLL_EXP
+</MACRO>
+<MACRO>
+<NAME>getpid</NAME>
+#define getpid _getpid
+</MACRO>
+<MACRO>
+<NAME>strdup</NAME>
+#define strdup _strdup
+</MACRO>
+<MACRO>
+<NAME>CLOCK_MONOTONIC</NAME>
+#define CLOCK_MONOTONIC -1
+</MACRO>
+<MACRO>
+<NAME>CLOCK_REALTIME</NAME>
+#define CLOCK_REALTIME -1
+</MACRO>
+<STRUCT>
+<NAME>timespec</NAME>
+struct timespec
+{
+  time_t tv_sec;
+  long tv_nsec;
+};
+</STRUCT>
+<STRUCT>
+<NAME>itimerspec</NAME>
+struct itimerspec
+{
+  struct timespec it_interval;
+  struct timespec it_value;
+};
+</STRUCT>
+<STRUCT>
+<NAME>sigevent</NAME>
+struct sigevent;
+</STRUCT>
+<FUNCTION>
+<NAME>send_failure_info</NAME>
+<RETURNS>void  </RETURNS>
+const char *msg
+</FUNCTION>
+<FUNCTION>
+<NAME>send_loc_info</NAME>
+<RETURNS>void  </RETURNS>
+const char *file, int line
+</FUNCTION>
+<FUNCTION>
+<NAME>send_ctx_info</NAME>
+<RETURNS>void  </RETURNS>
+enum ck_result_ctx ctx
+</FUNCTION>
+<FUNCTION>
+<NAME>send_duration_info</NAME>
+<RETURNS>void  </RETURNS>
+int duration
+</FUNCTION>
+<FUNCTION>
+<NAME>receive_test_result</NAME>
+<RETURNS>TestResult  *</RETURNS>
+int waserror
+</FUNCTION>
+<FUNCTION>
+<NAME>setup_messaging</NAME>
+<RETURNS>void  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>teardown_messaging</NAME>
+<RETURNS>void  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>open_tmp_file</NAME>
+<RETURNS>FILE  *</RETURNS>
+char **name
+</FUNCTION>
+<FUNCTION>
+<NAME>log_srunner_start</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr
+</FUNCTION>
+<FUNCTION>
+<NAME>log_srunner_end</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr
+</FUNCTION>
+<FUNCTION>
+<NAME>log_suite_start</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, Suite * s
+</FUNCTION>
+<FUNCTION>
+<NAME>log_suite_end</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, Suite * s
+</FUNCTION>
+<FUNCTION>
+<NAME>log_test_end</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, TestResult * tr
+</FUNCTION>
+<FUNCTION>
+<NAME>log_test_start</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, TCase * tc, TF * tfun
+</FUNCTION>
+<FUNCTION>
+<NAME>stdout_lfun</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, FILE * file, enum print_output, void *obj, enum cl_event evt
+</FUNCTION>
+<FUNCTION>
+<NAME>lfile_lfun</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, FILE * file, enum print_output, void *obj, enum cl_event evt
+</FUNCTION>
+<FUNCTION>
+<NAME>xml_lfun</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, FILE * file, enum print_output, void *obj, enum cl_event evt
+</FUNCTION>
+<FUNCTION>
+<NAME>tap_lfun</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, FILE * file, enum print_output, void *obj, enum cl_event evt
+</FUNCTION>
+<FUNCTION>
+<NAME>subunit_lfun</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, FILE * file, enum print_output, void *obj, enum cl_event evt
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_register_lfun</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, FILE * lfile, int close, LFun lfun, enum print_output
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_open_lfile</NAME>
+<RETURNS>FILE  *</RETURNS>
+SRunner * sr
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_open_xmlfile</NAME>
+<RETURNS>FILE  *</RETURNS>
+SRunner * sr
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_open_tapfile</NAME>
+<RETURNS>FILE  *</RETURNS>
+SRunner * sr
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_init_logging</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr, enum print_output print_mode
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_end_logging</NAME>
+<RETURNS>void  </RETURNS>
+SRunner * sr
+</FUNCTION>
+<VARIABLE>
+<NAME>error_jmp_buffer</NAME>
+extern jmp_buf error_jmp_buffer;
+</VARIABLE>
+<FUNCTION>
+<NAME>eprintf</NAME>
+<RETURNS>void </RETURNS>
+const char *fmt, const char *file, int line, ...) CK_ATTRIBUTE_NORETURN; void *emalloc (size_t n
+</FUNCTION>
+<FUNCTION>
+<NAME>erealloc</NAME>
+<RETURNS>void  *</RETURNS>
+void *, size_t n
+</FUNCTION>
+<FUNCTION>
+<NAME>fprint_xml_esc</NAME>
+<RETURNS>void  </RETURNS>
+FILE * file, const char *str
+</FUNCTION>
+<FUNCTION>
+<NAME>tr_fprint</NAME>
+<RETURNS>void  </RETURNS>
+FILE * file, TestResult * tr, enum print_output print_mode
+</FUNCTION>
+<FUNCTION>
+<NAME>tr_xmlprint</NAME>
+<RETURNS>void  </RETURNS>
+FILE * file, TestResult * tr, enum print_output print_mode
+</FUNCTION>
+<FUNCTION>
+<NAME>srunner_fprint</NAME>
+<RETURNS>void  </RETURNS>
+FILE * file, SRunner * sr, enum print_output print_mode
+</FUNCTION>
+<FUNCTION>
+<NAME>get_env_printmode</NAME>
+<RETURNS>enum print_output  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>tr_str</NAME>
+<RETURNS>char  *</RETURNS>
+TestResult * tr
+</FUNCTION>
+<FUNCTION>
+<NAME>tr_short_str</NAME>
+<RETURNS>char  *</RETURNS>
+TestResult * tr
+</FUNCTION>
+<FUNCTION>
+<NAME>sr_stat_str</NAME>
+<RETURNS>char  *</RETURNS>
+SRunner * sr
+</FUNCTION>
+<FUNCTION>
+<NAME>ck_strdup_printf</NAME>
+<RETURNS>char  *</RETURNS>
+const char *fmt, ...
+</FUNCTION>
+<TYPEDEF>
+<NAME>List</NAME>
+typedef struct List List;
+</TYPEDEF>
+<FUNCTION>
+<NAME>check_list_create</NAME>
+<RETURNS>List  *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_at_end</NAME>
+<RETURNS>int  </RETURNS>
+List * lp
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_front</NAME>
+<RETURNS>void  </RETURNS>
+List * lp
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_add_front</NAME>
+<RETURNS>void  </RETURNS>
+List * lp, void *val
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_add_end</NAME>
+<RETURNS>void  </RETURNS>
+List * lp, void *val
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_val</NAME>
+<RETURNS>void  *</RETURNS>
+List * lp
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_advance</NAME>
+<RETURNS>void  </RETURNS>
+List * lp
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_free</NAME>
+<RETURNS>void  </RETURNS>
+List * lp
+</FUNCTION>
+<FUNCTION>
+<NAME>check_list_apply</NAME>
+<RETURNS>void  </RETURNS>
+List * lp, void (*fp) (void *)
+</FUNCTION>
+<MACRO>
+<NAME>US_PER_SEC</NAME>
+#define US_PER_SEC 1000000
+</MACRO>
+<MACRO>
+<NAME>NANOS_PER_SECONDS</NAME>
+#define NANOS_PER_SECONDS 1000000000
+</MACRO>
+<MACRO>
+<NAME>DIFF_IN_USEC</NAME>
+#define DIFF_IN_USEC(begin, end) \
+  ( (((end).tv_sec - (begin).tv_sec) * US_PER_SEC) + \
+    ((end).tv_nsec/1000) - ((begin).tv_nsec/1000) )
+</MACRO>
+<STRUCT>
+<NAME>Suite</NAME>
+struct Suite
+{
+  const char *name;
+  List *tclst;                  /* List of test cases */
+};
+</STRUCT>
+<STRUCT>
+<NAME>TCase</NAME>
+struct TCase
+{
+  const char *name;
+  struct timespec timeout;
+  List *tflst;                  /* list of test functions */
+  List *unch_sflst;
+  List *unch_tflst;
+  List *ch_sflst;
+  List *ch_tflst;
+};
+</STRUCT>
+<STRUCT>
+<NAME>TestResult</NAME>
+struct TestResult
+{
+  enum test_result rtype;       /* Type of result */
+  enum ck_result_ctx ctx;       /* When the result occurred */
+  char *file;                   /* File where the test occured */
+  int line;                     /* Line number where the test occurred */
+  int iter;                     /* The iteration value for looping tests */
+  int duration;                 /* duration of this test in microseconds */
+  const char *tcname;           /* Test case that generated the result */
+  const char *tname;            /* Test that generated the result */
+  char *msg;                    /* Failure message */
+};
+</STRUCT>
+<FUNCTION>
+<NAME>tr_create</NAME>
+<RETURNS>TestResult  *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>tr_reset</NAME>
+<RETURNS>void  </RETURNS>
+TestResult * tr
+</FUNCTION>
+<FUNCTION>
+<NAME>tr_free</NAME>
+<RETURNS>void  </RETURNS>
+TestResult * tr
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>LFun</NAME>
+<RETURNS>void </RETURNS>
+SRunner *, FILE *, enum print_output,
+    void *, enum cl_event
+</USER_FUNCTION>
+<STRUCT>
+<NAME>SRunner</NAME>
+struct SRunner
+{
+  List *slst;                   /* List of Suite objects */
+  TestStats *stats;             /* Run statistics */
+  List *resultlst;              /* List of unit test results */
+  const char *log_fname;        /* name of log file */
+  const char *xml_fname;        /* name of xml output file */
+  const char *tap_fname;        /* name of tap output file */
+  List *loglst;                 /* list of Log objects */
+  enum fork_status fstat;       /* controls if suites are forked or not
+                                   NOTE: Don't use this value directly,
+                                   instead use srunner_fork_status */
+};
+</STRUCT>
+<FUNCTION>
+<NAME>set_fork_status</NAME>
+<RETURNS>void  </RETURNS>
+enum fork_status fstat
+</FUNCTION>
+<FUNCTION>
+<NAME>cur_fork_status</NAME>
+<RETURNS>enum fork_status  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>check_get_clockid</NAME>
+<RETURNS>clockid_t  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_DATA_QUEUE</NAME>
+#define GST_TYPE_DATA_QUEUE \
+  (gst_data_queue_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_DATA_QUEUE</NAME>
+#define GST_DATA_QUEUE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_DATA_QUEUE,GstDataQueue))
+</MACRO>
+<MACRO>
+<NAME>GST_DATA_QUEUE_CLASS</NAME>
+#define GST_DATA_QUEUE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_DATA_QUEUE,GstDataQueueClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_DATA_QUEUE</NAME>
+#define GST_IS_DATA_QUEUE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_DATA_QUEUE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_DATA_QUEUE_CLASS</NAME>
+#define GST_IS_DATA_QUEUE_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_DATA_QUEUE))
+</MACRO>
+<STRUCT>
+<NAME>GstDataQueueItem</NAME>
+struct _GstDataQueueItem
+{
+  GstMiniObject *object;
+  guint size;
+  guint64 duration;
+  gboolean visible;
+
+  /* user supplied destroy function */
+  GDestroyNotify destroy;
+
+  /* < private > */
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstDataQueueSize</NAME>
+struct _GstDataQueueSize
+{
+  guint visible;
+  guint bytes;
+  guint64 time;
+};
+</STRUCT>
+<USER_FUNCTION>
+<NAME>GstDataQueueCheckFullFunction</NAME>
+<RETURNS>gboolean </RETURNS>
+GstDataQueue * queue,
+    guint visible, guint bytes, guint64 time, gpointer checkdata
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstDataQueueFullCallback</NAME>
+<RETURNS>void </RETURNS>
+GstDataQueue * queue, gpointer checkdata
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstDataQueueEmptyCallback</NAME>
+<RETURNS>void </RETURNS>
+GstDataQueue * queue, gpointer checkdata
+</USER_FUNCTION>
+<STRUCT>
+<NAME>GstDataQueue</NAME>
+struct _GstDataQueue
+{
+  GObject object;
+
+  /*< private >*/
+  GstDataQueuePrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstDataQueueClass</NAME>
+struct _GstDataQueueClass
+{
+  GObjectClass parent_class;
+
+  /* signals */
+  void (*empty) (GstDataQueue * queue);
+  void (*full) (GstDataQueue * queue);
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_data_queue_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_new</NAME>
+<RETURNS>GstDataQueue  * </RETURNS>
+GstDataQueueCheckFullFunction checkfull, GstDataQueueFullCallback fullcallback, GstDataQueueEmptyCallback emptycallback, gpointer checkdata
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_push</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue, GstDataQueueItem * item
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_push_force</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue, GstDataQueueItem * item
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_pop</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue, GstDataQueueItem ** item
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_peek</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue, GstDataQueueItem ** item
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_flush</NAME>
+<RETURNS>void            </RETURNS>
+GstDataQueue * queue
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_set_flushing</NAME>
+<RETURNS>void            </RETURNS>
+GstDataQueue * queue, gboolean flushing
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_drop_head</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue, GType type
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_is_full</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_is_empty</NAME>
+<RETURNS>gboolean        </RETURNS>
+GstDataQueue * queue
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_get_level</NAME>
+<RETURNS>void            </RETURNS>
+GstDataQueue * queue, GstDataQueueSize *level
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_data_queue_limits_changed</NAME>
+<RETURNS>void            </RETURNS>
+GstDataQueue * queue
+</FUNCTION>
+<STRUCT>
+<NAME>GstDataQueuePrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_BASE_TRANSFORM</NAME>
+#define GST_TYPE_BASE_TRANSFORM		   (gst_base_transform_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM</NAME>
+#define GST_BASE_TRANSFORM(obj)		   (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_BASE_TRANSFORM,GstBaseTransform))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_CLASS</NAME>
+#define GST_BASE_TRANSFORM_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_BASE_TRANSFORM,GstBaseTransformClass))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_GET_CLASS</NAME>
+#define GST_BASE_TRANSFORM_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),GST_TYPE_BASE_TRANSFORM,GstBaseTransformClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_TRANSFORM</NAME>
+#define GST_IS_BASE_TRANSFORM(obj)	   (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_BASE_TRANSFORM))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_TRANSFORM_CLASS</NAME>
+#define GST_IS_BASE_TRANSFORM_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_BASE_TRANSFORM))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_CAST</NAME>
+#define GST_BASE_TRANSFORM_CAST(obj)	((GstBaseTransform *)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_SINK_NAME</NAME>
+#define GST_BASE_TRANSFORM_SINK_NAME	"sink"
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_SRC_NAME</NAME>
+#define GST_BASE_TRANSFORM_SRC_NAME	"src"
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_SRC_PAD</NAME>
+#define GST_BASE_TRANSFORM_SRC_PAD(obj)		(GST_BASE_TRANSFORM_CAST (obj)->srcpad)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_SINK_PAD</NAME>
+#define GST_BASE_TRANSFORM_SINK_PAD(obj)	(GST_BASE_TRANSFORM_CAST (obj)->sinkpad)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_TRANSFORM_FLOW_DROPPED</NAME>
+#define GST_BASE_TRANSFORM_FLOW_DROPPED   GST_FLOW_CUSTOM_SUCCESS
+</MACRO>
+<STRUCT>
+<NAME>GstBaseTransform</NAME>
+struct _GstBaseTransform {
+  GstElement	 element;
+
+  /*< protected >*/
+  /* source and sink pads */
+  GstPad	*sinkpad;
+  GstPad	*srcpad;
+
+  /* MT-protected (with STREAM_LOCK) */
+  gboolean       have_segment;
+  GstSegment     segment;
+  /* Default submit_input_buffer places the buffer here,
+   * for consumption by the generate_output method: */
+  GstBuffer      *queued_buf;
+
+  /*< private >*/
+  GstBaseTransformPrivate *priv;
+
+  gpointer       _gst_reserved[GST_PADDING_LARGE-1];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstBaseTransformClass</NAME>
+struct _GstBaseTransformClass {
+  GstElementClass parent_class;
+
+  /*< public >*/
+  gboolean       passthrough_on_same_caps;
+  gboolean       transform_ip_on_passthrough;
+
+  /* virtual methods for subclasses */
+  GstCaps*	(*transform_caps) (GstBaseTransform *trans,
+                                   GstPadDirection direction,
+                                   GstCaps *caps, GstCaps *filter);
+  GstCaps*	(*fixate_caps)	  (GstBaseTransform *trans,
+                                   GstPadDirection direction, GstCaps *caps,
+                                   GstCaps *othercaps);
+  gboolean      (*accept_caps)    (GstBaseTransform *trans, GstPadDirection direction,
+                                   GstCaps *caps);
+  gboolean      (*set_caps)       (GstBaseTransform *trans, GstCaps *incaps,
+                                   GstCaps *outcaps);
+  gboolean      (*query)          (GstBaseTransform *trans, GstPadDirection direction,
+                                   GstQuery *query);
+
+  /* decide allocation query for output buffers */
+  gboolean      (*decide_allocation)  (GstBaseTransform *trans, GstQuery *query);
+  gboolean      (*filter_meta)        (GstBaseTransform *trans, GstQuery *query,
+                                       GType api, const GstStructure *params);
+
+  /* propose allocation query parameters for input buffers */
+  gboolean      (*propose_allocation) (GstBaseTransform *trans, GstQuery *decide_query,
+                                       GstQuery *query);
+
+  /* transform size */
+  gboolean      (*transform_size) (GstBaseTransform *trans,
+                                   GstPadDirection direction,
+                                   GstCaps *caps, gsize size,
+                                   GstCaps *othercaps, gsize *othersize);
+
+  gboolean      (*get_unit_size)  (GstBaseTransform *trans, GstCaps *caps,
+                                   gsize *size);
+
+  /* states */
+  gboolean      (*start)        (GstBaseTransform *trans);
+  gboolean      (*stop)         (GstBaseTransform *trans);
+
+  /* sink and src pad event handlers */
+  gboolean      (*sink_event)   (GstBaseTransform *trans, GstEvent *event);
+  gboolean      (*src_event)    (GstBaseTransform *trans, GstEvent *event);
+
+  GstFlowReturn (*prepare_output_buffer) (GstBaseTransform * trans,
+                                          GstBuffer *input, GstBuffer **outbuf);
+
+  /* metadata */
+  gboolean      (*copy_metadata)     (GstBaseTransform *trans, GstBuffer *input,
+                                      GstBuffer *outbuf);
+  gboolean      (*transform_meta)    (GstBaseTransform *trans, GstBuffer *outbuf,
+                                      GstMeta *meta, GstBuffer *inbuf);
+
+  void          (*before_transform)  (GstBaseTransform *trans, GstBuffer *buffer);
+
+  /* transform */
+  GstFlowReturn (*transform)    (GstBaseTransform *trans, GstBuffer *inbuf,
+                                 GstBuffer *outbuf);
+  GstFlowReturn (*transform_ip) (GstBaseTransform *trans, GstBuffer *buf);
+
+  GstFlowReturn (*submit_input_buffer) (GstBaseTransform *trans, gboolean is_discont, GstBuffer *input);
+  GstFlowReturn (*generate_output) (GstBaseTransform *trans, GstBuffer **outbuf);
+
+  /*< private >*/
+  gpointer       _gst_reserved[GST_PADDING_LARGE - 2];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_base_transform_get_type</NAME>
+<RETURNS>GType            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_set_passthrough</NAME>
+<RETURNS>void 		</RETURNS>
+GstBaseTransform *trans, gboolean passthrough
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_is_passthrough</NAME>
+<RETURNS>gboolean 	</RETURNS>
+GstBaseTransform *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_set_in_place</NAME>
+<RETURNS>void 		</RETURNS>
+GstBaseTransform *trans, gboolean in_place
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_is_in_place</NAME>
+<RETURNS>gboolean 	</RETURNS>
+GstBaseTransform *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_update_qos</NAME>
+<RETURNS>void 		</RETURNS>
+GstBaseTransform *trans, gdouble proportion, GstClockTimeDiff diff, GstClockTime timestamp
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_set_qos_enabled</NAME>
+<RETURNS>void 		</RETURNS>
+GstBaseTransform *trans, gboolean enabled
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_is_qos_enabled</NAME>
+<RETURNS>gboolean 	</RETURNS>
+GstBaseTransform *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_set_gap_aware</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseTransform *trans, gboolean gap_aware
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_set_prefer_passthrough</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseTransform *trans, gboolean prefer_passthrough
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_get_buffer_pool</NAME>
+<RETURNS>GstBufferPool  * </RETURNS>
+GstBaseTransform *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_get_allocator</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseTransform *trans, GstAllocator **allocator, GstAllocationParams *params
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_reconfigure_sink</NAME>
+<RETURNS>void 		</RETURNS>
+GstBaseTransform *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_reconfigure_src</NAME>
+<RETURNS>void 		</RETURNS>
+GstBaseTransform *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_transform_update_src_caps</NAME>
+<RETURNS>gboolean  </RETURNS>
+GstBaseTransform *trans, GstCaps *updated_caps
+</FUNCTION>
+<STRUCT>
+<NAME>GstBaseTransformPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_BASE_PARSE</NAME>
+#define GST_TYPE_BASE_PARSE            (gst_base_parse_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE</NAME>
+#define GST_BASE_PARSE(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_BASE_PARSE,GstBaseParse))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_CLASS</NAME>
+#define GST_BASE_PARSE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_BASE_PARSE,GstBaseParseClass))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_GET_CLASS</NAME>
+#define GST_BASE_PARSE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),GST_TYPE_BASE_PARSE,GstBaseParseClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_PARSE</NAME>
+#define GST_IS_BASE_PARSE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_BASE_PARSE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_PARSE_CLASS</NAME>
+#define GST_IS_BASE_PARSE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_BASE_PARSE))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_CAST</NAME>
+#define GST_BASE_PARSE_CAST(obj)       ((GstBaseParse *)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_SRC_PAD</NAME>
+#define GST_BASE_PARSE_SRC_PAD(obj)    (GST_BASE_PARSE_CAST (obj)->srcpad)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_SINK_PAD</NAME>
+#define GST_BASE_PARSE_SINK_PAD(obj)    (GST_BASE_PARSE_CAST (obj)->sinkpad)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_FLOW_DROPPED</NAME>
+#define GST_BASE_PARSE_FLOW_DROPPED     GST_FLOW_CUSTOM_SUCCESS
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_FLAG_LOST_SYNC</NAME>
+#define GST_BASE_PARSE_FLAG_LOST_SYNC (1 << 0)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_FLAG_DRAINING</NAME>
+#define GST_BASE_PARSE_FLAG_DRAINING  (1 << 1)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_LOST_SYNC</NAME>
+#define GST_BASE_PARSE_LOST_SYNC(parse) (!!(GST_BASE_PARSE_CAST(parse)->flags & GST_BASE_PARSE_FLAG_LOST_SYNC))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_PARSE_DRAINING</NAME>
+#define GST_BASE_PARSE_DRAINING(parse)  (!!(GST_BASE_PARSE_CAST(parse)->flags & GST_BASE_PARSE_FLAG_DRAINING))
+</MACRO>
+<ENUM>
+<NAME>GstBaseParseFrameFlags</NAME>
+typedef enum {
+  GST_BASE_PARSE_FRAME_FLAG_NONE         = 0,
+  GST_BASE_PARSE_FRAME_FLAG_NEW_FRAME    = (1 << 0),
+  GST_BASE_PARSE_FRAME_FLAG_NO_FRAME     = (1 << 1),
+  GST_BASE_PARSE_FRAME_FLAG_CLIP         = (1 << 2),
+  GST_BASE_PARSE_FRAME_FLAG_DROP         = (1 << 3),
+  GST_BASE_PARSE_FRAME_FLAG_QUEUE        = (1 << 4)
+} GstBaseParseFrameFlags;
+</ENUM>
+<STRUCT>
+<NAME>GstBaseParseFrame</NAME>
+typedef struct {
+  GstBuffer * buffer;
+  GstBuffer * out_buffer;
+  guint       flags;
+  guint64     offset;
+  gint        overhead;
+  /*< private >*/
+  gint        size;
+  guint       _gst_reserved_i[2];
+  gpointer    _gst_reserved_p[2];
+  guint       _private_flags;
+} GstBaseParseFrame;
+</STRUCT>
+<STRUCT>
+<NAME>GstBaseParse</NAME>
+struct _GstBaseParse {
+  /*< public >*/
+  GstElement     element;
+
+  /*< protected >*/
+  /* source and sink pads */
+  GstPad         *sinkpad;
+  GstPad         *srcpad;
+
+  guint           flags;
+
+  /* MT-protected (with STREAM_LOCK) */
+  GstSegment      segment;
+
+  /*< private >*/
+  gpointer       _gst_reserved[GST_PADDING_LARGE];
+  GstBaseParsePrivate *priv;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstBaseParseClass</NAME>
+struct _GstBaseParseClass {
+  GstElementClass parent_class;
+
+  /*< public >*/
+  /* virtual methods for subclasses */
+
+  gboolean      (*start)              (GstBaseParse * parse);
+
+  gboolean      (*stop)               (GstBaseParse * parse);
+
+  gboolean      (*set_sink_caps)      (GstBaseParse * parse,
+                                       GstCaps      * caps);
+
+  GstFlowReturn (*handle_frame)       (GstBaseParse      * parse,
+                                       GstBaseParseFrame * frame,
+                                       gint              * skipsize);
+
+  GstFlowReturn (*pre_push_frame)     (GstBaseParse      * parse,
+                                       GstBaseParseFrame * frame);
+
+  gboolean      (*convert)            (GstBaseParse * parse,
+                                       GstFormat      src_format,
+                                       gint64         src_value,
+                                       GstFormat      dest_format,
+                                       gint64       * dest_value);
+
+  gboolean      (*sink_event)         (GstBaseParse * parse,
+                                       GstEvent     * event);
+
+  gboolean      (*src_event)          (GstBaseParse * parse,
+                                       GstEvent     * event);
+
+  GstCaps *     (*get_sink_caps)      (GstBaseParse * parse,
+                                       GstCaps      * filter);
+
+  GstFlowReturn (*detect)             (GstBaseParse * parse,
+                                       GstBuffer    * buffer);
+
+  gboolean      (*sink_query)         (GstBaseParse * parse,
+                                       GstQuery     * query);
+
+  gboolean      (*src_query)          (GstBaseParse * parse,
+                                       GstQuery     * query);
+
+  /*< private >*/
+  gpointer       _gst_reserved[GST_PADDING_LARGE - 2];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_base_parse_get_type</NAME>
+<RETURNS>GType            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_frame_get_type</NAME>
+<RETURNS>GType            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_frame_new</NAME>
+<RETURNS>GstBaseParseFrame  * </RETURNS>
+GstBuffer              * buffer, GstBaseParseFrameFlags   flags, gint                     overhead
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_frame_init</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParseFrame * frame
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_frame_free</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParseFrame * frame
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_push_frame</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseParse      * parse, GstBaseParseFrame * frame
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_finish_frame</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseParse * parse, GstBaseParseFrame * frame, gint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_duration</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse      * parse, GstFormat           fmt, gint64              duration, gint                interval
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_average_bitrate</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse   * parse, guint            bitrate
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_min_frame_size</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse    * parse, guint             min_size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_has_timing_info</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse   * parse, gboolean         has_timing
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_syncable</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse * parse, gboolean       syncable
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_passthrough</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse * parse, gboolean       passthrough
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_pts_interpolation</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse * parse, gboolean pts_interpolate
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_infer_ts</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse * parse, gboolean infer_ts
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_frame_rate</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse * parse, guint          fps_num, guint          fps_den, guint          lead_in, guint          lead_out
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_latency</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse * parse, GstClockTime min_latency, GstClockTime max_latency
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_convert_default</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseParse * parse, GstFormat      src_format, gint64         src_value, GstFormat      dest_format, gint64       * dest_value
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_add_index_entry</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseParse * parse, guint64        offset, GstClockTime   ts, gboolean       key, gboolean       force
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_set_ts_at_offset</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse *parse, gsize offset
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_parse_merge_tags</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseParse  * parse, GstTagList    * tags, GstTagMergeMode mode
+</FUNCTION>
+<STRUCT>
+<NAME>GstBaseParsePrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_FLOW_COMBINER</NAME>
+#define GST_TYPE_FLOW_COMBINER gst_flow_combiner_get_type()
+</MACRO>
+<FUNCTION>
+<NAME>gst_flow_combiner_new</NAME>
+<RETURNS>GstFlowCombiner  * </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_free</NAME>
+<RETURNS>void               </RETURNS>
+GstFlowCombiner * combiner
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_update_flow</NAME>
+<RETURNS>GstFlowReturn      </RETURNS>
+GstFlowCombiner * combiner, GstFlowReturn fret
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_update_pad_flow</NAME>
+<RETURNS>GstFlowReturn      </RETURNS>
+GstFlowCombiner * combiner, GstPad * pad, GstFlowReturn fret
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_add_pad</NAME>
+<RETURNS>void               </RETURNS>
+GstFlowCombiner * combiner, GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_remove_pad</NAME>
+<RETURNS>void               </RETURNS>
+GstFlowCombiner * combiner, GstPad * pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_clear</NAME>
+<RETURNS>void               </RETURNS>
+GstFlowCombiner * combiner
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_reset</NAME>
+<RETURNS>void               </RETURNS>
+GstFlowCombiner * combiner
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_flow_combiner_get_type</NAME>
+<RETURNS>GType              </RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstFlowCombiner</NAME>
+</STRUCT>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint8_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint8 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint16_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint24_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint32_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint64_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint16_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint24_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint32_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint64_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int8_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint8 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int16_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int24_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int32_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int64_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int16_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int24_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int32_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int64_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float32_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gfloat val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float64_be_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gdouble val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float32_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gfloat val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float64_le_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, gdouble val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_data_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_fill_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteWriter *writer, guint8 value, guint size
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_BASE_SRC</NAME>
+#define GST_TYPE_BASE_SRC               (gst_base_src_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SRC</NAME>
+#define GST_BASE_SRC(obj)               (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_BASE_SRC,GstBaseSrc))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SRC_CLASS</NAME>
+#define GST_BASE_SRC_CLASS(klass)       (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_BASE_SRC,GstBaseSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SRC_GET_CLASS</NAME>
+#define GST_BASE_SRC_GET_CLASS(obj)     (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_BASE_SRC, GstBaseSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_SRC</NAME>
+#define GST_IS_BASE_SRC(obj)            (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_BASE_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_SRC_CLASS</NAME>
+#define GST_IS_BASE_SRC_CLASS(klass)    (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_BASE_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SRC_CAST</NAME>
+#define GST_BASE_SRC_CAST(obj)          ((GstBaseSrc *)(obj))
+</MACRO>
+<ENUM>
+<NAME>GstBaseSrcFlags</NAME>
+typedef enum {
+  GST_BASE_SRC_FLAG_STARTING     = (GST_ELEMENT_FLAG_LAST << 0),
+  GST_BASE_SRC_FLAG_STARTED      = (GST_ELEMENT_FLAG_LAST << 1),
+  /* padding */
+  GST_BASE_SRC_FLAG_LAST         = (GST_ELEMENT_FLAG_LAST << 6)
+} GstBaseSrcFlags;
+</ENUM>
+<MACRO>
+<NAME>GST_BASE_SRC_IS_STARTING</NAME>
+#define GST_BASE_SRC_IS_STARTING(obj) GST_OBJECT_FLAG_IS_SET ((obj), GST_BASE_SRC_FLAG_STARTING)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SRC_IS_STARTED</NAME>
+#define GST_BASE_SRC_IS_STARTED(obj)  GST_OBJECT_FLAG_IS_SET ((obj), GST_BASE_SRC_FLAG_STARTED)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SRC_PAD</NAME>
+#define GST_BASE_SRC_PAD(obj)                 (GST_BASE_SRC_CAST (obj)->srcpad)
+</MACRO>
+<STRUCT>
+<NAME>GstBaseSrc</NAME>
+struct _GstBaseSrc {
+  GstElement     element;
+
+  /*< protected >*/
+  GstPad        *srcpad;
+
+  /* available to subclass implementations */
+  /* MT-protected (with LIVE_LOCK) */
+  GMutex         live_lock;
+  GCond          live_cond;
+  gboolean       is_live;
+  gboolean       live_running;
+
+  /* MT-protected (with LOCK) */
+  guint          blocksize;     /* size of buffers when operating push based */
+  gboolean       can_activate_push;     /* some scheduling properties */
+  gboolean       random_access;
+
+  GstClockID     clock_id;      /* for syncing */
+
+  /* MT-protected (with STREAM_LOCK *and* OBJECT_LOCK) */
+  GstSegment     segment;
+  /* MT-protected (with STREAM_LOCK) */
+  gboolean       need_newsegment;
+
+  gint           num_buffers;
+  gint           num_buffers_left;
+
+  gboolean       typefind;
+  gboolean       running;
+  GstEvent      *pending_seek;
+
+  GstBaseSrcPrivate *priv;
+
+  /*< private >*/
+  gpointer       _gst_reserved[GST_PADDING_LARGE];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstBaseSrcClass</NAME>
+struct _GstBaseSrcClass {
+  GstElementClass parent_class;
+
+  /*< public >*/
+  /* virtual methods for subclasses */
+
+  /* get caps from subclass */
+  GstCaps*      (*get_caps)     (GstBaseSrc *src, GstCaps *filter);
+  /* decide on caps */
+  gboolean      (*negotiate)    (GstBaseSrc *src);
+  /* called if, in negotiation, caps need fixating */
+  GstCaps *     (*fixate)       (GstBaseSrc *src, GstCaps *caps);
+  /* notify the subclass of new caps */
+  gboolean      (*set_caps)     (GstBaseSrc *src, GstCaps *caps);
+
+  /* setup allocation query */
+  gboolean      (*decide_allocation)   (GstBaseSrc *src, GstQuery *query);
+
+  /* start and stop processing, ideal for opening/closing the resource */
+  gboolean      (*start)        (GstBaseSrc *src);
+  gboolean      (*stop)         (GstBaseSrc *src);
+
+  /* given a buffer, return start and stop time when it should be pushed
+   * out. The base class will sync on the clock using these times. */
+  void          (*get_times)    (GstBaseSrc *src, GstBuffer *buffer,
+                                 GstClockTime *start, GstClockTime *end);
+
+  /* get the total size of the resource in the format set by
+   * gst_base_src_set_format() */
+  gboolean      (*get_size)     (GstBaseSrc *src, guint64 *size);
+
+  /* check if the resource is seekable */
+  gboolean      (*is_seekable)  (GstBaseSrc *src);
+
+  /* Prepare the segment on which to perform do_seek(), converting to the
+   * current basesrc format. */
+  gboolean      (*prepare_seek_segment) (GstBaseSrc *src, GstEvent *seek,
+                                         GstSegment *segment);
+  /* notify subclasses of a seek */
+  gboolean      (*do_seek)      (GstBaseSrc *src, GstSegment *segment);
+
+  /* unlock any pending access to the resource. subclasses should unlock
+   * any function ASAP. */
+  gboolean      (*unlock)       (GstBaseSrc *src);
+  /* Clear any pending unlock request, as we succeeded in unlocking */
+  gboolean      (*unlock_stop)  (GstBaseSrc *src);
+
+  /* notify subclasses of a query */
+  gboolean      (*query)        (GstBaseSrc *src, GstQuery *query);
+
+  /* notify subclasses of an event */
+  gboolean      (*event)        (GstBaseSrc *src, GstEvent *event);
+
+  /* ask the subclass to create a buffer with offset and size, the default
+   * implementation will call alloc and fill. */
+  GstFlowReturn (*create)       (GstBaseSrc *src, guint64 offset, guint size,
+                                 GstBuffer **buf);
+  /* ask the subclass to allocate an output buffer. The default implementation
+   * will use the negotiated allocator. */
+  GstFlowReturn (*alloc)        (GstBaseSrc *src, guint64 offset, guint size,
+                                 GstBuffer **buf);
+  /* ask the subclass to fill the buffer with data from offset and size */
+  GstFlowReturn (*fill)         (GstBaseSrc *src, guint64 offset, guint size,
+                                 GstBuffer *buf);
+
+  /*< private >*/
+  gpointer       _gst_reserved[GST_PADDING_LARGE];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_base_src_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_wait_playing</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseSrc *src
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_live</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc *src, gboolean live
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_is_live</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSrc *src
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_format</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc *src, GstFormat format
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_dynamic_size</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc * src, gboolean dynamic
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_automatic_eos</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc * src, gboolean automatic_eos
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_async</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc *src, gboolean async
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_is_async</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSrc *src
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_start_complete</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc * basesrc, GstFlowReturn ret
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_start_wait</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseSrc * basesrc
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_query_latency</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSrc *src, gboolean * live, GstClockTime * min_latency, GstClockTime * max_latency
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_blocksize</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc *src, guint blocksize
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_get_blocksize</NAME>
+<RETURNS>guint            </RETURNS>
+GstBaseSrc *src
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_do_timestamp</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc *src, gboolean timestamp
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_get_do_timestamp</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSrc *src
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_new_seamless_segment</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSrc *src, gint64 start, gint64 stop, gint64 time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_set_caps</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSrc *src, GstCaps *caps
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_get_buffer_pool</NAME>
+<RETURNS>GstBufferPool  * </RETURNS>
+GstBaseSrc *src
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_src_get_allocator</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSrc *src, GstAllocator **allocator, GstAllocationParams *params
+</FUNCTION>
+<STRUCT>
+<NAME>GstBaseSrcPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_BYTE_WRITER</NAME>
+#define GST_BYTE_WRITER(writer) ((GstByteWriter *) (writer))
+</MACRO>
+<STRUCT>
+<NAME>GstByteWriter</NAME>
+typedef struct {
+  GstByteReader parent;
+
+  guint alloc_size;
+
+  gboolean fixed;
+  gboolean owned;
+
+  /* < private > */
+  gpointer _gst_reserved[GST_PADDING];
+} GstByteWriter;
+</STRUCT>
+<FUNCTION>
+<NAME>gst_byte_writer_new</NAME>
+<RETURNS>GstByteWriter  * </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_new_with_size</NAME>
+<RETURNS>GstByteWriter  * </RETURNS>
+guint size, gboolean fixed
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_new_with_data</NAME>
+<RETURNS>GstByteWriter  * </RETURNS>
+guint8 *data, guint size, gboolean initialized
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_init</NAME>
+<RETURNS>void             </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_init_with_size</NAME>
+<RETURNS>void             </RETURNS>
+GstByteWriter *writer, guint size, gboolean fixed
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_init_with_data</NAME>
+<RETURNS>void             </RETURNS>
+GstByteWriter *writer, guint8 *data, guint size, gboolean initialized
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_free</NAME>
+<RETURNS>void             </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_free_and_get_data</NAME>
+<RETURNS>guint8  *        </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_free_and_get_buffer</NAME>
+<RETURNS>GstBuffer  *     </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_reset</NAME>
+<RETURNS>void             </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_reset_and_get_data</NAME>
+<RETURNS>guint8  *        </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_reset_and_get_buffer</NAME>
+<RETURNS>GstBuffer  *     </RETURNS>
+GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_get_pos</NAME>
+<RETURNS>guint      </RETURNS>
+const GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_set_pos</NAME>
+<RETURNS>gboolean   </RETURNS>
+GstByteWriter *writer, guint pos
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_get_size</NAME>
+<RETURNS>guint      </RETURNS>
+const GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_get_remaining</NAME>
+<RETURNS>guint            </RETURNS>
+const GstByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_ensure_free_space</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint8 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint8 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint16_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint16_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int16_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int16_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint24_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint24_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int24_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int24_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_uint64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_int64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gfloat val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gfloat val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gdouble val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_float64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, gdouble val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_data</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_fill</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, guint8 value, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_string_utf8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, const gchar *data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_string_utf16</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, const guint16 *data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_string_utf32</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, const guint32 *data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_buffer</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteWriter *writer, GstBuffer * buffer, gsize offset, gssize size
+</FUNCTION>
+<MACRO>
+<NAME>gst_byte_writer_put_string</NAME>
+#define gst_byte_writer_put_string(writer, data) \
+  gst_byte_writer_put_string_utf8(writer, data)
+</MACRO>
+<VARIABLE>
+<NAME>ret</NAME>
+  guint ret = 16;
+</VARIABLE>
+<FUNCTION>
+<NAME>gst_byte_writer_put_data_unchecked</NAME>
+<RETURNS>void </RETURNS>
+GstByteWriter * writer, const guint8 * data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_fill_unchecked</NAME>
+<RETURNS>void </RETURNS>
+GstByteWriter * writer, guint8 value, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_writer_put_buffer_unchecked</NAME>
+<RETURNS>void </RETURNS>
+GstByteWriter * writer, GstBuffer * buffer, gsize offset, gssize size
+</FUNCTION>
+<MACRO>
+<NAME>GST_BIT_READER</NAME>
+#define GST_BIT_READER(reader) ((GstBitReader *) (reader))
+</MACRO>
+<STRUCT>
+<NAME>GstBitReader</NAME>
+typedef struct {
+  const guint8 *data;
+  guint size;
+
+  guint byte;  /* Byte position */
+  guint bit;   /* Bit position in the current byte */
+
+  /* < private > */
+  gpointer _gst_reserved[GST_PADDING];
+} GstBitReader;
+</STRUCT>
+<FUNCTION>
+<NAME>gst_bit_reader_new</NAME>
+<RETURNS>GstBitReader  *  </RETURNS>
+const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_free</NAME>
+<RETURNS>void             </RETURNS>
+GstBitReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_init</NAME>
+<RETURNS>void             </RETURNS>
+GstBitReader *reader, const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_set_pos</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader, guint pos
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_pos</NAME>
+<RETURNS>guint            </RETURNS>
+const GstBitReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_remaining</NAME>
+<RETURNS>guint            </RETURNS>
+const GstBitReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_size</NAME>
+<RETURNS>guint            </RETURNS>
+const GstBitReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_skip</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_skip_to_byte</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader, guint8 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint16</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader, guint16 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint32</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader, guint32 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint64</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBitReader *reader, guint64 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint8</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstBitReader *reader, guint8 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint16</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstBitReader *reader, guint16 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint32</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstBitReader *reader, guint32 *val, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint64</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstBitReader *reader, guint64 *val, guint nbits
+</FUNCTION>
+<MACRO>
+<NAME>GST_BIT_READER_INIT</NAME>
+#define GST_BIT_READER_INIT(data, size) {data, size, 0, 0}
+</MACRO>
+<FUNCTION>
+<NAME>gst_bit_reader_skip_unchecked</NAME>
+<RETURNS>void </RETURNS>
+GstBitReader * reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_skip_to_byte_unchecked</NAME>
+<RETURNS>void </RETURNS>
+GstBitReader * reader
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_ADAPTER</NAME>
+#define GST_TYPE_ADAPTER \
+  (gst_adapter_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_ADAPTER</NAME>
+#define GST_ADAPTER(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj), GST_TYPE_ADAPTER, GstAdapter))
+</MACRO>
+<MACRO>
+<NAME>GST_ADAPTER_CLASS</NAME>
+#define GST_ADAPTER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass), GST_TYPE_ADAPTER, GstAdapterClass))
+</MACRO>
+<MACRO>
+<NAME>GST_ADAPTER_GET_CLASS</NAME>
+#define GST_ADAPTER_GET_CLASS(obj) \
+  (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_ADAPTER, GstAdapterClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_ADAPTER</NAME>
+#define GST_IS_ADAPTER(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj), GST_TYPE_ADAPTER))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_ADAPTER_CLASS</NAME>
+#define GST_IS_ADAPTER_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass), GST_TYPE_ADAPTER))
+</MACRO>
+<FUNCTION>
+<NAME>gst_adapter_get_type</NAME>
+<RETURNS>GType                    </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_new</NAME>
+<RETURNS>GstAdapter  *            </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_clear</NAME>
+<RETURNS>void                     </RETURNS>
+GstAdapter *adapter
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_push</NAME>
+<RETURNS>void                     </RETURNS>
+GstAdapter *adapter, GstBuffer* buf
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_map</NAME>
+<RETURNS>gconstpointer            </RETURNS>
+GstAdapter *adapter, gsize size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_unmap</NAME>
+<RETURNS>void                     </RETURNS>
+GstAdapter *adapter
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_copy</NAME>
+<RETURNS>void                     </RETURNS>
+GstAdapter *adapter, gpointer dest, gsize offset, gsize size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_copy_bytes</NAME>
+<RETURNS>GBytes  *                </RETURNS>
+GstAdapter *adapter, gsize offset, gsize size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_flush</NAME>
+<RETURNS>void                     </RETURNS>
+GstAdapter *adapter, gsize flush
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_take</NAME>
+<RETURNS>gpointer                 </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_take_buffer</NAME>
+<RETURNS>GstBuffer *              </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_take_list</NAME>
+<RETURNS>GList *                  </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_take_buffer_fast</NAME>
+<RETURNS>GstBuffer  *             </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_take_buffer_list</NAME>
+<RETURNS>GstBufferList  *         </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_get_buffer</NAME>
+<RETURNS>GstBuffer *              </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_get_list</NAME>
+<RETURNS>GList *                  </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_get_buffer_fast</NAME>
+<RETURNS>GstBuffer  *             </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_get_buffer_list</NAME>
+<RETURNS>GstBufferList  *         </RETURNS>
+GstAdapter *adapter, gsize nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_available</NAME>
+<RETURNS>gsize                    </RETURNS>
+GstAdapter *adapter
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_available_fast</NAME>
+<RETURNS>gsize                    </RETURNS>
+GstAdapter *adapter
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_prev_pts</NAME>
+<RETURNS>GstClockTime             </RETURNS>
+GstAdapter *adapter, guint64 *distance
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_prev_dts</NAME>
+<RETURNS>GstClockTime             </RETURNS>
+GstAdapter *adapter, guint64 *distance
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_prev_pts_at_offset</NAME>
+<RETURNS>GstClockTime             </RETURNS>
+GstAdapter * adapter, gsize offset, guint64 * distance
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_prev_dts_at_offset</NAME>
+<RETURNS>GstClockTime             </RETURNS>
+GstAdapter * adapter, gsize offset, guint64 * distance
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_masked_scan_uint32</NAME>
+<RETURNS>gssize                   </RETURNS>
+GstAdapter * adapter, guint32 mask, guint32 pattern, gsize offset, gsize size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_adapter_masked_scan_uint32_peek</NAME>
+<RETURNS>gssize                   </RETURNS>
+GstAdapter * adapter, guint32 mask, guint32 pattern, gsize offset, gsize size, guint32 * value
+</FUNCTION>
+<STRUCT>
+<NAME>GstAdapter</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GstAdapterClass</NAME>
+</STRUCT>
+<FUNCTION>
+<NAME>gst_byte_reader_skip_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstByteReader * reader, guint nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint8_unchecked</NAME>
+<RETURNS>guint8   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint8_unchecked</NAME>
+<RETURNS>guint8   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int8_unchecked</NAME>
+<RETURNS>gint8    </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int8_unchecked</NAME>
+<RETURNS>gint8    </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint16_le_unchecked</NAME>
+<RETURNS>guint16  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint16_be_unchecked</NAME>
+<RETURNS>guint16  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint16_le_unchecked</NAME>
+<RETURNS>guint16  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint16_be_unchecked</NAME>
+<RETURNS>guint16  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int16_le_unchecked</NAME>
+<RETURNS>gint16   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int16_be_unchecked</NAME>
+<RETURNS>gint16   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int16_le_unchecked</NAME>
+<RETURNS>gint16   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int16_be_unchecked</NAME>
+<RETURNS>gint16   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint24_le_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint24_be_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint24_le_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint24_be_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int24_le_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int24_be_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int24_le_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int24_be_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint32_le_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint32_be_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint32_le_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint32_be_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int32_le_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int32_be_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int32_le_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int32_be_unchecked</NAME>
+<RETURNS>gint32   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint64_le_unchecked</NAME>
+<RETURNS>guint64  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint64_be_unchecked</NAME>
+<RETURNS>guint64  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint64_le_unchecked</NAME>
+<RETURNS>guint64  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint64_be_unchecked</NAME>
+<RETURNS>guint64  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int64_le_unchecked</NAME>
+<RETURNS>gint64   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int64_be_unchecked</NAME>
+<RETURNS>gint64   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int64_le_unchecked</NAME>
+<RETURNS>gint64   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int64_be_unchecked</NAME>
+<RETURNS>gint64   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float32_le_unchecked</NAME>
+<RETURNS>gfloat   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float32_be_unchecked</NAME>
+<RETURNS>gfloat   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float64_le_unchecked</NAME>
+<RETURNS>gdouble  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float64_be_unchecked</NAME>
+<RETURNS>gdouble  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float32_le_unchecked</NAME>
+<RETURNS>gfloat   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float32_be_unchecked</NAME>
+<RETURNS>gfloat   </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float64_le_unchecked</NAME>
+<RETURNS>gdouble  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float64_be_unchecked</NAME>
+<RETURNS>gdouble  </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_data_unchecked</NAME>
+<RETURNS>const guint8  * </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_data_unchecked</NAME>
+<RETURNS>const guint8  * </RETURNS>
+GstByteReader * reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_dup_data_unchecked</NAME>
+<RETURNS>guint8  * </RETURNS>
+GstByteReader * reader, guint size
+</FUNCTION>
+<MACRO>
+<NAME>GST_BYTE_READER</NAME>
+#define GST_BYTE_READER(reader) ((GstByteReader *) (reader))
+</MACRO>
+<STRUCT>
+<NAME>GstByteReader</NAME>
+typedef struct {
+  const guint8 *data;
+  guint size;
+
+  guint byte;  /* Byte position */
+
+  /* < private > */
+  gpointer _gst_reserved[GST_PADDING];
+} GstByteReader;
+</STRUCT>
+<FUNCTION>
+<NAME>gst_byte_reader_new</NAME>
+<RETURNS>GstByteReader  * </RETURNS>
+const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_free</NAME>
+<RETURNS>void             </RETURNS>
+GstByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_init</NAME>
+<RETURNS>void             </RETURNS>
+GstByteReader *reader, const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_sub_reader</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, GstByteReader * sub_reader, guint           size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_sub_reader</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, GstByteReader * sub_reader, guint           size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_set_pos</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint pos
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_pos</NAME>
+<RETURNS>guint            </RETURNS>
+const GstByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_remaining</NAME>
+<RETURNS>guint            </RETURNS>
+const GstByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_size</NAME>
+<RETURNS>guint            </RETURNS>
+const GstByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_skip</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint16_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int16_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint16_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int16_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint24_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int24_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint24_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int24_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_uint64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_int64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint8</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int8</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint16_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int16_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint16_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int16_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint24_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int24_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint24_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int24_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_uint64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_int64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_float64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float32_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float32_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float64_le</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_float64_be</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_dup_data</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, guint size, guint8       ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_data</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, guint size, const guint8 ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_data</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader * reader, guint size, const guint8 ** val
+</FUNCTION>
+<MACRO>
+<NAME>gst_byte_reader_dup_string</NAME>
+#define gst_byte_reader_dup_string(reader,str) \
+    gst_byte_reader_dup_string_utf8(reader,str)
+</MACRO>
+<FUNCTION>
+<NAME>gst_byte_reader_dup_string_utf8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, gchar   ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_dup_string_utf16</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, guint16 ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_dup_string_utf32</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, guint32 ** str
+</FUNCTION>
+<MACRO>
+<NAME>gst_byte_reader_skip_string</NAME>
+#define gst_byte_reader_skip_string(reader) \
+    gst_byte_reader_skip_string_utf8(reader)
+</MACRO>
+<FUNCTION>
+<NAME>gst_byte_reader_skip_string_utf8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_skip_string_utf16</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_skip_string_utf32</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader
+</FUNCTION>
+<MACRO>
+<NAME>gst_byte_reader_get_string</NAME>
+#define gst_byte_reader_get_string(reader,str) \
+    gst_byte_reader_get_string_utf8(reader,str)
+</MACRO>
+<MACRO>
+<NAME>gst_byte_reader_peek_string</NAME>
+#define gst_byte_reader_peek_string(reader,str) \
+    gst_byte_reader_peek_string_utf8(reader,str)
+</MACRO>
+<FUNCTION>
+<NAME>gst_byte_reader_get_string_utf8</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstByteReader * reader, const gchar ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_string_utf8</NAME>
+<RETURNS>gboolean         </RETURNS>
+const GstByteReader * reader, const gchar ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_masked_scan_uint32</NAME>
+<RETURNS>guint            </RETURNS>
+const GstByteReader * reader, guint32               mask, guint32               pattern, guint                 offset, guint                 size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_masked_scan_uint32_peek</NAME>
+<RETURNS>guint            </RETURNS>
+const GstByteReader * reader, guint32 mask, guint32 pattern, guint offset, guint size, guint32 * value
+</FUNCTION>
+<MACRO>
+<NAME>GST_BYTE_READER_INIT</NAME>
+#define GST_BYTE_READER_INIT(data, size) {data, size, 0}
+</MACRO>
+<FUNCTION>
+<NAME>gst_byte_reader_skip_unchecked</NAME>
+<RETURNS>void </RETURNS>
+GstByteReader * reader, guint nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_peek_data_unchecked</NAME>
+<RETURNS>const guint8  *</RETURNS>
+const GstByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_get_data_unchecked</NAME>
+<RETURNS>const guint8  *</RETURNS>
+GstByteReader * reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_byte_reader_dup_data_unchecked</NAME>
+<RETURNS>guint8  *</RETURNS>
+GstByteReader * reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_type_find_helper</NAME>
+<RETURNS>GstCaps  * </RETURNS>
+GstPad *src, guint64 size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_type_find_helper_for_data</NAME>
+<RETURNS>GstCaps  * </RETURNS>
+GstObject              *obj, const guint8           *data, gsize                   size, GstTypeFindProbability *prob
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_type_find_helper_for_buffer</NAME>
+<RETURNS>GstCaps  * </RETURNS>
+GstObject              *obj, GstBuffer              *buf, GstTypeFindProbability *prob
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_type_find_helper_for_extension</NAME>
+<RETURNS>GstCaps  * </RETURNS>
+GstObject * obj, const gchar * extension
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>GstTypeFindHelperGetRangeFunction</NAME>
+<RETURNS>GstFlowReturn </RETURNS>
+GstObject  *obj,
+                                                            GstObject  *parent,
+                                                            guint64     offset,
+                                                            guint       length,
+                                                            GstBuffer **buffer
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_type_find_helper_get_range</NAME>
+<RETURNS>GstCaps  * </RETURNS>
+GstObject                         *obj, GstObject                         *parent, GstTypeFindHelperGetRangeFunction  func, guint64                            size, const gchar                       *extension, GstTypeFindProbability            *prob
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_skip_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstBitReader * reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_skip_to_byte_unchecked</NAME>
+<RETURNS>void  </RETURNS>
+GstBitReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint8_unchecked</NAME>
+<RETURNS>guint8  </RETURNS>
+GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint8_unchecked</NAME>
+<RETURNS>guint8  </RETURNS>
+const GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint16_unchecked</NAME>
+<RETURNS>guint16  </RETURNS>
+GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint16_unchecked</NAME>
+<RETURNS>guint16  </RETURNS>
+const GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint32_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint32_unchecked</NAME>
+<RETURNS>guint32  </RETURNS>
+const GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_get_bits_uint64_unchecked</NAME>
+<RETURNS>guint64  </RETURNS>
+GstBitReader *reader, guint nbits
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_bit_reader_peek_bits_uint64_unchecked</NAME>
+<RETURNS>guint64  </RETURNS>
+const GstBitReader *reader, guint nbits
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_BASE_SINK</NAME>
+#define GST_TYPE_BASE_SINK              (gst_base_sink_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK</NAME>
+#define GST_BASE_SINK(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_BASE_SINK,GstBaseSink))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_CLASS</NAME>
+#define GST_BASE_SINK_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_BASE_SINK,GstBaseSinkClass))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_GET_CLASS</NAME>
+#define GST_BASE_SINK_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_BASE_SINK, GstBaseSinkClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_SINK</NAME>
+#define GST_IS_BASE_SINK(obj)           (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_BASE_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_BASE_SINK_CLASS</NAME>
+#define GST_IS_BASE_SINK_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_BASE_SINK))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_CAST</NAME>
+#define GST_BASE_SINK_CAST(obj)         ((GstBaseSink *) (obj))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PAD</NAME>
+#define GST_BASE_SINK_PAD(obj)          (GST_BASE_SINK_CAST (obj)->sinkpad)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_GET_PREROLL_LOCK</NAME>
+#define GST_BASE_SINK_GET_PREROLL_LOCK(pad)   (&GST_BASE_SINK_CAST(pad)->preroll_lock)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_LOCK</NAME>
+#define GST_BASE_SINK_PREROLL_LOCK(pad)       (g_mutex_lock(GST_BASE_SINK_GET_PREROLL_LOCK(pad)))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_TRYLOCK</NAME>
+#define GST_BASE_SINK_PREROLL_TRYLOCK(pad)    (g_mutex_trylock(GST_BASE_SINK_GET_PREROLL_LOCK(pad)))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_UNLOCK</NAME>
+#define GST_BASE_SINK_PREROLL_UNLOCK(pad)     (g_mutex_unlock(GST_BASE_SINK_GET_PREROLL_LOCK(pad)))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_GET_PREROLL_COND</NAME>
+#define GST_BASE_SINK_GET_PREROLL_COND(pad)   (&GST_BASE_SINK_CAST(pad)->preroll_cond)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_WAIT</NAME>
+#define GST_BASE_SINK_PREROLL_WAIT(pad)       \
+      g_cond_wait (GST_BASE_SINK_GET_PREROLL_COND (pad), GST_BASE_SINK_GET_PREROLL_LOCK (pad))
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_WAIT_UNTIL</NAME>
+#define GST_BASE_SINK_PREROLL_WAIT_UNTIL(pad, end_time) \
+      g_cond_wait_until (GST_BASE_SINK_GET_PREROLL_COND (pad), GST_BASE_SINK_GET_PREROLL_LOCK (pad), end_time)
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_SIGNAL</NAME>
+#define GST_BASE_SINK_PREROLL_SIGNAL(pad)     g_cond_signal (GST_BASE_SINK_GET_PREROLL_COND (pad));
+</MACRO>
+<MACRO>
+<NAME>GST_BASE_SINK_PREROLL_BROADCAST</NAME>
+#define GST_BASE_SINK_PREROLL_BROADCAST(pad)  g_cond_broadcast (GST_BASE_SINK_GET_PREROLL_COND (pad));
+</MACRO>
+<STRUCT>
+<NAME>GstBaseSink</NAME>
+struct _GstBaseSink {
+  GstElement     element;
+
+  /*< protected >*/
+  GstPad        *sinkpad;
+  GstPadMode     pad_mode;
+
+  /*< protected >*/ /* with LOCK */
+  guint64        offset;
+  gboolean       can_activate_pull;
+  gboolean       can_activate_push;
+
+  /*< protected >*/ /* with PREROLL_LOCK */
+  GMutex         preroll_lock;
+  GCond          preroll_cond;
+  gboolean       eos;
+  gboolean       need_preroll;
+  gboolean       have_preroll;
+  gboolean       playing_async;
+
+  /*< protected >*/ /* with STREAM_LOCK */
+  gboolean       have_newsegment;
+  GstSegment     segment;
+
+  /*< private >*/ /* with LOCK */
+  GstClockID     clock_id;
+  gboolean       sync;
+  gboolean       flushing;
+  gboolean       running;
+
+  gint64         max_lateness;
+
+  /*< private >*/
+  GstBaseSinkPrivate *priv;
+
+  gpointer _gst_reserved[GST_PADDING_LARGE];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstBaseSinkClass</NAME>
+struct _GstBaseSinkClass {
+  GstElementClass parent_class;
+
+  /* get caps from subclass */
+  GstCaps*      (*get_caps)     (GstBaseSink *sink, GstCaps *filter);
+  /* notify subclass of new caps */
+  gboolean      (*set_caps)     (GstBaseSink *sink, GstCaps *caps);
+
+  /* fixate sink caps during pull-mode negotiation */
+  GstCaps *     (*fixate)       (GstBaseSink *sink, GstCaps *caps);
+  /* start or stop a pulling thread */
+  gboolean      (*activate_pull)(GstBaseSink *sink, gboolean active);
+
+  /* get the start and end times for syncing on this buffer */
+  void          (*get_times)    (GstBaseSink *sink, GstBuffer *buffer,
+                                 GstClockTime *start, GstClockTime *end);
+
+  /* propose allocation parameters for upstream */
+  gboolean      (*propose_allocation)   (GstBaseSink *sink, GstQuery *query);
+
+  /* start and stop processing, ideal for opening/closing the resource */
+  gboolean      (*start)        (GstBaseSink *sink);
+  gboolean      (*stop)         (GstBaseSink *sink);
+
+  /* unlock any pending access to the resource. subclasses should unlock
+   * any function ASAP. */
+  gboolean      (*unlock)       (GstBaseSink *sink);
+  /* Clear a previously indicated unlock request not that unlocking is
+   * complete. Sub-classes should clear any command queue or indicator they
+   * set during unlock */
+  gboolean      (*unlock_stop)  (GstBaseSink *sink);
+
+  /* notify subclass of query */
+  gboolean      (*query)        (GstBaseSink *sink, GstQuery *query);
+
+  /* notify subclass of event */
+  gboolean      (*event)        (GstBaseSink *sink, GstEvent *event);
+  /* wait for eos or gap, subclasses should chain up to parent first */
+  GstFlowReturn (*wait_event)   (GstBaseSink *sink, GstEvent *event);
+
+  /* notify subclass of buffer or list before doing sync */
+  GstFlowReturn (*prepare)      (GstBaseSink *sink, GstBuffer *buffer);
+  GstFlowReturn (*prepare_list) (GstBaseSink *sink, GstBufferList *buffer_list);
+
+  /* notify subclass of preroll buffer or real buffer */
+  GstFlowReturn (*preroll)      (GstBaseSink *sink, GstBuffer *buffer);
+  GstFlowReturn (*render)       (GstBaseSink *sink, GstBuffer *buffer);
+  /* Render a BufferList */
+  GstFlowReturn (*render_list)  (GstBaseSink *sink, GstBufferList *buffer_list);
+
+  /*< private >*/
+  gpointer       _gst_reserved[GST_PADDING_LARGE];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_base_sink_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_do_preroll</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseSink *sink, GstMiniObject *obj
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_wait_preroll</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_sync</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, gboolean sync
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_sync</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_max_lateness</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, gint64 max_lateness
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_max_lateness</NAME>
+<RETURNS>gint64           </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_qos_enabled</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, gboolean enabled
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_is_qos_enabled</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_async_enabled</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, gboolean enabled
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_is_async_enabled</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_ts_offset</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, GstClockTimeDiff offset
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_ts_offset</NAME>
+<RETURNS>GstClockTimeDiff  </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_last_sample</NAME>
+<RETURNS>GstSample  *     </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_last_sample_enabled</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, gboolean enabled
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_is_last_sample_enabled</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_query_latency</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstBaseSink *sink, gboolean *live, gboolean *upstream_live, GstClockTime *min_latency, GstClockTime *max_latency
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_latency</NAME>
+<RETURNS>GstClockTime     </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_render_delay</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, GstClockTime delay
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_render_delay</NAME>
+<RETURNS>GstClockTime     </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_blocksize</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, guint blocksize
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_blocksize</NAME>
+<RETURNS>guint            </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_throttle_time</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, guint64 throttle
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_throttle_time</NAME>
+<RETURNS>guint64          </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_set_max_bitrate</NAME>
+<RETURNS>void             </RETURNS>
+GstBaseSink *sink, guint64 max_bitrate
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_get_max_bitrate</NAME>
+<RETURNS>guint64          </RETURNS>
+GstBaseSink *sink
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_wait_clock</NAME>
+<RETURNS>GstClockReturn   </RETURNS>
+GstBaseSink *sink, GstClockTime time, GstClockTimeDiff * jitter
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_base_sink_wait</NAME>
+<RETURNS>GstFlowReturn    </RETURNS>
+GstBaseSink *sink, GstClockTime time, GstClockTimeDiff *jitter
+</FUNCTION>
+<STRUCT>
+<NAME>GstBaseSinkPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_PUSH_SRC</NAME>
+#define GST_TYPE_PUSH_SRC               (gst_push_src_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_PUSH_SRC</NAME>
+#define GST_PUSH_SRC(obj)               (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_PUSH_SRC,GstPushSrc))
+</MACRO>
+<MACRO>
+<NAME>GST_PUSH_SRC_CLASS</NAME>
+#define GST_PUSH_SRC_CLASS(klass)       (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_PUSH_SRC,GstPushSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_PUSH_SRC_GET_CLASS</NAME>
+#define GST_PUSH_SRC_GET_CLASS(obj)      (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_PUSH_SRC, GstPushSrcClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_PUSH_SRC</NAME>
+#define GST_IS_PUSH_SRC(obj)            (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_PUSH_SRC))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_PUSH_SRC_CLASS</NAME>
+#define GST_IS_PUSH_SRC_CLASS(klass)    (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_PUSH_SRC))
+</MACRO>
+<STRUCT>
+<NAME>GstPushSrc</NAME>
+struct _GstPushSrc {
+  GstBaseSrc     parent;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstPushSrcClass</NAME>
+struct _GstPushSrcClass {
+  GstBaseSrcClass parent_class;
+
+  /* ask the subclass to create a buffer, the default implementation
+   * uses alloc and fill */
+  GstFlowReturn (*create) (GstPushSrc *src, GstBuffer **buf);
+  /* allocate memory for a buffer */
+  GstFlowReturn (*alloc)  (GstPushSrc *src, GstBuffer **buf);
+  /* ask the subclass to fill a buffer */
+  GstFlowReturn (*fill)   (GstPushSrc *src, GstBuffer *buf);
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_push_src_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_COLLECT_PADS</NAME>
+#define GST_TYPE_COLLECT_PADS            (gst_collect_pads_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS</NAME>
+#define GST_COLLECT_PADS(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_COLLECT_PADS,GstCollectPads))
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_CLASS</NAME>
+#define GST_COLLECT_PADS_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_COLLECT_PADS,GstCollectPadsClass))
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_GET_CLASS</NAME>
+#define GST_COLLECT_PADS_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),GST_TYPE_COLLECT_PADS,GstCollectPadsClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_COLLECT_PADS</NAME>
+#define GST_IS_COLLECT_PADS(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_COLLECT_PADS))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_COLLECT_PADS_CLASS</NAME>
+#define GST_IS_COLLECT_PADS_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_COLLECT_PADS))
+</MACRO>
+<USER_FUNCTION>
+<NAME>GstCollectDataDestroyNotify</NAME>
+<RETURNS>void </RETURNS>
+GstCollectData *data
+</USER_FUNCTION>
+<ENUM>
+<NAME>GstCollectPadsStateFlags</NAME>
+typedef enum {
+  GST_COLLECT_PADS_STATE_EOS = 1 << 0,
+  GST_COLLECT_PADS_STATE_FLUSHING = 1 << 1,
+  GST_COLLECT_PADS_STATE_NEW_SEGMENT = 1 << 2,
+  GST_COLLECT_PADS_STATE_WAITING = 1 << 3,
+  GST_COLLECT_PADS_STATE_LOCKED = 1 << 4
+} GstCollectPadsStateFlags;
+</ENUM>
+<MACRO>
+<NAME>GST_COLLECT_PADS_STATE</NAME>
+#define GST_COLLECT_PADS_STATE(data)                 (((GstCollectData *) data)->state)
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_STATE_IS_SET</NAME>
+#define GST_COLLECT_PADS_STATE_IS_SET(data,flag)     !!(GST_COLLECT_PADS_STATE (data) & flag)
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_STATE_SET</NAME>
+#define GST_COLLECT_PADS_STATE_SET(data,flag)        (GST_COLLECT_PADS_STATE (data) |= flag)
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_STATE_UNSET</NAME>
+#define GST_COLLECT_PADS_STATE_UNSET(data,flag)      (GST_COLLECT_PADS_STATE (data) &= ~(flag))
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_DTS</NAME>
+#define GST_COLLECT_PADS_DTS(data)                   (((GstCollectData *) data)->ABI.abi.dts)
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_DTS_IS_VALID</NAME>
+#define GST_COLLECT_PADS_DTS_IS_VALID(data)          (GST_CLOCK_STIME_IS_VALID (GST_COLLECT_PADS_DTS (data)))
+</MACRO>
+<STRUCT>
+<NAME>GstCollectData</NAME>
+struct _GstCollectData
+{
+  /* with STREAM_LOCK of @collect */
+  GstCollectPads        *collect;
+  GstPad                *pad;
+  GstBuffer             *buffer;
+  guint                  pos;
+  GstSegment             segment;
+
+  /*< private >*/
+  /* state: bitfield for easier extension;
+   * eos, flushing, new_segment, waiting */
+  GstCollectPadsStateFlags    state;
+
+  GstCollectDataPrivate *priv;
+
+  union {
+    struct {
+      /*< public >*/
+      gint64 dts;
+      /*< private >*/
+    } abi;
+    gpointer _gst_reserved[GST_PADDING];
+  } ABI;
+};
+</STRUCT>
+<USER_FUNCTION>
+<NAME>GstCollectPadsFunction</NAME>
+<RETURNS>GstFlowReturn </RETURNS>
+GstCollectPads *pads, gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstCollectPadsBufferFunction</NAME>
+<RETURNS>GstFlowReturn </RETURNS>
+GstCollectPads *pads, GstCollectData *data,
+                                                       GstBuffer *buffer, gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstCollectPadsCompareFunction</NAME>
+<RETURNS>gint </RETURNS>
+GstCollectPads *pads,
+                                               GstCollectData * data1, GstClockTime timestamp1,
+                                               GstCollectData * data2, GstClockTime timestamp2,
+                                               gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstCollectPadsEventFunction</NAME>
+<RETURNS>gboolean </RETURNS>
+GstCollectPads *pads, GstCollectData * pad,
+                                                        GstEvent * event, gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstCollectPadsQueryFunction</NAME>
+<RETURNS>gboolean </RETURNS>
+GstCollectPads *pads, GstCollectData * pad,
+                                                        GstQuery * query, gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstCollectPadsClipFunction</NAME>
+<RETURNS>GstFlowReturn </RETURNS>
+GstCollectPads *pads, GstCollectData *data,
+                                                     GstBuffer *inbuffer, GstBuffer **outbuffer,
+                                                     gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstCollectPadsFlushFunction</NAME>
+<RETURNS>void </RETURNS>
+GstCollectPads *pads, gpointer user_data
+</USER_FUNCTION>
+<MACRO>
+<NAME>GST_COLLECT_PADS_GET_STREAM_LOCK</NAME>
+#define GST_COLLECT_PADS_GET_STREAM_LOCK(pads) (&((GstCollectPads *)pads)->stream_lock)
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_STREAM_LOCK</NAME>
+#define GST_COLLECT_PADS_STREAM_LOCK(pads)     g_rec_mutex_lock(GST_COLLECT_PADS_GET_STREAM_LOCK (pads))
+</MACRO>
+<MACRO>
+<NAME>GST_COLLECT_PADS_STREAM_UNLOCK</NAME>
+#define GST_COLLECT_PADS_STREAM_UNLOCK(pads)   g_rec_mutex_unlock(GST_COLLECT_PADS_GET_STREAM_LOCK (pads))
+</MACRO>
+<STRUCT>
+<NAME>GstCollectPads</NAME>
+struct _GstCollectPads {
+  GstObject      object;
+
+  /*< public >*/ /* with LOCK and/or STREAM_LOCK */
+  GSList        *data;                  /* list of CollectData items */
+
+  /*< private >*/
+  GRecMutex      stream_lock;          /* used to serialize collection among several streams */
+
+  GstCollectPadsPrivate *priv;
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstCollectPadsClass</NAME>
+struct _GstCollectPadsClass {
+  GstObjectClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_collect_pads_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_new</NAME>
+<RETURNS>GstCollectPads *        </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsFunction func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_buffer_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsBufferFunction func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_event_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsEventFunction func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_query_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsQueryFunction func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_compare_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsCompareFunction func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_clip_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsClipFunction clipfunc, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_flush_function</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectPadsFlushFunction func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_add_pad</NAME>
+<RETURNS>GstCollectData * </RETURNS>
+GstCollectPads *pads, GstPad *pad, guint size, GstCollectDataDestroyNotify destroy_notify, gboolean lock
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_remove_pad</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstCollectPads *pads, GstPad *pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_start</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_stop</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_flushing</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, gboolean flushing
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_peek</NAME>
+<RETURNS>GstBuffer *      </RETURNS>
+GstCollectPads *pads, GstCollectData *data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_pop</NAME>
+<RETURNS>GstBuffer *      </RETURNS>
+GstCollectPads *pads, GstCollectData *data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_available</NAME>
+<RETURNS>guint            </RETURNS>
+GstCollectPads *pads
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_flush</NAME>
+<RETURNS>guint            </RETURNS>
+GstCollectPads *pads, GstCollectData *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_read_buffer</NAME>
+<RETURNS>GstBuffer *      </RETURNS>
+GstCollectPads * pads, GstCollectData * data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_take_buffer</NAME>
+<RETURNS>GstBuffer *      </RETURNS>
+GstCollectPads * pads, GstCollectData * data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_set_waiting</NAME>
+<RETURNS>void             </RETURNS>
+GstCollectPads *pads, GstCollectData *data, gboolean waiting
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_clip_running_time</NAME>
+<RETURNS>GstFlowReturn 	</RETURNS>
+GstCollectPads * pads, GstCollectData * cdata, GstBuffer * buf, GstBuffer ** outbuf, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_event_default</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstCollectPads * pads, GstCollectData * data, GstEvent * event, gboolean discard
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_src_event_default</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstCollectPads * pads, GstPad * pad, GstEvent * event
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_collect_pads_query_default</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstCollectPads * pads, GstCollectData * data, GstQuery * query, gboolean discard
+</FUNCTION>
+<STRUCT>
+<NAME>GstCollectDataPrivate</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GstCollectPadsPrivate</NAME>
+</STRUCT>
+<FUNCTION>
+<NAME>gst_queue_array_new</NAME>
+<RETURNS>GstQueueArray  * </RETURNS>
+guint initial_size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_free</NAME>
+<RETURNS>void             </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_pop_head</NAME>
+<RETURNS>gpointer         </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_peek_head</NAME>
+<RETURNS>gpointer         </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_push_tail</NAME>
+<RETURNS>void             </RETURNS>
+GstQueueArray * array, gpointer        data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_is_empty</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_drop_element</NAME>
+<RETURNS>gpointer         </RETURNS>
+GstQueueArray * array, guint           idx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_find</NAME>
+<RETURNS>guint            </RETURNS>
+GstQueueArray * array, GCompareFunc    func, gpointer        data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_get_length</NAME>
+<RETURNS>guint            </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_new_for_struct</NAME>
+<RETURNS>GstQueueArray  * </RETURNS>
+gsize struct_size, guint initial_size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_push_tail_struct</NAME>
+<RETURNS>void             </RETURNS>
+GstQueueArray * array, gpointer        p_struct
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_pop_head_struct</NAME>
+<RETURNS>gpointer         </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_peek_head_struct</NAME>
+<RETURNS>gpointer         </RETURNS>
+GstQueueArray * array
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_queue_array_drop_struct</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstQueueArray * array, guint           idx, gpointer        p_struct
+</FUNCTION>
+<STRUCT>
+<NAME>GstQueueArray</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_DIRECT_CONTROL_BINDING</NAME>
+#define GST_TYPE_DIRECT_CONTROL_BINDING \
+  (gst_direct_control_binding_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_DIRECT_CONTROL_BINDING</NAME>
+#define GST_DIRECT_CONTROL_BINDING(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_DIRECT_CONTROL_BINDING,GstDirectControlBinding))
+</MACRO>
+<MACRO>
+<NAME>GST_DIRECT_CONTROL_BINDING_CLASS</NAME>
+#define GST_DIRECT_CONTROL_BINDING_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_DIRECT_CONTROL_BINDING,GstDirectControlBindingClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_DIRECT_CONTROL_BINDING</NAME>
+#define GST_IS_DIRECT_CONTROL_BINDING(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_DIRECT_CONTROL_BINDING))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_DIRECT_CONTROL_BINDING_CLASS</NAME>
+#define GST_IS_DIRECT_CONTROL_BINDING_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_DIRECT_CONTROL_BINDING))
+</MACRO>
+<MACRO>
+<NAME>GST_DIRECT_CONTROL_BINDING_GET_CLASS</NAME>
+#define GST_DIRECT_CONTROL_BINDING_GET_CLASS(obj) \
+  (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_CONTOL_SOURCE, GstDirectControlBindingClass))
+</MACRO>
+<USER_FUNCTION>
+<NAME>GstDirectControlBindingConvertValue</NAME>
+<RETURNS>void </RETURNS>
+GstDirectControlBinding *self, gdouble src_value, gpointer dest_value
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstDirectControlBindingConvertGValue</NAME>
+<RETURNS>void </RETURNS>
+GstDirectControlBinding *self, gdouble src_value, GValue *dest_value
+</USER_FUNCTION>
+<STRUCT>
+<NAME>GstDirectControlBinding</NAME>
+struct _GstDirectControlBinding {
+  GstControlBinding parent;
+  
+  /*< private >*/
+  GstControlSource *cs;    /* GstControlSource for this property */
+  GValue cur_value;
+  gdouble last_value;
+  gint byte_size;
+
+  GstDirectControlBindingConvertValue convert_value;
+  GstDirectControlBindingConvertGValue convert_g_value;
+
+  union {
+    gpointer _gst_reserved[GST_PADDING];
+    struct {
+      gboolean want_absolute;
+    } abi;
+  } ABI;};
+
+/**
+ * GstDirectControlBindingClass:
+ * @parent_class: Parent class
+ * @convert: Class method to convert control-values
+ *
+ * The class structure of #GstDirectControlBinding.
+ */
+
+struct _GstDirectControlBindingClass
+{
+  GstControlBindingClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_direct_control_binding_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_direct_control_binding_new</NAME>
+<RETURNS>GstControlBinding  * </RETURNS>
+GstObject * object, const gchar * property_name, GstControlSource * cs
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_direct_control_binding_new_absolute</NAME>
+<RETURNS>GstControlBinding  * </RETURNS>
+GstObject * object, const gchar * property_name, GstControlSource * cs
+</FUNCTION>
+<STRUCT>
+<NAME>GstDirectControlBindingClass</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_TIMED_VALUE_CONTROL_SOURCE</NAME>
+#define GST_TYPE_TIMED_VALUE_CONTROL_SOURCE \
+  (gst_timed_value_control_source_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_TIMED_VALUE_CONTROL_SOURCE</NAME>
+#define GST_TIMED_VALUE_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_TIMED_VALUE_CONTROL_SOURCE, GstTimedValueControlSource))
+</MACRO>
+<MACRO>
+<NAME>GST_TIMED_VALUE_CONTROL_SOURCE_CLASS</NAME>
+#define GST_TIMED_VALUE_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_CAST ((vtable), GST_TYPE_TIMED_VALUE_CONTROL_SOURCE, GstTimedValueControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TIMED_VALUE_CONTROL_SOURCE</NAME>
+#define GST_IS_TIMED_VALUE_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_TIMED_VALUE_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TIMED_VALUE_CONTROL_SOURCE_CLASS</NAME>
+#define GST_IS_TIMED_VALUE_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_TYPE ((vtable), GST_TYPE_TIMED_VALUE_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_TIMED_VALUE_CONTROL_SOURCE_GET_CLASS</NAME>
+#define GST_TIMED_VALUE_CONTROL_SOURCE_GET_CLASS(inst) \
+  (G_TYPE_INSTANCE_GET_CLASS ((inst), GST_TYPE_TIMED_VALUE_CONTROL_SOURCE, GstTimedValueControlSourceClass))
+</MACRO>
+<STRUCT>
+<NAME>GstControlPoint</NAME>
+struct _GstControlPoint
+{
+  /* fields from GstTimedValue. DO NOT CHANGE! */
+  GstClockTime timestamp;
+  gdouble value;
+
+  /*< private >*/
+
+  /* Caches for the interpolators */
+  /* FIXME: we should not have this here already ... */
+  union {
+    struct {
+      gdouble h;
+      gdouble z;
+    } cubic;
+  } cache;
+
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_control_point_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstTimedValueControlSource</NAME>
+struct _GstTimedValueControlSource {
+  GstControlSource parent;
+
+  /*< protected >*/
+  GMutex lock;
+
+  GSequence *values;            /* List of GstControlPoint */
+  gint nvalues;                 /* Number of control points */
+  gboolean valid_cache;
+
+  /*< private >*/
+  GstTimedValueControlSourcePrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstTimedValueControlSourceClass</NAME>
+struct _GstTimedValueControlSourceClass {
+  GstControlSourceClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<MACRO>
+<NAME>GST_TIMED_VALUE_CONTROL_SOURCE_LOCK</NAME>
+#define GST_TIMED_VALUE_CONTROL_SOURCE_LOCK(o) \
+  g_mutex_lock(&((GstTimedValueControlSource *)o)->lock)
+</MACRO>
+<MACRO>
+<NAME>GST_TIMED_VALUE_CONTROL_SOURCE_UNLOCK</NAME>
+#define GST_TIMED_VALUE_CONTROL_SOURCE_UNLOCK(o) \
+  g_mutex_unlock(&((GstTimedValueControlSource *)o)->lock)
+</MACRO>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_find_control_point_iter</NAME>
+<RETURNS>GSequenceIter  * </RETURNS>
+ GstTimedValueControlSource * self, GstClockTime timestamp
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_set</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstTimedValueControlSource * self, GstClockTime timestamp, const gdouble value
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_set_from_list</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstTimedValueControlSource * self, const GSList * timedvalues
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_unset</NAME>
+<RETURNS>gboolean         </RETURNS>
+GstTimedValueControlSource * self, GstClockTime timestamp
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_unset_all</NAME>
+<RETURNS>void             </RETURNS>
+GstTimedValueControlSource *self
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_get_all</NAME>
+<RETURNS>GList  *         </RETURNS>
+GstTimedValueControlSource * self
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_source_get_count</NAME>
+<RETURNS>gint             </RETURNS>
+GstTimedValueControlSource * self
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_timed_value_control_invalidate_cache</NAME>
+<RETURNS>void             </RETURNS>
+GstTimedValueControlSource * self
+</FUNCTION>
+<STRUCT>
+<NAME>GstTimedValueControlSourcePrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_LFO_CONTROL_SOURCE</NAME>
+#define GST_TYPE_LFO_CONTROL_SOURCE \
+  (gst_lfo_control_source_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_LFO_CONTROL_SOURCE</NAME>
+#define GST_LFO_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_LFO_CONTROL_SOURCE, GstLFOControlSource))
+</MACRO>
+<MACRO>
+<NAME>GST_LFO_CONTROL_SOURCE_CLASS</NAME>
+#define GST_LFO_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_CAST ((vtable), GST_TYPE_LFO_CONTROL_SOURCE, GstLFOControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_LFO_CONTROL_SOURCE</NAME>
+#define GST_IS_LFO_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_LFO_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_LFO_CONTROL_SOURCE_CLASS</NAME>
+#define GST_IS_LFO_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_TYPE ((vtable), GST_TYPE_LFO_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_LFO_CONTROL_SOURCE_GET_CLASS</NAME>
+#define GST_LFO_CONTROL_SOURCE_GET_CLASS(inst) \
+  (G_TYPE_INSTANCE_GET_CLASS ((inst), GST_TYPE_LFO_CONTROL_SOURCE, GstLFOControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_TYPE_LFO_WAVEFORM</NAME>
+#define GST_TYPE_LFO_WAVEFORM (gst_lfo_waveform_get_type ())
+</MACRO>
+<ENUM>
+<NAME>GstLFOWaveform</NAME>
+typedef enum
+{
+  GST_LFO_WAVEFORM_SINE,
+  GST_LFO_WAVEFORM_SQUARE,
+  GST_LFO_WAVEFORM_SAW,
+  GST_LFO_WAVEFORM_REVERSE_SAW,
+  GST_LFO_WAVEFORM_TRIANGLE
+} GstLFOWaveform;
+</ENUM>
+<STRUCT>
+<NAME>GstLFOControlSource</NAME>
+struct _GstLFOControlSource {
+  GstControlSource parent;
+
+  /* <private> */
+  GstLFOControlSourcePrivate *priv;
+  GMutex lock;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstLFOControlSourceClass</NAME>
+struct _GstLFOControlSourceClass {
+  GstControlSourceClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_lfo_control_source_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_lfo_waveform_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_lfo_control_source_new</NAME>
+<RETURNS>GstControlSource  *</RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstLFOControlSourcePrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_ARGB_CONTROL_BINDING</NAME>
+#define GST_TYPE_ARGB_CONTROL_BINDING \
+  (gst_argb_control_binding_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_ARGB_CONTROL_BINDING</NAME>
+#define GST_ARGB_CONTROL_BINDING(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_ARGB_CONTROL_BINDING,GstARGBControlBinding))
+</MACRO>
+<MACRO>
+<NAME>GST_ARGB_CONTROL_BINDING_CLASS</NAME>
+#define GST_ARGB_CONTROL_BINDING_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_ARGB_CONTROL_BINDING,GstARGBControlBindingClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_ARGB_CONTROL_BINDING</NAME>
+#define GST_IS_ARGB_CONTROL_BINDING(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_ARGB_CONTROL_BINDING))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_ARGB_CONTROL_BINDING_CLASS</NAME>
+#define GST_IS_ARGB_CONTROL_BINDING_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_ARGB_CONTROL_BINDING))
+</MACRO>
+<MACRO>
+<NAME>GST_ARGB_CONTROL_BINDING_GET_CLASS</NAME>
+#define GST_ARGB_CONTROL_BINDING_GET_CLASS(obj) \
+  (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_CONTOL_SOURCE, GstARGBControlBindingClass))
+</MACRO>
+<STRUCT>
+<NAME>GstARGBControlBinding</NAME>
+struct _GstARGBControlBinding {
+  GstControlBinding parent;
+  
+  /*< private >*/
+  GstControlSource *cs_a;       /* GstControlSources for this property */
+  GstControlSource *cs_r;
+  GstControlSource *cs_g;
+  GstControlSource *cs_b;
+
+  GValue cur_value;
+  guint32 last_value;
+
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstARGBControlBindingClass</NAME>
+struct _GstARGBControlBindingClass
+{
+  GstControlBindingClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_argb_control_binding_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_argb_control_binding_new</NAME>
+<RETURNS>GstControlBinding  * </RETURNS>
+GstObject * object, const gchar * property_name, GstControlSource * cs_a, GstControlSource * cs_r, GstControlSource * cs_g, GstControlSource * cs_b
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_INTERPOLATION_CONTROL_SOURCE</NAME>
+#define GST_TYPE_INTERPOLATION_CONTROL_SOURCE \
+  (gst_interpolation_control_source_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_INTERPOLATION_CONTROL_SOURCE</NAME>
+#define GST_INTERPOLATION_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_INTERPOLATION_CONTROL_SOURCE, GstInterpolationControlSource))
+</MACRO>
+<MACRO>
+<NAME>GST_INTERPOLATION_CONTROL_SOURCE_CLASS</NAME>
+#define GST_INTERPOLATION_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_CAST ((vtable), GST_TYPE_INTERPOLATION_CONTROL_SOURCE, GstInterpolationControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_INTERPOLATION_CONTROL_SOURCE</NAME>
+#define GST_IS_INTERPOLATION_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_INTERPOLATION_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_INTERPOLATION_CONTROL_SOURCE_CLASS</NAME>
+#define GST_IS_INTERPOLATION_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_TYPE ((vtable), GST_TYPE_INTERPOLATION_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_INTERPOLATION_CONTROL_SOURCE_GET_CLASS</NAME>
+#define GST_INTERPOLATION_CONTROL_SOURCE_GET_CLASS(inst) \
+  (G_TYPE_INSTANCE_GET_CLASS ((inst), GST_TYPE_INTERPOLATION_CONTROL_SOURCE, GstInterpolationControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_TYPE_INTERPOLATION_MODE</NAME>
+#define GST_TYPE_INTERPOLATION_MODE (gst_interpolation_mode_get_type ())
+</MACRO>
+<ENUM>
+<NAME>GstInterpolationMode</NAME>
+typedef enum
+{
+  GST_INTERPOLATION_MODE_NONE,
+  GST_INTERPOLATION_MODE_LINEAR,
+  GST_INTERPOLATION_MODE_CUBIC
+} GstInterpolationMode;
+</ENUM>
+<STRUCT>
+<NAME>GstInterpolationControlSource</NAME>
+struct _GstInterpolationControlSource {
+  GstTimedValueControlSource parent;
+
+  /*< private >*/
+  GstInterpolationControlSourcePrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstInterpolationControlSourceClass</NAME>
+struct _GstInterpolationControlSourceClass {
+  GstTimedValueControlSourceClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_interpolation_control_source_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_interpolation_mode_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_interpolation_control_source_new</NAME>
+<RETURNS>GstControlSource  * </RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstInterpolationControlSourcePrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_TRIGGER_CONTROL_SOURCE</NAME>
+#define GST_TYPE_TRIGGER_CONTROL_SOURCE \
+  (gst_trigger_control_source_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_TRIGGER_CONTROL_SOURCE</NAME>
+#define GST_TRIGGER_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_TRIGGER_CONTROL_SOURCE, GstTriggerControlSource))
+</MACRO>
+<MACRO>
+<NAME>GST_TRIGGER_CONTROL_SOURCE_CLASS</NAME>
+#define GST_TRIGGER_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_CAST ((vtable), GST_TYPE_TRIGGER_CONTROL_SOURCE, GstTriggerControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TRIGGER_CONTROL_SOURCE</NAME>
+#define GST_IS_TRIGGER_CONTROL_SOURCE(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_TRIGGER_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_TRIGGER_CONTROL_SOURCE_CLASS</NAME>
+#define GST_IS_TRIGGER_CONTROL_SOURCE_CLASS(vtable) \
+  (G_TYPE_CHECK_CLASS_TYPE ((vtable), GST_TYPE_TRIGGER_CONTROL_SOURCE))
+</MACRO>
+<MACRO>
+<NAME>GST_TRIGGER_CONTROL_SOURCE_GET_CLASS</NAME>
+#define GST_TRIGGER_CONTROL_SOURCE_GET_CLASS(inst) \
+  (G_TYPE_INSTANCE_GET_CLASS ((inst), GST_TYPE_TRIGGER_CONTROL_SOURCE, GstTriggerControlSourceClass))
+</MACRO>
+<MACRO>
+<NAME>GST_TYPE_TRIGGER_WAVEFORM</NAME>
+#define GST_TYPE_TRIGGER_WAVEFORM (gst_trigger_waveform_get_type ())
+</MACRO>
+<STRUCT>
+<NAME>GstTriggerControlSource</NAME>
+struct _GstTriggerControlSource {
+  GstTimedValueControlSource parent;
+
+  /*< private >*/
+  GstTriggerControlSourcePrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstTriggerControlSourceClass</NAME>
+struct _GstTriggerControlSourceClass {
+  GstTimedValueControlSourceClass parent_class;
+  
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_trigger_control_source_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_trigger_control_source_new</NAME>
+<RETURNS>GstControlSource  *</RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstTriggerControlSourcePrivate</NAME>
+</STRUCT>

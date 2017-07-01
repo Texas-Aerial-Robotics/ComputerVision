@@ -1,0 +1,305 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-multiqueue">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-multiqueue.top_of_page" role="top_of_page">multiqueue</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>multiqueue</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-multiqueue.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--extra-size-buffers">extra-size-buffers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--extra-size-bytes">extra-size-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--extra-size-time">extra-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--high-percent">high-percent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--low-percent">low-percent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--max-size-buffers">max-size-buffers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--max-size-bytes">max-size-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--max-size-time">max-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--sync-by-running-time">sync-by-running-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiQueue--use-buffering">use-buffering</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiQueue-overrun">overrun</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiQueue-underrun">underrun</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstMultiQueue"/><refsect1 id="gstreamer-plugins-multiqueue.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMultiQueue-struct">GstMultiQueue</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstMultiQueue
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-multiqueue.description" role="desc">
+<title role="desc.title">Description</title>
+<refsect2>
+<para>
+Multiqueue is similar to a normal <link linkend="GstQueue"><type>GstQueue</type></link> with the following additional
+features:
+<orderedlist>
+<listitem>
+  <itemizedlist><title>Multiple streamhandling</title>
+  <listitem><para>
+    The element handles queueing data on more than one stream at once. To
+    achieve such a feature it has request sink pads (sinku) and
+    'sometimes' src pads (srcu).
+  </para><para>
+    When requesting a given sinkpad with <link linkend="gst-element-request-pad"><function>gst_element_request_pad()</function></link>,
+    the associated srcpad for that stream will be created.
+    Example: requesting sink1 will generate src1.
+  </para></listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist><title>Non-starvation on multiple streams</title>
+  <listitem><para>
+    If more than one stream is used with the element, the streams' queues
+    will be dynamically grown (up to a limit), in order to ensure that no
+    stream is risking data starvation. This guarantees that at any given
+    time there are at least N bytes queued and available for each individual
+    stream.
+  </para><para>
+    If an EOS event comes through a srcpad, the associated queue will be
+    considered as 'not-empty' in the queue-size-growing algorithm.
+  </para></listitem>
+  </itemizedlist>
+</listitem>
+<listitem>
+  <itemizedlist><title>Non-linked srcpads graceful handling</title>
+  <listitem><para>
+    In order to better support dynamic switching between streams, the multiqueue
+    (unlike the current GStreamer queue) continues to push buffers on non-linked
+    pads rather than shutting down.
+  </para><para>
+    In addition, to prevent a non-linked stream from very quickly consuming all
+    available buffers and thus 'racing ahead' of the other streams, the element
+    must ensure that buffers and inlined events for a non-linked stream are pushed
+    in the same order as they were received, relative to the other streams
+    controlled by the element. This means that a buffer cannot be pushed to a
+    non-linked pad any sooner than buffers in any other stream which were received
+    before it.
+  </para></listitem>
+  </itemizedlist>
+</listitem>
+</orderedlist>
+</para>
+<para>
+  Data is queued until one of the limits specified by the
+  <link linkend="GstMultiQueue--max-size-buffers"><type>“max-size-buffers”</type></link>, <link linkend="GstMultiQueue--max-size-bytes"><type>“max-size-bytes”</type></link> and/or
+  <link linkend="GstMultiQueue--max-size-time"><type>“max-size-time”</type></link> properties has been reached. Any attempt to push
+  more buffers into the queue will block the pushing thread until more space
+  becomes available. <link linkend="GstMultiQueue--extra-size-buffers"><type>“extra-size-buffers”</type></link>,
+</para>
+<para>
+  <link linkend="GstMultiQueue--extra-size-bytes"><type>“extra-size-bytes”</type></link> and <link linkend="GstMultiQueue--extra-size-time"><type>“extra-size-time”</type></link> are
+  currently unused.
+</para>
+<para>
+  The default queue size limits are 5 buffers, 10MB of data, or
+  two second worth of data, whichever is reached first. Note that the number
+  of buffers will dynamically grow depending on the fill level of 
+  other queues.
+</para>
+<para>
+  The <link linkend="GstMultiQueue-underrun"><type>“underrun”</type></link> signal is emitted when all of the queues
+  are empty. The <link linkend="GstMultiQueue-overrun"><type>“overrun”</type></link> signal is emitted when one of the
+  queues is filled.
+  Both signals are emitted from the context of the streaming thread.
+</para>
+</refsect2>
+
+<include href="element-multiqueue-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMultiQueue-struct" role="struct">
+<title>struct GstMultiQueue</title>
+<indexterm zone="GstMultiQueue-struct"><primary>GstMultiQueue</primary></indexterm>
+<programlisting language="C">struct GstMultiQueue;</programlisting>
+<para>Opaque <link linkend="GstMultiQueue"><type>GstMultiQueue</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstMultiQueue--extra-size-buffers" role="property"><title>The <literal>“extra-size-buffers”</literal> property</title>
+<indexterm zone="GstMultiQueue--extra-size-buffers"><primary>GstMultiQueue:extra-size-buffers</primary></indexterm>
+<programlisting>  “extra-size-buffers”       <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of buffers the queues can grow if one of them is empty (0=disable) (NOT IMPLEMENTED).</para><para>Flags: Read / Write</para>
+<para>Default value: 5</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--extra-size-bytes" role="property"><title>The <literal>“extra-size-bytes”</literal> property</title>
+<indexterm zone="GstMultiQueue--extra-size-bytes"><primary>GstMultiQueue:extra-size-bytes</primary></indexterm>
+<programlisting>  “extra-size-bytes”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of data the queues can grow if one of them is empty (bytes, 0=disable) (NOT IMPLEMENTED).</para><para>Flags: Read / Write</para>
+<para>Default value: 10485760</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--extra-size-time" role="property"><title>The <literal>“extra-size-time”</literal> property</title>
+<indexterm zone="GstMultiQueue--extra-size-time"><primary>GstMultiQueue:extra-size-time</primary></indexterm>
+<programlisting>  “extra-size-time”          <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Amount of time the queues can grow if one of them is empty (in ns, 0=disable) (NOT IMPLEMENTED).</para><para>Flags: Read / Write</para>
+<para>Default value: 3000000000</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--high-percent" role="property"><title>The <literal>“high-percent”</literal> property</title>
+<indexterm zone="GstMultiQueue--high-percent"><primary>GstMultiQueue:high-percent</primary></indexterm>
+<programlisting>  “high-percent”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>High threshold percent for buffering to finish.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 99</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--low-percent" role="property"><title>The <literal>“low-percent”</literal> property</title>
+<indexterm zone="GstMultiQueue--low-percent"><primary>GstMultiQueue:low-percent</primary></indexterm>
+<programlisting>  “low-percent”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Low threshold percent for buffering to start.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 10</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--max-size-buffers" role="property"><title>The <literal>“max-size-buffers”</literal> property</title>
+<indexterm zone="GstMultiQueue--max-size-buffers"><primary>GstMultiQueue:max-size-buffers</primary></indexterm>
+<programlisting>  “max-size-buffers”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max. number of buffers in the queue (0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 5</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--max-size-bytes" role="property"><title>The <literal>“max-size-bytes”</literal> property</title>
+<indexterm zone="GstMultiQueue--max-size-bytes"><primary>GstMultiQueue:max-size-bytes</primary></indexterm>
+<programlisting>  “max-size-bytes”           <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max. amount of data in the queue (bytes, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 10485760</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--max-size-time" role="property"><title>The <literal>“max-size-time”</literal> property</title>
+<indexterm zone="GstMultiQueue--max-size-time"><primary>GstMultiQueue:max-size-time</primary></indexterm>
+<programlisting>  “max-size-time”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Max. amount of data in the queue (in ns, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 2000000000</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--sync-by-running-time" role="property"><title>The <literal>“sync-by-running-time”</literal> property</title>
+<indexterm zone="GstMultiQueue--sync-by-running-time"><primary>GstMultiQueue:sync-by-running-time</primary></indexterm>
+<programlisting>  “sync-by-running-time”     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If enabled multiqueue will synchronize deactivated or not-linked streams
+to the activated and linked streams by taking the running time.
+Otherwise multiqueue will synchronize the deactivated or not-linked
+streams by keeping the order in which buffers and events arrived compared
+to active and linked streams.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstMultiQueue--use-buffering" role="property"><title>The <literal>“use-buffering”</literal> property</title>
+<indexterm zone="GstMultiQueue--use-buffering"><primary>GstMultiQueue:use-buffering</primary></indexterm>
+<programlisting>  “use-buffering”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable the buffering option in multiqueue so that BUFFERING messages are
+emitted based on low-/high-percent thresholds.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstMultiQueue-overrun" role="signal"><title>The <literal>“overrun”</literal> signal</title>
+<indexterm zone="GstMultiQueue-overrun"><primary>GstMultiQueue::overrun</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiQueue"><type>GstMultiQueue</type></link> *multiqueue,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Reports that one of the queues in the multiqueue is full (overrun).
+A queue is full if the total amount of data inside it (num-buffers, time,
+size) is higher than the boundary values which can be set through the
+GObject properties.</para>
+<para>This can be used as an indicator of pre-roll.</para>
+<refsect3 id="GstMultiQueue-overrun.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>multiqueue</para></entry>
+<entry role="parameter_description"><para>the multiqueue instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+</refsect2><refsect2 id="GstMultiQueue-underrun" role="signal"><title>The <literal>“underrun”</literal> signal</title>
+<indexterm zone="GstMultiQueue-underrun"><primary>GstMultiQueue::underrun</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiQueue"><type>GstMultiQueue</type></link> *multiqueue,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>This signal is emitted from the streaming thread when there is
+no data in any of the queues inside the multiqueue instance (underrun).</para>
+<para>This indicates either starvation or EOS from the upstream data sources.</para>
+<refsect3 id="GstMultiQueue-underrun.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>multiqueue</para></entry>
+<entry role="parameter_description"><para>the multiqueue instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="gstreamer-plugins-multiqueue.see-also">
+<title>See Also</title>
+<para><link linkend="GstQueue"><type>GstQueue</type></link></para>
+
+</refsect1>
+
+</refentry>

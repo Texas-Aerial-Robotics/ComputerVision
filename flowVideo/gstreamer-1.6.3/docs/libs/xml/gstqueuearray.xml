@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstQueueArray">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstQueueArray.top_of_page">GstQueueArray</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstQueueArray</refname>
+<refpurpose>Array based queue object</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstQueueArray.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstQueueArray"><returnvalue>GstQueueArray</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-queue-array-new">gst_queue_array_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-free">gst_queue_array_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-get-length">gst_queue_array_get_length</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-pop-head">gst_queue_array_pop_head</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-peek-head">gst_queue_array_peek_head</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-push-tail">gst_queue_array_push_tail</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-is-empty">gst_queue_array_is_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-drop-element">gst_queue_array_drop_element</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-find">gst_queue_array_find</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstQueueArray"><returnvalue>GstQueueArray</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-queue-array-new-for-struct">gst_queue_array_new_for_struct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-push-tail-struct">gst_queue_array_push_tail_struct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-peek-head-struct">gst_queue_array_peek_head_struct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-pop-head-struct">gst_queue_array_pop_head_struct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-queue-array-drop-struct">gst_queue_array_drop_struct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstQueueArray.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstQueueArray">GstQueueArray</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstQueueArray.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstqueuearray.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstQueueArray.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstQueueArray"><type>GstQueueArray</type></link> is an object that provides standard queue functionality
+based on an array instead of linked lists. This reduces the overhead
+caused by memory management by a large factor.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstQueueArray.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-queue-array-new" role="function" condition="since:1.2">
+<title>gst_queue_array_new&#160;()</title>
+<indexterm zone="gst-queue-array-new" role="1.2"><primary>gst_queue_array_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstQueueArray"><returnvalue>GstQueueArray</returnvalue></link>&#160;*
+gst_queue_array_new (<parameter><link linkend="guint"><type>guint</type></link> initial_size</parameter>);</programlisting>
+<para>Allocates a new <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object with an initial
+queue size of <parameter>initial_size</parameter>
+.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>initial_size</para></entry>
+<entry role="parameter_description"><para>Initial size of the new queue</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-free" role="function" condition="since:1.2">
+<title>gst_queue_array_free&#160;()</title>
+<indexterm zone="gst-queue-array-free" role="1.2"><primary>gst_queue_array_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_queue_array_free (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Frees queue <parameter>array</parameter>
+ and all memory associated to it.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-get-length" role="function" condition="since:1.2">
+<title>gst_queue_array_get_length&#160;()</title>
+<indexterm zone="gst-queue-array-get-length" role="1.2"><primary>gst_queue_array_get_length</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_queue_array_get_length (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Returns the length of the queue <parameter>array</parameter>
+</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-get-length.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-get-length.returns" role="returns">
+<title>Returns</title>
+<para> the length of the queue <parameter>array</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-pop-head" role="function" condition="since:1.2">
+<title>gst_queue_array_pop_head&#160;()</title>
+<indexterm zone="gst-queue-array-pop-head" role="1.2"><primary>gst_queue_array_pop_head</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_queue_array_pop_head (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Returns and head of the queue <parameter>array</parameter>
+ and removes
+it from the queue.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-pop-head.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-pop-head.returns" role="returns">
+<title>Returns</title>
+<para> The head of the queue</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-peek-head" role="function" condition="since:1.2">
+<title>gst_queue_array_peek_head&#160;()</title>
+<indexterm zone="gst-queue-array-peek-head" role="1.2"><primary>gst_queue_array_peek_head</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_queue_array_peek_head (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Returns the head of the queue <parameter>array</parameter>
+ and does not
+remove it from the queue.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-peek-head.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-peek-head.returns" role="returns">
+<title>Returns</title>
+<para> The head of the queue</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-push-tail" role="function" condition="since:1.2">
+<title>gst_queue_array_push_tail&#160;()</title>
+<indexterm zone="gst-queue-array-push-tail" role="1.2"><primary>gst_queue_array_push_tail</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_queue_array_push_tail (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>,
+                           <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>Pushes <parameter>data</parameter>
+ to the tail of the queue <parameter>array</parameter>
+.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-push-tail.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>object to push</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-is-empty" role="function" condition="since:1.2">
+<title>gst_queue_array_is_empty&#160;()</title>
+<indexterm zone="gst-queue-array-is-empty" role="1.2"><primary>gst_queue_array_is_empty</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_queue_array_is_empty (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Checks if the queue <parameter>array</parameter>
+ is empty.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-is-empty.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-is-empty.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the queue <parameter>array</parameter>
+is empty</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-drop-element" role="function" condition="since:1.2">
+<title>gst_queue_array_drop_element&#160;()</title>
+<indexterm zone="gst-queue-array-drop-element" role="1.2"><primary>gst_queue_array_drop_element</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_queue_array_drop_element (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> idx</parameter>);</programlisting>
+<para>Drops the queue element at position <parameter>idx</parameter>
+ from queue <parameter>array</parameter>
+.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-drop-element.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>index to drop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-drop-element.returns" role="returns">
+<title>Returns</title>
+<para> the dropped element</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-find" role="function" condition="since:1.2">
+<title>gst_queue_array_find&#160;()</title>
+<indexterm zone="gst-queue-array-find" role="1.2"><primary>gst_queue_array_find</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_queue_array_find (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>,
+                      <parameter><link linkend="GCompareFunc"><type>GCompareFunc</type></link> func</parameter>,
+                      <parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>Finds an element in the queue <parameter>array</parameter>
+, either by comparing every element
+with <parameter>func</parameter>
+ or by looking up <parameter>data</parameter>
+ if no compare function <parameter>func</parameter>
+ is provided,
+and returning the index of the found element.</para>
+<para>Note that the index is not 0-based, but an internal index number with a
+random offset. The index can be used in connection with
+<link linkend="gst-queue-array-drop-element"><function>gst_queue_array_drop_element()</function></link>. FIXME: return index 0-based and make
+<link linkend="gst-queue-array-drop-element"><function>gst_queue_array_drop_element()</function></link> take a 0-based index.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-find.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> comparison function, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to find <parameter>data</parameter>
+by value. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>data for comparison function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-find.returns" role="returns">
+<title>Returns</title>
+<para> Index of the found element or -1 if nothing was found.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-queue-array-new-for-struct" role="function" condition="since:1.6">
+<title>gst_queue_array_new_for_struct&#160;()</title>
+<indexterm zone="gst-queue-array-new-for-struct" role="1.6"><primary>gst_queue_array_new_for_struct</primary></indexterm>
+<programlisting language="C"><link linkend="GstQueueArray"><returnvalue>GstQueueArray</returnvalue></link>&#160;*
+gst_queue_array_new_for_struct (<parameter><link linkend="gsize"><type>gsize</type></link> struct_size</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> initial_size</parameter>);</programlisting>
+<para>Allocates a new <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object for elements (e.g. structures)
+of size <parameter>struct_size</parameter>
+, with an initial queue size of <parameter>initial_size</parameter>
+.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-new-for-struct.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>struct_size</para></entry>
+<entry role="parameter_description"><para>Size of each element (e.g. structure) in the array</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>initial_size</para></entry>
+<entry role="parameter_description"><para>Initial size of the new queue</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-new-for-struct.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-queue-array-push-tail-struct" role="function">
+<title>gst_queue_array_push_tail_struct&#160;()</title>
+<indexterm zone="gst-queue-array-push-tail-struct"><primary>gst_queue_array_push_tail_struct</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_queue_array_push_tail_struct (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>,
+                                  <parameter><link linkend="gpointer"><type>gpointer</type></link> p_struct</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-queue-array-peek-head-struct" role="function" condition="since:1.6">
+<title>gst_queue_array_peek_head_struct&#160;()</title>
+<indexterm zone="gst-queue-array-peek-head-struct" role="1.6"><primary>gst_queue_array_peek_head_struct</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_queue_array_peek_head_struct (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Returns the head of the queue <parameter>array</parameter>
+ without removing it from the queue.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-peek-head-struct.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-peek-head-struct.returns" role="returns">
+<title>Returns</title>
+<para> pointer to element or struct, or NULL if <parameter>array</parameter>
+was empty. The
+data pointed to by the returned pointer stays valid only as long as
+the queue array is not modified further!</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-queue-array-pop-head-struct" role="function" condition="since:1.6">
+<title>gst_queue_array_pop_head_struct&#160;()</title>
+<indexterm zone="gst-queue-array-pop-head-struct" role="1.6"><primary>gst_queue_array_pop_head_struct</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_queue_array_pop_head_struct (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>);</programlisting>
+<para>Returns the head of the queue <parameter>array</parameter>
+ and removes it from the queue.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-pop-head-struct.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-pop-head-struct.returns" role="returns">
+<title>Returns</title>
+<para> pointer to element or struct, or NULL if <parameter>array</parameter>
+was empty. The
+data pointed to by the returned pointer stays valid only as long as
+the queue array is not modified further!</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-queue-array-drop-struct" role="function" condition="since:1.6">
+<title>gst_queue_array_drop_struct&#160;()</title>
+<indexterm zone="gst-queue-array-drop-struct" role="1.6"><primary>gst_queue_array_drop_struct</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_queue_array_drop_struct (<parameter><link linkend="GstQueueArray"><type>GstQueueArray</type></link> *array</parameter>,
+                             <parameter><link linkend="guint"><type>guint</type></link> idx</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> p_struct</parameter>);</programlisting>
+<para>Drops the queue element at position <parameter>idx</parameter>
+ from queue <parameter>array</parameter>
+ and copies the
+data of the element or structure that was removed into <parameter>p_struct</parameter>
+ if
+<parameter>p_struct</parameter>
+ is set (not NULL).</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-queue-array-drop-struct.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>array</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstQueueArray"><type>GstQueueArray</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>index to drop</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>p_struct</para></entry>
+<entry role="parameter_description"><para>address into which to store the data of the dropped structure, or NULL</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-queue-array-drop-struct.returns" role="returns">
+<title>Returns</title>
+<para> TRUE on success, or FALSE on error</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstQueueArray.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstQueueArray" role="struct">
+<title>GstQueueArray</title>
+<indexterm zone="GstQueueArray"><primary>GstQueueArray</primary></indexterm>
+<programlisting language="C">typedef struct _GstQueueArray GstQueueArray;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

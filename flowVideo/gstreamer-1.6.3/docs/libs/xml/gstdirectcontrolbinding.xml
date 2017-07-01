@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstDirectControlBinding">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstDirectControlBinding.top_of_page">GstDirectControlBinding</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDirectControlBinding</refname>
+<refpurpose>direct attachment for control sources</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstDirectControlBinding.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstControlBinding"><returnvalue>GstControlBinding</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-direct-control-binding-new">gst_direct_control_binding_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstControlBinding"><returnvalue>GstControlBinding</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-direct-control-binding-new-absolute">gst_direct_control_binding_new_absolute</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstDirectControlBinding.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDirectControlBinding--absolute">absolute</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="GstControlSource"><type>GstControlSource</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstDirectControlBinding--control-source">control-source</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstDirectControlBinding.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstControlBinding">GstControlBinding</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstDirectControlBinding
+</screen>
+</refsect1>
+
+<refsect1 id="GstDirectControlBinding.includes"><title>Includes</title><synopsis>#include &lt;libs/controller/gstdirectcontrolbinding.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstDirectControlBinding.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A value mapping object that attaches control sources to gobject properties. It
+will map the control values [0.0 ... 1.0] to the target property range. If a
+control value is outside of the range, it will be clipped.</para>
+
+</refsect1>
+<refsect1 id="GstDirectControlBinding.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-direct-control-binding-new" role="function">
+<title>gst_direct_control_binding_new&#160;()</title>
+<indexterm zone="gst-direct-control-binding-new"><primary>gst_direct_control_binding_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstControlBinding"><returnvalue>GstControlBinding</returnvalue></link>&#160;*
+gst_direct_control_binding_new (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>,
+                                <parameter><link linkend="GstControlSource"><type>GstControlSource</type></link> *cs</parameter>);</programlisting>
+<para>Create a new control-binding that attaches the <link linkend="GstControlSource"><type>GstControlSource</type></link> to the
+<link linkend="GObject"><type>GObject</type></link> property.</para>
+<refsect3 id="gst-direct-control-binding-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object of the property</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>the property-name to attach the control source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cs</para></entry>
+<entry role="parameter_description"><para>the control source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-direct-control-binding-new.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstDirectControlBinding"><type>GstDirectControlBinding</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-direct-control-binding-new-absolute" role="function" condition="since:1.6">
+<title>gst_direct_control_binding_new_absolute&#160;()</title>
+<indexterm zone="gst-direct-control-binding-new-absolute" role="1.6"><primary>gst_direct_control_binding_new_absolute</primary></indexterm>
+<programlisting language="C"><link linkend="GstControlBinding"><returnvalue>GstControlBinding</returnvalue></link>&#160;*
+gst_direct_control_binding_new_absolute
+                               (<parameter><link linkend="GstObject"><type>GstObject</type></link> *object</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *property_name</parameter>,
+                                <parameter><link linkend="GstControlSource"><type>GstControlSource</type></link> *cs</parameter>);</programlisting>
+<para>Create a new control-binding that attaches the <link linkend="GstControlSource"><type>GstControlSource</type></link> to the
+<link linkend="GObject"><type>GObject</type></link> property.</para>
+<refsect3 id="gst-direct-control-binding-new-absolute.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object of the property</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>property_name</para></entry>
+<entry role="parameter_description"><para>the property-name to attach the control source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cs</para></entry>
+<entry role="parameter_description"><para>the control source</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-direct-control-binding-new-absolute.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstDirectControlBinding"><type>GstDirectControlBinding</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstDirectControlBinding.other_details" role="details">
+<title role="details.title">Types and Values</title>
+
+</refsect1>
+<refsect1 id="GstDirectControlBinding.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDirectControlBinding--absolute" role="property"><title>The <literal>“absolute”</literal> property</title>
+<indexterm zone="GstDirectControlBinding--absolute"><primary>GstDirectControlBinding:absolute</primary></indexterm>
+<programlisting>  “absolute”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether the control values are absolute.</para><para>Flags: Read / Write / Construct Only</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstDirectControlBinding--control-source" role="property"><title>The <literal>“control-source”</literal> property</title>
+<indexterm zone="GstDirectControlBinding--control-source"><primary>GstDirectControlBinding:control-source</primary></indexterm>
+<programlisting>  “control-source”           <link linkend="GstControlSource"><type>GstControlSource</type></link>&#160;*</programlisting>
+<para>The control source.</para><para>Flags: Read / Write / Construct</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

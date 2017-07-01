@@ -1,0 +1,414 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-fakesrc">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-fakesrc.top_of_page" role="top_of_page">fakesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fakesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-fakesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--can-activate-pull">can-activate-pull</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--can-activate-push">can-activate-push</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="GstFakeSrcDataType"><type>GstFakeSrcDataType</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--data">data</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--datarate">datarate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--dump">dump</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstFakeSrcFillType"><type>GstFakeSrcFillType</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--filltype">filltype</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstFormat"><type>GstFormat</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--format">format</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--is-live">is-live</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstFakeSrc--last-message">last-message</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--parentsize">parentsize</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstFakeSrc--pattern">pattern</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--signal-handoffs">signal-handoffs</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--silent">silent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--sizemax">sizemax</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--sizemin">sizemin</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstFakeSrcSizeType"><type>GstFakeSrcSizeType</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--sizetype">sizetype</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFakeSrc--sync">sync</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstFakeSrc-handoff">handoff</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFakeSrc"/><refsect1 id="gstreamer-plugins-fakesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFakeSrc-struct">GstFakeSrc</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFakeSrcDataType">GstFakeSrcDataType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFakeSrcFillType">GstFakeSrcFillType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFakeSrcOutputType">GstFakeSrcOutputType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstFakeSrcSizeType">GstFakeSrcSizeType</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> GstFakeSrc
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-fakesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The fakesrc element is a multipurpose element that can generate
+a wide range of buffers and can operate in various scheduling modes.</para>
+<para>It is mostly used as a testing element, one trivial example for testing
+basic <application>GStreamer</application> core functionality is:</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v fakesrc num-buffers=5 ! fakesink
+]]></programlisting></informalexample> This pipeline will push 5 empty buffers to the fakesink element and then
+sends an EOS.
+</refsect2>
+
+<include href="element-fakesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFakeSrc-struct" role="struct">
+<title>struct GstFakeSrc</title>
+<indexterm zone="GstFakeSrc-struct"><primary>GstFakeSrc</primary></indexterm>
+<programlisting language="C">struct GstFakeSrc;</programlisting>
+<para>Opaque <link linkend="GstFakeSrc"><type>GstFakeSrc</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstFakeSrcDataType" role="enum">
+<title>enum GstFakeSrcDataType</title>
+<indexterm zone="GstFakeSrcDataType"><primary>GstFakeSrcDataType</primary></indexterm>
+<para>The different ways buffers are allocated.</para>
+<refsect3 id="GstFakeSrcDataType.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-DATA-ALLOCATE:CAPS">FAKE_SRC_DATA_ALLOCATE</para></entry>
+<entry role="enum_member_description"><para>allocate buffers</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-DATA-SUBBUFFER:CAPS">FAKE_SRC_DATA_SUBBUFFER</para></entry>
+<entry role="enum_member_description"><para>subbuffer each buffer</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstFakeSrcFillType" role="enum">
+<title>enum GstFakeSrcFillType</title>
+<indexterm zone="GstFakeSrcFillType"><primary>GstFakeSrcFillType</primary></indexterm>
+<para>The different ways of filling the buffers.</para>
+<refsect3 id="GstFakeSrcFillType.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-FILLTYPE-NOTHING:CAPS">FAKE_SRC_FILLTYPE_NOTHING</para></entry>
+<entry role="enum_member_description"><para>do not fill buffers </para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-FILLTYPE-ZERO:CAPS">FAKE_SRC_FILLTYPE_ZERO</para></entry>
+<entry role="enum_member_description"><para>fill buffers with 0</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-FILLTYPE-RANDOM:CAPS">FAKE_SRC_FILLTYPE_RANDOM</para></entry>
+<entry role="enum_member_description"><para>fill buffers with random bytes</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-FILLTYPE-PATTERN:CAPS">FAKE_SRC_FILLTYPE_PATTERN</para></entry>
+<entry role="enum_member_description"><para>fill buffers with a pattern</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-FILLTYPE-PATTERN-CONT:CAPS">FAKE_SRC_FILLTYPE_PATTERN_CONT</para></entry>
+<entry role="enum_member_description"><para>fill buffers with a continuous pattern</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstFakeSrcOutputType" role="enum">
+<title>enum GstFakeSrcOutputType</title>
+<indexterm zone="GstFakeSrcOutputType"><primary>GstFakeSrcOutputType</primary></indexterm>
+<para>The different output types. Unused currently.</para>
+<refsect3 id="GstFakeSrcOutputType.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-FIRST-LAST-LOOP:CAPS">FAKE_SRC_FIRST_LAST_LOOP</para></entry>
+<entry role="enum_member_description"><para>first pad then last pad</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-LAST-FIRST-LOOP:CAPS">FAKE_SRC_LAST_FIRST_LOOP</para></entry>
+<entry role="enum_member_description"><para>last pad then first pad</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-PING-PONG:CAPS">FAKE_SRC_PING_PONG</para></entry>
+<entry role="enum_member_description"><para>ping pong between pads</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-ORDERED-RANDOM:CAPS">FAKE_SRC_ORDERED_RANDOM</para></entry>
+<entry role="enum_member_description"><para>ordered random pad</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-RANDOM:CAPS">FAKE_SRC_RANDOM</para></entry>
+<entry role="enum_member_description"><para>random pad</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-PATTERN-LOOP:CAPS">FAKE_SRC_PATTERN_LOOP</para></entry>
+<entry role="enum_member_description"><para>loop between pads in a particular pattern</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-PING-PONG-PATTERN:CAPS">FAKE_SRC_PING_PONG_PATTERN</para></entry>
+<entry role="enum_member_description"><para>ping pong based on a pattern</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-GET-ALWAYS-SUCEEDS:CAPS">FAKE_SRC_GET_ALWAYS_SUCEEDS</para></entry>
+<entry role="enum_member_description"><para>a get always succeeds on a pad</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstFakeSrcSizeType" role="enum">
+<title>enum GstFakeSrcSizeType</title>
+<indexterm zone="GstFakeSrcSizeType"><primary>GstFakeSrcSizeType</primary></indexterm>
+<para>The different size of the allocated buffers.</para>
+<refsect3 id="GstFakeSrcSizeType.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-SIZETYPE-EMPTY:CAPS">FAKE_SRC_SIZETYPE_EMPTY</para></entry>
+<entry role="enum_member_description"><para>create empty buffers</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-SIZETYPE-FIXED:CAPS">FAKE_SRC_SIZETYPE_FIXED</para></entry>
+<entry role="enum_member_description"><para>fixed buffer size (sizemax sized)</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FAKE-SRC-SIZETYPE-RANDOM:CAPS">FAKE_SRC_SIZETYPE_RANDOM</para></entry>
+<entry role="enum_member_description"><para>random buffer size (sizemin &lt;= size &lt;= sizemax)</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFakeSrc--can-activate-pull" role="property"><title>The <literal>“can-activate-pull”</literal> property</title>
+<indexterm zone="GstFakeSrc--can-activate-pull"><primary>GstFakeSrc:can-activate-pull</primary></indexterm>
+<programlisting>  “can-activate-pull”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Can activate in pull mode.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--can-activate-push" role="property"><title>The <literal>“can-activate-push”</literal> property</title>
+<indexterm zone="GstFakeSrc--can-activate-push"><primary>GstFakeSrc:can-activate-push</primary></indexterm>
+<programlisting>  “can-activate-push”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Can activate in push mode.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--data" role="property"><title>The <literal>“data”</literal> property</title>
+<indexterm zone="GstFakeSrc--data"><primary>GstFakeSrc:data</primary></indexterm>
+<programlisting>  “data”                     <link linkend="GstFakeSrcDataType"><type>GstFakeSrcDataType</type></link></programlisting>
+<para>Data allocation method.</para><para>Flags: Read / Write</para>
+<para>Default value: Allocate data</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--datarate" role="property"><title>The <literal>“datarate”</literal> property</title>
+<indexterm zone="GstFakeSrc--datarate"><primary>GstFakeSrc:datarate</primary></indexterm>
+<programlisting>  “datarate”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Timestamps buffers with number of bytes per second (0 = none).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--dump" role="property"><title>The <literal>“dump”</literal> property</title>
+<indexterm zone="GstFakeSrc--dump"><primary>GstFakeSrc:dump</primary></indexterm>
+<programlisting>  “dump”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Dump buffer contents to stdout.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--filltype" role="property"><title>The <literal>“filltype”</literal> property</title>
+<indexterm zone="GstFakeSrc--filltype"><primary>GstFakeSrc:filltype</primary></indexterm>
+<programlisting>  “filltype”                 <link linkend="GstFakeSrcFillType"><type>GstFakeSrcFillType</type></link></programlisting>
+<para>How to fill the buffer, if at all.</para><para>Flags: Read / Write</para>
+<para>Default value: Fill buffers with zeros</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--format" role="property"><title>The <literal>“format”</literal> property</title>
+<indexterm zone="GstFakeSrc--format"><primary>GstFakeSrc:format</primary></indexterm>
+<programlisting>  “format”                   <link linkend="GstFormat"><type>GstFormat</type></link></programlisting>
+<para>Set the format of the newsegment events to produce.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: GST_FORMAT_BYTES</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--is-live" role="property"><title>The <literal>“is-live”</literal> property</title>
+<indexterm zone="GstFakeSrc--is-live"><primary>GstFakeSrc:is-live</primary></indexterm>
+<programlisting>  “is-live”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>True if the element cannot produce data in PAUSED.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--last-message" role="property"><title>The <literal>“last-message”</literal> property</title>
+<indexterm zone="GstFakeSrc--last-message"><primary>GstFakeSrc:last-message</primary></indexterm>
+<programlisting>  “last-message”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The last status message.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--parentsize" role="property"><title>The <literal>“parentsize”</literal> property</title>
+<indexterm zone="GstFakeSrc--parentsize"><primary>GstFakeSrc:parentsize</primary></indexterm>
+<programlisting>  “parentsize”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Size of parent buffer for sub-buffered allocation.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 40960</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--pattern" role="property"><title>The <literal>“pattern”</literal> property</title>
+<indexterm zone="GstFakeSrc--pattern"><primary>GstFakeSrc:pattern</primary></indexterm>
+<programlisting>  “pattern”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Set the pattern (unused).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--signal-handoffs" role="property"><title>The <literal>“signal-handoffs”</literal> property</title>
+<indexterm zone="GstFakeSrc--signal-handoffs"><primary>GstFakeSrc:signal-handoffs</primary></indexterm>
+<programlisting>  “signal-handoffs”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Send a signal before pushing the buffer.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--silent" role="property"><title>The <literal>“silent”</literal> property</title>
+<indexterm zone="GstFakeSrc--silent"><primary>GstFakeSrc:silent</primary></indexterm>
+<programlisting>  “silent”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Don't produce last_message events.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--sizemax" role="property"><title>The <literal>“sizemax”</literal> property</title>
+<indexterm zone="GstFakeSrc--sizemax"><primary>GstFakeSrc:sizemax</primary></indexterm>
+<programlisting>  “sizemax”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum buffer size.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 4096</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--sizemin" role="property"><title>The <literal>“sizemin”</literal> property</title>
+<indexterm zone="GstFakeSrc--sizemin"><primary>GstFakeSrc:sizemin</primary></indexterm>
+<programlisting>  “sizemin”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Minimum buffer size.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--sizetype" role="property"><title>The <literal>“sizetype”</literal> property</title>
+<indexterm zone="GstFakeSrc--sizetype"><primary>GstFakeSrc:sizetype</primary></indexterm>
+<programlisting>  “sizetype”                 <link linkend="GstFakeSrcSizeType"><type>GstFakeSrcSizeType</type></link></programlisting>
+<para>How to determine buffer sizes.</para><para>Flags: Read / Write</para>
+<para>Default value: Send empty buffers</para>
+</refsect2>
+<refsect2 id="GstFakeSrc--sync" role="property"><title>The <literal>“sync”</literal> property</title>
+<indexterm zone="GstFakeSrc--sync"><primary>GstFakeSrc:sync</primary></indexterm>
+<programlisting>  “sync”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Sync to the clock to the datarate.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstFakeSrc-handoff" role="signal"><title>The <literal>“handoff”</literal> signal</title>
+<indexterm zone="GstFakeSrc-handoff"><primary>GstFakeSrc::handoff</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstFakeSrc"><type>GstFakeSrc</type></link> *fakesrc,
+               <link linkend="GstBuffer"><type>GstBuffer</type></link>  *buffer,
+               <link linkend="GstPad"><type>GstPad</type></link>     *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>This signal gets emitted before sending the buffer.</para>
+<refsect3 id="GstFakeSrc-handoff.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>fakesrc</para></entry>
+<entry role="parameter_description"><para>the fakesrc instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the buffer that will be pushed</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad that will sent it</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fakesrc.see-also">
+<title>See Also</title>
+<para><link linkend="GstFakeSink"><type>GstFakeSink</type></link></para>
+
+</refsect1>
+
+</refentry>

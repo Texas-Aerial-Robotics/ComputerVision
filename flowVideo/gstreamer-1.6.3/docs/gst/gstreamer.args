@@ -1,0 +1,220 @@
+<ARG>
+<NAME>GstBin::async-handling</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Async Handling</NICK>
+<BLURB>The bin will handle Asynchronous state changes.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBin::message-forward</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Message Forward</NICK>
+<BLURB>Forwards all children messages.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBus::enable-async</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>wX</FLAGS>
+<NICK>Enable Async</NICK>
+<BLURB>Enable async message delivery for bus watches and gst_bus_pop().</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstClock::timeout</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Timeout</NICK>
+<BLURB>The amount of time, in nanoseconds, to sample master and slave clocks.</BLURB>
+<DEFAULT>100000000</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstClock::window-size</NAME>
+<TYPE>gint</TYPE>
+<RANGE>[2,1024]</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Window size</NICK>
+<BLURB>The size of the window used to calculate rate and offset.</BLURB>
+<DEFAULT>32</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstClock::window-threshold</NAME>
+<TYPE>gint</TYPE>
+<RANGE>[2,1024]</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Window threshold</NICK>
+<BLURB>The threshold to start calculating rate and offset.</BLURB>
+<DEFAULT>4</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstControlBinding::name</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Name</NICK>
+<BLURB>The name of the property.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstControlBinding::object</NAME>
+<TYPE>GstObject*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Object</NICK>
+<BLURB>The object of the property.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstObject::name</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>Name</NICK>
+<BLURB>The name of the object.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstObject::parent</NAME>
+<TYPE>GstObject*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Parent</NICK>
+<BLURB>The parent of the object.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPad::caps</NAME>
+<TYPE>GstCaps*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Caps</NICK>
+<BLURB>The capabilities of the pad.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPad::direction</NAME>
+<TYPE>GstPadDirection</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Direction</NICK>
+<BLURB>The direction of the pad.</BLURB>
+<DEFAULT>GST_PAD_UNKNOWN</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPad::offset</NAME>
+<TYPE>gint64</TYPE>
+<RANGE>>= 0</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Offset</NICK>
+<BLURB>The running time offset of the pad.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPad::template</NAME>
+<TYPE>GstPadTemplate*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Template</NICK>
+<BLURB>The GstPadTemplate of this pad.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPadTemplate::caps</NAME>
+<TYPE>GstCaps*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Caps</NICK>
+<BLURB>The capabilities of the pad described by the pad template.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPadTemplate::direction</NAME>
+<TYPE>GstPadDirection</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Direction</NICK>
+<BLURB>The direction of the pad described by the pad template.</BLURB>
+<DEFAULT>GST_PAD_UNKNOWN</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPadTemplate::name-template</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Name template</NICK>
+<BLURB>The name template of the pad template.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPadTemplate::presence</NAME>
+<TYPE>GstPadPresence</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Presence</NICK>
+<BLURB>When the pad described by the pad template will become available.</BLURB>
+<DEFAULT>GST_PAD_ALWAYS</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPipeline::auto-flush-bus</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Auto Flush Bus</NICK>
+<BLURB>Whether to automatically flush the pipeline's bus when going from READY into NULL state.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPipeline::delay</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Delay</NICK>
+<BLURB>Expected delay needed for elements to spin up to PLAYING in nanoseconds.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstPipeline::latency</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Latency</NICK>
+<BLURB>Latency to configure on the pipeline.</BLURB>
+<DEFAULT>18446744073709551615</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstSystemClock::clock-type</NAME>
+<TYPE>GstClockType</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Clock type</NICK>
+<BLURB>The type of underlying clock implementation used.</BLURB>
+<DEFAULT>GST_CLOCK_TYPE_MONOTONIC</DEFAULT>
+</ARG>
+

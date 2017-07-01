@@ -1,0 +1,137 @@
+<SIGNAL>
+<NAME>GstBin::do-latency</NAME>
+<RETURNS>gboolean</RETURNS>
+<FLAGS>l</FLAGS>
+GstBin *gstbin
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstBin::element-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>f</FLAGS>
+GstBin *gstbin
+GstElement *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstBin::element-removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>f</FLAGS>
+GstBin *gstbin
+GstElement *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstBus::message</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>ld</FLAGS>
+GstBus *gstbus
+GstMessage *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstBus::sync-message</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>ld</FLAGS>
+GstBus *gstbus
+GstMessage *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstChildProxy::child-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>f</FLAGS>
+GstChildProxy *gstchildproxy
+GObject *arg1
+gchar *arg2
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstChildProxy::child-removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>f</FLAGS>
+GstChildProxy *gstchildproxy
+GObject *arg1
+gchar *arg2
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstClock::synced</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstClock *gstclock
+gboolean  arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstElement::no-more-pads</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstElement *gstelement
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstElement::pad-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstElement *gstelement
+GstPad *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstElement::pad-removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstElement *gstelement
+GstPad *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstObject::deep-notify</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>frdh</FLAGS>
+GstObject *gstobject
+GstObject *arg1
+GParamSpec *arg2
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstPad::linked</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstPad *gstpad
+GstPad *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstPad::unlinked</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstPad *gstpad
+GstPad *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstPadTemplate::pad-created</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstPadTemplate *gstpadtemplate
+GstPad *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRegistry::feature-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRegistry *gstregistry
+GstPluginFeature *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRegistry::plugin-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRegistry *gstregistry
+GstPlugin *arg1
+</SIGNAL>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE screen PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<screen>
+    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstFakeSink">GstFakeSink</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstFdSink">GstFdSink</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstFileSink">GstFileSink</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstFakeSrc">GstFakeSrc</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstFileSrc">GstFileSrc</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstFdSrc">GstFdSrc</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstCapsFilter">GstCapsFilter</link>
+                <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstIdentity">GstIdentity</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstConcat">GstConcat</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstDownloadBuffer">GstDownloadBuffer</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstFunnel">GstFunnel</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstInputSelector">GstInputSelector</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstMultiQueue">GstMultiQueue</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstOutputSelector">GstOutputSelector</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstQueue">GstQueue</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstQueue2">GstQueue2</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstStreamidDemux">GstStreamidDemux</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTee">GstTee</link>
+                <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTypeFindElement">GstTypeFindElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstValve">GstValve</link>
+</screen>

@@ -1,0 +1,420 @@
+<ARG>
+<NAME>GstBaseParse::disable-passthrough</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Disable passthrough</NICK>
+<BLURB>Force processing (disables passthrough).</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSrc::blocksize</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Block size</NICK>
+<BLURB>Size in bytes to read per buffer (-1 = default).</BLURB>
+<DEFAULT>4096</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSrc::do-timestamp</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Do timestamp</NICK>
+<BLURB>Apply current stream time to buffers.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSrc::num-buffers</NAME>
+<TYPE>gint</TYPE>
+<RANGE>>= -1</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>num-buffers</NICK>
+<BLURB>Number of buffers to output before sending EOS (-1 = unlimited).</BLURB>
+<DEFAULT>-1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSrc::typefind</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Typefind</NICK>
+<BLURB>Run typefind before negotiating.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::async</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Async</NICK>
+<BLURB>Go asynchronously to PAUSED.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::blocksize</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Block size</NICK>
+<BLURB>Size in bytes to pull per buffer (0 = default).</BLURB>
+<DEFAULT>4096</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::enable-last-sample</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Enable Last Buffer</NICK>
+<BLURB>Enable the last-sample property.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::last-sample</NAME>
+<TYPE>GstSample*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Last Sample</NICK>
+<BLURB>The last sample received in the sink.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::max-bitrate</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Max Bitrate</NICK>
+<BLURB>The maximum bits per second to render (0 = disabled).</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::max-lateness</NAME>
+<TYPE>gint64</TYPE>
+<RANGE>>= -1</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Max Lateness</NICK>
+<BLURB>Maximum number of nanoseconds that a buffer can be late before it is dropped (-1 unlimited).</BLURB>
+<DEFAULT>-1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::qos</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Qos</NICK>
+<BLURB>Generate Quality-of-Service events upstream.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::render-delay</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Render Delay</NICK>
+<BLURB>Additional render delay of the sink in nanoseconds.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::sync</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Sync</NICK>
+<BLURB>Sync on the clock.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::throttle-time</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Throttle time</NICK>
+<BLURB>The time to keep between rendered buffers (0 = disabled).</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseSink::ts-offset</NAME>
+<TYPE>gint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>TS Offset</NICK>
+<BLURB>Timestamp offset in nanoseconds.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstBaseTransform::qos</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>QoS</NICK>
+<BLURB>Handle Quality-of-Service events.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstARGBControlBinding::control-source-a</NAME>
+<TYPE>GstControlSource*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>ControlSource A</NICK>
+<BLURB>The control source for the alpha color component.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstARGBControlBinding::control-source-b</NAME>
+<TYPE>GstControlSource*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>ControlSource B</NICK>
+<BLURB>The control source for the blue color component.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstARGBControlBinding::control-source-g</NAME>
+<TYPE>GstControlSource*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>ControlSource G</NICK>
+<BLURB>The control source for the green color component.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstARGBControlBinding::control-source-r</NAME>
+<TYPE>GstControlSource*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>ControlSource R</NICK>
+<BLURB>The control source for the red color component.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstDirectControlBinding::absolute</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Absolute</NICK>
+<BLURB>Whether the control values are absolute.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstDirectControlBinding::control-source</NAME>
+<TYPE>GstControlSource*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>ControlSource</NICK>
+<BLURB>The control source.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstInterpolationControlSource::mode</NAME>
+<TYPE>GstInterpolationMode</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Mode</NICK>
+<BLURB>Interpolation mode.</BLURB>
+<DEFAULT>GST_INTERPOLATION_MODE_NONE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstLFOControlSource::amplitude</NAME>
+<TYPE>gdouble</TYPE>
+<RANGE>[0,1]</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Amplitude</NICK>
+<BLURB>Amplitude of the waveform.</BLURB>
+<DEFAULT>1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstLFOControlSource::frequency</NAME>
+<TYPE>gdouble</TYPE>
+<RANGE>>= G_MINDOUBLE</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Frequency</NICK>
+<BLURB>Frequency of the waveform.</BLURB>
+<DEFAULT>1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstLFOControlSource::offset</NAME>
+<TYPE>gdouble</TYPE>
+<RANGE>[0,1]</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Offset</NICK>
+<BLURB>Offset of the waveform.</BLURB>
+<DEFAULT>1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstLFOControlSource::timeshift</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Timeshift</NICK>
+<BLURB>Timeshift of the waveform to the right.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstLFOControlSource::waveform</NAME>
+<TYPE>GstLFOWaveform</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Waveform</NICK>
+<BLURB>Waveform.</BLURB>
+<DEFAULT>GST_LFO_WAVEFORM_SINE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstTriggerControlSource::tolerance</NAME>
+<TYPE>gint64</TYPE>
+<RANGE>>= 0</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Tolerance</NICK>
+<BLURB>Amount of ns a control time can be off to still trigger.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::address</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>address</NICK>
+<BLURB>The IP address of the machine providing a time server.</BLURB>
+<DEFAULT>"127.0.0.1"</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::base-time</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Base Time</NICK>
+<BLURB>Initial time that is reported before synchronization.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::bus</NAME>
+<TYPE>GstBus*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>bus</NICK>
+<BLURB>A GstBus on which to send clock status information.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::internal-clock</NAME>
+<TYPE>GstClock*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Internal Clock</NICK>
+<BLURB>Internal clock that directly slaved to the remote clock.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::minimum-update-interval</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>minimum update interval</NICK>
+<BLURB>Minimum polling interval for packets, in nanoseconds(0 = no limit).</BLURB>
+<DEFAULT>50000000</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::port</NAME>
+<TYPE>gint</TYPE>
+<RANGE>[0,65535]</RANGE>
+<FLAGS>rwx</FLAGS>
+<NICK>port</NICK>
+<BLURB>The port on which the remote server is listening.</BLURB>
+<DEFAULT>5637</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetClientClock::round-trip-limit</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>round-trip limit</NICK>
+<BLURB>Maximum tolerable round-trip interval for packets, in nanoseconds (0 = no limit).</BLURB>
+<DEFAULT>1000000000</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetTimeProvider::active</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Active</NICK>
+<BLURB>TRUE if the clock will respond to queries over the network.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetTimeProvider::address</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>address</NICK>
+<BLURB>The address to bind on, as a dotted quad (x.x.x.x).</BLURB>
+<DEFAULT>"0.0.0.0"</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetTimeProvider::clock</NAME>
+<TYPE>GstClock*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Clock</NICK>
+<BLURB>The clock to export over the network.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstNetTimeProvider::port</NAME>
+<TYPE>gint</TYPE>
+<RANGE>[0,65535]</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>port</NICK>
+<BLURB>The port to receive the packets from, 0=allocate.</BLURB>
+<DEFAULT>5637</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstTestClock::start-time</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Start Time</NICK>
+<BLURB>Start Time of the Clock.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+

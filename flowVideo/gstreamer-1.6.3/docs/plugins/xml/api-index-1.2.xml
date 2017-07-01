@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-1.2">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstQueue--flush-on-eos"><link linkend="GstQueue--flush-on-eos">GstQueue:flush-on-eos</link>, object property in <link linkend="gstreamer-plugins-queue">queue</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

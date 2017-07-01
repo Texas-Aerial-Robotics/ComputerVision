@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstTocSetter">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstTocSetter.top_of_page">GstTocSetter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTocSetter</refname>
+<refpurpose>Element interface that allows setting and retrieval
+                    of the TOC</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstTocSetter.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-toc-setter-set-toc">gst_toc_setter_set_toc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstToc"><returnvalue>GstToc</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-toc-setter-get-toc">gst_toc_setter_get_toc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-toc-setter-reset">gst_toc_setter_reset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstTocSetter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstTocSetter">GstTocSetter</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTocSetterInterface">GstTocSetterInterface</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstTocSetter.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstTocSetter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Element interface that allows setting of the TOC.</para>
+<para>Elements that support some kind of chapters or editions (or tracks like in
+the FLAC cue sheet) will implement this interface.</para>
+<para>If you just want to retrieve the TOC in your application then all you
+need to do is watch for TOC messages on your pipeline's bus (or you can
+perform TOC query). This interface is only for setting TOC data, not for
+extracting it. To set TOC from the application, find proper tocsetter element
+and set TOC using <link linkend="gst-toc-setter-set-toc"><function>gst_toc_setter_set_toc()</function></link>.</para>
+<para>Elements implementing the <link linkend="GstTocSetter"><type>GstTocSetter</type></link> interface can extend existing TOC
+by getting extend UID for that (you can use <link linkend="gst-toc-find-entry"><function>gst_toc_find_entry()</function></link> to retrieve it)
+with any TOC entries received from downstream.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstTocSetter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-toc-setter-set-toc" role="function">
+<title>gst_toc_setter_set_toc&#160;()</title>
+<indexterm zone="gst-toc-setter-set-toc"><primary>gst_toc_setter_set_toc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_toc_setter_set_toc (<parameter><link linkend="GstTocSetter"><type>GstTocSetter</type></link> *setter</parameter>,
+                        <parameter><link linkend="GstToc"><type>GstToc</type></link> *toc</parameter>);</programlisting>
+<para>Set the given TOC on the setter. Previously set TOC will be
+unreffed before setting a new one.</para>
+<refsect3 id="gst-toc-setter-set-toc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTocSetter"><type>GstTocSetter</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>toc</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstToc"><type>GstToc</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-toc-setter-get-toc" role="function">
+<title>gst_toc_setter_get_toc&#160;()</title>
+<indexterm zone="gst-toc-setter-get-toc"><primary>gst_toc_setter_get_toc</primary></indexterm>
+<programlisting language="C"><link linkend="GstToc"><returnvalue>GstToc</returnvalue></link>&#160;*
+gst_toc_setter_get_toc (<parameter><link linkend="GstTocSetter"><type>GstTocSetter</type></link> *setter</parameter>);</programlisting>
+<para>Return current TOC the setter uses. The TOC should not be
+modified without making it writable first.</para>
+<refsect3 id="gst-toc-setter-get-toc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTocSetter"><type>GstTocSetter</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-toc-setter-get-toc.returns" role="returns">
+<title>Returns</title>
+<para> TOC set, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. Unref with
+<link linkend="gst-toc-unref"><function>gst_toc_unref()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-toc-setter-reset" role="function">
+<title>gst_toc_setter_reset&#160;()</title>
+<indexterm zone="gst-toc-setter-reset"><primary>gst_toc_setter_reset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_toc_setter_reset (<parameter><link linkend="GstTocSetter"><type>GstTocSetter</type></link> *setter</parameter>);</programlisting>
+<para>Reset the internal TOC. Elements should call this from within the
+state-change handler.</para>
+<refsect3 id="gst-toc-setter-reset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>setter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTocSetter"><type>GstTocSetter</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstTocSetter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTocSetter" role="struct">
+<title>GstTocSetter</title>
+<indexterm zone="GstTocSetter"><primary>GstTocSetter</primary></indexterm>
+<programlisting language="C">typedef struct _GstTocSetter GstTocSetter;</programlisting>
+<para>Opaque <link linkend="GstTocSetter"><type>GstTocSetter</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstTocSetterInterface" role="struct">
+<title>struct GstTocSetterInterface</title>
+<indexterm zone="GstTocSetterInterface"><primary>GstTocSetterInterface</primary></indexterm>
+<programlisting language="C">struct GstTocSetterInterface {
+  GTypeInterface g_iface;
+
+  /* signals */
+
+  /* virtual table */
+};
+</programlisting>
+<para><link linkend="GstTocSetterInterface"><type>GstTocSetterInterface</type></link> interface.</para>
+<refsect3 id="GstTocSetterInterface.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

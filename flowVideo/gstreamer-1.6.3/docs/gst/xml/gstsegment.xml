@@ -1,0 +1,821 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstSegment">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstSegment.top_of_page">GstSegment</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstSegment</refname>
+<refpurpose>Structure describing the configured region of interest
+                    in a media file.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstSegment.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-clip">gst_segment_clip</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-init">gst_segment_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstSegment"><returnvalue>GstSegment</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-segment-new">gst_segment_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstSegment"><returnvalue>GstSegment</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-segment-copy">gst_segment_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-free">gst_segment_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-do-seek">gst_segment_do_seek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-to-running-time">gst_segment_to_running_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-to-running-time-full">gst_segment_to_running_time_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-to-stream-time">gst_segment_to_stream_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-to-position">gst_segment_to_position</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-set-running-time">gst_segment_set_running_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-copy-into">gst_segment_copy_into</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-offset-running-time">gst_segment_offset_running_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-segment-is-equal">gst_segment_is_equal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstSegment.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSegment-struct">GstSegment</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstSegmentFlags">GstSegmentFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstSegment.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstSegment
+</screen>
+</refsect1>
+
+<refsect1 id="GstSegment.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstSegment.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This helper structure holds the relevant values for tracking the region of
+interest in a media file, called a segment.</para>
+<para>The structure can be used for two purposes:</para>
+<itemizedlist>
+  <listitem><para>performing seeks (handling seek events)</para></listitem>
+  <listitem><para>tracking playback regions (handling newsegment events)</para></listitem>
+</itemizedlist>
+<para>The segment is usually configured by the application with a seek event which
+is propagated upstream and eventually handled by an element that performs the seek.</para>
+<para>The configured segment is then propagated back downstream with a newsegment event.
+This information is then used to clip media to the segment boundaries.</para>
+<para>A segment structure is initialized with <link linkend="gst-segment-init"><function>gst_segment_init()</function></link>, which takes a <link linkend="GstFormat"><type>GstFormat</type></link>
+that will be used as the format of the segment values. The segment will be configured
+with a start value of 0 and a stop/duration of -1, which is undefined. The default
+rate and applied_rate is 1.0.</para>
+<para>The public duration field contains the duration of the segment. When using
+the segment for seeking, the start and time members should normally be left
+to their default 0 value. The stop position is left to -1 unless explicitly
+configured to a different value after a seek event.</para>
+<para>The current position in the segment should be set by changing the position
+member in the structure.</para>
+<para>For elements that perform seeks, the current segment should be updated with the
+<link linkend="gst-segment-do-seek"><function>gst_segment_do_seek()</function></link> and the values from the seek event. This method will update
+all the segment fields. The position field will contain the new playback position.
+If the start_type was different from GST_SEEK_TYPE_NONE, playback continues from
+the position position, possibly with updated flags or rate.</para>
+<para>For elements that want to use <link linkend="GstSegment"><type>GstSegment</type></link> to track the playback region,
+update the segment fields with the information from the newsegment event.
+The <link linkend="gst-segment-clip"><function>gst_segment_clip()</function></link> method can be used to check and clip
+the media data to the segment boundaries.</para>
+<para>For elements that want to synchronize to the pipeline clock, <link linkend="gst-segment-to-running-time"><function>gst_segment_to_running_time()</function></link>
+can be used to convert a timestamp to a value that can be used to synchronize
+to the clock. This function takes into account the base as well as
+any rate or applied_rate conversions.</para>
+<para>For elements that need to perform operations on media data in stream_time,
+<link linkend="gst-segment-to-stream-time"><function>gst_segment_to_stream_time()</function></link> can be used to convert a timestamp and the segment
+info to stream time (which is always between 0 and the duration of the stream).</para>
+
+</refsect1>
+<refsect1 id="GstSegment.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-segment-clip" role="function">
+<title>gst_segment_clip&#160;()</title>
+<indexterm zone="gst-segment-clip"><primary>gst_segment_clip</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_segment_clip (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                  <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                  <parameter><link linkend="guint64"><type>guint64</type></link> start</parameter>,
+                  <parameter><link linkend="guint64"><type>guint64</type></link> stop</parameter>,
+                  <parameter><link linkend="guint64"><type>guint64</type></link> *clip_start</parameter>,
+                  <parameter><link linkend="guint64"><type>guint64</type></link> *clip_stop</parameter>);</programlisting>
+<para>Clip the given <parameter>start</parameter>
+ and <parameter>stop</parameter>
+ values to the segment boundaries given
+in <parameter>segment</parameter>
+. <parameter>start</parameter>
+ and <parameter>stop</parameter>
+ are compared and clipped to <parameter>segment</parameter>
+
+start and stop values.</para>
+<para>If the function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>, <parameter>start</parameter>
+ and <parameter>stop</parameter>
+ are known to fall
+outside of <parameter>segment</parameter>
+ and <parameter>clip_start</parameter>
+ and <parameter>clip_stop</parameter>
+ are not updated.</para>
+<para>When the function returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, <parameter>clip_start</parameter>
+ and <parameter>clip_stop</parameter>
+ will be
+updated. If <parameter>clip_start</parameter>
+ or <parameter>clip_stop</parameter>
+ are different from <parameter>start</parameter>
+ or <parameter>stop</parameter>
+
+respectively, the region fell partially in the segment.</para>
+<para>Note that when <parameter>stop</parameter>
+ is -1, <parameter>clip_stop</parameter>
+ will be set to the end of the
+segment. Depending on the use case, this may or may not be what you want.</para>
+<refsect3 id="gst-segment-clip.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the start position in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop</para></entry>
+<entry role="parameter_description"><para>the stop position in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>clip_start</para></entry>
+<entry role="parameter_description"><para> the clipped start position in the segment. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>clip_stop</para></entry>
+<entry role="parameter_description"><para> the clipped stop position in the segment. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-clip.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the given <parameter>start</parameter>
+and <parameter>stop</parameter>
+times fall partially or
+completely in <parameter>segment</parameter>
+, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if the values are completely outside
+of the segment.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-init" role="function">
+<title>gst_segment_init&#160;()</title>
+<indexterm zone="gst-segment-init"><primary>gst_segment_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_segment_init (<parameter><link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                  <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>);</programlisting>
+<para>The start/position fields are set to 0 and the stop/duration
+fields are set to -1 (unknown). The default rate of 1.0 and no
+flags are set.</para>
+<para>Initialize <parameter>segment</parameter>
+ to its default values.</para>
+<refsect3 id="gst-segment-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-new" role="function">
+<title>gst_segment_new&#160;()</title>
+<indexterm zone="gst-segment-new"><primary>gst_segment_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstSegment"><returnvalue>GstSegment</returnvalue></link>&#160;*
+gst_segment_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Allocate a new <link linkend="GstSegment"><type>GstSegment</type></link> structure and initialize it using
+<link linkend="gst-segment-init"><function>gst_segment_init()</function></link>.</para>
+<para>Free-function: gst_segment_free</para>
+<refsect3 id="gst-segment-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstSegment"><type>GstSegment</type></link>, free with <link linkend="gst-segment-free"><function>gst_segment_free()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-copy" role="function">
+<title>gst_segment_copy&#160;()</title>
+<indexterm zone="gst-segment-copy"><primary>gst_segment_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstSegment"><returnvalue>GstSegment</returnvalue></link>&#160;*
+gst_segment_copy (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>);</programlisting>
+<para>Create a copy of given <parameter>segment</parameter>
+.</para>
+<para>Free-function: gst_segment_free</para>
+<refsect3 id="gst-segment-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSegment"><type>GstSegment</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstSegment"><type>GstSegment</type></link>, free with <link linkend="gst-segment-free"><function>gst_segment_free()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-free" role="function">
+<title>gst_segment_free&#160;()</title>
+<indexterm zone="gst-segment-free"><primary>gst_segment_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_segment_free (<parameter><link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>);</programlisting>
+<para>Free the allocated segment <parameter>segment</parameter>
+.</para>
+<refsect3 id="gst-segment-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSegment"><type>GstSegment</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-do-seek" role="function">
+<title>gst_segment_do_seek&#160;()</title>
+<indexterm zone="gst-segment-do-seek"><primary>gst_segment_do_seek</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_segment_do_seek (<parameter><link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                     <parameter><link linkend="gdouble"><type>gdouble</type></link> rate</parameter>,
+                     <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                     <parameter><link linkend="GstSeekFlags"><type>GstSeekFlags</type></link> flags</parameter>,
+                     <parameter><link linkend="GstSeekType"><type>GstSeekType</type></link> start_type</parameter>,
+                     <parameter><link linkend="guint64"><type>guint64</type></link> start</parameter>,
+                     <parameter><link linkend="GstSeekType"><type>GstSeekType</type></link> stop_type</parameter>,
+                     <parameter><link linkend="guint64"><type>guint64</type></link> stop</parameter>,
+                     <parameter><link linkend="gboolean"><type>gboolean</type></link> *update</parameter>);</programlisting>
+<para>Update the segment structure with the field values of a seek event (see
+<link linkend="gst-event-new-seek"><function>gst_event_new_seek()</function></link>).</para>
+<para>After calling this method, the segment field position and time will
+contain the requested new position in the segment. The new requested
+position in the segment depends on <parameter>rate</parameter>
+ and <parameter>start_type</parameter>
+ and <parameter>stop_type</parameter>
+.</para>
+<para>For positive <parameter>rate</parameter>
+, the new position in the segment is the new <parameter>segment</parameter>
+
+start field when it was updated with a <parameter>start_type</parameter>
+ different from
+<link linkend="GST-SEEK-TYPE-NONE:CAPS"><type>GST_SEEK_TYPE_NONE</type></link>. If no update was performed on <parameter>segment</parameter>
+ start position
+(<link linkend="GST-SEEK-TYPE-NONE:CAPS"><type>GST_SEEK_TYPE_NONE</type></link>), <parameter>start</parameter>
+ is ignored and <parameter>segment</parameter>
+ position is
+unmodified.</para>
+<para>For negative <parameter>rate</parameter>
+, the new position in the segment is the new <parameter>segment</parameter>
+
+stop field when it was updated with a <parameter>stop_type</parameter>
+ different from
+<link linkend="GST-SEEK-TYPE-NONE:CAPS"><type>GST_SEEK_TYPE_NONE</type></link>. If no stop was previously configured in the segment, the
+duration of the segment will be used to update the stop position.
+If no update was performed on <parameter>segment</parameter>
+ stop position (<link linkend="GST-SEEK-TYPE-NONE:CAPS"><type>GST_SEEK_TYPE_NONE</type></link>),
+<parameter>stop</parameter>
+ is ignored and <parameter>segment</parameter>
+ position is unmodified.</para>
+<para>The applied rate of the segment will be set to 1.0 by default.
+If the caller can apply a rate change, it should update <parameter>segment</parameter>
+
+rate and applied_rate after calling this function.</para>
+<para><parameter>update</parameter>
+ will be set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if a seek should be performed to the segment
+position field. This field can be <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if, for example, only the <parameter>rate</parameter>
+
+has been changed but not the playback position.</para>
+<refsect3 id="gst-segment-do-seek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rate</para></entry>
+<entry role="parameter_description"><para>the rate of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>the segment flags for the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start_type</para></entry>
+<entry role="parameter_description"><para>the seek method</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start</para></entry>
+<entry role="parameter_description"><para>the seek start value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop_type</para></entry>
+<entry role="parameter_description"><para>the seek method</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop</para></entry>
+<entry role="parameter_description"><para>the seek stop value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>update</para></entry>
+<entry role="parameter_description"><para>boolean holding whether position was updated.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-do-seek.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the seek could be performed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-to-running-time" role="function">
+<title>gst_segment_to_running_time&#160;()</title>
+<indexterm zone="gst-segment-to-running-time"><primary>gst_segment_to_running_time</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_segment_to_running_time (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                             <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                             <parameter><link linkend="guint64"><type>guint64</type></link> position</parameter>);</programlisting>
+<para>Translate <parameter>position</parameter>
+ to the total running time using the currently configured
+segment. Position is a value between <parameter>segment</parameter>
+ start and stop time.</para>
+<para>This function is typically used by elements that need to synchronize to the
+global clock in a pipeline. The running time is a constantly increasing value
+starting from 0. When <link linkend="gst-segment-init"><function>gst_segment_init()</function></link> is called, this value will reset to
+0.</para>
+<para>This function returns -1 if the position is outside of <parameter>segment</parameter>
+ start and stop.</para>
+<refsect3 id="gst-segment-to-running-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>position</para></entry>
+<entry role="parameter_description"><para>the position in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-to-running-time.returns" role="returns">
+<title>Returns</title>
+<para> the position as the total running time or -1 when an invalid position
+was given.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-to-running-time-full" role="function" condition="since:1.6">
+<title>gst_segment_to_running_time_full&#160;()</title>
+<indexterm zone="gst-segment-to-running-time-full" role="1.6"><primary>gst_segment_to_running_time_full</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_segment_to_running_time_full (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                                  <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                                  <parameter><link linkend="guint64"><type>guint64</type></link> position</parameter>,
+                                  <parameter><link linkend="guint64"><type>guint64</type></link> *running_time</parameter>);</programlisting>
+<para>Translate <parameter>position</parameter>
+ to the total running time using the currently configured
+segment. Compared to <link linkend="gst-segment-to-running-time"><function>gst_segment_to_running_time()</function></link> this function can return
+negative running-time.</para>
+<para>This function is typically used by elements that need to synchronize buffers
+against the clock or eachother.</para>
+<para><parameter>position</parameter>
+ can be any value and the result of this function for values outside
+of the segment is extrapolated.</para>
+<para>When 1 is returned, <parameter>position</parameter>
+ resulted in a positive running-time returned
+in <parameter>running_time</parameter>
+.</para>
+<para>When this function returns -1, the returned <parameter>running_time</parameter>
+ should be negated
+to get the real negative running time.</para>
+<refsect3 id="gst-segment-to-running-time-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>position</para></entry>
+<entry role="parameter_description"><para>the position in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>running_time</para></entry>
+<entry role="parameter_description"><para>result running-time</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-to-running-time-full.returns" role="returns">
+<title>Returns</title>
+<para> a 1 or -1 on success, 0 on failure.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-segment-to-stream-time" role="function">
+<title>gst_segment_to_stream_time&#160;()</title>
+<indexterm zone="gst-segment-to-stream-time"><primary>gst_segment_to_stream_time</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_segment_to_stream_time (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                            <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                            <parameter><link linkend="guint64"><type>guint64</type></link> position</parameter>);</programlisting>
+<para>Translate <parameter>position</parameter>
+ to stream time using the currently configured
+segment. The <parameter>position</parameter>
+ value must be between <parameter>segment</parameter>
+ start and
+stop value.</para>
+<para>This function is typically used by elements that need to operate on
+the stream time of the buffers it receives, such as effect plugins.
+In those use cases, <parameter>position</parameter>
+ is typically the buffer timestamp or
+clock time that one wants to convert to the stream time.
+The stream time is always between 0 and the total duration of the
+media stream.</para>
+<refsect3 id="gst-segment-to-stream-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>position</para></entry>
+<entry role="parameter_description"><para>the position in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-to-stream-time.returns" role="returns">
+<title>Returns</title>
+<para> the position in stream_time or -1 when an invalid position
+was given.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-to-position" role="function">
+<title>gst_segment_to_position&#160;()</title>
+<indexterm zone="gst-segment-to-position"><primary>gst_segment_to_position</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_segment_to_position (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                         <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                         <parameter><link linkend="guint64"><type>guint64</type></link> running_time</parameter>);</programlisting>
+<para>Convert <parameter>running_time</parameter>
+ into a position in the segment so that
+<link linkend="gst-segment-to-running-time"><function>gst_segment_to_running_time()</function></link> with that position returns <parameter>running_time</parameter>
+.</para>
+<refsect3 id="gst-segment-to-position.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>running_time</para></entry>
+<entry role="parameter_description"><para>the running_time in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-to-position.returns" role="returns">
+<title>Returns</title>
+<para> the position in the segment for <parameter>running_time</parameter>
+. This function returns
+-1 when <parameter>running_time</parameter>
+is -1 or when it is not inside <parameter>segment</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-set-running-time" role="function">
+<title>gst_segment_set_running_time&#160;()</title>
+<indexterm zone="gst-segment-set-running-time"><primary>gst_segment_set_running_time</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_segment_set_running_time (<parameter><link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                              <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                              <parameter><link linkend="guint64"><type>guint64</type></link> running_time</parameter>);</programlisting>
+<para>Adjust the start/stop and base values of <parameter>segment</parameter>
+ such that the next valid
+buffer will be one with <parameter>running_time</parameter>
+.</para>
+<refsect3 id="gst-segment-set-running-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>running_time</para></entry>
+<entry role="parameter_description"><para>the running_time in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-set-running-time.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the segment could be updated successfully. If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is
+returned, <parameter>running_time</parameter>
+is -1 or not in <parameter>segment</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-copy-into" role="function">
+<title>gst_segment_copy_into&#160;()</title>
+<indexterm zone="gst-segment-copy-into"><primary>gst_segment_copy_into</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_segment_copy_into (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *src</parameter>,
+                       <parameter><link linkend="GstSegment"><type>GstSegment</type></link> *dest</parameter>);</programlisting>
+<para>Copy the contents of <parameter>src</parameter>
+ into <parameter>dest</parameter>
+.</para>
+<refsect3 id="gst-segment-copy-into.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSegment"><type>GstSegment</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstSegment"><type>GstSegment</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-segment-offset-running-time" role="function" condition="since:1.2.3">
+<title>gst_segment_offset_running_time&#160;()</title>
+<indexterm zone="gst-segment-offset-running-time" role="1.2.3"><primary>gst_segment_offset_running_time</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_segment_offset_running_time (<parameter><link linkend="GstSegment"><type>GstSegment</type></link> *segment</parameter>,
+                                 <parameter><link linkend="GstFormat"><type>GstFormat</type></link> format</parameter>,
+                                 <parameter><link linkend="gint64"><type>gint64</type></link> offset</parameter>);</programlisting>
+<para>Adjust the values in <parameter>segment</parameter>
+ so that <parameter>offset</parameter>
+ is applied to all
+future running-time calculations.</para>
+<refsect3 id="gst-segment-offset-running-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>segment</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>the format of the segment.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the offset to apply in the segment</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-offset-running-time.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the segment could be updated successfully. If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is
+returned, <parameter>offset</parameter>
+is not in <parameter>segment</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2.3">1.2.3</link></para></refsect2>
+<refsect2 id="gst-segment-is-equal" role="function" condition="since:1.6">
+<title>gst_segment_is_equal&#160;()</title>
+<indexterm zone="gst-segment-is-equal" role="1.6"><primary>gst_segment_is_equal</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_segment_is_equal (<parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *s0</parameter>,
+                      <parameter>const <link linkend="GstSegment"><type>GstSegment</type></link> *s1</parameter>);</programlisting>
+<para>Checks for two segments being equal. Equality here is defined
+as perfect equality, including floating point values.</para>
+<refsect3 id="gst-segment-is-equal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>s0</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>s1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSegment"><type>GstSegment</type></link> structure.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-segment-is-equal.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the segments are equal, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstSegment.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSegment-struct" role="struct">
+<title>struct GstSegment</title>
+<indexterm zone="GstSegment-struct"><primary>GstSegment</primary></indexterm>
+<programlisting language="C">struct GstSegment {
+  GstSegmentFlags flags;
+
+  gdouble         rate;
+  gdouble         applied_rate;
+
+  GstFormat       format;
+  guint64         base;
+  guint64         offset;
+  guint64         start;
+  guint64         stop;
+  guint64         time;
+
+  guint64         position;
+  guint64         duration;
+};
+</programlisting>
+<para>A helper structure that holds the configured region of
+interest in a media file.</para>
+<refsect3 id="GstSegment.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstSegmentFlags"><type>GstSegmentFlags</type></link>&#160;<structfield id="GstSegment-struct.flags">flags</structfield>;</para></entry>
+<entry role="struct_member_description"><para>flags for this segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gdouble"><type>gdouble</type></link>&#160;<structfield id="GstSegment-struct.rate">rate</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the rate of the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gdouble"><type>gdouble</type></link>&#160;<structfield id="GstSegment-struct.applied-rate">applied_rate</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the already applied rate to the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstFormat"><type>GstFormat</type></link>&#160;<structfield id="GstSegment-struct.format">format</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the format of the segment values</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.base">base</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the base of the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.offset">offset</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the offset to apply to <parameter>start</parameter>
+or <parameter>stop</parameter>
+</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.start">start</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the start of the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.stop">stop</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the stop of the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.time">time</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the stream time of the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.position">position</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the position in the segment (used internally by elements
+such as sources, demuxers or parsers to track progress)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstSegment-struct.duration">duration</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the duration of the segment</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstSegmentFlags" role="enum">
+<title>enum GstSegmentFlags</title>
+<indexterm zone="GstSegmentFlags"><primary>GstSegmentFlags</primary></indexterm>
+<para>Flags for the GstSegment structure. Currently mapped to the corresponding
+values of the seek flags.</para>
+<refsect3 id="GstSegmentFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-NONE:CAPS">GST_SEGMENT_FLAG_NONE</para></entry>
+<entry role="enum_member_description"><para>no flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-RESET:CAPS">GST_SEGMENT_FLAG_RESET</para></entry>
+<entry role="enum_member_description"><para>reset the pipeline running_time to the segment
+                         running_time</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-TRICKMODE:CAPS">GST_SEGMENT_FLAG_TRICKMODE</para></entry>
+<entry role="enum_member_description"><para>perform skip playback (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-SKIP:CAPS">GST_SEGMENT_FLAG_SKIP</para></entry>
+<entry role="enum_member_description"><para>Deprecated backward compatibility flag, replaced
+                        by <parameter>GST_SEGMENT_FLAG_TRICKMODE</parameter>
+</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-SEGMENT:CAPS">GST_SEGMENT_FLAG_SEGMENT</para></entry>
+<entry role="enum_member_description"><para>send SEGMENT_DONE instead of EOS</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-TRICKMODE-KEY-UNITS:CAPS">GST_SEGMENT_FLAG_TRICKMODE_KEY_UNITS</para></entry>
+<entry role="enum_member_description"><para>Decode only keyframes, where
+                                       possible (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-SEGMENT-FLAG-TRICKMODE-NO-AUDIO:CAPS">GST_SEGMENT_FLAG_TRICKMODE_NO_AUDIO</para></entry>
+<entry role="enum_member_description"><para>Do not decode any audio, where
+                                       possible (Since 1.6)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstSegment.see-also">
+<title>See Also</title>
+<para><link linkend="GstEvent"><type>GstEvent</type></link></para>
+
+</refsect1>
+
+</refentry>

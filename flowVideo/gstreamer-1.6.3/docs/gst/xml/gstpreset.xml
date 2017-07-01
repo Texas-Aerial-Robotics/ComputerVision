@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstPreset">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstPreset.top_of_page">GstPreset</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPreset</refname>
+<refpurpose>helper interface for element presets</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstPreset.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+</entry><entry role="function_name"><link linkend="gst-preset-get-preset-names">gst_preset_get_preset_names</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+</entry><entry role="function_name"><link linkend="gst-preset-get-property-names">gst_preset_get_property_names</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-load-preset">gst_preset_load_preset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-save-preset">gst_preset_save_preset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-rename-preset">gst_preset_rename_preset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-delete-preset">gst_preset_delete_preset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-set-meta">gst_preset_set_meta</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-get-meta">gst_preset_get_meta</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-set-app-dir">gst_preset_set_app_dir</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-preset-get-app-dir">gst_preset_get_app_dir</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-preset-is-editable">gst_preset_is_editable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPreset.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstPreset-struct">GstPreset</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPresetInterface">GstPresetInterface</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPreset.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GInterface">GInterface</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstPreset
+</screen>
+</refsect1>
+
+<refsect1 id="GstPreset.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstPreset.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This interface offers methods to query and manipulate parameter preset sets.
+A preset is a bunch of property settings, together with meta data and a name.
+The name of a preset serves as key for subsequent method calls to manipulate
+single presets.
+All instances of one type will share the list of presets. The list is created
+on demand, if presets are not used, the list is not created.</para>
+<para>The interface comes with a default implementation that serves most plugins.
+Wrapper plugins will override most methods to implement support for the
+native preset format of those wrapped plugins.
+One method that is useful to be overridden is <link linkend="gst-preset-get-property-names"><function>gst_preset_get_property_names()</function></link>.
+With that one can control which properties are saved and in which order.
+When implementing support for read-only presets, one should set the vmethods
+for <link linkend="gst-preset-save-preset"><function>gst_preset_save_preset()</function></link> and <link linkend="gst-preset-delete-preset"><function>gst_preset_delete_preset()</function></link> to <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+Applications can use <link linkend="gst-preset-is-editable"><function>gst_preset_is_editable()</function></link> to check for that.</para>
+<para>The default implementation supports presets located in a system directory, 
+application specific directory and in the users home directory. When getting
+a list of presets individual presets are read and overlaid in 1) system, 
+2) application and 3) user order. Whenever an earlier entry is newer, the
+later entries will be updated.</para>
+
+</refsect1>
+<refsect1 id="GstPreset.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-preset-get-preset-names" role="function">
+<title>gst_preset_get_preset_names&#160;()</title>
+<indexterm zone="gst-preset-get-preset-names"><primary>gst_preset_get_preset_names</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+gst_preset_get_preset_names (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>);</programlisting>
+<para>Get a copy of preset names as a <link linkend="NULL:CAPS"><literal>NULL</literal></link> terminated string array.</para>
+<refsect3 id="gst-preset-get-preset-names.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-get-preset-names.returns" role="returns">
+<title>Returns</title>
+<para>    list with names, use <link linkend="g-strfreev"><function>g_strfreev()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>element-type</acronym> gchar*]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-get-property-names" role="function">
+<title>gst_preset_get_property_names&#160;()</title>
+<indexterm zone="gst-preset-get-property-names"><primary>gst_preset_get_property_names</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;**
+gst_preset_get_property_names (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>);</programlisting>
+<para>Get a the names of the GObject properties that can be used for presets.</para>
+<refsect3 id="gst-preset-get-property-names.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-get-property-names.returns" role="returns">
+<title>Returns</title>
+<para> an
+array of property names which should be freed with <link linkend="g-strfreev"><function>g_strfreev()</function></link> after use. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>array</acronym> zero-terminated=1][<acronym>element-type</acronym> gchar*]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-load-preset" role="function">
+<title>gst_preset_load_preset&#160;()</title>
+<indexterm zone="gst-preset-load-preset"><primary>gst_preset_load_preset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_load_preset (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Load the given preset.</para>
+<refsect3 id="gst-preset-load-preset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>preset name to load</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-load-preset.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if e.g. there is no preset with that <parameter>name</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-save-preset" role="function">
+<title>gst_preset_save_preset&#160;()</title>
+<indexterm zone="gst-preset-save-preset"><primary>gst_preset_save_preset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_save_preset (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Save the current object settings as a preset under the given name. If there
+is already a preset by this <parameter>name</parameter>
+ it will be overwritten.</para>
+<refsect3 id="gst-preset-save-preset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>preset name to save</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-save-preset.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-rename-preset" role="function">
+<title>gst_preset_rename_preset&#160;()</title>
+<indexterm zone="gst-preset-rename-preset"><primary>gst_preset_rename_preset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_rename_preset (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *old_name</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *new_name</parameter>);</programlisting>
+<para>Renames a preset. If there is already a preset by the <parameter>new_name</parameter>
+ it will be
+overwritten.</para>
+<refsect3 id="gst-preset-rename-preset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>old_name</para></entry>
+<entry role="parameter_description"><para>current preset name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>new_name</para></entry>
+<entry role="parameter_description"><para>new preset name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-rename-preset.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if e.g. there is no preset with <parameter>old_name</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-delete-preset" role="function">
+<title>gst_preset_delete_preset&#160;()</title>
+<indexterm zone="gst-preset-delete-preset"><primary>gst_preset_delete_preset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_delete_preset (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Delete the given preset.</para>
+<refsect3 id="gst-preset-delete-preset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>preset name to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-delete-preset.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if e.g. there is no preset with that <parameter>name</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-set-meta" role="function">
+<title>gst_preset_set_meta&#160;()</title>
+<indexterm zone="gst-preset-set-meta"><primary>gst_preset_set_meta</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_set_meta (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *value</parameter>);</programlisting>
+<para>Sets a new <parameter>value</parameter>
+ for an existing meta data item or adds a new item. Meta
+data <parameter>tag</parameter>
+ names can be something like e.g. "comment". Supplying <link linkend="NULL:CAPS"><literal>NULL</literal></link> for the
+<parameter>value</parameter>
+ will unset an existing value.</para>
+<refsect3 id="gst-preset-set-meta.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>preset name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>meta data item name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> new value. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-set-meta.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if e.g. there is no preset with that <parameter>name</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-get-meta" role="function">
+<title>gst_preset_get_meta&#160;()</title>
+<indexterm zone="gst-preset-get-meta"><primary>gst_preset_get_meta</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_get_meta (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *tag</parameter>,
+                     <parameter><link linkend="gchar"><type>gchar</type></link> **value</parameter>);</programlisting>
+<para>Gets the <parameter>value</parameter>
+ for an existing meta data <parameter>tag</parameter>
+. Meta data <parameter>tag</parameter>
+ names can be
+something like e.g. "comment". Returned values need to be released when done.</para>
+<refsect3 id="gst-preset-get-meta.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>preset name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>tag</para></entry>
+<entry role="parameter_description"><para>meta data item name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> value. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out callee-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-get-meta.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if e.g. there is no preset with that <parameter>name</parameter>
+or no value for the given <parameter>tag</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-set-app-dir" role="function">
+<title>gst_preset_set_app_dir&#160;()</title>
+<indexterm zone="gst-preset-set-app-dir"><primary>gst_preset_set_app_dir</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_set_app_dir (<parameter>const <link linkend="gchar"><type>gchar</type></link> *app_dir</parameter>);</programlisting>
+<para>Sets an extra directory as an absolute path that should be considered when
+looking for presets. Any presets in the application dir will shadow the 
+system presets.</para>
+<refsect3 id="gst-preset-set-app-dir.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>app_dir</para></entry>
+<entry role="parameter_description"><para>the application specific preset dir</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-set-app-dir.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if the dir already has been set</para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-get-app-dir" role="function">
+<title>gst_preset_get_app_dir&#160;()</title>
+<indexterm zone="gst-preset-get-app-dir"><primary>gst_preset_get_app_dir</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_preset_get_app_dir (<parameter><type>void</type></parameter>);</programlisting>
+<para>Gets the directory for application specific presets if set by the
+application.</para>
+<refsect3 id="gst-preset-get-app-dir.returns" role="returns">
+<title>Returns</title>
+<para> the directory or <link linkend="NULL:CAPS"><literal>NULL</literal></link>, don't free or modify
+the string. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-preset-is-editable" role="function" condition="since:1.6">
+<title>gst_preset_is_editable&#160;()</title>
+<indexterm zone="gst-preset-is-editable" role="1.6"><primary>gst_preset_is_editable</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_preset_is_editable (<parameter><link linkend="GstPreset"><type>GstPreset</type></link> *preset</parameter>);</programlisting>
+<para>Check if one can add new presets, change existing ones and remove presets.</para>
+<refsect3 id="gst-preset-is-editable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>preset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link> that implements <link linkend="GstPreset"><type>GstPreset</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-preset-is-editable.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if presets are editable or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if they are static</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstPreset.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstPreset-struct" role="struct">
+<title>GstPreset</title>
+<indexterm zone="GstPreset-struct"><primary>GstPreset</primary></indexterm>
+<programlisting language="C">typedef struct _GstPreset GstPreset;</programlisting>
+<para>Opaque <link linkend="GstPreset"><type>GstPreset</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstPresetInterface" role="struct">
+<title>struct GstPresetInterface</title>
+<indexterm zone="GstPresetInterface"><primary>GstPresetInterface</primary></indexterm>
+<programlisting language="C">struct GstPresetInterface {
+  GTypeInterface parent;
+
+  /* methods */
+  gchar**      (*get_preset_names)    (GstPreset *preset);
+
+  gchar**      (*get_property_names)  (GstPreset *preset);
+
+  gboolean     (*load_preset)         (GstPreset *preset, const gchar *name);
+  gboolean     (*save_preset)         (GstPreset *preset, const gchar *name);
+  gboolean     (*rename_preset)       (GstPreset *preset, const gchar *old_name,
+                                       const gchar *new_name);
+  gboolean     (*delete_preset)       (GstPreset *preset, const gchar *name);
+
+  gboolean     (*set_meta)            (GstPreset *preset, const gchar *name,
+                                       const gchar *tag, const gchar *value);
+  gboolean     (*get_meta)            (GstPreset *preset, const gchar *name,
+                                       const gchar *tag, gchar **value);
+};
+</programlisting>
+<para><link linkend="GstPreset"><type>GstPreset</type></link> interface.</para>
+<refsect3 id="GstPresetInterface.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GTypeInterface"><type>GTypeInterface</type></link>&#160;<structfield id="GstPresetInterface.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>parent interface type.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.get-preset-names">get_preset_names</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual method to get list of presets</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.get-property-names">get_property_names</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to get properties that are persistent</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.load-preset">load_preset</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to load a preset into properties</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.save-preset">save_preset</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to save properties into a preset</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.rename-preset">rename_preset</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to rename a preset</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.delete-preset">delete_preset</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to remove a preset</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.set-meta">set_meta</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to set textual meta data to a preset</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstPresetInterface.get-meta">get_meta</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual methods to get textual meta data from a preset</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

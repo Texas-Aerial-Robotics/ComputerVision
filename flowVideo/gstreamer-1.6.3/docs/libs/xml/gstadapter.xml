@@ -1,0 +1,1103 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstAdapter">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstAdapter.top_of_page">GstAdapter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstAdapter</refname>
+<refpurpose>adapts incoming data on a sink pad into chunks of N bytes</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstAdapter.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstAdapter"><returnvalue>GstAdapter</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-new">gst_adapter_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-clear">gst_adapter_clear</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-push">gst_adapter_push</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gconstpointer"><returnvalue>gconstpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-map">gst_adapter_map</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-unmap">gst_adapter_unmap</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-copy">gst_adapter_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GBytes"><returnvalue>GBytes</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-copy-bytes">gst_adapter_copy_bytes</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-flush">gst_adapter_flush</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gsize"><returnvalue>gsize</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-available">gst_adapter_available</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gsize"><returnvalue>gsize</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-available-fast">gst_adapter_available_fast</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-take">gst_adapter_take</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-take-buffer">gst_adapter_take_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-get-buffer">gst_adapter_get_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-take-buffer-fast">gst_adapter_take_buffer_fast</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-get-buffer-fast">gst_adapter_get_buffer_fast</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-take-list">gst_adapter_take_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-get-list">gst_adapter_get_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-take-buffer-list">gst_adapter_take_buffer_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-adapter-get-buffer-list">gst_adapter_get_buffer_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-prev-pts">gst_adapter_prev_pts</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-prev-dts">gst_adapter_prev_dts</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-prev-pts-at-offset">gst_adapter_prev_pts_at_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-prev-dts-at-offset">gst_adapter_prev_dts_at_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gssize"><returnvalue>gssize</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-masked-scan-uint32">gst_adapter_masked_scan_uint32</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gssize"><returnvalue>gssize</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-adapter-masked-scan-uint32-peek">gst_adapter_masked_scan_uint32_peek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstAdapter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstAdapter-struct">GstAdapter</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstAdapter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstAdapter
+</screen>
+</refsect1>
+
+<refsect1 id="GstAdapter.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstadapter.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstAdapter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This class is for elements that receive buffers in an undesired size.
+While for example raw video contains one image per buffer, the same is not
+true for a lot of other formats, especially those that come directly from
+a file. So if you have undefined buffer sizes and require a specific size,
+this object is for you.</para>
+<para>An adapter is created with <link linkend="gst-adapter-new"><function>gst_adapter_new()</function></link>. It can be freed again with
+<link linkend="g-object-unref"><function>g_object_unref()</function></link>.</para>
+<para>The theory of operation is like this: All buffers received are put
+into the adapter using <link linkend="gst-adapter-push"><function>gst_adapter_push()</function></link> and the data is then read back
+in chunks of the desired size using <link linkend="gst-adapter-map"><function>gst_adapter_map()</function></link>/<link linkend="gst-adapter-unmap"><function>gst_adapter_unmap()</function></link>
+and/or <link linkend="gst-adapter-copy"><function>gst_adapter_copy()</function></link>. After the data has been processed, it is freed
+using <link linkend="gst-adapter-unmap"><function>gst_adapter_unmap()</function></link>.</para>
+<para>Other methods such as <link linkend="gst-adapter-take"><function>gst_adapter_take()</function></link> and <link linkend="gst-adapter-take-buffer"><function>gst_adapter_take_buffer()</function></link>
+combine <link linkend="gst-adapter-map"><function>gst_adapter_map()</function></link> and <link linkend="gst-adapter-unmap"><function>gst_adapter_unmap()</function></link> in one method and are
+potentially more convenient for some use cases.</para>
+<para>For example, a sink pad's chain function that needs to pass data to a library
+in 512-byte chunks could be implemented like this:</para>
+<informalexample><programlisting><![CDATA[
+static GstFlowReturn
+sink_pad_chain (GstPad *pad, GstObject *parent, GstBuffer *buffer)
+{
+  MyElement *this;
+  GstAdapter *adapter;
+  GstFlowReturn ret = GST_FLOW_OK;
+
+  this = MY_ELEMENT (parent);
+
+  adapter = this->adapter;
+
+  // put buffer into adapter
+  gst_adapter_push (adapter, buffer);
+
+  // while we can read out 512 bytes, process them
+  while (gst_adapter_available (adapter) >= 512 && ret == GST_FLOW_OK) {
+    const guint8 *data = gst_adapter_map (adapter, 512);
+    // use flowreturn as an error value
+    ret = my_library_foo (data);
+    gst_adapter_unmap (adapter);
+    gst_adapter_flush (adapter, 512);
+  }
+  return ret;
+}
+]]></programlisting></informalexample>
+<para></para>
+<para>For another example, a simple element inside GStreamer that uses <link linkend="GstAdapter"><type>GstAdapter</type></link>
+is the libvisual element.</para>
+<para>An element using <link linkend="GstAdapter"><type>GstAdapter</type></link> in its sink pad chain function should ensure that
+when the FLUSH_STOP event is received, that any queued data is cleared using
+<link linkend="gst-adapter-clear"><function>gst_adapter_clear()</function></link>. Data should also be cleared or processed on EOS and
+when changing state from <link linkend="GST-STATE-PAUSED:CAPS"><literal>GST_STATE_PAUSED</literal></link> to <link linkend="GST-STATE-READY:CAPS"><literal>GST_STATE_READY</literal></link>.</para>
+<para>Also check the GST_BUFFER_FLAG_DISCONT flag on the buffer. Some elements might
+need to clear the adapter after a discontinuity.</para>
+<para>The adapter will keep track of the timestamps of the buffers
+that were pushed. The last seen timestamp before the current position
+can be queried with <link linkend="gst-adapter-prev-pts"><function>gst_adapter_prev_pts()</function></link>. This function can
+optionally return the number of bytes between the start of the buffer that
+carried the timestamp and the current adapter position. The distance is
+useful when dealing with, for example, raw audio samples because it allows
+you to calculate the timestamp of the current adapter position by using the
+last seen timestamp and the amount of bytes since.  Additionally, the
+<link linkend="gst-adapter-prev-pts-at-offset"><function>gst_adapter_prev_pts_at_offset()</function></link> can be used to determine the last
+seen timestamp at a particular offset in the adapter.</para>
+<para>A last thing to note is that while <link linkend="GstAdapter"><type>GstAdapter</type></link> is pretty optimized,
+merging buffers still might be an operation that requires a <link linkend="malloc"><function>malloc()</function></link> and
+<link linkend="memcpy"><function>memcpy()</function></link> operation, and these operations are not the fastest. Because of
+this, some functions like <link linkend="gst-adapter-available-fast"><function>gst_adapter_available_fast()</function></link> are provided to help
+speed up such cases should you want to. To avoid repeated memory allocations,
+<link linkend="gst-adapter-copy"><function>gst_adapter_copy()</function></link> can be used to copy data into a (statically allocated)
+user provided buffer.</para>
+<para><link linkend="GstAdapter"><type>GstAdapter</type></link> is not MT safe. All operations on an adapter must be serialized by
+the caller. This is not normally a problem, however, as the normal use case
+of <link linkend="GstAdapter"><type>GstAdapter</type></link> is inside one pad's chain function, in which case access is
+serialized via the pad's STREAM_LOCK.</para>
+<para>Note that <link linkend="gst-adapter-push"><function>gst_adapter_push()</function></link> takes ownership of the buffer passed. Use
+<link linkend="gst-buffer-ref"><function>gst_buffer_ref()</function></link> before pushing it into the adapter if you still want to
+access the buffer later. The adapter will never modify the data in the
+buffer pushed in it.</para>
+
+</refsect1>
+<refsect1 id="GstAdapter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-adapter-new" role="function">
+<title>gst_adapter_new&#160;()</title>
+<indexterm zone="gst-adapter-new"><primary>gst_adapter_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstAdapter"><returnvalue>GstAdapter</returnvalue></link>&#160;*
+gst_adapter_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new <link linkend="GstAdapter"><type>GstAdapter</type></link>. Free with <link linkend="g-object-unref"><function>g_object_unref()</function></link>.</para>
+<refsect3 id="gst-adapter-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstAdapter"><type>GstAdapter</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-clear" role="function">
+<title>gst_adapter_clear&#160;()</title>
+<indexterm zone="gst-adapter-clear"><primary>gst_adapter_clear</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_adapter_clear (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>);</programlisting>
+<para>Removes all buffers from <parameter>adapter</parameter>
+.</para>
+<refsect3 id="gst-adapter-clear.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-push" role="function">
+<title>gst_adapter_push&#160;()</title>
+<indexterm zone="gst-adapter-push"><primary>gst_adapter_push</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_adapter_push (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                  <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buf</parameter>);</programlisting>
+<para>Adds the data from <parameter>buf</parameter>
+ to the data stored inside <parameter>adapter</parameter>
+ and takes
+ownership of the buffer.</para>
+<refsect3 id="gst-adapter-push.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buf</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> to add to queue in the adapter. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-map" role="function">
+<title>gst_adapter_map&#160;()</title>
+<indexterm zone="gst-adapter-map"><primary>gst_adapter_map</primary></indexterm>
+<programlisting language="C"><link linkend="gconstpointer"><returnvalue>gconstpointer</returnvalue></link>
+gst_adapter_map (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                 <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Gets the first <parameter>size</parameter>
+ bytes stored in the <parameter>adapter</parameter>
+. The returned pointer is
+valid until the next function is called on the adapter.</para>
+<para>Note that setting the returned pointer as the data of a <link linkend="GstBuffer"><type>GstBuffer</type></link> is
+incorrect for general-purpose plugins. The reason is that if a downstream
+element stores the buffer so that it has access to it outside of the bounds
+of its chain function, the buffer will have an invalid data pointer after
+your element flushes the bytes. In that case you should use
+<link linkend="gst-adapter-take"><function>gst_adapter_take()</function></link>, which returns a freshly-allocated buffer that you can set
+as <link linkend="GstBuffer"><type>GstBuffer</type></link> memory or the potentially more performant
+<link linkend="gst-adapter-take-buffer"><function>gst_adapter_take_buffer()</function></link>.</para>
+<para>Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>size</parameter>
+ bytes are not available.</para>
+<refsect3 id="gst-adapter-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the number of bytes to map/peek</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-map.returns" role="returns">
+<title>Returns</title>
+<para>    a pointer to the first <parameter>size</parameter>
+bytes of data, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>array</acronym> length=size][<acronym>element-type</acronym> guint8][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-unmap" role="function">
+<title>gst_adapter_unmap&#160;()</title>
+<indexterm zone="gst-adapter-unmap"><primary>gst_adapter_unmap</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_adapter_unmap (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>);</programlisting>
+<para>Releases the memory obtained with the last <link linkend="gst-adapter-map"><function>gst_adapter_map()</function></link>.</para>
+<refsect3 id="gst-adapter-unmap.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-copy" role="function">
+<title>gst_adapter_copy&#160;()</title>
+<indexterm zone="gst-adapter-copy"><primary>gst_adapter_copy</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_adapter_copy (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> dest</parameter>,
+                  <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                  <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Copies <parameter>size</parameter>
+ bytes of data starting at <parameter>offset</parameter>
+ out of the buffers
+contained in <link linkend="GstAdapter"><type>GstAdapter</type></link> into an array <parameter>dest</parameter>
+ provided by the caller.</para>
+<para>The array <parameter>dest</parameter>
+ should be large enough to contain <parameter>size</parameter>
+ bytes.
+The user should check that the adapter has (<parameter>offset</parameter>
+ + <parameter>size</parameter>
+) bytes
+available before calling this function.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-adapter-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dest</para></entry>
+<entry role="parameter_description"><para>    the memory to copy into. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>][<acronym>array</acronym> length=size][<acronym>element-type</acronym> guint8]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the bytes offset in the adapter to start from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the number of bytes to copy</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-copy-bytes" role="function" condition="since:1.4">
+<title>gst_adapter_copy_bytes&#160;()</title>
+<indexterm zone="gst-adapter-copy-bytes" role="1.4"><primary>gst_adapter_copy_bytes</primary></indexterm>
+<programlisting language="C"><link linkend="GBytes"><returnvalue>GBytes</returnvalue></link>&#160;*
+gst_adapter_copy_bytes (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                        <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                        <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Similar to gst_adapter_copy, but more suitable for language bindings. <parameter>size</parameter>
+
+bytes of data starting at <parameter>offset</parameter>
+ will be copied out of the buffers contained
+in <parameter>adapter</parameter>
+ and into a new <link linkend="GBytes"><type>GBytes</type></link> structure which is returned. Depending on
+the value of the <parameter>size</parameter>
+ argument an empty <link linkend="GBytes"><type>GBytes</type></link> structure may be returned.</para>
+
+<para><emphasis role="annotation">[<acronym>rename-to</acronym> gst_adapter_copy]</emphasis></para><refsect3 id="gst-adapter-copy-bytes.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the bytes offset in the adapter to start from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the number of bytes to copy</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-copy-bytes.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GBytes"><type>GBytes</type></link> structure containing the copied data. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-adapter-flush" role="function">
+<title>gst_adapter_flush&#160;()</title>
+<indexterm zone="gst-adapter-flush"><primary>gst_adapter_flush</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_adapter_flush (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                   <parameter><link linkend="gsize"><type>gsize</type></link> flush</parameter>);</programlisting>
+<para>Flushes the first <parameter>flush</parameter>
+ bytes in the <parameter>adapter</parameter>
+. The caller must ensure that
+at least this many bytes are available.</para>
+<para>See also: <link linkend="gst-adapter-map"><function>gst_adapter_map()</function></link>, <link linkend="gst-adapter-unmap"><function>gst_adapter_unmap()</function></link></para>
+<refsect3 id="gst-adapter-flush.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flush</para></entry>
+<entry role="parameter_description"><para>the number of bytes to flush</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-available" role="function">
+<title>gst_adapter_available&#160;()</title>
+<indexterm zone="gst-adapter-available"><primary>gst_adapter_available</primary></indexterm>
+<programlisting language="C"><link linkend="gsize"><returnvalue>gsize</returnvalue></link>
+gst_adapter_available (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>);</programlisting>
+<para>Gets the maximum amount of bytes available, that is it returns the maximum
+value that can be supplied to <link linkend="gst-adapter-map"><function>gst_adapter_map()</function></link> without that function
+returning <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-adapter-available.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-available.returns" role="returns">
+<title>Returns</title>
+<para> number of bytes available in <parameter>adapter</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-available-fast" role="function">
+<title>gst_adapter_available_fast&#160;()</title>
+<indexterm zone="gst-adapter-available-fast"><primary>gst_adapter_available_fast</primary></indexterm>
+<programlisting language="C"><link linkend="gsize"><returnvalue>gsize</returnvalue></link>
+gst_adapter_available_fast (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>);</programlisting>
+<para>Gets the maximum number of bytes that are immediately available without
+requiring any expensive operations (like copying the data into a
+temporary buffer).</para>
+<refsect3 id="gst-adapter-available-fast.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-available-fast.returns" role="returns">
+<title>Returns</title>
+<para> number of bytes that are available in <parameter>adapter</parameter>
+without expensive
+operations</para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-take" role="function">
+<title>gst_adapter_take&#160;()</title>
+<indexterm zone="gst-adapter-take"><primary>gst_adapter_take</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_adapter_take (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                  <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a freshly allocated buffer containing the first <parameter>nbytes</parameter>
+ bytes of the
+<parameter>adapter</parameter>
+. The returned bytes will be flushed from the adapter.</para>
+<para>Caller owns returned value. g_free after usage.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-adapter-take.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to take</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-take.returns" role="returns">
+<title>Returns</title>
+<para>    oven-fresh hot data, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>array</acronym> length=nbytes][<acronym>element-type</acronym> guint8][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-take-buffer" role="function">
+<title>gst_adapter_take_buffer&#160;()</title>
+<indexterm zone="gst-adapter-take-buffer"><primary>gst_adapter_take_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_adapter_take_buffer (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                         <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first <parameter>nbytes</parameter>
+ bytes of the
+<parameter>adapter</parameter>
+. The returned bytes will be flushed from the adapter.
+This function is potentially more performant than
+<link linkend="gst-adapter-take"><function>gst_adapter_take()</function></link> since it can reuse the memory in pushed buffers
+by subbuffering or merging. This function will always return a
+buffer with a single memory region.</para>
+<para>Note that no assumptions should be made as to whether certain buffer
+flags such as the DISCONT flag are set on the returned buffer, or not.
+The caller needs to explicitly set or unset flags that should be set or
+unset.</para>
+<para>Since 1.6 this will also copy over all GstMeta of the input buffers except
+for meta with the <link linkend="GST-META-FLAG-POOLED:CAPS"><literal>GST_META_FLAG_POOLED</literal></link> flag or with the "memory" tag.</para>
+<para>Caller owns a reference to the returned buffer. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> after
+usage.</para>
+<para>Free-function: gst_buffer_unref</para>
+<refsect3 id="gst-adapter-take-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to take</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-take-buffer.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first
+<parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available.
+<link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-get-buffer" role="function" condition="since:1.6">
+<title>gst_adapter_get_buffer&#160;()</title>
+<indexterm zone="gst-adapter-get-buffer" role="1.6"><primary>gst_adapter_get_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_adapter_get_buffer (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                        <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first <parameter>nbytes</parameter>
+ of the <parameter>adapter</parameter>
+, but
+does not flush them from the adapter. See <link linkend="gst-adapter-take-buffer"><function>gst_adapter_take_buffer()</function></link>
+for details.</para>
+<para>Caller owns a reference to the returned buffer. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> after
+usage.</para>
+<para>Free-function: gst_buffer_unref</para>
+<refsect3 id="gst-adapter-get-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-get-buffer.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first
+<parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available.
+<link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-adapter-take-buffer-fast" role="function" condition="since:1.2">
+<title>gst_adapter_take_buffer_fast&#160;()</title>
+<indexterm zone="gst-adapter-take-buffer-fast" role="1.2"><primary>gst_adapter_take_buffer_fast</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_adapter_take_buffer_fast (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                              <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first <parameter>nbytes</parameter>
+ of the <parameter>adapter</parameter>
+.
+The returned bytes will be flushed from the adapter.  This function
+is potentially more performant than <link linkend="gst-adapter-take-buffer"><function>gst_adapter_take_buffer()</function></link> since
+it can reuse the memory in pushed buffers by subbuffering or
+merging. Unlike <link linkend="gst-adapter-take-buffer"><function>gst_adapter_take_buffer()</function></link>, the returned buffer may
+be composed of multiple non-contiguous <link linkend="GstMemory"><type>GstMemory</type></link> objects, no
+copies are made.</para>
+<para>Note that no assumptions should be made as to whether certain buffer
+flags such as the DISCONT flag are set on the returned buffer, or not.
+The caller needs to explicitly set or unset flags that should be set or
+unset.</para>
+<para>This will also copy over all GstMeta of the input buffers except
+for meta with the <link linkend="GST-META-FLAG-POOLED:CAPS"><literal>GST_META_FLAG_POOLED</literal></link> flag or with the "memory" tag.</para>
+<para>This function can return buffer up to the return value of
+<link linkend="gst-adapter-available"><function>gst_adapter_available()</function></link> without making copies if possible.</para>
+<para>Caller owns a reference to the returned buffer. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> after
+usage.</para>
+<para>Free-function: gst_buffer_unref</para>
+<refsect3 id="gst-adapter-take-buffer-fast.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to take</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-take-buffer-fast.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first
+<parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available.
+<link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-adapter-get-buffer-fast" role="function" condition="since:1.6">
+<title>gst_adapter_get_buffer_fast&#160;()</title>
+<indexterm zone="gst-adapter-get-buffer-fast" role="1.6"><primary>gst_adapter_get_buffer_fast</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_adapter_get_buffer_fast (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                             <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first <parameter>nbytes</parameter>
+ of the <parameter>adapter</parameter>
+, but
+does not flush them from the adapter. See <link linkend="gst-adapter-take-buffer-fast"><function>gst_adapter_take_buffer_fast()</function></link>
+for details.</para>
+<para>Caller owns a reference to the returned buffer. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> after
+usage.</para>
+<para>Free-function: gst_buffer_unref</para>
+<refsect3 id="gst-adapter-get-buffer-fast.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-get-buffer-fast.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> containing the first
+<parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available.
+<link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> when no longer needed. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-adapter-take-list" role="function">
+<title>gst_adapter_take_list&#160;()</title>
+<indexterm zone="gst-adapter-take-list"><primary>gst_adapter_take_list</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_adapter_take_list (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                       <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GList"><type>GList</type></link> of buffers containing the first <parameter>nbytes</parameter>
+ bytes of the
+<parameter>adapter</parameter>
+. The returned bytes will be flushed from the adapter.
+When the caller can deal with individual buffers, this function is more
+performant because no memory should be copied.</para>
+<para>Caller owns returned list and contained buffers. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> each
+buffer in the list before freeing the list after usage.</para>
+<refsect3 id="gst-adapter-take-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to take</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-take-list.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+buffers containing the first <parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> Gst.Buffer][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-get-list" role="function" condition="since:1.6">
+<title>gst_adapter_get_list&#160;()</title>
+<indexterm zone="gst-adapter-get-list" role="1.6"><primary>gst_adapter_get_list</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_adapter_get_list (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                      <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GList"><type>GList</type></link> of buffers containing the first <parameter>nbytes</parameter>
+ bytes of the
+<parameter>adapter</parameter>
+, but does not flush them from the adapter. See
+<link linkend="gst-adapter-take-list"><function>gst_adapter_take_list()</function></link> for details.</para>
+<para>Caller owns returned list and contained buffers. <link linkend="gst-buffer-unref"><function>gst_buffer_unref()</function></link> each
+buffer in the list before freeing the list after usage.</para>
+<refsect3 id="gst-adapter-get-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-get-list.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GList"><type>GList</type></link> of
+buffers containing the first <parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not available. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> Gst.Buffer][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-adapter-take-buffer-list" role="function" condition="since:1.6">
+<title>gst_adapter_take_buffer_list&#160;()</title>
+<indexterm zone="gst-adapter-take-buffer-list" role="1.6"><primary>gst_adapter_take_buffer_list</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_adapter_take_buffer_list (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                              <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GstBufferList"><type>GstBufferList</type></link> of buffers containing the first <parameter>nbytes</parameter>
+ bytes of
+the <parameter>adapter</parameter>
+. The returned bytes will be flushed from the adapter.
+When the caller can deal with individual buffers, this function is more
+performant because no memory should be copied.</para>
+<para>Caller owns the returned list. Call <link linkend="gst-buffer-list-unref"><function>gst_buffer_list_unref()</function></link> to free
+the list after usage.</para>
+<refsect3 id="gst-adapter-take-buffer-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to take</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-take-buffer-list.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBufferList"><type>GstBufferList</type></link> of buffers containing
+the first <parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not
+available. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-adapter-get-buffer-list" role="function" condition="since:1.6">
+<title>gst_adapter_get_buffer_list&#160;()</title>
+<indexterm zone="gst-adapter-get-buffer-list" role="1.6"><primary>gst_adapter_get_buffer_list</primary></indexterm>
+<programlisting language="C"><link linkend="GstBufferList"><returnvalue>GstBufferList</returnvalue></link>&#160;*
+gst_adapter_get_buffer_list (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                             <parameter><link linkend="gsize"><type>gsize</type></link> nbytes</parameter>);</programlisting>
+<para>Returns a <link linkend="GstBufferList"><type>GstBufferList</type></link> of buffers containing the first <parameter>nbytes</parameter>
+ bytes of
+the <parameter>adapter</parameter>
+ but does not flush them from the adapter. See
+<link linkend="gst-adapter-take-buffer-list"><function>gst_adapter_take_buffer_list()</function></link> for details.</para>
+<para>Caller owns the returned list. Call <link linkend="gst-buffer-list-unref"><function>gst_buffer_list_unref()</function></link> to free
+the list after usage.</para>
+<refsect3 id="gst-adapter-get-buffer-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbytes</para></entry>
+<entry role="parameter_description"><para>the number of bytes to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-get-buffer-list.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBufferList"><type>GstBufferList</type></link> of buffers containing
+the first <parameter>nbytes</parameter>
+of the adapter, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>nbytes</parameter>
+bytes are not
+available. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-adapter-prev-pts" role="function">
+<title>gst_adapter_prev_pts&#160;()</title>
+<indexterm zone="gst-adapter-prev-pts"><primary>gst_adapter_prev_pts</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_adapter_prev_pts (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                      <parameter><link linkend="guint64"><type>guint64</type></link> *distance</parameter>);</programlisting>
+<para>Get the pts that was before the current byte in the adapter. When
+<parameter>distance</parameter>
+ is given, the amount of bytes between the pts and the current
+position is returned.</para>
+<para>The pts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when
+the adapter is first created or when it is cleared. This also means that before
+the first byte with a pts is removed from the adapter, the pts
+and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</para>
+<refsect3 id="gst-adapter-prev-pts.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>distance</para></entry>
+<entry role="parameter_description"><para> pointer to location for distance, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-prev-pts.returns" role="returns">
+<title>Returns</title>
+<para> The previously seen pts.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-prev-dts" role="function">
+<title>gst_adapter_prev_dts&#160;()</title>
+<indexterm zone="gst-adapter-prev-dts"><primary>gst_adapter_prev_dts</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_adapter_prev_dts (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                      <parameter><link linkend="guint64"><type>guint64</type></link> *distance</parameter>);</programlisting>
+<para>Get the dts that was before the current byte in the adapter. When
+<parameter>distance</parameter>
+ is given, the amount of bytes between the dts and the current
+position is returned.</para>
+<para>The dts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when
+the adapter is first created or when it is cleared. This also means that before
+the first byte with a dts is removed from the adapter, the dts
+and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</para>
+<refsect3 id="gst-adapter-prev-dts.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>distance</para></entry>
+<entry role="parameter_description"><para> pointer to location for distance, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-prev-dts.returns" role="returns">
+<title>Returns</title>
+<para> The previously seen dts.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-prev-pts-at-offset" role="function" condition="since:1.2">
+<title>gst_adapter_prev_pts_at_offset&#160;()</title>
+<indexterm zone="gst-adapter-prev-pts-at-offset" role="1.2"><primary>gst_adapter_prev_pts_at_offset</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_adapter_prev_pts_at_offset (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                                <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> *distance</parameter>);</programlisting>
+<para>Get the pts that was before the byte at offset <parameter>offset</parameter>
+ in the adapter. When
+<parameter>distance</parameter>
+ is given, the amount of bytes between the pts and the current
+position is returned.</para>
+<para>The pts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when
+the adapter is first created or when it is cleared. This also means that before
+the first byte with a pts is removed from the adapter, the pts
+and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</para>
+<refsect3 id="gst-adapter-prev-pts-at-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the offset in the adapter at which to get timestamp</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>distance</para></entry>
+<entry role="parameter_description"><para> pointer to location for distance, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-prev-pts-at-offset.returns" role="returns">
+<title>Returns</title>
+<para> The previously seen pts at given offset.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-adapter-prev-dts-at-offset" role="function" condition="since:1.2">
+<title>gst_adapter_prev_dts_at_offset&#160;()</title>
+<indexterm zone="gst-adapter-prev-dts-at-offset" role="1.2"><primary>gst_adapter_prev_dts_at_offset</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_adapter_prev_dts_at_offset (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                                <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> *distance</parameter>);</programlisting>
+<para>Get the dts that was before the byte at offset <parameter>offset</parameter>
+ in the adapter. When
+<parameter>distance</parameter>
+ is given, the amount of bytes between the dts and the current
+position is returned.</para>
+<para>The dts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when
+the adapter is first created or when it is cleared. This also means that before
+the first byte with a dts is removed from the adapter, the dts
+and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</para>
+<refsect3 id="gst-adapter-prev-dts-at-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the offset in the adapter at which to get timestamp</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>distance</para></entry>
+<entry role="parameter_description"><para> pointer to location for distance, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-prev-dts-at-offset.returns" role="returns">
+<title>Returns</title>
+<para> The previously seen dts at given offset.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-adapter-masked-scan-uint32" role="function">
+<title>gst_adapter_masked_scan_uint32&#160;()</title>
+<indexterm zone="gst-adapter-masked-scan-uint32"><primary>gst_adapter_masked_scan_uint32</primary></indexterm>
+<programlisting language="C"><link linkend="gssize"><returnvalue>gssize</returnvalue></link>
+gst_adapter_masked_scan_uint32 (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> mask</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> pattern</parameter>,
+                                <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                                <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Scan for pattern <parameter>pattern</parameter>
+ with applied mask <parameter>mask</parameter>
+ in the adapter data,
+starting from offset <parameter>offset</parameter>
+.</para>
+<para>The bytes in <parameter>pattern</parameter>
+ and <parameter>mask</parameter>
+ are interpreted left-to-right, regardless
+of endianness.  All four bytes of the pattern must be present in the
+adapter for it to match, even if the first or last bytes are masked out.</para>
+<para>It is an error to call this function without making sure that there is
+enough data (offset+size bytes) in the adapter.</para>
+<para>This function calls <link linkend="gst-adapter-masked-scan-uint32-peek"><function>gst_adapter_masked_scan_uint32_peek()</function></link> passing <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+for value.</para>
+<refsect3 id="gst-adapter-masked-scan-uint32.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mask</para></entry>
+<entry role="parameter_description"><para>mask to apply to data before matching against <parameter>pattern</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pattern</para></entry>
+<entry role="parameter_description"><para>pattern to match (after mask is applied)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset into the adapter data from which to start scanning, returns
+the last scanned position.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>number of bytes to scan from offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-masked-scan-uint32.returns" role="returns">
+<title>Returns</title>
+<para> offset of the first match, or -1 if no match was found.</para>
+<para>Example:</para>
+<programlisting>
+// Assume the adapter contains 0x00 0x01 0x02 ... 0xfe 0xff
+gst_adapter_masked_scan_uint32 (adapter, 0xffffffff, 0x00010203, 0, 256);
+// -> returns 0
+gst_adapter_masked_scan_uint32 (adapter, 0xffffffff, 0x00010203, 1, 255);
+// -> returns -1
+gst_adapter_masked_scan_uint32 (adapter, 0xffffffff, 0x01020304, 1, 255);
+// -> returns 1
+gst_adapter_masked_scan_uint32 (adapter, 0xffff, 0x0001, 0, 256);
+// -> returns -1
+gst_adapter_masked_scan_uint32 (adapter, 0xffff, 0x0203, 0, 256);
+// -> returns 0
+gst_adapter_masked_scan_uint32 (adapter, 0xffff0000, 0x02030000, 0, 256);
+// -> returns 2
+gst_adapter_masked_scan_uint32 (adapter, 0xffff0000, 0x02030000, 0, 4);
+// -> returns -1
+</programlisting>
+</refsect3></refsect2>
+<refsect2 id="gst-adapter-masked-scan-uint32-peek" role="function">
+<title>gst_adapter_masked_scan_uint32_peek&#160;()</title>
+<indexterm zone="gst-adapter-masked-scan-uint32-peek"><primary>gst_adapter_masked_scan_uint32_peek</primary></indexterm>
+<programlisting language="C"><link linkend="gssize"><returnvalue>gssize</returnvalue></link>
+gst_adapter_masked_scan_uint32_peek (<parameter><link linkend="GstAdapter"><type>GstAdapter</type></link> *adapter</parameter>,
+                                     <parameter><link linkend="guint32"><type>guint32</type></link> mask</parameter>,
+                                     <parameter><link linkend="guint32"><type>guint32</type></link> pattern</parameter>,
+                                     <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                                     <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>,
+                                     <parameter><link linkend="guint32"><type>guint32</type></link> *value</parameter>);</programlisting>
+<para>Scan for pattern <parameter>pattern</parameter>
+ with applied mask <parameter>mask</parameter>
+ in the adapter data,
+starting from offset <parameter>offset</parameter>
+.  If a match is found, the value that matched
+is returned through <parameter>value</parameter>
+, otherwise <parameter>value</parameter>
+ is left untouched.</para>
+<para>The bytes in <parameter>pattern</parameter>
+ and <parameter>mask</parameter>
+ are interpreted left-to-right, regardless
+of endianness.  All four bytes of the pattern must be present in the
+adapter for it to match, even if the first or last bytes are masked out.</para>
+<para>It is an error to call this function without making sure that there is
+enough data (offset+size bytes) in the adapter.</para>
+<refsect3 id="gst-adapter-masked-scan-uint32-peek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>adapter</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstAdapter"><type>GstAdapter</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mask</para></entry>
+<entry role="parameter_description"><para>mask to apply to data before matching against <parameter>pattern</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pattern</para></entry>
+<entry role="parameter_description"><para>pattern to match (after mask is applied)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset into the adapter data from which to start scanning, returns
+the last scanned position.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>number of bytes to scan from offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> pointer to uint32 to return matching data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-adapter-masked-scan-uint32-peek.returns" role="returns">
+<title>Returns</title>
+<para> offset of the first match, or -1 if no match was found.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstAdapter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAdapter-struct" role="struct">
+<title>GstAdapter</title>
+<indexterm zone="GstAdapter-struct"><primary>GstAdapter</primary></indexterm>
+<programlisting language="C">typedef struct _GstAdapter GstAdapter;</programlisting>
+<para>The opaque <link linkend="GstAdapter"><type>GstAdapter</type></link> data structure.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

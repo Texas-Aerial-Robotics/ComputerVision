@@ -1,0 +1,173 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-input-selector">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-input-selector.top_of_page" role="top_of_page">input-selector</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>input-selector</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-input-selector.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstPad"><type>GstPad</type></link> *</entry><entry role="property_name"><link linkend="GstInputSelector--active-pad">active-pad</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstInputSelector--cache-buffers">cache-buffers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstInputSelector--n-pads">n-pads</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstInputSelectorSyncMode"><type>GstInputSelectorSyncMode</type></link></entry><entry role="property_name"><link linkend="GstInputSelector--sync-mode">sync-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstInputSelector--sync-streams">sync-streams</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstInputSelector"/><refsect1 id="gstreamer-plugins-input-selector.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstInputSelector-struct">GstInputSelector</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstInputSelectorSyncMode">GstInputSelectorSyncMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-input-selector.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstInputSelector
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-input-selector.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Direct one out of N input streams to the output pad.</para>
+<para>The input pads are from a GstPad subclass and have additional
+properties, which users may find useful, namely:</para>
+<itemizedlist>
+<listitem>
+&quot;running-time&quot;: Running time of stream on pad (<link linkend="gint64"><type>gint64</type></link>)
+</listitem>
+<listitem>
+&quot;tags&quot;: The currently active tags on the pad (<link linkend="GstTagList"><type>GstTagList</type></link>, boxed type)
+</listitem>
+<listitem>
+&quot;active&quot;: If the pad is currently active (<link linkend="gboolean"><type>gboolean</type></link>)
+</listitem>
+<listitem>
+&quot;always-ok&quot; : Make an inactive pads return <link linkend="GST-FLOW-OK:CAPS"><type>GST_FLOW_OK</type></link> instead of
+<link linkend="GST-FLOW-NOT-LINKED:CAPS"><type>GST_FLOW_NOT_LINKED</type></link>
+</listitem>
+</itemizedlist>
+
+<include href="element-input-selector-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-input-selector.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-input-selector.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstInputSelector-struct" role="struct">
+<title>struct GstInputSelector</title>
+<indexterm zone="GstInputSelector-struct"><primary>GstInputSelector</primary></indexterm>
+<programlisting language="C">struct GstInputSelector;</programlisting>
+</refsect2>
+<refsect2 id="GstInputSelectorSyncMode" role="enum">
+<title>enum GstInputSelectorSyncMode</title>
+<indexterm zone="GstInputSelectorSyncMode"><primary>GstInputSelectorSyncMode</primary></indexterm>
+<para>The different ways that input-selector can behave when in sync-streams mode.</para>
+<refsect3 id="GstInputSelectorSyncMode.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-INPUT-SELECTOR-SYNC-MODE-ACTIVE-SEGMENT:CAPS">GST_INPUT_SELECTOR_SYNC_MODE_ACTIVE_SEGMENT</para></entry>
+<entry role="enum_member_description"><para>Sync using the current active segment.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-INPUT-SELECTOR-SYNC-MODE-CLOCK:CAPS">GST_INPUT_SELECTOR_SYNC_MODE_CLOCK</para></entry>
+<entry role="enum_member_description"><para>Sync using the clock.</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-input-selector.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstInputSelector--active-pad" role="property"><title>The <literal>“active-pad”</literal> property</title>
+<indexterm zone="GstInputSelector--active-pad"><primary>GstInputSelector:active-pad</primary></indexterm>
+<programlisting>  “active-pad”               <link linkend="GstPad"><type>GstPad</type></link> *</programlisting>
+<para>The currently active sink pad.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstInputSelector--cache-buffers" role="property"><title>The <literal>“cache-buffers”</literal> property</title>
+<indexterm zone="GstInputSelector--cache-buffers"><primary>GstInputSelector:cache-buffers</primary></indexterm>
+<programlisting>  “cache-buffers”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> and GstInputSelector:sync-streams is also set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>,
+the active pad will cache the buffers still considered valid (after current
+running time, see sync-mode) to avoid missing frames if/when the pad is
+reactivated.</para>
+<para>The active pad may push more buffers than what is currently displayed/consumed
+and when changing pads those buffers will be discarded and the only way to
+reactivate that pad without loosing the already consumed buffers is to enable cache.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstInputSelector--n-pads" role="property"><title>The <literal>“n-pads”</literal> property</title>
+<indexterm zone="GstInputSelector--n-pads"><primary>GstInputSelector:n-pads</primary></indexterm>
+<programlisting>  “n-pads”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The number of sink pads.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstInputSelector--sync-mode" role="property"><title>The <literal>“sync-mode”</literal> property</title>
+<indexterm zone="GstInputSelector--sync-mode"><primary>GstInputSelector:sync-mode</primary></indexterm>
+<programlisting>  “sync-mode”                <link linkend="GstInputSelectorSyncMode"><type>GstInputSelectorSyncMode</type></link></programlisting>
+<para>Select how input-selector will sync buffers when in sync-streams mode.</para>
+<para>Note that when using the &quot;active-segment&quot; mode, the &quot;active-segment&quot; may
+be ahead of current clock time when switching the active pad, as the current
+active pad may have pushed more buffers than what was displayed/consumed,
+which may cause delays and some missing buffers.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: Sync using the current active segment</para>
+</refsect2>
+<refsect2 id="GstInputSelector--sync-streams" role="property"><title>The <literal>“sync-streams”</literal> property</title>
+<indexterm zone="GstInputSelector--sync-streams"><primary>GstInputSelector:sync-streams</primary></indexterm>
+<programlisting>  “sync-streams”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> all inactive streams will be synced to the
+running time of the active stream or to the current clock.</para>
+<para>To make sure no buffers are dropped by input-selector
+that might be needed when switching the active pad,
+sync-mode should be set to &quot;clock&quot; and cache-buffers to TRUE.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-input-selector.see-also">
+<title>See Also</title>
+<para><link linkend="GstOutputSelector"><type>GstOutputSelector</type></link></para>
+
+</refsect1>
+
+</refentry>

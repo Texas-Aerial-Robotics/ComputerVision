@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstChildProxy">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstChildProxy.top_of_page">GstChildProxy</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstChildProxy</refname>
+<refpurpose>Interface for multi child elements.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstChildProxy.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-get-children-count">gst_child_proxy_get_children_count</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GObject"><returnvalue>GObject</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-child-proxy-get-child-by-name">gst_child_proxy_get_child_by_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GObject"><returnvalue>GObject</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-child-proxy-get-child-by-index">gst_child_proxy_get_child_by_index</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-lookup">gst_child_proxy_lookup</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-get-property">gst_child_proxy_get_property</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-get-valist">gst_child_proxy_get_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-get">gst_child_proxy_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-set-property">gst_child_proxy_set_property</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-set-valist">gst_child_proxy_set_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-set">gst_child_proxy_set</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-child-added">gst_child_proxy_child_added</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-child-proxy-child-removed">gst_child_proxy_child_removed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstChildProxy.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstChildProxy-child-added">child-added</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstChildProxy-child-removed">child-removed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstChildProxy.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstChildProxy-struct">GstChildProxy</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstChildProxyInterface">GstChildProxyInterface</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstChildProxy.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GInterface">GInterface</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstChildProxy
+</screen>
+</refsect1>
+<refsect1 id="GstChildProxy.prerequisites" role="prerequisites">
+<title role="prerequisites.title">Prerequisites</title>
+<para>
+GstChildProxy requires
+ <link linkend="GObject">GObject</link>.</para>
+
+</refsect1>
+<refsect1 id="GstChildProxy.implementations" role="implementations">
+<title role="implementations.title">Known Implementations</title>
+<para>
+GstChildProxy is implemented by
+ <link linkend="GstBin">GstBin</link> and  <link linkend="GstPipeline">GstPipeline</link>.</para>
+
+</refsect1>
+
+<refsect1 id="GstChildProxy.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstChildProxy.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This interface abstracts handling of property sets for elements with
+children. Imagine elements such as mixers or polyphonic generators. They all
+have multiple <link linkend="GstPad"><type>GstPad</type></link> or some kind of voice objects. Another use case are
+container elements like <link linkend="GstBin"><type>GstBin</type></link>.
+The element implementing the interface acts as a parent for those child
+objects.</para>
+<para>By implementing this interface the child properties can be accessed from the
+parent element by using <link linkend="gst-child-proxy-get"><function>gst_child_proxy_get()</function></link> and <link linkend="gst-child-proxy-set"><function>gst_child_proxy_set()</function></link>.</para>
+<para>Property names are written as "child-name::property-name". The whole naming
+scheme is recursive. Thus "child1::child2::property" is valid too, if
+"child1" and "child2" implement the <link linkend="GstChildProxy"><type>GstChildProxy</type></link> interface.</para>
+
+</refsect1>
+<refsect1 id="GstChildProxy.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-child-proxy-get-children-count" role="function">
+<title>gst_child_proxy_get_children_count&#160;()</title>
+<indexterm zone="gst-child-proxy-get-children-count"><primary>gst_child_proxy_get_children_count</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_child_proxy_get_children_count (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *parent</parameter>);</programlisting>
+<para>Gets the number of child objects this parent contains.</para>
+<refsect3 id="gst-child-proxy-get-children-count.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-child-proxy-get-children-count.returns" role="returns">
+<title>Returns</title>
+<para> the number of child objects</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-get-child-by-name" role="function">
+<title>gst_child_proxy_get_child_by_name&#160;()</title>
+<indexterm zone="gst-child-proxy-get-child-by-name"><primary>gst_child_proxy_get_child_by_name</primary></indexterm>
+<programlisting language="C"><link linkend="GObject"><returnvalue>GObject</returnvalue></link>&#160;*
+gst_child_proxy_get_child_by_name (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *parent</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Looks up a child element by the given name.</para>
+<para>This virtual method has a default implementation that uses <link linkend="GstObject"><type>GstObject</type></link>
+together with <link linkend="gst-object-get-name"><function>gst_object_get_name()</function></link>. If the interface is to be used with
+<link linkend="GObjects"><type>GObjects</type></link>, this methods needs to be overridden.</para>
+<refsect3 id="gst-child-proxy-get-child-by-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent object to get the child from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the child's name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-child-proxy-get-child-by-name.returns" role="returns">
+<title>Returns</title>
+<para> the child object or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if
+not found. Unref after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-get-child-by-index" role="function">
+<title>gst_child_proxy_get_child_by_index&#160;()</title>
+<indexterm zone="gst-child-proxy-get-child-by-index"><primary>gst_child_proxy_get_child_by_index</primary></indexterm>
+<programlisting language="C"><link linkend="GObject"><returnvalue>GObject</returnvalue></link>&#160;*
+gst_child_proxy_get_child_by_index (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *parent</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> index</parameter>);</programlisting>
+<para>Fetches a child by its number.</para>
+<refsect3 id="gst-child-proxy-get-child-by-index.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent object to get the child from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>index</para></entry>
+<entry role="parameter_description"><para>the child's position in the child list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-child-proxy-get-child-by-index.returns" role="returns">
+<title>Returns</title>
+<para> the child object or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if
+not found (index too high). Unref after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-lookup" role="function">
+<title>gst_child_proxy_lookup&#160;()</title>
+<indexterm zone="gst-child-proxy-lookup"><primary>gst_child_proxy_lookup</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_child_proxy_lookup (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                        <parameter><link linkend="GObject"><type>GObject</type></link> **target</parameter>,
+                        <parameter><link linkend="GParamSpec"><type>GParamSpec</type></link> **pspec</parameter>);</programlisting>
+<para>Looks up which object and <link linkend="GParamSpec"><type>GParamSpec</type></link> would be effected by the given <parameter>name</parameter>
+.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-child-proxy-lookup.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>child proxy object to lookup the property in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the property to look up</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="GObject"><type>GObject</type></link> that
+takes the real object to set property on. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>pspec</para></entry>
+<entry role="parameter_description"><para> pointer to take the <link linkend="GParamSpec"><type>GParamSpec</type></link>
+describing the property. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-child-proxy-lookup.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>target</parameter>
+and <parameter>pspec</parameter>
+could be found. <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise. In that
+case the values for <parameter>pspec</parameter>
+and <parameter>target</parameter>
+are not modified. Unref <parameter>target</parameter>
+after
+usage. For plain GObjects <parameter>target</parameter>
+is the same as <parameter>object</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-get-property" role="function">
+<title>gst_child_proxy_get_property&#160;()</title>
+<indexterm zone="gst-child-proxy-get-property"><primary>gst_child_proxy_get_property</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_get_property (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                              <parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Gets a single property using the GstChildProxy mechanism.
+You are responsible for freeing it by calling <link linkend="g-value-unset"><function>g_value_unset()</function></link></para>
+<refsect3 id="gst-child-proxy-get-property.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>object to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the property</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GValue"><type>GValue</type></link> that should take the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-get-valist" role="function">
+<title>gst_child_proxy_get_valist&#160;()</title>
+<indexterm zone="gst-child-proxy-get-valist"><primary>gst_child_proxy_get_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_get_valist (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *first_property_name</parameter>,
+                            <parameter><link linkend="va-list"><type>va_list</type></link> var_args</parameter>);</programlisting>
+<para>Gets properties of the parent object and its children.</para>
+<refsect3 id="gst-child-proxy-get-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the object to query</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_property_name</para></entry>
+<entry role="parameter_description"><para>name of the first property to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>var_args</para></entry>
+<entry role="parameter_description"><para>return location for the first property, followed optionally by more name/return location pairs, followed by <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-get" role="function">
+<title>gst_child_proxy_get&#160;()</title>
+<indexterm zone="gst-child-proxy-get"><primary>gst_child_proxy_get</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_get (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *first_property_name</parameter>,
+                     <parameter>...</parameter>);</programlisting>
+<para>Gets properties of the parent object and its children.</para>
+<refsect3 id="gst-child-proxy-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_property_name</para></entry>
+<entry role="parameter_description"><para>name of the first property to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>return location for the first property, followed optionally by more name/return location pairs, followed by <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-set-property" role="function">
+<title>gst_child_proxy_set_property&#160;()</title>
+<indexterm zone="gst-child-proxy-set-property"><primary>gst_child_proxy_set_property</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_set_property (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                              <parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Sets a single property using the GstChildProxy mechanism.</para>
+<refsect3 id="gst-child-proxy-set-property.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the property to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>new <link linkend="GValue"><type>GValue</type></link> for the property</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-set-valist" role="function">
+<title>gst_child_proxy_set_valist&#160;()</title>
+<indexterm zone="gst-child-proxy-set-valist"><primary>gst_child_proxy_set_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_set_valist (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *first_property_name</parameter>,
+                            <parameter><link linkend="va-list"><type>va_list</type></link> var_args</parameter>);</programlisting>
+<para>Sets properties of the parent object and its children.</para>
+<refsect3 id="gst-child-proxy-set-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_property_name</para></entry>
+<entry role="parameter_description"><para>name of the first property to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>var_args</para></entry>
+<entry role="parameter_description"><para>value for the first property, followed optionally by more name/value pairs, followed by <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-set" role="function">
+<title>gst_child_proxy_set&#160;()</title>
+<indexterm zone="gst-child-proxy-set"><primary>gst_child_proxy_set</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_set (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *object</parameter>,
+                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *first_property_name</parameter>,
+                     <parameter>...</parameter>);</programlisting>
+<para>Sets properties of the parent object and its children.</para>
+<refsect3 id="gst-child-proxy-set.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_property_name</para></entry>
+<entry role="parameter_description"><para>name of the first property to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>value for the first property, followed optionally by more name/value pairs, followed by <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-child-added" role="function">
+<title>gst_child_proxy_child_added&#160;()</title>
+<indexterm zone="gst-child-proxy-child-added"><primary>gst_child_proxy_child_added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_child_added (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *parent</parameter>,
+                             <parameter><link linkend="GObject"><type>GObject</type></link> *child</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Emits the "child-added" signal.</para>
+<refsect3 id="gst-child-proxy-child-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>child</para></entry>
+<entry role="parameter_description"><para>the newly added child</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name of the new child</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-child-proxy-child-removed" role="function">
+<title>gst_child_proxy_child_removed&#160;()</title>
+<indexterm zone="gst-child-proxy-child-removed"><primary>gst_child_proxy_child_removed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_child_proxy_child_removed (<parameter><link linkend="GstChildProxy"><type>GstChildProxy</type></link> *parent</parameter>,
+                               <parameter><link linkend="GObject"><type>GObject</type></link> *child</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Emits the "child-removed" signal.</para>
+<refsect3 id="gst-child-proxy-child-removed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>child</para></entry>
+<entry role="parameter_description"><para>the removed child</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name of the old child</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstChildProxy.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstChildProxy-struct" role="struct">
+<title>GstChildProxy</title>
+<indexterm zone="GstChildProxy-struct"><primary>GstChildProxy</primary></indexterm>
+<programlisting language="C">typedef struct _GstChildProxy GstChildProxy;</programlisting>
+<para>Opaque <link linkend="GstChildProxy"><type>GstChildProxy</type></link> data structure.</para>
+</refsect2>
+<refsect2 id="GstChildProxyInterface" role="struct">
+<title>struct GstChildProxyInterface</title>
+<indexterm zone="GstChildProxyInterface"><primary>GstChildProxyInterface</primary></indexterm>
+<programlisting language="C">struct GstChildProxyInterface {
+  GTypeInterface parent;
+
+  /* methods */
+  GObject * (*get_child_by_name)  (GstChildProxy * parent, const gchar * name);
+  GObject * (*get_child_by_index) (GstChildProxy * parent, guint index);
+  guint     (*get_children_count) (GstChildProxy * parent);
+};
+</programlisting>
+<para><link linkend="GstChildProxy"><type>GstChildProxy</type></link> interface.</para>
+<refsect3 id="GstChildProxyInterface.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GTypeInterface"><type>GTypeInterface</type></link>&#160;<structfield id="GstChildProxyInterface.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>parent interface type.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstChildProxyInterface.get-child-by-name">get_child_by_name</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual method to fetch the child by name</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstChildProxyInterface.get-child-by-index">get_child_by_index</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual method to fetch the child by index</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstChildProxyInterface.get-children-count">get_children_count</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>virtual method to get the children count</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstChildProxy.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstChildProxy-child-added" role="signal"><title>The <literal>“child-added”</literal> signal</title>
+<indexterm zone="GstChildProxy-child-added"><primary>GstChildProxy::child-added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstChildProxy"><type>GstChildProxy</type></link> *child_proxy,
+               <link linkend="GObject"><type>GObject</type></link>       *object,
+               <link linkend="gchar"><type>gchar</type></link>         *name,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Will be emitted after the <parameter>object</parameter>
+ was added to the <parameter>child_proxy</parameter>
+.</para>
+<refsect3 id="GstChildProxy-child-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>child_proxy</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstChildProxy"><type>GstChildProxy</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> that was added</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name of the new child</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+</refsect2><refsect2 id="GstChildProxy-child-removed" role="signal"><title>The <literal>“child-removed”</literal> signal</title>
+<indexterm zone="GstChildProxy-child-removed"><primary>GstChildProxy::child-removed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstChildProxy"><type>GstChildProxy</type></link> *child_proxy,
+               <link linkend="GObject"><type>GObject</type></link>       *object,
+               <link linkend="gchar"><type>gchar</type></link>         *name,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Will be emitted after the <parameter>object</parameter>
+ was removed from the <parameter>child_proxy</parameter>
+.</para>
+<refsect3 id="GstChildProxy-child-removed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>child_proxy</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstChildProxy"><type>GstChildProxy</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> that was removed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name of the old child</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstChildProxy.see-also">
+<title>See Also</title>
+<para><link linkend="GstBin"><type>GstBin</type></link></para>
+
+</refsect1>
+
+</refentry>

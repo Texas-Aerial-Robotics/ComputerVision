@@ -1,0 +1,728 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstCapsFeatures">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstCapsFeatures.top_of_page">GstCapsFeatures</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstCapsFeatures</refname>
+<refpurpose>A set of features in caps</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstCapsFeatures.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-new">gst_caps_features_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-new-empty">gst_caps_features_new_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-new-any">gst_caps_features_new_any</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-new-id">gst_caps_features_new_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-new-id-valist">gst_caps_features_new_id_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-new-valist">gst_caps_features_new_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-copy">gst_caps_features_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-free">gst_caps_features_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-from-string">gst_caps_features_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-to-string">gst_caps_features_to_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-set-parent-refcount">gst_caps_features_set_parent_refcount</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-is-equal">gst_caps_features_is_equal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-is-any">gst_caps_features_is_any</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-contains">gst_caps_features_contains</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-contains-id">gst_caps_features_contains_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-get-size">gst_caps_features_get_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-caps-features-get-nth">gst_caps_features_get_nth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-get-nth-id">gst_caps_features_get_nth_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-add">gst_caps_features_add</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-add-id">gst_caps_features_add_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-remove">gst_caps_features_remove</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-caps-features-remove-id">gst_caps_features_remove_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstCapsFeatures.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstCapsFeatures-struct">GstCapsFeatures</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAPS-FEATURES-ANY:CAPS">GST_CAPS_FEATURES_ANY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAPS-FEATURES-MEMORY-SYSTEM-MEMORY:CAPS">GST_CAPS_FEATURES_MEMORY_SYSTEM_MEMORY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAPS-FEATURE-MEMORY-SYSTEM-MEMORY:CAPS">GST_CAPS_FEATURE_MEMORY_SYSTEM_MEMORY</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstCapsFeatures.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstCapsFeatures
+</screen>
+</refsect1>
+
+<refsect1 id="GstCapsFeatures.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstCapsFeatures.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> can optionally be set on a <link linkend="GstCaps"><type>GstCaps</type></link> to add requirements
+for additional features for a specific <link linkend="GstStructure"><type>GstStructure</type></link>. Caps structures with
+the same name but with a non-equal set of caps features are not compatible.
+If a pad supports multiple sets of features it has to add multiple equal
+structures with different feature sets to the caps.</para>
+<para>Empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> are equivalent with the <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> that only
+contain <link linkend="GST-CAPS-FEATURE-MEMORY-SYSTEM-MEMORY:CAPS"><type>GST_CAPS_FEATURE_MEMORY_SYSTEM_MEMORY</type></link>. ANY <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> as
+created by <link linkend="gst-caps-features-new-any"><function>gst_caps_features_new_any()</function></link> are equal to any other <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>
+and can be used to specify that any <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> would be supported, e.g.
+for elements that don't touch buffer memory. <link linkend="GstCaps"><type>GstCaps</type></link> with ANY <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>
+are considered non-fixed and during negotiation some <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> have
+to be selected.</para>
+<para>Examples for caps features would be the requirement of a specific <link linkend="GstMemory"><type>GstMemory</type></link>
+types or the requirement of having a specific <link linkend="GstMeta"><type>GstMeta</type></link> on the buffer. Features
+are given as a string of the format "memory:GstMemoryTypeName" or
+"meta:GstMetaAPIName".</para>
+
+</refsect1>
+<refsect1 id="GstCapsFeatures.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-caps-features-new" role="function" condition="since:1.2">
+<title>gst_caps_features_new&#160;()</title>
+<indexterm zone="gst-caps-features-new" role="1.2"><primary>gst_caps_features_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *feature1</parameter>,
+                       <parameter>...</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> with the given features.
+The last argument must be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature1</para></entry>
+<entry role="parameter_description"><para>name of first feature to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>additional features</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-new.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-new-empty" role="function" condition="since:1.2">
+<title>gst_caps_features_new_empty&#160;()</title>
+<indexterm zone="gst-caps-features-new-empty" role="1.2"><primary>gst_caps_features_new_empty</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_new_empty (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new, empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-new-empty.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-new-any" role="function" condition="since:1.2">
+<title>gst_caps_features_new_any&#160;()</title>
+<indexterm zone="gst-caps-features-new-any" role="1.2"><primary>gst_caps_features_new_any</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_new_any (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new, ANY <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. This will be equal
+to any other <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> but caps with these are
+unfixed.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-new-any.returns" role="returns">
+<title>Returns</title>
+<para> a new, ANY <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-new-id" role="function" condition="since:1.2">
+<title>gst_caps_features_new_id&#160;()</title>
+<indexterm zone="gst-caps-features-new-id" role="1.2"><primary>gst_caps_features_new_id</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_new_id (<parameter><link linkend="GQuark"><type>GQuark</type></link> feature1</parameter>,
+                          <parameter>...</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> with the given features.
+The last argument must be 0.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-new-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature1</para></entry>
+<entry role="parameter_description"><para>name of first feature to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>additional features</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-new-id.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-new-id-valist" role="function" condition="since:1.2">
+<title>gst_caps_features_new_id_valist&#160;()</title>
+<indexterm zone="gst-caps-features-new-id-valist" role="1.2"><primary>gst_caps_features_new_id_valist</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_new_id_valist (<parameter><link linkend="GQuark"><type>GQuark</type></link> feature1</parameter>,
+                                 <parameter><link linkend="va-list"><type>va_list</type></link> varargs</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> with the given features.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-new-id-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature1</para></entry>
+<entry role="parameter_description"><para>name of first feature to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>varargs</para></entry>
+<entry role="parameter_description"><para>variable argument list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-new-id-valist.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-new-valist" role="function" condition="since:1.2">
+<title>gst_caps_features_new_valist&#160;()</title>
+<indexterm zone="gst-caps-features-new-valist" role="1.2"><primary>gst_caps_features_new_valist</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_new_valist (<parameter>const <link linkend="gchar"><type>gchar</type></link> *feature1</parameter>,
+                              <parameter><link linkend="va-list"><type>va_list</type></link> varargs</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> with the given features.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-new-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>feature1</para></entry>
+<entry role="parameter_description"><para>name of first feature to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>varargs</para></entry>
+<entry role="parameter_description"><para>variable argument list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-new-valist.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-copy" role="function" condition="since:1.2">
+<title>gst_caps_features_copy&#160;()</title>
+<indexterm zone="gst-caps-features-copy" role="1.2"><primary>gst_caps_features_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_copy (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>);</programlisting>
+<para>Duplicates a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> and all its values.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> to duplicate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-free" role="function" condition="since:1.2">
+<title>gst_caps_features_free&#160;()</title>
+<indexterm zone="gst-caps-features-free" role="1.2"><primary>gst_caps_features_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_caps_features_free (<parameter><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>);</programlisting>
+<para>Frees a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> and all its values. The caps features must not
+have a parent when this function is called.</para>
+<refsect3 id="gst-caps-features-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> to free. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-from-string" role="function" condition="since:1.2">
+<title>gst_caps_features_from_string&#160;()</title>
+<indexterm zone="gst-caps-features-from-string" role="1.2"><primary>gst_caps_features_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="GstCapsFeatures"><returnvalue>GstCapsFeatures</returnvalue></link>&#160;*
+gst_caps_features_from_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *features</parameter>);</programlisting>
+<para>Creates a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> from a string representation.</para>
+<para>Free-function: gst_caps_features_free</para>
+<refsect3 id="gst-caps-features-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a string representation of a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-from-string.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> or
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> when the string could not be parsed. Free with
+<link linkend="gst-caps-features-free"><function>gst_caps_features_free()</function></link> after use. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-to-string" role="function" condition="since:1.2">
+<title>gst_caps_features_to_string&#160;()</title>
+<indexterm zone="gst-caps-features-to-string" role="1.2"><primary>gst_caps_features_to_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_caps_features_to_string (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>);</programlisting>
+<para>Converts <parameter>features</parameter>
+ to a human-readable string representation.</para>
+<para>For debugging purposes its easier to do something like this:</para>
+<informalexample><programlisting><![CDATA[
+GST_LOG ("features is %" GST_PTR_FORMAT, features);
+]]></programlisting></informalexample>
+<para>
+This prints the features in human readable form.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-caps-features-to-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-to-string.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to string allocated by <link linkend="g-malloc"><function>g_malloc()</function></link>.
+<link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-set-parent-refcount" role="function" condition="since:1.2">
+<title>gst_caps_features_set_parent_refcount&#160;()</title>
+<indexterm zone="gst-caps-features-set-parent-refcount" role="1.2"><primary>gst_caps_features_set_parent_refcount</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_caps_features_set_parent_refcount (<parameter><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                                       <parameter><link linkend="gint"><type>gint</type></link> *refcount</parameter>);</programlisting>
+<para>Sets the parent_refcount field of <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>. This field is used to
+determine whether a caps features is mutable or not. This function should only be
+called by code implementing parent objects of <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>, as described in
+the MT Refcounting section of the design documents.</para>
+<refsect3 id="gst-caps-features-set-parent-refcount.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>refcount</para></entry>
+<entry role="parameter_description"><para> a pointer to the parent's refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-set-parent-refcount.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the parent refcount could be set.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-is-equal" role="function" condition="since:1.2">
+<title>gst_caps_features_is_equal&#160;()</title>
+<indexterm zone="gst-caps-features-is-equal" role="1.2"><primary>gst_caps_features_is_equal</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_caps_features_is_equal (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features1</parameter>,
+                            <parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features2</parameter>);</programlisting>
+<para>Check if <parameter>features1</parameter>
+ and <parameter>features2</parameter>
+ are equal.</para>
+<refsect3 id="gst-caps-features-is-equal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>features2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-is-equal.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>features1</parameter>
+and <parameter>features2</parameter>
+are equal.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-is-any" role="function" condition="since:1.2">
+<title>gst_caps_features_is_any&#160;()</title>
+<indexterm zone="gst-caps-features-is-any" role="1.2"><primary>gst_caps_features_is_any</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_caps_features_is_any (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>);</programlisting>
+<para>Check if <parameter>features</parameter>
+ is <link linkend="GST-CAPS-FEATURES-ANY:CAPS"><literal>GST_CAPS_FEATURES_ANY</literal></link>.</para>
+<refsect3 id="gst-caps-features-is-any.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-is-any.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>features</parameter>
+is <link linkend="GST-CAPS-FEATURES-ANY:CAPS"><literal>GST_CAPS_FEATURES_ANY</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-contains" role="function" condition="since:1.2">
+<title>gst_caps_features_contains&#160;()</title>
+<indexterm zone="gst-caps-features-contains" role="1.2"><primary>gst_caps_features_contains</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_caps_features_contains (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *feature</parameter>);</programlisting>
+<para>Check if <parameter>features</parameter>
+ contains <parameter>feature</parameter>
+.</para>
+<refsect3 id="gst-caps-features-contains.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-contains.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>features</parameter>
+contains <parameter>feature</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-contains-id" role="function" condition="since:1.2">
+<title>gst_caps_features_contains_id&#160;()</title>
+<indexterm zone="gst-caps-features-contains-id" role="1.2"><primary>gst_caps_features_contains_id</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_caps_features_contains_id (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                               <parameter><link linkend="GQuark"><type>GQuark</type></link> feature</parameter>);</programlisting>
+<para>Check if <parameter>features</parameter>
+ contains <parameter>feature</parameter>
+.</para>
+<refsect3 id="gst-caps-features-contains-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-contains-id.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>features</parameter>
+contains <parameter>feature</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-get-size" role="function" condition="since:1.2">
+<title>gst_caps_features_get_size&#160;()</title>
+<indexterm zone="gst-caps-features-get-size" role="1.2"><primary>gst_caps_features_get_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_caps_features_get_size (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>);</programlisting>
+<para>Returns the number of features in <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-get-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-get-size.returns" role="returns">
+<title>Returns</title>
+<para> The number of features in <parameter>features</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-get-nth" role="function" condition="since:1.2">
+<title>gst_caps_features_get_nth&#160;()</title>
+<indexterm zone="gst-caps-features-get-nth" role="1.2"><primary>gst_caps_features_get_nth</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_caps_features_get_nth (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                           <parameter><link linkend="guint"><type>guint</type></link> i</parameter>);</programlisting>
+<para>Returns the <parameter>i</parameter>
+-th feature of <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-get-nth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>i</para></entry>
+<entry role="parameter_description"><para>index of the feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-get-nth.returns" role="returns">
+<title>Returns</title>
+<para> The <parameter>i</parameter>
+-th feature of <parameter>features</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-get-nth-id" role="function" condition="since:1.2">
+<title>gst_caps_features_get_nth_id&#160;()</title>
+<indexterm zone="gst-caps-features-get-nth-id" role="1.2"><primary>gst_caps_features_get_nth_id</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_caps_features_get_nth_id (<parameter>const <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> i</parameter>);</programlisting>
+<para>Returns the <parameter>i</parameter>
+-th feature of <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-get-nth-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>i</para></entry>
+<entry role="parameter_description"><para>index of the feature</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-caps-features-get-nth-id.returns" role="returns">
+<title>Returns</title>
+<para> The <parameter>i</parameter>
+-th feature of <parameter>features</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-add" role="function" condition="since:1.2">
+<title>gst_caps_features_add&#160;()</title>
+<indexterm zone="gst-caps-features-add" role="1.2"><primary>gst_caps_features_add</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_caps_features_add (<parameter><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *feature</parameter>);</programlisting>
+<para>Adds <parameter>feature</parameter>
+ to <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-add-id" role="function" condition="since:1.2">
+<title>gst_caps_features_add_id&#160;()</title>
+<indexterm zone="gst-caps-features-add-id" role="1.2"><primary>gst_caps_features_add_id</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_caps_features_add_id (<parameter><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                          <parameter><link linkend="GQuark"><type>GQuark</type></link> feature</parameter>);</programlisting>
+<para>Adds <parameter>feature</parameter>
+ to <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-add-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-remove" role="function" condition="since:1.2">
+<title>gst_caps_features_remove&#160;()</title>
+<indexterm zone="gst-caps-features-remove" role="1.2"><primary>gst_caps_features_remove</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_caps_features_remove (<parameter><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *feature</parameter>);</programlisting>
+<para>Removes <parameter>feature</parameter>
+ from <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-caps-features-remove-id" role="function" condition="since:1.2">
+<title>gst_caps_features_remove_id&#160;()</title>
+<indexterm zone="gst-caps-features-remove-id" role="1.2"><primary>gst_caps_features_remove_id</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_caps_features_remove_id (<parameter><link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link> *features</parameter>,
+                             <parameter><link linkend="GQuark"><type>GQuark</type></link> feature</parameter>);</programlisting>
+<para>Removes <parameter>feature</parameter>
+ from <parameter>features</parameter>
+.</para>
+<refsect3 id="gst-caps-features-remove-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>features</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCapsFeatures"><type>GstCapsFeatures</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para>a feature.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstCapsFeatures.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCapsFeatures-struct" role="struct">
+<title>GstCapsFeatures</title>
+<indexterm zone="GstCapsFeatures-struct"><primary>GstCapsFeatures</primary></indexterm>
+<programlisting language="C">typedef struct _GstCapsFeatures GstCapsFeatures;</programlisting>
+</refsect2>
+<refsect2 id="GST-CAPS-FEATURES-ANY:CAPS" role="macro">
+<title>GST_CAPS_FEATURES_ANY</title>
+<indexterm zone="GST-CAPS-FEATURES-ANY:CAPS"><primary>GST_CAPS_FEATURES_ANY</primary></indexterm>
+<programlisting language="C">#define GST_CAPS_FEATURES_ANY (_gst_caps_features_any)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-CAPS-FEATURES-MEMORY-SYSTEM-MEMORY:CAPS" role="macro">
+<title>GST_CAPS_FEATURES_MEMORY_SYSTEM_MEMORY</title>
+<indexterm zone="GST-CAPS-FEATURES-MEMORY-SYSTEM-MEMORY:CAPS"><primary>GST_CAPS_FEATURES_MEMORY_SYSTEM_MEMORY</primary></indexterm>
+<programlisting language="C">#define GST_CAPS_FEATURES_MEMORY_SYSTEM_MEMORY (_gst_caps_features_memory_system_memory)
+</programlisting>
+</refsect2>
+<refsect2 id="GST-CAPS-FEATURE-MEMORY-SYSTEM-MEMORY:CAPS" role="macro">
+<title>GST_CAPS_FEATURE_MEMORY_SYSTEM_MEMORY</title>
+<indexterm zone="GST-CAPS-FEATURE-MEMORY-SYSTEM-MEMORY:CAPS"><primary>GST_CAPS_FEATURE_MEMORY_SYSTEM_MEMORY</primary></indexterm>
+<programlisting language="C">#define GST_CAPS_FEATURE_MEMORY_SYSTEM_MEMORY "memory:SystemMemory"
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstCapsFeatures.see-also">
+<title>See Also</title>
+<para><link linkend="GstCaps"><type>GstCaps</type></link></para>
+
+</refsect1>
+
+</refentry>

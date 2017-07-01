@@ -1,0 +1,87 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-valve">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-valve.top_of_page" role="top_of_page">valve</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>valve</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-valve.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstValve--drop">drop</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstValve"/><refsect1 id="gstreamer-plugins-valve.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstValve-struct">GstValve</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-valve.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstValve
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-valve.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The valve is a simple element that drops buffers when the <link linkend="GstValve--drop"><type>“drop”</type></link>
+property is set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> and lets then through otherwise.</para>
+<para>Any downstream error received while the <link linkend="GstValve--drop"><type>“drop”</type></link> property is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>
+is ignored. So downstream element can be set to  <link linkend="GST-STATE-NULL:CAPS"><literal>GST_STATE_NULL</literal></link> and removed,
+without using pad blocking.</para>
+
+<include href="element-valve-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-valve.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-valve.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstValve-struct" role="struct">
+<title>struct GstValve</title>
+<indexterm zone="GstValve-struct"><primary>GstValve</primary></indexterm>
+<programlisting language="C">struct GstValve;</programlisting>
+<para>The private valve structure</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-valve.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstValve--drop" role="property"><title>The <literal>“drop”</literal> property</title>
+<indexterm zone="GstValve--drop"><primary>GstValve:drop</primary></indexterm>
+<programlisting>  “drop”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to drop buffers and events or let them through.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

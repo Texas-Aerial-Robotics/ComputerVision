@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE screen PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<screen>
+    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+    <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBaseParse">GstBaseParse</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstClock">GstClock</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstSystemClock">GstSystemClock</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstNetClientClock">GstNetClientClock</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstTestClock">GstTestClock</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstControlBinding">GstControlBinding</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstARGBControlBinding">GstARGBControlBinding</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstDirectControlBinding">GstDirectControlBinding</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstInterpolationControlSource">GstInterpolationControlSource</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstTriggerControlSource">GstTriggerControlSource</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstLFOControlSource">GstLFOControlSource</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstCollectPads">GstCollectPads</link>
+    <phrase role="lineart">&#9474;</phrase>       <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstNetTimeProvider">GstNetTimeProvider</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstAdapter">GstAdapter</link>
+</screen>

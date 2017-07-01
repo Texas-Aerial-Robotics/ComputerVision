@@ -1,0 +1,638 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstDataQueue">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstDataQueue.top_of_page">GstDataQueue</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDataQueue</refname>
+<refpurpose>Threadsafe queueing object</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstDataQueue.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstDataQueueCheckFullFunction">*GstDataQueueCheckFullFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstDataQueueEmptyCallback">*GstDataQueueEmptyCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstDataQueueFullCallback">*GstDataQueueFullCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDataQueue"><returnvalue>GstDataQueue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-data-queue-new">gst_data_queue_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-push">gst_data_queue_push</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-push-force">gst_data_queue_push_force</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-pop">gst_data_queue_pop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-peek">gst_data_queue_peek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-flush">gst_data_queue_flush</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-set-flushing">gst_data_queue_set_flushing</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-drop-head">gst_data_queue_drop_head</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-is-full">gst_data_queue_is_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-is-empty">gst_data_queue_is_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-get-level">gst_data_queue_get_level</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-data-queue-limits-changed">gst_data_queue_limits_changed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstDataQueue.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDataQueue">GstDataQueue</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDataQueueSize">GstDataQueueSize</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDataQueueItem">GstDataQueueItem</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstDataQueue.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstdataqueue.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstDataQueue.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstDataQueue"><type>GstDataQueue</type></link> is an object that handles threadsafe queueing of objects. It
+also provides size-related functionality. This object should be used for
+any <link linkend="GstElement"><type>GstElement</type></link> that wishes to provide some sort of queueing functionality.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstDataQueue.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstDataQueueCheckFullFunction" role="function">
+<title>GstDataQueueCheckFullFunction&#160;()</title>
+<indexterm zone="GstDataQueueCheckFullFunction"><primary>GstDataQueueCheckFullFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstDataQueueCheckFullFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> visible</parameter>,
+                                  <parameter><link linkend="guint"><type>guint</type></link> bytes</parameter>,
+                                  <parameter><link linkend="guint64"><type>guint64</type></link> time</parameter>,
+                                  <parameter><link linkend="gpointer"><type>gpointer</type></link> checkdata</parameter>);</programlisting>
+<para>The prototype of the function used to inform the queue that it should be
+considered as full.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="GstDataQueueCheckFullFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>visible</para></entry>
+<entry role="parameter_description"><para>The number of visible items currently in the queue.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bytes</para></entry>
+<entry role="parameter_description"><para>The amount of bytes currently in the queue.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>The accumulated duration of the items currently in the queue.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>checkdata</para></entry>
+<entry role="parameter_description"><para>The <link linkend="gpointer"><type>gpointer</type></link> registered when the <link linkend="GstDataQueue"><type>GstDataQueue</type></link> was created.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstDataQueueCheckFullFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the queue should be considered full.</para>
+</refsect3></refsect2>
+<refsect2 id="GstDataQueueEmptyCallback" role="function">
+<title>GstDataQueueEmptyCallback&#160;()</title>
+<indexterm zone="GstDataQueueEmptyCallback"><primary>GstDataQueueEmptyCallback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstDataQueueEmptyCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                              <parameter><link linkend="gpointer"><type>gpointer</type></link> checkdata</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="GstDataQueueFullCallback" role="function">
+<title>GstDataQueueFullCallback&#160;()</title>
+<indexterm zone="GstDataQueueFullCallback"><primary>GstDataQueueFullCallback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstDataQueueFullCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> checkdata</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-data-queue-new" role="function" condition="since:1.2">
+<title>gst_data_queue_new&#160;()</title>
+<indexterm zone="gst-data-queue-new" role="1.2"><primary>gst_data_queue_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstDataQueue"><returnvalue>GstDataQueue</returnvalue></link>&#160;*
+gst_data_queue_new (<parameter><link linkend="GstDataQueueCheckFullFunction"><type>GstDataQueueCheckFullFunction</type></link> checkfull</parameter>,
+                    <parameter><link linkend="GstDataQueueFullCallback"><type>GstDataQueueFullCallback</type></link> fullcallback</parameter>,
+                    <parameter><link linkend="GstDataQueueEmptyCallback"><type>GstDataQueueEmptyCallback</type></link> emptycallback</parameter>,
+                    <parameter><link linkend="gpointer"><type>gpointer</type></link> checkdata</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDataQueue"><type>GstDataQueue</type></link>. If <parameter>fullcallback</parameter>
+ or <parameter>emptycallback</parameter>
+ are supplied, then
+the <link linkend="GstDataQueue"><type>GstDataQueue</type></link> will call the respective callback to signal full or empty condition.
+If the callbacks are NULL the <link linkend="GstDataQueue"><type>GstDataQueue</type></link> will instead emit 'full' and 'empty'
+signals.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>checkfull</para></entry>
+<entry role="parameter_description"><para>the callback used to tell if the element considers the queue full
+or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fullcallback</para></entry>
+<entry role="parameter_description"><para>the callback which will be called when the queue is considered full.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>emptycallback</para></entry>
+<entry role="parameter_description"><para>the callback which will be called when the queue is considered empty.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>checkdata</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gpointer"><type>gpointer</type></link> that will be passed to the <parameter>checkfull</parameter>
+, <parameter>fullcallback</parameter>
+,
+and <parameter>emptycallback</parameter>
+callbacks.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-push" role="function" condition="since:1.2">
+<title>gst_data_queue_push&#160;()</title>
+<indexterm zone="gst-data-queue-push" role="1.2"><primary>gst_data_queue_push</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_push (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                     <parameter><link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> *item</parameter>);</programlisting>
+<para>Pushes a <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> (or a structure that begins with the same fields)
+on the <parameter>queue</parameter>
+. If the <parameter>queue</parameter>
+ is full, the call will block until space is
+available, OR the <parameter>queue</parameter>
+ is set to flushing state.
+MT safe.</para>
+<para>Note that this function has slightly different semantics than <link linkend="gst-pad-push"><function>gst_pad_push()</function></link>
+and <link linkend="gst-pad-push-event"><function>gst_pad_push_event()</function></link>: this function only takes ownership of <parameter>item</parameter>
+ and
+the <link linkend="GstMiniObject"><type>GstMiniObject</type></link> contained in <parameter>item</parameter>
+ if the push was successful. If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>
+is returned, the caller is responsible for freeing <parameter>item</parameter>
+ and its contents.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-push.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-push.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the <parameter>item</parameter>
+was successfully pushed on the <parameter>queue</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-push-force" role="function" condition="since:1.2">
+<title>gst_data_queue_push_force&#160;()</title>
+<indexterm zone="gst-data-queue-push-force" role="1.2"><primary>gst_data_queue_push_force</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_push_force (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                           <parameter><link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> *item</parameter>);</programlisting>
+<para>Pushes a <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> (or a structure that begins with the same fields)
+on the <parameter>queue</parameter>
+. It ignores if the <parameter>queue</parameter>
+ is full or not and forces the <parameter>item</parameter>
+
+to be pushed anyway.
+MT safe.</para>
+<para>Note that this function has slightly different semantics than <link linkend="gst-pad-push"><function>gst_pad_push()</function></link>
+and <link linkend="gst-pad-push-event"><function>gst_pad_push_event()</function></link>: this function only takes ownership of <parameter>item</parameter>
+ and
+the <link linkend="GstMiniObject"><type>GstMiniObject</type></link> contained in <parameter>item</parameter>
+ if the push was successful. If <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>
+is returned, the caller is responsible for freeing <parameter>item</parameter>
+ and its contents.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-push-force.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-push-force.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the <parameter>item</parameter>
+was successfully pushed on the <parameter>queue</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-pop" role="function" condition="since:1.2">
+<title>gst_data_queue_pop&#160;()</title>
+<indexterm zone="gst-data-queue-pop" role="1.2"><primary>gst_data_queue_pop</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_pop (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                    <parameter><link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> **item</parameter>);</programlisting>
+<para>Retrieves the first <parameter>item</parameter>
+ available on the <parameter>queue</parameter>
+. If the queue is currently
+empty, the call will block until at least one item is available, OR the
+<parameter>queue</parameter>
+ is set to the flushing state.
+MT safe.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-pop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>pointer to store the returned <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-pop.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if an <parameter>item</parameter>
+was successfully retrieved from the <parameter>queue</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-peek" role="function" condition="since:1.2">
+<title>gst_data_queue_peek&#160;()</title>
+<indexterm zone="gst-data-queue-peek" role="1.2"><primary>gst_data_queue_peek</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_peek (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                     <parameter><link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> **item</parameter>);</programlisting>
+<para>Retrieves the first <parameter>item</parameter>
+ available on the <parameter>queue</parameter>
+ without removing it.
+If the queue is currently empty, the call will block until at least
+one item is available, OR the <parameter>queue</parameter>
+ is set to the flushing state.
+MT safe.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-peek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>pointer to store the returned <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-peek.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if an <parameter>item</parameter>
+was successfully retrieved from the <parameter>queue</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-flush" role="function" condition="since:1.2">
+<title>gst_data_queue_flush&#160;()</title>
+<indexterm zone="gst-data-queue-flush" role="1.2"><primary>gst_data_queue_flush</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_data_queue_flush (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>);</programlisting>
+<para>Flushes all the contents of the <parameter>queue</parameter>
+. Any call to <link linkend="gst-data-queue-push"><type>gst_data_queue_push</type></link> and
+<link linkend="gst-data-queue-pop"><type>gst_data_queue_pop</type></link> will be released.
+MT safe.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-flush.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-set-flushing" role="function" condition="since:1.2">
+<title>gst_data_queue_set_flushing&#160;()</title>
+<indexterm zone="gst-data-queue-set-flushing" role="1.2"><primary>gst_data_queue_set_flushing</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_data_queue_set_flushing (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> flushing</parameter>);</programlisting>
+<para>Sets the queue to flushing state if <parameter>flushing</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>. If set to flushing
+state, any incoming data on the <parameter>queue</parameter>
+ will be discarded. Any call currently
+blocking on <link linkend="gst-data-queue-push"><type>gst_data_queue_push</type></link> or <link linkend="gst-data-queue-pop"><type>gst_data_queue_pop</type></link> will return straight
+away with a return value of <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>. While the <parameter>queue</parameter>
+ is in flushing state, 
+all calls to those two functions will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>MT Safe.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-set-flushing.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flushing</para></entry>
+<entry role="parameter_description"><para>a <link linkend="gboolean"><type>gboolean</type></link> stating if the queue will be flushing or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-drop-head" role="function" condition="since:1.2">
+<title>gst_data_queue_drop_head&#160;()</title>
+<indexterm zone="gst-data-queue-drop-head" role="1.2"><primary>gst_data_queue_drop_head</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_drop_head (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                          <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Pop and unref the head-most <link linkend="GstMiniObject"><type>GstMiniObject</type></link> with the given <link linkend="GType"><type>GType</type></link>.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-drop-head.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstDataQueue"><type>GstDataQueue</type></link> to drop an item from.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GType"><type>GType</type></link> of the item to drop.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-drop-head.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if an element was removed.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-is-full" role="function" condition="since:1.2">
+<title>gst_data_queue_is_full&#160;()</title>
+<indexterm zone="gst-data-queue-is-full" role="1.2"><primary>gst_data_queue_is_full</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_is_full (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>);</programlisting>
+<para>Queries if <parameter>queue</parameter>
+ is full. This check will be done using the
+<link linkend="GstDataQueueCheckFullFunction"><type>GstDataQueueCheckFullFunction</type></link> registered with <parameter>queue</parameter>
+.
+MT safe.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-is-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-is-full.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>queue</parameter>
+is full.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-is-empty" role="function" condition="since:1.2">
+<title>gst_data_queue_is_empty&#160;()</title>
+<indexterm zone="gst-data-queue-is-empty" role="1.2"><primary>gst_data_queue_is_empty</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_data_queue_is_empty (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>);</programlisting>
+<para>Queries if there are any items in the <parameter>queue</parameter>
+.
+MT safe.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-is-empty.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDataQueue"><type>GstDataQueue</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-data-queue-is-empty.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>queue</parameter>
+is empty.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-get-level" role="function" condition="since:1.2">
+<title>gst_data_queue_get_level&#160;()</title>
+<indexterm zone="gst-data-queue-get-level" role="1.2"><primary>gst_data_queue_get_level</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_data_queue_get_level (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>,
+                          <parameter><link linkend="GstDataQueueSize"><type>GstDataQueueSize</type></link> *level</parameter>);</programlisting>
+<para>Get the current level of the queue.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-get-level.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstDataQueue"><type>GstDataQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>the location to store the result</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-data-queue-limits-changed" role="function" condition="since:1.2">
+<title>gst_data_queue_limits_changed&#160;()</title>
+<indexterm zone="gst-data-queue-limits-changed" role="1.2"><primary>gst_data_queue_limits_changed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_data_queue_limits_changed (<parameter><link linkend="GstDataQueue"><type>GstDataQueue</type></link> *queue</parameter>);</programlisting>
+<para>Inform the queue that the limits for the fullness check have changed and that
+any blocking <link linkend="gst-data-queue-push"><function>gst_data_queue_push()</function></link> should be unblocked to recheck the limits.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-data-queue-limits-changed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>queue</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstDataQueue"><type>GstDataQueue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstDataQueue.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDataQueue" role="struct">
+<title>struct GstDataQueue</title>
+<indexterm zone="GstDataQueue"><primary>GstDataQueue</primary></indexterm>
+<programlisting language="C">struct GstDataQueue {
+  GObject object;
+};
+</programlisting>
+<para>Opaque <link linkend="GstDataQueue"><type>GstDataQueue</type></link> structure.</para>
+<refsect3 id="GstDataQueue.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GObject"><type>GObject</type></link>&#160;<structfield id="GstDataQueue.object">object</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the parent structure</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstDataQueueSize" role="struct">
+<title>struct GstDataQueueSize</title>
+<indexterm zone="GstDataQueueSize"><primary>GstDataQueueSize</primary></indexterm>
+<programlisting language="C">struct GstDataQueueSize {
+  guint visible;
+  guint bytes;
+  guint64 time;
+};
+</programlisting>
+<para>Structure describing the size of a queue.</para>
+<refsect3 id="GstDataQueueSize.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstDataQueueSize.visible">visible</structfield>;</para></entry>
+<entry role="struct_member_description"><para>number of buffers</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstDataQueueSize.bytes">bytes</structfield>;</para></entry>
+<entry role="struct_member_description"><para>number of bytes</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstDataQueueSize.time">time</structfield>;</para></entry>
+<entry role="struct_member_description"><para>amount of time</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstDataQueueItem" role="struct">
+<title>struct GstDataQueueItem</title>
+<indexterm zone="GstDataQueueItem"><primary>GstDataQueueItem</primary></indexterm>
+<programlisting language="C">struct GstDataQueueItem {
+  GstMiniObject *object;
+  guint size;
+  guint64 duration;
+  gboolean visible;
+
+  /* user supplied destroy function */
+  GDestroyNotify destroy;
+};
+</programlisting>
+<para>Structure used by <link linkend="GstDataQueue"><type>GstDataQueue</type></link>. You can supply a different structure, as
+long as the top of the structure is identical to this structure.</para>
+<refsect3 id="GstDataQueueItem.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMiniObject"><type>GstMiniObject</type></link>&#160;*<structfield id="GstDataQueueItem.object">object</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the <link linkend="GstMiniObject"><type>GstMiniObject</type></link> to queue.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstDataQueueItem.size">size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the size in bytes of the miniobject.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint64"><type>guint64</type></link>&#160;<structfield id="GstDataQueueItem.duration">duration</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the duration in <link linkend="GstClockTime"><type>GstClockTime</type></link> of the miniobject. Can not be
+<link linkend="GST-CLOCK-TIME-NONE:CAPS"><literal>GST_CLOCK_TIME_NONE</literal></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gboolean"><type>gboolean</type></link>&#160;<structfield id="GstDataQueueItem.visible">visible</structfield>;</para></entry>
+<entry role="struct_member_description"><para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>object</parameter>
+should be considered as a visible object.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link>&#160;<structfield id="GstDataQueueItem.destroy">destroy</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The <link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> function to use to free the <link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link>.
+This function should also drop the reference to <parameter>object</parameter>
+the owner of the
+<link linkend="GstDataQueueItem"><type>GstDataQueueItem</type></link> is assumed to hold.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

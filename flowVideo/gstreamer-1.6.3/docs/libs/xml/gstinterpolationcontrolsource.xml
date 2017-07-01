@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstInterpolationControlSource">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstInterpolationControlSource.top_of_page">GstInterpolationControlSource</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstInterpolationControlSource</refname>
+<refpurpose>interpolation control source</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstInterpolationControlSource.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstControlSource"><returnvalue>GstControlSource</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-interpolation-control-source-new">gst_interpolation_control_source_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstInterpolationControlSource.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstInterpolationMode"><type>GstInterpolationMode</type></link></entry><entry role="property_name"><link linkend="GstInterpolationControlSource--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstInterpolationControlSource.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstInterpolationControlSource-struct">GstInterpolationControlSource</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstInterpolationMode">GstInterpolationMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstInterpolationControlSource.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstTimedValueControlSource">GstTimedValueControlSource</link>
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstInterpolationControlSource
+</screen>
+</refsect1>
+
+<refsect1 id="GstInterpolationControlSource.includes"><title>Includes</title><synopsis>#include &lt;libs/controller/gstinterpolationcontrolsource.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstInterpolationControlSource.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstInterpolationControlSource"><type>GstInterpolationControlSource</type></link> is a <link linkend="GstControlSource"><type>GstControlSource</type></link>, that interpolates values between user-given
+control points. It supports several interpolation modes and property types.</para>
+<para>To use <link linkend="GstInterpolationControlSource"><type>GstInterpolationControlSource</type></link> get a new instance by calling
+<link linkend="gst-interpolation-control-source-new"><function>gst_interpolation_control_source_new()</function></link>, bind it to a <link linkend="GParamSpec"><type>GParamSpec</type></link> and set some
+control points by calling <link linkend="gst-timed-value-control-source-set"><function>gst_timed_value_control_source_set()</function></link>.</para>
+<para>All functions are MT-safe.</para>
+
+</refsect1>
+<refsect1 id="GstInterpolationControlSource.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-interpolation-control-source-new" role="function">
+<title>gst_interpolation_control_source_new&#160;()</title>
+<indexterm zone="gst-interpolation-control-source-new"><primary>gst_interpolation_control_source_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstControlSource"><returnvalue>GstControlSource</returnvalue></link>&#160;*
+gst_interpolation_control_source_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>This returns a new, unbound <link linkend="GstInterpolationControlSource"><type>GstInterpolationControlSource</type></link>.</para>
+<refsect3 id="gst-interpolation-control-source-new.returns" role="returns">
+<title>Returns</title>
+<para> a new, unbound <link linkend="GstInterpolationControlSource"><type>GstInterpolationControlSource</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstInterpolationControlSource.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstInterpolationControlSource-struct" role="struct">
+<title>struct GstInterpolationControlSource</title>
+<indexterm zone="GstInterpolationControlSource-struct"><primary>GstInterpolationControlSource</primary></indexterm>
+<programlisting language="C">struct GstInterpolationControlSource;</programlisting>
+<para>The instance structure of <link linkend="GstControlSource"><type>GstControlSource</type></link>.</para>
+</refsect2>
+<refsect2 id="GstInterpolationMode" role="enum">
+<title>enum GstInterpolationMode</title>
+<indexterm zone="GstInterpolationMode"><primary>GstInterpolationMode</primary></indexterm>
+<para>The various interpolation modes available.</para>
+<refsect3 id="GstInterpolationMode.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-INTERPOLATION-MODE-NONE:CAPS">GST_INTERPOLATION_MODE_NONE</para></entry>
+<entry role="enum_member_description"><para>steps-like interpolation, default</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-INTERPOLATION-MODE-LINEAR:CAPS">GST_INTERPOLATION_MODE_LINEAR</para></entry>
+<entry role="enum_member_description"><para>linear interpolation</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-INTERPOLATION-MODE-CUBIC:CAPS">GST_INTERPOLATION_MODE_CUBIC</para></entry>
+<entry role="enum_member_description"><para>cubic interpolation</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstInterpolationControlSource.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstInterpolationControlSource--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstInterpolationControlSource--mode"><primary>GstInterpolationControlSource:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstInterpolationMode"><type>GstInterpolationMode</type></link></programlisting>
+<para>Interpolation mode.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_INTERPOLATION_MODE_NONE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

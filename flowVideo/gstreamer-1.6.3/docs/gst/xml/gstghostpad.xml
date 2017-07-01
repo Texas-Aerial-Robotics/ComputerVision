@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstGhostPad">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstGhostPad.top_of_page">GstGhostPad</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstGhostPad</refname>
+<refpurpose>Pseudo link pads</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstGhostPad.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-new">gst_ghost_pad_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-new-no-target">gst_ghost_pad_new_no_target</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-new-from-template">gst_ghost_pad_new_from_template</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-new-no-target-from-template">gst_ghost_pad_new_no_target_from_template</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-set-target">gst_ghost_pad_set_target</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-get-target">gst_ghost_pad_get_target</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-construct">gst_ghost_pad_construct</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-activate-mode-default">gst_ghost_pad_activate_mode_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-ghost-pad-internal-activate-mode-default">gst_ghost_pad_internal_activate_mode_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstProxyPad"><returnvalue>GstProxyPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-proxy-pad-get-internal">gst_proxy_pad_get_internal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-proxy-pad-iterate-internal-links-default">gst_proxy_pad_iterate_internal_links_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-proxy-pad-chain-default">gst_proxy_pad_chain_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-proxy-pad-chain-list-default">gst_proxy_pad_chain_list_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-proxy-pad-getrange-default">gst_proxy_pad_getrange_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstProxyPad"/><refsect1 id="GstGhostPad.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstProxyPad-struct">GstProxyPad</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstGhostPad-struct">GstGhostPad</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstGhostPad.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstPad">GstPad</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstProxyPad
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstGhostPad
+</screen>
+</refsect1>
+
+<refsect1 id="GstGhostPad.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstGhostPad.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GhostPads are useful when organizing pipelines with <link linkend="GstBin"><type>GstBin</type></link> like elements.
+The idea here is to create hierarchical element graphs. The bin element
+contains a sub-graph. Now one would like to treat the bin-element like any
+other <link linkend="GstElement"><type>GstElement</type></link>. This is where GhostPads come into play. A GhostPad acts as
+a proxy for another pad. Thus the bin can have sink and source ghost-pads
+that are associated with sink and source pads of the child elements.</para>
+<para>If the target pad is known at creation time, <link linkend="gst-ghost-pad-new"><function>gst_ghost_pad_new()</function></link> is the
+function to use to get a ghost-pad. Otherwise one can use <link linkend="gst-ghost-pad-new-no-target"><function>gst_ghost_pad_new_no_target()</function></link>
+to create the ghost-pad and use <link linkend="gst-ghost-pad-set-target"><function>gst_ghost_pad_set_target()</function></link> to establish the
+association later on.</para>
+<para>Note that GhostPads add overhead to the data processing of a pipeline.</para>
+
+</refsect1>
+<refsect1 id="GstGhostPad.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-ghost-pad-new" role="function">
+<title>gst_ghost_pad_new&#160;()</title>
+<indexterm zone="gst-ghost-pad-new"><primary>gst_ghost_pad_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_ghost_pad_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                   <parameter><link linkend="GstPad"><type>GstPad</type></link> *target</parameter>);</programlisting>
+<para>Create a new ghostpad with <parameter>target</parameter>
+ as the target. The direction will be taken
+from the target pad. <parameter>target</parameter>
+ must be unlinked.</para>
+<para>Will ref the target.</para>
+<refsect3 id="gst-ghost-pad-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> the name of the new pad, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to assign a default name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para> the pad to ghost. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPad"><type>GstPad</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in
+case of an error. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-new-no-target" role="function">
+<title>gst_ghost_pad_new_no_target&#160;()</title>
+<indexterm zone="gst-ghost-pad-new-no-target"><primary>gst_ghost_pad_new_no_target</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_ghost_pad_new_no_target (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                             <parameter><link linkend="GstPadDirection"><type>GstPadDirection</type></link> dir</parameter>);</programlisting>
+<para>Create a new ghostpad without a target with the given direction.
+A target can be set on the ghostpad later with the
+<link linkend="gst-ghost-pad-set-target"><function>gst_ghost_pad_set_target()</function></link> function.</para>
+<para>The created ghostpad will not have a padtemplate.</para>
+<refsect3 id="gst-ghost-pad-new-no-target.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> the name of the new pad, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to assign a default name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>dir</para></entry>
+<entry role="parameter_description"><para>the direction of the ghostpad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-new-no-target.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPad"><type>GstPad</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in
+case of an error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-new-from-template" role="function">
+<title>gst_ghost_pad_new_from_template&#160;()</title>
+<indexterm zone="gst-ghost-pad-new-from-template"><primary>gst_ghost_pad_new_from_template</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_ghost_pad_new_from_template (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                                 <parameter><link linkend="GstPad"><type>GstPad</type></link> *target</parameter>,
+                                 <parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *templ</parameter>);</programlisting>
+<para>Create a new ghostpad with <parameter>target</parameter>
+ as the target. The direction will be taken
+from the target pad. The template used on the ghostpad will be <parameter>template</parameter>
+.</para>
+<para>Will ref the target.</para>
+<refsect3 id="gst-ghost-pad-new-from-template.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> the name of the new pad, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to assign a default name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para> the pad to ghost. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> to use on the ghostpad. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-new-from-template.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPad"><type>GstPad</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in
+case of an error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-new-no-target-from-template" role="function">
+<title>gst_ghost_pad_new_no_target_from_template&#160;()</title>
+<indexterm zone="gst-ghost-pad-new-no-target-from-template"><primary>gst_ghost_pad_new_no_target_from_template</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_ghost_pad_new_no_target_from_template
+                               (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                                <parameter><link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> *templ</parameter>);</programlisting>
+<para>Create a new ghostpad based on <parameter>templ</parameter>
+, without setting a target. The
+direction will be taken from the <parameter>templ</parameter>
+.</para>
+<refsect3 id="gst-ghost-pad-new-no-target-from-template.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> the name of the new pad, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to assign a default name. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>templ</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstPadTemplate"><type>GstPadTemplate</type></link> to create the ghostpad from. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-new-no-target-from-template.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstPad"><type>GstPad</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in
+case of an error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-set-target" role="function">
+<title>gst_ghost_pad_set_target&#160;()</title>
+<indexterm zone="gst-ghost-pad-set-target"><primary>gst_ghost_pad_set_target</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ghost_pad_set_target (<parameter><link linkend="GstGhostPad"><type>GstGhostPad</type></link> *gpad</parameter>,
+                          <parameter><link linkend="GstPad"><type>GstPad</type></link> *newtarget</parameter>);</programlisting>
+<para>Set the new target of the ghostpad <parameter>gpad</parameter>
+. Any existing target
+is unlinked and links to the new target are established. if <parameter>newtarget</parameter>
+ is
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> the target will be cleared.</para>
+<refsect3 id="gst-ghost-pad-set-target.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gpad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstGhostPad"><type>GstGhostPad</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>newtarget</para></entry>
+<entry role="parameter_description"><para> the new pad target. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-set-target.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the new target could be set. This function
+can return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when the internal pads could not be linked. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-get-target" role="function">
+<title>gst_ghost_pad_get_target&#160;()</title>
+<indexterm zone="gst-ghost-pad-get-target"><primary>gst_ghost_pad_get_target</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_ghost_pad_get_target (<parameter><link linkend="GstGhostPad"><type>GstGhostPad</type></link> *gpad</parameter>);</programlisting>
+<para>Get the target pad of <parameter>gpad</parameter>
+. Unref target pad after usage.</para>
+<refsect3 id="gst-ghost-pad-get-target.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gpad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstGhostPad"><type>GstGhostPad</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-get-target.returns" role="returns">
+<title>Returns</title>
+<para> the target <link linkend="GstPad"><type>GstPad</type></link>, can be
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> if the ghostpad has no target set. Unref target pad after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-construct" role="function">
+<title>gst_ghost_pad_construct&#160;()</title>
+<indexterm zone="gst-ghost-pad-construct"><primary>gst_ghost_pad_construct</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ghost_pad_construct (<parameter><link linkend="GstGhostPad"><type>GstGhostPad</type></link> *gpad</parameter>);</programlisting>
+<para>Finish initialization of a newly allocated ghost pad.</para>
+<para>This function is most useful in language bindings and when subclassing
+<link linkend="GstGhostPad"><type>GstGhostPad</type></link>; plugin and application developers normally will not call this
+function. Call this function directly after a call to g_object_new
+(GST_TYPE_GHOST_PAD, "direction", <parameter>dir</parameter>
+, ..., NULL).</para>
+<refsect3 id="gst-ghost-pad-construct.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gpad</para></entry>
+<entry role="parameter_description"><para>the newly allocated ghost pad</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-construct.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the construction succeeds, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-activate-mode-default" role="function">
+<title>gst_ghost_pad_activate_mode_default&#160;()</title>
+<indexterm zone="gst-ghost-pad-activate-mode-default"><primary>gst_ghost_pad_activate_mode_default</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ghost_pad_activate_mode_default (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                                     <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                                     <parameter><link linkend="GstPadMode"><type>GstPadMode</type></link> mode</parameter>,
+                                     <parameter><link linkend="gboolean"><type>gboolean</type></link> active</parameter>);</programlisting>
+<para>Invoke the default activate mode function of a ghost pad.</para>
+<refsect3 id="gst-ghost-pad-activate-mode-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPad"><type>GstPad</type></link> to activate or deactivate.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>pad</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the requested activation mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>active</para></entry>
+<entry role="parameter_description"><para>whether the pad should be active or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-activate-mode-default.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the operation was successful.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-ghost-pad-internal-activate-mode-default" role="function">
+<title>gst_ghost_pad_internal_activate_mode_default&#160;()</title>
+<indexterm zone="gst-ghost-pad-internal-activate-mode-default"><primary>gst_ghost_pad_internal_activate_mode_default</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_ghost_pad_internal_activate_mode_default
+                               (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                                <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                                <parameter><link linkend="GstPadMode"><type>GstPadMode</type></link> mode</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> active</parameter>);</programlisting>
+<para>Invoke the default activate mode function of a proxy pad that is
+owned by a ghost pad.</para>
+<refsect3 id="gst-ghost-pad-internal-activate-mode-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPad"><type>GstPad</type></link> to activate or deactivate.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>pad</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the requested activation mode</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>active</para></entry>
+<entry role="parameter_description"><para>whether the pad should be active or not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-ghost-pad-internal-activate-mode-default.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the operation was successful.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-proxy-pad-get-internal" role="function">
+<title>gst_proxy_pad_get_internal&#160;()</title>
+<indexterm zone="gst-proxy-pad-get-internal"><primary>gst_proxy_pad_get_internal</primary></indexterm>
+<programlisting language="C"><link linkend="GstProxyPad"><returnvalue>GstProxyPad</returnvalue></link>&#160;*
+gst_proxy_pad_get_internal (<parameter><link linkend="GstProxyPad"><type>GstProxyPad</type></link> *pad</parameter>);</programlisting>
+<para>Get the internal pad of <parameter>pad</parameter>
+. Unref target pad after usage.</para>
+<para>The internal pad of a <link linkend="GstGhostPad"><type>GstGhostPad</type></link> is the internally used
+pad of opposite direction, which is used to link to the target.</para>
+<refsect3 id="gst-proxy-pad-get-internal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstProxyPad"><type>GstProxyPad</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-proxy-pad-get-internal.returns" role="returns">
+<title>Returns</title>
+<para> the target <link linkend="GstProxyPad"><type>GstProxyPad</type></link>, can
+be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.  Unref target pad after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-proxy-pad-iterate-internal-links-default" role="function">
+<title>gst_proxy_pad_iterate_internal_links_default&#160;()</title>
+<indexterm zone="gst-proxy-pad-iterate-internal-links-default"><primary>gst_proxy_pad_iterate_internal_links_default</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_proxy_pad_iterate_internal_links_default
+                               (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                                <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>);</programlisting>
+<para>Invoke the default iterate internal links function of the proxy pad.</para>
+<refsect3 id="gst-proxy-pad-iterate-internal-links-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstPad"><type>GstPad</type></link> to get the internal links of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>pad</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-proxy-pad-iterate-internal-links-default.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstIterator"><type>GstIterator</type></link> of <link linkend="GstPad"><type>GstPad</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if <parameter>pad</parameter>
+has no parent. Unref each returned pad with <link linkend="gst-object-unref"><function>gst_object_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-proxy-pad-chain-default" role="function">
+<title>gst_proxy_pad_chain_default&#160;()</title>
+<indexterm zone="gst-proxy-pad-chain-default"><primary>gst_proxy_pad_chain_default</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_proxy_pad_chain_default (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                             <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                             <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Invoke the default chain function of the proxy pad.</para>
+<refsect3 id="gst-proxy-pad-chain-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>a sink <link linkend="GstPad"><type>GstPad</type></link>, returns GST_FLOW_ERROR if not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>pad</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstBuffer"><type>GstBuffer</type></link> to send, return GST_FLOW_ERROR
+if not. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-proxy-pad-chain-default.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> from the pad.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-proxy-pad-chain-list-default" role="function">
+<title>gst_proxy_pad_chain_list_default&#160;()</title>
+<indexterm zone="gst-proxy-pad-chain-list-default"><primary>gst_proxy_pad_chain_list_default</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_proxy_pad_chain_list_default (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                                  <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                                  <parameter><link linkend="GstBufferList"><type>GstBufferList</type></link> *list</parameter>);</programlisting>
+<para>Invoke the default chain list function of the proxy pad.</para>
+<refsect3 id="gst-proxy-pad-chain-list-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>a sink <link linkend="GstPad"><type>GstPad</type></link>, returns GST_FLOW_ERROR if not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>pad</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstBufferList"><type>GstBufferList</type></link> to send, return GST_FLOW_ERROR
+if not. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-proxy-pad-chain-list-default.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> from the pad.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-proxy-pad-getrange-default" role="function">
+<title>gst_proxy_pad_getrange_default&#160;()</title>
+<indexterm zone="gst-proxy-pad-getrange-default"><primary>gst_proxy_pad_getrange_default</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_proxy_pad_getrange_default (<parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>,
+                                <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> offset</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                                <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **buffer</parameter>);</programlisting>
+<para>Invoke the default getrange function of the proxy pad.</para>
+<refsect3 id="gst-proxy-pad-getrange-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>a src <link linkend="GstPad"><type>GstPad</type></link>, returns <link linkend="GST-FLOW-ERROR:CAPS"><type>GST_FLOW_ERROR</type></link> if not.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent of <parameter>pad</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>The start offset of the buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>The length of the buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para> a pointer to hold the <link linkend="GstBuffer"><type>GstBuffer</type></link>,
+returns <link linkend="GST-FLOW-ERROR:CAPS"><type>GST_FLOW_ERROR</type></link> if <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out callee-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-proxy-pad-getrange-default.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstFlowReturn"><type>GstFlowReturn</type></link> from the pad.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstGhostPad.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstProxyPad-struct" role="struct">
+<title>struct GstProxyPad</title>
+<indexterm zone="GstProxyPad-struct"><primary>GstProxyPad</primary></indexterm>
+<programlisting language="C">struct GstProxyPad;</programlisting>
+</refsect2>
+<refsect2 id="GstGhostPad-struct" role="struct">
+<title>struct GstGhostPad</title>
+<indexterm zone="GstGhostPad-struct"><primary>GstGhostPad</primary></indexterm>
+<programlisting language="C">struct GstGhostPad;</programlisting>
+<para>Opaque <link linkend="GstGhostPad"><type>GstGhostPad</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstGhostPad.see-also">
+<title>See Also</title>
+<para><link linkend="GstPad"><type>GstPad</type></link></para>
+
+</refsect1>
+
+</refentry>

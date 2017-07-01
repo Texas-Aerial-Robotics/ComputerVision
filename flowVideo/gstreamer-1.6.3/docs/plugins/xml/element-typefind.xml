@@ -1,0 +1,152 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-typefind">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-typefind.top_of_page" role="top_of_page">typefind</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>typefind</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-typefind.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link> *</entry><entry role="property_name"><link linkend="GstTypeFindElement--caps">caps</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link> *</entry><entry role="property_name"><link linkend="GstTypeFindElement--force-caps">force-caps</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstTypeFindElement--minimum">minimum</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-typefind.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstTypeFindElement-have-type">have-type</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstTypeFindElement"/><refsect1 id="gstreamer-plugins-typefind.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTypeFindElement-struct">GstTypeFindElement</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-typefind.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstTypeFindElement
+</screen>
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-typefind.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Determines the media-type of a stream. It applies typefind functions in the
+order of their rank. Once the type has been detected it sets its src pad caps
+to the found media type.</para>
+<para>Whenever a type is found the <link linkend="GstTypeFindElement-have-type"><type>“have-type”</type></link> signal is
+emitted, either from the streaming thread or the application thread
+(the latter may happen when typefinding is done pull-based from the
+state change function).</para>
+<para>Plugins can register custom typefinders by using <link linkend="GstTypeFindFactory"><type>GstTypeFindFactory</type></link>.</para>
+
+<include href="element-typefind-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-typefind.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-typefind.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTypeFindElement-struct" role="struct">
+<title>struct GstTypeFindElement</title>
+<indexterm zone="GstTypeFindElement-struct"><primary>GstTypeFindElement</primary></indexterm>
+<programlisting language="C">struct GstTypeFindElement;</programlisting>
+<para>Opaque <link linkend="GstTypeFindElement"><type>GstTypeFindElement</type></link> data structure</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-typefind.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstTypeFindElement--caps" role="property"><title>The <literal>“caps”</literal> property</title>
+<indexterm zone="GstTypeFindElement--caps"><primary>GstTypeFindElement:caps</primary></indexterm>
+<programlisting>  “caps”                     <link linkend="GstCaps"><type>GstCaps</type></link> *</programlisting>
+<para>detected capabilities in stream.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstTypeFindElement--force-caps" role="property"><title>The <literal>“force-caps”</literal> property</title>
+<indexterm zone="GstTypeFindElement--force-caps"><primary>GstTypeFindElement:force-caps</primary></indexterm>
+<programlisting>  “force-caps”               <link linkend="GstCaps"><type>GstCaps</type></link> *</programlisting>
+<para>force caps without doing a typefind.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstTypeFindElement--minimum" role="property"><title>The <literal>“minimum”</literal> property</title>
+<indexterm zone="GstTypeFindElement--minimum"><primary>GstTypeFindElement:minimum</primary></indexterm>
+<programlisting>  “minimum”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>minimum probability required to accept caps.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,100]</para>
+<para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-typefind.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstTypeFindElement-have-type" role="signal"><title>The <literal>“have-type”</literal> signal</title>
+<indexterm zone="GstTypeFindElement-have-type"><primary>GstTypeFindElement::have-type</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstTypeFindElement"><type>GstTypeFindElement</type></link> *typefind,
+               <link linkend="guint"><type>guint</type></link>               probability,
+               <link linkend="GstCaps"><type>GstCaps</type></link>            *caps,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>This signal gets emitted when the type and its probability has
+been found.</para>
+<refsect3 id="GstTypeFindElement-have-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>typefind</para></entry>
+<entry role="parameter_description"><para>the typefind instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>probability</para></entry>
+<entry role="parameter_description"><para>the probability of the type found</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the caps of the type found</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

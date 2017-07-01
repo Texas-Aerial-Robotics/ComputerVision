@@ -1,0 +1,957 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstBitReader">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstBitReader.top_of_page">GstBitReader</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBitReader</refname>
+<refpurpose>Reads any number of bits from a memory buffer</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstBitReader.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-BIT-READER-INIT:CAPS">GST_BIT_READER_INIT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBitReader"><returnvalue>GstBitReader</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-bit-reader-new">gst_bit_reader_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-free">gst_bit_reader_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-init">gst_bit_reader_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-pos">gst_bit_reader_get_pos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-remaining">gst_bit_reader_get_remaining</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-set-pos">gst_bit_reader_set_pos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-size">gst_bit_reader_get_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-skip">gst_bit_reader_skip</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-skip-to-byte">gst_bit_reader_skip_to_byte</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint16">gst_bit_reader_get_bits_uint16</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint32">gst_bit_reader_get_bits_uint32</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint64">gst_bit_reader_get_bits_uint64</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint8">gst_bit_reader_get_bits_uint8</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint16">gst_bit_reader_peek_bits_uint16</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint32">gst_bit_reader_peek_bits_uint32</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint64">gst_bit_reader_peek_bits_uint64</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint8">gst_bit_reader_peek_bits_uint8</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-skip-unchecked">gst_bit_reader_skip_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-skip-to-byte-unchecked">gst_bit_reader_skip_to_byte_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint16"><returnvalue>guint16</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint16-unchecked">gst_bit_reader_get_bits_uint16_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint32-unchecked">gst_bit_reader_get_bits_uint32_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint64-unchecked">gst_bit_reader_get_bits_uint64_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-get-bits-uint8-unchecked">gst_bit_reader_get_bits_uint8_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint16"><returnvalue>guint16</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint16-unchecked">gst_bit_reader_peek_bits_uint16_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint32-unchecked">gst_bit_reader_peek_bits_uint32_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint64-unchecked">gst_bit_reader_peek_bits_uint64_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-bit-reader-peek-bits-uint8-unchecked">gst_bit_reader_peek_bits_uint8_unchecked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-libs-GstBitReader.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstBitReader">GstBitReader</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstBitReader.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gstbitreader.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstBitReader.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstBitReader"><type>GstBitReader</type></link> provides a bit reader that can read any number of bits
+from a memory buffer. It provides functions for reading any number of bits
+into 8, 16, 32 and 64 bit variables.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstBitReader.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-BIT-READER-INIT:CAPS" role="macro">
+<title>GST_BIT_READER_INIT()</title>
+<indexterm zone="GST-BIT-READER-INIT:CAPS"><primary>GST_BIT_READER_INIT</primary></indexterm>
+<programlisting language="C">#define GST_BIT_READER_INIT(data, size) {data, size, 0, 0}
+</programlisting>
+<para>A <link linkend="GstBitReader"><type>GstBitReader</type></link> must be initialized with this macro, before it can be
+used. This macro can used be to initialize a variable, but it cannot
+be assigned to a variable. In that case you have to use
+<link linkend="gst-bit-reader-init"><function>gst_bit_reader_init()</function></link>.</para>
+<refsect3 id="GST-BIT-READER-INIT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>Data from which the <link linkend="GstBitReader"><type>GstBitReader</type></link> should read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-new" role="function">
+<title>gst_bit_reader_new&#160;()</title>
+<indexterm zone="gst-bit-reader-new"><primary>gst_bit_reader_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstBitReader"><returnvalue>GstBitReader</returnvalue></link>&#160;*
+gst_bit_reader_new (<parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                    <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Create a new <link linkend="GstBitReader"><type>GstBitReader</type></link> instance, which will read from <parameter>data</parameter>
+.</para>
+<para>Free-function: gst_bit_reader_free</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-bit-reader-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> Data from which the <link linkend="GstBitReader"><type>GstBitReader</type></link>
+should read. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=size]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstBitReader"><type>GstBitReader</type></link> instance. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-free" role="function">
+<title>gst_bit_reader_free&#160;()</title>
+<indexterm zone="gst-bit-reader-free"><primary>gst_bit_reader_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bit_reader_free (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>);</programlisting>
+<para>Frees a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance, which was previously allocated by
+<link linkend="gst-bit-reader-new"><function>gst_bit_reader_new()</function></link>.</para>
+<refsect3 id="gst-bit-reader-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-init" role="function">
+<title>gst_bit_reader_init&#160;()</title>
+<indexterm zone="gst-bit-reader-init"><primary>gst_bit_reader_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bit_reader_init (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                     <parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                     <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Initializes a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance to read from <parameter>data</parameter>
+. This function
+can be called on already initialized instances.</para>
+<refsect3 id="gst-bit-reader-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> data from which the bit reader should read. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>array</acronym> length=size]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-pos" role="function">
+<title>gst_bit_reader_get_pos&#160;()</title>
+<indexterm zone="gst-bit-reader-get-pos"><primary>gst_bit_reader_get_pos</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_bit_reader_get_pos (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>);</programlisting>
+<para>Returns the current position of a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance in bits.</para>
+<refsect3 id="gst-bit-reader-get-pos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-pos.returns" role="returns">
+<title>Returns</title>
+<para> The current position of <parameter>reader</parameter>
+in bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-remaining" role="function">
+<title>gst_bit_reader_get_remaining&#160;()</title>
+<indexterm zone="gst-bit-reader-get-remaining"><primary>gst_bit_reader_get_remaining</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_bit_reader_get_remaining (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>);</programlisting>
+<para>Returns the remaining number of bits of a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance.</para>
+<refsect3 id="gst-bit-reader-get-remaining.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-remaining.returns" role="returns">
+<title>Returns</title>
+<para> The remaining number of bits of <parameter>reader</parameter>
+instance.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-set-pos" role="function">
+<title>gst_bit_reader_set_pos&#160;()</title>
+<indexterm zone="gst-bit-reader-set-pos"><primary>gst_bit_reader_set_pos</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_set_pos (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> pos</parameter>);</programlisting>
+<para>Sets the new position of a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance to <parameter>pos</parameter>
+ in bits.</para>
+<refsect3 id="gst-bit-reader-set-pos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pos</para></entry>
+<entry role="parameter_description"><para>The new position in bits</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-set-pos.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the position could be set successfully, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>
+otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-size" role="function">
+<title>gst_bit_reader_get_size&#160;()</title>
+<indexterm zone="gst-bit-reader-get-size"><primary>gst_bit_reader_get_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_bit_reader_get_size (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>);</programlisting>
+<para>Returns the total number of bits of a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance.</para>
+<refsect3 id="gst-bit-reader-get-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-size.returns" role="returns">
+<title>Returns</title>
+<para> The total number of bits of <parameter>reader</parameter>
+instance.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-skip" role="function">
+<title>gst_bit_reader_skip&#160;()</title>
+<indexterm zone="gst-bit-reader-skip"><primary>gst_bit_reader_skip</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_skip (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                     <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Skips <parameter>nbits</parameter>
+ bits of the <link linkend="GstBitReader"><type>GstBitReader</type></link> instance.</para>
+<refsect3 id="gst-bit-reader-skip.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>the number of bits to skip</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-skip.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>nbits</parameter>
+bits could be skipped, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-skip-to-byte" role="function">
+<title>gst_bit_reader_skip_to_byte&#160;()</title>
+<indexterm zone="gst-bit-reader-skip-to-byte"><primary>gst_bit_reader_skip_to_byte</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_skip_to_byte (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>);</programlisting>
+<para>Skips until the next byte.</para>
+<refsect3 id="gst-bit-reader-skip-to-byte.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-skip-to-byte.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint16" role="function">
+<title>gst_bit_reader_get_bits_uint16&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint16"><primary>gst_bit_reader_get_bits_uint16</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_get_bits_uint16 (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint16"><type>guint16</type></link> *val</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint16.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint16"><type>guint16</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint16.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint32" role="function">
+<title>gst_bit_reader_get_bits_uint32&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint32"><primary>gst_bit_reader_get_bits_uint32</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_get_bits_uint32 (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint32"><type>guint32</type></link> *val</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint32.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint32"><type>guint32</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint32.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint64" role="function">
+<title>gst_bit_reader_get_bits_uint64&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint64"><primary>gst_bit_reader_get_bits_uint64</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_get_bits_uint64 (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> *val</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint64"><type>guint64</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint64.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint8" role="function">
+<title>gst_bit_reader_get_bits_uint8&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint8"><primary>gst_bit_reader_get_bits_uint8</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_get_bits_uint8 (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                               <parameter><link linkend="guint8"><type>guint8</type></link> *val</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint8"><type>guint8</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint8.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint16" role="function">
+<title>gst_bit_reader_peek_bits_uint16&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint16"><primary>gst_bit_reader_peek_bits_uint16</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_peek_bits_uint16 (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                 <parameter><link linkend="guint16"><type>guint16</type></link> *val</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position.</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint16.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint16"><type>guint16</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint16.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint32" role="function">
+<title>gst_bit_reader_peek_bits_uint32&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint32"><primary>gst_bit_reader_peek_bits_uint32</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_peek_bits_uint32 (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                 <parameter><link linkend="guint32"><type>guint32</type></link> *val</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position.</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint32.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint32"><type>guint32</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint32.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint64" role="function">
+<title>gst_bit_reader_peek_bits_uint64&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint64"><primary>gst_bit_reader_peek_bits_uint64</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_peek_bits_uint64 (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                 <parameter><link linkend="guint64"><type>guint64</type></link> *val</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position.</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint64"><type>guint64</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint64.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint8" role="function">
+<title>gst_bit_reader_peek_bits_uint8&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint8"><primary>gst_bit_reader_peek_bits_uint8</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_bit_reader_peek_bits_uint8 (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint8"><type>guint8</type></link> *val</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position.</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint8.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>val</para></entry>
+<entry role="parameter_description"><para> Pointer to a <link linkend="guint8"><type>guint8</type></link> to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint8.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if successful, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-skip-unchecked" role="function">
+<title>gst_bit_reader_skip_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-skip-unchecked"><primary>gst_bit_reader_skip_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bit_reader_skip_unchecked (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Skips <parameter>nbits</parameter>
+ bits of the <link linkend="GstBitReader"><type>GstBitReader</type></link> instance without checking if there
+are enough bits available in the bit reader.</para>
+<refsect3 id="gst-bit-reader-skip-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>the number of bits to skip</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-skip-to-byte-unchecked" role="function">
+<title>gst_bit_reader_skip_to_byte_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-skip-to-byte-unchecked"><primary>gst_bit_reader_skip_to_byte_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_bit_reader_skip_to_byte_unchecked (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>);</programlisting>
+<para>Skips until the next byte without checking if there are enough bits
+available in the bit reader.</para>
+<refsect3 id="gst-bit-reader-skip-to-byte-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint16-unchecked" role="function">
+<title>gst_bit_reader_get_bits_uint16_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint16-unchecked"><primary>gst_bit_reader_get_bits_uint16_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint16"><returnvalue>guint16</returnvalue></link>
+gst_bit_reader_get_bits_uint16_unchecked
+                               (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position without
+checking if there are enough bits available in the bit reader.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint16-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint16-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 16 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint32-unchecked" role="function">
+<title>gst_bit_reader_get_bits_uint32_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint32-unchecked"><primary>gst_bit_reader_get_bits_uint32_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+gst_bit_reader_get_bits_uint32_unchecked
+                               (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position without
+checking if there are enough bits available in the bit reader.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint32-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint32-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 32 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint64-unchecked" role="function">
+<title>gst_bit_reader_get_bits_uint64_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint64-unchecked"><primary>gst_bit_reader_get_bits_uint64_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_bit_reader_get_bits_uint64_unchecked
+                               (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position without
+checking if there are enough bits available in the bit reader.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint64-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint64-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 64 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-get-bits-uint8-unchecked" role="function">
+<title>gst_bit_reader_get_bits_uint8_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-get-bits-uint8-unchecked"><primary>gst_bit_reader_get_bits_uint8_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>
+gst_bit_reader_get_bits_uint8_unchecked
+                               (<parameter><link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ and update the current position without
+checking if there are enough bits available in the bit reader.</para>
+<refsect3 id="gst-bit-reader-get-bits-uint8-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-get-bits-uint8-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 8 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint16-unchecked" role="function">
+<title>gst_bit_reader_peek_bits_uint16_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint16-unchecked"><primary>gst_bit_reader_peek_bits_uint16_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint16"><returnvalue>guint16</returnvalue></link>
+gst_bit_reader_peek_bits_uint16_unchecked
+                               (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position without
+checking if there are enough bits available in the bit reader</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint16-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint16-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 16 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint32-unchecked" role="function">
+<title>gst_bit_reader_peek_bits_uint32_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint32-unchecked"><primary>gst_bit_reader_peek_bits_uint32_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint32"><returnvalue>guint32</returnvalue></link>
+gst_bit_reader_peek_bits_uint32_unchecked
+                               (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position without
+checking if there are enough bits available in the bit reader</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint32-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint32-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 32 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint64-unchecked" role="function">
+<title>gst_bit_reader_peek_bits_uint64_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint64-unchecked"><primary>gst_bit_reader_peek_bits_uint64_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+gst_bit_reader_peek_bits_uint64_unchecked
+                               (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position without
+checking if there are enough bits available in the bit reader</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint64-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint64-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 64 bit integer with the bits.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-bit-reader-peek-bits-uint8-unchecked" role="function">
+<title>gst_bit_reader_peek_bits_uint8_unchecked&#160;()</title>
+<indexterm zone="gst-bit-reader-peek-bits-uint8-unchecked"><primary>gst_bit_reader_peek_bits_uint8_unchecked</primary></indexterm>
+<programlisting language="C"><link linkend="guint8"><returnvalue>guint8</returnvalue></link>
+gst_bit_reader_peek_bits_uint8_unchecked
+                               (<parameter>const <link linkend="GstBitReader"><type>GstBitReader</type></link> *reader</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> nbits</parameter>);</programlisting>
+<para>Read <parameter>nbits</parameter>
+ bits into <parameter>val</parameter>
+ but keep the current position without
+checking if there are enough bits available in the bit reader</para>
+<refsect3 id="gst-bit-reader-peek-bits-uint8-unchecked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>reader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBitReader"><type>GstBitReader</type></link> instance</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nbits</para></entry>
+<entry role="parameter_description"><para>number of bits to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-bit-reader-peek-bits-uint8-unchecked.returns" role="returns">
+<title>Returns</title>
+<para> unsigned 8 bit integer with the bits.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstBitReader.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstBitReader" role="struct">
+<title>GstBitReader</title>
+<indexterm zone="GstBitReader"><primary>GstBitReader</primary></indexterm>
+<programlisting language="C">typedef struct {
+  const guint8 *data;
+  guint size;
+
+  guint byte;  /* Byte position */
+  guint bit;   /* Bit position in the current byte */
+} GstBitReader;
+</programlisting>
+<para>A bit reader instance.</para>
+<refsect3 id="GstBitReader.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="guint8"><type>guint8</type></link>&#160;*<structfield id="GstBitReader.data">data</structfield>;</para></entry>
+<entry role="struct_member_description"><para> Data from which the bit reader will
+read. </para></entry>
+<entry role="struct_member_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=size]</emphasis></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstBitReader.size">size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Size of <parameter>data</parameter>
+in bytes</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstBitReader.byte">byte</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Current byte position</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint"><type>guint</type></link>&#160;<structfield id="GstBitReader.bit">bit</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Bit position in the current byte</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

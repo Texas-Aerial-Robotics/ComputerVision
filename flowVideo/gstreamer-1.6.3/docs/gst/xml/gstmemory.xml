@@ -1,0 +1,1215 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstMemory">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstMemory.top_of_page">GstMemory</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstMemory</refname>
+<refpurpose>refcounted wrapper for memory blocks</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstMemory.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-FLAGS:CAPS">GST_MEMORY_FLAGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-FLAG-IS-SET:CAPS">GST_MEMORY_FLAG_IS_SET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-FLAG-UNSET:CAPS">GST_MEMORY_FLAG_UNSET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-IS-READONLY:CAPS">GST_MEMORY_IS_READONLY</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-IS-NO-SHARE:CAPS">GST_MEMORY_IS_NO_SHARE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-IS-ZERO-PADDED:CAPS">GST_MEMORY_IS_ZERO_PADDED</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-IS-ZERO-PREFIXED:CAPS">GST_MEMORY_IS_ZERO_PREFIXED</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-IS-PHYSICALLY-CONTIGUOUS:CAPS">GST_MEMORY_IS_PHYSICALLY_CONTIGUOUS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMORY-IS-NOT-MAPPABLE:CAPS">GST_MEMORY_IS_NOT_MAPPABLE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryMapFunction">*GstMemoryMapFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryMapFullFunction">*GstMemoryMapFullFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryUnmapFunction">*GstMemoryUnmapFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryUnmapFullFunction">*GstMemoryUnmapFullFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryCopyFunction">*GstMemoryCopyFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryShareFunction">*GstMemoryShareFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstMemoryIsSpanFunction">*GstMemoryIsSpanFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-init">gst_memory_init</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-is-type">gst_memory_is_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-memory-ref">gst_memory_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-unref">gst_memory_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gsize"><returnvalue>gsize</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-get-sizes">gst_memory_get_sizes</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-resize">gst_memory_resize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-memory-lock">gst_memory_lock</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-memory-unlock">gst_memory_unlock</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-memory-is-writable">gst_memory_is_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-memory-make-writable">gst_memory_make_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-memory-make-mapped">gst_memory_make_mapped</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-map">gst_memory_map</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-unmap">gst_memory_unmap</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-memory-copy">gst_memory_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-memory-share">gst_memory_share</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-memory-is-span">gst_memory_is_span</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstMemory.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstMemoryFlags">GstMemoryFlags</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMemory-struct">GstMemory</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstMapFlags">GstMapFlags</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MAP-READWRITE:CAPS">GST_MAP_READWRITE</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstMapInfo">GstMapInfo</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MAP-INFO-INIT:CAPS">GST_MAP_INFO_INIT</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstMemory.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstMemory
+</screen>
+</refsect1>
+
+<refsect1 id="GstMemory.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstMemory.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GstMemory is a lightweight refcounted object that wraps a region of memory.
+They are typically used to manage the data of a <link linkend="GstBuffer"><type>GstBuffer</type></link>.</para>
+<para>A GstMemory object has an allocated region of memory of maxsize. The maximum
+size does not change during the lifetime of the memory object. The memory
+also has an offset and size property that specifies the valid range of memory
+in the allocated region.</para>
+<para>Memory is usually created by allocators with a <link linkend="gst-allocator-alloc"><function>gst_allocator_alloc()</function></link>
+method call. When <link linkend="NULL:CAPS"><literal>NULL</literal></link> is used as the allocator, the default allocator will
+be used.</para>
+<para>New allocators can be registered with <link linkend="gst-allocator-register"><function>gst_allocator_register()</function></link>.
+Allocators are identified by name and can be retrieved with
+<link linkend="gst-allocator-find"><function>gst_allocator_find()</function></link>. <link linkend="gst-allocator-set-default"><function>gst_allocator_set_default()</function></link> can be used to change the
+default allocator.</para>
+<para>New memory can be created with <link linkend="gst-memory-new-wrapped"><function>gst_memory_new_wrapped()</function></link> that wraps the memory
+allocated elsewhere.</para>
+<para>Refcounting of the memory block is performed with <link linkend="gst-memory-ref"><function>gst_memory_ref()</function></link> and
+<link linkend="gst-memory-unref"><function>gst_memory_unref()</function></link>.</para>
+<para>The size of the memory can be retrieved and changed with
+<link linkend="gst-memory-get-sizes"><function>gst_memory_get_sizes()</function></link> and <link linkend="gst-memory-resize"><function>gst_memory_resize()</function></link> respectively.</para>
+<para>Getting access to the data of the memory is performed with <link linkend="gst-memory-map"><function>gst_memory_map()</function></link>.
+The call will return a pointer to offset bytes into the region of memory.
+After the memory access is completed, <link linkend="gst-memory-unmap"><function>gst_memory_unmap()</function></link> should be called.</para>
+<para>Memory can be copied with <link linkend="gst-memory-copy"><function>gst_memory_copy()</function></link>, which will return a writable
+copy. <link linkend="gst-memory-share"><function>gst_memory_share()</function></link> will create a new memory block that shares the
+memory with an existing memory block at a custom offset and with a custom
+size.</para>
+<para>Memory can be efficiently merged when <link linkend="gst-memory-is-span"><function>gst_memory_is_span()</function></link> returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+
+</refsect1>
+<refsect1 id="GstMemory.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-MEMORY-FLAGS:CAPS" role="macro">
+<title>GST_MEMORY_FLAGS()</title>
+<indexterm zone="GST-MEMORY-FLAGS:CAPS"><primary>GST_MEMORY_FLAGS</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_FLAGS(mem)  GST_MINI_OBJECT_FLAGS (mem)
+</programlisting>
+<para>A flags word containing <link linkend="GstMemoryFlags"><type>GstMemoryFlags</type></link> flags set on <parameter>mem</parameter>
+</para>
+<refsect3 id="GST-MEMORY-FLAGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-FLAG-IS-SET:CAPS" role="macro">
+<title>GST_MEMORY_FLAG_IS_SET()</title>
+<indexterm zone="GST-MEMORY-FLAG-IS-SET:CAPS"><primary>GST_MEMORY_FLAG_IS_SET</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_FLAG_IS_SET(mem,flag)   GST_MINI_OBJECT_FLAG_IS_SET (mem,flag)
+</programlisting>
+<para>Gives the status of a specific flag on a <parameter>mem</parameter>
+.</para>
+<refsect3 id="GST-MEMORY-FLAG-IS-SET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMemoryFlags"><type>GstMemoryFlags</type></link> to check.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-FLAG-UNSET:CAPS" role="macro">
+<title>GST_MEMORY_FLAG_UNSET()</title>
+<indexterm zone="GST-MEMORY-FLAG-UNSET:CAPS"><primary>GST_MEMORY_FLAG_UNSET</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_FLAG_UNSET(mem,flag)   GST_MINI_OBJECT_FLAG_UNSET (mem, flag)
+</programlisting>
+<para>Clear a specific flag on a <parameter>mem</parameter>
+.</para>
+<refsect3 id="GST-MEMORY-FLAG-UNSET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flag</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMemoryFlags"><type>GstMemoryFlags</type></link> to clear.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-IS-READONLY:CAPS" role="macro">
+<title>GST_MEMORY_IS_READONLY()</title>
+<indexterm zone="GST-MEMORY-IS-READONLY:CAPS"><primary>GST_MEMORY_IS_READONLY</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_IS_READONLY(mem)        GST_MEMORY_FLAG_IS_SET(mem,GST_MEMORY_FLAG_READONLY)
+</programlisting>
+<para>Check if <parameter>mem</parameter>
+ is readonly.</para>
+<refsect3 id="GST-MEMORY-IS-READONLY.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-IS-NO-SHARE:CAPS" role="macro">
+<title>GST_MEMORY_IS_NO_SHARE()</title>
+<indexterm zone="GST-MEMORY-IS-NO-SHARE:CAPS"><primary>GST_MEMORY_IS_NO_SHARE</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_IS_NO_SHARE(mem)        GST_MEMORY_FLAG_IS_SET(mem,GST_MEMORY_FLAG_NO_SHARE)
+</programlisting>
+<para>Check if <parameter>mem</parameter>
+ cannot be shared between buffers</para>
+<refsect3 id="GST-MEMORY-IS-NO-SHARE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-IS-ZERO-PADDED:CAPS" role="macro">
+<title>GST_MEMORY_IS_ZERO_PADDED()</title>
+<indexterm zone="GST-MEMORY-IS-ZERO-PADDED:CAPS"><primary>GST_MEMORY_IS_ZERO_PADDED</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_IS_ZERO_PADDED(mem)     GST_MEMORY_FLAG_IS_SET(mem,GST_MEMORY_FLAG_ZERO_PADDED)
+</programlisting>
+<para>Check if the padding in <parameter>mem</parameter>
+ is 0 filled.</para>
+<refsect3 id="GST-MEMORY-IS-ZERO-PADDED.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-IS-ZERO-PREFIXED:CAPS" role="macro">
+<title>GST_MEMORY_IS_ZERO_PREFIXED()</title>
+<indexterm zone="GST-MEMORY-IS-ZERO-PREFIXED:CAPS"><primary>GST_MEMORY_IS_ZERO_PREFIXED</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_IS_ZERO_PREFIXED(mem)   GST_MEMORY_FLAG_IS_SET(mem,GST_MEMORY_FLAG_ZERO_PREFIXED)
+</programlisting>
+<para>Check if the prefix in <parameter>mem</parameter>
+ is 0 filled.</para>
+<refsect3 id="GST-MEMORY-IS-ZERO-PREFIXED.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMORY-IS-PHYSICALLY-CONTIGUOUS:CAPS" role="macro" condition="since:1.2">
+<title>GST_MEMORY_IS_PHYSICALLY_CONTIGUOUS()</title>
+<indexterm zone="GST-MEMORY-IS-PHYSICALLY-CONTIGUOUS:CAPS" role="1.2"><primary>GST_MEMORY_IS_PHYSICALLY_CONTIGUOUS</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_IS_PHYSICALLY_CONTIGUOUS(mem)     GST_MEMORY_FLAG_IS_SET(mem,GST_MEMORY_FLAG_PHYSICALLY_CONTIGUOUS)
+</programlisting>
+<para>Check if <parameter>mem</parameter>
+ is physically contiguous.</para>
+<refsect3 id="GST-MEMORY-IS-PHYSICALLY-CONTIGUOUS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GST-MEMORY-IS-NOT-MAPPABLE:CAPS" role="macro" condition="since:1.2">
+<title>GST_MEMORY_IS_NOT_MAPPABLE()</title>
+<indexterm zone="GST-MEMORY-IS-NOT-MAPPABLE:CAPS" role="1.2"><primary>GST_MEMORY_IS_NOT_MAPPABLE</primary></indexterm>
+<programlisting language="C">#define GST_MEMORY_IS_NOT_MAPPABLE(mem)     GST_MEMORY_FLAG_IS_SET(mem,GST_MEMORY_FLAG_NOT_MAPPABLE)
+</programlisting>
+<para>Check if <parameter>mem</parameter>
+ can't be mapped via <link linkend="gst-memory-map"><function>gst_memory_map()</function></link> without any preconditions</para>
+<refsect3 id="GST-MEMORY-IS-NOT-MAPPABLE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstMemoryMapFunction" role="function">
+<title>GstMemoryMapFunction&#160;()</title>
+<indexterm zone="GstMemoryMapFunction"><primary>GstMemoryMapFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMemoryMapFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                         <parameter><link linkend="gsize"><type>gsize</type></link> maxsize</parameter>,
+                         <parameter><link linkend="GstMapFlags"><type>GstMapFlags</type></link> flags</parameter>);</programlisting>
+<para>Get the memory of <parameter>mem</parameter>
+ that can be accessed according to the mode specified
+in <parameter>flags</parameter>
+. The function should return a pointer that contains at least
+<parameter>maxsize</parameter>
+ bytes.</para>
+<refsect3 id="GstMemoryMapFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>maxsize</para></entry>
+<entry role="parameter_description"><para>size to map</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>access mode for the memory</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMemoryMapFunction.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to memory of which at least <parameter>maxsize</parameter>
+bytes can be
+accessed according to the access pattern in <parameter>flags</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="GstMemoryMapFullFunction" role="function">
+<title>GstMemoryMapFullFunction&#160;()</title>
+<indexterm zone="GstMemoryMapFullFunction"><primary>GstMemoryMapFullFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMemoryMapFullFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                             <parameter><link linkend="GstMapInfo"><type>GstMapInfo</type></link> *info</parameter>,
+                             <parameter><link linkend="gsize"><type>gsize</type></link> maxsize</parameter>);</programlisting>
+<para>Get the memory of <parameter>mem</parameter>
+ that can be accessed according to the mode specified
+in <parameter>info</parameter>
+'s flags. The function should return a pointer that contains at least
+<parameter>maxsize</parameter>
+ bytes.</para>
+<refsect3 id="GstMemoryMapFullFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstMapInfo"><type>GstMapInfo</type></link> to map with</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>maxsize</para></entry>
+<entry role="parameter_description"><para>size to map</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMemoryMapFullFunction.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to memory of which at least <parameter>maxsize</parameter>
+bytes can be
+accessed according to the access pattern in <parameter>info</parameter>
+'s flags.</para>
+</refsect3></refsect2>
+<refsect2 id="GstMemoryUnmapFunction" role="function">
+<title>GstMemoryUnmapFunction&#160;()</title>
+<indexterm zone="GstMemoryUnmapFunction"><primary>GstMemoryUnmapFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMemoryUnmapFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>);</programlisting>
+<para>Return the pointer previously retrieved with <link linkend="gst-memory-map"><function>gst_memory_map()</function></link>.</para>
+<refsect3 id="GstMemoryUnmapFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMemoryUnmapFullFunction" role="function">
+<title>GstMemoryUnmapFullFunction&#160;()</title>
+<indexterm zone="GstMemoryUnmapFullFunction"><primary>GstMemoryUnmapFullFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMemoryUnmapFullFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                               <parameter><link linkend="GstMapInfo"><type>GstMapInfo</type></link> *info</parameter>);</programlisting>
+<para>Return the pointer previously retrieved with <link linkend="gst-memory-map"><function>gst_memory_map()</function></link> with <parameter>info</parameter>
+.</para>
+<refsect3 id="GstMemoryUnmapFullFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMapInfo"><type>GstMapInfo</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMemoryCopyFunction" role="function">
+<title>GstMemoryCopyFunction&#160;()</title>
+<indexterm zone="GstMemoryCopyFunction"><primary>GstMemoryCopyFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+<phrase role="c_punctuation">(</phrase>*GstMemoryCopyFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                          <parameter><link linkend="gssize"><type>gssize</type></link> offset</parameter>,
+                          <parameter><link linkend="gssize"><type>gssize</type></link> size</parameter>);</programlisting>
+<para>Copy <parameter>size</parameter>
+ bytes from <parameter>mem</parameter>
+ starting at <parameter>offset</parameter>
+ and return them wrapped in a
+new GstMemory object.
+If <parameter>size</parameter>
+ is set to -1, all bytes starting at <parameter>offset</parameter>
+ are copied.</para>
+<refsect3 id="GstMemoryCopyFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>an offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>a size or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMemoryCopyFunction.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstMemory"><type>GstMemory</type></link> object wrapping a copy of the requested region in
+<parameter>mem</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="GstMemoryShareFunction" role="function">
+<title>GstMemoryShareFunction&#160;()</title>
+<indexterm zone="GstMemoryShareFunction"><primary>GstMemoryShareFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+<phrase role="c_punctuation">(</phrase>*GstMemoryShareFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                           <parameter><link linkend="gssize"><type>gssize</type></link> offset</parameter>,
+                           <parameter><link linkend="gssize"><type>gssize</type></link> size</parameter>);</programlisting>
+<para>Share <parameter>size</parameter>
+ bytes from <parameter>mem</parameter>
+ starting at <parameter>offset</parameter>
+ and return them wrapped in a
+new GstMemory object. If <parameter>size</parameter>
+ is set to -1, all bytes starting at <parameter>offset</parameter>
+ are
+shared. This function does not make a copy of the bytes in <parameter>mem</parameter>
+.</para>
+<refsect3 id="GstMemoryShareFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>an offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>a size or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMemoryShareFunction.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstMemory"><type>GstMemory</type></link> object sharing the requested region in <parameter>mem</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="GstMemoryIsSpanFunction" role="function">
+<title>GstMemoryIsSpanFunction&#160;()</title>
+<indexterm zone="GstMemoryIsSpanFunction"><primary>GstMemoryIsSpanFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstMemoryIsSpanFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem1</parameter>,
+                            <parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem2</parameter>,
+                            <parameter><link linkend="gsize"><type>gsize</type></link> *offset</parameter>);</programlisting>
+<para>Check if <parameter>mem1</parameter>
+ and <parameter>mem2</parameter>
+ occupy contiguous memory and return the offset of
+<parameter>mem1</parameter>
+ in the parent buffer in <parameter>offset</parameter>
+.</para>
+<refsect3 id="GstMemoryIsSpanFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mem2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>a result offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMemoryIsSpanFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>mem1</parameter>
+and <parameter>mem2</parameter>
+are in contiguous memory.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-init" role="function">
+<title>gst_memory_init&#160;()</title>
+<indexterm zone="gst-memory-init"><primary>gst_memory_init</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_memory_init (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                 <parameter><link linkend="GstMemoryFlags"><type>GstMemoryFlags</type></link> flags</parameter>,
+                 <parameter><link linkend="GstAllocator"><type>GstAllocator</type></link> *allocator</parameter>,
+                 <parameter><link linkend="GstMemory"><type>GstMemory</type></link> *parent</parameter>,
+                 <parameter><link linkend="gsize"><type>gsize</type></link> maxsize</parameter>,
+                 <parameter><link linkend="gsize"><type>gsize</type></link> align</parameter>,
+                 <parameter><link linkend="gsize"><type>gsize</type></link> offset</parameter>,
+                 <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Initializes a newly allocated <parameter>mem</parameter>
+ with the given parameters. This function
+will call <link linkend="gst-mini-object-init"><function>gst_mini_object_init()</function></link> with the default memory parameters.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-memory-init.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para><link linkend="GstMemoryFlags"><type>GstMemoryFlags</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>allocator</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstAllocator"><type>GstAllocator</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>the parent of <parameter>mem</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>maxsize</para></entry>
+<entry role="parameter_description"><para>the total size of the memory</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>align</para></entry>
+<entry role="parameter_description"><para>the alignment of the memory</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>The offset in the memory</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the size of valid data in the memory</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-is-type" role="function" condition="since:1.2">
+<title>gst_memory_is_type&#160;()</title>
+<indexterm zone="gst-memory-is-type" role="1.2"><primary>gst_memory_is_type</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_memory_is_type (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *mem_type</parameter>);</programlisting>
+<para>Check if <parameter>mem</parameter>
+ if allocated with an allocator for <parameter>mem_type</parameter>
+.</para>
+<refsect3 id="gst-memory-is-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mem_type</para></entry>
+<entry role="parameter_description"><para>a memory type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-is-type.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>mem</parameter>
+was allocated from an allocator for <parameter>mem_type</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-memory-ref" role="function">
+<title>gst_memory_ref&#160;()</title>
+<indexterm zone="gst-memory-ref"><primary>gst_memory_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+gst_memory_ref (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *memory</parameter>);</programlisting>
+<para>Increase the refcount of this memory.</para>
+<refsect3 id="gst-memory-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>memory</para></entry>
+<entry role="parameter_description"><para>The memory to refcount</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-ref.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>memory</parameter>
+(for convenience when doing assignments). </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-unref" role="function">
+<title>gst_memory_unref&#160;()</title>
+<indexterm zone="gst-memory-unref"><primary>gst_memory_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_memory_unref (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *memory</parameter>);</programlisting>
+<para>Decrease the refcount of an memory, freeing it if the refcount reaches 0.</para>
+<refsect3 id="gst-memory-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>memory</para></entry>
+<entry role="parameter_description"><para> the memory to refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-get-sizes" role="function">
+<title>gst_memory_get_sizes&#160;()</title>
+<indexterm zone="gst-memory-get-sizes"><primary>gst_memory_get_sizes</primary></indexterm>
+<programlisting language="C"><link linkend="gsize"><returnvalue>gsize</returnvalue></link>
+gst_memory_get_sizes (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                      <parameter><link linkend="gsize"><type>gsize</type></link> *offset</parameter>,
+                      <parameter><link linkend="gsize"><type>gsize</type></link> *maxsize</parameter>);</programlisting>
+<para>Get the current <parameter>size</parameter>
+, <parameter>offset</parameter>
+ and <parameter>maxsize</parameter>
+ of <parameter>mem</parameter>
+.</para>
+<refsect3 id="gst-memory-get-sizes.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>pointer to offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>maxsize</para></entry>
+<entry role="parameter_description"><para>pointer to maxsize</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-get-sizes.returns" role="returns">
+<title>Returns</title>
+<para> the current sizes of <parameter>mem</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-resize" role="function">
+<title>gst_memory_resize&#160;()</title>
+<indexterm zone="gst-memory-resize"><primary>gst_memory_resize</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_memory_resize (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                   <parameter><link linkend="gssize"><type>gssize</type></link> offset</parameter>,
+                   <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>);</programlisting>
+<para>Resize the memory region. <parameter>mem</parameter>
+ should be writable and offset + size should be
+less than the maxsize of <parameter>mem</parameter>
+.</para>
+<para><link linkend="GST-MEMORY-FLAG-ZERO-PREFIXED:CAPS"><type>GST_MEMORY_FLAG_ZERO_PREFIXED</type></link> and <link linkend="GST-MEMORY-FLAG-ZERO-PADDED:CAPS"><type>GST_MEMORY_FLAG_ZERO_PADDED</type></link> will be
+cleared when offset or padding is increased respectively.</para>
+<refsect3 id="gst-memory-resize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>a new offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>a new size</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-lock" role="macro">
+<title>gst_memory_lock()</title>
+<indexterm zone="gst-memory-lock"><primary>gst_memory_lock</primary></indexterm>
+<programlisting language="C">#define        gst_memory_lock(m,f)        gst_mini_object_lock (GST_MINI_OBJECT_CAST (m), (f))
+</programlisting>
+</refsect2>
+<refsect2 id="gst-memory-unlock" role="macro">
+<title>gst_memory_unlock()</title>
+<indexterm zone="gst-memory-unlock"><primary>gst_memory_unlock</primary></indexterm>
+<programlisting language="C">#define        gst_memory_unlock(m,f)      gst_mini_object_unlock (GST_MINI_OBJECT_CAST (m), (f))
+</programlisting>
+</refsect2>
+<refsect2 id="gst-memory-is-writable" role="macro">
+<title>gst_memory_is_writable()</title>
+<indexterm zone="gst-memory-is-writable"><primary>gst_memory_is_writable</primary></indexterm>
+<programlisting language="C">#define        gst_memory_is_writable(m)   gst_mini_object_is_writable (GST_MINI_OBJECT_CAST (m))
+</programlisting>
+</refsect2>
+<refsect2 id="gst-memory-make-writable" role="macro">
+<title>gst_memory_make_writable()</title>
+<indexterm zone="gst-memory-make-writable"><primary>gst_memory_make_writable</primary></indexterm>
+<programlisting language="C">#define        gst_memory_make_writable(m) GST_MEMORY_CAST (gst_mini_object_make_writable (GST_MINI_OBJECT_CAST (m)))
+</programlisting>
+</refsect2>
+<refsect2 id="gst-memory-make-mapped" role="function">
+<title>gst_memory_make_mapped&#160;()</title>
+<indexterm zone="gst-memory-make-mapped"><primary>gst_memory_make_mapped</primary></indexterm>
+<programlisting language="C"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+gst_memory_make_mapped (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                        <parameter><link linkend="GstMapInfo"><type>GstMapInfo</type></link> *info</parameter>,
+                        <parameter><link linkend="GstMapFlags"><type>GstMapFlags</type></link> flags</parameter>);</programlisting>
+<para>Create a <link linkend="GstMemory"><type>GstMemory</type></link> object that is mapped with <parameter>flags</parameter>
+. If <parameter>mem</parameter>
+ is mappable
+with <parameter>flags</parameter>
+, this function returns the mapped <parameter>mem</parameter>
+ directly. Otherwise a
+mapped copy of <parameter>mem</parameter>
+ is returned.</para>
+<para>This function takes ownership of old <parameter>mem</parameter>
+ and returns a reference to a new
+<link linkend="GstMemory"><type>GstMemory</type></link>.</para>
+<refsect3 id="gst-memory-make-mapped.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstMemory"><type>GstMemory</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para> pointer for info. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>mapping flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-make-mapped.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstMemory"><type>GstMemory</type></link> object mapped
+with <parameter>flags</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when a mapping is not possible. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-map" role="function">
+<title>gst_memory_map&#160;()</title>
+<indexterm zone="gst-memory-map"><primary>gst_memory_map</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_memory_map (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                <parameter><link linkend="GstMapInfo"><type>GstMapInfo</type></link> *info</parameter>,
+                <parameter><link linkend="GstMapFlags"><type>GstMapFlags</type></link> flags</parameter>);</programlisting>
+<para>Fill <parameter>info</parameter>
+ with the pointer and sizes of the memory in <parameter>mem</parameter>
+ that can be
+accessed according to <parameter>flags</parameter>
+.</para>
+<para>This function can return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> for various reasons:</para>
+<itemizedlist>
+<listitem><para>the memory backed by <parameter>mem</parameter>
+ is not accessible with the given <parameter>flags</parameter>
+.</para></listitem>
+<listitem>
+<para>the memory was already mapped with a different mapping.</para>
+</listitem>
+</itemizedlist>
+<para><parameter>info</parameter>
+ and its contents remain valid for as long as <parameter>mem</parameter>
+ is valid and
+until <link linkend="gst-memory-unmap"><function>gst_memory_unmap()</function></link> is called.</para>
+<para>For each <link linkend="gst-memory-map"><function>gst_memory_map()</function></link> call, a corresponding <link linkend="gst-memory-unmap"><function>gst_memory_unmap()</function></link> call
+should be done.</para>
+<refsect3 id="gst-memory-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para> pointer for info. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>flags</para></entry>
+<entry role="parameter_description"><para>mapping flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-map.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the map operation was successful.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-unmap" role="function">
+<title>gst_memory_unmap&#160;()</title>
+<indexterm zone="gst-memory-unmap"><primary>gst_memory_unmap</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_memory_unmap (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                  <parameter><link linkend="GstMapInfo"><type>GstMapInfo</type></link> *info</parameter>);</programlisting>
+<para>Release the memory obtained with <link linkend="gst-memory-map"><function>gst_memory_map()</function></link></para>
+<refsect3 id="gst-memory-unmap.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMapInfo"><type>GstMapInfo</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-copy" role="function">
+<title>gst_memory_copy&#160;()</title>
+<indexterm zone="gst-memory-copy"><primary>gst_memory_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+gst_memory_copy (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                 <parameter><link linkend="gssize"><type>gssize</type></link> offset</parameter>,
+                 <parameter><link linkend="gssize"><type>gssize</type></link> size</parameter>);</programlisting>
+<para>Return a copy of <parameter>size</parameter>
+ bytes from <parameter>mem</parameter>
+ starting from <parameter>offset</parameter>
+. This copy is
+guaranteed to be writable. <parameter>size</parameter>
+ can be set to -1 to return a copy
+from <parameter>offset</parameter>
+ to the end of the memory region.</para>
+<refsect3 id="gst-memory-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset to copy from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>size to copy, or -1 to copy to the end of the memory region</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstMemory"><type>GstMemory</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-share" role="function">
+<title>gst_memory_share&#160;()</title>
+<indexterm zone="gst-memory-share"><primary>gst_memory_share</primary></indexterm>
+<programlisting language="C"><link linkend="GstMemory"><returnvalue>GstMemory</returnvalue></link>&#160;*
+gst_memory_share (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem</parameter>,
+                  <parameter><link linkend="gssize"><type>gssize</type></link> offset</parameter>,
+                  <parameter><link linkend="gssize"><type>gssize</type></link> size</parameter>);</programlisting>
+<para>Return a shared copy of <parameter>size</parameter>
+ bytes from <parameter>mem</parameter>
+ starting from <parameter>offset</parameter>
+. No
+memory copy is performed and the memory region is simply shared. The result
+is guaranteed to be non-writable. <parameter>size</parameter>
+ can be set to -1 to return a shared
+copy from <parameter>offset</parameter>
+ to the end of the memory region.</para>
+<refsect3 id="gst-memory-share.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>offset to share from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>size to share, or -1 to share to the end of the memory region</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-share.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstMemory"><type>GstMemory</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-memory-is-span" role="function">
+<title>gst_memory_is_span&#160;()</title>
+<indexterm zone="gst-memory-is-span"><primary>gst_memory_is_span</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_memory_is_span (<parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem1</parameter>,
+                    <parameter><link linkend="GstMemory"><type>GstMemory</type></link> *mem2</parameter>,
+                    <parameter><link linkend="gsize"><type>gsize</type></link> *offset</parameter>);</programlisting>
+<para>Check if <parameter>mem1</parameter>
+ and mem2 share the memory with a common parent memory object
+and that the memory is contiguous.</para>
+<para>If this is the case, the memory of <parameter>mem1</parameter>
+ and <parameter>mem2</parameter>
+ can be merged
+efficiently by performing <link linkend="gst-memory-share"><function>gst_memory_share()</function></link> on the parent object from
+the returned <parameter>offset</parameter>
+.</para>
+<refsect3 id="gst-memory-is-span.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mem1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mem2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstMemory"><type>GstMemory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>a pointer to a result offset</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-memory-is-span.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the memory is contiguous and of a common parent.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstMemory.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMemoryFlags" role="enum">
+<title>enum GstMemoryFlags</title>
+<indexterm zone="GstMemoryFlags"><primary>GstMemoryFlags</primary></indexterm>
+<para>Flags for wrapped memory.</para>
+<refsect3 id="GstMemoryFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-READONLY:CAPS">GST_MEMORY_FLAG_READONLY</para></entry>
+<entry role="enum_member_description"><para>memory is readonly. It is not allowed to map the
+memory with <link linkend="GST-MAP-WRITE:CAPS"><type>GST_MAP_WRITE</type></link>.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-NO-SHARE:CAPS">GST_MEMORY_FLAG_NO_SHARE</para></entry>
+<entry role="enum_member_description"><para>memory must not be shared. Copies will have to be
+made when this memory needs to be shared between buffers.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-ZERO-PREFIXED:CAPS">GST_MEMORY_FLAG_ZERO_PREFIXED</para></entry>
+<entry role="enum_member_description"><para>the memory prefix is filled with 0 bytes</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-ZERO-PADDED:CAPS">GST_MEMORY_FLAG_ZERO_PADDED</para></entry>
+<entry role="enum_member_description"><para>the memory padding is filled with 0 bytes</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-PHYSICALLY-CONTIGUOUS:CAPS">GST_MEMORY_FLAG_PHYSICALLY_CONTIGUOUS</para></entry>
+<entry role="enum_member_description"><para>the memory is physically contiguous. (Since 2.2)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-NOT-MAPPABLE:CAPS">GST_MEMORY_FLAG_NOT_MAPPABLE</para></entry>
+<entry role="enum_member_description"><para>the memory can't be mapped via <link linkend="gst-memory-map"><function>gst_memory_map()</function></link> without any preconditions. (Since 1.2)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MEMORY-FLAG-LAST:CAPS">GST_MEMORY_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>first flag that can be used for custom purposes</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstMemory-struct" role="struct">
+<title>struct GstMemory</title>
+<indexterm zone="GstMemory-struct"><primary>GstMemory</primary></indexterm>
+<programlisting language="C">struct GstMemory {
+  GstMiniObject   mini_object;
+
+  GstAllocator   *allocator;
+
+  GstMemory      *parent;
+  gsize           maxsize;
+  gsize           align;
+  gsize           offset;
+  gsize           size;
+};
+</programlisting>
+<para>Base structure for memory implementations. Custom memory will put this structure
+as the first member of their structure.</para>
+<refsect3 id="GstMemory.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMiniObject"><type>GstMiniObject</type></link>&#160;<structfield id="GstMemory-struct.mini-object">mini_object</structfield>;</para></entry>
+<entry role="struct_member_description"><para>parent structure</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstAllocator"><type>GstAllocator</type></link>&#160;*<structfield id="GstMemory-struct.allocator">allocator</structfield>;</para></entry>
+<entry role="struct_member_description"><para>pointer to the <link linkend="GstAllocator"><type>GstAllocator</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMemory"><type>GstMemory</type></link>&#160;*<structfield id="GstMemory-struct.parent">parent</structfield>;</para></entry>
+<entry role="struct_member_description"><para>parent memory block</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMemory-struct.maxsize">maxsize</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the maximum size allocated</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMemory-struct.align">align</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the alignment of the memory</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMemory-struct.offset">offset</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the offset where valid data starts</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMemory-struct.size">size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the size of valid data</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstMapFlags" role="enum">
+<title>enum GstMapFlags</title>
+<indexterm zone="GstMapFlags"><primary>GstMapFlags</primary></indexterm>
+<para>Flags used when mapping memory</para>
+<refsect3 id="GstMapFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MAP-READ:CAPS">GST_MAP_READ</para></entry>
+<entry role="enum_member_description"><para>map for read access</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MAP-WRITE:CAPS">GST_MAP_WRITE</para></entry>
+<entry role="enum_member_description"><para>map for write access</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MAP-FLAG-LAST:CAPS">GST_MAP_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>first flag that can be used for custom purposes</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MAP-READWRITE:CAPS" role="macro">
+<title>GST_MAP_READWRITE</title>
+<indexterm zone="GST-MAP-READWRITE:CAPS"><primary>GST_MAP_READWRITE</primary></indexterm>
+<programlisting language="C">#define GST_MAP_READWRITE      (GST_MAP_READ | GST_MAP_WRITE)
+</programlisting>
+<para>GstMapFlags value alias for GST_MAP_READ | GST_MAP_WRITE</para>
+</refsect2>
+<refsect2 id="GstMapInfo" role="struct">
+<title>GstMapInfo</title>
+<indexterm zone="GstMapInfo"><primary>GstMapInfo</primary></indexterm>
+<programlisting language="C">typedef struct {
+  GstMemory *memory;
+  GstMapFlags flags;
+  guint8 *data;
+  gsize size;
+  gsize maxsize;
+} GstMapInfo;
+</programlisting>
+<para>A structure containing the result of a map operation such as
+<link linkend="gst-memory-map"><function>gst_memory_map()</function></link>. It contains the data and size.</para>
+<refsect3 id="GstMapInfo.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMemory"><type>GstMemory</type></link>&#160;*<structfield id="GstMapInfo.memory">memory</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a pointer to the mapped memory</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMapFlags"><type>GstMapFlags</type></link>&#160;<structfield id="GstMapInfo.flags">flags</structfield>;</para></entry>
+<entry role="struct_member_description"><para>flags used when mapping the memory</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guint8"><type>guint8</type></link>&#160;*<structfield id="GstMapInfo.data">data</structfield>;</para></entry>
+<entry role="struct_member_description"><para> a pointer to the mapped data. </para></entry>
+<entry role="struct_member_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=size]</emphasis></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMapInfo.size">size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the valid size in <parameter>data</parameter>
+</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gsize"><type>gsize</type></link>&#160;<structfield id="GstMapInfo.maxsize">maxsize</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the maximum bytes in <parameter>data</parameter>
+</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GST-MAP-INFO-INIT:CAPS" role="macro">
+<title>GST_MAP_INFO_INIT</title>
+<indexterm zone="GST-MAP-INFO-INIT:CAPS"><primary>GST_MAP_INFO_INIT</primary></indexterm>
+<programlisting language="C">#define GST_MAP_INFO_INIT { NULL, 0, NULL, 0, 0, {0, }, {0, }}
+</programlisting>
+<para>Initializer for <link linkend="GstMapInfo"><type>GstMapInfo</type></link></para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstMemory.see-also">
+<title>See Also</title>
+<para><link linkend="GstBuffer"><type>GstBuffer</type></link></para>
+
+</refsect1>
+
+</refentry>

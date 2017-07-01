@@ -1,0 +1,128 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gstreamer-plugins-fdsrc">
+<refmeta>
+<refentrytitle id="gstreamer-plugins-fdsrc.top_of_page" role="top_of_page">fdsrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fdsrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gstreamer-plugins-fdsrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFdSrc--fd">fd</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstFdSrc--timeout">timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFdSrc"/><refsect1 id="gstreamer-plugins-fdsrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFdSrc-struct">GstFdSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstFdSrc
+</screen>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFdSrc implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gstreamer-plugins-fdsrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Read data from a unix file descriptor.</para>
+<para>To generate data, enter some data on the console followed by enter.
+The above mentioned pipeline should dump data packets to the console.</para>
+<para>If the <link linkend="GstFdSrc--timeout"><type>“timeout”</type></link> property is set to a value bigger than 0, fdsrc will
+generate an element message named <classname>&quot;GstFdSrcTimeout&quot;</classname>
+if no data was received in the given timeout.</para>
+<para>The message's structure contains one field:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;timeout&quot;</classname>: the timeout in microseconds that
+  expired when waiting for data.
+  </para>
+</listitem>
+</itemizedlist>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+echo "Hello GStreamer" | gst-launch-1.0 -v fdsrc ! fakesink dump=true
+]]></programlisting></informalexample> A simple pipeline to read from the standard input and dump the data
+with a fakesink as hex ascii block.
+</refsect2>
+
+<include href="element-fdsrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gstreamer-plugins-fdsrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFdSrc-struct" role="struct">
+<title>struct GstFdSrc</title>
+<indexterm zone="GstFdSrc-struct"><primary>GstFdSrc</primary></indexterm>
+<programlisting language="C">struct GstFdSrc;</programlisting>
+<para>Opaque <link linkend="GstFdSrc"><type>GstFdSrc</type></link> data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFdSrc--fd" role="property"><title>The <literal>“fd”</literal> property</title>
+<indexterm zone="GstFdSrc--fd"><primary>GstFdSrc:fd</primary></indexterm>
+<programlisting>  “fd”                       <link linkend="gint"><type>gint</type></link></programlisting>
+<para>An open file descriptor to read from.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstFdSrc--timeout" role="property"><title>The <literal>“timeout”</literal> property</title>
+<indexterm zone="GstFdSrc--timeout"><primary>GstFdSrc:timeout</primary></indexterm>
+<programlisting>  “timeout”                  <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Post a message after timeout microseconds</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-plugins-fdsrc.see-also">
+<title>See Also</title>
+<para><link linkend="GstFdSink"><type>GstFdSink</type></link></para>
+
+</refsect1>
+
+</refentry>

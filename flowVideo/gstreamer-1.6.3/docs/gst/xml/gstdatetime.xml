@@ -1,0 +1,943 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstDateTime">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstDateTime.top_of_page">GstDateTime</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstDateTime</refname>
+<refpurpose>A date, time and timezone structure</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstDateTime.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-day">gst_date_time_get_day</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-month">gst_date_time_get_month</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-hour">gst_date_time_get_hour</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-microsecond">gst_date_time_get_microsecond</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-minute">gst_date_time_get_minute</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-time-zone-offset">gst_date_time_get_time_zone_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-second">gst_date_time_get_second</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-get-year">gst_date_time_get_year</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new">gst_date_time_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-ymd">gst_date_time_new_ymd</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-ym">gst_date_time_new_ym</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-y">gst_date_time_new_y</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-from-unix-epoch-local-time">gst_date_time_new_from_unix_epoch_local_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-from-unix-epoch-utc">gst_date_time_new_from_unix_epoch_utc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-local-time">gst_date_time_new_local_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-now-local-time">gst_date_time_new_now_local_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-now-utc">gst_date_time_new_now_utc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-ref">gst_date_time_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-unref">gst_date_time_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-has-day">gst_date_time_has_day</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-has-month">gst_date_time_has_month</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-has-second">gst_date_time_has_second</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-has-time">gst_date_time_has_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-date-time-has-year">gst_date_time_has_year</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-from-iso8601-string">gst_date_time_new_from_iso8601_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-to-iso8601-string">gst_date_time_to_iso8601_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-new-from-g-date-time">gst_date_time_new_from_g_date_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GDateTime"><returnvalue>GDateTime</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-date-time-to-g-date-time">gst_date_time_to_g_date_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstDateTime.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstDateTime-struct">GstDateTime</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TYPE-DATE-TIME:CAPS">GST_TYPE_DATE_TIME</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstDateTime.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstDateTime
+</screen>
+</refsect1>
+
+<refsect1 id="GstDateTime.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstDateTime.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Struct to store date, time and timezone information altogether.
+<link linkend="GstDateTime"><type>GstDateTime</type></link> is refcounted and immutable.</para>
+<para>Date information is handled using the proleptic Gregorian calendar.</para>
+<para>Provides basic creation functions and accessor functions to its fields.</para>
+
+</refsect1>
+<refsect1 id="GstDateTime.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-date-time-get-day" role="function">
+<title>gst_date_time_get_day&#160;()</title>
+<indexterm zone="gst-date-time-get-day"><primary>gst_date_time_get_day</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_day (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Returns the day of the month of this <link linkend="GstDateTime"><type>GstDateTime</type></link>.
+Call gst_date_time_has_day before, to avoid warnings.</para>
+<refsect3 id="gst-date-time-get-day.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-day.returns" role="returns">
+<title>Returns</title>
+<para> The day of this <link linkend="GstDateTime"><type>GstDateTime</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-month" role="function">
+<title>gst_date_time_get_month&#160;()</title>
+<indexterm zone="gst-date-time-get-month"><primary>gst_date_time_get_month</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_month (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Returns the month of this <link linkend="GstDateTime"><type>GstDateTime</type></link>. January is 1, February is 2, etc..
+Call gst_date_time_has_month before, to avoid warnings.</para>
+<refsect3 id="gst-date-time-get-month.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-month.returns" role="returns">
+<title>Returns</title>
+<para> The month of this <link linkend="GstDateTime"><type>GstDateTime</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-hour" role="function">
+<title>gst_date_time_get_hour&#160;()</title>
+<indexterm zone="gst-date-time-get-hour"><primary>gst_date_time_get_hour</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_hour (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Retrieves the hour of the day represented by <parameter>datetime</parameter>
+ in the gregorian
+calendar. The return is in the range of 0 to 23.
+Call gst_date_time_has_haur before, to avoid warnings.</para>
+<refsect3 id="gst-date-time-get-hour.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-hour.returns" role="returns">
+<title>Returns</title>
+<para> the hour of the day</para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-microsecond" role="function">
+<title>gst_date_time_get_microsecond&#160;()</title>
+<indexterm zone="gst-date-time-get-microsecond"><primary>gst_date_time_get_microsecond</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_microsecond (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Retrieves the fractional part of the seconds in microseconds represented by
+<parameter>datetime</parameter>
+ in the gregorian calendar.</para>
+<refsect3 id="gst-date-time-get-microsecond.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-microsecond.returns" role="returns">
+<title>Returns</title>
+<para> the microsecond of the second</para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-minute" role="function">
+<title>gst_date_time_get_minute&#160;()</title>
+<indexterm zone="gst-date-time-get-minute"><primary>gst_date_time_get_minute</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_minute (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Retrieves the minute of the hour represented by <parameter>datetime</parameter>
+ in the gregorian
+calendar.
+Call gst_date_time_has_minute before, to avoid warnings.</para>
+<refsect3 id="gst-date-time-get-minute.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-minute.returns" role="returns">
+<title>Returns</title>
+<para> the minute of the hour</para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-time-zone-offset" role="function">
+<title>gst_date_time_get_time_zone_offset&#160;()</title>
+<indexterm zone="gst-date-time-get-time-zone-offset"><primary>gst_date_time_get_time_zone_offset</primary></indexterm>
+<programlisting language="C"><link linkend="gfloat"><returnvalue>gfloat</returnvalue></link>
+gst_date_time_get_time_zone_offset (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Retrieves the offset from UTC in hours that the timezone specified
+by <parameter>datetime</parameter>
+ represents. Timezones ahead (to the east) of UTC have positive
+values, timezones before (to the west) of UTC have negative values.
+If <parameter>datetime</parameter>
+ represents UTC time, then the offset is zero.</para>
+<refsect3 id="gst-date-time-get-time-zone-offset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-time-zone-offset.returns" role="returns">
+<title>Returns</title>
+<para> the offset from UTC in hours</para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-second" role="function">
+<title>gst_date_time_get_second&#160;()</title>
+<indexterm zone="gst-date-time-get-second"><primary>gst_date_time_get_second</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_second (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Retrieves the second of the minute represented by <parameter>datetime</parameter>
+ in the gregorian
+calendar.
+Call gst_date_time_has_second before, to avoid warnings.</para>
+<refsect3 id="gst-date-time-get-second.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-second.returns" role="returns">
+<title>Returns</title>
+<para> the second represented by <parameter>datetime</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-get-year" role="function">
+<title>gst_date_time_get_year&#160;()</title>
+<indexterm zone="gst-date-time-get-year"><primary>gst_date_time_get_year</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_date_time_get_year (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Returns the year of this <link linkend="GstDateTime"><type>GstDateTime</type></link>
+Call gst_date_time_has_year before, to avoid warnings.</para>
+<refsect3 id="gst-date-time-get-year.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-get-year.returns" role="returns">
+<title>Returns</title>
+<para> The year of this <link linkend="GstDateTime"><type>GstDateTime</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new" role="function">
+<title>gst_date_time_new&#160;()</title>
+<indexterm zone="gst-date-time-new"><primary>gst_date_time_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new (<parameter><link linkend="gfloat"><type>gfloat</type></link> tzoffset</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> year</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> month</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> day</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> hour</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> minute</parameter>,
+                   <parameter><link linkend="gdouble"><type>gdouble</type></link> seconds</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the date and times in the gregorian calendar
+in the supplied timezone.</para>
+<para><parameter>year</parameter>
+ should be from 1 to 9999, <parameter>month</parameter>
+ should be from 1 to 12, <parameter>day</parameter>
+ from
+1 to 31, <parameter>hour</parameter>
+ from 0 to 23, <parameter>minutes</parameter>
+ and <parameter>seconds</parameter>
+ from 0 to 59.</para>
+<para>Note that <parameter>tzoffset</parameter>
+ is a float and was chosen so for being able to handle
+some fractional timezones, while it still keeps the readability of
+representing it in hours for most timezones.</para>
+<para>If value is -1 then all over value will be ignored. For example
+if <parameter>month</parameter>
+ == -1, then <link linkend="GstDateTime"><type>GstDateTime</type></link> will created only for <parameter>year</parameter>
+. If
+<parameter>day</parameter>
+ == -1, then <link linkend="GstDateTime"><type>GstDateTime</type></link> will created for <parameter>year</parameter>
+ and <parameter>month</parameter>
+ and
+so on.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>tzoffset</para></entry>
+<entry role="parameter_description"><para>Offset from UTC in hours.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>year</para></entry>
+<entry role="parameter_description"><para>the gregorian year</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>month</para></entry>
+<entry role="parameter_description"><para>the gregorian month</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>day</para></entry>
+<entry role="parameter_description"><para>the day of the gregorian month</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>hour</para></entry>
+<entry role="parameter_description"><para>the hour of the day</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minute</para></entry>
+<entry role="parameter_description"><para>the minute of the hour</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>seconds</para></entry>
+<entry role="parameter_description"><para>the second of the minute</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-ymd" role="function">
+<title>gst_date_time_new_ymd&#160;()</title>
+<indexterm zone="gst-date-time-new-ymd"><primary>gst_date_time_new_ymd</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_ymd (<parameter><link linkend="gint"><type>gint</type></link> year</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> month</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> day</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the date and times in the gregorian calendar
+in the local timezone.</para>
+<para><parameter>year</parameter>
+ should be from 1 to 9999, <parameter>month</parameter>
+ should be from 1 to 12, <parameter>day</parameter>
+ from
+1 to 31.</para>
+<para>If value is -1 then all over value will be ignored. For example
+if <parameter>month</parameter>
+ == -1, then <link linkend="GstDateTime"><type>GstDateTime</type></link> will created only for <parameter>year</parameter>
+. If
+<parameter>day</parameter>
+ == -1, then <link linkend="GstDateTime"><type>GstDateTime</type></link> will created for <parameter>year</parameter>
+ and <parameter>month</parameter>
+ and
+so on.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-ymd.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>year</para></entry>
+<entry role="parameter_description"><para>the gregorian year</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>month</para></entry>
+<entry role="parameter_description"><para>the gregorian month</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>day</para></entry>
+<entry role="parameter_description"><para>the day of the gregorian month</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-ymd.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-ym" role="function">
+<title>gst_date_time_new_ym&#160;()</title>
+<indexterm zone="gst-date-time-new-ym"><primary>gst_date_time_new_ym</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_ym (<parameter><link linkend="gint"><type>gint</type></link> year</parameter>,
+                      <parameter><link linkend="gint"><type>gint</type></link> month</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the date and times in the gregorian calendar
+in the local timezone.</para>
+<para><parameter>year</parameter>
+ should be from 1 to 9999, <parameter>month</parameter>
+ should be from 1 to 12.</para>
+<para>If value is -1 then all over value will be ignored. For example
+if <parameter>month</parameter>
+ == -1, then <link linkend="GstDateTime"><type>GstDateTime</type></link> will created only for <parameter>year</parameter>
+.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-ym.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>year</para></entry>
+<entry role="parameter_description"><para>the gregorian year</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>month</para></entry>
+<entry role="parameter_description"><para>the gregorian month</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-ym.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-y" role="function">
+<title>gst_date_time_new_y&#160;()</title>
+<indexterm zone="gst-date-time-new-y"><primary>gst_date_time_new_y</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_y (<parameter><link linkend="gint"><type>gint</type></link> year</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the date and times in the gregorian calendar
+in the local timezone.</para>
+<para><parameter>year</parameter>
+ should be from 1 to 9999.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-y.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>year</para></entry>
+<entry role="parameter_description"><para>the gregorian year</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-y.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-from-unix-epoch-local-time" role="function">
+<title>gst_date_time_new_from_unix_epoch_local_time&#160;()</title>
+<indexterm zone="gst-date-time-new-from-unix-epoch-local-time"><primary>gst_date_time_new_from_unix_epoch_local_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_from_unix_epoch_local_time
+                               (<parameter><link linkend="gint64"><type>gint64</type></link> secs</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the time since Jan 1, 1970 specified by
+<parameter>secs</parameter>
+. The <link linkend="GstDateTime"><type>GstDateTime</type></link> is in the local timezone.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-from-unix-epoch-local-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>secs</para></entry>
+<entry role="parameter_description"><para>seconds from the Unix epoch</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-from-unix-epoch-local-time.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-from-unix-epoch-utc" role="function">
+<title>gst_date_time_new_from_unix_epoch_utc&#160;()</title>
+<indexterm zone="gst-date-time-new-from-unix-epoch-utc"><primary>gst_date_time_new_from_unix_epoch_utc</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_from_unix_epoch_utc (<parameter><link linkend="gint64"><type>gint64</type></link> secs</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the time since Jan 1, 1970 specified by
+<parameter>secs</parameter>
+. The <link linkend="GstDateTime"><type>GstDateTime</type></link> is in the UTC timezone.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-from-unix-epoch-utc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>secs</para></entry>
+<entry role="parameter_description"><para>seconds from the Unix epoch</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-from-unix-epoch-utc.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-local-time" role="function">
+<title>gst_date_time_new_local_time&#160;()</title>
+<indexterm zone="gst-date-time-new-local-time"><primary>gst_date_time_new_local_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_local_time (<parameter><link linkend="gint"><type>gint</type></link> year</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> month</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> day</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> hour</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> minute</parameter>,
+                              <parameter><link linkend="gdouble"><type>gdouble</type></link> seconds</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> using the date and times in the gregorian calendar
+in the local timezone.</para>
+<para><parameter>year</parameter>
+ should be from 1 to 9999, <parameter>month</parameter>
+ should be from 1 to 12, <parameter>day</parameter>
+ from
+1 to 31, <parameter>hour</parameter>
+ from 0 to 23, <parameter>minutes</parameter>
+ and <parameter>seconds</parameter>
+ from 0 to 59.</para>
+<para>If <parameter>month</parameter>
+ is -1, then the <link linkend="GstDateTime"><type>GstDateTime</type></link> created will only contain <parameter>year</parameter>
+,
+and all other fields will be considered not set.</para>
+<para>If <parameter>day</parameter>
+ is -1, then the <link linkend="GstDateTime"><type>GstDateTime</type></link> created will only contain <parameter>year</parameter>
+ and
+<parameter>month</parameter>
+ and all other fields will be considered not set.</para>
+<para>If <parameter>hour</parameter>
+ is -1, then the <link linkend="GstDateTime"><type>GstDateTime</type></link> created will only contain <parameter>year</parameter>
+ and
+<parameter>month</parameter>
+ and <parameter>day</parameter>
+, and the time fields will be considered not set. In this
+case <parameter>minute</parameter>
+ and <parameter>seconds</parameter>
+ should also be -1.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-local-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>year</para></entry>
+<entry role="parameter_description"><para>the gregorian year</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>month</para></entry>
+<entry role="parameter_description"><para>the gregorian month, or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>day</para></entry>
+<entry role="parameter_description"><para>the day of the gregorian month, or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>hour</para></entry>
+<entry role="parameter_description"><para>the hour of the day, or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>minute</para></entry>
+<entry role="parameter_description"><para>the minute of the hour, or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>seconds</para></entry>
+<entry role="parameter_description"><para>the second of the minute, or -1</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-local-time.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-now-local-time" role="function">
+<title>gst_date_time_new_now_local_time&#160;()</title>
+<indexterm zone="gst-date-time-new-now-local-time"><primary>gst_date_time_new_now_local_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_now_local_time (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> representing the current date and time.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-now-local-time.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link> which should
+be freed with <link linkend="gst-date-time-unref"><function>gst_date_time_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-now-utc" role="function">
+<title>gst_date_time_new_now_utc&#160;()</title>
+<indexterm zone="gst-date-time-new-now-utc"><primary>gst_date_time_new_now_utc</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_now_utc (<parameter><type>void</type></parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> that represents the current instant at Universal
+coordinated time.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-now-utc.returns" role="returns">
+<title>Returns</title>
+<para> the newly created <link linkend="GstDateTime"><type>GstDateTime</type></link> which should
+be freed with <link linkend="gst-date-time-unref"><function>gst_date_time_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-ref" role="function">
+<title>gst_date_time_ref&#160;()</title>
+<indexterm zone="gst-date-time-ref"><primary>gst_date_time_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_ref (<parameter><link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Atomically increments the reference count of <parameter>datetime</parameter>
+ by one.</para>
+<refsect3 id="gst-date-time-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-ref.returns" role="returns">
+<title>Returns</title>
+<para> the reference <parameter>datetime</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-unref" role="function">
+<title>gst_date_time_unref&#160;()</title>
+<indexterm zone="gst-date-time-unref"><primary>gst_date_time_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_date_time_unref (<parameter><link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Atomically decrements the reference count of <parameter>datetime</parameter>
+ by one.  When the
+reference count reaches zero, the structure is freed.</para>
+<refsect3 id="gst-date-time-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstDateTime"><type>GstDateTime</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-has-day" role="function">
+<title>gst_date_time_has_day&#160;()</title>
+<indexterm zone="gst-date-time-has-day"><primary>gst_date_time_has_day</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_date_time_has_day (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<refsect3 id="gst-date-time-has-day.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-has-day.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>datetime</parameter>
+<!-- -->'s day field is set, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-has-month" role="function">
+<title>gst_date_time_has_month&#160;()</title>
+<indexterm zone="gst-date-time-has-month"><primary>gst_date_time_has_month</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_date_time_has_month (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<refsect3 id="gst-date-time-has-month.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-has-month.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>datetime</parameter>
+<!-- -->'s month field is set, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-has-second" role="function">
+<title>gst_date_time_has_second&#160;()</title>
+<indexterm zone="gst-date-time-has-second"><primary>gst_date_time_has_second</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_date_time_has_second (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<refsect3 id="gst-date-time-has-second.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-has-second.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>datetime</parameter>
+<!-- -->'s second field is set, otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-has-time" role="function">
+<title>gst_date_time_has_time&#160;()</title>
+<indexterm zone="gst-date-time-has-time"><primary>gst_date_time_has_time</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_date_time_has_time (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<refsect3 id="gst-date-time-has-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-has-time.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>datetime</parameter>
+<!-- -->'s hour and minute fields are set,
+otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-has-year" role="function">
+<title>gst_date_time_has_year&#160;()</title>
+<indexterm zone="gst-date-time-has-year"><primary>gst_date_time_has_year</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_date_time_has_year (<parameter>const <link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<refsect3 id="gst-date-time-has-year.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDateTime"><type>GstDateTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-has-year.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>datetime</parameter>
+<!-- -->'s year field is set (which should always
+be the case), otherwise <link linkend="FALSE:CAPS"><literal>FALSE</literal></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-from-iso8601-string" role="function">
+<title>gst_date_time_new_from_iso8601_string&#160;()</title>
+<indexterm zone="gst-date-time-new-from-iso8601-string"><primary>gst_date_time_new_from_iso8601_string</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_from_iso8601_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *string</parameter>);</programlisting>
+<para>Tries to parse common variants of ISO-8601 datetime strings into a
+<link linkend="GstDateTime"><type>GstDateTime</type></link>. Possible input formats are (for example):
+2012-06-30T22:46:43Z, 2012, 2012-06, 2012-06-30, 2012-06-30T22:46:43-0430,
+2012-06-30T22:46Z, 2012-06-30T22:46-0430, 2012-06-30 22:46,
+2012-06-30 22:46:43, 2012-06-00, 2012-00-00, 2012-00-30, 22:46:43Z, 22:46Z,
+22:46:43-0430, 22:46-0430, 22:46:30, 22:46
+If no date is provided, it is assumed to be "today" in the timezone
+provided (if any), otherwise UTC.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-from-iso8601-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>string</para></entry>
+<entry role="parameter_description"><para>ISO 8601-formatted datetime string.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-from-iso8601-string.returns" role="returns">
+<title>Returns</title>
+<para> a newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-to-iso8601-string" role="function">
+<title>gst_date_time_to_iso8601_string&#160;()</title>
+<indexterm zone="gst-date-time-to-iso8601-string"><primary>gst_date_time_to_iso8601_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_date_time_to_iso8601_string (<parameter><link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Create a minimal string compatible with ISO-8601. Possible output formats
+are (for example): 2012, 2012-06, 2012-06-23, 2012-06-23T23:30Z,
+2012-06-23T23:30+0100, 2012-06-23T23:30:59Z, 2012-06-23T23:30:59+0100</para>
+<refsect3 id="gst-date-time-to-iso8601-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>GstDateTime.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-to-iso8601-string.returns" role="returns">
+<title>Returns</title>
+<para> a newly allocated string formatted according
+to ISO 8601 and only including the datetime fields that are
+valid, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> in case there was an error. The string should
+be freed with <link linkend="g-free"><function>g_free()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-new-from-g-date-time" role="function">
+<title>gst_date_time_new_from_g_date_time&#160;()</title>
+<indexterm zone="gst-date-time-new-from-g-date-time"><primary>gst_date_time_new_from_g_date_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstDateTime"><returnvalue>GstDateTime</returnvalue></link>&#160;*
+gst_date_time_new_from_g_date_time (<parameter><link linkend="GDateTime"><type>GDateTime</type></link> *dt</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstDateTime"><type>GstDateTime</type></link> from a <link linkend="GDateTime"><type>GDateTime</type></link> object.</para>
+<para>Free-function: gst_date_time_unref</para>
+<refsect3 id="gst-date-time-new-from-g-date-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dt</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GDateTime"><type>GDateTime</type></link>. The new <link linkend="GstDateTime"><type>GstDateTime</type></link> takes ownership. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-new-from-g-date-time.returns" role="returns">
+<title>Returns</title>
+<para> a newly created <link linkend="GstDateTime"><type>GstDateTime</type></link>,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-date-time-to-g-date-time" role="function">
+<title>gst_date_time_to_g_date_time&#160;()</title>
+<indexterm zone="gst-date-time-to-g-date-time"><primary>gst_date_time_to_g_date_time</primary></indexterm>
+<programlisting language="C"><link linkend="GDateTime"><returnvalue>GDateTime</returnvalue></link>&#160;*
+gst_date_time_to_g_date_time (<parameter><link linkend="GstDateTime"><type>GstDateTime</type></link> *datetime</parameter>);</programlisting>
+<para>Creates a new <link linkend="GDateTime"><type>GDateTime</type></link> from a fully defined <link linkend="GstDateTime"><type>GstDateTime</type></link> object.</para>
+<para>Free-function: g_date_time_unref</para>
+<refsect3 id="gst-date-time-to-g-date-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>datetime</para></entry>
+<entry role="parameter_description"><para>GstDateTime.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-date-time-to-g-date-time.returns" role="returns">
+<title>Returns</title>
+<para> a newly created <link linkend="GDateTime"><type>GDateTime</type></link>, or
+<link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstDateTime.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDateTime-struct" role="struct">
+<title>GstDateTime</title>
+<indexterm zone="GstDateTime-struct"><primary>GstDateTime</primary></indexterm>
+<programlisting language="C">typedef struct _GstDateTime GstDateTime;</programlisting>
+<para>Opaque, immutable, refcounted struct that stores date, time and timezone
+information. It currently supports ranges from 0001-01-01 to
+9999-12-31 in the Gregorian proleptic calendar.</para>
+<para>Use the accessor functions to get the stored values.</para>
+</refsect2>
+<refsect2 id="GST-TYPE-DATE-TIME:CAPS" role="macro">
+<title>GST_TYPE_DATE_TIME</title>
+<indexterm zone="GST-TYPE-DATE-TIME:CAPS"><primary>GST_TYPE_DATE_TIME</primary></indexterm>
+<programlisting language="C">#define GST_TYPE_DATE_TIME (_gst_date_time_type)
+</programlisting>
+<para>a boxed <link linkend="GValue"><type>GValue</type></link> type for <link linkend="GstDateTime"><type>GstDateTime</type></link> that represents a date and time.</para>
+<refsect3 id="GST-TYPE-DATE-TIME.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GType"><type>GType</type></link> of GstDateTime</para>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

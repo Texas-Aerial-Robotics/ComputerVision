@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstProtectionMeta">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstProtectionMeta.top_of_page">GstProtectionMeta</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstProtectionMeta</refname>
+<refpurpose>Functions and classes to support encrypted streams.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstProtectionMeta.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstProtectionMeta"><returnvalue>GstProtectionMeta</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-add-protection-meta">gst_buffer_add_protection_meta</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-buffer-get-protection-meta">gst_buffer_get_protection_meta</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-protection-select-system">gst_protection_select_system</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstProtectionMeta.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstProtectionMeta">GstProtectionMeta</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-PROTECTION-SYSTEM-ID-CAPS-FIELD:CAPS">GST_PROTECTION_SYSTEM_ID_CAPS_FIELD</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstProtectionMeta.includes"><title>Includes</title><synopsis>#include &lt;gst/gstprotection.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstProtectionMeta.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The GstProtectionMeta class enables the information needed to decrypt a
+<link linkend="GstBuffer"><type>GstBuffer</type></link> to be attached to that buffer.</para>
+<para>Typically, a demuxer element would attach GstProtectionMeta objects
+to the buffers that it pushes downstream. The demuxer would parse the
+protection information for a video/audio frame from its input data and use
+this information to populate the <link linkend="GstStructure"><type>GstStructure</type></link> <parameter>info</parameter>
+ field,
+which is then encapsulated in a GstProtectionMeta object and attached to
+the corresponding output buffer using the <link linkend="gst-buffer-add-protection-meta"><function>gst_buffer_add_protection_meta()</function></link>
+function. The information in this attached GstProtectionMeta would be
+used by a downstream decrypter element to recover the original unencrypted
+frame.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstProtectionMeta.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-buffer-add-protection-meta" role="function" condition="since:1.6">
+<title>gst_buffer_add_protection_meta&#160;()</title>
+<indexterm zone="gst-buffer-add-protection-meta" role="1.6"><primary>gst_buffer_add_protection_meta</primary></indexterm>
+<programlisting language="C"><link linkend="GstProtectionMeta"><returnvalue>GstProtectionMeta</returnvalue></link>&#160;*
+gst_buffer_add_protection_meta (<parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>,
+                                <parameter><link linkend="GstStructure"><type>GstStructure</type></link> *info</parameter>);</programlisting>
+<para>Attaches protection metadata to a <link linkend="GstBuffer"><type>GstBuffer</type></link>.</para>
+<refsect3 id="gst-buffer-add-protection-meta.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para><link linkend="GstBuffer"><type>GstBuffer</type></link> holding an encrypted sample, to which protection
+metadata should be added.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstStructure"><type>GstStructure</type></link> holding cryptographic
+information relating to the sample contained in <parameter>buffer</parameter>
+. This
+function takes ownership of <parameter>info</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-add-protection-meta.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to the added <link linkend="GstProtectionMeta"><type>GstProtectionMeta</type></link> if successful; <link linkend="NULL:CAPS"><literal>NULL</literal></link> if
+unsuccessful. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-buffer-get-protection-meta" role="macro">
+<title>gst_buffer_get_protection_meta()</title>
+<indexterm zone="gst-buffer-get-protection-meta"><primary>gst_buffer_get_protection_meta</primary></indexterm>
+<programlisting language="C">#define             gst_buffer_get_protection_meta(b)</programlisting>
+</refsect2>
+<refsect2 id="gst-protection-select-system" role="function" condition="since:1.6">
+<title>gst_protection_select_system&#160;()</title>
+<indexterm zone="gst-protection-select-system" role="1.6"><primary>gst_protection_select_system</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_protection_select_system (<parameter>const <link linkend="gchar"><type>gchar</type></link> **system_identifiers</parameter>);</programlisting>
+<para>Iterates the supplied list of UUIDs and checks the GstRegistry for
+an element that supports one of the supplied UUIDs. If more than one
+element matches, the system ID of the highest ranked element is selected.</para>
+<refsect3 id="gst-protection-select-system.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>system_identifiers</para></entry>
+<entry role="parameter_description"><para> A null terminated array of strings
+that contains the UUID values of each protection system that is to be
+checked. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-protection-select-system.returns" role="returns">
+<title>Returns</title>
+<para> One of the strings from <parameter>system_identifiers</parameter>
+that
+indicates the highest ranked element that implements the protection system
+indicated by that system ID, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no element has been found. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstProtectionMeta.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstProtectionMeta" role="struct" condition="since:1.6">
+<title>struct GstProtectionMeta</title>
+<indexterm zone="GstProtectionMeta" role="1.6"><primary>GstProtectionMeta</primary></indexterm>
+<programlisting language="C">struct GstProtectionMeta {
+  GstMeta meta;
+
+  GstStructure *info;
+};
+</programlisting>
+<para>Metadata type that holds information about a sample from a protection-protected
+track, including the information needed to decrypt it (if it is encrypted).</para>
+<refsect3 id="GstProtectionMeta.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMeta"><type>GstMeta</type></link>&#160;<structfield id="GstProtectionMeta.meta">meta</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the parent <link linkend="GstMeta"><type>GstMeta</type></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstStructure"><type>GstStructure</type></link>&#160;*<structfield id="GstProtectionMeta.info">info</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the cryptographic information needed to decrypt the sample.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GST-PROTECTION-SYSTEM-ID-CAPS-FIELD:CAPS" role="macro" condition="since:1.6">
+<title>GST_PROTECTION_SYSTEM_ID_CAPS_FIELD</title>
+<indexterm zone="GST-PROTECTION-SYSTEM-ID-CAPS-FIELD:CAPS" role="1.6"><primary>GST_PROTECTION_SYSTEM_ID_CAPS_FIELD</primary></indexterm>
+<programlisting language="C">#define GST_PROTECTION_SYSTEM_ID_CAPS_FIELD "protection-system"
+</programlisting>
+<para>The field name in a GstCaps that is used to signal the UUID of the protection
+system.</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+
+</refentry>

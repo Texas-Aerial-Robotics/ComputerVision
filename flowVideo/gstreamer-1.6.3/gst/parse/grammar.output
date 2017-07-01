@@ -1,0 +1,455 @@
+Terminals unused in grammar
+
+   '.'
+   '!'
+   '='
+
+
+Grammar
+
+    0 $accept: graph $end
+
+    1 element: IDENTIFIER
+    2        | element ASSIGNMENT
+
+    3 elementary: element
+    4           | bin
+
+    5 chain: openchain
+
+    6 openchain: elementary pads
+    7          | openchain link pads elementary pads
+
+    8 link: LINK
+
+    9 pads: %empty
+   10     | PADREF morepads
+
+   11 morepads: %empty
+   12         | ',' IDENTIFIER morepads
+
+   13 chain: openchain link PARSE_URL
+
+   14 openchain: PARSE_URL
+
+   15 chain: openchain link reference
+
+   16 openchain: reference
+
+   17 reference: REF morepads
+
+   18 chainlist: %empty
+   19          | chainlist chain
+   20          | chainlist error
+
+   21 assignments: %empty
+   22            | ASSIGNMENT assignments
+
+   23 binopener: '('
+   24          | BINREF
+
+   25 bin: binopener assignments chainlist ')'
+
+   26 graph: chainlist
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'!' (33)
+'(' (40) 23
+')' (41) 25
+',' (44) 12
+'.' (46)
+'=' (61)
+error (256) 20
+PARSE_URL (258) 13 14
+IDENTIFIER (259) 1 12
+REF (260) 17
+PADREF (261) 10
+BINREF (262) 24
+ASSIGNMENT (263) 2 22
+LINK (264) 8
+
+
+Nonterminals, with rules where they appear
+
+$accept (16)
+    on left: 0
+element (17)
+    on left: 1 2, on right: 2 3
+elementary (18)
+    on left: 3 4, on right: 6 7
+chain (19)
+    on left: 5 13 15, on right: 19
+openchain (20)
+    on left: 6 7 14 16, on right: 5 7 13 15
+link (21)
+    on left: 8, on right: 7 13 15
+pads (22)
+    on left: 9 10, on right: 6 7
+morepads (23)
+    on left: 11 12, on right: 10 12 17
+reference (24)
+    on left: 17, on right: 15 16
+chainlist (25)
+    on left: 18 19 20, on right: 19 20 25 26
+assignments (26)
+    on left: 21 22, on right: 22 25
+binopener (27)
+    on left: 23 24, on right: 25
+bin (28)
+    on left: 25, on right: 4
+graph (29)
+    on left: 26, on right: 0
+
+
+State 0
+
+    0 $accept: . graph $end
+
+    $default  reduce using rule 18 (chainlist)
+
+    chainlist  go to state 1
+    graph      go to state 2
+
+
+State 1
+
+   19 chainlist: chainlist . chain
+   20          | chainlist . error
+   26 graph: chainlist .
+
+    error       shift, and go to state 3
+    PARSE_URL   shift, and go to state 4
+    IDENTIFIER  shift, and go to state 5
+    REF         shift, and go to state 6
+    BINREF      shift, and go to state 7
+    '('         shift, and go to state 8
+
+    $end  reduce using rule 26 (graph)
+
+    element     go to state 9
+    elementary  go to state 10
+    chain       go to state 11
+    openchain   go to state 12
+    reference   go to state 13
+    binopener   go to state 14
+    bin         go to state 15
+
+
+State 2
+
+    0 $accept: graph . $end
+
+    $end  shift, and go to state 16
+
+
+State 3
+
+   20 chainlist: chainlist error .
+
+    $default  reduce using rule 20 (chainlist)
+
+
+State 4
+
+   14 openchain: PARSE_URL .
+
+    $default  reduce using rule 14 (openchain)
+
+
+State 5
+
+    1 element: IDENTIFIER .
+
+    $default  reduce using rule 1 (element)
+
+
+State 6
+
+   17 reference: REF . morepads
+
+    ','  shift, and go to state 17
+
+    $default  reduce using rule 11 (morepads)
+
+    morepads  go to state 18
+
+
+State 7
+
+   24 binopener: BINREF .
+
+    $default  reduce using rule 24 (binopener)
+
+
+State 8
+
+   23 binopener: '(' .
+
+    $default  reduce using rule 23 (binopener)
+
+
+State 9
+
+    2 element: element . ASSIGNMENT
+    3 elementary: element .
+
+    ASSIGNMENT  shift, and go to state 19
+
+    $default  reduce using rule 3 (elementary)
+
+
+State 10
+
+    6 openchain: elementary . pads
+
+    PADREF  shift, and go to state 20
+
+    $default  reduce using rule 9 (pads)
+
+    pads  go to state 21
+
+
+State 11
+
+   19 chainlist: chainlist chain .
+
+    $default  reduce using rule 19 (chainlist)
+
+
+State 12
+
+    5 chain: openchain .
+    7 openchain: openchain . link pads elementary pads
+   13 chain: openchain . link PARSE_URL
+   15      | openchain . link reference
+
+    LINK  shift, and go to state 22
+
+    $default  reduce using rule 5 (chain)
+
+    link  go to state 23
+
+
+State 13
+
+   16 openchain: reference .
+
+    $default  reduce using rule 16 (openchain)
+
+
+State 14
+
+   25 bin: binopener . assignments chainlist ')'
+
+    ASSIGNMENT  shift, and go to state 24
+
+    $default  reduce using rule 21 (assignments)
+
+    assignments  go to state 25
+
+
+State 15
+
+    4 elementary: bin .
+
+    $default  reduce using rule 4 (elementary)
+
+
+State 16
+
+    0 $accept: graph $end .
+
+    $default  accept
+
+
+State 17
+
+   12 morepads: ',' . IDENTIFIER morepads
+
+    IDENTIFIER  shift, and go to state 26
+
+
+State 18
+
+   17 reference: REF morepads .
+
+    $default  reduce using rule 17 (reference)
+
+
+State 19
+
+    2 element: element ASSIGNMENT .
+
+    $default  reduce using rule 2 (element)
+
+
+State 20
+
+   10 pads: PADREF . morepads
+
+    ','  shift, and go to state 17
+
+    $default  reduce using rule 11 (morepads)
+
+    morepads  go to state 27
+
+
+State 21
+
+    6 openchain: elementary pads .
+
+    $default  reduce using rule 6 (openchain)
+
+
+State 22
+
+    8 link: LINK .
+
+    $default  reduce using rule 8 (link)
+
+
+State 23
+
+    7 openchain: openchain link . pads elementary pads
+   13 chain: openchain link . PARSE_URL
+   15      | openchain link . reference
+
+    PARSE_URL  shift, and go to state 28
+    REF        shift, and go to state 6
+    PADREF     shift, and go to state 20
+
+    $default  reduce using rule 9 (pads)
+
+    pads       go to state 29
+    reference  go to state 30
+
+
+State 24
+
+   22 assignments: ASSIGNMENT . assignments
+
+    ASSIGNMENT  shift, and go to state 24
+
+    $default  reduce using rule 21 (assignments)
+
+    assignments  go to state 31
+
+
+State 25
+
+   25 bin: binopener assignments . chainlist ')'
+
+    $default  reduce using rule 18 (chainlist)
+
+    chainlist  go to state 32
+
+
+State 26
+
+   12 morepads: ',' IDENTIFIER . morepads
+
+    ','  shift, and go to state 17
+
+    $default  reduce using rule 11 (morepads)
+
+    morepads  go to state 33
+
+
+State 27
+
+   10 pads: PADREF morepads .
+
+    $default  reduce using rule 10 (pads)
+
+
+State 28
+
+   13 chain: openchain link PARSE_URL .
+
+    $default  reduce using rule 13 (chain)
+
+
+State 29
+
+    7 openchain: openchain link pads . elementary pads
+
+    IDENTIFIER  shift, and go to state 5
+    BINREF      shift, and go to state 7
+    '('         shift, and go to state 8
+
+    element     go to state 9
+    elementary  go to state 34
+    binopener   go to state 14
+    bin         go to state 15
+
+
+State 30
+
+   15 chain: openchain link reference .
+
+    $default  reduce using rule 15 (chain)
+
+
+State 31
+
+   22 assignments: ASSIGNMENT assignments .
+
+    $default  reduce using rule 22 (assignments)
+
+
+State 32
+
+   19 chainlist: chainlist . chain
+   20          | chainlist . error
+   25 bin: binopener assignments chainlist . ')'
+
+    error       shift, and go to state 3
+    PARSE_URL   shift, and go to state 4
+    IDENTIFIER  shift, and go to state 5
+    REF         shift, and go to state 6
+    BINREF      shift, and go to state 7
+    '('         shift, and go to state 8
+    ')'         shift, and go to state 35
+
+    element     go to state 9
+    elementary  go to state 10
+    chain       go to state 11
+    openchain   go to state 12
+    reference   go to state 13
+    binopener   go to state 14
+    bin         go to state 15
+
+
+State 33
+
+   12 morepads: ',' IDENTIFIER morepads .
+
+    $default  reduce using rule 12 (morepads)
+
+
+State 34
+
+    7 openchain: openchain link pads elementary . pads
+
+    PADREF  shift, and go to state 20
+
+    $default  reduce using rule 9 (pads)
+
+    pads  go to state 36
+
+
+State 35
+
+   25 bin: binopener assignments chainlist ')' .
+
+    $default  reduce using rule 25 (bin)
+
+
+State 36
+
+    7 openchain: openchain link pads elementary pads .
+
+    $default  reduce using rule 7 (openchain)

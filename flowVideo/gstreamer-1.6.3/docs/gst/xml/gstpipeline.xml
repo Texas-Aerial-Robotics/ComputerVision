@@ -1,0 +1,616 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstPipeline">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstPipeline.top_of_page">GstPipeline</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstPipeline</refname>
+<refpurpose>Top-level bin with clocking and bus management
+                       functionality.</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstPipeline.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-pipeline-new">gst_pipeline_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-pipeline-get-bus">gst_pipeline_get_bus</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-set-clock">gst_pipeline_set_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-pipeline-get-pipeline-clock">gst_pipeline_get_pipeline_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-pipeline-get-clock">gst_pipeline_get_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-use-clock">gst_pipeline_use_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-auto-clock">gst_pipeline_auto_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-set-auto-flush-bus">gst_pipeline_set_auto_flush_bus</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-get-auto-flush-bus">gst_pipeline_get_auto_flush_bus</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-set-delay">gst_pipeline_set_delay</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-get-delay">gst_pipeline_get_delay</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-set-latency">gst_pipeline_set_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-pipeline-get-latency">gst_pipeline_get_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPipeline.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstPipeline--auto-flush-bus">auto-flush-bus</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstPipeline--delay">delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstPipeline--latency">latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPipeline.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPipeline-struct">GstPipeline</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstPipelineFlags">GstPipelineFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstPipeline.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstBin">GstBin</link>
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstPipeline
+</screen>
+</refsect1>
+<refsect1 id="GstPipeline.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstPipeline implements
+ <link linkend="GstChildProxy">GstChildProxy</link>.</para>
+
+</refsect1>
+
+<refsect1 id="GstPipeline.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstPipeline.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstPipeline"><type>GstPipeline</type></link> is a special <link linkend="GstBin"><type>GstBin</type></link> used as the toplevel container for
+the filter graph. The <link linkend="GstPipeline"><type>GstPipeline</type></link> will manage the selection and
+distribution of a global <link linkend="GstClock"><type>GstClock</type></link> as well as provide a <link linkend="GstBus"><type>GstBus</type></link> to the
+application.</para>
+<para>gst_pipeline_new() is used to create a pipeline. when you are done with
+the pipeline, use <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> to free its resources including all
+added <link linkend="GstElement"><type>GstElement</type></link> objects (if not otherwise referenced).</para>
+<para>Elements are added and removed from the pipeline using the <link linkend="GstBin"><type>GstBin</type></link>
+methods like <link linkend="gst-bin-add"><function>gst_bin_add()</function></link> and <link linkend="gst-bin-remove"><function>gst_bin_remove()</function></link> (see <link linkend="GstBin"><type>GstBin</type></link>).</para>
+<para>Before changing the state of the <link linkend="GstPipeline"><type>GstPipeline</type></link> (see <link linkend="GstElement"><type>GstElement</type></link>) a <link linkend="GstBus"><type>GstBus</type></link>
+can be retrieved with <link linkend="gst-pipeline-get-bus"><function>gst_pipeline_get_bus()</function></link>. This bus can then be
+used to receive <link linkend="GstMessage"><type>GstMessage</type></link> from the elements in the pipeline.</para>
+<para>By default, a <link linkend="GstPipeline"><type>GstPipeline</type></link> will automatically flush the pending <link linkend="GstBus"><type>GstBus</type></link>
+messages when going to the NULL state to ensure that no circular
+references exist when no messages are read from the <link linkend="GstBus"><type>GstBus</type></link>. This
+behaviour can be changed with <link linkend="gst-pipeline-set-auto-flush-bus"><function>gst_pipeline_set_auto_flush_bus()</function></link>.</para>
+<para>When the <link linkend="GstPipeline"><type>GstPipeline</type></link> performs the PAUSED to PLAYING state change it will
+select a clock for the elements. The clock selection algorithm will by
+default select a clock provided by an element that is most upstream
+(closest to the source). For live pipelines (ones that return
+<link linkend="GST-STATE-CHANGE-NO-PREROLL:CAPS"><type>GST_STATE_CHANGE_NO_PREROLL</type></link> from the <link linkend="gst-element-set-state"><function>gst_element_set_state()</function></link> call) this
+will select the clock provided by the live source. For normal pipelines
+this will select a clock provided by the sinks (most likely the audio
+sink). If no element provides a clock, a default <link linkend="GstSystemClock"><type>GstSystemClock</type></link> is used.</para>
+<para>The clock selection can be controlled with the <link linkend="gst-pipeline-use-clock"><function>gst_pipeline_use_clock()</function></link>
+method, which will enforce a given clock on the pipeline. With
+<link linkend="gst-pipeline-auto-clock"><function>gst_pipeline_auto_clock()</function></link> the default clock selection algorithm can be
+restored.</para>
+<para>A <link linkend="GstPipeline"><type>GstPipeline</type></link> maintains a running time for the elements. The running
+time is defined as the difference between the current clock time and
+the base time. When the pipeline goes to READY or a flushing seek is
+performed on it, the running time is reset to 0. When the pipeline is
+set from PLAYING to PAUSED, the current clock time is sampled and used to
+configure the base time for the elements when the pipeline is set
+to PLAYING again. The effect is that the running time (as the difference
+between the clock time and the base time) will count how much time was spent
+in the PLAYING state. This default behaviour can be changed with the
+<link linkend="gst-element-set-start-time"><function>gst_element_set_start_time()</function></link> method.</para>
+
+</refsect1>
+<refsect1 id="GstPipeline.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-pipeline-new" role="function">
+<title>gst_pipeline_new&#160;()</title>
+<indexterm zone="gst-pipeline-new"><primary>gst_pipeline_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_pipeline_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Create a new pipeline with the given name.</para>
+<refsect3 id="gst-pipeline-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para> name of new pipeline. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-new.returns" role="returns">
+<title>Returns</title>
+<para> newly created GstPipeline</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-get-bus" role="function">
+<title>gst_pipeline_get_bus&#160;()</title>
+<indexterm zone="gst-pipeline-get-bus"><primary>gst_pipeline_get_bus</primary></indexterm>
+<programlisting language="C"><link linkend="GstBus"><returnvalue>GstBus</returnvalue></link>&#160;*
+gst_pipeline_get_bus (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Gets the <link linkend="GstBus"><type>GstBus</type></link> of <parameter>pipeline</parameter>
+. The bus allows applications to receive
+<link linkend="GstMessage"><type>GstMessage</type></link> packets.</para>
+<refsect3 id="gst-pipeline-get-bus.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-get-bus.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstBus"><type>GstBus</type></link>, unref after usage.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-set-clock" role="function">
+<title>gst_pipeline_set_clock&#160;()</title>
+<indexterm zone="gst-pipeline-set-clock"><primary>gst_pipeline_set_clock</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_pipeline_set_clock (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>,
+                        <parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Set the clock for <parameter>pipeline</parameter>
+. The clock will be distributed
+to all the elements managed by the pipeline.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-pipeline-set-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para> the clock to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-set-clock.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the clock could be set on the pipeline. <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if
+some element did not accept the clock.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-get-pipeline-clock" role="function" condition="since:1.6">
+<title>gst_pipeline_get_pipeline_clock&#160;()</title>
+<indexterm zone="gst-pipeline-get-pipeline-clock" role="1.6"><primary>gst_pipeline_get_pipeline_clock</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_pipeline_get_pipeline_clock (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Gets the current clock used by <parameter>pipeline</parameter>
+.</para>
+<para>Unlike <link linkend="gst-element-get-clock"><function>gst_element_get_clock()</function></link>, this function will always return a
+clock, even if the pipeline is not in the PLAYING state.</para>
+<refsect3 id="gst-pipeline-get-pipeline-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-get-pipeline-clock.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstClock"><type>GstClock</type></link>, unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-pipeline-get-clock" role="function">
+<title>gst_pipeline_get_clock&#160;()</title>
+<indexterm zone="gst-pipeline-get-clock"><primary>gst_pipeline_get_clock</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_pipeline_get_clock (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Gets the current clock used by <parameter>pipeline</parameter>
+. Users of object
+oriented languages should use <link linkend="gst-pipeline-get-pipeline-clock"><function>gst_pipeline_get_pipeline_clock()</function></link>
+to avoid confusion with <link linkend="gst-element-get-clock"><function>gst_element_get_clock()</function></link> which has a different behavior.</para>
+<para>Unlike <link linkend="gst-element-get-clock"><function>gst_element_get_clock()</function></link>, this function will always return a
+clock, even if the pipeline is not in the PLAYING state.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-pipeline-get-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-get-clock.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstClock"><type>GstClock</type></link>, unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-use-clock" role="function">
+<title>gst_pipeline_use_clock&#160;()</title>
+<indexterm zone="gst-pipeline-use-clock"><primary>gst_pipeline_use_clock</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_pipeline_use_clock (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>,
+                        <parameter><link linkend="GstClock"><type>GstClock</type></link> *clock</parameter>);</programlisting>
+<para>Force <parameter>pipeline</parameter>
+ to use the given <parameter>clock</parameter>
+. The pipeline will
+always use the given clock even if new clock providers are added
+to this pipeline.</para>
+<para>If <parameter>clock</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link> all clocking will be disabled which will make
+the pipeline run as fast as possible.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-pipeline-use-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>clock</para></entry>
+<entry role="parameter_description"><para> the clock to use. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-auto-clock" role="function">
+<title>gst_pipeline_auto_clock&#160;()</title>
+<indexterm zone="gst-pipeline-auto-clock"><primary>gst_pipeline_auto_clock</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_pipeline_auto_clock (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Let <parameter>pipeline</parameter>
+ select a clock automatically. This is the default
+behaviour.</para>
+<para>Use this function if you previous forced a fixed clock with
+<link linkend="gst-pipeline-use-clock"><function>gst_pipeline_use_clock()</function></link> and want to restore the default
+pipeline clock selection algorithm.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-pipeline-auto-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-set-auto-flush-bus" role="function">
+<title>gst_pipeline_set_auto_flush_bus&#160;()</title>
+<indexterm zone="gst-pipeline-set-auto-flush-bus"><primary>gst_pipeline_set_auto_flush_bus</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_pipeline_set_auto_flush_bus (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>,
+                                 <parameter><link linkend="gboolean"><type>gboolean</type></link> auto_flush</parameter>);</programlisting>
+<para>Usually, when a pipeline goes from READY to NULL state, it automatically
+flushes all pending messages on the bus, which is done for refcounting
+purposes, to break circular references.</para>
+<para>This means that applications that update state using (async) bus messages
+(e.g. do certain things when a pipeline goes from PAUSED to READY) might
+not get to see messages when the pipeline is shut down, because they might
+be flushed before they can be dispatched in the main thread. This behaviour
+can be disabled using this function.</para>
+<para>It is important that all messages on the bus are handled when the
+automatic flushing is disabled else memory leaks will be introduced.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-pipeline-set-auto-flush-bus.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>auto_flush</para></entry>
+<entry role="parameter_description"><para>whether or not to automatically flush the bus when
+the pipeline goes from READY to NULL state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-get-auto-flush-bus" role="function">
+<title>gst_pipeline_get_auto_flush_bus&#160;()</title>
+<indexterm zone="gst-pipeline-get-auto-flush-bus"><primary>gst_pipeline_get_auto_flush_bus</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_pipeline_get_auto_flush_bus (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Check if <parameter>pipeline</parameter>
+ will automatically flush messages when going to
+the NULL state.</para>
+<refsect3 id="gst-pipeline-get-auto-flush-bus.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-get-auto-flush-bus.returns" role="returns">
+<title>Returns</title>
+<para> whether the pipeline will automatically flush its bus when
+going from READY to NULL state or not.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-set-delay" role="function">
+<title>gst_pipeline_set_delay&#160;()</title>
+<indexterm zone="gst-pipeline-set-delay"><primary>gst_pipeline_set_delay</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_pipeline_set_delay (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>,
+                        <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> delay</parameter>);</programlisting>
+<para>Set the expected delay needed for all elements to perform the
+PAUSED to PLAYING state change. <parameter>delay</parameter>
+ will be added to the
+base time of the elements so that they wait an additional <parameter>delay</parameter>
+
+amount of time before starting to process buffers and cannot be
+<link linkend="GST-CLOCK-TIME-NONE:CAPS"><type>GST_CLOCK_TIME_NONE</type></link>.</para>
+<para>This option is used for tuning purposes and should normally not be
+used.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-pipeline-set-delay.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>delay</para></entry>
+<entry role="parameter_description"><para>the delay</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-get-delay" role="function">
+<title>gst_pipeline_get_delay&#160;()</title>
+<indexterm zone="gst-pipeline-get-delay"><primary>gst_pipeline_get_delay</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_pipeline_get_delay (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Get the configured delay (see <link linkend="gst-pipeline-set-delay"><function>gst_pipeline_set_delay()</function></link>).</para>
+<refsect3 id="gst-pipeline-get-delay.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-get-delay.returns" role="returns">
+<title>Returns</title>
+<para> The configured delay.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-pipeline-set-latency" role="function" condition="since:1.6">
+<title>gst_pipeline_set_latency&#160;()</title>
+<indexterm zone="gst-pipeline-set-latency" role="1.6"><primary>gst_pipeline_set_latency</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_pipeline_set_latency (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>,
+                          <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> latency</parameter>);</programlisting>
+<para>Sets the latency that should be configured on the pipeline. Setting
+GST_CLOCK_TIME_NONE will restore the default behaviour of using the minimum
+latency from the LATENCY query. Setting this is usually not required and
+the pipeline will figure out an appropriate latency automatically.</para>
+<para>Setting a too low latency, especially lower than the minimum latency from
+the LATENCY query, will most likely cause the pipeline to fail.</para>
+<refsect3 id="gst-pipeline-set-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>latency</para></entry>
+<entry role="parameter_description"><para>latency to configure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-pipeline-get-latency" role="function" condition="since:1.6">
+<title>gst_pipeline_get_latency&#160;()</title>
+<indexterm zone="gst-pipeline-get-latency" role="1.6"><primary>gst_pipeline_get_latency</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_pipeline_get_latency (<parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Gets the latency that should be configured on the pipeline. See
+<link linkend="gst-pipeline-set-latency"><function>gst_pipeline_set_latency()</function></link>.</para>
+<refsect3 id="gst-pipeline-get-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-pipeline-get-latency.returns" role="returns">
+<title>Returns</title>
+<para> Latency to configure on the pipeline or GST_CLOCK_TIME_NONE</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstPipeline.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstPipeline-struct" role="struct">
+<title>struct GstPipeline</title>
+<indexterm zone="GstPipeline-struct"><primary>GstPipeline</primary></indexterm>
+<programlisting language="C">struct GstPipeline {
+  GstClock      *fixed_clock;
+
+  GstClockTime   stream_time;
+  GstClockTime   delay;
+};
+</programlisting>
+<para>The <link linkend="GstPipeline"><type>GstPipeline</type></link> structure.</para>
+<refsect3 id="GstPipeline.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClock"><type>GstClock</type></link>&#160;*<structfield id="GstPipeline-struct.fixed-clock">fixed_clock</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The fixed clock of the pipeline, used when
+GST_PIPELINE_FLAG_FIXED_CLOCK is set.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClockTime"><type>GstClockTime</type></link>&#160;<structfield id="GstPipeline-struct.stream-time">stream_time</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The stream time of the pipeline. A better name for this
+property would be the running_time, the total time spent in the
+PLAYING state without being flushed. (deprecated, use the start_time
+on GstElement).</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClockTime"><type>GstClockTime</type></link>&#160;<structfield id="GstPipeline-struct.delay">delay</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Extra delay added to base_time to compensate for computing delays
+when setting elements to PLAYING.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstPipelineFlags" role="enum">
+<title>enum GstPipelineFlags</title>
+<indexterm zone="GstPipelineFlags"><primary>GstPipelineFlags</primary></indexterm>
+<para>Pipeline flags</para>
+<refsect3 id="GstPipelineFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PIPELINE-FLAG-FIXED-CLOCK:CAPS">GST_PIPELINE_FLAG_FIXED_CLOCK</para></entry>
+<entry role="enum_member_description"><para>this pipeline works with a fixed clock</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-PIPELINE-FLAG-LAST:CAPS">GST_PIPELINE_FLAG_LAST</para></entry>
+<entry role="enum_member_description"><para>offset to define more flags</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstPipeline.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstPipeline--auto-flush-bus" role="property"><title>The <literal>“auto-flush-bus”</literal> property</title>
+<indexterm zone="GstPipeline--auto-flush-bus"><primary>GstPipeline:auto-flush-bus</primary></indexterm>
+<programlisting>  “auto-flush-bus”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether or not to automatically flush all messages on the
+pipeline's bus when going from READY to NULL state. Please see
+<link linkend="gst-pipeline-set-auto-flush-bus"><function>gst_pipeline_set_auto_flush_bus()</function></link> for more information on this option.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstPipeline--delay" role="property"><title>The <literal>“delay”</literal> property</title>
+<indexterm zone="GstPipeline--delay"><primary>GstPipeline:delay</primary></indexterm>
+<programlisting>  “delay”                    <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>The expected delay needed for elements to spin up to the
+PLAYING state expressed in nanoseconds.
+see <link linkend="gst-pipeline-set-delay"><function>gst_pipeline_set_delay()</function></link> for more information on this option.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstPipeline--latency" role="property"><title>The <literal>“latency”</literal> property</title>
+<indexterm zone="GstPipeline--latency" role="1.6"><primary>GstPipeline:latency</primary></indexterm>
+<programlisting>  “latency”                  <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Latency to configure on the pipeline. See <link linkend="gst-pipeline-set-latency"><function>gst_pipeline_set_latency()</function></link>.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 18446744073709551615</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstPipeline.see-also">
+<title>See Also</title>
+<para><link linkend="GstElement"><type>GstElement</type></link>, <link linkend="GstBin"><type>GstBin</type></link>, <link linkend="GstClock"><type>GstClock</type></link>, <link linkend="GstBus"><type>GstBus</type></link></para>
+
+</refsect1>
+
+</refentry>

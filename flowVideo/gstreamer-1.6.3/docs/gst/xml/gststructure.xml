@@ -1,0 +1,2419 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstStructure">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstStructure.top_of_page">GstStructure</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstStructure</refname>
+<refpurpose>Generic structure containing fields of names and values</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstStructure.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstStructureForeachFunc">*GstStructureForeachFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstStructureMapFunc">*GstStructureMapFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstStructureFilterMapFunc">*GstStructureFilterMapFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-new-empty">gst_structure_new_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-new-id-empty">gst_structure_new_id_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-new">gst_structure_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-new-valist">gst_structure_new_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-new-id">gst_structure_new_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-new-from-string">gst_structure_new_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-copy">gst_structure_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-free">gst_structure_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-get-name">gst_structure_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-has-name">gst_structure_has_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-set-name">gst_structure_set_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-name-id">gst_structure_get_name_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-get">gst_structure_id_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-get-valist">gst_structure_id_get_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-id-get-value">gst_structure_id_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-set-value">gst_structure_id_set_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-take-value">gst_structure_id_take_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get">gst_structure_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-valist">gst_structure_get_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-get-value">gst_structure_get_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-set-value">gst_structure_set_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-take-value">gst_structure_take_value</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-set">gst_structure_set</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-set-valist">gst_structure_set_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-set">gst_structure_id_set</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-set-valist">gst_structure_id_set_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-remove-field">gst_structure_remove_field</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-remove-fields">gst_structure_remove_fields</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-remove-fields-valist">gst_structure_remove_fields_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-remove-all-fields">gst_structure_remove_all_fields</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-field-type">gst_structure_get_field_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-n-fields">gst_structure_n_fields</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-has-field">gst_structure_has_field</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-has-field-typed">gst_structure_has_field_typed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-is-equal">gst_structure_is_equal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-is-subset">gst_structure_is_subset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-can-intersect">gst_structure_can_intersect</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-intersect">gst_structure_intersect</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-has-field">gst_structure_id_has_field</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-id-has-field-typed">gst_structure_id_has_field_typed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-boolean">gst_structure_get_boolean</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-int">gst_structure_get_int</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-uint">gst_structure_get_uint</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-int64">gst_structure_get_int64</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-uint64">gst_structure_get_uint64</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-double">gst_structure_get_double</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-get-string">gst_structure_get_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-date">gst_structure_get_date</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-date-time">gst_structure_get_date_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-clock-time">gst_structure_get_clock_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-enum">gst_structure_get_enum</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-get-fraction">gst_structure_get_fraction</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-foreach">gst_structure_foreach</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-map-in-place">gst_structure_map_in_place</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-filter-and-map-in-place">gst_structure_filter_and_map_in_place</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-nth-field-name">gst_structure_nth_field_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-set-parent-refcount">gst_structure_set_parent_refcount</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-to-string">gst_structure_to_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-structure-from-string">gst_structure_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate">gst_structure_fixate</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate-field">gst_structure_fixate_field</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate-field-nearest-int">gst_structure_fixate_field_nearest_int</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate-field-nearest-double">gst_structure_fixate_field_nearest_double</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate-field-nearest-fraction">gst_structure_fixate_field_nearest_fraction</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate-field-boolean">gst_structure_fixate_field_boolean</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-structure-fixate-field-string">gst_structure_fixate_field_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstStructure.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstStructure-struct">GstStructure</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstStructure.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstStructure
+</screen>
+</refsect1>
+
+<refsect1 id="GstStructure.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstStructure.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstStructure"><type>GstStructure</type></link> is a collection of key/value pairs. The keys are expressed
+as GQuarks and the values can be of any GType.</para>
+<para>In addition to the key/value pairs, a <link linkend="GstStructure"><type>GstStructure</type></link> also has a name. The name
+starts with a letter and can be filled by letters, numbers and any of "/-_.:".</para>
+<para><link linkend="GstStructure"><type>GstStructure</type></link> is used by various GStreamer subsystems to store information
+in a flexible and extensible way. A <link linkend="GstStructure"><type>GstStructure</type></link> does not have a refcount
+because it usually is part of a higher level object such as <link linkend="GstCaps"><type>GstCaps</type></link>,
+<link linkend="GstMessage"><type>GstMessage</type></link>, <link linkend="GstEvent"><type>GstEvent</type></link>, <link linkend="GstQuery"><type>GstQuery</type></link>. It provides a means to enforce mutability
+using the refcount of the parent with the <link linkend="gst-structure-set-parent-refcount"><function>gst_structure_set_parent_refcount()</function></link>
+method.</para>
+<para>A <link linkend="GstStructure"><type>GstStructure</type></link> can be created with <link linkend="gst-structure-new-empty"><function>gst_structure_new_empty()</function></link> or
+<link linkend="gst-structure-new"><function>gst_structure_new()</function></link>, which both take a name and an optional set of
+key/value pairs along with the types of the values.</para>
+<para>Field values can be changed with <link linkend="gst-structure-set-value"><function>gst_structure_set_value()</function></link> or
+<link linkend="gst-structure-set"><function>gst_structure_set()</function></link>.</para>
+<para>Field values can be retrieved with <link linkend="gst-structure-get-value"><function>gst_structure_get_value()</function></link> or the more
+convenient gst_structure_get_*() functions.</para>
+<para>Fields can be removed with <link linkend="gst-structure-remove-field"><function>gst_structure_remove_field()</function></link> or
+<link linkend="gst-structure-remove-fields"><function>gst_structure_remove_fields()</function></link>.</para>
+<para>Strings in structures must be ASCII or UTF-8 encoded. Other encodings are
+not allowed. Strings may be <link linkend="NULL:CAPS"><literal>NULL</literal></link> however.</para>
+<para>Be aware that the current <link linkend="GstCaps"><type>GstCaps</type></link> / <link linkend="GstStructure"><type>GstStructure</type></link> serialization into string
+has limited support for nested <link linkend="GstCaps"><type>GstCaps</type></link> / <link linkend="GstStructure"><type>GstStructure</type></link> fields. It can only
+support one level of nesting. Using more levels will lead to unexpected
+behavior when using serialization features, such as <link linkend="gst-caps-to-string"><function>gst_caps_to_string()</function></link> or
+<link linkend="gst-value-serialize"><function>gst_value_serialize()</function></link> and their counterparts.</para>
+
+</refsect1>
+<refsect1 id="GstStructure.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstStructureForeachFunc" role="function">
+<title>GstStructureForeachFunc&#160;()</title>
+<indexterm zone="GstStructureForeachFunc"><primary>GstStructureForeachFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstStructureForeachFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GQuark"><type>GQuark</type></link> field_id</parameter>,
+                            <parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                            <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called in <link linkend="gst-structure-foreach"><function>gst_structure_foreach()</function></link>. The function may
+not modify <parameter>value</parameter>
+.</para>
+<refsect3 id="GstStructureForeachFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>field_id</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GQuark"><type>GQuark</type></link> of the field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> of the field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstStructureForeachFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the foreach operation should continue, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if
+the foreach operation should stop with <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="GstStructureMapFunc" role="function">
+<title>GstStructureMapFunc&#160;()</title>
+<indexterm zone="GstStructureMapFunc"><primary>GstStructureMapFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstStructureMapFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GQuark"><type>GQuark</type></link> field_id</parameter>,
+                        <parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called in <link linkend="gst-structure-map-in-place"><function>gst_structure_map_in_place()</function></link>. The function
+may modify <parameter>value</parameter>
+.</para>
+<refsect3 id="GstStructureMapFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>field_id</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GQuark"><type>GQuark</type></link> of the field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> of the field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstStructureMapFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the map operation should continue, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if
+the map operation should stop with <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="GstStructureFilterMapFunc" role="function">
+<title>GstStructureFilterMapFunc&#160;()</title>
+<indexterm zone="GstStructureFilterMapFunc"><primary>GstStructureFilterMapFunc</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstStructureFilterMapFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GQuark"><type>GQuark</type></link> field_id</parameter>,
+                              <parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>,
+                              <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that will be called in <link linkend="gst-structure-filter-and-map-in-place"><function>gst_structure_filter_and_map_in_place()</function></link>.
+The function may modify <parameter>value</parameter>
+, and the value will be removed from
+the structure if <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is returned.</para>
+<refsect3 id="GstStructureFilterMapFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>field_id</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GQuark"><type>GQuark</type></link> of the field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GValue"><type>GValue</type></link> of the field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstStructureFilterMapFunc.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the field should be preserved, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if it
+should be removed.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-new-empty" role="function">
+<title>gst_structure_new_empty&#160;()</title>
+<indexterm zone="gst-structure-new-empty"><primary>gst_structure_new_empty</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_new_empty (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Creates a new, empty <link linkend="GstStructure"><type>GstStructure</type></link> with the given <parameter>name</parameter>
+.</para>
+<para>See <link linkend="gst-structure-set-name"><function>gst_structure_set_name()</function></link> for constraints on the <parameter>name</parameter>
+ parameter.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-new-empty.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of new structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-new-empty.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstStructure"><type>GstStructure</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-new-id-empty" role="function">
+<title>gst_structure_new_id_empty&#160;()</title>
+<indexterm zone="gst-structure-new-id-empty"><primary>gst_structure_new_id_empty</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_new_id_empty (<parameter><link linkend="GQuark"><type>GQuark</type></link> quark</parameter>);</programlisting>
+<para>Creates a new, empty <link linkend="GstStructure"><type>GstStructure</type></link> with the given name as a GQuark.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-new-id-empty.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>quark</para></entry>
+<entry role="parameter_description"><para>name of new structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-new-id-empty.returns" role="returns">
+<title>Returns</title>
+<para> a new, empty <link linkend="GstStructure"><type>GstStructure</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-new" role="function">
+<title>gst_structure_new&#160;()</title>
+<indexterm zone="gst-structure-new"><primary>gst_structure_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *firstfield</parameter>,
+                   <parameter>...</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstStructure"><type>GstStructure</type></link> with the given name.  Parses the
+list of variable arguments and sets fields to the values listed.
+Variable arguments should be passed as field name, field type,
+and value.  Last variable argument should be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of new structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>firstfield</para></entry>
+<entry role="parameter_description"><para>name of first field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>additional arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstStructure"><type>GstStructure</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-new-valist" role="function">
+<title>gst_structure_new_valist&#160;()</title>
+<indexterm zone="gst-structure-new-valist"><primary>gst_structure_new_valist</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_new_valist (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *firstfield</parameter>,
+                          <parameter><link linkend="va-list"><type>va_list</type></link> varargs</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstStructure"><type>GstStructure</type></link> with the given <parameter>name</parameter>
+.  Structure fields
+are set according to the varargs in a manner similar to
+<link linkend="gst-structure-new"><function>gst_structure_new()</function></link>.</para>
+<para>See <link linkend="gst-structure-set-name"><function>gst_structure_set_name()</function></link> for constraints on the <parameter>name</parameter>
+ parameter.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-new-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of new structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>firstfield</para></entry>
+<entry role="parameter_description"><para>name of first field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>varargs</para></entry>
+<entry role="parameter_description"><para>variable argument list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-new-valist.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstStructure"><type>GstStructure</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-new-id" role="function">
+<title>gst_structure_new_id&#160;()</title>
+<indexterm zone="gst-structure-new-id"><primary>gst_structure_new_id</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_new_id (<parameter><link linkend="GQuark"><type>GQuark</type></link> name_quark</parameter>,
+                      <parameter><link linkend="GQuark"><type>GQuark</type></link> field_quark</parameter>,
+                      <parameter>...</parameter>);</programlisting>
+<para>Creates a new <link linkend="GstStructure"><type>GstStructure</type></link> with the given name as a GQuark, followed by
+fieldname quark, GType, argument(s) "triplets" in the same format as
+<link linkend="gst-structure-id-set"><function>gst_structure_id_set()</function></link>. Basically a convenience wrapper around
+<link linkend="gst-structure-new-id-empty"><function>gst_structure_new_id_empty()</function></link> and <link linkend="gst-structure-id-set"><function>gst_structure_id_set()</function></link>.</para>
+<para>The last variable argument must be <link linkend="NULL:CAPS"><literal>NULL</literal></link> (or 0).</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-new-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name_quark</para></entry>
+<entry role="parameter_description"><para>name of new structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_quark</para></entry>
+<entry role="parameter_description"><para>the GQuark for the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-new-id.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstStructure"><type>GstStructure</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-new-from-string" role="function" condition="since:1.2">
+<title>gst_structure_new_from_string&#160;()</title>
+<indexterm zone="gst-structure-new-from-string" role="1.2"><primary>gst_structure_new_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_new_from_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *string</parameter>);</programlisting>
+<para>Creates a <link linkend="GstStructure"><type>GstStructure</type></link> from a string representation.
+If end is not <link linkend="NULL:CAPS"><literal>NULL</literal></link>, a pointer to the place inside the given string
+where parsing ended will be returned.</para>
+<para>The current implementation of serialization will lead to unexpected results
+when there are nested <link linkend="GstCaps"><type>GstCaps</type></link> / <link linkend="GstStructure"><type>GstStructure</type></link> deeper than one level.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-new-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>string</para></entry>
+<entry role="parameter_description"><para>a string representation of a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-new-from-string.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstStructure"><type>GstStructure</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+when the string could not be parsed. Free with
+<link linkend="gst-structure-free"><function>gst_structure_free()</function></link> after use. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-structure-copy" role="function">
+<title>gst_structure_copy&#160;()</title>
+<indexterm zone="gst-structure-copy"><primary>gst_structure_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_copy (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Duplicates a <link linkend="GstStructure"><type>GstStructure</type></link> and all its fields and values.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link> to duplicate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstStructure"><type>GstStructure</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-free" role="function">
+<title>gst_structure_free&#160;()</title>
+<indexterm zone="gst-structure-free"><primary>gst_structure_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_free (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Frees a <link linkend="GstStructure"><type>GstStructure</type></link> and all its fields and values. The structure must not
+have a parent when this function is called.</para>
+<refsect3 id="gst-structure-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GstStructure"><type>GstStructure</type></link> to free. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-name" role="function">
+<title>gst_structure_get_name&#160;()</title>
+<indexterm zone="gst-structure-get-name"><primary>gst_structure_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_structure_get_name (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Get the name of <parameter>structure</parameter>
+ as a string.</para>
+<refsect3 id="gst-structure-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of the structure.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-has-name" role="function">
+<title>gst_structure_has_name&#160;()</title>
+<indexterm zone="gst-structure-has-name"><primary>gst_structure_has_name</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_has_name (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Checks if the structure has the given name</para>
+<refsect3 id="gst-structure-has-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>structure name to check for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-has-name.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>name</parameter>
+matches the name of the structure.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-set-name" role="function">
+<title>gst_structure_set_name&#160;()</title>
+<indexterm zone="gst-structure-set-name"><primary>gst_structure_set_name</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_set_name (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Sets the name of the structure to the given <parameter>name</parameter>
+.  The string
+provided is copied before being used. It must not be empty, start with a
+letter and can be followed by letters, numbers and any of "/-_.:".</para>
+<refsect3 id="gst-structure-set-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the new name of the structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-name-id" role="function">
+<title>gst_structure_get_name_id&#160;()</title>
+<indexterm zone="gst-structure-get-name-id"><primary>gst_structure_get_name_id</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+gst_structure_get_name_id (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Get the name of <parameter>structure</parameter>
+ as a GQuark.</para>
+<refsect3 id="gst-structure-get-name-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-name-id.returns" role="returns">
+<title>Returns</title>
+<para> the quark representing the name of the structure.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-get" role="function">
+<title>gst_structure_id_get&#160;()</title>
+<indexterm zone="gst-structure-id-get"><primary>gst_structure_id_get</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_id_get (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                      <parameter><link linkend="GQuark"><type>GQuark</type></link> first_field_id</parameter>,
+                      <parameter>...</parameter>);</programlisting>
+<para>Parses the variable arguments and reads fields from <parameter>structure</parameter>
+ accordingly.
+Variable arguments should be in the form field id quark, field type
+(as a GType), pointer(s) to a variable(s) to hold the return value(s).
+The last variable argument should be <link linkend="NULL:CAPS"><literal>NULL</literal></link> (technically it should be a
+0 quark, but we require <link linkend="NULL:CAPS"><literal>NULL</literal></link> so compilers that support it can check for
+the <link linkend="NULL:CAPS"><literal>NULL</literal></link> terminator and warn if it's not there).</para>
+<para>This function is just like <link linkend="gst-structure-get"><function>gst_structure_get()</function></link> only that it is slightly
+more efficient since it saves the string-to-quark lookup in the global
+quark hashtable.</para>
+<para>For refcounted (mini)objects you will receive a new reference which
+you must release with a suitable <link linkend="unref"><function>_unref()</function></link> when no longer needed. For
+strings and boxed types you will receive a copy which you will need to
+release with either <link linkend="g-free"><function>g_free()</function></link> or the suitable function for the boxed type.</para>
+<refsect3 id="gst-structure-id-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_field_id</para></entry>
+<entry role="parameter_description"><para>the quark of the first field to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-id-get.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if there was a problem reading any of the fields (e.g.
+because the field requested did not exist, or was of a type other
+than the type specified), otherwise <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-get-valist" role="function">
+<title>gst_structure_id_get_valist&#160;()</title>
+<indexterm zone="gst-structure-id-get-valist"><primary>gst_structure_id_get_valist</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_id_get_valist (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                             <parameter><link linkend="GQuark"><type>GQuark</type></link> first_field_id</parameter>,
+                             <parameter><link linkend="va-list"><type>va_list</type></link> args</parameter>);</programlisting>
+<para>Parses the variable arguments and reads fields from <parameter>structure</parameter>
+ accordingly.
+valist-variant of <link linkend="gst-structure-id-get"><function>gst_structure_id_get()</function></link>. Look at the documentation of
+<link linkend="gst-structure-id-get"><function>gst_structure_id_get()</function></link> for more details.</para>
+<refsect3 id="gst-structure-id-get-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_field_id</para></entry>
+<entry role="parameter_description"><para>the quark of the first field to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>args</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-id-get-valist.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if there was a problem reading any of the fields</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-get-value" role="function">
+<title>gst_structure_id_get_value&#160;()</title>
+<indexterm zone="gst-structure-id-get-value"><primary>gst_structure_id_get_value</primary></indexterm>
+<programlisting language="C">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_structure_id_get_value (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter><link linkend="GQuark"><type>GQuark</type></link> field</parameter>);</programlisting>
+<para>Get the value of the field with GQuark <parameter>field</parameter>
+.</para>
+<refsect3 id="gst-structure-id-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GQuark"><type>GQuark</type></link> of the field to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-id-get-value.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GValue"><type>GValue</type></link> corresponding to the field with the given name
+identifier.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-set-value" role="function">
+<title>gst_structure_id_set_value&#160;()</title>
+<indexterm zone="gst-structure-id-set-value"><primary>gst_structure_id_set_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_id_set_value (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter><link linkend="GQuark"><type>GQuark</type></link> field</parameter>,
+                            <parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Sets the field with the given GQuark <parameter>field</parameter>
+ to <parameter>value</parameter>
+.  If the field
+does not exist, it is created.  If the field exists, the previous
+value is replaced and freed.</para>
+<refsect3 id="gst-structure-id-set-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GQuark"><type>GQuark</type></link> representing a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the new value of the field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-take-value" role="function">
+<title>gst_structure_id_take_value&#160;()</title>
+<indexterm zone="gst-structure-id-take-value"><primary>gst_structure_id_take_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_id_take_value (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                             <parameter><link linkend="GQuark"><type>GQuark</type></link> field</parameter>,
+                             <parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Sets the field with the given GQuark <parameter>field</parameter>
+ to <parameter>value</parameter>
+.  If the field
+does not exist, it is created.  If the field exists, the previous
+value is replaced and freed.</para>
+<refsect3 id="gst-structure-id-take-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GQuark"><type>GQuark</type></link> representing a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> the new value of the field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get" role="function">
+<title>gst_structure_get&#160;()</title>
+<indexterm zone="gst-structure-get"><primary>gst_structure_get</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                   <parameter>const <link linkend="char"><type>char</type></link> *first_fieldname</parameter>,
+                   <parameter>...</parameter>);</programlisting>
+<para>Parses the variable arguments and reads fields from <parameter>structure</parameter>
+ accordingly.
+Variable arguments should be in the form field name, field type
+(as a GType), pointer(s) to a variable(s) to hold the return value(s).
+The last variable argument should be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<para>For refcounted (mini)objects you will receive a new reference which
+you must release with a suitable <link linkend="unref"><function>_unref()</function></link> when no longer needed. For
+strings and boxed types you will receive a copy which you will need to
+release with either <link linkend="g-free"><function>g_free()</function></link> or the suitable function for the boxed type.</para>
+<refsect3 id="gst-structure-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the first field to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if there was a problem reading any of the fields (e.g.
+because the field requested did not exist, or was of a type other
+than the type specified), otherwise <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-valist" role="function">
+<title>gst_structure_get_valist&#160;()</title>
+<indexterm zone="gst-structure-get-valist"><primary>gst_structure_get_valist</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_valist (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                          <parameter>const <link linkend="char"><type>char</type></link> *first_fieldname</parameter>,
+                          <parameter><link linkend="va-list"><type>va_list</type></link> args</parameter>);</programlisting>
+<para>Parses the variable arguments and reads fields from <parameter>structure</parameter>
+ accordingly.
+valist-variant of <link linkend="gst-structure-get"><function>gst_structure_get()</function></link>. Look at the documentation of
+<link linkend="gst-structure-get"><function>gst_structure_get()</function></link> for more details.</para>
+<refsect3 id="gst-structure-get-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>first_fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the first field to read</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>args</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-valist.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if there was a problem reading any of the fields</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-value" role="function">
+<title>gst_structure_get_value&#160;()</title>
+<indexterm zone="gst-structure-get-value"><primary>gst_structure_get_value</primary></indexterm>
+<programlisting language="C">const <link linkend="GValue"><returnvalue>GValue</returnvalue></link>&#160;*
+gst_structure_get_value (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>);</programlisting>
+<para>Get the value of the field with name <parameter>fieldname</parameter>
+.</para>
+<refsect3 id="gst-structure-get-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-value.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GValue"><type>GValue</type></link> corresponding to the field with the given name.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-set-value" role="function">
+<title>gst_structure_set_value&#160;()</title>
+<indexterm zone="gst-structure-set-value"><primary>gst_structure_set_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_set_value (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                         <parameter>const <link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Sets the field with the given name <parameter>field</parameter>
+ to <parameter>value</parameter>
+.  If the field
+does not exist, it is created.  If the field exists, the previous
+value is replaced and freed.</para>
+<refsect3 id="gst-structure-set-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the new value of the field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-take-value" role="function">
+<title>gst_structure_take_value&#160;()</title>
+<indexterm zone="gst-structure-take-value"><primary>gst_structure_take_value</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_take_value (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                          <parameter><link linkend="GValue"><type>GValue</type></link> *value</parameter>);</programlisting>
+<para>Sets the field with the given name <parameter>field</parameter>
+ to <parameter>value</parameter>
+.  If the field
+does not exist, it is created.  If the field exists, the previous
+value is replaced and freed. The function will take ownership of <parameter>value</parameter>
+.</para>
+<refsect3 id="gst-structure-take-value.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> the new value of the field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-set" role="function">
+<title>gst_structure_set&#160;()</title>
+<indexterm zone="gst-structure-set"><primary>gst_structure_set</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_set (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                   <parameter>...</parameter>);</programlisting>
+<para>Parses the variable arguments and sets fields accordingly. Fields that
+weren't already part of the structure are added as needed.
+Variable arguments should be in the form field name, field type
+(as a GType), value(s).  The last variable argument should be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-structure-set.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-set-valist" role="function">
+<title>gst_structure_set_valist&#160;()</title>
+<indexterm zone="gst-structure-set-valist"><primary>gst_structure_set_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_set_valist (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                          <parameter><link linkend="va-list"><type>va_list</type></link> varargs</parameter>);</programlisting>
+<para>va_list form of <link linkend="gst-structure-set"><function>gst_structure_set()</function></link>.</para>
+<refsect3 id="gst-structure-set-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>varargs</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-set" role="function">
+<title>gst_structure_id_set&#160;()</title>
+<indexterm zone="gst-structure-id-set"><primary>gst_structure_id_set</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_id_set (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                      <parameter><link linkend="GQuark"><type>GQuark</type></link> fieldname</parameter>,
+                      <parameter>...</parameter>);</programlisting>
+<para>Identical to gst_structure_set, except that field names are
+passed using the GQuark for the field name. This allows more efficient
+setting of the structure if the caller already knows the associated
+quark values.
+The last variable argument must be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-structure-id-set.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the GQuark for the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-set-valist" role="function">
+<title>gst_structure_id_set_valist&#160;()</title>
+<indexterm zone="gst-structure-id-set-valist"><primary>gst_structure_id_set_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_id_set_valist (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                             <parameter><link linkend="GQuark"><type>GQuark</type></link> fieldname</parameter>,
+                             <parameter><link linkend="va-list"><type>va_list</type></link> varargs</parameter>);</programlisting>
+<para>va_list form of <link linkend="gst-structure-id-set"><function>gst_structure_id_set()</function></link>.</para>
+<refsect3 id="gst-structure-id-set-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>varargs</para></entry>
+<entry role="parameter_description"><para>variable arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-remove-field" role="function">
+<title>gst_structure_remove_field&#160;()</title>
+<indexterm zone="gst-structure-remove-field"><primary>gst_structure_remove_field</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_remove_field (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>);</programlisting>
+<para>Removes the field with the given name.  If the field with the given
+name does not exist, the structure is unchanged.</para>
+<refsect3 id="gst-structure-remove-field.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-remove-fields" role="function">
+<title>gst_structure_remove_fields&#160;()</title>
+<indexterm zone="gst-structure-remove-fields"><primary>gst_structure_remove_fields</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_remove_fields (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                             <parameter>...</parameter>);</programlisting>
+<para>Removes the fields with the given names. If a field does not exist, the
+argument is ignored.</para>
+<refsect3 id="gst-structure-remove-fields.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para><link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated list of more fieldnames to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-remove-fields-valist" role="function">
+<title>gst_structure_remove_fields_valist&#160;()</title>
+<indexterm zone="gst-structure-remove-fields-valist"><primary>gst_structure_remove_fields_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_remove_fields_valist (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                                    <parameter><link linkend="va-list"><type>va_list</type></link> varargs</parameter>);</programlisting>
+<para>va_list form of <link linkend="gst-structure-remove-fields"><function>gst_structure_remove_fields()</function></link>.</para>
+<refsect3 id="gst-structure-remove-fields-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>varargs</para></entry>
+<entry role="parameter_description"><para><link linkend="NULL:CAPS"><literal>NULL</literal></link>-terminated list of more fieldnames to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-remove-all-fields" role="function">
+<title>gst_structure_remove_all_fields&#160;()</title>
+<indexterm zone="gst-structure-remove-all-fields"><primary>gst_structure_remove_all_fields</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_remove_all_fields (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Removes all fields in a GstStructure.</para>
+<refsect3 id="gst-structure-remove-all-fields.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-field-type" role="function">
+<title>gst_structure_get_field_type&#160;()</title>
+<indexterm zone="gst-structure-get-field-type"><primary>gst_structure_get_field_type</primary></indexterm>
+<programlisting language="C"><link linkend="GType"><returnvalue>GType</returnvalue></link>
+gst_structure_get_field_type (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>);</programlisting>
+<para>Finds the field with the given name, and returns the type of the
+value it contains.  If the field is not found, G_TYPE_INVALID is
+returned.</para>
+<refsect3 id="gst-structure-get-field-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of the field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-field-type.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GValue"><type>GValue</type></link> of the field</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-n-fields" role="function">
+<title>gst_structure_n_fields&#160;()</title>
+<indexterm zone="gst-structure-n-fields"><primary>gst_structure_n_fields</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_structure_n_fields (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Get the number of fields in the structure.</para>
+<refsect3 id="gst-structure-n-fields.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-n-fields.returns" role="returns">
+<title>Returns</title>
+<para> the number of fields in the structure</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-has-field" role="function">
+<title>gst_structure_has_field&#160;()</title>
+<indexterm zone="gst-structure-has-field"><primary>gst_structure_has_field</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_has_field (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>);</programlisting>
+<para>Check if <parameter>structure</parameter>
+ contains a field named <parameter>fieldname</parameter>
+.</para>
+<refsect3 id="gst-structure-has-field.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-has-field.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure contains a field with the given name</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-has-field-typed" role="function">
+<title>gst_structure_has_field_typed&#160;()</title>
+<indexterm zone="gst-structure-has-field-typed"><primary>gst_structure_has_field_typed</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_has_field_typed (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                               <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Check if <parameter>structure</parameter>
+ contains a field named <parameter>fieldname</parameter>
+ and with GType <parameter>type</parameter>
+.</para>
+<refsect3 id="gst-structure-has-field-typed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the type of a value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-has-field-typed.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure contains a field with the given name and type</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-is-equal" role="function">
+<title>gst_structure_is_equal&#160;()</title>
+<indexterm zone="gst-structure-is-equal"><primary>gst_structure_is_equal</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_is_equal (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure1</parameter>,
+                        <parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure2</parameter>);</programlisting>
+<para>Tests if the two <link linkend="GstStructure"><type>GstStructure</type></link> are equal.</para>
+<refsect3 id="gst-structure-is-equal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>structure2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-is-equal.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the two structures have the same name and field.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-is-subset" role="function">
+<title>gst_structure_is_subset&#160;()</title>
+<indexterm zone="gst-structure-is-subset"><primary>gst_structure_is_subset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_is_subset (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *subset</parameter>,
+                         <parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *superset</parameter>);</programlisting>
+<para>Checks if <parameter>subset</parameter>
+ is a subset of <parameter>superset</parameter>
+, i.e. has the same
+structure name and for all fields that are existing in <parameter>superset</parameter>
+,
+<parameter>subset</parameter>
+ has a value that is a subset of the value in <parameter>superset</parameter>
+.</para>
+<refsect3 id="gst-structure-is-subset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>subset</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>superset</para></entry>
+<entry role="parameter_description"><para>a potentially greater <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-is-subset.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>subset</parameter>
+is a subset of <parameter>superset</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-can-intersect" role="function">
+<title>gst_structure_can_intersect&#160;()</title>
+<indexterm zone="gst-structure-can-intersect"><primary>gst_structure_can_intersect</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_can_intersect (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *struct1</parameter>,
+                             <parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *struct2</parameter>);</programlisting>
+<para>Tries intersecting <parameter>struct1</parameter>
+ and <parameter>struct2</parameter>
+ and reports whether the result
+would not be empty.</para>
+<refsect3 id="gst-structure-can-intersect.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>struct1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>struct2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-can-intersect.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if intersection would not be empty</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-intersect" role="function">
+<title>gst_structure_intersect&#160;()</title>
+<indexterm zone="gst-structure-intersect"><primary>gst_structure_intersect</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_intersect (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *struct1</parameter>,
+                         <parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *struct2</parameter>);</programlisting>
+<para>Intersects <parameter>struct1</parameter>
+ and <parameter>struct2</parameter>
+ and returns the intersection.</para>
+<refsect3 id="gst-structure-intersect.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>struct1</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>struct2</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-intersect.returns" role="returns">
+<title>Returns</title>
+<para> Intersection of <parameter>struct1</parameter>
+and <parameter>struct2</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-has-field" role="function">
+<title>gst_structure_id_has_field&#160;()</title>
+<indexterm zone="gst-structure-id-has-field"><primary>gst_structure_id_has_field</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_id_has_field (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter><link linkend="GQuark"><type>GQuark</type></link> field</parameter>);</programlisting>
+<para>Check if <parameter>structure</parameter>
+ contains a field named <parameter>field</parameter>
+.</para>
+<refsect3 id="gst-structure-id-has-field.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para><link linkend="GQuark"><type>GQuark</type></link> of the field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-id-has-field.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure contains a field with the given name</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-id-has-field-typed" role="function">
+<title>gst_structure_id_has_field_typed&#160;()</title>
+<indexterm zone="gst-structure-id-has-field-typed"><primary>gst_structure_id_has_field_typed</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_id_has_field_typed (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                  <parameter><link linkend="GQuark"><type>GQuark</type></link> field</parameter>,
+                                  <parameter><link linkend="GType"><type>GType</type></link> type</parameter>);</programlisting>
+<para>Check if <parameter>structure</parameter>
+ contains a field named <parameter>field</parameter>
+ and with GType <parameter>type</parameter>
+.</para>
+<refsect3 id="gst-structure-id-has-field-typed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para><link linkend="GQuark"><type>GQuark</type></link> of the field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the type of a value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-id-has-field-typed.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure contains a field with the given name and type</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-boolean" role="function">
+<title>gst_structure_get_boolean&#160;()</title>
+<indexterm zone="gst-structure-get-boolean"><primary>gst_structure_get_boolean</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_boolean (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                           <parameter><link linkend="gboolean"><type>gboolean</type></link> *value</parameter>);</programlisting>
+<para>Sets the boolean pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field.  Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-boolean.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="gboolean"><type>gboolean</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-boolean.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a boolean, this
+function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-int" role="function">
+<title>gst_structure_get_int&#160;()</title>
+<indexterm zone="gst-structure-get-int"><primary>gst_structure_get_int</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_int (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> *value</parameter>);</programlisting>
+<para>Sets the int pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field.  Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-int.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to an int to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-int.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain an int, this function
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-uint" role="function">
+<title>gst_structure_get_uint&#160;()</title>
+<indexterm zone="gst-structure-get-uint"><primary>gst_structure_get_uint</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_uint (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                        <parameter><link linkend="guint"><type>guint</type></link> *value</parameter>);</programlisting>
+<para>Sets the uint pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field.  Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-uint.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a uint to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-uint.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a uint, this function
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-int64" role="function" condition="since:1.4">
+<title>gst_structure_get_int64&#160;()</title>
+<indexterm zone="gst-structure-get-int64" role="1.4"><primary>gst_structure_get_int64</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_int64 (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                         <parameter><link linkend="gint64"><type>gint64</type></link> *value</parameter>);</programlisting>
+<para>Sets the <link linkend="gint64"><type>gint64</type></link> pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field. Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-int64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="gint64"><type>gint64</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-int64.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a <link linkend="gint64"><type>gint64</type></link>, this function
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-structure-get-uint64" role="function" condition="since:1.4">
+<title>gst_structure_get_uint64&#160;()</title>
+<indexterm zone="gst-structure-get-uint64" role="1.4"><primary>gst_structure_get_uint64</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_uint64 (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                          <parameter><link linkend="guint64"><type>guint64</type></link> *value</parameter>);</programlisting>
+<para>Sets the <link linkend="guint64"><type>guint64</type></link> pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field. Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-uint64.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="guint64"><type>guint64</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-uint64.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a <link linkend="guint64"><type>guint64</type></link>, this function
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="gst-structure-get-double" role="function">
+<title>gst_structure_get_double&#160;()</title>
+<indexterm zone="gst-structure-get-double"><primary>gst_structure_get_double</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_double (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                          <parameter><link linkend="gdouble"><type>gdouble</type></link> *value</parameter>);</programlisting>
+<para>Sets the double pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field.  Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-double.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a gdouble to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-double.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a double, this
+function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-string" role="function">
+<title>gst_structure_get_string&#160;()</title>
+<indexterm zone="gst-structure-get-string"><primary>gst_structure_get_string</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_structure_get_string (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>);</programlisting>
+<para>Finds the field corresponding to <parameter>fieldname</parameter>
+, and returns the string
+contained in the field's value.  Caller is responsible for making
+sure the field exists and has the correct type.</para>
+<para>The string should not be modified, and remains valid until the next
+call to a gst_structure_*() function with the given structure.</para>
+<refsect3 id="gst-structure-get-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-string.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to the string or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when the
+field did not exist or did not contain a string. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-date" role="function">
+<title>gst_structure_get_date&#160;()</title>
+<indexterm zone="gst-structure-get-date"><primary>gst_structure_get_date</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_date (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                        <parameter><link linkend="GDate"><type>GDate</type></link> **value</parameter>);</programlisting>
+<para>Sets the date pointed to by <parameter>value</parameter>
+ corresponding to the date of the
+given field.  Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<para>On success <parameter>value</parameter>
+ will point to a newly-allocated copy of the date which
+should be freed with <link linkend="g-date-free"><function>g_date_free()</function></link> when no longer needed (note: this is
+inconsistent with e.g. <link linkend="gst-structure-get-string"><function>gst_structure_get_string()</function></link> which doesn't return a
+copy of the string).</para>
+<refsect3 id="gst-structure-get-date.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="GDate"><type>GDate</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out callee-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-date.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a data, this function
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-date-time" role="function">
+<title>gst_structure_get_date_time&#160;()</title>
+<indexterm zone="gst-structure-get-date-time"><primary>gst_structure_get_date_time</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_date_time (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                             <parameter><link linkend="GstDateTime"><type>GstDateTime</type></link> **value</parameter>);</programlisting>
+<para>Sets the datetime pointed to by <parameter>value</parameter>
+ corresponding to the datetime of the
+given field. Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<para>On success <parameter>value</parameter>
+ will point to a reference of the datetime which
+should be unreffed with <link linkend="gst-date-time-unref"><function>gst_date_time_unref()</function></link> when no longer needed
+(note: this is inconsistent with e.g. <link linkend="gst-structure-get-string"><function>gst_structure_get_string()</function></link>
+which doesn't return a copy of the string).</para>
+<refsect3 id="gst-structure-get-date-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="GstDateTime"><type>GstDateTime</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out callee-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-date-time.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a data, this function
+returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-clock-time" role="function">
+<title>gst_structure_get_clock_time&#160;()</title>
+<indexterm zone="gst-structure-get-clock-time"><primary>gst_structure_get_clock_time</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_clock_time (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                              <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *value</parameter>);</programlisting>
+<para>Sets the clock time pointed to by <parameter>value</parameter>
+ corresponding to the clock time
+of the given field.  Caller is responsible for making sure the field exists
+and has the correct type.</para>
+<refsect3 id="gst-structure-get-clock-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to a <link linkend="GstClockTime"><type>GstClockTime</type></link> to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-clock-time.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a <link linkend="GstClockTime"><type>GstClockTime</type></link>, this
+function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-enum" role="function">
+<title>gst_structure_get_enum&#160;()</title>
+<indexterm zone="gst-structure-get-enum"><primary>gst_structure_get_enum</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_enum (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                        <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                        <parameter><link linkend="GType"><type>GType</type></link> enumtype</parameter>,
+                        <parameter><link linkend="gint"><type>gint</type></link> *value</parameter>);</programlisting>
+<para>Sets the int pointed to by <parameter>value</parameter>
+ corresponding to the value of the
+given field.  Caller is responsible for making sure the field exists,
+has the correct type and that the enumtype is correct.</para>
+<refsect3 id="gst-structure-get-enum.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enumtype</para></entry>
+<entry role="parameter_description"><para>the enum type of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para> a pointer to an int to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-enum.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the value could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain an enum of the given
+type, this function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-get-fraction" role="function">
+<title>gst_structure_get_fraction&#160;()</title>
+<indexterm zone="gst-structure-get-fraction"><primary>gst_structure_get_fraction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_get_fraction (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> *value_numerator</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> *value_denominator</parameter>);</programlisting>
+<para>Sets the integers pointed to by <parameter>value_numerator</parameter>
+ and <parameter>value_denominator</parameter>
+
+corresponding to the value of the given field.  Caller is responsible
+for making sure the field exists and has the correct type.</para>
+<refsect3 id="gst-structure-get-fraction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the name of a field</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value_numerator</para></entry>
+<entry role="parameter_description"><para> a pointer to an int to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>value_denominator</para></entry>
+<entry role="parameter_description"><para> a pointer to an int to set. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-get-fraction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the values could be set correctly. If there was no field
+with <parameter>fieldname</parameter>
+or the existing field did not contain a GstFraction, this
+function returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-foreach" role="function">
+<title>gst_structure_foreach&#160;()</title>
+<indexterm zone="gst-structure-foreach"><primary>gst_structure_foreach</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_foreach (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                       <parameter><link linkend="GstStructureForeachFunc"><type>GstStructureForeachFunc</type></link> func</parameter>,
+                       <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Calls the provided function once for each field in the <link linkend="GstStructure"><type>GstStructure</type></link>. The
+function must not modify the fields. Also see <link linkend="gst-structure-map-in-place"><function>gst_structure_map_in_place()</function></link>
+and <link linkend="gst-structure-filter-and-map-in-place"><function>gst_structure_filter_and_map_in_place()</function></link>.</para>
+<refsect3 id="gst-structure-foreach.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> a function to call for each field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> private data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-foreach.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the supplied function returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> For each of the fields,
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-map-in-place" role="function">
+<title>gst_structure_map_in_place&#160;()</title>
+<indexterm zone="gst-structure-map-in-place"><primary>gst_structure_map_in_place</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_map_in_place (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter><link linkend="GstStructureMapFunc"><type>GstStructureMapFunc</type></link> func</parameter>,
+                            <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Calls the provided function once for each field in the <link linkend="GstStructure"><type>GstStructure</type></link>. In
+contrast to <link linkend="gst-structure-foreach"><function>gst_structure_foreach()</function></link>, the function may modify but not delete the
+fields. The structure must be mutable.</para>
+<refsect3 id="gst-structure-map-in-place.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> a function to call for each field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> private data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-map-in-place.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the supplied function returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> For each of the fields,
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-filter-and-map-in-place" role="function" condition="since:1.6">
+<title>gst_structure_filter_and_map_in_place&#160;()</title>
+<indexterm zone="gst-structure-filter-and-map-in-place" role="1.6"><primary>gst_structure_filter_and_map_in_place</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_filter_and_map_in_place (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                       <parameter><link linkend="GstStructureFilterMapFunc"><type>GstStructureFilterMapFunc</type></link> func</parameter>,
+                                       <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Calls the provided function once for each field in the <link linkend="GstStructure"><type>GstStructure</type></link>. In
+contrast to <link linkend="gst-structure-foreach"><function>gst_structure_foreach()</function></link>, the function may modify the fields.
+In contrast to <link linkend="gst-structure-map-in-place"><function>gst_structure_map_in_place()</function></link>, the field is removed from
+the structure if <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> is returned from the function.
+The structure must be mutable.</para>
+<refsect3 id="gst-structure-filter-and-map-in-place.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> a function to call for each field. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> private data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-structure-nth-field-name" role="function">
+<title>gst_structure_nth_field_name&#160;()</title>
+<indexterm zone="gst-structure-nth-field-name"><primary>gst_structure_nth_field_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_structure_nth_field_name (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> index</parameter>);</programlisting>
+<para>Get the name of the given field number, counting from 0 onwards.</para>
+<refsect3 id="gst-structure-nth-field-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>index</para></entry>
+<entry role="parameter_description"><para>the index to get the name of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-nth-field-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of the given field number</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-set-parent-refcount" role="function">
+<title>gst_structure_set_parent_refcount&#160;()</title>
+<indexterm zone="gst-structure-set-parent-refcount"><primary>gst_structure_set_parent_refcount</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_set_parent_refcount (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                   <parameter><link linkend="gint"><type>gint</type></link> *refcount</parameter>);</programlisting>
+<para>Sets the parent_refcount field of <link linkend="GstStructure"><type>GstStructure</type></link>. This field is used to
+determine whether a structure is mutable or not. This function should only be
+called by code implementing parent objects of <link linkend="GstStructure"><type>GstStructure</type></link>, as described in
+the MT Refcounting section of the design documents.</para>
+<refsect3 id="gst-structure-set-parent-refcount.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>refcount</para></entry>
+<entry role="parameter_description"><para> a pointer to the parent's refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-set-parent-refcount.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the parent refcount could be set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-to-string" role="function">
+<title>gst_structure_to_string&#160;()</title>
+<indexterm zone="gst-structure-to-string"><primary>gst_structure_to_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_structure_to_string (<parameter>const <link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Converts <parameter>structure</parameter>
+ to a human-readable string representation.</para>
+<para>For debugging purposes its easier to do something like this:</para>
+<informalexample><programlisting><![CDATA[
+GST_LOG ("structure is %" GST_PTR_FORMAT, structure);
+]]></programlisting></informalexample>
+<para>
+This prints the structure in human readable form.</para>
+<para>The current implementation of serialization will lead to unexpected results
+when there are nested <link linkend="GstCaps"><type>GstCaps</type></link> / <link linkend="GstStructure"><type>GstStructure</type></link> deeper than one level.</para>
+<para>Free-function: g_free</para>
+<refsect3 id="gst-structure-to-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-to-string.returns" role="returns">
+<title>Returns</title>
+<para> a pointer to string allocated by <link linkend="g-malloc"><function>g_malloc()</function></link>.
+<link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-from-string" role="function">
+<title>gst_structure_from_string&#160;()</title>
+<indexterm zone="gst-structure-from-string"><primary>gst_structure_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_structure_from_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *string</parameter>,
+                           <parameter><link linkend="gchar"><type>gchar</type></link> **end</parameter>);</programlisting>
+<para>Creates a <link linkend="GstStructure"><type>GstStructure</type></link> from a string representation.
+If end is not <link linkend="NULL:CAPS"><literal>NULL</literal></link>, a pointer to the place inside the given string
+where parsing ended will be returned.</para>
+<para>Free-function: gst_structure_free</para>
+<refsect3 id="gst-structure-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>string</para></entry>
+<entry role="parameter_description"><para>a string representation of a <link linkend="GstStructure"><type>GstStructure</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>end</para></entry>
+<entry role="parameter_description"><para> pointer to store the end of the string in. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>][<acronym>transfer none</acronym>][<acronym>skip</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-from-string.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstStructure"><type>GstStructure</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+when the string could not be parsed. Free with
+<link linkend="gst-structure-free"><function>gst_structure_free()</function></link> after use. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate" role="function">
+<title>gst_structure_fixate&#160;()</title>
+<indexterm zone="gst-structure-fixate"><primary>gst_structure_fixate</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_structure_fixate (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Fixate all values in <parameter>structure</parameter>
+ using <link linkend="gst-value-fixate"><function>gst_value_fixate()</function></link>.
+<parameter>structure</parameter>
+ will be modified in-place and should be writable.</para>
+<refsect3 id="gst-structure-fixate.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate-field" role="function">
+<title>gst_structure_fixate_field&#160;()</title>
+<indexterm zone="gst-structure-fixate-field"><primary>gst_structure_fixate_field</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_fixate_field (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                            <parameter>const <link linkend="char"><type>char</type></link> *field_name</parameter>);</programlisting>
+<para>Fixates a <link linkend="GstStructure"><type>GstStructure</type></link> by changing the given field with its fixated value.</para>
+<refsect3 id="gst-structure-fixate-field.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_name</para></entry>
+<entry role="parameter_description"><para>a field in <parameter>structure</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-fixate-field.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure field could be fixated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate-field-nearest-int" role="function">
+<title>gst_structure_fixate_field_nearest_int&#160;()</title>
+<indexterm zone="gst-structure-fixate-field-nearest-int"><primary>gst_structure_fixate_field_nearest_int</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_fixate_field_nearest_int
+                               (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                <parameter>const <link linkend="char"><type>char</type></link> *field_name</parameter>,
+                                <parameter><link linkend="int"><type>int</type></link> target</parameter>);</programlisting>
+<para>Fixates a <link linkend="GstStructure"><type>GstStructure</type></link> by changing the given field to the nearest
+integer to <parameter>target</parameter>
+ that is a subset of the existing field.</para>
+<refsect3 id="gst-structure-fixate-field-nearest-int.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_name</para></entry>
+<entry role="parameter_description"><para>a field in <parameter>structure</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para>the target value of the fixation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-fixate-field-nearest-int.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure could be fixated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate-field-nearest-double" role="function">
+<title>gst_structure_fixate_field_nearest_double&#160;()</title>
+<indexterm zone="gst-structure-fixate-field-nearest-double"><primary>gst_structure_fixate_field_nearest_double</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_fixate_field_nearest_double
+                               (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                <parameter>const <link linkend="char"><type>char</type></link> *field_name</parameter>,
+                                <parameter><link linkend="double"><type>double</type></link> target</parameter>);</programlisting>
+<para>Fixates a <link linkend="GstStructure"><type>GstStructure</type></link> by changing the given field to the nearest
+double to <parameter>target</parameter>
+ that is a subset of the existing field.</para>
+<refsect3 id="gst-structure-fixate-field-nearest-double.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_name</para></entry>
+<entry role="parameter_description"><para>a field in <parameter>structure</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para>the target value of the fixation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-fixate-field-nearest-double.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure could be fixated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate-field-nearest-fraction" role="function">
+<title>gst_structure_fixate_field_nearest_fraction&#160;()</title>
+<indexterm zone="gst-structure-fixate-field-nearest-fraction"><primary>gst_structure_fixate_field_nearest_fraction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_fixate_field_nearest_fraction
+                               (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                <parameter>const <link linkend="char"><type>char</type></link> *field_name</parameter>,
+                                <parameter>const <link linkend="gint"><type>gint</type></link> target_numerator</parameter>,
+                                <parameter>const <link linkend="gint"><type>gint</type></link> target_denominator</parameter>);</programlisting>
+<para>Fixates a <link linkend="GstStructure"><type>GstStructure</type></link> by changing the given field to the nearest
+fraction to <parameter>target_numerator</parameter>
+/<parameter>target_denominator</parameter>
+ that is a subset
+of the existing field.</para>
+<refsect3 id="gst-structure-fixate-field-nearest-fraction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_name</para></entry>
+<entry role="parameter_description"><para>a field in <parameter>structure</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target_numerator</para></entry>
+<entry role="parameter_description"><para>The numerator of the target value of the fixation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target_denominator</para></entry>
+<entry role="parameter_description"><para>The denominator of the target value of the fixation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-fixate-field-nearest-fraction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure could be fixated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate-field-boolean" role="function">
+<title>gst_structure_fixate_field_boolean&#160;()</title>
+<indexterm zone="gst-structure-fixate-field-boolean"><primary>gst_structure_fixate_field_boolean</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_fixate_field_boolean (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                    <parameter>const <link linkend="char"><type>char</type></link> *field_name</parameter>,
+                                    <parameter><link linkend="gboolean"><type>gboolean</type></link> target</parameter>);</programlisting>
+<para>Fixates a <link linkend="GstStructure"><type>GstStructure</type></link> by changing the given <parameter>field_name</parameter>
+ field to the given
+<parameter>target</parameter>
+ boolean if that field is not fixed yet.</para>
+<refsect3 id="gst-structure-fixate-field-boolean.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_name</para></entry>
+<entry role="parameter_description"><para>a field in <parameter>structure</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para>the target value of the fixation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-fixate-field-boolean.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure could be fixated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-structure-fixate-field-string" role="function">
+<title>gst_structure_fixate_field_string&#160;()</title>
+<indexterm zone="gst-structure-fixate-field-string"><primary>gst_structure_fixate_field_string</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_structure_fixate_field_string (<parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>,
+                                   <parameter>const <link linkend="char"><type>char</type></link> *field_name</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *target</parameter>);</programlisting>
+<para>Fixates a <link linkend="GstStructure"><type>GstStructure</type></link> by changing the given <parameter>field_name</parameter>
+ field to the given
+<parameter>target</parameter>
+ string if that field is not fixed yet.</para>
+<refsect3 id="gst-structure-fixate-field-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>structure</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstStructure"><type>GstStructure</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field_name</para></entry>
+<entry role="parameter_description"><para>a field in <parameter>structure</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>target</para></entry>
+<entry role="parameter_description"><para>the target value of the fixation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-structure-fixate-field-string.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the structure could be fixated</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstStructure.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstStructure-struct" role="struct">
+<title>struct GstStructure</title>
+<indexterm zone="GstStructure-struct"><primary>GstStructure</primary></indexterm>
+<programlisting language="C">struct GstStructure {
+  GType type;
+};
+</programlisting>
+<para>The GstStructure object. Most fields are private.</para>
+<refsect3 id="GstStructure.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GType"><type>GType</type></link>&#160;<structfield id="GstStructure-struct.type">type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the GType of a structure</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstStructure.see-also">
+<title>See Also</title>
+<para><link linkend="GstCaps"><type>GstCaps</type></link>, <link linkend="GstMessage"><type>GstMessage</type></link>, <link linkend="GstEvent"><type>GstEvent</type></link>, <link linkend="GstQuery"><type>GstQuery</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTaskPool">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTaskPool.top_of_page">GstTaskPool</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTaskPool</refname>
+<refpurpose>Pool of GStreamer streaming threads</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTaskPool.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstTaskPoolFunction">*GstTaskPoolFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstTaskPool"><returnvalue>GstTaskPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-task-pool-new">gst_task_pool_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-pool-prepare">gst_task_pool_prepare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-pool-push">gst_task_pool_push</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-pool-join">gst_task_pool_join</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-task-pool-cleanup">gst_task_pool_cleanup</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTaskPool.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTaskPool-struct">GstTaskPool</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTaskPoolClass">GstTaskPoolClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTaskPool.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTaskPool
+</screen>
+</refsect1>
+
+<refsect1 id="GstTaskPool.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTaskPool.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This object provides an abstraction for creating threads. The default
+implementation uses a regular GThreadPool to start tasks.</para>
+<para>Subclasses can be made to create custom threads.</para>
+
+</refsect1>
+<refsect1 id="GstTaskPool.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstTaskPoolFunction" role="function">
+<title>GstTaskPoolFunction&#160;()</title>
+<indexterm zone="GstTaskPoolFunction"><primary>GstTaskPoolFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstTaskPoolFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="void"><type>void</type></link> *user_data</parameter>);</programlisting>
+<para>Task function, see <link linkend="gst-task-pool-push"><function>gst_task_pool_push()</function></link>.</para>
+<refsect3 id="GstTaskPoolFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data for the task function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-pool-new" role="function">
+<title>gst_task_pool_new&#160;()</title>
+<indexterm zone="gst-task-pool-new"><primary>gst_task_pool_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstTaskPool"><returnvalue>GstTaskPool</returnvalue></link>&#160;*
+gst_task_pool_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new default task pool. The default task pool will use a regular
+GThreadPool for threads.</para>
+<refsect3 id="gst-task-pool-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstTaskPool"><type>GstTaskPool</type></link>. <link linkend="gst-object-unref"><function>gst_object_unref()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-pool-prepare" role="function">
+<title>gst_task_pool_prepare&#160;()</title>
+<indexterm zone="gst-task-pool-prepare"><primary>gst_task_pool_prepare</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_pool_prepare (<parameter><link linkend="GstTaskPool"><type>GstTaskPool</type></link> *pool</parameter>,
+                       <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Prepare the taskpool for accepting <link linkend="gst-task-pool-push"><function>gst_task_pool_push()</function></link> operations.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-task-pool-prepare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTaskPool"><type>GstTaskPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>an error return location</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-pool-push" role="function">
+<title>gst_task_pool_push&#160;()</title>
+<indexterm zone="gst-task-pool-push"><primary>gst_task_pool_push</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+gst_task_pool_push (<parameter><link linkend="GstTaskPool"><type>GstTaskPool</type></link> *pool</parameter>,
+                    <parameter><link linkend="GstTaskPoolFunction"><type>GstTaskPoolFunction</type></link> func</parameter>,
+                    <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                    <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Start the execution of a new thread from <parameter>pool</parameter>
+.</para>
+<refsect3 id="gst-task-pool-push.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTaskPool"><type>GstTaskPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to call. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope async</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> data to pass to <parameter>func</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>return location for an error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-task-pool-push.returns" role="returns">
+<title>Returns</title>
+<para> a pointer that should be used
+for the gst_task_pool_join function. This pointer can be <link linkend="NULL:CAPS"><literal>NULL</literal></link>, you
+must check <parameter>error</parameter>
+to detect errors. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-task-pool-join" role="function">
+<title>gst_task_pool_join&#160;()</title>
+<indexterm zone="gst-task-pool-join"><primary>gst_task_pool_join</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_pool_join (<parameter><link linkend="GstTaskPool"><type>GstTaskPool</type></link> *pool</parameter>,
+                    <parameter><link linkend="gpointer"><type>gpointer</type></link> id</parameter>);</programlisting>
+<para>Join a task and/or return it to the pool. <parameter>id</parameter>
+ is the id obtained from 
+<link linkend="gst-task-pool-push"><function>gst_task_pool_push()</function></link>.</para>
+<refsect3 id="gst-task-pool-join.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTaskPool"><type>GstTaskPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>id</para></entry>
+<entry role="parameter_description"><para>the id</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-task-pool-cleanup" role="function">
+<title>gst_task_pool_cleanup&#160;()</title>
+<indexterm zone="gst-task-pool-cleanup"><primary>gst_task_pool_cleanup</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_task_pool_cleanup (<parameter><link linkend="GstTaskPool"><type>GstTaskPool</type></link> *pool</parameter>);</programlisting>
+<para>Wait for all tasks to be stopped. This is mainly used internally
+to ensure proper cleanup of internal data structures in test suites.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-task-pool-cleanup.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstTaskPool"><type>GstTaskPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstTaskPool.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTaskPool-struct" role="struct">
+<title>struct GstTaskPool</title>
+<indexterm zone="GstTaskPool-struct"><primary>GstTaskPool</primary></indexterm>
+<programlisting language="C">struct GstTaskPool;</programlisting>
+<para>The <link linkend="GstTaskPool"><type>GstTaskPool</type></link> object.</para>
+</refsect2>
+<refsect2 id="GstTaskPoolClass" role="struct">
+<title>struct GstTaskPoolClass</title>
+<indexterm zone="GstTaskPoolClass"><primary>GstTaskPoolClass</primary></indexterm>
+<programlisting language="C">struct GstTaskPoolClass {
+  GstObjectClass parent_class;
+
+  void      (*prepare)  (GstTaskPool *pool, GError **error);
+  void      (*cleanup)  (GstTaskPool *pool);
+
+  gpointer  (*push)     (GstTaskPool *pool, GstTaskPoolFunction func,
+                         gpointer user_data, GError **error);
+  void      (*join)     (GstTaskPool *pool, gpointer id);
+};
+</programlisting>
+<para>The <link linkend="GstTaskPoolClass"><type>GstTaskPoolClass</type></link> object.</para>
+<refsect3 id="GstTaskPoolClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTaskPoolClass.prepare">prepare</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>prepare the threadpool</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTaskPoolClass.cleanup">cleanup</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>make sure all threads are stopped</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTaskPoolClass.push">push</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>start a new thread</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstTaskPoolClass.join">join</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>join a thread</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstTaskPool.see-also">
+<title>See Also</title>
+<para><link linkend="GstTask"><type>GstTask</type></link>, <link linkend="GstPad"><type>GstPad</type></link></para>
+
+</refsect1>
+
+</refentry>

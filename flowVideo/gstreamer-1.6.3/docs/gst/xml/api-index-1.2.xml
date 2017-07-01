@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.2">
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gst-buffer-get-max-memory"><link linkend="gst-buffer-get-max-memory">gst_buffer_get_max_memory</link>, function in <link linkend="GstBuffer">GstBuffer</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gst-caps-append-structure-full"><link linkend="gst-caps-append-structure-full">gst_caps_append_structure_full</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-add"><link linkend="gst-caps-features-add">gst_caps_features_add</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-add-id"><link linkend="gst-caps-features-add-id">gst_caps_features_add_id</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-contains"><link linkend="gst-caps-features-contains">gst_caps_features_contains</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-contains-id"><link linkend="gst-caps-features-contains-id">gst_caps_features_contains_id</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-copy"><link linkend="gst-caps-features-copy">gst_caps_features_copy</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-free"><link linkend="gst-caps-features-free">gst_caps_features_free</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-from-string"><link linkend="gst-caps-features-from-string">gst_caps_features_from_string</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-get-nth"><link linkend="gst-caps-features-get-nth">gst_caps_features_get_nth</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-get-nth-id"><link linkend="gst-caps-features-get-nth-id">gst_caps_features_get_nth_id</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-get-size"><link linkend="gst-caps-features-get-size">gst_caps_features_get_size</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-is-any"><link linkend="gst-caps-features-is-any">gst_caps_features_is_any</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-is-equal"><link linkend="gst-caps-features-is-equal">gst_caps_features_is_equal</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-new"><link linkend="gst-caps-features-new">gst_caps_features_new</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-new-any"><link linkend="gst-caps-features-new-any">gst_caps_features_new_any</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-new-empty"><link linkend="gst-caps-features-new-empty">gst_caps_features_new_empty</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-new-id"><link linkend="gst-caps-features-new-id">gst_caps_features_new_id</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-new-id-valist"><link linkend="gst-caps-features-new-id-valist">gst_caps_features_new_id_valist</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-new-valist"><link linkend="gst-caps-features-new-valist">gst_caps_features_new_valist</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-remove"><link linkend="gst-caps-features-remove">gst_caps_features_remove</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-remove-id"><link linkend="gst-caps-features-remove-id">gst_caps_features_remove_id</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-set-parent-refcount"><link linkend="gst-caps-features-set-parent-refcount">gst_caps_features_set_parent_refcount</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-features-to-string"><link linkend="gst-caps-features-to-string">gst_caps_features_to_string</link>, function in <link linkend="GstCapsFeatures">GstCapsFeatures</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-get-features"><link linkend="gst-caps-get-features">gst_caps_get_features</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-is-subset-structure-full"><link linkend="gst-caps-is-subset-structure-full">gst_caps_is_subset_structure_full</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-merge-structure-full"><link linkend="gst-caps-merge-structure-full">gst_caps_merge_structure_full</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-caps-set-features"><link linkend="gst-caps-set-features">gst_caps_set_features</link>, function in <link linkend="GstCaps">GstCaps</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-context-get-context-type"><link linkend="gst-context-get-context-type">gst_context_get_context_type</link>, function in <link linkend="GstContext">GstContext</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-context-get-structure"><link linkend="gst-context-get-structure">gst_context_get_structure</link>, function in <link linkend="GstContext">GstContext</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-context-has-context-type"><link linkend="gst-context-has-context-type">gst_context_has_context_type</link>, function in <link linkend="GstContext">GstContext</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-context-is-persistent"><link linkend="gst-context-is-persistent">gst_context_is_persistent</link>, function in <link linkend="GstContext">GstContext</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-context-new"><link linkend="gst-context-new">gst_context_new</link>, function in <link linkend="GstContext">GstContext</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-context-writable-structure"><link linkend="gst-context-writable-structure">gst_context_writable_structure</link>, function in <link linkend="GstContext">GstContext</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gst-debug-get-color-mode"><link linkend="gst-debug-get-color-mode">gst_debug_get_color_mode</link>, function in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-debug-set-color-mode"><link linkend="gst-debug-set-color-mode">gst_debug_set_color_mode</link>, function in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-debug-set-color-mode-from-string"><link linkend="gst-debug-set-color-mode-from-string">gst_debug_set_color_mode_from_string</link>, function in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-debug-set-threshold-from-string"><link linkend="gst-debug-set-threshold-from-string">gst_debug_set_threshold_from_string</link>, function in <link linkend="gstreamer-GstInfo">GstInfo</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="gst-event-parse-group-id"><link linkend="gst-event-parse-group-id">gst_event_parse_group_id</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-event-parse-stream-flags"><link linkend="gst-event-parse-stream-flags">gst_event_parse_stream_flags</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-event-set-group-id"><link linkend="gst-event-set-group-id">gst_event_set_group_id</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-event-set-stream-flags"><link linkend="gst-event-set-stream-flags">gst_event_set_stream_flags</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>M</title>
+<indexentry><primaryie linkends="GST-MEMORY-IS-NOT-MAPPABLE:CAPS"><link linkend="GST-MEMORY-IS-NOT-MAPPABLE:CAPS">GST_MEMORY_IS_NOT_MAPPABLE</link>, macro in <link linkend="GstMemory">GstMemory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-MEMORY-IS-PHYSICALLY-CONTIGUOUS:CAPS"><link linkend="GST-MEMORY-IS-PHYSICALLY-CONTIGUOUS:CAPS">GST_MEMORY_IS_PHYSICALLY_CONTIGUOUS</link>, macro in <link linkend="GstMemory">GstMemory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-memory-is-type"><link linkend="gst-memory-is-type">gst_memory_is_type</link>, function in <link linkend="GstMemory">GstMemory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-new-have-context"><link linkend="gst-message-new-have-context">gst_message_new_have_context</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-new-need-context"><link linkend="gst-message-new-need-context">gst_message_new_need_context</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-parse-context-type"><link linkend="gst-message-parse-context-type">gst_message_parse_context_type</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-parse-group-id"><link linkend="gst-message-parse-group-id">gst_message_parse_group_id</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-parse-have-context"><link linkend="gst-message-parse-have-context">gst_message_parse_have_context</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-set-group-id"><link linkend="gst-message-set-group-id">gst_message_set_group_id</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-meta-api-type-get-tags"><link linkend="gst-meta-api-type-get-tags">gst_meta_api_type_get_tags</link>, function in <link linkend="gstreamer-GstMeta">GstMeta</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-META-TAG-MEMORY-STR:CAPS"><link linkend="GST-META-TAG-MEMORY-STR:CAPS">GST_META_TAG_MEMORY_STR</link>, macro in <link linkend="gstreamer-GstMeta">GstMeta</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gst-pad-get-stream-id"><link linkend="gst-pad-get-stream-id">gst_pad_get_stream_id</link>, function in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-pad-store-sticky-event"><link linkend="gst-pad-store-sticky-event">gst_pad_store_sticky_event</link>, function in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-plugin-feature-get-plugin-name"><link linkend="gst-plugin-feature-get-plugin-name">gst_plugin_feature_get_plugin_name</link>, function in <link linkend="GstPluginFeature">GstPluginFeature</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PLUGIN-STATIC-DECLARE:CAPS"><link linkend="GST-PLUGIN-STATIC-DECLARE:CAPS">GST_PLUGIN_STATIC_DECLARE</link>, macro in <link linkend="GstPlugin">GstPlugin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PLUGIN-STATIC-REGISTER:CAPS"><link linkend="GST-PLUGIN-STATIC-REGISTER:CAPS">GST_PLUGIN_STATIC_REGISTER</link>, macro in <link linkend="GstPlugin">GstPlugin</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>Q</title>
+<indexentry><primaryie linkends="gst-query-new-context"><link linkend="gst-query-new-context">gst_query_new_context</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-parse-context"><link linkend="gst-query-parse-context">gst_query_parse_context</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-parse-context-type"><link linkend="gst-query-parse-context-type">gst_query_parse_context_type</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-parse-uri-redirection"><link linkend="gst-query-parse-uri-redirection">gst_query_parse_uri_redirection</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-remove-nth-allocation-param"><link linkend="gst-query-remove-nth-allocation-param">gst_query_remove_nth_allocation_param</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-remove-nth-allocation-pool"><link linkend="gst-query-remove-nth-allocation-pool">gst_query_remove_nth_allocation_pool</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-set-context"><link linkend="gst-query-set-context">gst_query_set_context</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-set-uri-redirection"><link linkend="gst-query-set-uri-redirection">gst_query_set_uri_redirection</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gst-sample-copy"><link linkend="gst-sample-copy">gst_sample_copy</link>, function in <link linkend="GstSample">GstSample</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstStreamFlags"><link linkend="GstStreamFlags">GstStreamFlags</link>, enum in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-structure-new-from-string"><link linkend="gst-structure-new-from-string">gst_structure_new_from_string</link>, function in <link linkend="GstStructure">GstStructure</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="GST-TAG-INTERPRETED-BY:CAPS"><link linkend="GST-TAG-INTERPRETED-BY:CAPS">GST_TAG_INTERPRETED_BY</link>, macro in <link linkend="GstTagList">GstTagList</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-TAG-PUBLISHER:CAPS"><link linkend="GST-TAG-PUBLISHER:CAPS">GST_TAG_PUBLISHER</link>, macro in <link linkend="GstTagList">GstTagList</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>V</title>
+<indexentry><primaryie linkends="gst-value-array-append-and-take-value"><link linkend="gst-value-array-append-and-take-value">gst_value_array_append_and_take_value</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-value-list-append-and-take-value"><link linkend="gst-value-list-append-and-take-value">gst_value_list_append_and_take_value</link>, function in <link linkend="gstreamer-GstValue">GstValue</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,427 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstContext">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstContext.top_of_page">GstContext</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstContext</refname>
+<refpurpose>Lightweight objects to represent element contexts</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstContext.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstContext"><returnvalue>GstContext</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-context-new">gst_context_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstContext"><returnvalue>GstContext</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-context-ref">gst_context_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-context-unref">gst_context_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstContext"><returnvalue>GstContext</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-context-copy">gst_context_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-context-get-context-type">gst_context_get_context_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-context-has-context-type">gst_context_has_context_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-context-is-persistent">gst_context_is_persistent</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-context-get-structure">gst_context_get_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-context-writable-structure">gst_context_writable_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-context-make-writable">gst_context_make_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="gst-context-is-writable">gst_context_is_writable</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-context-replace">gst_context_replace</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstContext.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="GstContext-struct">GstContext</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstContext.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstContext
+</screen>
+</refsect1>
+
+<refsect1 id="GstContext.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstContext.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="GstContext"><type>GstContext</type></link> is a container object used to store contexts like a device
+context, a display server connection and similar concepts that should
+be shared between multiple elements.</para>
+<para>Applications can set a context on a complete pipeline by using
+<link linkend="gst-element-set-context"><function>gst_element_set_context()</function></link>, which will then be propagated to all
+child elements. Elements can handle these in <link linkend="GstElementClass.set-context"><function>GstElementClass.set_context()</function></link>
+and merge them with the context information they already have.</para>
+<para>When an element needs a context it will do the following actions in this
+order until one step succeeds:</para>
+<orderedlist>
+<listitem><para>Check if the element already has a context</para></listitem>
+<listitem><para>Query downstream with GST_QUERY_CONTEXT for the context</para></listitem>
+<listitem><para>Query upstream with GST_QUERY_CONTEXT for the context</para></listitem>
+<listitem><para>Post a GST_MESSAGE_NEED_CONTEXT message on the bus with the required
+context types and afterwards check if a usable context was set now</para></listitem>
+<listitem>
+<para>Create a context by itself and post a GST_MESSAGE_HAVE_CONTEXT message
+on the bus.</para>
+</listitem>
+</orderedlist>
+<para>Bins will catch GST_MESSAGE_NEED_CONTEXT messages and will set any previously
+known context on the element that asks for it if possible. Otherwise the
+application should provide one if it can.</para>
+
+</refsect1>
+<refsect1 id="GstContext.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-context-new" role="function" condition="since:1.2">
+<title>gst_context_new&#160;()</title>
+<indexterm zone="gst-context-new" role="1.2"><primary>gst_context_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstContext"><returnvalue>GstContext</returnvalue></link>&#160;*
+gst_context_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *context_type</parameter>,
+                 <parameter><link linkend="gboolean"><type>gboolean</type></link> persistent</parameter>);</programlisting>
+<para>Create a new context.</para>
+<refsect3 id="gst-context-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context_type</para></entry>
+<entry role="parameter_description"><para>Context type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>persistent</para></entry>
+<entry role="parameter_description"><para>Persistent context</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-new.returns" role="returns">
+<title>Returns</title>
+<para> The new context. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-context-ref" role="function">
+<title>gst_context_ref&#160;()</title>
+<indexterm zone="gst-context-ref"><primary>gst_context_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstContext"><returnvalue>GstContext</returnvalue></link>&#160;*
+gst_context_ref (<parameter><link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Convenience macro to increase the reference count of the context.</para>
+<refsect3 id="gst-context-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>the context to ref</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-ref.returns" role="returns">
+<title>Returns</title>
+<para> <parameter>context</parameter>
+(for convenience when doing assignments)</para>
+</refsect3></refsect2>
+<refsect2 id="gst-context-unref" role="function">
+<title>gst_context_unref&#160;()</title>
+<indexterm zone="gst-context-unref"><primary>gst_context_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_context_unref (<parameter><link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Convenience macro to decrease the reference count of the context, possibly
+freeing it.</para>
+<refsect3 id="gst-context-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>the context to unref</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-context-copy" role="function">
+<title>gst_context_copy&#160;()</title>
+<indexterm zone="gst-context-copy"><primary>gst_context_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstContext"><returnvalue>GstContext</returnvalue></link>&#160;*
+gst_context_copy (<parameter>const <link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Creates a copy of the context. Returns a copy of the context.</para>
+<refsect3 id="gst-context-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>the context to copy</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new copy of <parameter>context</parameter>
+.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-context-get-context-type" role="function" condition="since:1.2">
+<title>gst_context_get_context_type&#160;()</title>
+<indexterm zone="gst-context-get-context-type" role="1.2"><primary>gst_context_get_context_type</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_context_get_context_type (<parameter>const <link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Get the type of <parameter>context</parameter>
+.</para>
+<refsect3 id="gst-context-get-context-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstContext"><type>GstContext</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-get-context-type.returns" role="returns">
+<title>Returns</title>
+<para> The type of the context.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-context-has-context-type" role="function" condition="since:1.2">
+<title>gst_context_has_context_type&#160;()</title>
+<indexterm zone="gst-context-has-context-type" role="1.2"><primary>gst_context_has_context_type</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_context_has_context_type (<parameter>const <link linkend="GstContext"><type>GstContext</type></link> *context</parameter>,
+                              <parameter>const <link linkend="gchar"><type>gchar</type></link> *context_type</parameter>);</programlisting>
+<para>Checks if <parameter>context</parameter>
+ has <parameter>context_type</parameter>
+.</para>
+<refsect3 id="gst-context-has-context-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstContext"><type>GstContext</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>context_type</para></entry>
+<entry role="parameter_description"><para>Context type to check.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-has-context-type.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>context</parameter>
+has <parameter>context_type</parameter>
+.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-context-is-persistent" role="function" condition="since:1.2">
+<title>gst_context_is_persistent&#160;()</title>
+<indexterm zone="gst-context-is-persistent" role="1.2"><primary>gst_context_is_persistent</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_context_is_persistent (<parameter>const <link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Check if <parameter>context</parameter>
+ is persistent.</para>
+<refsect3 id="gst-context-is-persistent.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstContext"><type>GstContext</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-is-persistent.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the context is persistent.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-context-get-structure" role="function" condition="since:1.2">
+<title>gst_context_get_structure&#160;()</title>
+<indexterm zone="gst-context-get-structure" role="1.2"><primary>gst_context_get_structure</primary></indexterm>
+<programlisting language="C">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_context_get_structure (<parameter>const <link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Access the structure of the context.</para>
+<refsect3 id="gst-context-get-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstContext"><type>GstContext</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-get-structure.returns" role="returns">
+<title>Returns</title>
+<para> The structure of the context. The structure is
+still owned by the context, which means that you should not modify it,
+free it and that the pointer becomes invalid when you free the context. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-context-writable-structure" role="function" condition="since:1.2">
+<title>gst_context_writable_structure&#160;()</title>
+<indexterm zone="gst-context-writable-structure" role="1.2"><primary>gst_context_writable_structure</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_context_writable_structure (<parameter><link linkend="GstContext"><type>GstContext</type></link> *context</parameter>);</programlisting>
+<para>Get a writable version of the structure.</para>
+<refsect3 id="gst-context-writable-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstContext"><type>GstContext</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-writable-structure.returns" role="returns">
+<title>Returns</title>
+<para> The structure of the context. The structure is still
+owned by the event, which means that you should not free it and
+that the pointer becomes invalid when you free the event.
+This function checks if <parameter>context</parameter>
+is writable.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-context-make-writable" role="macro">
+<title>gst_context_make_writable()</title>
+<indexterm zone="gst-context-make-writable"><primary>gst_context_make_writable</primary></indexterm>
+<programlisting language="C">#define         gst_context_make_writable(context)  GST_CONTEXT_CAST (gst_mini_object_make_writable (GST_MINI_OBJECT_CAST (context)))
+</programlisting>
+<para>Checks if a context is writable. If not, a writable copy is made and
+returned.</para>
+<refsect3 id="gst-context-make-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para> the context to make writable. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-make-writable.returns" role="returns">
+<title>Returns</title>
+<para> a context (possibly a duplicate) that is writable.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-context-is-writable" role="macro">
+<title>gst_context_is_writable()</title>
+<indexterm zone="gst-context-is-writable"><primary>gst_context_is_writable</primary></indexterm>
+<programlisting language="C">#define         gst_context_is_writable(context)     gst_mini_object_is_writable (GST_MINI_OBJECT_CAST (context))
+</programlisting>
+<para>Tests if you can safely write into a context's structure or validly
+modify the seqnum and timestamp fields.</para>
+<refsect3 id="gst-context-is-writable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstContext"><type>GstContext</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-context-replace" role="function">
+<title>gst_context_replace&#160;()</title>
+<indexterm zone="gst-context-replace"><primary>gst_context_replace</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_context_replace (<parameter><link linkend="GstContext"><type>GstContext</type></link> **old_context</parameter>,
+                     <parameter><link linkend="GstContext"><type>GstContext</type></link> *new_context</parameter>);</programlisting>
+<para>Modifies a pointer to a <link linkend="GstContext"><type>GstContext</type></link> to point to a different <link linkend="GstContext"><type>GstContext</type></link>. The
+modification is done atomically (so this is useful for ensuring thread safety
+in some cases), and the reference counts are updated appropriately (the old
+context is unreffed, the new one is reffed).</para>
+<para>Either <parameter>new_context</parameter>
+ or the <link linkend="GstContext"><type>GstContext</type></link> pointed to by <parameter>old_context</parameter>
+ may be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<refsect3 id="gst-context-replace.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>old_context</para></entry>
+<entry role="parameter_description"><para> pointer to a pointer to a <link linkend="GstContext"><type>GstContext</type></link>
+to be replaced. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>inout</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>new_context</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="GstContext"><type>GstContext</type></link> that will
+replace the context pointed to by <parameter>old_context</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-context-replace.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>new_context</parameter>
+was different from <parameter>old_context</parameter>
+</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstContext.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstContext-struct" role="struct">
+<title>GstContext</title>
+<indexterm zone="GstContext-struct"><primary>GstContext</primary></indexterm>
+<programlisting language="C">typedef struct _GstContext GstContext;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstContext.see-also">
+<title>See Also</title>
+<para><link linkend="GstMiniObject"><type>GstMiniObject</type></link>, <link linkend="GstElement"><type>GstElement</type></link></para>
+
+</refsect1>
+
+</refentry>

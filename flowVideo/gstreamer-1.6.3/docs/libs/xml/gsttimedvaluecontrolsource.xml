@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstTimedValueControlSource">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstTimedValueControlSource.top_of_page">GstTimedValueControlSource</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTimedValueControlSource</refname>
+<refpurpose>timed value control source base class</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstTimedValueControlSource.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GSequenceIter"><returnvalue>GSequenceIter</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-find-control-point-iter">gst_timed_value_control_source_find_control_point_iter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-set">gst_timed_value_control_source_set</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-set-from-list">gst_timed_value_control_source_set_from_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-get-all">gst_timed_value_control_source_get_all</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-unset">gst_timed_value_control_source_unset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-unset-all">gst_timed_value_control_source_unset_all</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-source-get-count">gst_timed_value_control_source_get_count</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-timed-value-control-invalidate-cache">gst_timed_value_control_invalidate_cache</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTimedValueControlSource.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstTimedValueControlSource-value-added">value-added</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstTimedValueControlSource-value-changed">value-changed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstTimedValueControlSource-value-removed">value-removed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTimedValueControlSource.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTimedValueControlSource-struct">GstTimedValueControlSource</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstControlPoint">GstControlPoint</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstTimedValueControlSource.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstControlSource">GstControlSource</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstTimedValueControlSource
+                    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstInterpolationControlSource">GstInterpolationControlSource</link>
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstTriggerControlSource">GstTriggerControlSource</link>
+</screen>
+</refsect1>
+
+<refsect1 id="GstTimedValueControlSource.includes"><title>Includes</title><synopsis>#include &lt;libs/controller/gsttimedvaluecontrolsource.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstTimedValueControlSource.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Base class for <link linkend="GstControlSource"><type>GstControlSource</type></link> that use time-stamped values.</para>
+<para>When overriding bind, chain up first to give this bind implementation a
+chance to setup things.</para>
+<para>All functions are MT-safe.</para>
+
+</refsect1>
+<refsect1 id="GstTimedValueControlSource.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-timed-value-control-source-find-control-point-iter" role="function">
+<title>gst_timed_value_control_source_find_control_point_iter&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-find-control-point-iter"><primary>gst_timed_value_control_source_find_control_point_iter</primary></indexterm>
+<programlisting language="C"><link linkend="GSequenceIter"><returnvalue>GSequenceIter</returnvalue></link>&#160;*
+gst_timed_value_control_source_find_control_point_iter
+                               (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>,
+                                <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Find last value before given timestamp in control point list.
+If all values in the control point list come after the given
+timestamp or no values exist, <link linkend="NULL:CAPS"><literal>NULL</literal></link> is returned.</para>
+<para>For use in control source implementations.</para>
+<refsect3 id="gst-timed-value-control-source-find-control-point-iter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the control source to search in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the search key</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-timed-value-control-source-find-control-point-iter.returns" role="returns">
+<title>Returns</title>
+<para> the found <link linkend="GSequenceIter"><type>GSequenceIter</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-source-set" role="function">
+<title>gst_timed_value_control_source_set&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-set"><primary>gst_timed_value_control_source_set</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_timed_value_control_source_set (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>,
+                                    <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>,
+                                    <parameter>const <link linkend="gdouble"><type>gdouble</type></link> value</parameter>);</programlisting>
+<para>Set the value of given controller-handled property at a certain time.</para>
+<refsect3 id="gst-timed-value-control-source-set.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time the control-change is scheduled for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>the control-value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-timed-value-control-source-set.returns" role="returns">
+<title>Returns</title>
+<para> FALSE if the values couldn't be set, TRUE otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-source-set-from-list" role="function">
+<title>gst_timed_value_control_source_set_from_list&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-set-from-list"><primary>gst_timed_value_control_source_set_from_list</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_timed_value_control_source_set_from_list
+                               (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>,
+                                <parameter>const <link linkend="GSList"><type>GSList</type></link> *timedvalues</parameter>);</programlisting>
+<para>Sets multiple timed values at once.</para>
+<refsect3 id="gst-timed-value-control-source-set-from-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timedvalues</para></entry>
+<entry role="parameter_description"><para> a list
+with <link linkend="GstTimedValue"><type>GstTimedValue</type></link> items. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> GstTimedValue]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-timed-value-control-source-set-from-list.returns" role="returns">
+<title>Returns</title>
+<para> FALSE if the values couldn't be set, TRUE otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-source-get-all" role="function">
+<title>gst_timed_value_control_source_get_all&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-get-all"><primary>gst_timed_value_control_source_get_all</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_timed_value_control_source_get_all
+                               (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>);</programlisting>
+<para>Returns a read-only copy of the list of <link linkend="GstTimedValue"><type>GstTimedValue</type></link> for the given property.
+Free the list after done with it.</para>
+<refsect3 id="gst-timed-value-control-source-get-all.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> to get the list from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-timed-value-control-source-get-all.returns" role="returns">
+<title>Returns</title>
+<para> a copy
+of the list, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the property isn't handled by the controller. </para>
+<para><emphasis role="annotation">[<acronym>transfer container</acronym>][<acronym>element-type</acronym> GstTimedValue]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-source-unset" role="function">
+<title>gst_timed_value_control_source_unset&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-unset"><primary>gst_timed_value_control_source_unset</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_timed_value_control_source_unset (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>,
+                                      <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> timestamp</parameter>);</programlisting>
+<para>Used to remove the value of given controller-handled property at a certain
+time.</para>
+<refsect3 id="gst-timed-value-control-source-unset.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>the time the control-change should be removed from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-timed-value-control-source-unset.returns" role="returns">
+<title>Returns</title>
+<para> FALSE if the value couldn't be unset (i.e. not found, TRUE otherwise.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-source-unset-all" role="function">
+<title>gst_timed_value_control_source_unset_all&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-unset-all"><primary>gst_timed_value_control_source_unset_all</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_timed_value_control_source_unset_all
+                               (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>);</programlisting>
+<para>Used to remove all time-stamped values of given controller-handled property</para>
+<refsect3 id="gst-timed-value-control-source-unset-all.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-source-get-count" role="function">
+<title>gst_timed_value_control_source_get_count&#160;()</title>
+<indexterm zone="gst-timed-value-control-source-get-count"><primary>gst_timed_value_control_source_get_count</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_timed_value_control_source_get_count
+                               (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>);</programlisting>
+<para>Get the number of control points that are set.</para>
+<refsect3 id="gst-timed-value-control-source-get-count.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> to get the number of values from</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-timed-value-control-source-get-count.returns" role="returns">
+<title>Returns</title>
+<para> the number of control points that are set.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-timed-value-control-invalidate-cache" role="function">
+<title>gst_timed_value_control_invalidate_cache&#160;()</title>
+<indexterm zone="gst-timed-value-control-invalidate-cache"><primary>gst_timed_value_control_invalidate_cache</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_timed_value_control_invalidate_cache
+                               (<parameter><link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self</parameter>);</programlisting>
+<para>Reset the controlled value cache.</para>
+<refsect3 id="gst-timed-value-control-invalidate-cache.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstTimedValueControlSource.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTimedValueControlSource-struct" role="struct">
+<title>struct GstTimedValueControlSource</title>
+<indexterm zone="GstTimedValueControlSource-struct"><primary>GstTimedValueControlSource</primary></indexterm>
+<programlisting language="C">struct GstTimedValueControlSource;</programlisting>
+<para>The instance structure of <link linkend="GstControlSource"><type>GstControlSource</type></link>.</para>
+</refsect2>
+<refsect2 id="GstControlPoint" role="struct">
+<title>struct GstControlPoint</title>
+<indexterm zone="GstControlPoint"><primary>GstControlPoint</primary></indexterm>
+<programlisting language="C">struct GstControlPoint {
+  /* fields from GstTimedValue. DO NOT CHANGE! */
+  GstClockTime timestamp;
+  gdouble value;
+};
+</programlisting>
+<para>a internal structure for value+time and various temporary
+values used for interpolation. This "inherits" from
+GstTimedValue.</para>
+<refsect3 id="GstControlPoint.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstClockTime"><type>GstClockTime</type></link>&#160;<structfield id="GstControlPoint.timestamp">timestamp</structfield>;</para></entry>
+<entry role="struct_member_description"><para>timestamp of the value change</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gdouble"><type>gdouble</type></link>&#160;<structfield id="GstControlPoint.value">value</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the new value</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstTimedValueControlSource.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstTimedValueControlSource-value-added" role="signal"><title>The <literal>“value-added”</literal> signal</title>
+<indexterm zone="GstTimedValueControlSource-value-added" role="1.6"><primary>GstTimedValueControlSource::value-added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self,
+               <link linkend="GstControlPoint"><type>GstControlPoint</type></link>            *timed_value,
+               <link linkend="gpointer"><type>gpointer</type></link>                    user_data)</programlisting>
+<para>Emited right after the new value has been added to <parameter>self</parameter>
+</para>
+<refsect3 id="GstTimedValueControlSource-value-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> into which a <link linkend="GstTimedValue"><type>GstTimedValue</type></link> has been
+added</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timed_value</para></entry>
+<entry role="parameter_description"><para>The newly added <link linkend="GstTimedValue"><type>GstTimedValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2><refsect2 id="GstTimedValueControlSource-value-changed" role="signal"><title>The <literal>“value-changed”</literal> signal</title>
+<indexterm zone="GstTimedValueControlSource-value-changed" role="1.6"><primary>GstTimedValueControlSource::value-changed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self,
+               <link linkend="GstControlPoint"><type>GstControlPoint</type></link>            *timed_value,
+               <link linkend="gpointer"><type>gpointer</type></link>                    user_data)</programlisting>
+<para>Emited right after the new value has been set on <parameter>timed_signals</parameter>
+</para>
+<refsect3 id="GstTimedValueControlSource-value-changed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> on which a <link linkend="GstTimedValue"><type>GstTimedValue</type></link> has changed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timed_value</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTimedValue"><type>GstTimedValue</type></link> where the value changed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2><refsect2 id="GstTimedValueControlSource-value-removed" role="signal"><title>The <literal>“value-removed”</literal> signal</title>
+<indexterm zone="GstTimedValueControlSource-value-removed" role="1.6"><primary>GstTimedValueControlSource::value-removed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> *self,
+               <link linkend="GstControlPoint"><type>GstControlPoint</type></link>            *timed_value,
+               <link linkend="gpointer"><type>gpointer</type></link>                    user_data)</programlisting>
+<para>Emited when <parameter>timed_value</parameter>
+ is removed from <parameter>self</parameter>
+</para>
+<refsect3 id="GstTimedValueControlSource-value-removed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstTimedValueControlSource"><type>GstTimedValueControlSource</type></link> from which a <link linkend="GstTimedValue"><type>GstTimedValue</type></link> has been
+removed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timed_value</para></entry>
+<entry role="parameter_description"><para>The removed <link linkend="GstTimedValue"><type>GstTimedValue</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+</refsect1>
+
+</refentry>

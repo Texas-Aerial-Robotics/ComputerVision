@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="GstSystemClock">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstSystemClock.top_of_page">GstSystemClock</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstSystemClock</refname>
+<refpurpose>Default clock that uses the current system time</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstSystemClock.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-system-clock-obtain">gst_system_clock_obtain</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-system-clock-set-default">gst_system_clock_set_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstSystemClock.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstClockType"><type>GstClockType</type></link></entry><entry role="property_name"><link linkend="GstSystemClock--clock-type">clock-type</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstSystemClock.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstClockType">GstClockType</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSystemClock-struct">GstSystemClock</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstSystemClock.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstClock">GstClock</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstSystemClock
+</screen>
+</refsect1>
+
+<refsect1 id="GstSystemClock.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="GstSystemClock.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The GStreamer core provides a GstSystemClock based on the system time.
+Asynchronous callbacks are scheduled from an internal thread.</para>
+<para>Clock implementors are encouraged to subclass this systemclock as it
+implements the async notification.</para>
+<para>Subclasses can however override all of the important methods for sync and
+async notifications to implement their own callback methods or blocking
+wait operations.</para>
+
+</refsect1>
+<refsect1 id="GstSystemClock.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-system-clock-obtain" role="function">
+<title>gst_system_clock_obtain&#160;()</title>
+<indexterm zone="gst-system-clock-obtain"><primary>gst_system_clock_obtain</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_system_clock_obtain (<parameter><type>void</type></parameter>);</programlisting>
+<para>Get a handle to the default system clock. The refcount of the
+clock will be increased so you need to unref the clock after
+usage.</para>
+<refsect3 id="gst-system-clock-obtain.returns" role="returns">
+<title>Returns</title>
+<para> the default clock.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-system-clock-set-default" role="function" condition="since:1.4">
+<title>gst_system_clock_set_default&#160;()</title>
+<indexterm zone="gst-system-clock-set-default" role="1.4"><primary>gst_system_clock_set_default</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_system_clock_set_default (<parameter><link linkend="GstClock"><type>GstClock</type></link> *new_clock</parameter>);</programlisting>
+<para>Sets the default system clock that can be obtained with
+<link linkend="gst-system-clock-obtain"><function>gst_system_clock_obtain()</function></link>.</para>
+<para>This is mostly used for testing and debugging purposes when you
+want to have control over the time reported by the default system
+clock.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-system-clock-set-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>new_clock</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClock"><type>GstClock</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="GstSystemClock.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstClockType" role="enum">
+<title>enum GstClockType</title>
+<indexterm zone="GstClockType"><primary>GstClockType</primary></indexterm>
+<para>The different kind of clocks.</para>
+<refsect3 id="GstClockType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-TYPE-REALTIME:CAPS">GST_CLOCK_TYPE_REALTIME</para></entry>
+<entry role="enum_member_description"><para>time since Epoch</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-TYPE-MONOTONIC:CAPS">GST_CLOCK_TYPE_MONOTONIC</para></entry>
+<entry role="enum_member_description"><para>monotonic time since some unspecified starting
+                           point</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-CLOCK-TYPE-OTHER:CAPS">GST_CLOCK_TYPE_OTHER</para></entry>
+<entry role="enum_member_description"><para>some other time source is used (Since 1.0.5)</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstSystemClock-struct" role="struct">
+<title>struct GstSystemClock</title>
+<indexterm zone="GstSystemClock-struct"><primary>GstSystemClock</primary></indexterm>
+<programlisting language="C">struct GstSystemClock;</programlisting>
+<para>The default implementation of a <link linkend="GstClock"><type>GstClock</type></link> that uses the system time.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstSystemClock.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSystemClock--clock-type" role="property"><title>The <literal>“clock-type”</literal> property</title>
+<indexterm zone="GstSystemClock--clock-type"><primary>GstSystemClock:clock-type</primary></indexterm>
+<programlisting>  “clock-type”               <link linkend="GstClockType"><type>GstClockType</type></link></programlisting>
+<para>The type of underlying clock implementation used.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_CLOCK_TYPE_MONOTONIC</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstSystemClock.see-also">
+<title>See Also</title>
+<para><link linkend="GstClock"><type>GstClock</type></link></para>
+
+</refsect1>
+
+</refentry>

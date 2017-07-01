@@ -1,0 +1,984 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstIterator">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstIterator.top_of_page">GstIterator</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstIterator</refname>
+<refpurpose>Object to retrieve multiple elements in a threadsafe
+way.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstIterator.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorCopyFunction">*GstIteratorCopyFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorNextFunction">*GstIteratorNextFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIteratorItem"><returnvalue>GstIteratorItem</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorItemFunction">*GstIteratorItemFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorResyncFunction">*GstIteratorResyncFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorFreeFunction">*GstIteratorFreeFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorForeachFunction">*GstIteratorForeachFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstIteratorFoldFunction">*GstIteratorFoldFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ITERATOR:CAPS">GST_ITERATOR</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ITERATOR-LOCK:CAPS">GST_ITERATOR_LOCK</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ITERATOR-COOKIE:CAPS">GST_ITERATOR_COOKIE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ITERATOR-ORIG-COOKIE:CAPS">GST_ITERATOR_ORIG_COOKIE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-iterator-new">gst_iterator_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-iterator-new-list">gst_iterator_new_list</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-iterator-new-single">gst_iterator_new_single</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-iterator-copy">gst_iterator_copy</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-free">gst_iterator_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-next">gst_iterator_next</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-resync">gst_iterator_resync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-push">gst_iterator_push</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-iterator-filter">gst_iterator_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-fold">gst_iterator_fold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-foreach">gst_iterator_foreach</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-iterator-find-custom">gst_iterator_find_custom</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstIterator.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstIterator">GstIterator</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstIteratorItem">GstIteratorItem</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstIteratorResult">GstIteratorResult</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstIterator.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstIterator.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A GstIterator is used to retrieve multiple objects from another object in
+a threadsafe way.</para>
+<para>Various GStreamer objects provide access to their internal structures using
+an iterator.</para>
+<para>Note that if calling a GstIterator function results in your code receiving
+a refcounted object (with, say, <link linkend="g-value-get-object"><function>g_value_get_object()</function></link>), the refcount for that
+object will not be increased. Your code is responsible for taking a reference
+if it wants to continue using it later.</para>
+<para>The basic use pattern of an iterator is as follows:</para>
+<informalexample><programlisting><![CDATA[
+  GstIterator *it = _get_iterator(object);
+  GValue item = G_VALUE_INIT;
+  done = FALSE;
+  while (!done) {
+    switch (gst_iterator_next (it, &item)) {
+      case GST_ITERATOR_OK:
+        ...get/use/change item here...
+        g_value_reset (&item);
+        break;
+      case GST_ITERATOR_RESYNC:
+        ...rollback changes to items...
+        gst_iterator_resync (it);
+        break;
+      case GST_ITERATOR_ERROR:
+        ...wrong parameters were given...
+        done = TRUE;
+        break;
+      case GST_ITERATOR_DONE:
+        done = TRUE;
+        break;
+    }
+  }
+  g_value_unset (&item);
+  gst_iterator_free (it);
+]]></programlisting></informalexample>
+<para></para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstIterator.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GstIteratorCopyFunction" role="function">
+<title>GstIteratorCopyFunction&#160;()</title>
+<indexterm zone="GstIteratorCopyFunction"><primary>GstIteratorCopyFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorCopyFunction<phrase role="c_punctuation">)</phrase> (<parameter>const <link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                            <parameter><link linkend="GstIterator"><type>GstIterator</type></link> *copy</parameter>);</programlisting>
+<para>This function will be called when creating a copy of <parameter>it</parameter>
+ and should
+create a copy of all custom iterator fields or increase their
+reference counts.</para>
+<refsect3 id="GstIteratorCopyFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The original iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>copy</para></entry>
+<entry role="parameter_description"><para>The copied iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorNextFunction" role="function">
+<title>GstIteratorNextFunction&#160;()</title>
+<indexterm zone="GstIteratorNextFunction"><primary>GstIteratorNextFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorNextFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                            <parameter><link linkend="GValue"><type>GValue</type></link> *result</parameter>);</programlisting>
+<para>The function that will be called when the next element of the iterator
+should be retrieved.</para>
+<para>Implementors of a <link linkend="GstIterator"><type>GstIterator</type></link> should implement this
+function and pass it to the constructor of the custom iterator.
+The function will be called with the iterator lock held.</para>
+<refsect3 id="GstIteratorNextFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>a pointer to hold the next item</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstIteratorNextFunction.returns" role="returns">
+<title>Returns</title>
+<para> the result of the operation.</para>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorItemFunction" role="function">
+<title>GstIteratorItemFunction&#160;()</title>
+<indexterm zone="GstIteratorItemFunction"><primary>GstIteratorItemFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstIteratorItem"><returnvalue>GstIteratorItem</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorItemFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                            <parameter>const <link linkend="GValue"><type>GValue</type></link> *item</parameter>);</programlisting>
+<para>The function that will be called after the next item of the iterator
+has been retrieved. This function can be used to skip items or stop
+the iterator.</para>
+<para>The function will be called with the iterator lock held.</para>
+<refsect3 id="GstIteratorItemFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>the item being retrieved.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstIteratorItemFunction.returns" role="returns">
+<title>Returns</title>
+<para> the result of the operation.</para>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorResyncFunction" role="function">
+<title>GstIteratorResyncFunction&#160;()</title>
+<indexterm zone="GstIteratorResyncFunction"><primary>GstIteratorResyncFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorResyncFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>);</programlisting>
+<para>This function will be called whenever a concurrent update happened
+to the iterated datastructure. The implementor of the iterator should
+restart the iterator from the beginning and clean up any state it might
+have.</para>
+<para>Implementors of a <link linkend="GstIterator"><type>GstIterator</type></link> should implement this
+function and pass it to the constructor of the custom iterator.
+The function will be called with the iterator lock held.</para>
+<refsect3 id="GstIteratorResyncFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorFreeFunction" role="function">
+<title>GstIteratorFreeFunction&#160;()</title>
+<indexterm zone="GstIteratorFreeFunction"><primary>GstIteratorFreeFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorFreeFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>);</programlisting>
+<para>This function will be called when the iterator is freed.</para>
+<para>Implementors of a <link linkend="GstIterator"><type>GstIterator</type></link> should implement this
+function and pass it to the constructor of the custom iterator.
+The function will be called with the iterator lock held.</para>
+<refsect3 id="GstIteratorFreeFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorForeachFunction" role="function">
+<title>GstIteratorForeachFunction&#160;()</title>
+<indexterm zone="GstIteratorForeachFunction"><primary>GstIteratorForeachFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorForeachFunction<phrase role="c_punctuation">)</phrase> (<parameter>const <link linkend="GValue"><type>GValue</type></link> *item</parameter>,
+                               <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function that is called by <link linkend="gst-iterator-foreach"><function>gst_iterator_foreach()</function></link> for every element.</para>
+<refsect3 id="GstIteratorForeachFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>The item</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorFoldFunction" role="function">
+<title>GstIteratorFoldFunction&#160;()</title>
+<indexterm zone="GstIteratorFoldFunction"><primary>GstIteratorFoldFunction</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstIteratorFoldFunction<phrase role="c_punctuation">)</phrase> (<parameter>const <link linkend="GValue"><type>GValue</type></link> *item</parameter>,
+                            <parameter><link linkend="GValue"><type>GValue</type></link> *ret</parameter>,
+                            <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>A function to be passed to <link linkend="gst-iterator-fold"><function>gst_iterator_fold()</function></link>.</para>
+<refsect3 id="GstIteratorFoldFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>the item to fold</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ret</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GValue"><type>GValue</type></link> collecting the result</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>data passed to <link linkend="gst-iterator-fold"><function>gst_iterator_fold()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstIteratorFoldFunction.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the fold should continue, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if it should stop.</para>
+</refsect3></refsect2>
+<refsect2 id="GST-ITERATOR:CAPS" role="macro">
+<title>GST_ITERATOR()</title>
+<indexterm zone="GST-ITERATOR:CAPS"><primary>GST_ITERATOR</primary></indexterm>
+<programlisting language="C">#define GST_ITERATOR(it)                ((GstIterator*)(it))
+</programlisting>
+<para>Macro to cast to a <link linkend="GstIterator"><type>GstIterator</type></link></para>
+<refsect3 id="GST-ITERATOR.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstIterator"><type>GstIterator</type></link> value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ITERATOR-LOCK:CAPS" role="macro">
+<title>GST_ITERATOR_LOCK()</title>
+<indexterm zone="GST-ITERATOR-LOCK:CAPS"><primary>GST_ITERATOR_LOCK</primary></indexterm>
+<programlisting language="C">#define GST_ITERATOR_LOCK(it)           (GST_ITERATOR(it)-&gt;lock)
+</programlisting>
+<para>Macro to get the lock protecting the datastructure being iterated.</para>
+<refsect3 id="GST-ITERATOR-LOCK.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstIterator"><type>GstIterator</type></link> to get the lock of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ITERATOR-COOKIE:CAPS" role="macro">
+<title>GST_ITERATOR_COOKIE()</title>
+<indexterm zone="GST-ITERATOR-COOKIE:CAPS"><primary>GST_ITERATOR_COOKIE</primary></indexterm>
+<programlisting language="C">#define GST_ITERATOR_COOKIE(it)         (GST_ITERATOR(it)-&gt;cookie)
+</programlisting>
+<para>Macro to get the cookie of a <link linkend="GstIterator"><type>GstIterator</type></link>. The cookie of the
+iterator is the value of the master cookie when the iterator
+was created.
+Whenever the iterator is iterated, the value is compared to the
+value of the master cookie. If they are different, a concurrent
+modification happened to the iterator and a resync is needed.</para>
+<refsect3 id="GST-ITERATOR-COOKIE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstIterator"><type>GstIterator</type></link> to get the cookie of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ITERATOR-ORIG-COOKIE:CAPS" role="macro">
+<title>GST_ITERATOR_ORIG_COOKIE()</title>
+<indexterm zone="GST-ITERATOR-ORIG-COOKIE:CAPS"><primary>GST_ITERATOR_ORIG_COOKIE</primary></indexterm>
+<programlisting language="C">#define GST_ITERATOR_ORIG_COOKIE(it)    (GST_ITERATOR(it)-&gt;master_cookie)
+</programlisting>
+<para>Macro to get a pointer to where the master cookie is stored. The
+master cookie protects the structure being iterated and gets updated
+whenever the datastructure changes.</para>
+<refsect3 id="GST-ITERATOR-ORIG-COOKIE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstIterator"><type>GstIterator</type></link> to get the master cookie of</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-new" role="function">
+<title>gst_iterator_new&#160;()</title>
+<indexterm zone="gst-iterator-new"><primary>gst_iterator_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_iterator_new (<parameter><link linkend="guint"><type>guint</type></link> size</parameter>,
+                  <parameter><link linkend="GType"><type>GType</type></link> type</parameter>,
+                  <parameter><link linkend="GMutex"><type>GMutex</type></link> *lock</parameter>,
+                  <parameter><link linkend="guint32"><type>guint32</type></link> *master_cookie</parameter>,
+                  <parameter><link linkend="GstIteratorCopyFunction"><type>GstIteratorCopyFunction</type></link> copy</parameter>,
+                  <parameter><link linkend="GstIteratorNextFunction"><type>GstIteratorNextFunction</type></link> next</parameter>,
+                  <parameter><link linkend="GstIteratorItemFunction"><type>GstIteratorItemFunction</type></link> item</parameter>,
+                  <parameter><link linkend="GstIteratorResyncFunction"><type>GstIteratorResyncFunction</type></link> resync</parameter>,
+                  <parameter><link linkend="GstIteratorFreeFunction"><type>GstIteratorFreeFunction</type></link> free</parameter>);</programlisting>
+<para>Create a new iterator. This function is mainly used for objects
+implementing the next/resync/free function to iterate a data structure.</para>
+<para>For each item retrieved, the <parameter>item</parameter>
+ function is called with the lock
+held. The <parameter>free</parameter>
+ function is called when the iterator is freed.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-iterator-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the size of the iterator structure</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para><link linkend="GType"><type>GType</type></link> of children</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>lock</para></entry>
+<entry role="parameter_description"><para>pointer to a <link linkend="GMutex"><type>GMutex</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>master_cookie</para></entry>
+<entry role="parameter_description"><para>pointer to a guint32 that is changed when the items in the
+iterator changed.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>copy</para></entry>
+<entry role="parameter_description"><para>copy function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>next</para></entry>
+<entry role="parameter_description"><para>function to get next item</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>function to call on each item retrieved</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>resync</para></entry>
+<entry role="parameter_description"><para>function to resync the iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>free</para></entry>
+<entry role="parameter_description"><para>function to free the iterator</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-new.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstIterator"><type>GstIterator</type></link>.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-new-list" role="function">
+<title>gst_iterator_new_list&#160;()</title>
+<indexterm zone="gst-iterator-new-list"><primary>gst_iterator_new_list</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_iterator_new_list (<parameter><link linkend="GType"><type>GType</type></link> type</parameter>,
+                       <parameter><link linkend="GMutex"><type>GMutex</type></link> *lock</parameter>,
+                       <parameter><link linkend="guint32"><type>guint32</type></link> *master_cookie</parameter>,
+                       <parameter><link linkend="GList"><type>GList</type></link> **list</parameter>,
+                       <parameter><link linkend="GObject"><type>GObject</type></link> *owner</parameter>,
+                       <parameter><link linkend="GstIteratorItemFunction"><type>GstIteratorItemFunction</type></link> item</parameter>);</programlisting>
+<para>Create a new iterator designed for iterating <parameter>list</parameter>
+.</para>
+<para>The list you iterate is usually part of a data structure <parameter>owner</parameter>
+ and is
+protected with <parameter>lock</parameter>
+. </para>
+<para>The iterator will use <parameter>lock</parameter>
+ to retrieve the next item of the list and it
+will then call the <parameter>item</parameter>
+ function before releasing <parameter>lock</parameter>
+ again.</para>
+<para>When a concurrent update to the list is performed, usually by <parameter>owner</parameter>
+ while
+holding <parameter>lock</parameter>
+, <parameter>master_cookie</parameter>
+ will be updated. The iterator implementation
+will notice the update of the cookie and will return <link linkend="GST-ITERATOR-RESYNC:CAPS"><literal>GST_ITERATOR_RESYNC</literal></link> to
+the user of the iterator in the next call to <link linkend="gst-iterator-next"><function>gst_iterator_next()</function></link>.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-iterator-new-list.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para><link linkend="GType"><type>GType</type></link> of elements</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>lock</para></entry>
+<entry role="parameter_description"><para>pointer to a <link linkend="GMutex"><type>GMutex</type></link> protecting the list.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>master_cookie</para></entry>
+<entry role="parameter_description"><para>pointer to a guint32 that is incremented when the list
+is changed.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>pointer to the list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>owner</para></entry>
+<entry role="parameter_description"><para>object owning the list</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>item</para></entry>
+<entry role="parameter_description"><para>function to call on each item retrieved</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-new-list.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstIterator"><type>GstIterator</type></link> for <parameter>list</parameter>
+.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-new-single" role="function">
+<title>gst_iterator_new_single&#160;()</title>
+<indexterm zone="gst-iterator-new-single"><primary>gst_iterator_new_single</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_iterator_new_single (<parameter><link linkend="GType"><type>GType</type></link> type</parameter>,
+                         <parameter>const <link linkend="GValue"><type>GValue</type></link> *object</parameter>);</programlisting>
+<para>This <link linkend="GstIterator"><type>GstIterator</type></link> is a convenient iterator for the common
+case where a <link linkend="GstIterator"><type>GstIterator</type></link> needs to be returned but only
+a single object has to be considered. This happens often
+for the <link linkend="GstPadIterIntLinkFunction"><type>GstPadIterIntLinkFunction</type></link>.</para>
+<refsect3 id="gst-iterator-new-single.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para><link linkend="GType"><type>GType</type></link> of the passed object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>object that this iterator should return</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-new-single.returns" role="returns">
+<title>Returns</title>
+<para> the new <link linkend="GstIterator"><type>GstIterator</type></link> for <parameter>object</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-copy" role="function">
+<title>gst_iterator_copy&#160;()</title>
+<indexterm zone="gst-iterator-copy"><primary>gst_iterator_copy</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_iterator_copy (<parameter>const <link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>);</programlisting>
+<para>Copy the iterator and its state.</para>
+<refsect3 id="gst-iterator-copy.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstIterator"><type>GstIterator</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-copy.returns" role="returns">
+<title>Returns</title>
+<para> a new copy of <parameter>it</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-free" role="function">
+<title>gst_iterator_free&#160;()</title>
+<indexterm zone="gst-iterator-free"><primary>gst_iterator_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_iterator_free (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>);</programlisting>
+<para>Free the iterator.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-iterator-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to free</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-next" role="function">
+<title>gst_iterator_next&#160;()</title>
+<indexterm zone="gst-iterator-next"><primary>gst_iterator_next</primary></indexterm>
+<programlisting language="C"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+gst_iterator_next (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                   <parameter><link linkend="GValue"><type>GValue</type></link> *elem</parameter>);</programlisting>
+<para>Get the next item from the iterator in <parameter>elem</parameter>
+. </para>
+<para>Only when this function returns <link linkend="GST-ITERATOR-OK:CAPS"><literal>GST_ITERATOR_OK</literal></link>, <parameter>elem</parameter>
+ will contain a valid
+value. <parameter>elem</parameter>
+ must have been initialized to the type of the iterator or
+initialized to zeroes with <link linkend="g-value-unset"><function>g_value_unset()</function></link>. The caller is responsible for
+unsetting or resetting <parameter>elem</parameter>
+ with <link linkend="g-value-unset"><function>g_value_unset()</function></link> or <link linkend="g-value-reset"><function>g_value_reset()</function></link>
+after usage.</para>
+<para>When this function returns <link linkend="GST-ITERATOR-DONE:CAPS"><literal>GST_ITERATOR_DONE</literal></link>, no more elements can be
+retrieved from <parameter>it</parameter>
+.</para>
+<para>A return value of <link linkend="GST-ITERATOR-RESYNC:CAPS"><literal>GST_ITERATOR_RESYNC</literal></link> indicates that the element list was
+concurrently updated. The user of <parameter>it</parameter>
+ should call <link linkend="gst-iterator-resync"><function>gst_iterator_resync()</function></link> to
+get the newly updated list. </para>
+<para>A return value of <link linkend="GST-ITERATOR-ERROR:CAPS"><literal>GST_ITERATOR_ERROR</literal></link> indicates an unrecoverable fatal error.</para>
+<refsect3 id="gst-iterator-next.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to iterate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>elem</para></entry>
+<entry role="parameter_description"><para> pointer to hold next element. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-next.returns" role="returns">
+<title>Returns</title>
+<para> The result of the iteration. Unset <parameter>elem</parameter>
+after usage.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-resync" role="function">
+<title>gst_iterator_resync&#160;()</title>
+<indexterm zone="gst-iterator-resync"><primary>gst_iterator_resync</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_iterator_resync (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>);</programlisting>
+<para>Resync the iterator. this function is mostly called
+after <link linkend="gst-iterator-next"><function>gst_iterator_next()</function></link> returned <link linkend="GST-ITERATOR-RESYNC:CAPS"><literal>GST_ITERATOR_RESYNC</literal></link>.</para>
+<para>When an iterator was pushed on <parameter>it</parameter>
+, it will automatically be popped again
+with this function.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-iterator-resync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to resync</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-push" role="function">
+<title>gst_iterator_push&#160;()</title>
+<indexterm zone="gst-iterator-push"><primary>gst_iterator_push</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_iterator_push (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                   <parameter><link linkend="GstIterator"><type>GstIterator</type></link> *other</parameter>);</programlisting>
+<para>Pushes <parameter>other</parameter>
+ iterator onto <parameter>it</parameter>
+. All calls performed on <parameter>it</parameter>
+ are
+forwarded to <parameter>other</parameter>
+. If <parameter>other</parameter>
+ returns <link linkend="GST-ITERATOR-DONE:CAPS"><literal>GST_ITERATOR_DONE</literal></link>, it is
+popped again and calls are handled by <parameter>it</parameter>
+ again.</para>
+<para>This function is mainly used by objects implementing the iterator
+next function to recurse into substructures.</para>
+<para>When <link linkend="gst-iterator-resync"><function>gst_iterator_resync()</function></link> is called on <parameter>it</parameter>
+, <parameter>other</parameter>
+ will automatically be
+popped.</para>
+<para>MT safe.</para>
+<refsect3 id="gst-iterator-push.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>other</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to push</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-filter" role="function">
+<title>gst_iterator_filter&#160;()</title>
+<indexterm zone="gst-iterator-filter"><primary>gst_iterator_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GstIterator"><returnvalue>GstIterator</returnvalue></link>&#160;*
+gst_iterator_filter (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                     <parameter><link linkend="GCompareFunc"><type>GCompareFunc</type></link> func</parameter>,
+                     <parameter>const <link linkend="GValue"><type>GValue</type></link> *user_data</parameter>);</programlisting>
+<para>Create a new iterator from an existing iterator. The new iterator
+will only return those elements that match the given compare function <parameter>func</parameter>
+.
+The first parameter that is passed to <parameter>func</parameter>
+ is the <link linkend="GValue"><type>GValue</type></link> of the current
+iterator element and the second parameter is <parameter>user_data</parameter>
+. <parameter>func</parameter>
+ should
+return 0 for elements that should be included in the filtered iterator.</para>
+<para>When this iterator is freed, <parameter>it</parameter>
+ will also be freed.</para>
+<refsect3 id="gst-iterator-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to filter</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the compare function to select elements. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the compare function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-filter.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="GstIterator"><type>GstIterator</type></link>.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-fold" role="function">
+<title>gst_iterator_fold&#160;()</title>
+<indexterm zone="gst-iterator-fold"><primary>gst_iterator_fold</primary></indexterm>
+<programlisting language="C"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+gst_iterator_fold (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                   <parameter><link linkend="GstIteratorFoldFunction"><type>GstIteratorFoldFunction</type></link> func</parameter>,
+                   <parameter><link linkend="GValue"><type>GValue</type></link> *ret</parameter>,
+                   <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Folds <parameter>func</parameter>
+ over the elements of <parameter>iter</parameter>
+. That is to say, <parameter>func</parameter>
+ will be called
+as <parameter>func</parameter>
+ (object, <parameter>ret</parameter>
+, <parameter>user_data</parameter>
+) for each object in <parameter>it</parameter>
+. The normal use
+of this procedure is to accumulate the results of operating on the objects in
+<parameter>ret</parameter>
+.</para>
+<para>This procedure can be used (and is used internally) to implement the
+<link linkend="gst-iterator-foreach"><function>gst_iterator_foreach()</function></link> and <link linkend="gst-iterator-find-custom"><function>gst_iterator_find_custom()</function></link> operations.</para>
+<para>The fold will proceed as long as <parameter>func</parameter>
+ returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>. When the iterator has no
+more arguments, <link linkend="GST-ITERATOR-DONE:CAPS"><literal>GST_ITERATOR_DONE</literal></link> will be returned. If <parameter>func</parameter>
+ returns <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>,
+the fold will stop, and <link linkend="GST-ITERATOR-OK:CAPS"><literal>GST_ITERATOR_OK</literal></link> will be returned. Errors or resyncs
+will cause fold to return <link linkend="GST-ITERATOR-ERROR:CAPS"><literal>GST_ITERATOR_ERROR</literal></link> or <link linkend="GST-ITERATOR-RESYNC:CAPS"><literal>GST_ITERATOR_RESYNC</literal></link> as
+appropriate.</para>
+<para>The iterator will not be freed.</para>
+<refsect3 id="gst-iterator-fold.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to fold over</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the fold function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>ret</para></entry>
+<entry role="parameter_description"><para>the seed value passed to the fold function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the fold function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-fold.returns" role="returns">
+<title>Returns</title>
+<para> A <link linkend="GstIteratorResult"><type>GstIteratorResult</type></link>, as described above.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-foreach" role="function">
+<title>gst_iterator_foreach&#160;()</title>
+<indexterm zone="gst-iterator-foreach"><primary>gst_iterator_foreach</primary></indexterm>
+<programlisting language="C"><link linkend="GstIteratorResult"><returnvalue>GstIteratorResult</returnvalue></link>
+gst_iterator_foreach (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                      <parameter><link linkend="GstIteratorForeachFunction"><type>GstIteratorForeachFunction</type></link> func</parameter>,
+                      <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Iterate over all element of <parameter>it</parameter>
+ and call the given function <parameter>func</parameter>
+ for
+each element.</para>
+<refsect3 id="gst-iterator-foreach.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to iterate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the function to call for each element. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-foreach.returns" role="returns">
+<title>Returns</title>
+<para> the result call to <link linkend="gst-iterator-fold"><function>gst_iterator_fold()</function></link>. The iterator will not be
+freed.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-iterator-find-custom" role="function">
+<title>gst_iterator_find_custom&#160;()</title>
+<indexterm zone="gst-iterator-find-custom"><primary>gst_iterator_find_custom</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_iterator_find_custom (<parameter><link linkend="GstIterator"><type>GstIterator</type></link> *it</parameter>,
+                          <parameter><link linkend="GCompareFunc"><type>GCompareFunc</type></link> func</parameter>,
+                          <parameter><link linkend="GValue"><type>GValue</type></link> *elem</parameter>,
+                          <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Find the first element in <parameter>it</parameter>
+ that matches the compare function <parameter>func</parameter>
+.
+<parameter>func</parameter>
+ should return 0 when the element is found. The first parameter
+to <parameter>func</parameter>
+ will be the current element of the iterator and the
+second parameter will be <parameter>user_data</parameter>
+.
+The result will be stored in <parameter>elem</parameter>
+ if a result is found.</para>
+<para>The iterator will not be freed.</para>
+<para>This function will return <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if an error happened to the iterator
+or if the element wasn't found.</para>
+<refsect3 id="gst-iterator-find-custom.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>it</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstIterator"><type>GstIterator</type></link> to iterate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the compare function to use. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>elem</para></entry>
+<entry role="parameter_description"><para> pointer to a <link linkend="GValue"><type>GValue</type></link> where to store the result. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para> user data passed to the compare function. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-iterator-find-custom.returns" role="returns">
+<title>Returns</title>
+<para> Returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the element was found, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+<para>MT safe.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstIterator.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstIterator" role="struct">
+<title>struct GstIterator</title>
+<indexterm zone="GstIterator"><primary>GstIterator</primary></indexterm>
+<programlisting language="C">struct GstIterator {
+};
+</programlisting>
+<para><link linkend="GstIterator"><type>GstIterator</type></link> base structure. The values of this structure are
+protected for subclasses, use the methods to use the <link linkend="GstIterator"><type>GstIterator</type></link>.</para>
+<refsect3 id="GstIterator.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstIteratorItem" role="enum">
+<title>enum GstIteratorItem</title>
+<indexterm zone="GstIteratorItem"><primary>GstIteratorItem</primary></indexterm>
+<para>The result of a <link linkend="GstIteratorItemFunction"><type>GstIteratorItemFunction</type></link>.</para>
+<refsect3 id="GstIteratorItem.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-ITEM-SKIP:CAPS">GST_ITERATOR_ITEM_SKIP</para></entry>
+<entry role="enum_member_description"><para>Skip this item</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-ITEM-PASS:CAPS">GST_ITERATOR_ITEM_PASS</para></entry>
+<entry role="enum_member_description"><para>Return item</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-ITEM-END:CAPS">GST_ITERATOR_ITEM_END</para></entry>
+<entry role="enum_member_description"><para>Stop after this item.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstIteratorResult" role="enum">
+<title>enum GstIteratorResult</title>
+<indexterm zone="GstIteratorResult"><primary>GstIteratorResult</primary></indexterm>
+<para>The result of <link linkend="gst-iterator-next"><function>gst_iterator_next()</function></link>.</para>
+<refsect3 id="GstIteratorResult.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-DONE:CAPS">GST_ITERATOR_DONE</para></entry>
+<entry role="enum_member_description"><para>No more items in the iterator</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-OK:CAPS">GST_ITERATOR_OK</para></entry>
+<entry role="enum_member_description"><para>An item was retrieved</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-RESYNC:CAPS">GST_ITERATOR_RESYNC</para></entry>
+<entry role="enum_member_description"><para>Datastructure changed while iterating</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-ITERATOR-ERROR:CAPS">GST_ITERATOR_ERROR</para></entry>
+<entry role="enum_member_description"><para>An error happened</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstIterator.see-also">
+<title>See Also</title>
+<para><link linkend="GstElement"><type>GstElement</type></link>, <link linkend="GstBin"><type>GstBin</type></link></para>
+
+</refsect1>
+
+</refentry>

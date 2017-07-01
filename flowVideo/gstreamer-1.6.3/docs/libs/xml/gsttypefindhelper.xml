@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstTypeFindHelper">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstTypeFindHelper.top_of_page">GstTypeFindHelper</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstTypeFindHelper</refname>
+<refpurpose>Utility functions for typefinding</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstTypeFindHelper.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-helper">gst_type_find_helper</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-helper-for-buffer">gst_type_find_helper_for_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-helper-for-extension">gst_type_find_helper_for_extension</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-helper-for-data">gst_type_find_helper_for_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstTypeFindHelperGetRangeFunction">*GstTypeFindHelperGetRangeFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-type-find-helper-get-range">gst_type_find_helper_get_range</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstTypeFindHelper.includes"><title>Includes</title><synopsis>#include &lt;gst/base/gsttypefindhelper.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstTypeFindHelper.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Utility functions for elements doing typefinding:
+<link linkend="gst-type-find-helper"><function>gst_type_find_helper()</function></link> does typefinding in pull mode, while
+<link linkend="gst-type-find-helper-for-buffer"><function>gst_type_find_helper_for_buffer()</function></link> is useful for elements needing to do
+typefinding in push mode from a chain function.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstTypeFindHelper.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-type-find-helper" role="function">
+<title>gst_type_find_helper&#160;()</title>
+<indexterm zone="gst-type-find-helper"><primary>gst_type_find_helper</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_type_find_helper (<parameter><link linkend="GstPad"><type>GstPad</type></link> *src</parameter>,
+                      <parameter><link linkend="guint64"><type>guint64</type></link> size</parameter>);</programlisting>
+<para>Tries to find what type of data is flowing from the given source <link linkend="GstPad"><type>GstPad</type></link>.</para>
+<para>Free-function: gst_caps_unref</para>
+<refsect3 id="gst-type-find-helper.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>A source <link linkend="GstPad"><type>GstPad</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>The length in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-helper.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> corresponding to the data
+stream.  Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no <link linkend="GstCaps"><type>GstCaps</type></link> matches the data stream. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-helper-for-buffer" role="function">
+<title>gst_type_find_helper_for_buffer&#160;()</title>
+<indexterm zone="gst-type-find-helper-for-buffer"><primary>gst_type_find_helper_for_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_type_find_helper_for_buffer (<parameter><link linkend="GstObject"><type>GstObject</type></link> *obj</parameter>,
+                                 <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buf</parameter>,
+                                 <parameter><link linkend="GstTypeFindProbability"><type>GstTypeFindProbability</type></link> *prob</parameter>);</programlisting>
+<para>Tries to find what type of data is contained in the given <link linkend="GstBuffer"><type>GstBuffer</type></link>, the
+assumption being that the buffer represents the beginning of the stream or
+file.</para>
+<para>All available typefinders will be called on the data in order of rank. If
+a typefinding function returns a probability of <link linkend="GST-TYPE-FIND-MAXIMUM:CAPS"><literal>GST_TYPE_FIND_MAXIMUM</literal></link>,
+typefinding is stopped immediately and the found caps will be returned
+right away. Otherwise, all available typefind functions will the tried,
+and the caps with the highest probability will be returned, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if
+the content of the buffer could not be identified.</para>
+<para>Free-function: gst_caps_unref</para>
+<refsect3 id="gst-type-find-helper-for-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para> object doing the typefinding, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> (used for logging). </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>buf</para></entry>
+<entry role="parameter_description"><para> a <link linkend="GstBuffer"><type>GstBuffer</type></link> with data to typefind. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>prob</para></entry>
+<entry role="parameter_description"><para> location to store the probability of the found
+caps, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-helper-for-buffer.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> corresponding to the data,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no type could be found. The caller should free the caps
+returned with <link linkend="gst-caps-unref"><function>gst_caps_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-helper-for-extension" role="function">
+<title>gst_type_find_helper_for_extension&#160;()</title>
+<indexterm zone="gst-type-find-helper-for-extension"><primary>gst_type_find_helper_for_extension</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_type_find_helper_for_extension (<parameter><link linkend="GstObject"><type>GstObject</type></link> *obj</parameter>,
+                                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *extension</parameter>);</programlisting>
+<para>Tries to find the best <link linkend="GstCaps"><type>GstCaps</type></link> associated with <parameter>extension</parameter>
+.</para>
+<para>All available typefinders will be checked against the extension in order
+of rank. The caps of the first typefinder that can handle <parameter>extension</parameter>
+ will be
+returned.</para>
+<para>Free-function: gst_caps_unref</para>
+<refsect3 id="gst-type-find-helper-for-extension.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para> object doing the typefinding, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> (used for logging). </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>extension</para></entry>
+<entry role="parameter_description"><para>an extension</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-helper-for-extension.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> corresponding to
+<parameter>extension</parameter>
+, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no type could be found. The caller should free
+the caps returned with <link linkend="gst-caps-unref"><function>gst_caps_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-helper-for-data" role="function">
+<title>gst_type_find_helper_for_data&#160;()</title>
+<indexterm zone="gst-type-find-helper-for-data"><primary>gst_type_find_helper_for_data</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_type_find_helper_for_data (<parameter><link linkend="GstObject"><type>GstObject</type></link> *obj</parameter>,
+                               <parameter>const <link linkend="guint8"><type>guint8</type></link> *data</parameter>,
+                               <parameter><link linkend="gsize"><type>gsize</type></link> size</parameter>,
+                               <parameter><link linkend="GstTypeFindProbability"><type>GstTypeFindProbability</type></link> *prob</parameter>);</programlisting>
+<para>Tries to find what type of data is contained in the given <parameter>data</parameter>
+, the
+assumption being that the data represents the beginning of the stream or
+file.</para>
+<para>All available typefinders will be called on the data in order of rank. If
+a typefinding function returns a probability of <link linkend="GST-TYPE-FIND-MAXIMUM:CAPS"><literal>GST_TYPE_FIND_MAXIMUM</literal></link>,
+typefinding is stopped immediately and the found caps will be returned
+right away. Otherwise, all available typefind functions will the tried,
+and the caps with the highest probability will be returned, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if
+the content of <parameter>data</parameter>
+ could not be identified.</para>
+<para>Free-function: gst_caps_unref</para>
+<refsect3 id="gst-type-find-helper-for-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para> object doing the typefinding, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> (used for logging). </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para> a pointer with data to typefind. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para> the size of <parameter>data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>in</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>prob</para></entry>
+<entry role="parameter_description"><para> location to store the probability of the found
+caps, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-helper-for-data.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> corresponding to the data,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no type could be found. The caller should free the caps
+returned with <link linkend="gst-caps-unref"><function>gst_caps_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GstTypeFindHelperGetRangeFunction" role="function">
+<title>GstTypeFindHelperGetRangeFunction&#160;()</title>
+<indexterm zone="GstTypeFindHelperGetRangeFunction"><primary>GstTypeFindHelperGetRangeFunction</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstTypeFindHelperGetRangeFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstObject"><type>GstObject</type></link> *obj</parameter>,
+                                      <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                                      <parameter><link linkend="guint64"><type>guint64</type></link> offset</parameter>,
+                                      <parameter><link linkend="guint"><type>guint</type></link> length</parameter>,
+                                      <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> **buffer</parameter>);</programlisting>
+<para>This function will be called by <link linkend="gst-type-find-helper-get-range"><function>gst_type_find_helper_get_range()</function></link> when
+typefinding functions request to peek at the data of a stream at certain
+offsets. If this function returns GST_FLOW_OK, the result buffer will be
+stored in <parameter>buffer</parameter>
+. The  contents of <parameter>buffer</parameter>
+ is invalid for any other
+return value.</para>
+<para>This function is supposed to behave exactly like a <link linkend="GstPadGetRangeFunction"><type>GstPadGetRangeFunction</type></link>.</para>
+<refsect3 id="GstTypeFindHelperGetRangeFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstObject"><type>GstObject</type></link> that will handle the getrange request</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>obj</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>offset</para></entry>
+<entry role="parameter_description"><para>the offset of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>the length of the range</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>a memory location to hold the result buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstTypeFindHelperGetRangeFunction.returns" role="returns">
+<title>Returns</title>
+<para> GST_FLOW_OK for success</para>
+</refsect3></refsect2>
+<refsect2 id="gst-type-find-helper-get-range" role="function">
+<title>gst_type_find_helper_get_range&#160;()</title>
+<indexterm zone="gst-type-find-helper-get-range"><primary>gst_type_find_helper_get_range</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_type_find_helper_get_range (<parameter><link linkend="GstObject"><type>GstObject</type></link> *obj</parameter>,
+                                <parameter><link linkend="GstObject"><type>GstObject</type></link> *parent</parameter>,
+                                <parameter><link linkend="GstTypeFindHelperGetRangeFunction"><type>GstTypeFindHelperGetRangeFunction</type></link> func</parameter>,
+                                <parameter><link linkend="guint64"><type>guint64</type></link> size</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *extension</parameter>,
+                                <parameter><link linkend="GstTypeFindProbability"><type>GstTypeFindProbability</type></link> *prob</parameter>);</programlisting>
+<para>Utility function to do pull-based typefinding. Unlike <link linkend="gst-type-find-helper"><function>gst_type_find_helper()</function></link>
+however, this function will use the specified function <parameter>func</parameter>
+ to obtain the
+data needed by the typefind functions, rather than operating on a given
+source pad. This is useful mostly for elements like tag demuxers which
+strip off data at the beginning and/or end of a file and want to typefind
+the stripped data stream before adding their own source pad (the specified
+callback can then call the upstream peer pad with offsets adjusted for the
+tag size, for example).</para>
+<para>When <parameter>extension</parameter>
+ is not <link linkend="NULL:CAPS"><literal>NULL</literal></link>, this function will first try the typefind
+functions for the given extension, which might speed up the typefinding
+in many cases.</para>
+<para>Free-function: gst_caps_unref</para>
+<refsect3 id="gst-type-find-helper-get-range.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstObject"><type>GstObject</type></link> that will be passed as first argument to <parameter>func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para> the parent of <parameter>obj</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> A generic <link linkend="GstTypeFindHelperGetRangeFunction"><type>GstTypeFindHelperGetRangeFunction</type></link> that will
+be used to access data at random offsets when doing the typefinding. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>The length in bytes</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>extension</para></entry>
+<entry role="parameter_description"><para>extension of the media</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prob</para></entry>
+<entry role="parameter_description"><para> location to store the probability of the found
+caps, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-type-find-helper-get-range.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstCaps"><type>GstCaps</type></link> corresponding to the data
+stream.  Returns <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no <link linkend="GstCaps"><type>GstCaps</type></link> matches the data stream. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstTypeFindHelper.other_details" role="details">
+<title role="details.title">Types and Values</title>
+
+</refsect1>
+
+</refentry>

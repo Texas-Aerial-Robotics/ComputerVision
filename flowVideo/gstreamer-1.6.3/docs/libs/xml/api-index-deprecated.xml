@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-deprecated">
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gst-test-clock-wait-for-pending-id-count"><link linkend="gst-test-clock-wait-for-pending-id-count">gst_test_clock_wait_for_pending_id_count</link>, function in <link linkend="GstTestClock">GstTestClock</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

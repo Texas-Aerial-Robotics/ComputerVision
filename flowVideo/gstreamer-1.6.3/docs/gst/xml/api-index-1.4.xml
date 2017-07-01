@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<indexdiv id="api-index-1.4">
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gst-buffer-is-all-memory-writable"><link linkend="gst-buffer-is-all-memory-writable">gst_buffer_is_all_memory_writable</link>, function in <link linkend="GstBuffer">GstBuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-is-memory-range-writable"><link linkend="gst-buffer-is-memory-range-writable">gst_buffer_is_memory_range_writable</link>, function in <link linkend="GstBuffer">GstBuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-pool-config-validate-params"><link linkend="gst-buffer-pool-config-validate-params">gst_buffer_pool_config_validate_params</link>, function in <link linkend="GstBufferPool">GstBufferPool</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-buffer-pool-set-flushing"><link linkend="gst-buffer-pool-set-flushing">gst_buffer_pool_set_flushing</link>, function in <link linkend="GstBufferPool">GstBufferPool</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="GstDevice"><link linkend="GstDevice">GstDevice</link>, struct in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceClass"><link linkend="GstDeviceClass">GstDeviceClass</link>, struct in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceMonitor"><link linkend="GstDeviceMonitor">GstDeviceMonitor</link>, struct in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceMonitorClass"><link linkend="GstDeviceMonitorClass">GstDeviceMonitorClass</link>, struct in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceProvider"><link linkend="GstDeviceProvider">GstDeviceProvider</link>, struct in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceProviderClass"><link linkend="GstDeviceProviderClass">GstDeviceProviderClass</link>, struct in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceProviderFactory-struct"><link linkend="GstDeviceProviderFactory-struct">GstDeviceProviderFactory</link>, struct in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstDeviceProviderFactoryClass"><link linkend="GstDeviceProviderFactoryClass">GstDeviceProviderFactoryClass</link>, struct in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-create-element"><link linkend="gst-device-create-element">gst_device_create_element</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-get-caps"><link linkend="gst-device-get-caps">gst_device_get_caps</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-get-device-class"><link linkend="gst-device-get-device-class">gst_device_get_device_class</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-get-display-name"><link linkend="gst-device-get-display-name">gst_device_get_display_name</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-has-classes"><link linkend="gst-device-has-classes">gst_device_has_classes</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-has-classesv"><link linkend="gst-device-has-classesv">gst_device_has_classesv</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-add-filter"><link linkend="gst-device-monitor-add-filter">gst_device_monitor_add_filter</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-get-bus"><link linkend="gst-device-monitor-get-bus">gst_device_monitor_get_bus</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-get-devices"><link linkend="gst-device-monitor-get-devices">gst_device_monitor_get_devices</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-new"><link linkend="gst-device-monitor-new">gst_device_monitor_new</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-remove-filter"><link linkend="gst-device-monitor-remove-filter">gst_device_monitor_remove_filter</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-start"><link linkend="gst-device-monitor-start">gst_device_monitor_start</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-monitor-stop"><link linkend="gst-device-monitor-stop">gst_device_monitor_stop</link>, function in <link linkend="gstreamer-GstDeviceMonitor">GstDeviceMonitor</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-class-add-metadata"><link linkend="gst-device-provider-class-add-metadata">gst_device_provider_class_add_metadata</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-class-add-static-metadata"><link linkend="gst-device-provider-class-add-static-metadata">gst_device_provider_class_add_static_metadata</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-class-get-metadata"><link linkend="gst-device-provider-class-get-metadata">gst_device_provider_class_get_metadata</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-class-set-metadata"><link linkend="gst-device-provider-class-set-metadata">gst_device_provider_class_set_metadata</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-class-set-static-metadata"><link linkend="gst-device-provider-class-set-static-metadata">gst_device_provider_class_set_static_metadata</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-device-add"><link linkend="gst-device-provider-device-add">gst_device_provider_device_add</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-device-remove"><link linkend="gst-device-provider-device-remove">gst_device_provider_device_remove</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-find"><link linkend="gst-device-provider-factory-find">gst_device_provider_factory_find</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-get"><link linkend="gst-device-provider-factory-get">gst_device_provider_factory_get</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-get-by-name"><link linkend="gst-device-provider-factory-get-by-name">gst_device_provider_factory_get_by_name</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-get-device-provider-type"><link linkend="gst-device-provider-factory-get-device-provider-type">gst_device_provider_factory_get_device_provider_type</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-get-metadata"><link linkend="gst-device-provider-factory-get-metadata">gst_device_provider_factory_get_metadata</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-get-metadata-keys"><link linkend="gst-device-provider-factory-get-metadata-keys">gst_device_provider_factory_get_metadata_keys</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-has-classes"><link linkend="gst-device-provider-factory-has-classes">gst_device_provider_factory_has_classes</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-has-classesv"><link linkend="gst-device-provider-factory-has-classesv">gst_device_provider_factory_has_classesv</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-factory-list-get-device-providers"><link linkend="gst-device-provider-factory-list-get-device-providers">gst_device_provider_factory_list_get_device_providers</link>, function in <link linkend="GstDeviceProviderFactory">GstDeviceProviderFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-get-bus"><link linkend="gst-device-provider-get-bus">gst_device_provider_get_bus</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-get-devices"><link linkend="gst-device-provider-get-devices">gst_device_provider_get_devices</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-get-factory"><link linkend="gst-device-provider-get-factory">gst_device_provider_get_factory</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-register"><link linkend="gst-device-provider-register">gst_device_provider_register</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-start"><link linkend="gst-device-provider-start">gst_device_provider_start</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-provider-stop"><link linkend="gst-device-provider-stop">gst_device_provider_stop</link>, function in <link linkend="gstreamer-GstDeviceProvider">GstDeviceProvider</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-device-reconfigure-element"><link linkend="gst-device-reconfigure-element">gst_device_reconfigure_element</link>, function in <link linkend="gstreamer-GstDevice">GstDevice</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="gst-event-get-running-time-offset"><link linkend="gst-event-get-running-time-offset">gst_event_get_running_time_offset</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-event-set-running-time-offset"><link linkend="gst-event-set-running-time-offset">gst_event_set_running_time_offset</link>, function in <link linkend="GstEvent">GstEvent</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>M</title>
+<indexentry><primaryie linkends="gst-message-new-device-added"><link linkend="gst-message-new-device-added">gst_message_new_device_added</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-new-device-removed"><link linkend="gst-message-new-device-removed">gst_message_new_device_removed</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-parse-device-added"><link linkend="gst-message-parse-device-added">gst_message_parse_device_added</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-message-parse-device-removed"><link linkend="gst-message-parse-device-removed">gst_message_parse_device_removed</link>, function in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-MESSAGE-TYPE-IS-EXTENDED:CAPS"><link linkend="GST-MESSAGE-TYPE-IS-EXTENDED:CAPS">GST_MESSAGE_TYPE_IS_EXTENDED</link>, macro in <link linkend="GstMessage">GstMessage</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gst-pad-get-last-flow-return"><link linkend="gst-pad-get-last-flow-return">gst_pad_get_last_flow_return</link>, function in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-PAD-LAST-FLOW-RETURN:CAPS"><link linkend="GST-PAD-LAST-FLOW-RETURN:CAPS">GST_PAD_LAST_FLOW_RETURN</link>, macro in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-pad-link-get-name"><link linkend="gst-pad-link-get-name">gst_pad_link_get_name</link>, function in <link linkend="GstPad">GstPad</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>Q</title>
+<indexentry><primaryie linkends="gst-query-parse-uri-redirection-permanent"><link linkend="gst-query-parse-uri-redirection-permanent">gst_query_parse_uri_redirection_permanent</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-query-set-uri-redirection-permanent"><link linkend="gst-query-set-uri-redirection-permanent">gst_query_set_uri_redirection_permanent</link>, function in <link linkend="GstQuery">GstQuery</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="GST-ROUND-DOWN-128:CAPS"><link linkend="GST-ROUND-DOWN-128:CAPS">GST_ROUND_DOWN_128</link>, macro in <link linkend="gstreamer-GstUtils">GstUtils</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-ROUND-UP-128:CAPS"><link linkend="GST-ROUND-UP-128:CAPS">GST_ROUND_UP_128</link>, macro in <link linkend="gstreamer-GstUtils">GstUtils</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gst-structure-get-int64"><link linkend="gst-structure-get-int64">gst_structure_get_int64</link>, function in <link linkend="GstStructure">GstStructure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-structure-get-uint64"><link linkend="gst-structure-get-uint64">gst_structure_get_uint64</link>, function in <link linkend="GstStructure">GstStructure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-system-clock-set-default"><link linkend="gst-system-clock-set-default">gst_system_clock_set_default</link>, function in <link linkend="GstSystemClock">GstSystemClock</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="GST-TAG-MIDI-BASE-NOTE:CAPS"><link linkend="GST-TAG-MIDI-BASE-NOTE:CAPS">GST_TAG_MIDI_BASE_NOTE</link>, macro in <link linkend="GstTagList">GstTagList</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstTocLoopType"><link linkend="GstTocLoopType">GstTocLoopType</link>, enum in <link linkend="GstToc">GstToc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-toc-entry-get-loop"><link linkend="gst-toc-entry-get-loop">gst_toc_entry_get_loop</link>, function in <link linkend="GstToc">GstToc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-toc-entry-set-loop"><link linkend="gst-toc-entry-set-loop">gst_toc_entry_set_loop</link>, function in <link linkend="GstToc">GstToc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GST-TOC-REPEAT-COUNT-INFINITE:CAPS"><link linkend="GST-TOC-REPEAT-COUNT-INFINITE:CAPS">GST_TOC_REPEAT_COUNT_INFINITE</link>, macro in <link linkend="GstToc">GstToc</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-libs-GstBufferStraw">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-libs-GstBufferStraw.top_of_page">GstBufferStraw</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER-LIBS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstBufferStraw</refname>
+<refpurpose>Buffer interception code for GStreamer unit tests</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-libs-GstBufferStraw.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-straw-start-pipeline">gst_buffer_straw_start_pipeline</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-buffer-straw-get-buffer">gst_buffer_straw_get_buffer</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-buffer-straw-stop-pipeline">gst_buffer_straw_stop_pipeline</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-libs-GstBufferStraw.includes"><title>Includes</title><synopsis>#include &lt;gst/check/gstbufferstraw.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-libs-GstBufferStraw.description" role="desc">
+<title role="desc.title">Description</title>
+<para>These macros and functions are for internal use of the unit tests found
+inside the 'check' directories of various GStreamer packages.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstBufferStraw.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-buffer-straw-start-pipeline" role="function">
+<title>gst_buffer_straw_start_pipeline&#160;()</title>
+<indexterm zone="gst-buffer-straw-start-pipeline"><primary>gst_buffer_straw_start_pipeline</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_straw_start_pipeline (<parameter><link linkend="GstElement"><type>GstElement</type></link> *bin</parameter>,
+                                 <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Sets up a pipeline for buffer sucking. This will allow you to call
+<link linkend="gst-buffer-straw-get-buffer"><function>gst_buffer_straw_get_buffer()</function></link> to access buffers as they pass over <parameter>pad</parameter>
+.</para>
+<para>This function is normally used in unit tests that want to verify that a
+particular element is outputting correct buffers. For example, you would make
+a pipeline via <link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link>, pull out the pad you want to monitor, then
+call <link linkend="gst-buffer-straw-get-buffer"><function>gst_buffer_straw_get_buffer()</function></link> to get the buffers that pass through <parameter>pad</parameter>
+.
+The pipeline will block until you have sucked off the buffers.</para>
+<para>This function will set the state of <parameter>bin</parameter>
+ to PLAYING; to clean up, be sure to
+call <link linkend="gst-buffer-straw-stop-pipeline"><function>gst_buffer_straw_stop_pipeline()</function></link>.</para>
+<para>Note that you may not start two buffer straws at the same time. This function
+is intended for unit tests, not general API use. In fact it calls fail_if
+from libcheck, so you cannot use it outside unit tests.</para>
+<refsect3 id="gst-buffer-straw-start-pipeline.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the pipeline to run</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>a pad on an element in <parameter>bin</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-straw-get-buffer" role="function">
+<title>gst_buffer_straw_get_buffer&#160;()</title>
+<indexterm zone="gst-buffer-straw-get-buffer"><primary>gst_buffer_straw_get_buffer</primary></indexterm>
+<programlisting language="C"><link linkend="GstBuffer"><returnvalue>GstBuffer</returnvalue></link>&#160;*
+gst_buffer_straw_get_buffer (<parameter><link linkend="GstElement"><type>GstElement</type></link> *bin</parameter>,
+                             <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Get one buffer from <parameter>pad</parameter>
+. Implemented via buffer probes. This function will
+block until the pipeline passes a buffer over <parameter>pad</parameter>
+, so for robust behavior
+in unit tests, you need to use check's timeout to fail out in the case that a
+buffer never arrives.</para>
+<para>You must have previously called <link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link> on
+<parameter>pipeline</parameter>
+ and <parameter>pad</parameter>
+.</para>
+<refsect3 id="gst-buffer-straw-get-buffer.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the pipeline previously started via <link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad previously passed to <link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-buffer-straw-get-buffer.returns" role="returns">
+<title>Returns</title>
+<para> the captured <link linkend="GstBuffer"><type>GstBuffer</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-buffer-straw-stop-pipeline" role="function">
+<title>gst_buffer_straw_stop_pipeline&#160;()</title>
+<indexterm zone="gst-buffer-straw-stop-pipeline"><primary>gst_buffer_straw_stop_pipeline</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_buffer_straw_stop_pipeline (<parameter><link linkend="GstElement"><type>GstElement</type></link> *bin</parameter>,
+                                <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Set <parameter>bin</parameter>
+ to <link linkend="GST-STATE-NULL:CAPS"><type>GST_STATE_NULL</type></link> and release resource allocated in
+<link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link>.</para>
+<para>You must have previously called <link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link> on
+<parameter>pipeline</parameter>
+ and <parameter>pad</parameter>
+.</para>
+<refsect3 id="gst-buffer-straw-stop-pipeline.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the pipeline previously started via <link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad previously passed to <link linkend="gst-buffer-straw-start-pipeline"><function>gst_buffer_straw_start_pipeline()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-libs-GstBufferStraw.other_details" role="details">
+<title role="details.title">Types and Values</title>
+
+</refsect1>
+
+</refentry>

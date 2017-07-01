@@ -1,0 +1,2523 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY hash "#">
+]>
+<refentry id="gstreamer-GstInfo">
+<refmeta>
+<refentrytitle role="top_of_page" id="gstreamer-GstInfo.top_of_page">GstInfo</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GSTREAMER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstInfo</refname>
+<refpurpose>Debugging and logging facilities</refpurpose>
+</refnamediv>
+
+<refsect1 id="gstreamer-GstInfo.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-STR-NULL:CAPS">GST_STR_NULL</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-PAD-NAME:CAPS">GST_DEBUG_PAD_NAME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstLogFunction">*GstLogFunction</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-log">gst_debug_log</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-log-valist">gst_debug_log_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-message-get">gst_debug_message_get</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-log-default">gst_debug_log_default</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-level-get-name">gst_debug_level_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-add-log-function">gst_debug_add_log_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-remove-log-function">gst_debug_remove_log_function</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-remove-log-function-by-data">gst_debug_remove_log_function_by_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-active">gst_debug_set_active</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-is-active">gst_debug_is_active</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-colored">gst_debug_set_colored</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-color-mode">gst_debug_set_color_mode</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-color-mode-from-string">gst_debug_set_color_mode_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-is-colored">gst_debug_is_colored</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDebugColorMode"><returnvalue>GstDebugColorMode</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-get-color-mode">gst_debug_get_color_mode</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-default-threshold">gst_debug_set_default_threshold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-threshold-from-string">gst_debug_set_threshold_from_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDebugLevel"><returnvalue>GstDebugLevel</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-get-default-threshold">gst_debug_get_default_threshold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-set-threshold-for-name">gst_debug_set_threshold_for_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-unset-threshold-for-name">gst_debug_unset_threshold_for_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-CATEGORY:CAPS">GST_DEBUG_CATEGORY</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-CATEGORY-EXTERN:CAPS">GST_DEBUG_CATEGORY_EXTERN</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-CATEGORY-STATIC:CAPS">GST_DEBUG_CATEGORY_STATIC</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-CATEGORY-INIT:CAPS">GST_DEBUG_CATEGORY_INIT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-CATEGORY-GET:CAPS">GST_DEBUG_CATEGORY_GET</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-category-free">gst_debug_category_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-category-set-threshold">gst_debug_category_set_threshold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-category-reset-threshold">gst_debug_category_reset_threshold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstDebugLevel"><returnvalue>GstDebugLevel</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-category-get-threshold">gst_debug_category_get_threshold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-category-get-name">gst_debug_category_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-category-get-color">gst_debug_category_get_color</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-category-get-description">gst_debug_category_get_description</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSList"><returnvalue>GSList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-get-all-categories">gst_debug_get_all_categories</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-construct-term-color">gst_debug_construct_term_color</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-construct-win-color">gst_debug_construct_win_color</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-LEVEL-LOG:CAPS">GST_CAT_LEVEL_LOG</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-ERROR-OBJECT:CAPS">GST_CAT_ERROR_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-WARNING-OBJECT:CAPS">GST_CAT_WARNING_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-INFO-OBJECT:CAPS">GST_CAT_INFO_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-DEBUG-OBJECT:CAPS">GST_CAT_DEBUG_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-LOG-OBJECT:CAPS">GST_CAT_LOG_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-FIXME-OBJECT:CAPS">GST_CAT_FIXME_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-TRACE-OBJECT:CAPS">GST_CAT_TRACE_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-MEMDUMP-OBJECT:CAPS">GST_CAT_MEMDUMP_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-ERROR:CAPS">GST_CAT_ERROR</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-WARNING:CAPS">GST_CAT_WARNING</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-INFO:CAPS">GST_CAT_INFO</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-DEBUG:CAPS">GST_CAT_DEBUG</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-LOG:CAPS">GST_CAT_LOG</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-FIXME:CAPS">GST_CAT_FIXME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-TRACE:CAPS">GST_CAT_TRACE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-CAT-MEMDUMP:CAPS">GST_CAT_MEMDUMP</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ERROR-OBJECT:CAPS">GST_ERROR_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WARNING-OBJECT:CAPS">GST_WARNING_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-INFO-OBJECT:CAPS">GST_INFO_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-OBJECT:CAPS">GST_DEBUG_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-LOG-OBJECT:CAPS">GST_LOG_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FIXME-OBJECT:CAPS">GST_FIXME_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TRACE-OBJECT:CAPS">GST_TRACE_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMDUMP-OBJECT:CAPS">GST_MEMDUMP_OBJECT</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-ERROR:CAPS">GST_ERROR</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-WARNING:CAPS">GST_WARNING</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-INFO:CAPS">GST_INFO</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG:CAPS">GST_DEBUG</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-LOG:CAPS">GST_LOG</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FIXME:CAPS">GST_FIXME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TRACE:CAPS">GST_TRACE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-MEMDUMP:CAPS">GST_MEMDUMP</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-REGISTER-FUNCPTR:CAPS">GST_DEBUG_REGISTER_FUNCPTR</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-FUNCPTR:CAPS">GST_DEBUG_FUNCPTR</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-FUNCPTR-NAME:CAPS">GST_DEBUG_FUNCPTR_NAME</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-BIN-TO-DOT-FILE:CAPS">GST_DEBUG_BIN_TO_DOT_FILE</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-DEBUG-BIN-TO-DOT-FILE-WITH-TS:CAPS">GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-print-stack-trace">gst_debug_print_stack_trace</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-ARGS:CAPS">GST_TIME_ARGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-STIME-ARGS:CAPS">GST_STIME_ARGS</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-debug-bin-to-dot-data">gst_debug_bin_to_dot_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-bin-to-dot-file">gst_debug_bin_to_dot_file</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-debug-bin-to-dot-file-with-ts">gst_debug_bin_to_dot_file_with_ts</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gstreamer-GstInfo.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDebugLevel">GstDebugLevel</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-LEVEL-DEFAULT:CAPS">GST_LEVEL_DEFAULT</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-LEVEL-MAX:CAPS">GST_LEVEL_MAX</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDebugColorFlags">GstDebugColorFlags</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDebugColorMode">GstDebugColorMode</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDebugCategory">GstDebugCategory</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDebugGraphDetails">GstDebugGraphDetails</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-FUNCTION:CAPS">GST_FUNCTION</link></entry></row>
+<row><entry role="variable_type">extern</entry><entry role="function_name"><link linkend="GST-CAT-DEFAULT:CAPS">GST_CAT_DEFAULT</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-TIME-FORMAT:CAPS">GST_TIME_FORMAT</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="GST-STIME-FORMAT:CAPS">GST_STIME_FORMAT</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+<refsect1 id="gstreamer-GstInfo.includes"><title>Includes</title><synopsis>#include &lt;gst/gst.h&gt;
+</synopsis></refsect1>
+
+<refsect1 id="gstreamer-GstInfo.description" role="desc">
+<title role="desc.title">Description</title>
+<para>GStreamer's debugging subsystem is an easy way to get information about what
+the application is doing.  It is not meant for programming errors. Use GLib
+methods (g_warning and friends) for that.</para>
+<para>The debugging subsystem works only after GStreamer has been initialized</para>
+<itemizedlist>
+<listitem>
+<para>for example by calling <link linkend="gst-init"><function>gst_init()</function></link>.</para>
+</listitem>
+</itemizedlist>
+<para>The debugging subsystem is used to log informational messages while the
+application runs.  Each messages has some properties attached to it. Among
+these properties are the debugging category, the severity (called "level"
+here) and an optional <link linkend="GObject"><type>GObject</type></link> it belongs to. Each of these messages is sent
+to all registered debugging handlers, which then handle the messages.
+GStreamer attaches a default handler on startup, which outputs requested
+messages to stderr.</para>
+<para>Messages are output by using shortcut macros like <link linkend="GST-DEBUG:CAPS"><type>GST_DEBUG</type></link>,
+<link linkend="GST-CAT-ERROR-OBJECT:CAPS"><type>GST_CAT_ERROR_OBJECT</type></link> or similar. These all expand to calling <link linkend="gst-debug-log"><function>gst_debug_log()</function></link>
+with the right parameters.
+The only thing a developer will probably want to do is define his own
+categories. This is easily done with 3 lines. At the top of your code,
+declare
+the variables and set the default category.</para>
+<informalexample><programlisting><![CDATA[
+  GST_DEBUG_CATEGORY_STATIC (my_category);  // define category (statically)
+  #define GST_CAT_DEFAULT my_category       // set as default
+]]></programlisting></informalexample>
+<para>
+After that you only need to initialize the category.</para>
+<informalexample><programlisting><![CDATA[
+  GST_DEBUG_CATEGORY_INIT (my_category, "my category",
+                           0, "This is my very own");
+]]></programlisting></informalexample>
+<para>
+Initialization must be done before the category is used first.
+Plugins do this
+in their plugin_init function, libraries and applications should do that
+during their initialization.</para>
+<para>The whole debugging subsystem can be disabled at build time with passing the
+--disable-gst-debug switch to configure. If this is done, every function,
+macro and even structs described in this file evaluate to default values or
+nothing at all.
+So don't take addresses of these functions or use other tricks.
+If you must do that for some reason, there is still an option.
+If the debugging
+subsystem was compiled out, <link linkend="GST-DISABLE-GST-DEBUG:CAPS"><type>GST_DISABLE_GST_DEBUG</type></link> is defined in
+&lt;gst/gst.h&gt;,
+so you can check that before doing your trick.
+Disabling the debugging subsystem will give you a slight (read: unnoticeable)
+speed increase and will reduce the size of your compiled code. The GStreamer
+library itself becomes around 10% smaller.</para>
+<para>Please note that there are naming conventions for the names of debugging
+categories. These are explained at <link linkend="GST-DEBUG-CATEGORY-INIT:CAPS"><function>GST_DEBUG_CATEGORY_INIT()</function></link>.</para>
+
+</refsect1>
+<refsect1 id="gstreamer-GstInfo.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="GST-STR-NULL:CAPS" role="macro">
+<title>GST_STR_NULL()</title>
+<indexterm zone="GST-STR-NULL:CAPS"><primary>GST_STR_NULL</primary></indexterm>
+<programlisting language="C">#define GST_STR_NULL(str) ((str) ? (str) : "(NULL)")
+</programlisting>
+<para>Macro to use when a string must not be <link linkend="NULL:CAPS"><literal>NULL</literal></link>, but may be <link linkend="NULL:CAPS"><literal>NULL</literal></link>. If the string
+is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, "(NULL)" is printed instead.
+In GStreamer printf string arguments may not be <link linkend="NULL:CAPS"><literal>NULL</literal></link>, because on some
+platforms (ie Solaris) the libc crashes in that case. This includes debugging
+strings.</para>
+<refsect3 id="GST-STR-NULL.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>str</para></entry>
+<entry role="parameter_description"><para> The string to check. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-PAD-NAME:CAPS" role="macro">
+<title>GST_DEBUG_PAD_NAME()</title>
+<indexterm zone="GST-DEBUG-PAD-NAME:CAPS"><primary>GST_DEBUG_PAD_NAME</primary></indexterm>
+<programlisting language="C">#define             GST_DEBUG_PAD_NAME(pad)</programlisting>
+<para>Evaluates to 2 strings, that describe the pad. Often used in debugging
+statements.</para>
+<refsect3 id="GST-DEBUG-PAD-NAME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>The pad to debug.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstLogFunction" role="function">
+<title>GstLogFunction&#160;()</title>
+<indexterm zone="GstLogFunction"><primary>GstLogFunction</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstLogFunction<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>,
+                   <parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *file</parameter>,
+                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *function</parameter>,
+                   <parameter><link linkend="gint"><type>gint</type></link> line</parameter>,
+                   <parameter><link linkend="GObject"><type>GObject</type></link> *object</parameter>,
+                   <parameter><link linkend="GstDebugMessage"><type>GstDebugMessage</type></link> *message</parameter>,
+                   <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Function prototype for a logging function that can be registered with
+<link linkend="gst-debug-add-log-function"><function>gst_debug_add_log_function()</function></link>.
+Use G_GNUC_NO_INSTRUMENT on that function.</para>
+<refsect3 id="GstLogFunction.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugLevel"><type>GstDebugLevel</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>file</para></entry>
+<entry role="parameter_description"><para>file name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>function</para></entry>
+<entry role="parameter_description"><para>function name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>line</para></entry>
+<entry role="parameter_description"><para>line number</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GObject"><type>GObject</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data for the log function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-log" role="function">
+<title>gst_debug_log&#160;()</title>
+<indexterm zone="gst-debug-log"><primary>gst_debug_log</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_log (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>,
+               <parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>,
+               <parameter>const <link linkend="gchar"><type>gchar</type></link> *file</parameter>,
+               <parameter>const <link linkend="gchar"><type>gchar</type></link> *function</parameter>,
+               <parameter><link linkend="gint"><type>gint</type></link> line</parameter>,
+               <parameter><link linkend="GObject"><type>GObject</type></link> *object</parameter>,
+               <parameter>const <link linkend="gchar"><type>gchar</type></link> *format</parameter>,
+               <parameter>...</parameter>);</programlisting>
+<para>Logs the given message using the currently registered debugging handlers.</para>
+<refsect3 id="gst-debug-log.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>category to log</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>level of the message is in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>file</para></entry>
+<entry role="parameter_description"><para>the file that emitted the message, usually the __FILE__ identifier</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>function</para></entry>
+<entry role="parameter_description"><para>the function that emitted the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>line</para></entry>
+<entry role="parameter_description"><para>the line from that the message was emitted, usually __LINE__</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para> the object this message relates to,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>a printf style format string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>optional arguments for the format</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-log-valist" role="function">
+<title>gst_debug_log_valist&#160;()</title>
+<indexterm zone="gst-debug-log-valist"><primary>gst_debug_log_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_log_valist (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>,
+                      <parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *file</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *function</parameter>,
+                      <parameter><link linkend="gint"><type>gint</type></link> line</parameter>,
+                      <parameter><link linkend="GObject"><type>GObject</type></link> *object</parameter>,
+                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *format</parameter>,
+                      <parameter><link linkend="va-list"><type>va_list</type></link> args</parameter>);</programlisting>
+<para>Logs the given message using the currently registered debugging handlers.</para>
+<refsect3 id="gst-debug-log-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>category to log</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>level of the message is in</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>file</para></entry>
+<entry role="parameter_description"><para>the file that emitted the message, usually the __FILE__ identifier</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>function</para></entry>
+<entry role="parameter_description"><para>the function that emitted the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>line</para></entry>
+<entry role="parameter_description"><para>the line from that the message was emitted, usually __LINE__</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para> the object this message relates to,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>format</para></entry>
+<entry role="parameter_description"><para>a printf style format string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>args</para></entry>
+<entry role="parameter_description"><para>optional arguments for the format</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-message-get" role="function">
+<title>gst_debug_message_get&#160;()</title>
+<indexterm zone="gst-debug-message-get"><primary>gst_debug_message_get</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_debug_message_get (<parameter><link linkend="GstDebugMessage"><type>GstDebugMessage</type></link> *message</parameter>);</programlisting>
+<para>Gets the string representation of a <link linkend="GstDebugMessage"><type>GstDebugMessage</type></link>. This function is used
+in debug handlers to extract the message.</para>
+<refsect3 id="gst-debug-message-get.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>a debug message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-message-get.returns" role="returns">
+<title>Returns</title>
+<para> the string representation of a <link linkend="GstDebugMessage"><type>GstDebugMessage</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-log-default" role="function">
+<title>gst_debug_log_default&#160;()</title>
+<indexterm zone="gst-debug-log-default"><primary>gst_debug_log_default</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_log_default (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>,
+                       <parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *file</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *function</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> line</parameter>,
+                       <parameter><link linkend="GObject"><type>GObject</type></link> *object</parameter>,
+                       <parameter><link linkend="GstDebugMessage"><type>GstDebugMessage</type></link> *message</parameter>,
+                       <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>The default logging handler used by GStreamer. Logging functions get called
+whenever a macro like GST_DEBUG or similar is used. By default this function
+is setup to output the message and additional info to stderr (or the log file
+specified via the GST_DEBUG_FILE environment variable) as received via
+<parameter>user_data</parameter>
+.</para>
+<para>You can add other handlers by using <link linkend="gst-debug-add-log-function"><function>gst_debug_add_log_function()</function></link>.
+And you can remove this handler by calling
+gst_debug_remove_log_function(gst_debug_log_default);</para>
+<refsect3 id="gst-debug-log-default.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>category to log</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>level of the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>file</para></entry>
+<entry role="parameter_description"><para>the file that emitted the message, usually the __FILE__ identifier</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>function</para></entry>
+<entry role="parameter_description"><para>the function that emitted the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>line</para></entry>
+<entry role="parameter_description"><para>the line from that the message was emitted, usually __LINE__</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>message</para></entry>
+<entry role="parameter_description"><para>the actual message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para> the object this message relates to,
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the FILE* to log to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-level-get-name" role="function">
+<title>gst_debug_level_get_name&#160;()</title>
+<indexterm zone="gst-debug-level-get-name"><primary>gst_debug_level_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_debug_level_get_name (<parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>);</programlisting>
+<para>Get the string representation of a debugging level</para>
+<refsect3 id="gst-debug-level-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>the level to get the name for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-level-get-name.returns" role="returns">
+<title>Returns</title>
+<para> the name</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-add-log-function" role="function">
+<title>gst_debug_add_log_function&#160;()</title>
+<indexterm zone="gst-debug-add-log-function"><primary>gst_debug_add_log_function</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_add_log_function (<parameter><link linkend="GstLogFunction"><type>GstLogFunction</type></link> func</parameter>,
+                            <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                            <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> notify</parameter>);</programlisting>
+<para>Adds the logging function to the list of logging functions.
+Be sure to use <link linkend="G-GNUC-NO-INSTRUMENT:CAPS"><type>G_GNUC_NO_INSTRUMENT</type></link> on that function, it is needed.</para>
+<refsect3 id="gst-debug-add-log-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>the function to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>notify</para></entry>
+<entry role="parameter_description"><para>called when <parameter>user_data</parameter>
+is not used anymore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-remove-log-function" role="function">
+<title>gst_debug_remove_log_function&#160;()</title>
+<indexterm zone="gst-debug-remove-log-function"><primary>gst_debug_remove_log_function</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_debug_remove_log_function (<parameter><link linkend="GstLogFunction"><type>GstLogFunction</type></link> func</parameter>);</programlisting>
+<para>Removes all registered instances of the given logging functions.</para>
+<refsect3 id="gst-debug-remove-log-function.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para> the log function to remove. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-remove-log-function.returns" role="returns">
+<title>Returns</title>
+<para> How many instances of the function were removed</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-remove-log-function-by-data" role="function">
+<title>gst_debug_remove_log_function_by_data&#160;()</title>
+<indexterm zone="gst-debug-remove-log-function-by-data"><primary>gst_debug_remove_log_function_by_data</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_debug_remove_log_function_by_data (<parameter><link linkend="gpointer"><type>gpointer</type></link> data</parameter>);</programlisting>
+<para>Removes all registered instances of log functions with the given user data.</para>
+<refsect3 id="gst-debug-remove-log-function-by-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>user data of the log function to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-remove-log-function-by-data.returns" role="returns">
+<title>Returns</title>
+<para> How many instances of the function were removed</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-set-active" role="function">
+<title>gst_debug_set_active&#160;()</title>
+<indexterm zone="gst-debug-set-active"><primary>gst_debug_set_active</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_active (<parameter><link linkend="gboolean"><type>gboolean</type></link> active</parameter>);</programlisting>
+<para>If activated, debugging messages are sent to the debugging
+handlers.
+It makes sense to deactivate it for speed issues.</para>
+<note><para>This function is not threadsafe. It makes sense to only call it
+during initialization.</para></note>
+<refsect3 id="gst-debug-set-active.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>active</para></entry>
+<entry role="parameter_description"><para>Whether to use debugging output or not</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-is-active" role="function">
+<title>gst_debug_is_active&#160;()</title>
+<indexterm zone="gst-debug-is-active"><primary>gst_debug_is_active</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_debug_is_active (<parameter><type>void</type></parameter>);</programlisting>
+<para>Checks if debugging output is activated.</para>
+<refsect3 id="gst-debug-is-active.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, if debugging is activated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-set-colored" role="function">
+<title>gst_debug_set_colored&#160;()</title>
+<indexterm zone="gst-debug-set-colored"><primary>gst_debug_set_colored</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_colored (<parameter><link linkend="gboolean"><type>gboolean</type></link> colored</parameter>);</programlisting>
+<para>Sets or unsets the use of coloured debugging output.
+Same as <link linkend="gst-debug-set-color-mode"><function>gst_debug_set_color_mode()</function></link> with the argument being
+being GST_DEBUG_COLOR_MODE_ON or GST_DEBUG_COLOR_MODE_OFF.</para>
+<para>This function may be called before <link linkend="gst-init"><function>gst_init()</function></link>.</para>
+<refsect3 id="gst-debug-set-colored.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>colored</para></entry>
+<entry role="parameter_description"><para>Whether to use colored output or not</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-set-color-mode" role="function" condition="since:1.2">
+<title>gst_debug_set_color_mode&#160;()</title>
+<indexterm zone="gst-debug-set-color-mode" role="1.2"><primary>gst_debug_set_color_mode</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_color_mode (<parameter><link linkend="GstDebugColorMode"><type>GstDebugColorMode</type></link> mode</parameter>);</programlisting>
+<para>Changes the coloring mode for debug output.</para>
+<para>This function may be called before <link linkend="gst-init"><function>gst_init()</function></link>.</para>
+<refsect3 id="gst-debug-set-color-mode.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>The coloring mode for debug output. See <parameter>GstDebugColorMode</parameter>
+.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-debug-set-color-mode-from-string" role="function" condition="since:1.2">
+<title>gst_debug_set_color_mode_from_string&#160;()</title>
+<indexterm zone="gst-debug-set-color-mode-from-string" role="1.2"><primary>gst_debug_set_color_mode_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_color_mode_from_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *mode</parameter>);</programlisting>
+<para>Changes the coloring mode for debug output.</para>
+<para>This function may be called before <link linkend="gst-init"><function>gst_init()</function></link>.</para>
+<refsect3 id="gst-debug-set-color-mode-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>The coloring mode for debug output. One of the following:
+"on", "auto", "off", "disable", "unix".</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-debug-is-colored" role="function">
+<title>gst_debug_is_colored&#160;()</title>
+<indexterm zone="gst-debug-is-colored"><primary>gst_debug_is_colored</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_debug_is_colored (<parameter><type>void</type></parameter>);</programlisting>
+<para>Checks if the debugging output should be colored.</para>
+<refsect3 id="gst-debug-is-colored.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, if the debug output should be colored.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-get-color-mode" role="function" condition="since:1.2">
+<title>gst_debug_get_color_mode&#160;()</title>
+<indexterm zone="gst-debug-get-color-mode" role="1.2"><primary>gst_debug_get_color_mode</primary></indexterm>
+<programlisting language="C"><link linkend="GstDebugColorMode"><returnvalue>GstDebugColorMode</returnvalue></link>
+gst_debug_get_color_mode (<parameter><type>void</type></parameter>);</programlisting>
+<para>Changes the coloring mode for debug output.</para>
+<refsect3 id="gst-debug-get-color-mode.returns" role="returns">
+<title>Returns</title>
+<para> see <parameter>GstDebugColorMode</parameter>
+for possible values.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-debug-set-default-threshold" role="function">
+<title>gst_debug_set_default_threshold&#160;()</title>
+<indexterm zone="gst-debug-set-default-threshold"><primary>gst_debug_set_default_threshold</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_default_threshold (<parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>);</programlisting>
+<para>Sets the default threshold to the given level and updates all categories to
+use this threshold.</para>
+<para>This function may be called before <link linkend="gst-init"><function>gst_init()</function></link>.</para>
+<refsect3 id="gst-debug-set-default-threshold.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>level to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-set-threshold-from-string" role="function" condition="since:1.2">
+<title>gst_debug_set_threshold_from_string&#160;()</title>
+<indexterm zone="gst-debug-set-threshold-from-string" role="1.2"><primary>gst_debug_set_threshold_from_string</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_threshold_from_string (<parameter>const <link linkend="gchar"><type>gchar</type></link> *list</parameter>,
+                                     <parameter><link linkend="gboolean"><type>gboolean</type></link> reset</parameter>);</programlisting>
+<para>Sets the debug logging wanted in the same form as with the GST_DEBUG
+environment variable. You can use wildcards such as '*', but note that
+the order matters when you use wild cards, e.g. "foosrc:6,*src:3,*:2" sets
+everything to log level 2.</para>
+<refsect3 id="gst-debug-set-threshold-from-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>list</para></entry>
+<entry role="parameter_description"><para>comma-separated list of "category:level" pairs to be used
+as debug logging levels</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>reset</para></entry>
+<entry role="parameter_description"><para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> to clear all previously-set debug levels before setting
+new thresholds
+<link linkend="FALSE:CAPS"><literal>FALSE</literal></link> if adding the threshold described by <parameter>list</parameter>
+to the one already set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="gst-debug-get-default-threshold" role="function">
+<title>gst_debug_get_default_threshold&#160;()</title>
+<indexterm zone="gst-debug-get-default-threshold"><primary>gst_debug_get_default_threshold</primary></indexterm>
+<programlisting language="C"><link linkend="GstDebugLevel"><returnvalue>GstDebugLevel</returnvalue></link>
+gst_debug_get_default_threshold (<parameter><type>void</type></parameter>);</programlisting>
+<para>Returns the default threshold that is used for new categories.</para>
+<refsect3 id="gst-debug-get-default-threshold.returns" role="returns">
+<title>Returns</title>
+<para> the default threshold level</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-set-threshold-for-name" role="function">
+<title>gst_debug_set_threshold_for_name&#160;()</title>
+<indexterm zone="gst-debug-set-threshold-for-name"><primary>gst_debug_set_threshold_for_name</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_set_threshold_for_name (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>,
+                                  <parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>);</programlisting>
+<para>Sets all categories which match the given glob style pattern to the given
+level.</para>
+<refsect3 id="gst-debug-set-threshold-for-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the categories to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>level to set them to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-unset-threshold-for-name" role="function">
+<title>gst_debug_unset_threshold_for_name&#160;()</title>
+<indexterm zone="gst-debug-unset-threshold-for-name"><primary>gst_debug_unset_threshold_for_name</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_unset_threshold_for_name (<parameter>const <link linkend="gchar"><type>gchar</type></link> *name</parameter>);</programlisting>
+<para>Resets all categories with the given name back to the default level.</para>
+<refsect3 id="gst-debug-unset-threshold-for-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>name of the categories to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-CATEGORY:CAPS" role="macro">
+<title>GST_DEBUG_CATEGORY()</title>
+<indexterm zone="GST-DEBUG-CATEGORY:CAPS"><primary>GST_DEBUG_CATEGORY</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG_CATEGORY(cat) GstDebugCategory *cat = NULL
+</programlisting>
+<para>Defines a GstDebugCategory variable.
+This macro expands to nothing if debugging is disabled.</para>
+<refsect3 id="GST-DEBUG-CATEGORY.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>the category</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-CATEGORY-EXTERN:CAPS" role="macro">
+<title>GST_DEBUG_CATEGORY_EXTERN()</title>
+<indexterm zone="GST-DEBUG-CATEGORY-EXTERN:CAPS"><primary>GST_DEBUG_CATEGORY_EXTERN</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG_CATEGORY_EXTERN(cat) extern GstDebugCategory *cat
+</programlisting>
+<para>Declares a GstDebugCategory variable as extern. Use in header files.
+This macro expands to nothing if debugging is disabled.</para>
+<refsect3 id="GST-DEBUG-CATEGORY-EXTERN.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>the category</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-CATEGORY-STATIC:CAPS" role="macro">
+<title>GST_DEBUG_CATEGORY_STATIC()</title>
+<indexterm zone="GST-DEBUG-CATEGORY-STATIC:CAPS"><primary>GST_DEBUG_CATEGORY_STATIC</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG_CATEGORY_STATIC(cat) static GstDebugCategory *cat = NULL
+</programlisting>
+<para>Defines a static GstDebugCategory variable.
+This macro expands to nothing if debugging is disabled.</para>
+<refsect3 id="GST-DEBUG-CATEGORY-STATIC.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>the category</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-CATEGORY-INIT:CAPS" role="macro">
+<title>GST_DEBUG_CATEGORY_INIT()</title>
+<indexterm zone="GST-DEBUG-CATEGORY-INIT:CAPS"><primary>GST_DEBUG_CATEGORY_INIT</primary></indexterm>
+<programlisting language="C">#define             GST_DEBUG_CATEGORY_INIT(cat,name,color,description)</programlisting>
+<para>Initializes a new <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> with the given properties and set to
+the default threshold.</para>
+<note>
+<para>
+This macro expands to nothing if debugging is disabled.
+</para>
+<para>
+When naming your category, please follow the following conventions to ensure
+that the pattern matching for categories works as expected. It is not
+earth-shattering if you don't follow these conventions, but it would be nice
+for everyone.
+</para>
+<para>
+If you define a category for a plugin or a feature of it, name the category
+like the feature. So if you wanted to write a "filesrc" element, you would
+name the category "filesrc". Use lowercase letters only.
+If you define more than one category for the same element, append an
+underscore and an identifier to your categories, like this: "filesrc_cache"
+</para>
+<para>
+If you create a library or an application using debugging categories, use a
+common prefix followed by an underscore for all your categories. GStreamer
+uses the GST prefix so GStreamer categories look like "GST_STATES". Be sure
+to include uppercase letters.
+</para>
+</note>
+<refsect3 id="GST-DEBUG-CATEGORY-INIT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>the category to initialize.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>the name of the category.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>color</para></entry>
+<entry role="parameter_description"><para>the colors to use for a color representation or 0 for no color.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>optional description of the category.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-CATEGORY-GET:CAPS" role="macro">
+<title>GST_DEBUG_CATEGORY_GET()</title>
+<indexterm zone="GST-DEBUG-CATEGORY-GET:CAPS"><primary>GST_DEBUG_CATEGORY_GET</primary></indexterm>
+<programlisting language="C">#define             GST_DEBUG_CATEGORY_GET(cat,name)</programlisting>
+<para>Looks up an existing <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> by its <parameter>name</parameter>
+ and sets <parameter>cat</parameter>
+. If the
+category is not found, but GST_CAT_DEFAULT is defined, that is assigned to
+<parameter>cat</parameter>
+. Otherwise <parameter>cat</parameter>
+ will be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<informalexample><programlisting><![CDATA[
+GST_DEBUG_CATEGORY_STATIC (gst_myplugin_debug);
+#define GST_CAT_DEFAULT gst_myplugin_debug
+GST_DEBUG_CATEGORY_STATIC (GST_CAT_PERFORMANCE);
+...
+GST_DEBUG_CATEGORY_INIT (gst_myplugin_debug, "myplugin", 0, "nice element");
+GST_DEBUG_CATEGORY_GET (GST_CAT_PERFORMANCE, "GST_PERFORMANCE");
+]]></programlisting></informalexample>
+<para></para>
+<refsect3 id="GST-DEBUG-CATEGORY-GET.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>the category to initialize.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>name</para></entry>
+<entry role="parameter_description"><para>log category name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-free" role="function">
+<title>gst_debug_category_free&#160;()</title>
+<indexterm zone="gst-debug-category-free"><primary>gst_debug_category_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_category_free (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>);</programlisting>
+<para>Removes and frees the category and all associated resources.</para>
+<refsect3 id="gst-debug-category-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to free.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-set-threshold" role="function">
+<title>gst_debug_category_set_threshold&#160;()</title>
+<indexterm zone="gst-debug-category-set-threshold"><primary>gst_debug_category_set_threshold</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_category_set_threshold (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>,
+                                  <parameter><link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> level</parameter>);</programlisting>
+<para>Sets the threshold of the category to the given level. Debug information will
+only be output if the threshold is lower or equal to the level of the
+debugging message.</para>
+<note><para>
+Do not use this function in production code, because other functions may
+change the threshold of categories as side effect. It is however a nice
+function to use when debugging (even from gdb).
+</para></note>
+<refsect3 id="gst-debug-category-set-threshold.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to set threshold of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> threshold to set.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-reset-threshold" role="function">
+<title>gst_debug_category_reset_threshold&#160;()</title>
+<indexterm zone="gst-debug-category-reset-threshold"><primary>gst_debug_category_reset_threshold</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_category_reset_threshold (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>);</programlisting>
+<para>Resets the threshold of the category to the default level. Debug information
+will only be output if the threshold is lower or equal to the level of the
+debugging message.
+Use this function to set the threshold back to where it was after using
+<link linkend="gst-debug-category-set-threshold"><function>gst_debug_category_set_threshold()</function></link>.</para>
+<refsect3 id="gst-debug-category-reset-threshold.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to reset threshold of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-get-threshold" role="function">
+<title>gst_debug_category_get_threshold&#160;()</title>
+<indexterm zone="gst-debug-category-get-threshold"><primary>gst_debug_category_get_threshold</primary></indexterm>
+<programlisting language="C"><link linkend="GstDebugLevel"><returnvalue>GstDebugLevel</returnvalue></link>
+gst_debug_category_get_threshold (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>);</programlisting>
+<para>Returns the threshold of a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link>.</para>
+<refsect3 id="gst-debug-category-get-threshold.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to get threshold of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-category-get-threshold.returns" role="returns">
+<title>Returns</title>
+<para> the <link linkend="GstDebugLevel"><type>GstDebugLevel</type></link> that is used as threshold.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-get-name" role="function">
+<title>gst_debug_category_get_name&#160;()</title>
+<indexterm zone="gst-debug-category-get-name"><primary>gst_debug_category_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_debug_category_get_name (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>);</programlisting>
+<para>Returns the name of a debug category.</para>
+<refsect3 id="gst-debug-category-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to get name of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-category-get-name.returns" role="returns">
+<title>Returns</title>
+<para> the name of the category.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-get-color" role="function">
+<title>gst_debug_category_get_color&#160;()</title>
+<indexterm zone="gst-debug-category-get-color"><primary>gst_debug_category_get_color</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_debug_category_get_color (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>);</programlisting>
+<para>Returns the color of a debug category used when printing output in this
+category.</para>
+<refsect3 id="gst-debug-category-get-color.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to get the color of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-category-get-color.returns" role="returns">
+<title>Returns</title>
+<para> the color of the category.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-category-get-description" role="function">
+<title>gst_debug_category_get_description&#160;()</title>
+<indexterm zone="gst-debug-category-get-description"><primary>gst_debug_category_get_description</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_debug_category_get_description (<parameter><link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> *category</parameter>);</programlisting>
+<para>Returns the description of a debug category.</para>
+<refsect3 id="gst-debug-category-get-description.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>category</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstDebugCategory"><type>GstDebugCategory</type></link> to get the description of.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-category-get-description.returns" role="returns">
+<title>Returns</title>
+<para> the description of the category.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-get-all-categories" role="function">
+<title>gst_debug_get_all_categories&#160;()</title>
+<indexterm zone="gst-debug-get-all-categories"><primary>gst_debug_get_all_categories</primary></indexterm>
+<programlisting language="C"><link linkend="GSList"><returnvalue>GSList</returnvalue></link>&#160;*
+gst_debug_get_all_categories (<parameter><type>void</type></parameter>);</programlisting>
+<para>Returns a snapshot of a all categories that are currently in use . This list
+may change anytime.
+The caller has to free the list after use.</para>
+<refsect3 id="gst-debug-get-all-categories.returns" role="returns">
+<title>Returns</title>
+<para> the list of
+debug categories. </para>
+<para><emphasis role="annotation">[<acronym>transfer container</acronym>][<acronym>element-type</acronym> Gst.DebugCategory]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-construct-term-color" role="function">
+<title>gst_debug_construct_term_color&#160;()</title>
+<indexterm zone="gst-debug-construct-term-color"><primary>gst_debug_construct_term_color</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_debug_construct_term_color (<parameter><link linkend="guint"><type>guint</type></link> colorinfo</parameter>);</programlisting>
+<para>Constructs a string that can be used for getting the desired color in color
+terminals.
+You need to free the string after use.</para>
+<refsect3 id="gst-debug-construct-term-color.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>colorinfo</para></entry>
+<entry role="parameter_description"><para>the color info</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-construct-term-color.returns" role="returns">
+<title>Returns</title>
+<para> a string containing the color
+definition. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>type</acronym> gchar*]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-construct-win-color" role="function">
+<title>gst_debug_construct_win_color&#160;()</title>
+<indexterm zone="gst-debug-construct-win-color"><primary>gst_debug_construct_win_color</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_debug_construct_win_color (<parameter><link linkend="guint"><type>guint</type></link> colorinfo</parameter>);</programlisting>
+<para>Constructs an integer that can be used for getting the desired color in
+windows' terminals (cmd.exe). As there is no mean to underline, we simply
+ignore this attribute.</para>
+<para>This function returns 0 on non-windows machines.</para>
+<refsect3 id="gst-debug-construct-win-color.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>colorinfo</para></entry>
+<entry role="parameter_description"><para>the color info</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-debug-construct-win-color.returns" role="returns">
+<title>Returns</title>
+<para> an integer containing the color definition</para>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-LEVEL-LOG:CAPS" role="macro">
+<title>GST_CAT_LEVEL_LOG()</title>
+<indexterm zone="GST-CAT-LEVEL-LOG:CAPS"><primary>GST_CAT_LEVEL_LOG</primary></indexterm>
+<programlisting language="C">#define             GST_CAT_LEVEL_LOG(cat,level,object,...)</programlisting>
+<para>Outputs a debugging message. This is the most general macro for outputting
+debugging messages. You will probably want to use one of the ones described
+below.</para>
+<refsect3 id="GST-CAT-LEVEL-LOG.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>level</para></entry>
+<entry role="parameter_description"><para>the severity of the message</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>object</para></entry>
+<entry role="parameter_description"><para> the <link linkend="GObject"><type>GObject</type></link> the message belongs to or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if none. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>A printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-ERROR-OBJECT:CAPS" role="macro">
+<title>GST_CAT_ERROR_OBJECT()</title>
+<indexterm zone="GST-CAT-ERROR-OBJECT:CAPS"><primary>GST_CAT_ERROR_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_ERROR_OBJECT(cat,obj,...)&#160;GST_CAT_LEVEL_LOG (cat, GST_LEVEL_ERROR,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output an error message belonging to the given object in the given category.</para>
+<refsect3 id="GST-CAT-ERROR-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-WARNING-OBJECT:CAPS" role="macro">
+<title>GST_CAT_WARNING_OBJECT()</title>
+<indexterm zone="GST-CAT-WARNING-OBJECT:CAPS"><primary>GST_CAT_WARNING_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_WARNING_OBJECT(cat,obj,...)&#160;GST_CAT_LEVEL_LOG (cat, GST_LEVEL_WARNING, obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a warning message belonging to the given object in the given category.</para>
+<refsect3 id="GST-CAT-WARNING-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-INFO-OBJECT:CAPS" role="macro">
+<title>GST_CAT_INFO_OBJECT()</title>
+<indexterm zone="GST-CAT-INFO-OBJECT:CAPS"><primary>GST_CAT_INFO_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_INFO_OBJECT(cat,obj,...)&#160;GST_CAT_LEVEL_LOG (cat, GST_LEVEL_INFO,    obj,  __VA_ARGS__)
+</programlisting>
+<para>Output an informational message belonging to the given object in the given
+category.</para>
+<refsect3 id="GST-CAT-INFO-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-DEBUG-OBJECT:CAPS" role="macro">
+<title>GST_CAT_DEBUG_OBJECT()</title>
+<indexterm zone="GST-CAT-DEBUG-OBJECT:CAPS"><primary>GST_CAT_DEBUG_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_DEBUG_OBJECT(cat,obj,...)&#160;GST_CAT_LEVEL_LOG (cat, GST_LEVEL_DEBUG,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output an debugging message belonging to the given object in the given category.</para>
+<refsect3 id="GST-CAT-DEBUG-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-LOG-OBJECT:CAPS" role="macro">
+<title>GST_CAT_LOG_OBJECT()</title>
+<indexterm zone="GST-CAT-LOG-OBJECT:CAPS"><primary>GST_CAT_LOG_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_LOG_OBJECT(cat,obj,...)		GST_CAT_LEVEL_LOG (cat, GST_LEVEL_LOG,     obj,  __VA_ARGS__)
+</programlisting>
+<para>Output an logging message belonging to the given object in the given category.</para>
+<refsect3 id="GST-CAT-LOG-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-FIXME-OBJECT:CAPS" role="macro">
+<title>GST_CAT_FIXME_OBJECT()</title>
+<indexterm zone="GST-CAT-FIXME-OBJECT:CAPS"><primary>GST_CAT_FIXME_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_FIXME_OBJECT(cat,obj,...)&#160;GST_CAT_LEVEL_LOG (cat, GST_LEVEL_FIXME,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a fixme message belonging to the given object in the given category.</para>
+<refsect3 id="GST-CAT-FIXME-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-TRACE-OBJECT:CAPS" role="macro">
+<title>GST_CAT_TRACE_OBJECT()</title>
+<indexterm zone="GST-CAT-TRACE-OBJECT:CAPS"><primary>GST_CAT_TRACE_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_CAT_TRACE_OBJECT(cat,obj,...)&#160;GST_CAT_LEVEL_LOG (cat, GST_LEVEL_TRACE,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a tracing message belonging to the given object in the given
+category.</para>
+<refsect3 id="GST-CAT-TRACE-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-MEMDUMP-OBJECT:CAPS" role="macro">
+<title>GST_CAT_MEMDUMP_OBJECT()</title>
+<indexterm zone="GST-CAT-MEMDUMP-OBJECT:CAPS"><primary>GST_CAT_MEMDUMP_OBJECT</primary></indexterm>
+<programlisting language="C">#define             GST_CAT_MEMDUMP_OBJECT(cat,obj,msg,data,length)</programlisting>
+<para>Output a hexdump of <parameter>data</parameter>
+ relating to the given object in the given
+category.</para>
+<refsect3 id="GST-CAT-MEMDUMP-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para>message string to log with the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>pointer to the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>length of the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-ERROR:CAPS" role="macro">
+<title>GST_CAT_ERROR()</title>
+<indexterm zone="GST-CAT-ERROR:CAPS"><primary>GST_CAT_ERROR</primary></indexterm>
+<programlisting language="C">#define GST_CAT_ERROR(cat,...)			GST_CAT_LEVEL_LOG (cat, GST_LEVEL_ERROR,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an error message in the given category.</para>
+<refsect3 id="GST-CAT-ERROR.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-WARNING:CAPS" role="macro">
+<title>GST_CAT_WARNING()</title>
+<indexterm zone="GST-CAT-WARNING:CAPS"><primary>GST_CAT_WARNING</primary></indexterm>
+<programlisting language="C">#define GST_CAT_WARNING(cat,...)		GST_CAT_LEVEL_LOG (cat, GST_LEVEL_WARNING, NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an warning message in the given category.</para>
+<refsect3 id="GST-CAT-WARNING.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-INFO:CAPS" role="macro">
+<title>GST_CAT_INFO()</title>
+<indexterm zone="GST-CAT-INFO:CAPS"><primary>GST_CAT_INFO</primary></indexterm>
+<programlisting language="C">#define GST_CAT_INFO(cat,...)			GST_CAT_LEVEL_LOG (cat, GST_LEVEL_INFO,    NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an informational message in the given category.</para>
+<refsect3 id="GST-CAT-INFO.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-DEBUG:CAPS" role="macro">
+<title>GST_CAT_DEBUG()</title>
+<indexterm zone="GST-CAT-DEBUG:CAPS"><primary>GST_CAT_DEBUG</primary></indexterm>
+<programlisting language="C">#define GST_CAT_DEBUG(cat,...)			GST_CAT_LEVEL_LOG (cat, GST_LEVEL_DEBUG,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an debugging message in the given category.</para>
+<refsect3 id="GST-CAT-DEBUG.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-LOG:CAPS" role="macro">
+<title>GST_CAT_LOG()</title>
+<indexterm zone="GST-CAT-LOG:CAPS"><primary>GST_CAT_LOG</primary></indexterm>
+<programlisting language="C">#define GST_CAT_LOG(cat,...)			GST_CAT_LEVEL_LOG (cat, GST_LEVEL_LOG,     NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an logging message in the given category.</para>
+<refsect3 id="GST-CAT-LOG.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-FIXME:CAPS" role="macro">
+<title>GST_CAT_FIXME()</title>
+<indexterm zone="GST-CAT-FIXME:CAPS"><primary>GST_CAT_FIXME</primary></indexterm>
+<programlisting language="C">#define GST_CAT_FIXME(cat,...)			GST_CAT_LEVEL_LOG (cat, GST_LEVEL_FIXME,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an fixme message in the given category.</para>
+<refsect3 id="GST-CAT-FIXME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-TRACE:CAPS" role="macro">
+<title>GST_CAT_TRACE()</title>
+<indexterm zone="GST-CAT-TRACE:CAPS"><primary>GST_CAT_TRACE</primary></indexterm>
+<programlisting language="C">#define GST_CAT_TRACE(cat,...)		GST_CAT_LEVEL_LOG (cat, GST_LEVEL_TRACE,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output a tracing message in the given category.</para>
+<refsect3 id="GST-CAT-TRACE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-CAT-MEMDUMP:CAPS" role="macro">
+<title>GST_CAT_MEMDUMP()</title>
+<indexterm zone="GST-CAT-MEMDUMP:CAPS"><primary>GST_CAT_MEMDUMP</primary></indexterm>
+<programlisting language="C">#define             GST_CAT_MEMDUMP(cat,msg,data,length)</programlisting>
+<para>Output a hexdump of <parameter>data</parameter>
+ in the given category.</para>
+<refsect3 id="GST-CAT-MEMDUMP.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>cat</para></entry>
+<entry role="parameter_description"><para>category to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para>message string to log with the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>pointer to the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>length of the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ERROR-OBJECT:CAPS" role="macro">
+<title>GST_ERROR_OBJECT()</title>
+<indexterm zone="GST-ERROR-OBJECT:CAPS"><primary>GST_ERROR_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_ERROR_OBJECT(obj,...)&#160;GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_ERROR,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output an error message belonging to the given object in the default category.</para>
+<refsect3 id="GST-ERROR-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WARNING-OBJECT:CAPS" role="macro">
+<title>GST_WARNING_OBJECT()</title>
+<indexterm zone="GST-WARNING-OBJECT:CAPS"><primary>GST_WARNING_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_WARNING_OBJECT(obj,...)&#160;GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_WARNING, obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a warning message belonging to the given object in the default category.</para>
+<refsect3 id="GST-WARNING-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-INFO-OBJECT:CAPS" role="macro">
+<title>GST_INFO_OBJECT()</title>
+<indexterm zone="GST-INFO-OBJECT:CAPS"><primary>GST_INFO_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_INFO_OBJECT(obj,...)&#160;GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_INFO,    obj,  __VA_ARGS__)
+</programlisting>
+<para>Output an informational message belonging to the given object in the default
+category.</para>
+<refsect3 id="GST-INFO-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-OBJECT:CAPS" role="macro">
+<title>GST_DEBUG_OBJECT()</title>
+<indexterm zone="GST-DEBUG-OBJECT:CAPS"><primary>GST_DEBUG_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG_OBJECT(obj,...)&#160;GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_DEBUG,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a debugging message belonging to the given object in the default
+category.</para>
+<refsect3 id="GST-DEBUG-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-LOG-OBJECT:CAPS" role="macro">
+<title>GST_LOG_OBJECT()</title>
+<indexterm zone="GST-LOG-OBJECT:CAPS"><primary>GST_LOG_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_LOG_OBJECT(obj,...)		GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_LOG,     obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a logging message belonging to the given object in the default category.</para>
+<refsect3 id="GST-LOG-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-FIXME-OBJECT:CAPS" role="macro">
+<title>GST_FIXME_OBJECT()</title>
+<indexterm zone="GST-FIXME-OBJECT:CAPS"><primary>GST_FIXME_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_FIXME_OBJECT(obj,...)&#160;GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_FIXME,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a fixme message belonging to the given object in the default category.</para>
+<refsect3 id="GST-FIXME-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TRACE-OBJECT:CAPS" role="macro">
+<title>GST_TRACE_OBJECT()</title>
+<indexterm zone="GST-TRACE-OBJECT:CAPS"><primary>GST_TRACE_OBJECT</primary></indexterm>
+<programlisting language="C">#define GST_TRACE_OBJECT(obj,...)&#160;GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_TRACE,   obj,  __VA_ARGS__)
+</programlisting>
+<para>Output a tracing message belonging to the given object in the default category.</para>
+<refsect3 id="GST-TRACE-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMDUMP-OBJECT:CAPS" role="macro">
+<title>GST_MEMDUMP_OBJECT()</title>
+<indexterm zone="GST-MEMDUMP-OBJECT:CAPS"><primary>GST_MEMDUMP_OBJECT</primary></indexterm>
+<programlisting language="C">#define             GST_MEMDUMP_OBJECT(obj,msg,data,length)</programlisting>
+<para>Output a logging message belonging to the given object in the default category.</para>
+<refsect3 id="GST-MEMDUMP-OBJECT.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>obj</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GObject"><type>GObject</type></link> the message belongs to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para>message string to log with the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>pointer to the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>length of the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-ERROR:CAPS" role="macro">
+<title>GST_ERROR()</title>
+<indexterm zone="GST-ERROR:CAPS"><primary>GST_ERROR</primary></indexterm>
+<programlisting language="C">#define GST_ERROR(...)			GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_ERROR,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an error message in the default category.</para>
+<refsect3 id="GST-ERROR.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-WARNING:CAPS" role="macro">
+<title>GST_WARNING()</title>
+<indexterm zone="GST-WARNING:CAPS"><primary>GST_WARNING</primary></indexterm>
+<programlisting language="C">#define GST_WARNING(...)		GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_WARNING, NULL, __VA_ARGS__)
+</programlisting>
+<para>Output a warning message in the default category.</para>
+<refsect3 id="GST-WARNING.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-INFO:CAPS" role="macro">
+<title>GST_INFO()</title>
+<indexterm zone="GST-INFO:CAPS"><primary>GST_INFO</primary></indexterm>
+<programlisting language="C">#define GST_INFO(...)			GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_INFO,    NULL, __VA_ARGS__)
+</programlisting>
+<para>Output an informational message in the default category.</para>
+<refsect3 id="GST-INFO.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG:CAPS" role="macro">
+<title>GST_DEBUG()</title>
+<indexterm zone="GST-DEBUG:CAPS"><primary>GST_DEBUG</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG(...)			GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_DEBUG,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output a debugging message in the default category.</para>
+<refsect3 id="GST-DEBUG.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-LOG:CAPS" role="macro">
+<title>GST_LOG()</title>
+<indexterm zone="GST-LOG:CAPS"><primary>GST_LOG</primary></indexterm>
+<programlisting language="C">#define GST_LOG(...)			GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_LOG,     NULL, __VA_ARGS__)
+</programlisting>
+<para>Output a logging message in the default category.</para>
+<refsect3 id="GST-LOG.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-FIXME:CAPS" role="macro">
+<title>GST_FIXME()</title>
+<indexterm zone="GST-FIXME:CAPS"><primary>GST_FIXME</primary></indexterm>
+<programlisting language="C">#define GST_FIXME(...)			GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_FIXME,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output a fixme message in the default category.</para>
+<refsect3 id="GST-FIXME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-TRACE:CAPS" role="macro">
+<title>GST_TRACE()</title>
+<indexterm zone="GST-TRACE:CAPS"><primary>GST_TRACE</primary></indexterm>
+<programlisting language="C">#define GST_TRACE(...)		GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_TRACE,   NULL, __VA_ARGS__)
+</programlisting>
+<para>Output a tracing message in the default category.</para>
+<refsect3 id="GST-TRACE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>printf-style message to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-MEMDUMP:CAPS" role="macro">
+<title>GST_MEMDUMP()</title>
+<indexterm zone="GST-MEMDUMP:CAPS"><primary>GST_MEMDUMP</primary></indexterm>
+<programlisting language="C">#define             GST_MEMDUMP(msg,data,length)</programlisting>
+<para>Output a hexdump of <parameter>data</parameter>
+.</para>
+<refsect3 id="GST-MEMDUMP.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para>message string to log with the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>pointer to the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>length of the data to output</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-REGISTER-FUNCPTR:CAPS" role="macro">
+<title>GST_DEBUG_REGISTER_FUNCPTR()</title>
+<indexterm zone="GST-DEBUG-REGISTER-FUNCPTR:CAPS"><primary>GST_DEBUG_REGISTER_FUNCPTR</primary></indexterm>
+<programlisting language="C">#define             GST_DEBUG_REGISTER_FUNCPTR(ptr)</programlisting>
+<para>Register a pointer to a function with its name, so it can later be used by
+<link linkend="GST-DEBUG-FUNCPTR-NAME:CAPS"><function>GST_DEBUG_FUNCPTR_NAME()</function></link>.</para>
+<para>Use this variant of <link linkend="GST-DEBUG-FUNCPTR:CAPS"><type>GST_DEBUG_FUNCPTR</type></link> if you do not need to use <parameter>ptr</parameter>
+.</para>
+<refsect3 id="GST-DEBUG-REGISTER-FUNCPTR.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ptr</para></entry>
+<entry role="parameter_description"><para>pointer to the function to register</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-FUNCPTR:CAPS" role="macro">
+<title>GST_DEBUG_FUNCPTR()</title>
+<indexterm zone="GST-DEBUG-FUNCPTR:CAPS"><primary>GST_DEBUG_FUNCPTR</primary></indexterm>
+<programlisting language="C">#define             GST_DEBUG_FUNCPTR(ptr)</programlisting>
+<para>Register a pointer to a function with its name, so it can later be used by
+<link linkend="GST-DEBUG-FUNCPTR-NAME:CAPS"><function>GST_DEBUG_FUNCPTR_NAME()</function></link>.</para>
+<refsect3 id="GST-DEBUG-FUNCPTR.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ptr</para></entry>
+<entry role="parameter_description"><para>pointer to the function to register</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GST-DEBUG-FUNCPTR.returns" role="returns">
+<title>Returns</title>
+<para> the value passed to <parameter>ptr</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-FUNCPTR-NAME:CAPS" role="macro">
+<title>GST_DEBUG_FUNCPTR_NAME()</title>
+<indexterm zone="GST-DEBUG-FUNCPTR-NAME:CAPS"><primary>GST_DEBUG_FUNCPTR_NAME</primary></indexterm>
+<programlisting language="C">#define             GST_DEBUG_FUNCPTR_NAME(ptr)</programlisting>
+<para>Retrieves the name of the function, if it was previously registered with
+<link linkend="GST-DEBUG-FUNCPTR:CAPS"><function>GST_DEBUG_FUNCPTR()</function></link>. If not, it returns a description of the pointer.</para>
+<para>This macro returns a constant string which must not be modified or
+freed by the caller.</para>
+<refsect3 id="GST-DEBUG-FUNCPTR-NAME.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ptr</para></entry>
+<entry role="parameter_description"><para>address of the function of which to look up the name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-BIN-TO-DOT-FILE:CAPS" role="macro">
+<title>GST_DEBUG_BIN_TO_DOT_FILE()</title>
+<indexterm zone="GST-DEBUG-BIN-TO-DOT-FILE:CAPS"><primary>GST_DEBUG_BIN_TO_DOT_FILE</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG_BIN_TO_DOT_FILE(bin, details, file_name) gst_debug_bin_to_dot_file (bin, details, file_name)
+</programlisting>
+<para>To aid debugging applications one can use this method to write out the whole
+network of gstreamer elements that form the pipeline into an dot file.
+This file can be processed with graphviz to get an image.</para>
+<informalexample><programlisting>
+ dot -Tpng -oimage.png graph_lowlevel.dot
+</programlisting></informalexample>
+<para>The macro is only active if gstreamer is configured with
+&quot;--gst-enable-gst-debug&quot; and the environment variable
+GST_DEBUG_DUMP_DOT_DIR is set to a basepath (e.g. /tmp).</para>
+<refsect3 id="GST-DEBUG-BIN-TO-DOT-FILE.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the top-level pipeline that should be analyzed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>details</para></entry>
+<entry role="parameter_description"><para>details to show in the graph, e.g. <link linkend="GST-DEBUG-GRAPH-SHOW-ALL:CAPS"><type>GST_DEBUG_GRAPH_SHOW_ALL</type></link> or
+one or more other <link linkend="GstDebugGraphDetails"><type>GstDebugGraphDetails</type></link> flags.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>file_name</para></entry>
+<entry role="parameter_description"><para>output base filename (e.g. "myplayer")</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-DEBUG-BIN-TO-DOT-FILE-WITH-TS:CAPS" role="macro">
+<title>GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS()</title>
+<indexterm zone="GST-DEBUG-BIN-TO-DOT-FILE-WITH-TS:CAPS"><primary>GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS</primary></indexterm>
+<programlisting language="C">#define GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS(bin, details, file_name) gst_debug_bin_to_dot_file_with_ts (bin, details, file_name)
+</programlisting>
+<para>This works like <link linkend="GST-DEBUG-BIN-TO-DOT-FILE:CAPS"><function>GST_DEBUG_BIN_TO_DOT_FILE()</function></link>, but adds the current timestamp
+to the filename, so that it can be used to take multiple snapshots.</para>
+<refsect3 id="GST-DEBUG-BIN-TO-DOT-FILE-WITH-TS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>the top-level pipeline that should be analyzed</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>details</para></entry>
+<entry role="parameter_description"><para>details to show in the graph, e.g. <link linkend="GST-DEBUG-GRAPH-SHOW-ALL:CAPS"><type>GST_DEBUG_GRAPH_SHOW_ALL</type></link> or
+one or more other <link linkend="GstDebugGraphDetails"><type>GstDebugGraphDetails</type></link> flags.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>file_name</para></entry>
+<entry role="parameter_description"><para>output base filename (e.g. "myplayer")</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-debug-print-stack-trace" role="function">
+<title>gst_debug_print_stack_trace&#160;()</title>
+<indexterm zone="gst-debug-print-stack-trace"><primary>gst_debug_print_stack_trace</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_print_stack_trace (<parameter><type>void</type></parameter>);</programlisting>
+<para>If GST_ENABLE_FUNC_INSTRUMENTATION is defined a stacktrace is available for
+gstreamer code, which can be printed with this function.</para>
+</refsect2>
+<refsect2 id="GST-TIME-ARGS:CAPS" role="macro">
+<title>GST_TIME_ARGS()</title>
+<indexterm zone="GST-TIME-ARGS:CAPS"><primary>GST_TIME_ARGS</primary></indexterm>
+<programlisting language="C">#define             GST_TIME_ARGS(t)</programlisting>
+<para>Format <parameter>t</parameter>
+ for the <link linkend="GST-TIME-FORMAT:CAPS"><type>GST_TIME_FORMAT</type></link> format string. Note: <parameter>t</parameter>
+ will be
+evaluated more than once.</para>
+<refsect3 id="GST-TIME-ARGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>t</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockTime"><type>GstClockTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-STIME-ARGS:CAPS" role="macro" condition="since:1.6">
+<title>GST_STIME_ARGS()</title>
+<indexterm zone="GST-STIME-ARGS:CAPS" role="1.6"><primary>GST_STIME_ARGS</primary></indexterm>
+<programlisting language="C">#define             GST_STIME_ARGS(t)</programlisting>
+<para>Format <parameter>t</parameter>
+ for the <link linkend="GST-STIME-FORMAT:CAPS"><type>GST_STIME_FORMAT</type></link> format string. Note: <parameter>t</parameter>
+ will be
+evaluated more than once.</para>
+<refsect3 id="GST-STIME-ARGS.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>t</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> or <link linkend="gint64"><type>gint64</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-debug-bin-to-dot-data" role="function">
+<title>gst_debug_bin_to_dot_data&#160;()</title>
+<indexterm zone="gst-debug-bin-to-dot-data"><primary>gst_debug_bin_to_dot_data</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_debug_bin_to_dot_data (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                           <parameter><link linkend="GstDebugGraphDetails"><type>GstDebugGraphDetails</type></link> details</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-debug-bin-to-dot-file" role="function">
+<title>gst_debug_bin_to_dot_file&#160;()</title>
+<indexterm zone="gst-debug-bin-to-dot-file"><primary>gst_debug_bin_to_dot_file</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_bin_to_dot_file (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                           <parameter><link linkend="GstDebugGraphDetails"><type>GstDebugGraphDetails</type></link> details</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *file_name</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-debug-bin-to-dot-file-with-ts" role="function">
+<title>gst_debug_bin_to_dot_file_with_ts&#160;()</title>
+<indexterm zone="gst-debug-bin-to-dot-file-with-ts"><primary>gst_debug_bin_to_dot_file_with_ts</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_debug_bin_to_dot_file_with_ts (<parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                                   <parameter><link linkend="GstDebugGraphDetails"><type>GstDebugGraphDetails</type></link> details</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *file_name</parameter>);</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstInfo.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDebugLevel" role="enum">
+<title>enum GstDebugLevel</title>
+<indexterm zone="GstDebugLevel"><primary>GstDebugLevel</primary></indexterm>
+<para>The level defines the importance of a debugging message. The more important a
+message is, the greater the probability that the debugging system outputs it.</para>
+<refsect3 id="GstDebugLevel.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-NONE:CAPS">GST_LEVEL_NONE</para></entry>
+<entry role="enum_member_description"><para>No debugging level specified or desired. Used to deactivate
+ debugging output.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-ERROR:CAPS">GST_LEVEL_ERROR</para></entry>
+<entry role="enum_member_description"><para>Error messages are to be used only when an error occurred
+ that stops the application from keeping working correctly.
+ An examples is gst_element_error, which outputs a message with this priority.
+ It does not mean that the application is terminating as with g_error.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-WARNING:CAPS">GST_LEVEL_WARNING</para></entry>
+<entry role="enum_member_description"><para>Warning messages are to inform about abnormal behaviour
+ that could lead to problems or weird behaviour later on. An example of this
+ would be clocking issues ("your computer is pretty slow") or broken input
+ data ("Can't synchronize to stream.")</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-FIXME:CAPS">GST_LEVEL_FIXME</para></entry>
+<entry role="enum_member_description"><para>Fixme messages are messages that indicate that something
+ in the executed code path is not fully implemented or handled yet. Note
+ that this does not replace proper error handling in any way, the purpose
+ of this message is to make it easier to spot incomplete/unfinished pieces
+ of code when reading the debug log.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-INFO:CAPS">GST_LEVEL_INFO</para></entry>
+<entry role="enum_member_description"><para>Informational messages should be used to keep the developer
+ updated about what is happening.
+ Examples where this should be used are when a typefind function has
+ successfully determined the type of the stream or when an mp3 plugin detects
+ the format to be used. ("This file has mono sound.")</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-DEBUG:CAPS">GST_LEVEL_DEBUG</para></entry>
+<entry role="enum_member_description"><para>Debugging messages should be used when something common
+ happens that is not the expected default behavior, or something that's
+ useful to know but doesn't happen all the time (ie. per loop iteration or
+ buffer processed or event handled).
+ An example would be notifications about state changes or receiving/sending
+ of events.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-LOG:CAPS">GST_LEVEL_LOG</para></entry>
+<entry role="enum_member_description"><para>Log messages are messages that are very common but might be
+ useful to know. As a rule of thumb a pipeline that is running as expected
+ should never output anything else but LOG messages whilst processing data.
+ Use this log level to log recurring information in chain functions and
+ loop functions, for example.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-TRACE:CAPS">GST_LEVEL_TRACE</para></entry>
+<entry role="enum_member_description"><para>Tracing-related messages.
+ Examples for this are referencing/dereferencing of objects.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-MEMDUMP:CAPS">GST_LEVEL_MEMDUMP</para></entry>
+<entry role="enum_member_description"><para>memory dump messages are used to log (small) chunks of
+ data as memory dumps in the log. They will be displayed as hexdump with
+ ASCII characters.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-LEVEL-COUNT:CAPS">GST_LEVEL_COUNT</para></entry>
+<entry role="enum_member_description"><para>The number of defined debugging levels.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-LEVEL-DEFAULT:CAPS" role="macro">
+<title>GST_LEVEL_DEFAULT</title>
+<indexterm zone="GST-LEVEL-DEFAULT:CAPS"><primary>GST_LEVEL_DEFAULT</primary></indexterm>
+<programlisting language="C">#define GST_LEVEL_DEFAULT GST_LEVEL_NONE
+</programlisting>
+<para>Defines the default debugging level to be used with GStreamer. It is normally
+set to <link linkend="GST-LEVEL-NONE:CAPS"><type>GST_LEVEL_NONE</type></link> so nothing get printed.
+As it can be configured at compile time, developer builds may chose to
+override that though.
+You can use this as an argument to <link linkend="gst-debug-set-default-threshold"><function>gst_debug_set_default_threshold()</function></link> to
+reset the debugging output to default behaviour.</para>
+</refsect2>
+<refsect2 id="GST-LEVEL-MAX:CAPS" role="macro" condition="since:1.6">
+<title>GST_LEVEL_MAX</title>
+<indexterm zone="GST-LEVEL-MAX:CAPS" role="1.6"><primary>GST_LEVEL_MAX</primary></indexterm>
+<programlisting language="C">#define GST_LEVEL_MAX GST_LEVEL_COUNT
+</programlisting>
+<para>Defines the maximum debugging level to be enabled at compilation time. By default
+it is set such that all debugging statements will be enabled.</para>
+<para>If you wish to compile GStreamer and plugins with only some debugging statements
+(Such as just warnings and errors), you can define it at compile time to the
+maximum debug level. Any debug statements above that level will be compiled out.</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstDebugColorFlags" role="enum">
+<title>enum GstDebugColorFlags</title>
+<indexterm zone="GstDebugColorFlags"><primary>GstDebugColorFlags</primary></indexterm>
+<para>These are some terminal style flags you can use when creating your
+debugging categories to make them stand out in debugging output.</para>
+<refsect3 id="GstDebugColorFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-BLACK:CAPS">GST_DEBUG_FG_BLACK</para></entry>
+<entry role="enum_member_description"><para>Use black as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-RED:CAPS">GST_DEBUG_FG_RED</para></entry>
+<entry role="enum_member_description"><para>Use red as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-GREEN:CAPS">GST_DEBUG_FG_GREEN</para></entry>
+<entry role="enum_member_description"><para>Use green as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-YELLOW:CAPS">GST_DEBUG_FG_YELLOW</para></entry>
+<entry role="enum_member_description"><para>Use yellow as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-BLUE:CAPS">GST_DEBUG_FG_BLUE</para></entry>
+<entry role="enum_member_description"><para>Use blue as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-MAGENTA:CAPS">GST_DEBUG_FG_MAGENTA</para></entry>
+<entry role="enum_member_description"><para>Use magenta as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-CYAN:CAPS">GST_DEBUG_FG_CYAN</para></entry>
+<entry role="enum_member_description"><para>Use cyan as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-FG-WHITE:CAPS">GST_DEBUG_FG_WHITE</para></entry>
+<entry role="enum_member_description"><para>Use white as foreground color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-BLACK:CAPS">GST_DEBUG_BG_BLACK</para></entry>
+<entry role="enum_member_description"><para>Use black as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-RED:CAPS">GST_DEBUG_BG_RED</para></entry>
+<entry role="enum_member_description"><para>Use red as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-GREEN:CAPS">GST_DEBUG_BG_GREEN</para></entry>
+<entry role="enum_member_description"><para>Use green as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-YELLOW:CAPS">GST_DEBUG_BG_YELLOW</para></entry>
+<entry role="enum_member_description"><para>Use yellow as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-BLUE:CAPS">GST_DEBUG_BG_BLUE</para></entry>
+<entry role="enum_member_description"><para>Use blue as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-MAGENTA:CAPS">GST_DEBUG_BG_MAGENTA</para></entry>
+<entry role="enum_member_description"><para>Use magenta as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-CYAN:CAPS">GST_DEBUG_BG_CYAN</para></entry>
+<entry role="enum_member_description"><para>Use cyan as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BG-WHITE:CAPS">GST_DEBUG_BG_WHITE</para></entry>
+<entry role="enum_member_description"><para>Use white as background color.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-BOLD:CAPS">GST_DEBUG_BOLD</para></entry>
+<entry role="enum_member_description"><para>Make the output bold.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-UNDERLINE:CAPS">GST_DEBUG_UNDERLINE</para></entry>
+<entry role="enum_member_description"><para>Underline the output.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstDebugColorMode" role="enum">
+<title>enum GstDebugColorMode</title>
+<indexterm zone="GstDebugColorMode"><primary>GstDebugColorMode</primary></indexterm>
+<refsect3 id="GstDebugColorMode.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-COLOR-MODE-OFF:CAPS">GST_DEBUG_COLOR_MODE_OFF</para></entry>
+<entry role="enum_member_description"><para>Do not use colors in logs.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-COLOR-MODE-ON:CAPS">GST_DEBUG_COLOR_MODE_ON</para></entry>
+<entry role="enum_member_description"><para>Paint logs in a platform-specific way.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-COLOR-MODE-UNIX:CAPS">GST_DEBUG_COLOR_MODE_UNIX</para></entry>
+<entry role="enum_member_description"><para>Paint logs with UNIX terminal color codes
+                            no matter what platform GStreamer is running on.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstDebugCategory" role="struct">
+<title>struct GstDebugCategory</title>
+<indexterm zone="GstDebugCategory"><primary>GstDebugCategory</primary></indexterm>
+<programlisting language="C">struct GstDebugCategory {
+};
+</programlisting>
+<para>This is the struct that describes the categories. Once initialized with
+<link linkend="GST-DEBUG-CATEGORY-INIT:CAPS"><type>GST_DEBUG_CATEGORY_INIT</type></link>, its values can't be changed anymore.</para>
+</refsect2>
+<refsect2 id="GstDebugGraphDetails" role="enum">
+<title>enum GstDebugGraphDetails</title>
+<indexterm zone="GstDebugGraphDetails"><primary>GstDebugGraphDetails</primary></indexterm>
+<para>Available details for pipeline graphs produced by <link linkend="GST-DEBUG-BIN-TO-DOT-FILE:CAPS"><function>GST_DEBUG_BIN_TO_DOT_FILE()</function></link>
+and <link linkend="GST-DEBUG-BIN-TO-DOT-FILE-WITH-TS:CAPS"><function>GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS()</function></link>.</para>
+<refsect3 id="GstDebugGraphDetails.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-MEDIA-TYPE:CAPS">GST_DEBUG_GRAPH_SHOW_MEDIA_TYPE</para></entry>
+<entry role="enum_member_description"><para>show caps-name on edges</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-CAPS-DETAILS:CAPS">GST_DEBUG_GRAPH_SHOW_CAPS_DETAILS</para></entry>
+<entry role="enum_member_description"><para>show caps-details on edges</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-NON-DEFAULT-PARAMS:CAPS">GST_DEBUG_GRAPH_SHOW_NON_DEFAULT_PARAMS</para></entry>
+<entry role="enum_member_description"><para>show modified parameters on
+                                          elements</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-STATES:CAPS">GST_DEBUG_GRAPH_SHOW_STATES</para></entry>
+<entry role="enum_member_description"><para>show element states</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-FULL-PARAMS:CAPS">GST_DEBUG_GRAPH_SHOW_FULL_PARAMS</para></entry>
+<entry role="enum_member_description"><para>show full element parameter values even
+                                   if they are very long</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-ALL:CAPS">GST_DEBUG_GRAPH_SHOW_ALL</para></entry>
+<entry role="enum_member_description"><para>show all the typical details that one might want</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEBUG-GRAPH-SHOW-VERBOSE:CAPS">GST_DEBUG_GRAPH_SHOW_VERBOSE</para></entry>
+<entry role="enum_member_description"><para>show all details regardless of how large or
+                               verbose they make the resulting output</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GST-FUNCTION:CAPS" role="macro">
+<title>GST_FUNCTION</title>
+<indexterm zone="GST-FUNCTION:CAPS"><primary>GST_FUNCTION</primary></indexterm>
+<programlisting language="C">#  define GST_FUNCTION     ((const char*) (__FUNCTION__))
+</programlisting>
+<para>This macro should evaluate to the name of the current function and be should
+be defined when configuring your project, as it is compiler dependant. If it
+is not defined, some default value is used. It is used to provide debugging
+output with the function name of the message.</para>
+<para>Note that this is different from G_STRFUNC as we do not want the full
+function signature in C++ code.</para>
+</refsect2>
+<refsect2 id="GST-CAT-DEFAULT:CAPS" role="variable">
+<title>GST_CAT_DEFAULT</title>
+<indexterm zone="GST-CAT-DEFAULT:CAPS"><primary>GST_CAT_DEFAULT</primary></indexterm>
+<programlisting language="C">GST_EXPORT GstDebugCategory *&#160;GST_CAT_DEFAULT;
+</programlisting>
+<para>Default gstreamer core debug log category. Please define your own.</para>
+</refsect2>
+<refsect2 id="GST-TIME-FORMAT:CAPS" role="macro">
+<title>GST_TIME_FORMAT</title>
+<indexterm zone="GST-TIME-FORMAT:CAPS"><primary>GST_TIME_FORMAT</primary></indexterm>
+<programlisting language="C">#define GST_TIME_FORMAT "u:%02u:%02u.%09u"
+</programlisting>
+<para>A string that can be used in printf-like format strings to display a
+<link linkend="GstClockTime"><type>GstClockTime</type></link> value in h:m:s format.  Use <link linkend="GST-TIME-ARGS:CAPS"><function>GST_TIME_ARGS()</function></link> to construct
+the matching arguments.</para>
+<para>Example:</para>
+<informalexample><programlisting><![CDATA[
+printf("%" GST_TIME_FORMAT "\n", GST_TIME_ARGS(ts));
+]]></programlisting></informalexample>
+<para></para>
+</refsect2>
+<refsect2 id="GST-STIME-FORMAT:CAPS" role="macro" condition="since:1.6">
+<title>GST_STIME_FORMAT</title>
+<indexterm zone="GST-STIME-FORMAT:CAPS" role="1.6"><primary>GST_STIME_FORMAT</primary></indexterm>
+<programlisting language="C">#define GST_STIME_FORMAT "c%" GST_TIME_FORMAT
+</programlisting>
+<para>A string that can be used in printf-like format strings to display a signed
+<link linkend="GstClockTimeDiff"><type>GstClockTimeDiff</type></link> or <link linkend="gint64"><type>gint64</type></link> value in h:m:s format.  Use <link linkend="GST-TIME-ARGS:CAPS"><function>GST_TIME_ARGS()</function></link> to
+construct the matching arguments.</para>
+<para>Example:</para>
+<informalexample><programlisting><![CDATA[
+printf("%" GST_STIME_FORMAT "\n", GST_STIME_ARGS(ts));
+]]></programlisting></informalexample>
+<para></para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gstreamer-GstInfo.see-also">
+<title>See Also</title>
+<para><link linkend="gst-running"><type>gst-running</type></link> for command line parameters
+and environment variables that affect the debugging output.</para>
+
+</refsect1>
+
+</refentry>
