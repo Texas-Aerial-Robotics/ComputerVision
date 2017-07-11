@@ -57,6 +57,12 @@ int main()
 	while (1)
 	{
 		cap.read(imgA);
+		if (!imgA.data)                              // Check for invalid input
+		{
+			cout << "Could not open or find the image" << std::endl;
+			system("pause");
+			return -1;
+		}
 		imgA.copyTo(imgC);
 		video.write(imgA);
 		cvtColor(imgA, imgA, CV_BGR2GRAY);
