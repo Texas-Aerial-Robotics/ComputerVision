@@ -96,7 +96,7 @@ int main()
 			// average distance moved between frames
 			flow.x = flowSum.x / cornersFound;
 			flow.y = flowSum.y / cornersFound;
-
+			if (flow.x>10 && flow.y>10){ continue;}
 			// add amount of distance moved in this frame
 			POS2 = POS1 + flow;
 			takeHeight();

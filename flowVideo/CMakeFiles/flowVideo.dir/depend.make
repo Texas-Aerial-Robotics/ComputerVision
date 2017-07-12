@@ -35,6 +35,16 @@ CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/core/types.
 CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/core/types_c.h
 CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/core/utility.hpp
 CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/core/version.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudaarithm.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudabgsegm.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudacodec.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudafeatures2d.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudafilters.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudaimgproc.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudaobjdetect.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudaoptflow.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudastereo.hpp
+CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/cudawarping.hpp
 CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/features2d.hpp
 CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/flann.hpp
 CMakeFiles/flowVideo.dir/flowVideo.cpp.o: /usr/local/include/opencv2/flann/all_indices.h
