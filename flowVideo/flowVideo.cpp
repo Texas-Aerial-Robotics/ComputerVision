@@ -34,6 +34,8 @@ int main()
 	cap.open(0);
 	cap.set(CV_CAP_PROP_FRAME_WIDTH, FRAME_WIDTH);
 	cap.set(CV_CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT);
+	double fps= cap.get(CV_CAP_PROP_FPS);
+
 	VideoWriter video("out.avi", CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(FRAME_WIDTH, FRAME_HEIGHT), true);
 	VideoWriter videoPos("pos.avi", CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(1000, 1000), true);
 	Mat imgA;
