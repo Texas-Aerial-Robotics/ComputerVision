@@ -25,7 +25,7 @@ void grid(Mat img);
 void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 void showDestination(Mat img);
 void takeHeight();
-float takeHeading();
+void takeHeading();
 
 
 int main()

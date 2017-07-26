@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mark/Desktop/flightCode/flowVideo
+CMAKE_SOURCE_DIR = /home/ubuntu/flightCode/flowVideo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mark/Desktop/flightCode/flowVideo
+CMAKE_BINARY_DIR = /home/ubuntu/flightCode/flowVideo
 
 #=============================================================================
 # Target rules for target CMakeFiles/flowVideo.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/mark/Desktop/flightCode/flowVideo
 CMakeFiles/flowVideo.dir/all:
 	$(MAKE) -f CMakeFiles/flowVideo.dir/build.make CMakeFiles/flowVideo.dir/depend
 	$(MAKE) -f CMakeFiles/flowVideo.dir/build.make CMakeFiles/flowVideo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/Desktop/flightCode/flowVideo/CMakeFiles --progress-num=1,2 "Built target flowVideo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/flightCode/flowVideo/CMakeFiles --progress-num=1,2 "Built target flowVideo"
 .PHONY : CMakeFiles/flowVideo.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/flowVideo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flowVideo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Desktop/flightCode/flowVideo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/flightCode/flowVideo/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/flowVideo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Desktop/flightCode/flowVideo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/flightCode/flowVideo/CMakeFiles 0
 .PHONY : CMakeFiles/flowVideo.dir/rule
 
 # Convenience name for target.
