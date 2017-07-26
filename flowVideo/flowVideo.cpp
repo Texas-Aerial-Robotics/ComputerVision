@@ -170,18 +170,21 @@ void showDestination(Mat img)
 	rectangle(img, pt1, pt2, Scalar(255, 105, 180), -1, 8);
 	
 }
-// float takeHeading()
-// {
-// 	// read in compass data
-// 	return heading;
-// }
+ void takeHeading()
+ {	float heading;
+ 	ifstream infile;
+ 	infile.open("hdg.log");
+ 	infile >> heading;
+
+ 	data[1]=heading;
+ }
 void takeHeight()
 {   
 
 	float height;
 	float second;
 	ifstream infile;
-	infile.open("data.csv");
+	infile.open("rng.log");
 
 		
 	infile>> height >> second;
