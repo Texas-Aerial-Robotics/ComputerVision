@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/flightCode/flowVideo
+# Install script for directory: /home/ubuntu/vision/flightCode/flowVideo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/flightCode/flowVideo/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/vision/flightCode/flowVideo/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

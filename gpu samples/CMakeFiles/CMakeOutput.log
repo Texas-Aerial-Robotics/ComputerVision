@@ -550,3 +550,31 @@ make[1]: Leaving directory '/home/mark/Desktop/flightCode/gpu samples/CMakeFiles
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bb8df/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bb8df.dir/build.make CMakeFiles/cmTC_bb8df.dir/build
+make[1]: Entering directory '/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bb8df.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_bb8df.dir/CheckIncludeFile.c.o   -c "/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_bb8df
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb8df.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_bb8df.dir/CheckIncludeFile.c.o  -o cmTC_bb8df 
+make[1]: Leaving directory '/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b8ae4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b8ae4.dir/build.make CMakeFiles/cmTC_b8ae4.dir/build
+make[1]: Entering directory '/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b8ae4.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b8ae4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b8ae4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8ae4.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_b8ae4.dir/CheckFunctionExists.c.o  -o cmTC_b8ae4 -lpthread 
+make[1]: Leaving directory '/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/CMakeTmp'
+
+

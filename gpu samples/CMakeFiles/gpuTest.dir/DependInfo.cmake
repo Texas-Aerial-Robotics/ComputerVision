@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mark/Desktop/flightCode/gpu samples/gpuTest.cpp" "/home/mark/Desktop/flightCode/gpu samples/CMakeFiles/gpuTest.dir/gpuTest.cpp.o"
+  "/home/ubuntu/vision/flightCode/gpu samples/gpuTest.cpp" "/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/gpuTest.dir/gpuTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include"
-  "/usr/local/include/opencv"
+  "/usr/include/opencv"
   )
 
 # Targets to which this target links.

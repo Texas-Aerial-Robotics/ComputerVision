@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/mark/Desktop/flightCode/gpu samples"
+CMAKE_SOURCE_DIR = "/home/ubuntu/vision/flightCode/gpu samples"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/mark/Desktop/flightCode/gpu samples"
+CMAKE_BINARY_DIR = "/home/ubuntu/vision/flightCode/gpu samples"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gpuTest.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/gpuTest.dir/flags.make
 
 CMakeFiles/gpuTest.dir/gpuTest.cpp.o: CMakeFiles/gpuTest.dir/flags.make
 CMakeFiles/gpuTest.dir/gpuTest.cpp.o: gpuTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/mark/Desktop/flightCode/gpu samples/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gpuTest.dir/gpuTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gpuTest.dir/gpuTest.cpp.o -c "/home/mark/Desktop/flightCode/gpu samples/gpuTest.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gpuTest.dir/gpuTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gpuTest.dir/gpuTest.cpp.o -c "/home/ubuntu/vision/flightCode/gpu samples/gpuTest.cpp"
 
 CMakeFiles/gpuTest.dir/gpuTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gpuTest.dir/gpuTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/mark/Desktop/flightCode/gpu samples/gpuTest.cpp" > CMakeFiles/gpuTest.dir/gpuTest.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ubuntu/vision/flightCode/gpu samples/gpuTest.cpp" > CMakeFiles/gpuTest.dir/gpuTest.cpp.i
 
 CMakeFiles/gpuTest.dir/gpuTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gpuTest.dir/gpuTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/mark/Desktop/flightCode/gpu samples/gpuTest.cpp" -o CMakeFiles/gpuTest.dir/gpuTest.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ubuntu/vision/flightCode/gpu samples/gpuTest.cpp" -o CMakeFiles/gpuTest.dir/gpuTest.cpp.s
 
 CMakeFiles/gpuTest.dir/gpuTest.cpp.o.requires:
 
@@ -90,24 +90,36 @@ gpuTest_EXTERNAL_OBJECTS =
 
 gpuTest: CMakeFiles/gpuTest.dir/gpuTest.cpp.o
 gpuTest: CMakeFiles/gpuTest.dir/build.make
-gpuTest: /usr/local/lib/libopencv_ml.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_objdetect.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_shape.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_stitching.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_superres.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_videostab.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_calib3d.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_features2d.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_flann.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_highgui.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_photo.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_video.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_videoio.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_imgcodecs.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_imgproc.so.3.2.0
-gpuTest: /usr/local/lib/libopencv_core.so.3.2.0
+gpuTest: /usr/lib/libopencv_videostab.so.3.1.0
+gpuTest: /usr/lib/libopencv_superres.so.3.1.0
+gpuTest: /usr/lib/libopencv_stitching.so.3.1.0
+gpuTest: /usr/lib/libopencv_shape.so.3.1.0
+gpuTest: /usr/lib/libopencv_photo.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudastereo.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudaoptflow.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudaobjdetect.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudalegacy.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudaimgproc.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudafeatures2d.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudacodec.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudabgsegm.so.3.1.0
+gpuTest: /usr/lib/libopencv_calib3d.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudawarping.so.3.1.0
+gpuTest: /usr/lib/libopencv_objdetect.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudafilters.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudaarithm.so.3.1.0
+gpuTest: /usr/lib/libopencv_features2d.so.3.1.0
+gpuTest: /usr/lib/libopencv_ml.so.3.1.0
+gpuTest: /usr/lib/libopencv_highgui.so.3.1.0
+gpuTest: /usr/lib/libopencv_videoio.so.3.1.0
+gpuTest: /usr/lib/libopencv_imgcodecs.so.3.1.0
+gpuTest: /usr/lib/libopencv_flann.so.3.1.0
+gpuTest: /usr/lib/libopencv_video.so.3.1.0
+gpuTest: /usr/lib/libopencv_imgproc.so.3.1.0
+gpuTest: /usr/lib/libopencv_core.so.3.1.0
+gpuTest: /usr/lib/libopencv_cudev.so.3.1.0
 gpuTest: CMakeFiles/gpuTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/mark/Desktop/flightCode/gpu samples/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable gpuTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable gpuTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpuTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +136,6 @@ CMakeFiles/gpuTest.dir/clean:
 .PHONY : CMakeFiles/gpuTest.dir/clean
 
 CMakeFiles/gpuTest.dir/depend:
-	cd "/home/mark/Desktop/flightCode/gpu samples" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/mark/Desktop/flightCode/gpu samples" "/home/mark/Desktop/flightCode/gpu samples" "/home/mark/Desktop/flightCode/gpu samples" "/home/mark/Desktop/flightCode/gpu samples" "/home/mark/Desktop/flightCode/gpu samples/CMakeFiles/gpuTest.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/ubuntu/vision/flightCode/gpu samples" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/ubuntu/vision/flightCode/gpu samples" "/home/ubuntu/vision/flightCode/gpu samples" "/home/ubuntu/vision/flightCode/gpu samples" "/home/ubuntu/vision/flightCode/gpu samples" "/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/gpuTest.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/gpuTest.dir/depend
 

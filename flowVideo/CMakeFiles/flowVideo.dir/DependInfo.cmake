@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ubuntu/flightCode/flowVideo/flowVideo.cpp" "/home/ubuntu/flightCode/flowVideo/CMakeFiles/flowVideo.dir/flowVideo.cpp.o"
+  "/home/ubuntu/vision/flightCode/flowVideo/flowVideo.cpp" "/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/flowVideo.dir/flowVideo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/opt/ros/kinetic/include/opencv-3.2.0-dev"
-  "/opt/ros/kinetic/include/opencv-3.2.0-dev/opencv"
+  "/usr/include/opencv"
   )
 
 # Targets to which this target links.

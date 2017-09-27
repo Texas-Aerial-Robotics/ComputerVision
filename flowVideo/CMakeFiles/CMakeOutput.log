@@ -578,3 +578,31 @@ Linking C executable cmTC_e4ce7
 make[1]: Leaving directory '/home/mark/Desktop/flightCode/flowVideo/CMakeFiles/CMakeTmp'
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4e0af/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4e0af.dir/build.make CMakeFiles/cmTC_4e0af.dir/build
+make[1]: Entering directory '/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4e0af.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_4e0af.dir/CheckIncludeFile.c.o   -c /home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4e0af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e0af.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_4e0af.dir/CheckIncludeFile.c.o  -o cmTC_4e0af 
+make[1]: Leaving directory '/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_74cd7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_74cd7.dir/build.make CMakeFiles/cmTC_74cd7.dir/build
+make[1]: Entering directory '/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_74cd7.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_74cd7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_74cd7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74cd7.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_74cd7.dir/CheckFunctionExists.c.o  -o cmTC_74cd7 -lpthread 
+make[1]: Leaving directory '/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/CMakeTmp'
+
+
