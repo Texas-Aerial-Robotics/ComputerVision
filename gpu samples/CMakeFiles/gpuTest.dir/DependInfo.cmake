@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ubuntu/vision/flightCode/gpu samples/gpuTest.cpp" "/home/ubuntu/vision/flightCode/gpu samples/CMakeFiles/gpuTest.dir/gpuTest.cpp.o"
+  "/home/ubuntu/computerVision/gpu samples/gpuTest.cpp" "/home/ubuntu/computerVision/gpu samples/CMakeFiles/gpuTest.dir/gpuTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

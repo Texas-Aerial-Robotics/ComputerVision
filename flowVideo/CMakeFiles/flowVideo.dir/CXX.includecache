@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/vision/flightCode/flowVideo/flowVideo.cpp
+/home/ubuntu/computerVision/flowVideo/flowVideo.cpp
 opencv2/opencv.hpp
 -
 iostream

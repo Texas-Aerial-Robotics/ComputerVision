@@ -118,7 +118,7 @@ int main()
 			//putText(pos, to_string(POSM2.x) + " " + to_string(POSM2.y), POSM2 * (W / gridM) + Point2f(15, 15), 1, 1, Scalar(255, 0, 0));
 			POS1 = POS2;
 			POSM1 = POSM2;
-			//imshow("Image A", imgA);
+			imshow("Image A", imgA);
 			//imshow("Image B", imgB);
 			//imshow("flow", imgC);
 		
@@ -127,7 +127,7 @@ int main()
 		}
 		
 		videoPos.write(pos);
-		//imshow("position", pos);
+		imshow("position", pos);
 		imgA.copyTo(imgB);
 		waitKey(30);
 

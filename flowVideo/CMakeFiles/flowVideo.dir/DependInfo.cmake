@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ubuntu/vision/flightCode/flowVideo/flowVideo.cpp" "/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/flowVideo.dir/flowVideo.cpp.o"
+  "/home/ubuntu/computerVision/flowVideo/flowVideo.cpp" "/home/ubuntu/computerVision/flowVideo/CMakeFiles/flowVideo.dir/flowVideo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

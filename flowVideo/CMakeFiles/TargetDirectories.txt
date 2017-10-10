@@ -1,3 +1,3 @@
-/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/edit_cache.dir
-/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/vision/flightCode/flowVideo/CMakeFiles/flowVideo.dir
+/home/ubuntu/computerVision/flowVideo/CMakeFiles/edit_cache.dir
+/home/ubuntu/computerVision/flowVideo/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/computerVision/flowVideo/CMakeFiles/flowVideo.dir

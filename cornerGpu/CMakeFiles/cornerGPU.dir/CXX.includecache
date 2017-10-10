@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/computerVision/cornerGpu/cornerGPU.cpp
+iostream
+-
+string
+-
+sstream
+-
+fstream
+-
+opencv2/opencv.hpp
+/home/ubuntu/computerVision/cornerGpu/opencv2/opencv.hpp
+opencv2/core/cuda.hpp
+-
+opencv2/cudaarithm.hpp
+-
+opencv2/cudaimgproc.hpp
+/home/ubuntu/computerVision/cornerGpu/opencv2/cudaimgproc.hpp
+opencv2/cudafilters.hpp
+/home/ubuntu/computerVision/cornerGpu/opencv2/cudafilters.hpp
+

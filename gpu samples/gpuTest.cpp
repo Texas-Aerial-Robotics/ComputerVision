@@ -15,6 +15,8 @@ int main (int argc, char* argv[])
    while(1)
    {
 	cap.read(src_host);
+	double fps = cap.get(cv::CAP_PROP_FPS);
+	cout << fps << endl;
 	cvtColor(src_host, src_host, COLOR_BGR2GRAY);
 	imshow("source", src_host);
         src.upload(src_host);

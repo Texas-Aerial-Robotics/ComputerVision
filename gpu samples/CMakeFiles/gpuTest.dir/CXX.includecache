@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/vision/flightCode/gpu samples/gpuTest.cpp
+/home/ubuntu/computerVision/gpu samples/gpuTest.cpp
 iostream
 -
 opencv2/opencv.hpp
-/home/ubuntu/vision/flightCode/gpu samples/opencv2/opencv.hpp
+/home/ubuntu/computerVision/gpu samples/opencv2/opencv.hpp
 opencv2/core/cuda.hpp
 -
 opencv2/cudaarithm.hpp
