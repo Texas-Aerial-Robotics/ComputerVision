@@ -29,10 +29,14 @@ static void download(const GpuMat& d_mat, vector<uchar>& vec)
 
 static void drawArrows(Mat& frame, const vector<Point2f>& prevPts, const vector<Point2f>& nextPts, const vector<uchar>& status, Scalar line_color = Scalar(0, 0, 255))
 {
+    Point flowSum = Point(0,0);
+    int counter =  0;
     for (size_t i = 0; i < prevPts.size(); ++i)
     {
+
         if (status[i])
         {
+            counter++;
             int line_thickness = 1;
 
             Point p = prevPts[i];
@@ -41,6 +45,7 @@ static void drawArrows(Mat& frame, const vector<Point2f>& prevPts, const vector<
             double angle = atan2((double) p.y - q.y, (double) p.x - q.x);
 
             double hypotenuse = sqrt( (double)(p.y - q.y)*(p.y - q.y) + (double)(p.x - q.x)*(p.x - q.x) );
+            flowSum = (q - p) + flowSum;
 
             if (hypotenuse < 1.0)
                 continue;
@@ -63,7 +68,12 @@ static void drawArrows(Mat& frame, const vector<Point2f>& prevPts, const vector<
             p.y = (int) (q.y + 9 * sin(angle - CV_PI / 4));
             line(frame, p, q, line_color, line_thickness);
         }
+        
     }
+    cout << "pnt size" << prevPts.size() << endl;
+    flowSum.x =  flowSum.x / counter;
+    flowSum.y =  flowSum.y / counter;
+    cout << "Flow = " << flowSum << endl;
 }
 
 template <typename T> inline T clamp (T x, T a, T b)
@@ -79,6 +89,7 @@ template <typename T> inline T mapValue(T x, T a, T b, T c, T d)
 
 int main(int argc, const char* argv[])
 {
+    /*
     const char* keys =
         "{ h             help   |       | print help message }"
         "{ l             left   | ../data/pic1.png       | specify left image }"
@@ -108,73 +119,76 @@ int main(int argc, const char* argv[])
         return -1;
     }
 
+
+
     bool useGray = cmd.has("gray");
     int winSize = cmd.get<int>("win_size");
     int maxLevel = cmd.get<int>("max_level");
     int iters = cmd.get<int>("iters");
     int points = cmd.get<int>("points");
     double minDist = cmd.get<double>("min_dist");
+*/
+    Mat frame0, frame1;
+    VideoCapture cap(0);
+    cap.read(frame0);
+    waitKey(30);
+    cap.read(frame1);
 
-    Mat frame0 = imread(fname0);
-    Mat frame1 = imread(fname1);
-
-    if (frame0.empty() || frame1.empty())
+    while(waitKey(30) != 27)
     {
-        cout << "Can't load input images" << endl;
-        return -1;
+        cap.read(frame1);
+        namedWindow("PyrLK [Sparse]", WINDOW_NORMAL);
+
+        cout << "Image size : " << frame0.cols << " x " << frame0.rows << endl;
+        
+
+        cout << endl;
+
+        Mat frame0Gray;
+        cv::cvtColor(frame0, frame0Gray, COLOR_BGR2GRAY);
+        Mat frame1Gray;
+        cv::cvtColor(frame1, frame1Gray, COLOR_BGR2GRAY);
+
+        // goodFeaturesToTrack
+
+        GpuMat d_frame0Gray(frame0Gray);
+        GpuMat d_prevPts;
+
+        Ptr<cuda::CornersDetector> detector = cuda::createGoodFeaturesToTrackDetector(d_frame0Gray.type(), 2000, 0.04, 0);
+
+        detector->detect(d_frame0Gray, d_prevPts);
+
+        // Sparse
+
+        Ptr<cuda::SparsePyrLKOpticalFlow> d_pyrLK = cuda::SparsePyrLKOpticalFlow::create(
+                    Size(21, 21), 3, 30);
+
+        GpuMat d_frame0(frame0);
+        GpuMat d_frame1(frame1);
+        GpuMat d_frame1Gray(frame1Gray);
+        GpuMat d_nextPts;
+        GpuMat d_status;
+
+        d_pyrLK->calc(1 ? d_frame0Gray : d_frame0, 1 ? d_frame1Gray : d_frame1, d_prevPts, d_nextPts, d_status);
+
+        // Draw arrows
+
+        vector<Point2f> prevPts(d_prevPts.cols);
+        download(d_prevPts, prevPts);
+
+        vector<Point2f> nextPts(d_nextPts.cols);
+        download(d_nextPts, nextPts);
+
+        vector<uchar> status(d_status.cols);
+        download(d_status, status);
+
+        drawArrows(frame0, prevPts, nextPts, status, Scalar(255, 0, 0));
+
+        imshow("PyrLK [Sparse]", frame0);
+        frame0 = frame1.clone();
+
+        prevPts = nextPts;
     }
-
-    namedWindow("PyrLK [Sparse]", WINDOW_NORMAL);
-    namedWindow("PyrLK [Dense] Flow Field", WINDOW_NORMAL);
-
-    cout << "Image size : " << frame0.cols << " x " << frame0.rows << endl;
-    cout << "Points count : " << points << endl;
-
-    cout << endl;
-
-    Mat frame0Gray;
-    cv::cvtColor(frame0, frame0Gray, COLOR_BGR2GRAY);
-    Mat frame1Gray;
-    cv::cvtColor(frame1, frame1Gray, COLOR_BGR2GRAY);
-
-    // goodFeaturesToTrack
-
-    GpuMat d_frame0Gray(frame0Gray);
-    GpuMat d_prevPts;
-
-    Ptr<cuda::CornersDetector> detector = cuda::createGoodFeaturesToTrackDetector(d_frame0Gray.type(), points, 0.01, minDist);
-
-    detector->detect(d_frame0Gray, d_prevPts);
-
-    // Sparse
-
-    Ptr<cuda::SparsePyrLKOpticalFlow> d_pyrLK = cuda::SparsePyrLKOpticalFlow::create(
-                Size(winSize, winSize), maxLevel, iters);
-
-    GpuMat d_frame0(frame0);
-    GpuMat d_frame1(frame1);
-    GpuMat d_frame1Gray(frame1Gray);
-    GpuMat d_nextPts;
-    GpuMat d_status;
-
-    d_pyrLK->calc(useGray ? d_frame0Gray : d_frame0, useGray ? d_frame1Gray : d_frame1, d_prevPts, d_nextPts, d_status);
-
-    // Draw arrows
-
-    vector<Point2f> prevPts(d_prevPts.cols);
-    download(d_prevPts, prevPts);
-
-    vector<Point2f> nextPts(d_nextPts.cols);
-    download(d_nextPts, nextPts);
-
-    vector<uchar> status(d_status.cols);
-    download(d_status, status);
-
-    drawArrows(frame0, prevPts, nextPts, status, Scalar(255, 0, 0));
-
-    imshow("PyrLK [Sparse]", frame0);
-
-    waitKey();
 
     return 0;
 }
