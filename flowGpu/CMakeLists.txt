@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5 )
+project( flowGPU )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable(  flowGPU pyrlk_optical_flow.cpp )
+target_link_libraries( flowGPU ${OpenCV_LIBS})
