@@ -1,1 +1,1 @@
-# flightCode
+This repository contains prototype code for our computer vision system. Some repositories optical flow, which is used to estimate velocity and position. Corner detection, which is used to find our position based on the distance from the absolute corners of the field. Yolo training file(soon to be). Yolo is uses a nural net to train our recognition algorithm which used as our primary target detector.
