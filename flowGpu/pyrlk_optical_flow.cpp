@@ -1,5 +1,12 @@
+#include <sstream>
+#include <fstream>
+#include <string>
 #include <iostream>
 #include <vector>
+#include <ctime>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sstream>
 
 #include "opencv2/core.hpp"
 #include <opencv2/core/utility.hpp>
@@ -13,10 +20,32 @@ using namespace std;
 using namespace cv;
 using namespace cv::cuda;
 
+string DATALOGFILE;
+string VIDEOLOGFILE;
+const int FRAME_WIDTH = 640;
+const int FRAME_HEIGHT = 480;
+const int64 TIMESTART = getTickCount();
+double FPS;
+
+double timeStamp()
+{
+    double timeStamp = ((double)getTickCount() - TIMESTART)/getTickFrequency();
+    return timeStamp;
+}
+void logData(Point flow )
+
+{
+    double time = timeStamp();
+    ofstream config;
+    config.open (DATALOGFILE.c_str(), ios::out | ios::app );
+    cout << DATALOGFILE << endl;
+    config<<flow.x<<","<<flow.y<<","<<FPS<<","<<time<<"\n";
+    config.close();
+}
 static void download(const GpuMat& d_mat, vector<Point2f>& vec)
 {
     vec.resize(d_mat.cols);
-    Mat mat(1, d_mat.cols, CV_32FC2, (void*)&vec[0]);
+    Mat mat(1, d_mat.cols, CV_32FC2, (void*)&vec[0]);   
     d_mat.download(mat);
 }
 
@@ -74,6 +103,7 @@ static void drawArrows(Mat& frame, const vector<Point2f>& prevPts, const vector<
     flowSum.x =  flowSum.x / counter;
     flowSum.y =  flowSum.y / counter;
     cout << "Flow = " << flowSum << endl;
+    logData(flowSum);
 }
 
 template <typename T> inline T clamp (T x, T a, T b)
@@ -87,62 +117,50 @@ template <typename T> inline T mapValue(T x, T a, T b, T c, T d)
     return c + (d - c) * (x - a) / (b - a);
 }
 
+const std::string currentDateTime() {
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
+    // for more information about date/time format
+    strftime(buf, sizeof(buf), "%m_%d_%y_%X", &tstruct);
+
+    return buf;
+}
+void startLog()
+{
+    string date = currentDateTime();
+    DATALOGFILE = "/sdCard/Logs/OF" + date + ".csv";
+    string cmd =  "touch " + DATALOGFILE;
+    system(cmd.c_str());
+
+    ofstream config;
+    config.open (DATALOGFILE.c_str(), ios::out | ios::app );
+    cout << DATALOGFILE << endl;
+    config<<"flowX,flowY,Vx,Vy,FPS,time\n";
+    config.close();
+}
 int main(int argc, const char* argv[])
 {
-    /*
-    const char* keys =
-        "{ h             help   |       | print help message }"
-        "{ l             left   | ../data/pic1.png       | specify left image }"
-        "{ r             right  | ../data/pic2.png       | specify right image }"
-        "{ gray                 |       | use grayscale sources [PyrLK Sparse] }"
-        "{ win_size             | 21    | specify windows size [PyrLK] }"
-        "{ max_level            | 3     | specify max level [PyrLK] }"
-        "{ iters                | 30    | specify iterations count [PyrLK] }"
-        "{ points               | 4000  | specify points count [GoodFeatureToTrack] }"
-        "{ min_dist             | 0     | specify minimal distance between points [GoodFeatureToTrack] }";
+    startLog();
+    string date = currentDateTime();
+    VIDEOLOGFILE = "/sdCard/Logs/OF" + date + ".avi";
+    VideoWriter video(VIDEOLOGFILE.c_str(), CV_FOURCC('D', 'I', 'V', 'X'), 10, Size(FRAME_WIDTH, FRAME_HEIGHT), true);
 
-    CommandLineParser cmd(argc, argv, keys);
-
-    if (cmd.has("help") || !cmd.check())
-    {
-        cmd.printMessage();
-        cmd.printErrors();
-        return 0;
-    }
-
-    string fname0 = cmd.get<string>("left");
-    string fname1 = cmd.get<string>("right");
-
-    if (fname0.empty() || fname1.empty())
-    {
-        cerr << "Missing input file names" << endl;
-        return -1;
-    }
-
-
-
-    bool useGray = cmd.has("gray");
-    int winSize = cmd.get<int>("win_size");
-    int maxLevel = cmd.get<int>("max_level");
-    int iters = cmd.get<int>("iters");
-    int points = cmd.get<int>("points");
-    double minDist = cmd.get<double>("min_dist");
-*/
     Mat frame0, frame1;
-    VideoCapture cap(0);
-    cap.read(frame0);
-    waitKey(30);
-    cap.read(frame1);
-
+    VideoCapture cap;
+    cap.set(CV_CAP_PROP_FRAME_WIDTH, FRAME_WIDTH);
+    cap.set(CV_CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT);
+    cap.open(0);
+        
     while(waitKey(30) != 27)
     {
+        int64 frameStart = getTickCount();
+        cap.read(frame0);
         cap.read(frame1);
         namedWindow("PyrLK [Sparse]", WINDOW_NORMAL);
-
-        cout << "Image size : " << frame0.cols << " x " << frame0.rows << endl;
         
-
-        cout << endl;
 
         Mat frame0Gray;
         cv::cvtColor(frame0, frame0Gray, COLOR_BGR2GRAY);
@@ -154,7 +172,7 @@ int main(int argc, const char* argv[])
         GpuMat d_frame0Gray(frame0Gray);
         GpuMat d_prevPts;
 
-        Ptr<cuda::CornersDetector> detector = cuda::createGoodFeaturesToTrackDetector(d_frame0Gray.type(), 2000, 0.04, 0);
+        Ptr<cuda::CornersDetector> detector = cuda::createGoodFeaturesToTrackDetector(d_frame0Gray.type(), 300, 0.04, 0);
 
         detector->detect(d_frame0Gray, d_prevPts);
 
@@ -185,10 +203,16 @@ int main(int argc, const char* argv[])
         drawArrows(frame0, prevPts, nextPts, status, Scalar(255, 0, 0));
 
         imshow("PyrLK [Sparse]", frame0);
+        video.write(frame0);
         frame0 = frame1.clone();
-
         prevPts = nextPts;
+        cout << "width " << frame0.cols << " height "<< frame0.rows; 
+        double timeSec = ((getTickCount() - frameStart) / getTickFrequency());
+        FPS = 1 / timeSec;
     }
 
     return 0;
 }
+
+
+
