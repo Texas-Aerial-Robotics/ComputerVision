@@ -11,8 +11,8 @@
 
 ## Camera Properties:
 
-**Field of view in y (\alpha)** = 31.8244 degrees
-**Field of view in x (\beta)** = Soon to be found
+**Field of view in y (alpha)** = 31.8244 degrees  
+**Field of view in x (beta)** = Soon to be found
 
 
 ## Transformations from camera to gym frame
