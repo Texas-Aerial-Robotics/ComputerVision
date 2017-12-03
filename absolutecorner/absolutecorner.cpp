@@ -5,12 +5,12 @@ using namespace cv;
 using namespace std;
 
 const string trackbarWindowName = "Trackbars";
-int B_MIN = 120;
-int B_MAX = 256;
-int G_MIN = 46;
-int G_MAX = 256;
-int R_MIN = 73;
-int R_MAX = 256;
+int B_MIN = 91;
+int B_MAX = 255;
+int G_MIN = 31;
+int G_MAX = 255;
+int R_MIN = 60;
+int R_MAX = 255;
 char* window_name = "Edge Map";
 int lowThreshold;
 int ratio = 3;
@@ -68,11 +68,13 @@ int main()
 	Mat cameraFeed;
 	
 	VideoCapture capture;
-	capture.open(1);
+	capture.open(0);
 
 	while (waitKey(30) != 27)
 	{
 		capture.read(cameraFeed);
+		blur( cameraFeed, cameraFeed, Size(20,20) );
+		blur( cameraFeed, cameraFeed, Size(20,20) );
 		imshow("Camera Output", cameraFeed);
 		
 		//now filter out color of gym floor
@@ -90,28 +92,63 @@ int main()
 		dilate(thresholded, thresholded, dilateElement);
 		dilate(thresholded, thresholded, dilateElement);
 
+
 		imshow("thresh", thresholded);
 
 		/// Create a window
-		  namedWindow( window_name, CV_WINDOW_AUTOSIZE );
+		namedWindow( window_name, CV_WINDOW_AUTOSIZE );
 
-		  /// Create a Trackbar for user to enter threshold
-		  createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
-		   CannyThreshold(0, 0);
-
-		//detect lines on thresholded image
-		blur( thresholded, thresholded, Size(3,3) );
-		Canny( edges, edges, lowThreshold, lowThreshold*ratio, kernel_size );
+		/// Create a Trackbar for user to enter threshold
+		createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
+		CannyThreshold(0, 0);
 
 		//Canny(thresholded,edges,0,0,3);
 		//Houghlines transform (if this doesnt work try HoughLinesP) also check last set of perameters
-		HoughLinesP(edges,Hlines,1, CV_PI/180,30,30,70);
+		
+		HoughLinesP(edges,Hlines,1, CV_PI/180,30,50,5);
 		for (size_t i = 0; i < Hlines.size(); ++i)
  	   	{
 	        Vec4i l = Hlines[i];
-	        line(edges, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, LINE_AA);
+	        line(cameraFeed, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, LINE_AA);
 		}
-		imshow("hough", edges);
+
+		for (size_t i = 0; i < Hlines.size(); ++i)
+ 	   	{
+	        Vec4i l1 = Hlines[i];
+	        Point A1 = Point(l1[0], l1[1]);
+	        Point A2 = Point(l1[2], l1[3]);
+	        if (norm(A2.x - A1.x) < .05)
+	        {
+	        	continue;
+	        }
+	        cout << "A1 " << A1 << "A2 " << A2 << endl;
+	        float Ma = (float)(A2.y - A1.y)/(float)(A2.x - A1.x);
+	        for (size_t ii = 0; ii < Hlines.size(); ++ii)
+ 	   		{
+		        Vec4i l2 = Hlines[ii];
+		        Point B1 = Point(l2[0], l2[1]);
+		        Point B2 = Point(l2[2], l2[3]);
+		        if(i == ii)
+		        {
+		        	continue;
+		        }
+		        if((B2.x - B1.x)  < .05)
+		        {
+		        	continue;
+		        }
+		        float Mb = (float)(B2.y - B1.y)/(float)(B2.x - B1.x);
+				if(norm(Mb - Ma) < .1 ) 
+				{
+					continue;
+				}
+				float Xint = (1/(Mb - Ma))*(A1.y -B1.y - Ma*A1.x + Mb*B1.x);
+				float Yint = Ma*(Xint - A1.x) + A1.y;
+				circle( cameraFeed, Point2f( Xint, Yint ), 5,  Scalar(255,0,0), 2, 8, 0 );
+				cout << "Ma " << Ma << "Mb " << Mb << endl;
+				cout<< "X: " <<Xint<< "Y: " << Yint << endl;
+			}
+		}
+		imshow("hough", cameraFeed);
 
 	}
 }
