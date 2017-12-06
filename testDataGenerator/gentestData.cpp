@@ -26,7 +26,7 @@ string VIDEOLOGFILE;
 int main()
 {
     startLog();
-    VideoCapture cap(0);
+    VideoCapture cap(1);
     if(!cap.isOpened())  // check if we succeeded
         return -1;
 
@@ -87,11 +87,8 @@ void takeHeight()
     float height;
     float second;
     ifstream infile;
-    infile.open("/home/eric/rng.log");
-
-        
+    infile.open("/home/eric/rng.log");   
     infile>> height >> second;
     data[0]= height;
      
-
 }

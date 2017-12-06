@@ -1,0 +1,3 @@
+/home/eric/ComputerVision/absolutecorner/CMakeFiles/edit_cache.dir
+/home/eric/ComputerVision/absolutecorner/CMakeFiles/rebuild_cache.dir
+/home/eric/ComputerVision/absolutecorner/CMakeFiles/corner.dir
