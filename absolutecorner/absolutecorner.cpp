@@ -63,34 +63,37 @@ void CannyThreshold(int, void*)
   //src.copyTo( dst, edges);
   imshow( window_name, edges );
  }
-void datasupress(vector<float> Corners, int &xcorner, int &ycorner){
+void datasupress(vector<float> xCorners, vector<float> yCorners, int &xcorner, int &ycorner){
 	int i;
-	float xtemp, ytemp, xavg, yavg, stdevx, stdevy;weight1;weight2;big1;big2
+	float xtemp, ytemp, xavg, yavg, stdevx, stdevy,weight1,weight2,big1,big2;
 	xavg=0;yavg=0;stdevx=0;stdevy=0;xcorner=0;ycorner=0;big1=0;big2=0;
-	for (i=0;i<(Corners.size()/2);i++){
-		xtemp=Corners[i];
-		ytemp=Corners[i+1];
+	for (i=0;i<(xCorners.size());i++){
+
+		xtemp=xCorners[i];
+		ytemp=yCorners[i];
 		xavg=xavg+xtemp;
 		yavg=yavg+ytemp;
 
 	}
-	xavg=xavg/(float(Corners.size()));
-	yavg=yavg/(float(Corners.size()));
-	for (i=0;i<(Corners.size()/2);i++){
-		stdevx=pow((Corners[i]-xavg),2)+stdevx;
-		stdevy=pow((Corners[i+1]-yavg),2)+stdevy;
+	xavg=xavg/(float(xCorners.size()));
+	yavg=yavg/(float(yCorners.size()));
+	cout<< "X AVG " << xavg << "Y AVG " << yavg<<endl;
+	for (i=0;i<(xCorners.size());i++){
+		stdevx=pow((xCorners[i]-xavg),2)+stdevx;
+		stdevy=pow((yCorners[i]-yavg),2)+stdevy;
+
 
 	}
-	stdevx=sqrt(stdevx/((Corners.size()-1)));
-	stdevy=sqrt(stdevx/(Corners.size()-1));
-
-	for (i=0;i<(Corners.size()/2);i++){
-		weight1=1/(abs(Corners[i]-xavg)/stdevx);
-		weight2=1/(abs(Corners[i+1]-yavg)/stdevy);
+	stdevx=sqrt(stdevx/((xCorners.size()-1)));
+	stdevy=sqrt(stdevy/(yCorners.size()-1));
+cout<<"STD X "<<stdevx << "STD Y "<< stdevy<<endl;
+	for (i=0;i<(xCorners.size());i++){
+		weight1=1/(abs(xCorners[i]-xavg)/stdevx);
+		weight2=1/(abs(yCorners[i]-yavg)/stdevy);
 		big1=weight1+big1;
 		big2=weight2+big2;
-		xcorner=xcorner+weight1*Corners[i];
-		ycorner=ycorner+weight2*Corners[i+1];
+		xcorner=xcorner+weight1*xCorners[i];
+		ycorner=ycorner+weight2*yCorners[i];
 
 
 	}
@@ -105,7 +108,7 @@ int main()
 	Mat cameraFeed;
 	
 	VideoCapture capture;
-	capture.open(0);
+	capture.open(1);
 
 	while (waitKey(30) != 27)
 	{
@@ -143,8 +146,9 @@ int main()
 		//Houghlines transform (if this doesnt work try HoughLinesP) also check last set of perameters
 		
 		HoughLinesP(edges,Hlines,1, CV_PI/180,30,50,5);
-		int xcorner ycorner;
-		vector,<float> Corners;
+		int xcorner, ycorner;
+		vector<float> xCorners, yCorners;
+
 		for (size_t i = 0; i < Hlines.size(); ++i)
  	   	{
 	        Vec4i l = Hlines[i];
@@ -182,16 +186,18 @@ int main()
 				}
 				float Xint = (1/(Mb - Ma))*(A1.y -B1.y - Ma*A1.x + Mb*B1.x);
 				float Yint = Ma*(Xint - A1.x) + A1.y;
-				Corners.push_back(Xint);
-				Corners.push_back(Yint);
+				if (Xint<640 && Yint<480 && Xint>0 && Yint>0){
+					xCorners.push_back(Xint);
+					yCorners.push_back(Yint);
+				}
 				circle( cameraFeed, Point2f( Xint, Yint ), 5,  Scalar(255,0,0), 2, 8, 0 );
 				cout << "Ma " << Ma << "Mb " << Mb << endl;
 				cout<< "X: " <<Xint<< "Y: " << Yint << endl;
 			}
 		}
-		datasupress(Corners,xcorner,ycorner)
+		datasupress(xCorners, yCorners, xcorner,ycorner);
 		circle( cameraFeed, Point2f( xcorner, ycorner ), 5,  Scalar(0,255,0), 2, 8, 0 );
-		cout<< "AVG X: "  <<xcorner<<"Avg Y: "<<ycorner<<endl;
+		cout<< "WEIGHTED AVG X: "  <<xcorner<<"WEIGHTED Avg Y: "<<ycorner<<endl;
 
 		imshow("hough", cameraFeed);
 

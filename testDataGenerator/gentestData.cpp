@@ -20,7 +20,7 @@ const int64 TIMESTART = getTickCount();
 
 double FPS;
 float data[3];
-string DATALOGFILE;
+string DATALOGFILE; 
 string VIDEOLOGFILE;
 
 int main()
@@ -38,6 +38,8 @@ int main()
     {
         Mat frame;
         cap.read(frame); // get a new frame from camera
+        cout << frame.cols << frame.rows <<endl;
+        circle( frame, Point2f( 200,200 ), 5,  Scalar(255,0,0), 2, 8, 0 );
         imshow("original", frame);
         logData(frameNum);
         orig.write(frame);
