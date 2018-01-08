@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ubuntu/computerVision/flowGpu/pyrlk_optical_flow.cpp" "/home/ubuntu/computerVision/flowGpu/CMakeFiles/flowGPU.dir/pyrlk_optical_flow.cpp.o"
+  "/home/eric/ComputerVision/flowGpu/pyrlk_optical_flow.cpp" "/home/eric/ComputerVision/flowGpu/CMakeFiles/flowGPU.dir/pyrlk_optical_flow.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/include/opencv"
+  "/opt/ros/kinetic/include/opencv-3.3.1"
+  "/opt/ros/kinetic/include/opencv-3.3.1/opencv"
   )
 
 # Targets to which this target links.

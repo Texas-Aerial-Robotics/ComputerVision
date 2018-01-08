@@ -2,6 +2,8 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 #include <cmath>
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/cuda.hpp>
 using namespace cv;
 using namespace std;
 
@@ -17,7 +19,7 @@ int lowThreshold;
 int ratio = 3;
 int kernel_size = 3;
 int const max_lowThreshold = 100;
-Mat thresholded, edges;
+Mat thresholded, edges, cameraFeed;
 void on_trackbar(int, void*)
 {//This function gets called whenever a
  // trackbar position is changed
@@ -63,6 +65,7 @@ void CannyThreshold(int, void*)
   //src.copyTo( dst, edges);
   imshow( window_name, edges );
  }
+
 void datasupress(vector<float> xCorners, vector<float> yCorners, int &xcorner, int &ycorner){
 	int i;
 	float xtemp, ytemp, xavg, yavg, stdevx, stdevy,weight1,weight2,big1,big2;
@@ -101,53 +104,10 @@ cout<<"STD X "<<stdevx << "STD Y "<< stdevy<<endl;
 	ycorner=ycorner/big2;
 }
 
-
-int main()
+Point findIntersection(vector<Vec4i> Hlines)
 {
-	createTrackbars();
-	Mat cameraFeed;
-	
-	VideoCapture capture;
-	capture.open(1);
-
-	while (waitKey(30) != 27)
-	{
-		capture.read(cameraFeed);
-		blur( cameraFeed, cameraFeed, Size(20,20) );
-		blur( cameraFeed, cameraFeed, Size(20,20) );
-		imshow("Camera Output", cameraFeed);
-		
-		//now filter out color of gym floor
-		vector<Vec4i> Hlines;
-		//in range filters out colors outside of the two scalar inputs,
-		inRange(cameraFeed,Scalar(B_MIN, G_MIN, R_MIN), Scalar(B_MAX, G_MAX, R_MAX),thresholded);
-		Mat erodeElement = getStructuringElement(MORPH_RECT, Size(3, 3));
-		//dilate with larger element so make sure object is nicely visible
-		Mat dilateElement = getStructuringElement(MORPH_RECT, Size(8, 8));
-
-		erode(thresholded, thresholded, erodeElement);
-		erode(thresholded, thresholded, erodeElement);
-		erode(thresholded, thresholded, erodeElement);
-		dilate(thresholded, thresholded, dilateElement);
-		dilate(thresholded, thresholded, dilateElement);
-		dilate(thresholded, thresholded, dilateElement);
-
-
-		imshow("thresh", thresholded);
-
-		/// Create a window
-		namedWindow( window_name, CV_WINDOW_AUTOSIZE );
-
-		/// Create a Trackbar for user to enter threshold
-		createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
-		CannyThreshold(0, 0);
-
-		//Canny(thresholded,edges,0,0,3);
-		//Houghlines transform (if this doesnt work try HoughLinesP) also check last set of perameters
-		
-		HoughLinesP(edges,Hlines,1, CV_PI/180,30,50,5);
-		int xcorner, ycorner;
-		vector<float> xCorners, yCorners;
+	int xcorner, ycorner;
+	vector<float> xCorners, yCorners;
 
 		for (size_t i = 0; i < Hlines.size(); ++i)
  	   	{
@@ -194,14 +154,84 @@ int main()
 				cout << "Ma " << Ma << "Mb " << Mb << endl;
 				cout<< "X: " <<Xint<< "Y: " << Yint << endl;
 			}
+
 		}
-		datasupress(xCorners, yCorners, xcorner,ycorner);
-		circle( cameraFeed, Point2f( xcorner, ycorner ), 5,  Scalar(0,255,0), 2, 8, 0 );
-		cout<< "WEIGHTED AVG X: "  <<xcorner<<"WEIGHTED Avg Y: "<<ycorner<<endl;
+	datasupress(xCorners, yCorners, xcorner,ycorner);
+	Point stdXY = Point(xcorner, ycorner);
+	return stdXY;
+}
+void cpuAlgorithm(VideoCapture capture)
+{
+	
+	capture.read(cameraFeed);
 
-		imshow("hough", cameraFeed);
 
+	blur( cameraFeed, cameraFeed, Size(20,20) );
+	blur( cameraFeed, cameraFeed, Size(20,20) );
+	imshow("Camera Output", cameraFeed);
+	
+	//now filter out color of gym floor
+	vector<Vec4i> Hlines;
+	//in range filters out colors outside of the two scalar inputs,
+	inRange(cameraFeed,Scalar(B_MIN, G_MIN, R_MIN), Scalar(B_MAX, G_MAX, R_MAX),thresholded);
+	Mat erodeElement = getStructuringElement(MORPH_RECT, Size(3, 3));
+	//dilate with larger element so make sure object is nicely visible
+	Mat dilateElement = getStructuringElement(MORPH_RECT, Size(8, 8));
+
+	erode(thresholded, thresholded, erodeElement);
+	erode(thresholded, thresholded, erodeElement);
+	erode(thresholded, thresholded, erodeElement);
+	dilate(thresholded, thresholded, dilateElement);
+	dilate(thresholded, thresholded, dilateElement);
+	dilate(thresholded, thresholded, dilateElement);
+
+	imshow("thresh", thresholded);
+	/// Create a window
+	namedWindow( window_name, CV_WINDOW_AUTOSIZE );
+
+	/// Create a Trackbar for user to enter threshold
+	createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
+	CannyThreshold(0, 0);
+
+	//Canny(thresholded,edges,0,0,3);
+	//Houghlines transform (if this doesnt work try HoughLinesP) also check last set of perameters
+	
+	HoughLinesP(edges,Hlines,1, CV_PI/180,30,50,5);
+	
+	Point stdxy = findIntersection(Hlines);
+	circle( cameraFeed, stdxy , 5,  Scalar(0,255,0), 2, 8, 0 );
+	cout<< "WEIGHTED AVG X: "  <<stdxy.x<<"WEIGHTED Avg Y: "<< stdxy.y <<endl;
+
+	imshow("hough", cameraFeed);
+}
+
+void gpuAlgorithm()
+{
+
+}
+
+int main()
+{
+	createTrackbars();
+
+	cout << cuda::getCudaEnabledDeviceCount() << " cuda devices found" <<endl;
+	VideoCapture capture;
+	capture.open(0);
+	if (cuda::getCudaEnabledDeviceCount() == 0){
+		
+		while (waitKey(30) != 27)
+		{
+			cpuAlgorithm(capture);
+		}
+	}else{
+		cout << "starting with cuda" << endl;
+		while (waitKey(30) != 27)
+		{
+			gpuAlgorithm();
+		}
 	}
+
+	return 0;
 }
 
 	

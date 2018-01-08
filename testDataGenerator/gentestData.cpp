@@ -26,7 +26,7 @@ string VIDEOLOGFILE;
 int main()
 {
     startLog();
-    VideoCapture cap(1);
+    VideoCapture cap(0);
     if(!cap.isOpened())  // check if we succeeded
         return -1;
 
