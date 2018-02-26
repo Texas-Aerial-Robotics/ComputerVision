@@ -169,6 +169,12 @@ void cpuAlgorithm(VideoCapture capture)
 	blur( cameraFeed, cameraFeed, Size(20,20) );
 	blur( cameraFeed, cameraFeed, Size(20,20) );
 	imshow("Camera Output", cameraFeed);
+	//take canny of color image
+	/// Create a Trackbar for user to enter threshold
+	Mat canny1;
+	createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
+	CannyThreshold(0, 0);
+	Canny(cameraFeed, canny1,0,0,3);
 	
 	//now filter out color of gym floor
 	vector<Vec4i> Hlines;
@@ -189,14 +195,16 @@ void cpuAlgorithm(VideoCapture capture)
 	/// Create a window
 	namedWindow( window_name, CV_WINDOW_AUTOSIZE );
 
-	/// Create a Trackbar for user to enter threshold
-	createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
-	CannyThreshold(0, 0);
 
-	//Canny(thresholded,edges,0,0,3);
+
+	Canny(thresholded,edges,0,0,3);
 	//Houghlines transform (if this doesnt work try HoughLinesP) also check last set of perameters
 	
-	HoughLinesP(edges,Hlines,1, CV_PI/180,30,50,5);
+	//see if we can correlate Canny and color thresholded images
+	bitwise_and(canny1, edges, correlated_edges, mask=noArray());
+	imshow("Correlated", correlated_edges);
+	
+	HoughLinesP(correlated_edges,Hlines,1, CV_PI/180,30,50,5);
 	
 	Point stdxy = findIntersection(Hlines);
 	circle( cameraFeed, stdxy , 5,  Scalar(0,255,0), 2, 8, 0 );
