@@ -1,3 +1,3 @@
-/home/ubuntu/computerVision/houghLines/CMakeFiles/edit_cache.dir
-/home/ubuntu/computerVision/houghLines/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/computerVision/houghLines/CMakeFiles/hough.dir
+/home/mark/Documents/ComputerVision/houghLines/CMakeFiles/edit_cache.dir
+/home/mark/Documents/ComputerVision/houghLines/CMakeFiles/rebuild_cache.dir
+/home/mark/Documents/ComputerVision/houghLines/CMakeFiles/hough.dir

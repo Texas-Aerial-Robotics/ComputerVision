@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eric/ComputerVision/absolutecorner
+CMAKE_SOURCE_DIR = /home/mark/Documents/ComputerVision/absolutecorner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eric/ComputerVision/absolutecorner
+CMAKE_BINARY_DIR = /home/mark/Documents/ComputerVision/absolutecorner
 
 # Include any dependencies generated for this target.
 include CMakeFiles/corner.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/corner.dir/flags.make
 
 CMakeFiles/corner.dir/absolutecorner.cpp.o: CMakeFiles/corner.dir/flags.make
 CMakeFiles/corner.dir/absolutecorner.cpp.o: absolutecorner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eric/ComputerVision/absolutecorner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/corner.dir/absolutecorner.cpp.o"
-	/usr/lib/ccache/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/corner.dir/absolutecorner.cpp.o -c /home/eric/ComputerVision/absolutecorner/absolutecorner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mark/Documents/ComputerVision/absolutecorner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/corner.dir/absolutecorner.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/corner.dir/absolutecorner.cpp.o -c /home/mark/Documents/ComputerVision/absolutecorner/absolutecorner.cpp
 
 CMakeFiles/corner.dir/absolutecorner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/corner.dir/absolutecorner.cpp.i"
-	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eric/ComputerVision/absolutecorner/absolutecorner.cpp > CMakeFiles/corner.dir/absolutecorner.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mark/Documents/ComputerVision/absolutecorner/absolutecorner.cpp > CMakeFiles/corner.dir/absolutecorner.cpp.i
 
 CMakeFiles/corner.dir/absolutecorner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/corner.dir/absolutecorner.cpp.s"
-	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eric/ComputerVision/absolutecorner/absolutecorner.cpp -o CMakeFiles/corner.dir/absolutecorner.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mark/Documents/ComputerVision/absolutecorner/absolutecorner.cpp -o CMakeFiles/corner.dir/absolutecorner.cpp.s
 
 CMakeFiles/corner.dir/absolutecorner.cpp.o.requires:
 
@@ -90,36 +90,25 @@ corner_EXTERNAL_OBJECTS =
 
 corner: CMakeFiles/corner.dir/absolutecorner.cpp.o
 corner: CMakeFiles/corner.dir/build.make
-corner: /usr/lib/libopencv_videostab.so.3.1.0
-corner: /usr/lib/libopencv_superres.so.3.1.0
-corner: /usr/lib/libopencv_stitching.so.3.1.0
-corner: /usr/lib/libopencv_shape.so.3.1.0
-corner: /usr/lib/libopencv_photo.so.3.1.0
-corner: /usr/lib/libopencv_cudastereo.so.3.1.0
-corner: /usr/lib/libopencv_cudaoptflow.so.3.1.0
-corner: /usr/lib/libopencv_cudaobjdetect.so.3.1.0
-corner: /usr/lib/libopencv_cudalegacy.so.3.1.0
-corner: /usr/lib/libopencv_cudaimgproc.so.3.1.0
-corner: /usr/lib/libopencv_cudafeatures2d.so.3.1.0
-corner: /usr/lib/libopencv_cudacodec.so.3.1.0
-corner: /usr/lib/libopencv_cudabgsegm.so.3.1.0
-corner: /usr/lib/libopencv_calib3d.so.3.1.0
-corner: /usr/lib/libopencv_cudawarping.so.3.1.0
-corner: /usr/lib/libopencv_objdetect.so.3.1.0
-corner: /usr/lib/libopencv_cudafilters.so.3.1.0
-corner: /usr/lib/libopencv_cudaarithm.so.3.1.0
-corner: /usr/lib/libopencv_features2d.so.3.1.0
-corner: /usr/lib/libopencv_ml.so.3.1.0
-corner: /usr/lib/libopencv_highgui.so.3.1.0
-corner: /usr/lib/libopencv_videoio.so.3.1.0
-corner: /usr/lib/libopencv_imgcodecs.so.3.1.0
-corner: /usr/lib/libopencv_flann.so.3.1.0
-corner: /usr/lib/libopencv_video.so.3.1.0
-corner: /usr/lib/libopencv_imgproc.so.3.1.0
-corner: /usr/lib/libopencv_core.so.3.1.0
-corner: /usr/lib/libopencv_cudev.so.3.1.0
+corner: /usr/local/lib/libopencv_dnn.so.4.0.0
+corner: /usr/local/lib/libopencv_ml.so.4.0.0
+corner: /usr/local/lib/libopencv_shape.so.4.0.0
+corner: /usr/local/lib/libopencv_objdetect.so.4.0.0
+corner: /usr/local/lib/libopencv_videostab.so.4.0.0
+corner: /usr/local/lib/libopencv_superres.so.4.0.0
+corner: /usr/local/lib/libopencv_video.so.4.0.0
+corner: /usr/local/lib/libopencv_photo.so.4.0.0
+corner: /usr/local/lib/libopencv_stitching.so.4.0.0
+corner: /usr/local/lib/libopencv_calib3d.so.4.0.0
+corner: /usr/local/lib/libopencv_features2d.so.4.0.0
+corner: /usr/local/lib/libopencv_flann.so.4.0.0
+corner: /usr/local/lib/libopencv_highgui.so.4.0.0
+corner: /usr/local/lib/libopencv_videoio.so.4.0.0
+corner: /usr/local/lib/libopencv_imgcodecs.so.4.0.0
+corner: /usr/local/lib/libopencv_imgproc.so.4.0.0
+corner: /usr/local/lib/libopencv_core.so.4.0.0
 corner: CMakeFiles/corner.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eric/ComputerVision/absolutecorner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable corner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mark/Documents/ComputerVision/absolutecorner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable corner"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/corner.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +125,6 @@ CMakeFiles/corner.dir/clean:
 .PHONY : CMakeFiles/corner.dir/clean
 
 CMakeFiles/corner.dir/depend:
-	cd /home/eric/ComputerVision/absolutecorner && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eric/ComputerVision/absolutecorner /home/eric/ComputerVision/absolutecorner /home/eric/ComputerVision/absolutecorner /home/eric/ComputerVision/absolutecorner /home/eric/ComputerVision/absolutecorner/CMakeFiles/corner.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mark/Documents/ComputerVision/absolutecorner && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mark/Documents/ComputerVision/absolutecorner /home/mark/Documents/ComputerVision/absolutecorner /home/mark/Documents/ComputerVision/absolutecorner /home/mark/Documents/ComputerVision/absolutecorner /home/mark/Documents/ComputerVision/absolutecorner/CMakeFiles/corner.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/corner.dir/depend
 

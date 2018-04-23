@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/computerVision/houghLines
+CMAKE_SOURCE_DIR = /home/mark/Documents/ComputerVision/houghLines
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/computerVision/houghLines
+CMAKE_BINARY_DIR = /home/mark/Documents/ComputerVision/houghLines
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hough.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/hough.dir/flags.make
 
 CMakeFiles/hough.dir/houghlines.cpp.o: CMakeFiles/hough.dir/flags.make
 CMakeFiles/hough.dir/houghlines.cpp.o: houghlines.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/computerVision/houghLines/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hough.dir/houghlines.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hough.dir/houghlines.cpp.o -c /home/ubuntu/computerVision/houghLines/houghlines.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mark/Documents/ComputerVision/houghLines/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hough.dir/houghlines.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hough.dir/houghlines.cpp.o -c /home/mark/Documents/ComputerVision/houghLines/houghlines.cpp
 
 CMakeFiles/hough.dir/houghlines.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hough.dir/houghlines.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/computerVision/houghLines/houghlines.cpp > CMakeFiles/hough.dir/houghlines.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mark/Documents/ComputerVision/houghLines/houghlines.cpp > CMakeFiles/hough.dir/houghlines.cpp.i
 
 CMakeFiles/hough.dir/houghlines.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hough.dir/houghlines.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/computerVision/houghLines/houghlines.cpp -o CMakeFiles/hough.dir/houghlines.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mark/Documents/ComputerVision/houghLines/houghlines.cpp -o CMakeFiles/hough.dir/houghlines.cpp.s
 
 CMakeFiles/hough.dir/houghlines.cpp.o.requires:
 
@@ -90,36 +90,25 @@ hough_EXTERNAL_OBJECTS =
 
 hough: CMakeFiles/hough.dir/houghlines.cpp.o
 hough: CMakeFiles/hough.dir/build.make
-hough: /usr/lib/libopencv_videostab.so.3.1.0
-hough: /usr/lib/libopencv_superres.so.3.1.0
-hough: /usr/lib/libopencv_stitching.so.3.1.0
-hough: /usr/lib/libopencv_shape.so.3.1.0
-hough: /usr/lib/libopencv_photo.so.3.1.0
-hough: /usr/lib/libopencv_cudastereo.so.3.1.0
-hough: /usr/lib/libopencv_cudaoptflow.so.3.1.0
-hough: /usr/lib/libopencv_cudaobjdetect.so.3.1.0
-hough: /usr/lib/libopencv_cudalegacy.so.3.1.0
-hough: /usr/lib/libopencv_cudaimgproc.so.3.1.0
-hough: /usr/lib/libopencv_cudafeatures2d.so.3.1.0
-hough: /usr/lib/libopencv_cudacodec.so.3.1.0
-hough: /usr/lib/libopencv_cudabgsegm.so.3.1.0
-hough: /usr/lib/libopencv_calib3d.so.3.1.0
-hough: /usr/lib/libopencv_cudawarping.so.3.1.0
-hough: /usr/lib/libopencv_objdetect.so.3.1.0
-hough: /usr/lib/libopencv_cudafilters.so.3.1.0
-hough: /usr/lib/libopencv_cudaarithm.so.3.1.0
-hough: /usr/lib/libopencv_features2d.so.3.1.0
-hough: /usr/lib/libopencv_ml.so.3.1.0
-hough: /usr/lib/libopencv_highgui.so.3.1.0
-hough: /usr/lib/libopencv_videoio.so.3.1.0
-hough: /usr/lib/libopencv_imgcodecs.so.3.1.0
-hough: /usr/lib/libopencv_flann.so.3.1.0
-hough: /usr/lib/libopencv_video.so.3.1.0
-hough: /usr/lib/libopencv_imgproc.so.3.1.0
-hough: /usr/lib/libopencv_core.so.3.1.0
-hough: /usr/lib/libopencv_cudev.so.3.1.0
+hough: /usr/local/lib/libopencv_dnn.so.4.0.0
+hough: /usr/local/lib/libopencv_ml.so.4.0.0
+hough: /usr/local/lib/libopencv_shape.so.4.0.0
+hough: /usr/local/lib/libopencv_objdetect.so.4.0.0
+hough: /usr/local/lib/libopencv_videostab.so.4.0.0
+hough: /usr/local/lib/libopencv_superres.so.4.0.0
+hough: /usr/local/lib/libopencv_video.so.4.0.0
+hough: /usr/local/lib/libopencv_photo.so.4.0.0
+hough: /usr/local/lib/libopencv_stitching.so.4.0.0
+hough: /usr/local/lib/libopencv_calib3d.so.4.0.0
+hough: /usr/local/lib/libopencv_features2d.so.4.0.0
+hough: /usr/local/lib/libopencv_flann.so.4.0.0
+hough: /usr/local/lib/libopencv_highgui.so.4.0.0
+hough: /usr/local/lib/libopencv_videoio.so.4.0.0
+hough: /usr/local/lib/libopencv_imgcodecs.so.4.0.0
+hough: /usr/local/lib/libopencv_imgproc.so.4.0.0
+hough: /usr/local/lib/libopencv_core.so.4.0.0
 hough: CMakeFiles/hough.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/computerVision/houghLines/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hough"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mark/Documents/ComputerVision/houghLines/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hough"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hough.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +125,6 @@ CMakeFiles/hough.dir/clean:
 .PHONY : CMakeFiles/hough.dir/clean
 
 CMakeFiles/hough.dir/depend:
-	cd /home/ubuntu/computerVision/houghLines && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/computerVision/houghLines /home/ubuntu/computerVision/houghLines /home/ubuntu/computerVision/houghLines /home/ubuntu/computerVision/houghLines /home/ubuntu/computerVision/houghLines/CMakeFiles/hough.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mark/Documents/ComputerVision/houghLines && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mark/Documents/ComputerVision/houghLines /home/mark/Documents/ComputerVision/houghLines /home/mark/Documents/ComputerVision/houghLines /home/mark/Documents/ComputerVision/houghLines /home/mark/Documents/ComputerVision/houghLines/CMakeFiles/hough.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hough.dir/depend
 

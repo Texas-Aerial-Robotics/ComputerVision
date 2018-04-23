@@ -15,6 +15,6 @@ VideoCapture cap(0);
 
         Mat frame;
         cap.read(frame); // get a new frame from camera
-        imwrite( "../../images/testImage.jpg", frame );
+        imwrite( "testImage.jpg", frame );
 return 0;
 }

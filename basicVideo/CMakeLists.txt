@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5 )
+set(CMAKE_CXX_STANDARD 11)
 project( video )
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( video basicVid.cpp )
 target_link_libraries( video ${OpenCV_LIBS})
+

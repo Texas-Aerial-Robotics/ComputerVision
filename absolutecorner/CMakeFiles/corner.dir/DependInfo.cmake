@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/eric/ComputerVision/absolutecorner/absolutecorner.cpp" "/home/eric/ComputerVision/absolutecorner/CMakeFiles/corner.dir/absolutecorner.cpp.o"
+  "/home/mark/Documents/ComputerVision/absolutecorner/absolutecorner.cpp" "/home/mark/Documents/ComputerVision/absolutecorner/CMakeFiles/corner.dir/absolutecorner.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/eric/include/opencv"
-  "/home/eric/include"
+  "/usr/local/include"
+  "/usr/local/include/opencv"
   )
 
 # Targets to which this target links.
