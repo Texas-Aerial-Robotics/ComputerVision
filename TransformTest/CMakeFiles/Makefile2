@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mark/Documents/ComputerVision/TransformTest
+CMAKE_SOURCE_DIR = /home/mark/Desktop/ComputerVision/TransformTest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mark/Documents/ComputerVision/TransformTest
+CMAKE_BINARY_DIR = /home/mark/Desktop/ComputerVision/TransformTest
 
 #=============================================================================
 # Target rules for target CMakeFiles/testvideo.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/mark/Documents/ComputerVision/TransformTest
 CMakeFiles/testvideo.dir/all:
 	$(MAKE) -f CMakeFiles/testvideo.dir/build.make CMakeFiles/testvideo.dir/depend
 	$(MAKE) -f CMakeFiles/testvideo.dir/build.make CMakeFiles/testvideo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/Documents/ComputerVision/TransformTest/CMakeFiles --progress-num=1,2 "Built target testvideo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/Desktop/ComputerVision/TransformTest/CMakeFiles --progress-num=1,2 "Built target testvideo"
 .PHONY : CMakeFiles/testvideo.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/testvideo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testvideo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Documents/ComputerVision/TransformTest/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Desktop/ComputerVision/TransformTest/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testvideo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Documents/ComputerVision/TransformTest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/Desktop/ComputerVision/TransformTest/CMakeFiles 0
 .PHONY : CMakeFiles/testvideo.dir/rule
 
 # Convenience name for target.

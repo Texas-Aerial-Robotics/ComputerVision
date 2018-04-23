@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mark/Documents/ComputerVision/TransformTest/TransformTest.cpp" "/home/mark/Documents/ComputerVision/TransformTest/CMakeFiles/testvideo.dir/TransformTest.cpp.o"
+  "/home/mark/Desktop/ComputerVision/TransformTest/TransformTest.cpp" "/home/mark/Desktop/ComputerVision/TransformTest/CMakeFiles/testvideo.dir/TransformTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

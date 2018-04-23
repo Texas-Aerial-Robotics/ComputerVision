@@ -7,7 +7,6 @@ CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core.hp
 CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/affine.hpp
 CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/base.hpp
 CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/bufferpool.hpp
-CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/check.hpp
 CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/cuda.hpp
 CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/cuda.inl.hpp
 CMakeFiles/testvideo.dir/TransformTest.cpp.o: /usr/local/include/opencv2/core/cuda_types.hpp
